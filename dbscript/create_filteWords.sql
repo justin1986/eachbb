@@ -1,0 +1,5 @@
+CREATE TABLE  `eachbb`.`eb_filte_words` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `text` varchar(256) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2471 DEFAULT CHARSET=utf8 COMMENT='敏感词'
