@@ -3,7 +3,7 @@
 	$key = $_REQUEST['key'];
 	$id_adopt = $_REQUEST['adopt'];
 	$db = get_db();
-	$sql = "select * from fb_vote where is_sub_vote=0";
+	$sql = "select * from eb_vote where is_sub_vote=0";
 	if($key!=''){
 		$sql .= " and name='$key'";
 	}
@@ -99,7 +99,7 @@
 				<?php paginate("",null,"page",true);?>
 				<button id=clear_priority>清空优先级</button>
 				<button id=edit_priority>编辑优先级</button>
-				<input type="hidden" id="db_table" value="fb_vote">
+				<input type="hidden" id="db_table" value="eb_vote">
 			</td>
 		</tr>
 	</table>

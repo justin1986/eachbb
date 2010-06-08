@@ -2,10 +2,10 @@
 	include_once('../../frame.php');
 	
 	$id = intval($_GET['id']);
-	$vote = new table_class('fb_vote');
+	$vote = new table_class('eb_vote');
 	$vote->find($id);
 	$db = get_db();
-	$item = $db->query("select * from fb_vote_item where vote_id=$id");
+	$item = $db->query("select * from eb_vote_item where vote_id=$id");
 	$item_count = $db->record_count;
 ?>
 

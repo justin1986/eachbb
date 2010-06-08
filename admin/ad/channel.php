@@ -32,9 +32,9 @@
 		</tr>
 		<?php
 			$db = get_db();
-			$channel = $db->query("select * from forbes_ad.fb_channel");
+			$channel = $db->query("select * from eachbb_ad.eb_channel");
 			$count = $db->record_count;
-			$banner = $db->query("select t1.channel_id,t2.name,t2.ad_size,t2.id from forbes_ad.fb_channel_banner t1 join forbes_ad.fb_banner t2 on t1.banner_id=t2.id");
+			$banner = $db->query("select t1.channel_id,t2.name,t2.ad_size,t2.id from eachbb_ad.eb_channel_banner t1 join eachbb_ad.eb_banner t2 on t1.banner_id=t2.id");
 			$b_count = $db->record_count;
 			for($i=0;$i<$count;$i++){
 		?>
@@ -58,7 +58,7 @@
 			</td>
 		</tr>
 		<?php }}}?>
-		<input type="hidden" id="db_table" value="forbes_ad.fb_channel">	
+		<input type="hidden" id="db_table" value="eachbb_ad.eb_channel">	
 	</table>
 </body>
 </html>

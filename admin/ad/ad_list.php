@@ -36,9 +36,9 @@
 		<?php
 			$db = get_db();
 			if($key!=''){
-				$ad = $db->query("select * from forbes_ad.fb_ad where banner_id=$bid and channel_id=$cid and name like '%$key%'");
+				$ad = $db->query("select * from eachbb_ad.eb_ad where banner_id=$bid and channel_id=$cid and name like '%$key%'");
 			}else{
-				$ad = $db->query("select * from forbes_ad.fb_ad where banner_id=$bid and channel_id=$cid");
+				$ad = $db->query("select * from eachbb_ad.eb_ad where banner_id=$bid and channel_id=$cid");
 			}
 			$count = $db->record_count;
 			for($i=0;$i<$count;$i++){
@@ -61,7 +61,7 @@
 		<?php }?>
 		<tr class="btools">
 			<td colspan=10><?php paginate("",null,"page",true);?></td>
-			<input type="hidden" id="db_table" value="forbes_ad.fb_ad">
+			<input type="hidden" id="db_table" value="eachbb_ad.eb_ad">
 		</tr>
 	</table>
 </body>

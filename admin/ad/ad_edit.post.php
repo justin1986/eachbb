@@ -19,7 +19,7 @@
 	
 	
 	$id = $_REQUEST['id'];
-	$ad = new table_class('forbes_ad.fb_ad');
+	$ad = new table_class('eachbb_ad.eb_ad');
 	if($id!=''){
 		$ad->find($id);
 		$ad->update_attributes($_POST['ad'],false);

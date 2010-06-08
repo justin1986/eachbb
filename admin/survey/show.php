@@ -4,17 +4,17 @@
 	judge_role();
 	$db = get_db();
 	$id = intval($_GET['id']);
-	$vote = new table_class("fb_vote");
+	$vote = new table_class("eb_vote");
 	$vote->find($id);
-	$item = $db->query("select * from fb_vote_item where vote_id=$id");
+	$item = $db->query("select * from eb_vote_item where vote_id=$id");
 	$item_count = $db->record_count;
 	if($vote->vote_type!='more_vote'){
-		$record = $db->query("select * from fb_vote where id=$id");
+		$record = $db->query("select * from eb_vote where id=$id");
 		$count = 1;
 	}else{
-		$record = $db->query("SELECT t1.id,t1.name,t1.max_item_count FROM fb_vote t1 join fb_vote_item t2 on t1.id=t2.sub_vote_id where t2.vote_id=$id");
+		$record = $db->query("SELECT t1.id,t1.name,t1.max_item_count FROM eb_vote t1 join eb_vote_item t2 on t1.id=t2.sub_vote_id where t2.vote_id=$id");
 		$count = $item_count;
-		$item = $db->query("SELECT t1.id as vote_id,t3.title,t3.id FROM fb_vote t1 join fb_vote_item t2 on t1.id=t2.sub_vote_id join fb_vote_item t3 on t1.id=t3.vote_id where t2.vote_id=$id");
+		$item = $db->query("SELECT t1.id as vote_id,t3.title,t3.id FROM eb_vote t1 join eb_vote_item t2 on t1.id=t2.sub_vote_id join eb_vote_item t3 on t1.id=t3.vote_id where t2.vote_id=$id");
 		$item_count = $db->record_count;
 	}
 	#$in_type = "radio";
@@ -39,7 +39,7 @@
 		<div id="question_div2">
 			<?php for($i=0;$i<$count;$i++){
 				$total = 0;
-			    $result = $db->query("select count(item_id) as num,item_id from fb_survey_record2 where vote_id={$record[$i]->id} group by item_id");
+			    $result = $db->query("select count(item_id) as num,item_id from eb_survey_record2 where vote_id={$record[$i]->id} group by item_id");
 				for($k=0;$k<count($result);$k++){
 					$total = $total+$result[$k]->num;
 				}	

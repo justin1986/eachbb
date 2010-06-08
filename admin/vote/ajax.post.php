@@ -1,7 +1,7 @@
 <?php
 	require_once "../../frame.php";
 	use_jquery();
-	$vote = new table_class('fb_vote');
+	$vote = new table_class('eb_vote');
 	if($_POST['vote_id']!=''){
 		$vote->find($_POST['vote_id']);
 		$type = edit_sub;
@@ -28,7 +28,7 @@
 	$count = count($_POST['vote_item']['title']);
 	$old_count = count($_POST['old_item']['title']);
 	
-	$item = new table_class("fb_vote_item");
+	$item = new table_class("eb_vote_item");
 	if($_POST['vote']['vote_type']=='image_vote'){
 		$upload = new upload_file_class();
 		$upload->save_dir = '/upload/images/';

@@ -8,7 +8,7 @@
 	}
 	$type = $_GET['type'];
 	$key = $_GET['key'];
-	$sql = "SELECT t1.date_time,t1.source_id,t1.ad_name,sum(t1.count) as count,sum(t2.count) as click_count FROM forbes_ad.fb_ad_result t1 left join forbes_ad.fb_ad_result t2 on t1.source_id=t2.source_id and t2.type='channel_banner_click' and t1.date_time=t2.date_time where t1.type='channel_banner'";
+	$sql = "SELECT t1.date_time,t1.source_id,t1.ad_name,sum(t1.count) as count,sum(t2.count) as click_count FROM eachbb_ad.eb_ad_result t1 left join eachbb_ad.eb_ad_result t2 on t1.source_id=t2.source_id and t2.type='channel_banner_click' and t1.date_time=t2.date_time where t1.type='channel_banner'";
 	if($key!=''){
 		$sql .= " and t1.ad_name like '%$key%'";
 	}

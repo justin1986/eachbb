@@ -31,7 +31,7 @@ function send_mail($smtp_server,$smtp_user,$smtp_pwd,$from,$to,$title,$content){
 				<BODY style="MARGIN: 10px; FONT-FAMILY: verdana; FONT-SIZE: 10pt">';
 	$body = $body.addslashes($content);;
 	$body = $body.'</BODY></HTML>';
-	$email = new table_class('forbes_email.eb_email');
+	$email = new table_class('eachbb_email.eb_email');
 	$email->email_to = $to;
 	$email->email_status  = '0';
 	$email->email_subject = "=?UTF-8?B?".base64_encode($title)."?=";

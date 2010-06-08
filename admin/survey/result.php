@@ -5,7 +5,7 @@
 	
 	$search = $_REQUEST['search'];
 	$db = get_db();
-	$sql = "select * from fb_vote where is_sub_vote=0";
+	$sql = "select * from eb_vote where is_sub_vote=0";
 	if($search!=''){
 		$sql .= " and name like '%".$search."%'";
 	}

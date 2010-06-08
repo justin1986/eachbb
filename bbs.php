@@ -741,7 +741,7 @@
 								 }
 								}?>
 		</div>
-		<div id="fb_pg">
+		<div id="eb_pg">
 			<div id="fbp_l"><a href="#">
 				<div></div>
 				</a></div>
@@ -750,7 +750,7 @@
 									for($i=0;$i<5;$i++)
 									{
 								?>
-				<div class="fb_pg"><img src="images/bbs/p_p.gif"></div>
+				<div class="eb_pg"><img src="images/bbs/p_p.gif"></div>
 				<?}?>
 			</div>
 			<div id="fbp_r"><a href="#">

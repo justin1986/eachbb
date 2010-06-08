@@ -4,11 +4,11 @@
 	{
 		$id = $_POST['del_id'];
 		$db = get_db();
-		$db->execute("delete from fb_vote_item where vote_id=$id");
-		$db->execute("delete from fb_vote where id=$id");
+		$db->execute("delete from eb_vote_item where vote_id=$id");
+		$db->execute("delete from eb_vote where id=$id");
 	}else{
 		
-		$vote = new table_class('fb_vote');
+		$vote = new table_class('eb_vote');
 		if($_POST['vote_id']!=''){
 			$vote->find($_POST['vote_id']);
 		}else{
@@ -89,7 +89,7 @@
 		$vote_count = count($_POST['vote_vote']['title']);
 		$old_vote_count = count($_POST['old_vote_vote']['title']);
 		
-		$item = new table_class("fb_vote_item");
+		$item = new table_class("eb_vote_item");
 		if($_POST['vote']['vote_type']=='image_vote'){
 			$upload = new upload_file_class();
 			$upload->save_dir = '/upload/images/';

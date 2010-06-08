@@ -4,7 +4,7 @@
 	$role = judge_role();
 	$id = $_REQUEST['id'];
 	if($id!=''){
-		$ad = new table_class('forbes_ad.fb_ad');
+		$ad = new table_class('eachbb_ad.eb_ad');
 		$ad->find($id);
 	}
 	$db = get_db();
@@ -65,13 +65,13 @@
 		<tr class="tr4 ad_upload" id="ad_video" style="display:none;">
 			<td class=td1>上传视频</td>
 			<td align="left">
-				<input type="file" name="video" style="width:250px;"><?php if($ad->video!=''){?><a class="color" title="视频展示" href="/admin/show/show_video.php?id=<?php echo $id;?>&table=forbes_ad.fb_ad">点击查看</a><?php }?>
+				<input type="file" name="video" style="width:250px;"><?php if($ad->video!=''){?><a class="color" title="视频展示" href="/admin/show/show_video.php?id=<?php echo $id;?>&table=eachbb_ad.eb_ad">点击查看</a><?php }?>
 			</td>
 		</tr>
 		<tr class="tr4 ad_upload" id="ad_flash" style="display:none;">
 			<td class=td1>上传FLASH</td>
 			<td align="left">
-				<input type="file" name="flash" style="width:250px;"><?php if($ad->flash!=''){?><a class="color" title="flash展示" href="/admin/show/show_flash.php?id=<?php echo $id;?>&table=forbes_ad.fb_ad">点击查看</a><?php }?>
+				<input type="file" name="flash" style="width:250px;"><?php if($ad->flash!=''){?><a class="color" title="flash展示" href="/admin/show/show_flash.php?id=<?php echo $id;?>&table=eachbb_ad.eb_ad">点击查看</a><?php }?>
 			</td>
 		</tr>
 		<tr class=tr4>
