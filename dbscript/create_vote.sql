@@ -1,0 +1,22 @@
+CREATE TABLE  `eachbb`.`eb_vote` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `priority` int(11) DEFAULT '100',
+  `created_at` datetime DEFAULT NULL,
+  `ended_at` datetime DEFAULT NULL,
+  `started_at` datetime DEFAULT NULL,
+  `category_id` int(10) unsigned DEFAULT '0',
+  `vote_type` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `photo_url` varchar(255) DEFAULT NULL,
+  `description` text,
+  `limit_type` varchar(255) DEFAULT NULL,
+  `max_vote_count` int(10) unsigned DEFAULT '0',
+  `max_item_count` int(10) unsigned DEFAULT '0',
+  `is_sub_vote` int(10) unsigned DEFAULT '0',
+  `is_adopt` int(10) unsigned DEFAULT '0',
+  `click_count` int(10) unsigned DEFAULT '0',
+  `is_app` int(10) unsigned DEFAULT '0',
+  `publisher` varchar(255) DEFAULT NULL,
+  `file_url` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC
