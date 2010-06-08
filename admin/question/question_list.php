@@ -78,8 +78,8 @@
 			else
 			{
 				$.post("question.post.php",{'del_id':$(this).attr('name'),'post_type':'del'},function(data){
-					$("#"+data).remove();
 				});
+				$(this).parent().parent().remove();
 			}
 	});
 	
