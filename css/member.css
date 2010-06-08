@@ -1,0 +1,63 @@
+﻿body{width:1000px; font-size:12px; color:#000000; margin: 0 auto;  background:url(../images/img_pg.jpg) repeat-x;}
+#ibody{width:972px; overflow:hidden; background:#ffffff; margin:0 auto; margin-left:25px; float:left; display:inline;}
+#ibody_left{width:200px; background:#ffffff; float:left; display:inline;}
+#ibody_right{width:748px; background:#ffffff; float:right; display:inline;}
+
+#top_login{width:980px; height:20px; margin-top:15px; margin-left:20px;  font-size:13px; color:#ffffff; float:right; display:inline;}
+#login{width:400px; height:20px; z-index:12; float:right; display:inline;}
+#login_login{width:80px; height:20px; float:left; display:inline;}
+#login_img{width:22px; height:20px; background:url(../images/img_w_a.jpg) no-repeat; float:left; display:inline;}
+#login_word{width:50px; height:25px; line-height:23px; float:left; display:inline;}
+#register{width:80px; height:25px; float:left; display:inline;}
+#register_img{width:22px; height:20px; background:url(../images/img_w_b.jpg) no-repeat; float:left; display:inline;}
+#register_word{width:50px; height:25px; line-height:23px;  float:left; display:inline;}
+#comeback{width:90px; height:25px; float:left; display:inline;}
+#comeback_img{width:25px; height:20px; background:url(../images/img_w_c.jpg) no-repeat; float:left; display:inline;}
+#comeback_word{width:60px; height:25px; line-height:23px;  float:left; display:inline; }
+#member{width:90px; height:25px; margin-left:20px; float:left; display:inline; }
+#member_img{width:25px; height:20px; background:url(../images/img_w_d.jpg) no-repeat; float:left; display:inline;}
+#member_word{width:55px; height:25px; line-height:23px;  float:left; display:inline; }
+
+
+
+
+#top_menu{width:1000px; height:103px; margin-top:10px;  float:left; display:inline;}
+#menu_left{width:285px; height:103px; background:url(../images/top.jpg) no-repeat; float:left; display:inline;}
+#wangqu{width:133px; height:48px; margin-left:130px; margin-top:40px; background:url(../images/top_j.gif) no-repeat; float:left; display:inline;}
+#menu_center{width:673px; height:103px; background:url(../images/top_pg_a_center.jpg) repeat-x; overflow:hidden; float:left; display:inline;}
+#menu_right{width:40px; height:103px; background:url(../images/top_pg_a_right.jpg) no-repeat;  float:left; display:inline;}
+
+#member_left_top{width:200px; height:4px; margin-top:10px; margin-left:5px; background:url('/images/member/l_top.jpg') no-repeat; overflow:hidden; float:left; display:inline;}
+#member_left_bottom{width:200px; height:4px; margin-left:5px; background:url('/images/member/l_bottom.jpg') no-repeat; overflow:hidden; float:left; display:inline;}
+#member_left_middle{width:198px; margin-left:5px; padding-bottom:20px; border-left:1px solid #dedede; border-right:1px solid #dedede; float:left; display:inline;}
+#member_left_content{width:194px; margin-left:1px; border-left:1px solid #f4f4f4; border-right:1px solid #f4f4f4; float:left; display:inline;}
+#member_left_content #pic{width:56px; height:56px; margin-top:20px; margin-left:10px; background:url('/images/member/pic_border.jpg') no-repeat; overflow:hidden; float:left; display:inline;}
+#member_left_content #pic img{width:52px; height:52px; margin:2px;}
+#member_left_content #pictitle{width:104px; height:20px; margin-top:20px; margin-left:10px; line-height:20px; overflow:hidden; float:left; display:inline;}
+#member_left_content #pictitle a{color:#000000; text-decoration:none;}
+#member_left_content #piccontent{width:104px; height:30px; margin-top:5px; margin-left:10px; float:left; display:inline;}
+#member_left_content #piccontent button{width:58px; height:16px; border:0px; cursor:pointer; background:url('/images/member/button.jpg') no-repeat; overflow:hidden;}
+#member_left_content #myscore{width:160px; height:23px; margin-left:10px; padding-top:10px; padding-left:10px; color:#cd9445; font-weight:bold; border-bottom:1px solid #ffd4a5; background:#fffcf0; line-height:33px; float:left; display:inline;}
+#member_left_content #myscore button{width:37px; height:16px; border:0px; cursor:pointer; background:url('/images/member/myscore_button.jpg') no-repeat; overflow:hidden;}
+#member_left_content .l_title{width:150px; height:16px; margin-top:30px; margin-left:10px; padding-left:20px; color:#000000; font-weight:bold; line-height:16px; background:url('/images/member/l_title_bg.jpg') no-repeat; float:left; display:inline;}
+#member_left_content .l_title a{color:#333333; text-decoration:none;}
+#member_left_content .l_title.exit{margin-top:80px;}
+#member_left_content .l_content{width:170px; height:100px; margin-left:10px; background:#f8f8f8; float:left; display:inline;}
+#member_left_content .l_content .content{width:145px; height:25px; margin-left:5px; padding-left:15px; font-weight:bold; line-height:25px; background:url('/images/member/l_content_bg.jpg') 0 6px no-repeat; overflow:hidden; float:left; display:inline;}
+#member_left_content .l_content .content a{color:#666666; text-decoration:none;}
+
+.r_title{width:715px; height:22px; margin-top:10px; padding-left:25px; border-bottom:2px solid #f1f1f1; font-size:14px; font-weight:bold; color:#000000; line-height:22px; background:url('/images/member/r_title_bg.jpg') 5px 4px no-repeat; float:left; display:inline;}
+.r_title span{color:#ff6600;}
+.r_table{width:740px; margin-top:10px; float:left; display:inline;}
+.r_table tr{line-height:34px;}
+.r_table .td1{width:115px; border-top:1px solid #f1f1f1; border-bottom:1px solid #f1f1f1; padding-right:5px; text-align:right; color:#666666; background:#f9f9f9;}
+.r_table .td2{width:615px; border-top:1px solid #f1f1f1; border-bottom:1px solid #f1f1f1; padding-left:5px; text-align:left;}
+.r_table span{color:#ff6600;}
+.r_table .td2 input{width:213px; height:22px; margin-top:3px; padding-left:5px; border:1px solid #cccccc; color:#999999; line-height:22px;}
+.r_table .td2 input.radio{width:20px; height:16px; border:0px; margin-left:5px;}
+.r_table .td2 select{height:20px; margin-right:5px; border:1px solid #cccccc;}
+#r_button{width:740px; margin-top:20px; text-align:center; float:left; display:inline;}
+#r_button button{width:72px; height:30px; border:0px; cursor:pointer; background:url('/images/member/save.jpg') no-repeat;}
+
+#bottom{width:972px;  margin-left:25px; background:#ffffff; padding-top:20px; padding-bottom:10px; text-align:center; font-size:12px; color:#666666; float:left; display:inline;}
+#bottom_b{width:972px; margin-left:25px; background:#ffffff;  margin-bottom:50px; text-align:center; font-size:12px; color:#666666; float:left; display:inline;}
