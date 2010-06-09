@@ -12,12 +12,12 @@
 
 
 
-#top_menu{width:970px; height:61px; margin-left:5px; margin-top:5px; overflow:hidden;  float:left; display:inline;}
+#top_menu{width:970px; height:61px; margin-top:5px; overflow:hidden;  float:left; display:inline;}
 #menu_left{width:5px; height:61px; background:url(../images/class/tt_a.jpg) no-repeat; float:left; display:inline;}
-#menu_center{width:955px; height:60px; border-bottom:1px solid #D4D4D4; float:left; display:inline;}
-#menu_ct{width:955px; height:29px; background:#C7F6F2; border-top:1px solid #34CFAD; border-bottom:1px solid #34CFAD; float:left; display:inline;}
-#menu_ctt{width:955px; height:26px; margin-top:1px; border-bottom:1px solid #ffffff; border-top:1px solid #ffffff; float:left; display:inline;}
-#menu_ctb{width:955px; height:26px; margin-top:2px; background:#F9F9F9; float:left; display:inline;}
+#menu_center{width:960px; height:60px; border-bottom:1px solid #D4D4D4; float:left; display:inline;}
+#menu_ct{width:960px; height:29px; background:#C7F6F2; border-top:1px solid #34CFAD; border-bottom:1px solid #34CFAD; float:left; display:inline;}
+#menu_ctt{width:960px; height:26px; margin-top:1px; border-bottom:1px solid #ffffff; border-top:1px solid #ffffff; float:left; display:inline;}
+#menu_ctb{width:960px; height:26px; margin-top:2px; background:#F9F9F9; float:left; display:inline;}
 #menu_right{width:5px; height:61px; background:url(../images/class/tt_b.jpg) no-repeat;  float:left; display:inline;}
 #menu_ctt a{color:#555555; text-decoration:none; font-weight:600; font-size:13px;}
 #menu_ctb a{color:#000000; text-decoration:none; font-weight:600; font-size:13px;}
