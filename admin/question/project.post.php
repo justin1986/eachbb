@@ -15,11 +15,12 @@
 		close_db();
 	}else{
 		$project = new table_class('eb_problem');
-		if(""!=$_POST['id']){
+		if($_POST['id']){
 			$project->find($_POST['id']);
 		}else{
 			$project->create_time = now();
-			$project->is_adopt=0;
+			$project->is_adopt= '0';
+			$project->priority = '0';
 		}
 		
 		if($_FILES['image'][name]!=null){
