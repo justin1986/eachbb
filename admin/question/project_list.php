@@ -3,14 +3,14 @@
 	include_once('../../frame.php');
 	judge_role();
 	$key = $_REQUEST['key'];
-	$id_adopt = $_REQUEST['adopt'];
+	$is_adopt = $_REQUEST['adopt'];
 	$db = get_db();
 	$sql = "select * from eb_problem where 1=1";
 	if($key!=''){
 		$sql .= " and name like '%$key%'";
 	}
-	if($id_adopt!=''){
-		$sql .= " and is_adopt=$id_adopt";
+	if($is_adopt!=''){
+		$sql .= " and is_adopt=$is_adopt";
 	}
 	$sql .= " order by priority asc,create_time desc";
 	$record = $db->paginate($sql,30);
