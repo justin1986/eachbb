@@ -40,15 +40,138 @@
 													<div class="arv"></div>
 													<div class="cr_type"><a href="#">类别</a></div>
 											</div>
+
 										</div>
+										<div class="cr_hr"></div>
+										<div class="cr_a_v">
+											<div class="cr_av_t">
+												<div class="ar_avt"></div>
+												<div class="ar_avt_r">助手分别导航类别</div>
+											</div>
+											<div class="cr_av_c">
+													<div class="cr_type"><a href="#">类别</a></div><div class="arv"></div>
+													<div class="cr_type"><a href="#">类别</a></div><div class="arv"></div>
+													<div class="cr_type"><a href="#">类别</a></div>
+													<div class="cr_type"><a href="#">类别</a></div><div class="arv"></div>
+													<div class="cr_type"><a href="#">类别</a></div>
+													<div class="arv"></div>
+													<div class="cr_type"><a href="#">类别</a></div>
+											</div>
+
+										</div>
+										<div class="cr_hr"></div>
+										<div class="cr_a_v">
+											<div class="cr_av_t">
+												<div class="ar_avt"></div>
+												<div class="ar_avt_r">助手分别导航类别</div>
+											</div>
+										</div>
+										<div class="k"></div>
+										<div class="k"></div>
+										<div class="k"></div>
 									</div>
+									<div class="k"></div>
+								</div>
+							</div>
+							<div class="crr_b"></div>
+						</div>
+						<div id="crr_b">
+							<div class="crr_t"></div>
+							<div class="crr_c">
+								<div class="crrc">
+									<div class="cr_a_a">课程精华展示</div>
+									<div class="cr_a_hr"></div>
+									<div class="cr_a_b">
+										<div class="cr_a_v">
+											<div class="cr_av_t">
+												<div class="ar_avt"></div>
+												<div class="ar_avt_r">助手分别导航类别</div>
+											</div>
+											<div class="cr_av_c">
+													<div class="cr_type"><a href="#">类别</a></div><div class="arv"></div>
+													<div class="cr_type"><a href="#">类别</a></div><div class="arv"></div>
+													<div class="cr_type"><a href="#">类别</a></div>
+													<div class="cr_type"><a href="#">类别</a></div><div class="arv"></div>
+													<div class="cr_type"><a href="#">类别</a></div>
+													<div class="arv"></div>
+													<div class="cr_type"><a href="#">类别</a></div>
+											</div>
+
+										</div>
+										<div class="cr_hr"></div>
+										<div class="k"></div>
+										<div class="k"></div>
+										<div class="k"></div>
+									</div>
+									<div class="k"></div>
+								</div>
+							</div>
+							<div class="crr_b"></div>
+						</div>
+						<div id="crr_c">
+							<div class="crr_t"></div>
+							<div class="crr_c">
+								<div class="crrc">
+									<div class="cr_a_a">妈妈助手</div>
+									<div class="cr_a_hr"></div>
+									<div class="cr_a_b">
+										<div class="cr_a_v">
+											<div class="cr_av_t">
+												<div class="ar_avt"></div>
+												<div class="ar_avt_r">助手分别导航类别</div>
+											</div>
+											<div class="cr_av_c">
+													<div class="cr_type"><a href="#">类别</a></div><div class="arv"></div>
+													<div class="cr_type"><a href="#">类别</a></div><div class="arv"></div>
+													<div class="cr_type"><a href="#">类别</a></div>
+													<div class="cr_type"><a href="#">类别</a></div><div class="arv"></div>
+													<div class="cr_type"><a href="#">类别</a></div>
+													<div class="arv"></div>
+													<div class="cr_type"><a href="#">类别</a></div>
+											</div>
+
+										</div>
+										<div class="cr_hr"></div>
+										<div class="cr_a_v">
+											<div class="cr_av_t">
+												<div class="ar_avt"></div>
+												<div class="ar_avt_r">助手分别导航类别</div>
+											</div>
+											<div class="cr_av_c">
+													<div class="cr_type"><a href="#">类别</a></div><div class="arv"></div>
+													<div class="cr_type"><a href="#">类别</a></div><div class="arv"></div>
+													<div class="cr_type"><a href="#">类别</a></div>
+													<div class="cr_type"><a href="#">类别</a></div><div class="arv"></div>
+													<div class="cr_type"><a href="#">类别</a></div>
+													<div class="arv"></div>
+													<div class="cr_type"><a href="#">类别</a></div>
+											</div>
+
+										</div>
+										<div class="cr_hr"></div>
+										<div class="cr_a_v">
+											<div class="cr_av_t">
+												<div class="ar_avt"></div>
+												<div class="ar_avt_r">助手分别导航类别</div>
+											</div>
+										</div>
+										<div class="k"></div>
+										<div class="k"></div>
+										<div class="k"></div>
+									</div>
+									<div class="k"></div>
+									
 								</div>
 							</div>
 							<div class="crr_b"></div>
 						</div>
 					</div>
 				</div>
-				<div id="cr_b"></div>
+				<div id="cr_b">
+					<a href="#"><img src="/images/test/pp.jpg">
+						<div id="crb_img">我家小院子展示</div>
+					</a>
+				</div>
 			</div>
 		</div>
 		<div id="bg_hr"></div>
