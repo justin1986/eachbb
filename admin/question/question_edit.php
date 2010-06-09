@@ -37,7 +37,9 @@
 			<td align="center" width="15%">标题</td>
 			<td width="85%" align="left"><input type="text" name="question[title]" value="<?php echo $question->title;?>" class="required"></td>
 		</tr>
-		<?php foreach($records as $item){?>
+		<?php 
+		!$records && $records = array();
+		foreach($records as $item){?>
 		<tr class="tr4" >
 			<td align="center">选项-分值</td>
 			<td align="left">

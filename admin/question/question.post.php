@@ -28,6 +28,7 @@
 		$question_item = new table_class('eb_question_item');
 		$question_item->question_id = $question->id;
 		
+		!$_POST['old_item'] && $_POST['old_item'] = array();
 		foreach($_POST['old_item'] as $i => $item){
 			$question_item->find($_POST['item_id'][$i]);
 			$question_item->name = $item;
@@ -35,6 +36,7 @@
 			$question_item->save();
 		}
 		
+		!$_POST['item'] && $_POST['item'] = array();
 		foreach($_POST['item'] as $i => $item){
 			if($item){
 				$question_item->id = 0;
