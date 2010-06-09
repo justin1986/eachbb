@@ -51,8 +51,9 @@
 						<div class="welcom">欢迎,<font>123</font></div>
 						<div class="exit"><a href="#" style="color:#000;">退出</a></div>
 						<div class="info">消息<a href="#" style="color:#FE843A">(1)</a></div>
+						</div>
 					</div>
-					<div id="menu_ctb">
+				<div id="menu_ctb">
 						<input type="button" id="t_first" value="我的网趣">
 						<a href="#">
 						<div class="me_aa">网趣宝宝首页</div>
@@ -80,7 +81,6 @@
 						<input type="text" id="me_in">
 						<input type="button" id="me_btn">
 					</div>
-				</div>
 			</div>
 			<div id="menu_right"></div>
 		</div>
