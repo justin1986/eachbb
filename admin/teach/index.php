@@ -5,6 +5,7 @@
 	
 	$key = $_REQUEST['key'];
 	$is_adopt = $_REQUEST['adopt'];
+	$age = intval($_GET['age']);
 	$db = get_db();
 	$sql = "select * from eb_teach where del_flag=0";
 	if($key!=''){
@@ -12,6 +13,9 @@
 	}
 	if($is_adopt!=''){
 		$sql .= " and is_adopt=$is_adopt";
+	}
+	if($age){
+		$sql .= " and age=$age";
 	}
 	$sql .= " order by priority asc,create_time desc";
 	$record = $db->paginate($sql,30);
@@ -50,6 +54,12 @@
 					<option value="1" <? if($_REQUEST['adopt']=="1"){?>selected="selected"<? }?>>已发布</option>
 					<option value="0" <? if($_REQUEST['adopt']=="0"){?>selected="selected"<? }?>>未发布</option>
 		</select>
+		<select id=age style="width:100px">
+					<option value="">年龄段</option>
+					<option value="1" <? if($_REQUEST['age']=="1"){?>selected="selected"<? }?>>0～1岁</option>
+					<option value="2" <? if($_REQUEST['age']=="2"){?>selected="selected"<? }?>>1～2岁</option>
+					<option value="3" <? if($_REQUEST['age']=="3"){?>selected="selected"<? }?>>2～3岁</option>
+		</select>
 		<input type="button" value="搜索" id="search_button">
 </div>
 <div id=itable>
@@ -78,7 +88,7 @@
 				<?php paginate("",null,"page",true);?>
 				<button id=clear_priority>清空优先级</button>
 				<button id=edit_priority>编辑优先级</button>
-				<input type="hidden" id="db_table" value="eb_problem">
+				<input type="hidden" id="db_table" value="eb_teach">
 			</td>
 		</tr>
 	</table>
@@ -90,7 +100,7 @@
 	$("#search_button").click(function(){
 		search();
 	});
-	$("#adopt").change(function(){
+	$("#adopt,#age").change(function(){
 		search();
 	});
 	$("#key").keypress(function(event){
@@ -99,7 +109,7 @@
 		}
 	});
 	function search(){
-		window.location.href = "?key="+encodeURI($("#key").val())+"&adopt="+$("#adopt").val();
+		window.location.href = "?key="+encodeURI($("#key").val())+"&adopt="+$("#adopt").val()+"&age="+$("#age").val();
 	}
 	
 </script>

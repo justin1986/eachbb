@@ -3,7 +3,7 @@ CREATE TABLE  `eachbb`.`eb_teach` (
   `title` varchar(256) NOT NULL COMMENT '标题',
   `img_url` varchar(256) DEFAULT NULL COMMENT '封面图片',
   `description` text COMMENT '介绍',
-  `content` varchar(256) NOT NULL COMMENT '内容',
+  `content` varchar(256) DEFAULT NULL COMMENT '内容',
   `type` int(11) NOT NULL DEFAULT '1' COMMENT '类型，1是flash，2是文章',
   `age` int(11) NOT NULL DEFAULT '1' COMMENT '年龄段，1是0～1岁，2是1～2岁，3是2～3岁',
   `category` int(11) DEFAULT '0' COMMENT '类别，保留字段',

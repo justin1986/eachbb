@@ -2,7 +2,7 @@
 	session_start();
 	require_once('../../frame.php');
 	judge_role();
-	$id = $_REQUEST['id'];
+	$id = $_GET['id'];
 	$teach = new table_class('eb_teach');
 	$teach->find($id);
 ?>
@@ -13,9 +13,9 @@
 	<meta http-equiv=Content-Language content=zh-CN>
 	<title>smg</title>
 	<?php
-		css_include_tag('admin');
+		css_include_tag('admin','colorbox');
 		use_jquery();
-		js_include_tag('../ckeditor/ckeditor.js');
+		js_include_tag('../ckeditor/ckeditor','jquery.colorbox-min');
 		validate_form("teach");
 	?>
 </head>
@@ -37,7 +37,7 @@
 		</tr>
 		<tr class="tr4">
 			<td align="center">flash</td>
-			<td align="left"><input name="flash" type="file"><?php if($teach->content){?><a href="<?php echo $teach->content;?>" target="_blank">点击查看</a><?php }?></td>
+			<td align="left"><input name="flash" type="file"><?php if($teach->content){?><a id="flash" href="/admin/show/show_flash.php?flash=<?php echo $teach->content;?>" target="_blank">点击查看</a><?php }?></td>
 		</tr>
 		<tr class="tr4">
 			<td align="center">年龄段</td>
@@ -66,3 +66,14 @@
 </form>
 </body>
 </html>
+
+<script>
+$(function(){
+	$("#flash").click(function(e){
+		e.preventDefault();
+		parent.$.fn.colorbox({
+			href: $(this).attr('href')
+		});
+	});
+});
+</script>

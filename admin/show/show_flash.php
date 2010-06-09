@@ -2,6 +2,7 @@
 	include_once('../../frame.php');
 	
 	$flash = $_GET['flash'];
+	
 ?>
 
 <div id="myContent">

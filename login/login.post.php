@@ -18,7 +18,6 @@
 			}else{				
 				$sql = "select * from $tb_user where name='{$_POST['login_text']}' and password='{$_POST['password_text']}'";
 			}
-			echo $sql;
 			$record = $db->query($sql);		
 			if(count($record)==1){
 				$ip = $_SERVER["REMOTE_ADDR"];
