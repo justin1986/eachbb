@@ -42,7 +42,7 @@
 						</a>
 						<div class="me_h"></div>
 						<a href="#">
-						<div class="me_b" style="background:url(images/bbs/mo_pg.jpg) no-repeat;"><font class="son">育儿</font><font class="bbs">咨询</font></div>
+						<div class="me_b" style="background:url(images/bbs/mo_pg.jpg) no-repeat;"><font class="son">育儿</font><font class="bbs">咨讯</font></div>
 						</a>
 						<div class="me_h"></div>
 						<a href="#">
