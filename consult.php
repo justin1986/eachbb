@@ -289,11 +289,9 @@
 					<div class="bac_z" style="<?php if($i==0){ echo ' margin-top:5px;';}?>;">
 						<div class="bac_d"></div>
 						<div class="bac_v"><a href="#">友情链接友情链接友情链接</a></div>
-						<?php if($i!=6){
-																?>
+						<?php if($i!=6){?>
 						<div class="bac_c"></div>
-						<?php 
-															}?>
+						<?php }?>
 					</div>
 					<?php }?>
 				</div>
