@@ -9,14 +9,25 @@
 	$is_adopt = $_REQUEST['adopt'];
 	
 	$db = get_db();
-	$ids = $db->query("select source_id,id from eb_position where pos_name='hart_news'");
+	$ids = $db->query("select source_id,id,priority from eb_position where pos_name='hart_news'");
 	!$ids && $ids = array();
 	$ids_arr = array();
+	$pri_arr = array();
+	$sid_arr = array();
 	foreach($ids as $id){
 		$ids_arr[$id->source_id] = $id->id;
+		$pri_arr[$id->source_id] = $id->priority;
+		array_push($sid_arr,$id->source_id);
 	}
 	
-	$sql = "select * from eb_news where 1=1";
+	$sid = implode(',',$sid_arr);
+	
+	if($sid){
+		$p_news = $db->query("select * from eb_news where id in ($sid)");
+		$sql = "select * from eb_news where id not in ($sid)";
+	}else{
+		$sql = "select * from eb_news where 1=1";
+	}
 
 	
 	
@@ -25,7 +36,7 @@
 	}
 	if($category_id > 0){
 		$cate_ids = implode(',',$category->children_map($category_id));
-		$sql .= " and and category_id in($cate_ids)";
+		$sql .= " and category_id in($cate_ids)";
 	}
 	if($is_adopt!=''){
 		$sql .= " and is_adopt=$is_adopt";
@@ -67,10 +78,25 @@
 <div id=itable>
 	<table cellspacing="1" align="center">
 		<tr class=itable_title>
-			<td width="40%">标题</td><td width="15%">作者</td><td width="15%">所属类别</td><td width="15%">发布时间</td><td width="15%">操作</td>
+			<td width="30%">标题</td><td width="15%">作者</td><td width="15%">所属类别</td><td width="15%">发布时间</td><td width="10%">发布状态</td><td width="15%">操作</td>
 		</tr>
 		<?php
-			//--------------------$ids_arr
+			!$p_news && $p_news = array();
+			foreach($p_news as $news){
+		?>
+		<tr class=tr3>
+			<td style="text-align:left; text-indent:12px;"><?php echo strip_tags($news->title);?></td>
+			<td><?php echo $news->author;?></td>
+			<td><a href="?category=<?php echo $news->category_id;?>" style="color:#0000FF"><?php echo $category->find($news->category_id)->name;?></a></td>
+			<td><?php echo $news->created_at;?></td>
+			<td><?php  if($news->is_adopt)echo '已发布';else echo '未发布';?></td>
+			<td>
+				<a name="<?php echo $ids_arr[$news->id];?>"  style="cursor:pointer" class="del_pos" title="删除"><img src="/images/admin/btn_delete.png" border="0"></a>
+				<input type="text" class="priority" name="<?php echo $ids_arr[$news->id];?>" style="width:50px;" value="<?php if($pri_arr[$news->id]!=100) echo $pri_arr[$news->id];?>">
+			</td>
+		</tr>
+		<?php
+			}
 			!$record && $record = array();
 			foreach($record as $news){
 		?>
@@ -79,20 +105,13 @@
 			<td><?php echo $news->author;?></td>
 			<td><a href="?category=<?php echo $news->category_id;?>" style="color:#0000FF"><?php echo $category->find($news->category_id)->name;?></a></td>
 			<td><?php echo $news->created_at;?></td>
+			<td><?php  if($news->is_adopt)echo '已发布';else echo '未发布';?></td>
 			<td>
-				<?php
-					if(key_exists($news->id,$ids_arr)){ 
-				?>
-				<a name="<?php echo $ids_arr[$news->id];?>"  style="cursor:pointer" class="del" title="删除"><img src="/images/admin/btn_delete.png" border="0"></a>
-				<input type="text" name="priority" name="<?php echo $ids_arr[$news->id];?>" style="width:50px;">
-				<?php }else{?>
 				<a href="<?php echo $news->id;?>" class="add" title="加入"><img src="/images/admin/btn_add.png" border="0"></a>
-				<?php }?>
 			</td>
 		</tr>
 		<?php
 			}
-			//--------------------
 		?>
 		<tr class="btools">
 			<td colspan=10>
@@ -131,6 +150,19 @@
 			$.post('post.php',{'type':'add','id':$(this).attr('href')},function(data){
 				location.reload();
 			});
+		});
+
+		$(".del_pos").click(function(){
+			if(!window.confirm("确定要删除吗"))
+			{
+				return false;
+			}
+			else
+			{
+				$.post("/pub/pub.post.php",{'del_id':$(this).attr('name'),'db_table':$('#db_table').attr('value'),'post_type':'del'},function(data){
+					location.reload();
+				});
+			}
 		});
 	});
 </script>
