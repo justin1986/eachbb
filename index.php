@@ -1,4 +1,12 @@
 ﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<?php
+	include_once('./frame.php');
+	$db=get_db();
+	$test=$db->query("select id,name from eb_problem where is_adopt=1 order by priority,create_time desc limit 4;");
+	$test_count=$db->record_count;
+	$teact=$db->query("select id,title from eb_teach where is_adopt=1 and del_flag=0 order by create_time,priority desc");
+	$teact_count=$db->record_count;
+?>
 <html>
 <head>
 <title>网趣宝贝</title>
@@ -41,10 +49,11 @@
 			<div id="flash_right">
 				<div id="r_test">
 					<div id="test_value">
-						<div id="test_a">斯蒂芬妮撒旦发射</div>
-						<div id="test_b">sdf</div>
-						<div id="test_c">sdf</div>
-						<div id="test_d">sadf</div>
+						<?php
+							for($i=0;$i<$test_count;$i++){ ?>
+						<div class="test_a"><a href="<?php get_test_url($test[$i]);?>"><?php echo $test[$i]->name ?></a></div>
+						<?php 
+						}?>
 					</div>
 				</div>
 				<div id="r_student">
@@ -54,10 +63,9 @@
 						<div id="s_t_c"><img src="images/index/img_b_c.gif"></div>
 					</div>
 					<div id="student_value">
-						<div id="student_aa">斯蒂芬沙斯蒂芬沙发斯蒂芬沙发发</div>
-						<div id="student_ba">撒旦防撒斯蒂芬沙发斯蒂芬沙发旦法</div>
-						<div id="student_ca">给vdbdbd斯蒂芬沙发斯蒂芬沙发v</div>
-						<div id="student_da">给vdbdb斯蒂芬沙发斯蒂芬沙发dv</div>
+						<?php for($i=0;$i<$teact_count;$i++){?>
+							<div class="student_aa"><a href="#"><?php echo $teact[$i]->title?></a></div>
+						<?php }?>
 					</div>
 				</div>
 				<div id="r_spring"></div>
@@ -141,7 +149,13 @@
 		</div>
 		<div id="student">
 			<div id="student_l">
-				<div id="student_top"> <a href="#">
+				<div id="student_top">
+					<div id="u">
+						<div><a href="#">0-1岁</a></div>
+						<div><a href="#">1-2岁</a></div>
+						<div><a href="#">2-3岁</a></div>
+					</div>
+					<a href="#">
 					<div id="dict_more" style="margin-top:20px;"></div>
 					</a> </div>
 				<div id="student_c">
@@ -269,21 +283,21 @@
 						<a href="#">
 						<div id="m_c_bottom">查看详细内容>></div>
 						</a> </div>
-					<div id="m_l_c_r"> <a href="">
-						<div class="mlc">[斯蒂芬沙]是的沙发的</div>
-						</a> <a href="">
-						<div class="mlc">[斯蒂芬沙]是的沙发的</div>
-						</a> <a href="">
-						<div class="mlc">[斯蒂芬沙]是的沙发的</div>
-						</a> <a href="">
-						<div class="mlc">[斯蒂芬沙]是的沙发的</div>
-						</a> <a href="">
-						<div class="mlc">[斯蒂芬沙]是的沙发的</div>
-						</a> <a href="">
-						<div class="mlc">[斯蒂芬沙]是的沙发的</div>
-						</a> <a href="">
-						<div class="mlc">[斯蒂芬沙]是的沙发的</div>
-						</a> </div>
+					<div id="m_l_c_r"> 
+						<div class="mlc"><a href="">[斯蒂芬沙]是的沙发的</a></div>
+						
+						<div class="mlc"><a href="">[斯蒂芬沙]是的沙发的</a></div>
+						
+						<div class="mlc"><a href="">[斯蒂芬沙]是的沙发的</a></div>
+						
+						<div class="mlc"><a href="">[斯蒂芬沙]是的沙发的</a></div>
+						
+						<div class="mlc"><a href="">[斯蒂芬沙]是的沙发的</a></div>
+						 
+						<div class="mlc"><a href="">[斯蒂芬沙]是的沙发的</a></div>
+						
+						<div class="mlc"><a href="">[斯蒂芬沙]是的沙发的</a></div>
+					</div>
 				</div>
 			</div>
 			<div id="mother_r">
