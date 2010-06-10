@@ -7,3 +7,7 @@ function get_teach_url($teach){
 function get_news_url($news){
 	echo '/news/news.php?id='.$news->id;
 }
+
+function get_test_url($test){
+	echo '/test/test.php?id='.$test->id;
+}
