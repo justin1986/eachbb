@@ -14,7 +14,7 @@
 		css_include_tag('admin2','colorbox','jquery_ui');
 		use_jquery_ui();
 		validate_form("news_edit");
-		js_include_tag('category_class.js', 'admin/news_pub', 'admin/news_edit','jquery.colorbox-min.js','../ckeditor/ckeditor.js','pubfun');
+		js_include_tag('category_class.js', 'admin/news/news_pub', 'admin/news/news_edit','jquery.colorbox-min.js','../ckeditor/ckeditor.js','pubfun');
 		$column_roles = array('column_editor','column_writer');
 	?>
 </head>
@@ -22,33 +22,12 @@
 //initialize the categroy;
 	$category = new category_class('news');
 	$category->echo_jsdata();
-	if(role_name() == 'column_editor' || role_name()=='column_writer'){ ?>
-	<script>
-		var uncheck_keyword = true;
-	</script>		
-<?php
-	}
 ?>
 <body>
 	<?php 
-		$id = $_REQUEST['id'];
+		$id = intval($_GET['id']);
 		$news = new table_class($tb_news);	
-		if($id){
-			$news->find($id);
-		}
-		if($_REQUEST['language_tag']){
-			$news->language_tag = $_REQUEST['language_tag'];
-		}
-		if($news->language_tag == 1 || $_REQUEST['chinese_id']){
-			include '_english_news_edit.php';
-		}else{
-			if(in_array(role_name(),$column_roles)){
-				include "_column_news_edit.php";
-			}else{
-				include "_news_edit.php";	
-			}
-			
-		}	
+		include "_news_edit.php";	
 	?>
 </body>
 </html>

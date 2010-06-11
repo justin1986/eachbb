@@ -10,18 +10,12 @@
 		if ($db->move_first()){
 			$publish_date = $db->field_by_name('publish_date');
 		}
-		/*
-		$db->query("select group_concat(a.industry_id SEPARATOR ',') as ids from eb_news_industry a left join eb_industry b on a.industry_id = b.id where a.news_id={$id}");
-		if($db->move_first()){
-			$news_industry = $db->field_by_name('ids');
-		}
-		*/
 	}
 	if(empty($category_id)) $category_id = -1;
 	if (!$news->news_type){
 		$news->news_type = 1;
 	}
-	if($_SESSION["role_name"]=='author'||$_SESSION["role_name"]=='journalist')$href="/admin/column/news_list.php";else $href="news_list.php";
+	$href="news_list.php";
 	$related_news = $news->related_news  ? explode(',',$news->related_news) : array();
 	$sub_headline = $news->sub_headline  ? explode(',',$news->sub_headline) : array();
 ?>
