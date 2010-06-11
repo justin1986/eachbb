@@ -1,11 +1,7 @@
 ﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <?php
 	include_once('./frame.php');
-	$db=get_db();
-	$test=$db->query("select id,name from eb_problem where is_adopt=1 order by priority,create_time desc limit 4;");
-	$test_count=$db->record_count;
-	$teact=$db->query("select id,title from eb_teach where is_adopt=1 and del_flag=0 order by create_time,priority desc");
-	$teact_count=$db->record_count;
+
 ?>
 <html>
 <head>
@@ -50,10 +46,12 @@
 				<div id="r_test">
 					<div id="test_value">
 						<?php
-							for($i=0;$i<$test_count;$i++){ ?>
-						<div class="test_a"><a href="<?php get_test_url($test[$i]);?>"><?php echo $test[$i]->name ?></a></div>
-						<?php 
-						}?>
+						$db=get_db();
+						$test=$db->query("select id,name from eb_problem where is_adopt=1 order by priority,create_time desc limit 4;");
+						$test_count=$db->record_count;
+						for($i=0;$i<$test_count;$i++){ ?>
+						<div class="test_a"><a href="<?php get_test_url($test[$i]);?>" title="<?php echo $test[$i]->name ?>"><?php echo $test[$i]->name ?></a></div>
+						<?php }?>
 					</div>
 				</div>
 				<div id="r_student">
@@ -63,7 +61,9 @@
 						<div id="s_t_c"><img src="images/index/img_b_c.gif"></div>
 					</div>
 					<div id="student_value">
-						<?php for($i=0;$i<$teact_count;$i++){?>
+						<?php
+							$teact=$db->query("select id,title,img_url,description from eb_teach where is_adopt=1 and del_flag=0 order by priority,create_time desc limit 8");
+							 for($i=0;$i<4;$i++){?>
 							<div class="student_aa"><a href="#"><?php echo $teact[$i]->title?></a></div>
 						<?php }?>
 					</div>
@@ -88,9 +88,9 @@
 				<div id="t_l_pg">
 					<div id="t_content_left">
 						<div id="pic_top">请输入宝宝的出生日期:</div>
-						<div id="pic_bottom"> 
+						<div id="pic_bottom"> <a href="#">
 							<div id="pic_left"></div>
-							
+							</a>
 							<div id="pic_right">
 								<div id="pic_word">怀孕期测试</div>
 							</div>
@@ -122,7 +122,7 @@
 			</div>
 			<div id="test_right">
 				<div id="email">
-					<div id="email_l">邮件地址：</div>
+					<div id="email_l">邮件地址</div>
 					<div id="email_r">
 						<input type="text" >
 					</div>
@@ -151,78 +151,41 @@
 			<div id="student_l">
 				<div id="student_top">
 					<div id="u">
-						<div><a href="#">0-1岁</a></div>
-						<div><a href="#">1-2岁</a></div>
-						<div><a href="#">2-3岁</a></div>
+						<div><a href="#"><img src="/images/index/a_1.jpg"></a></div>
+						<div><a href="#"><img src="/images/index/b_2.jpg"></a></div>
+						<div><a href="#"><img src="/images/index/c_2.jpg"></a></div>
 					</div>
 					<a href="#">
 					<div id="dict_more" style="margin-top:20px;"></div>
-					</a> </div>
-				<div id="student_c">
-					<div id="s_pic_l"><img src="images/index/l_a.gif"></div>
-					<div id="s_pic_r">
-						<div id="s_word_top">撒旦发射发声法</div>
-						<div id="s_word_cotent">撒旦发射发声法撒旦发射撒旦发射发声法撒旦发射发声法撒旦发射发声法撒旦发射发声法撒旦发射撒旦发射发声法撒旦发射发声法撒旦发射发声法撒旦发射发声法撒旦发射发声法撒旦发射发声法撒旦发射发声法撒旦发射发声法发声法撒旦发撒旦发射发声法撒旦发射撒旦发射发声法撒旦发射发声法撒旦发射发声法撒旦发射发声法撒旦发射撒旦发射发声法撒旦发射发声法撒旦发射发声法撒旦发射发声法撒旦发射发声法撒旦发射发声法撒旦发射发声法撒旦发射发声法发声法撒旦发射发声法撒旦发射发声法撒旦发射发声法撒旦发射发声法撒旦发射发声法发声法射发声法撒旦发射发声法撒旦发射发声法撒旦发射发声法撒旦发射发声法发声法</div>
+					</a> 
+				</div>
+				<?php for($i=1;$i<4;$i++){
+				$teact=$db->query("select id,title,img_url,description from eb_teach where is_adopt=1 and del_flag=0 and age=".$i." order by create_time,priority desc limit");
+				$teact_count=$db->record_count;
+				?>
+				<div id="old" style="<?php if(1==$i){ echo 'display:inline;';}else{ echo 'display:none;';} ?>">
+				<div class="student_c">
+					<div class="s_pic_l"><img src="<?php echo $teact[0]->img_url;?>"></div>
+					<div class="s_pic_r">
+						<div class="s_word_top"><a href="<?php get_teach_url($teach[0]) ?>"><?php echo $teact[0]->title?></a></div>
+						<div class="s_word_cotent"><a href="<?php get_teach_url($teach[0]) ?>"><?php echo strip_tags($teact[0]->description) ?></a></div>
 					</div>
 				</div>
-				<div id="stuent_d">
+				<div class="stuent_d">
 					<div class="word_z">
+						<?php for($x=1;$x<=12;$x++){?>
+						
 						<div class="s_a">
 							<div class="s_dian"></div>
-							<div class="s_value">说的你发撒旦发</div>
+							<div class="s_value"><a href="<?php get_teach_url($teach[$x]) ?>"><?php echo $teact[$x]->title; ?></a></div>
 						</div>
-						<div class="s_b">
-							<div class="s_dian"></div>
-							<div class="s_value">说的你发说的你发撒旦发说的你发撒旦发说的你发撒旦发撒旦发</div>
-						</div>
-						<div class="s_c">
-							<div class="s_dian"></div>
-							<div class="s_value">说的你发撒旦发</div>
-						</div>
-					</div>
-					<div class="word_z">
-						<div class="s_a">
-							<div class="s_dian"></div>
-							<div class="s_value">说的你发撒旦发</div>
-						</div>
-						<div class="s_b">
-							<div class="s_dian"></div>
-							<div class="s_value">说的你发撒旦发</div>
-						</div>
-						<div class="s_c">
-							<div class="s_dian"></div>
-							<div class="s_value">说的你发撒旦发</div>
-						</div>
-					</div>
-					<div class="word_z">
-						<div class="s_a">
-							<div class="s_dian"></div>
-							<div class="s_value">说的你发撒旦发</div>
-						</div>
-						<div class="s_b">
-							<div class="s_dian"></div>
-							<div class="s_value">说的你发撒旦发</div>
-						</div>
-						<div class="s_c">
-							<div class="s_dian"></div>
-							<div class="s_value">说的你发撒旦发</div>
-						</div>
-					</div>
-					<div class="word_z">
-						<div class="s_a">
-							<div class="s_dian"></div>
-							<div class="s_value">说的你发撒旦发</div>
-						</div>
-						<div class="s_b">
-							<div class="s_dian"></div>
-							<div class="s_value">说的你发撒旦发</div>
-						</div>
-						<div class="s_c">
-							<div class="s_dian"></div>
-							<div class="s_value">说的你发撒旦发</div>
-						</div>
+						<?php }?>
 					</div>
 				</div>
+				</div>
+				<?php
+				 }?>
+				
 			</div>
 			<div id="student_r">
 				<div id="dict_a">
@@ -273,30 +236,28 @@
 					<div id="m_more"></div>
 					</a> </div>
 				<div id="m_l_c">
+					<?php
+					$mdb=$db->query(" SELECT id,title,short_title,description,video_photo_src,content FROM eb_news e where category_id=157 and is_adopt=1 order by created_at desc limit 9;");
+					$mdb_count=$db->record_count;
+					?>
 					<div id="m_l_a">
-						<div id="m_l_pic"><img src="images/index/people_a.jpg"></div>
-						<div id="m_l_title">新生儿童的照顾要点</div>
+						<div id="m_l_pic"><img src="<?php echo $mdb[0]->video_photo_src; ?>"></div>
+						<div id="m_l_title"><a herf="#"><?php echo $mdb[0]->title; ?></a></div>
 					</div>
 					<div id="m_l_b">
-						<div id="m_c_title">新生儿童的照顾要点</div>
-						<div id="m_c_content">新新生儿童的照顾要点新生儿童的照顾要点新生儿童的照顾要点新生儿童的照顾要点生儿童的照顾要点新生儿童的照顾要点新生儿童的照顾要点新生儿童的照顾要点</div>
-						<a href="#">
-						<div id="m_c_bottom">查看详细内容>></div>
-						</a> </div>
+						<div id="m_c_title"><a herf="#"><?php echo $mdb[0]->title; ?></a></div>
+						<div id="m_c_content"><?php echo strip_tags($mdb[0]->content); ?></div>
+						
+						<div id="m_c_bottom"><a href="#">查看详细内容&gt;&gt;</a> </div>
+					</div>
 					<div id="m_l_c_r"> 
-						<div class="mlc"><a href="">[斯蒂芬沙]是的沙发的</a></div>
-						
-						<div class="mlc"><a href="">[斯蒂芬沙]是的沙发的</a></div>
-						
-						<div class="mlc"><a href="">[斯蒂芬沙]是的沙发的</a></div>
-						
-						<div class="mlc"><a href="">[斯蒂芬沙]是的沙发的</a></div>
-						
-						<div class="mlc"><a href="">[斯蒂芬沙]是的沙发的</a></div>
-						 
-						<div class="mlc"><a href="">[斯蒂芬沙]是的沙发的</a></div>
-						
-						<div class="mlc"><a href="">[斯蒂芬沙]是的沙发的</a></div>
+						<?php 
+							for($i=1;$i<$mdb_count;$i++){
+						 ?>
+						<div class="mlc">
+							<a href=""><?php echo $mdb[$i]->short_title;?></a>
+						</div>
+						<?php } ?>
 					</div>
 				</div>
 			</div>
@@ -308,38 +269,18 @@
 						<div class="son_t_r"><a href="#"><font style="color:#F33B0A; font-weight:bold;" >+</font> 更多</a></div>
 					</div>
 					<div class="son_content">
+						<?php 
+							$news=$db->query("SELECT id,title,description,content,short_title FROM eb_news e where category_id=208 and is_adopt=1 order by created_at desc");
+							$news_count=$db->record_count;
+							
+							for($j=0;$j<$news_count&&$j<8;$j++){
+						 ?>
 						<div class="son_c_z">
 							<div class="son_c_z_l"></div>
-							<div class="son_c_z_r">是的是的佛撒大姐你发来撒佛撒大姐你发来撒</div>
+							<div class="son_c_z_r"><a href="<?php get_news_url($news[j]) ?>"  ><?php echo $news[$j]->short_title;?></a></div>
 						</div>
-						<div class="son_c_z">
-							<div class="son_c_z_l"></div>
-							<div class="son_c_z_r">是的是的佛撒大姐你发来撒佛撒大姐你发来撒</div>
-						</div>
-						<div class="son_c_z">
-							<div class="son_c_z_l"></div>
-							<div class="son_c_z_r">是的是的佛撒大姐你发来撒佛撒大姐你发来撒</div>
-						</div>
-						<div class="son_c_z">
-							<div class="son_c_z_l"></div>
-							<div class="son_c_z_r">是的佛是的佛撒大姐你发来撒撒大姐你发来撒</div>
-						</div>
-						<div class="son_c_z">
-							<div class="son_c_z_l"></div>
-							<div class="son_c_z_r">是的佛是的佛撒大姐你发来撒撒大姐你发来撒</div>
-						</div>
-						<div class="son_c_z">
-							<div class="son_c_z_l"></div>
-							<div class="son_c_z_r">是的佛v撒大姐你发来撒</div>
-						</div>
-						<div class="son_c_z">
-							<div class="son_c_z_l"></div>
-							<div class="son_c_z_r">是的佛是的佛撒大姐你发来撒撒大姐你发来撒</div>
-						</div>
-						<div class="son_c_z">
-							<div class="son_c_z_l"></div>
-							<div class="son_c_z_r">是的佛是的佛撒大姐你发来撒撒大姐你发来撒</div>
-						</div>
+						<?php
+						}?>
 					</div>
 				</div>
 				<div id="m_r_b"></div>
@@ -395,12 +336,13 @@
 							</div>
 							<div class="sblct_r">
 								<div class="sb_title">
-									<div class="sb_t_content" id="sb_t_a">母乳喂养</div>
-									<div class="sb_t_content" id="sb_t_b">母乳喂养</div>
-									<div class="sb_t_content" id="sb_t_c">母乳喂养</div>
-									<div class="sb_t_content" id="sb_t_d">母乳喂养</div>
-									<div class="sb_t_content" id="sb_t_e">母乳喂养</div>
-									<div class="sb_t_content" id="sb_t_f">母乳喂养</div>
+									<?php 
+									$ca=$db->query("SELECT name,id FROM eb_category where sort_id=119");
+									$ca_count=$db->record_count;
+									for($i=0;$i<$ca_count;$i++){
+										?>
+									<div class="sb_t_content" style="<?php if($i!==2){ if($i!==5){ echo 'border-right:1px solid #EEDECF';}} ?>"><a herf="#"><?php echo $ca[$i]->name; ?></a></div>
+									<?php } ?>
 								</div>
 								<div class="sb_content">母乳喂养母乳喂养母乳喂养母乳喂养母乳喂养母乳喂养</div>
 							</div>
@@ -412,14 +354,16 @@
 							</div>
 							<div class="sblct_r">
 								<div class="sb_title">
-									<div id="sbb_t_a">基地</div>
-									<div id="sbb_t_b">头部</div>
-									<div id="sbb_t_c">五关</div>
-									<div id="sbb_t_d">生殖器</div>
-									<div id="sbb_t_f">母乳养</div>
-									<div id="sbb_t_g">母乳养</div>
-									<div id="sbb_t_h">母乳养</div>
-									<div id="sbb_t_j">母乳养</div>
+									<?php 
+										$cb=$db->query("SELECT name,id FROM eb_category where sort_id=120");
+										$cb_count=$db->record_count;
+										for($i=0;$i<$cb_count;$i++){
+									 ?>
+									<div class="sbb_t_a" style="<?php if($i!=3){if($i!=7){ echo 'border-right:1px solid #EEDECF;'; }} ?>">
+										<a hef="#"><?php echo $cb[$i]->name; ?></a>
+									</div>
+									<?php 
+									} ?>
 								</div>
 								<div class="sb_content">母乳喂养母乳喂养母乳喂养母乳喂养母乳喂养母乳喂养</div>
 							</div>
@@ -433,10 +377,13 @@
 							</div>
 							<div class="sblct_r">
 								<div class="sb_title">
-									<div id="sbr_t_a">母乳</div>
-									<div id="sbr_t_b">母乳</div>
-									<div id="sbr_t_c">母乳</div>
-									<div id="sbr_t_d">母乳</div>
+									<?php
+									$cb=$db->query("SELECT name,id FROM eb_category where sort_id=121");
+										$cb_count=$db->record_count;
+										for($i=0;$i<$cb_count;$i++){
+									 ?>
+									<div class="sbr_t_a" style="<?php if($i!=3){ echo 'border-right:1px solid #EEDECF;';} ?>"><a herf=""><?php echo $cb[$i]->name; ?></a></div>
+									<?php } ?>
 								</div>
 								<div class="sb_content">母乳喂养母乳喂养母乳喂养母乳喂养母乳喂养母乳喂养</div>
 							</div>
@@ -453,54 +400,13 @@
 						<div class="son_t_l">关于<font style="color:#A4C853; font-weight:bold;" >新生儿</font></div>
 						<div class="son_t_r"><a href="#"><font style="color:#F33B0A; font-weight:bold;" >+</font> 更多</a></div>
 						<div class="son_content">
+							<?php for($k=0;$k<$news_count&&$k<11;$k++){
+							 ?>
 							<div class="son_c_z">
 								<div class="son_c_z_l"></div>
-								<div class="son_c_z_r">是的是的佛撒大姐你发来撒佛撒大姐你发来撒</div>
+								<div class="son_c_z_r"><a href="<?php get_news_url($news[$k]) ?>"><?php echo $news[$k]->short_title ?></a></div>
 							</div>
-							<div class="son_c_z">
-								<div class="son_c_z_l"></div>
-								<div class="son_c_z_r">是的是的佛撒大姐你发来撒佛撒大姐你发来撒</div>
-							</div>
-							<div class="son_c_z">
-								<div class="son_c_z_l"></div>
-								<div class="son_c_z_r">是的是的佛撒大姐你发来撒佛撒大姐你发来撒</div>
-							</div>
-							<div class="son_c_z">
-								<div class="son_c_z_l"></div>
-								<div class="son_c_z_r">是的佛是的佛撒大姐你发来撒撒大姐你发来撒</div>
-							</div>
-							<div class="son_c_z">
-								<div class="son_c_z_l"></div>
-								<div class="son_c_z_r">是的佛是的佛撒大姐你发来撒撒大姐你发来撒</div>
-							</div>
-							<div class="son_c_z">
-								<div class="son_c_z_l"></div>
-								<div class="son_c_z_r">是的佛v撒大姐你发来撒</div>
-							</div>
-							<div class="son_c_z">
-								<div class="son_c_z_l"></div>
-								<div class="son_c_z_r">是的佛是的佛撒大姐你发来撒撒大姐你发来撒</div>
-							</div>
-							<div class="son_c_z">
-								<div class="son_c_z_l"></div>
-								<div class="son_c_z_r">是的佛是的佛撒大姐你发来撒撒大姐你发来撒</div>
-							</div>
-							<div class="son_c_z">
-								<div class="son_c_z_l"></div>
-								<div class="son_c_z_r">是的佛是的佛撒大姐你发来撒撒大姐你发来撒</div>
-							</div>
-							<div class="son_c_z">
-								<div class="son_c_z_l"></div>
-								<div class="son_c_z_r">是的佛是的佛撒大姐你发来撒撒大姐你发来撒</div>
-							</div>
-							<div class="son_c_z">
-								<div class="son_c_z_l"></div>
-								<div class="son_c_z_r">是的佛是的佛撒大姐你发来撒撒大姐你发来撒</div>
-							</div>
-							<div class="son_c_z">
-								<div class="son_c_z_l"></div>
-								<div class="son_c_z_r">是的佛是的佛撒大姐你发来撒撒大姐你发来撒</div>
-							</div>
+							<?php } ?>
 						</div>
 					</div>
 				</div>
@@ -511,28 +417,15 @@
 		<div id="pic">
 			<div id="picc_left"></div>
 			<div id="picc_right">
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
+				<?php
+					$imgdb=$db->query("select id,title,description,src,src2 from eb_images where is_adopt=1 order by created_at desc limit 22");
+					$imgdb_count=$db->record_count;
+					for($k=0;$k<$imgdb_count;$k++){
+				 ?>
+				<div class="picc_a"><a href="#"><img src="<?php echo  $imgdb[$k]->src; ?>"></a></div>
+				<?php
+				} 
+					?>
 			</div>
 		</div>
 		<div id="bottom">关于我们 - 加入我们 - 友情链接 - 联系我们 - 服务条款 - 隐私保护 - 网站地图</div>
