@@ -23,14 +23,14 @@ $(function(){
 	
 	$('.publish_news').click(function(e){
 		e.preventDefault();
-		$.post('/admin/static/static_news.php?type=publish&id='+ $(this).attr('name'),function(data){
-			eval(data);
+		$.post('/admin/news/newscp.php?operation=publish&news_id='+ $(this).attr('name'),function(data){
+			location.reload();
 		});
 	});
 	$('.unpublish_news').click(function(e){
 		e.preventDefault();
-		$.post('/admin/static/static_news.php?type=unpublish&id='+ $(this).attr('name'),function(data){
-			eval(data);
+		$.post('/admin/news/newscp.php?operation=publish&news_id='+ $(this).attr('name'),function(data){
+			location.reload();
 		});
 	});
 	
