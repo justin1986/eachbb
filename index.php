@@ -239,30 +239,29 @@
 					<div id="m_more"></div>
 					</a> </div>
 				<div id="m_l_c">
+					<?php
+					$mdb=$db->query(" SELECT id,title,short_title,description,video_photo_src,content FROM eb_news e where category_id=157 and is_adopt=1 order by created_at desc limit 8;");
+					$mdb_count=$db->record_count;
+					 for($x=0;$x<1;$x++){ ?>
 					<div id="m_l_a">
-						<div id="m_l_pic"><img src="images/index/people_a.jpg"></div>
-						<div id="m_l_title">新生儿童的照顾要点</div>
+						<div id="m_l_pic"><img src="<?php echo $mdb[0]->video_photo_src; ?>"></div>
+						<div id="m_l_title"><a herf="#"><?php echo $mdb[0]->title; ?></a></div>
 					</div>
 					<div id="m_l_b">
-						<div id="m_c_title">新生儿童的照顾要点</div>
-						<div id="m_c_content">新新生儿童的照顾要点新生儿童的照顾要点新生儿童的照顾要点新生儿童的照顾要点生儿童的照顾要点新生儿童的照顾要点新生儿童的照顾要点新生儿童的照顾要点</div>
+						<div id="m_c_title"><a herf="#"><?php echo $mdb[0]->title; ?></a></div>
+						<div id="m_c_content"><?php echo strip_tags($mdb[0]->content); ?></div>
 						<a href="#">
 						<div id="m_c_bottom">查看详细内容>></div>
 						</a> </div>
+						<?php } ?>
 					<div id="m_l_c_r"> 
-						<div class="mlc"><a href="">[斯蒂芬沙]是的沙发的</a></div>
-						
-						<div class="mlc"><a href="">[斯蒂芬沙]是的沙发的</a></div>
-						
-						<div class="mlc"><a href="">[斯蒂芬沙]是的沙发的</a></div>
-						
-						<div class="mlc"><a href="">[斯蒂芬沙]是的沙发的</a></div>
-						
-						<div class="mlc"><a href="">[斯蒂芬沙]是的沙发的</a></div>
-						 
-						<div class="mlc"><a href="">[斯蒂芬沙]是的沙发的</a></div>
-						
-						<div class="mlc"><a href="">[斯蒂芬沙]是的沙发的</a></div>
+						<?php 
+							for($i=1;$i<$mdb_count;$i++){
+						 ?>
+						<div class="mlc">
+							<a href=""><?php echo $mdb[$i]->short_title;?></a>
+						</div>
+						<?php } ?>
 					</div>
 				</div>
 			</div>
@@ -343,8 +342,10 @@
 								<div class="sb_title">
 									<?php 
 									$ca=$db->query("SELECT name,id FROM eb_category where sort_id=119");
-									for($i=0;$i<2;$i++){ ?>
-									<div class="sb_t_content" id="sb_t_a">母乳喂养</div>
+									$ca_count=$db->record_count;
+									for($i=0;$i<$ca_count;$i++){
+										?>
+									<div class="sb_t_content" style="<?php if($i!==2){ if($i!==5){ echo 'border-right:1px solid #EEDECF';}} ?>"><a herf="#"><?php echo $ca[$i]->name; ?></a></div>
 									<?php } ?>
 								</div>
 								<div class="sb_content">母乳喂养母乳喂养母乳喂养母乳喂养母乳喂养母乳喂养</div>
@@ -357,14 +358,16 @@
 							</div>
 							<div class="sblct_r">
 								<div class="sb_title">
-									<div id="sbb_t_a">基地</div>
-									<div id="sbb_t_b">头部</div>
-									<div id="sbb_t_c">五关</div>
-									<div id="sbb_t_d">生殖器</div>
-									<div id="sbb_t_f">母乳养</div>
-									<div id="sbb_t_g">母乳养</div>
-									<div id="sbb_t_h">母乳养</div>
-									<div id="sbb_t_j">母乳养</div>
+									<?php 
+										$cb=$db->query("SELECT name,id FROM eb_category where sort_id=120");
+										$cb_count=$db->record_count;
+										for($i=0;$i<$cb_count;$i++){
+									 ?>
+									<div class="sbb_t_a" style="<?php if($i!=3){if($i!=7){ echo 'border-right:1px solid #EEDECF;'; }} ?>">
+										<a hef="#"><?php echo $cb[$i]->name; ?></a>
+									</div>
+									<?php 
+									} ?>
 								</div>
 								<div class="sb_content">母乳喂养母乳喂养母乳喂养母乳喂养母乳喂养母乳喂养</div>
 							</div>
@@ -378,10 +381,13 @@
 							</div>
 							<div class="sblct_r">
 								<div class="sb_title">
-									<div id="sbr_t_a">母乳</div>
-									<div id="sbr_t_b">母乳</div>
-									<div id="sbr_t_c">母乳</div>
-									<div id="sbr_t_d">母乳</div>
+									<?php
+									$cb=$db->query("SELECT name,id FROM eb_category where sort_id=121");
+										$cb_count=$db->record_count;
+										for($i=0;$i<$cb_count;$i++){
+									 ?>
+									<div class="sbr_t_a" style="<?php if($i!=3){ echo 'border-right:1px solid #EEDECF;';} ?>"><a herf=""><?php echo $cb[$i]->name; ?></a></div>
+									<?php } ?>
 								</div>
 								<div class="sb_content">母乳喂养母乳喂养母乳喂养母乳喂养母乳喂养母乳喂养</div>
 							</div>
@@ -420,7 +426,7 @@
 					$imgdb_count=$db->record_count;
 					for($k=0;$k<$imgdb_count;$k++){
 				 ?>
-				<div class="picc_a"><a href="#"><img src="<?php echo $imgdb[$k]->src; ?>"></a></div>
+				<div class="picc_a"><a href="#"><img src="<?php echo  $imgdb[$k]->src; ?>"></a></div>
 				<?php
 				} 
 					?>

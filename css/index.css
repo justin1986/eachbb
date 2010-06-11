@@ -138,7 +138,7 @@
 #m_more{width:48px; height:10px; border:0px solid red; margin-top:10px; margin-right:5px; z-index:100; background:url(../images/index/more.gif) no-repeat; float:right; display:inline;}
 #m_l_a{width:187px; height:158px; margin-left:23px; margin-top:20px; float:left; display:inline;}
 #m_l_pic{width:170px; height:115px; margin-left:7px; margin-top:7px; float:left; display:inline;}
-#m_l_pic{width:170px; height:115px;}
+#m_l_pic img{width:170px; height:115px;}
 #m_l_title{width:155px; height:25px; margin-left:28px; margin-top:4px; line-height:25px; font-family:黑体; overflow:hidden; float:left; display:inline;}
 #m_l_b{width:220px; height:175px; float:left; display:inline;}
 #m_c_title{width:177px; height:30px; margin-left:20px; margin-top:20px; line-height:30px; font-weight:bold; font-size:16px; color:#FF8C3F; float:left; display:inline;}
@@ -204,26 +204,19 @@
 .sblct_r{width:215px; height:120px; margin-left:10px; margin-top:2px; float:left; display:inline;}
 .sb_title{width:200px; height:45px; margin-left:10px; margin-top:2px; float:left; display:inline; }
 .sb_content{width:200px; height:70px; margin-left:13px; word-wrap: break-word; word-break: normal; overflow:hidden; font-size:12px; line-height:20px; float:left; display:inline;}
-.sb_t_content{width:60px; height:15px; margin-top:5px; color:#9BC683; text-align:center; font-size:12px;  float:left; display:inline;}
-#sb_t_a{border-right:1px solid #EEDECF;}
+.sb_t_content{width:60px; height:15px; margin-top:5px;  text-align:center;  float:left; display:inline;}
+.sb_t_content a{color:#9BC683; font-size:12px; text-decoration:none;}
+
+
+
 #sb_t_b{border-left:1px solid #CEDCEE; border-right:1px solid #EEDECF;}
 #sb_t_c{border-left:1px solid #CEDCEE;}
 #sb_t_d{border-right:1px solid #EEDECF;}
 #sb_t_e{border-left:1px solid #CEDCEE; border-right:1px solid #EEDECF;}
 #sb_t_f{border-left:1px solid #CEDCEE;}
-#sbb_t_a{width:35px; height:15px; margin-top:5px; overflow:hidden; border-right:1px solid #EEDECF; color:#9BC683; text-align:center; font-size:12px;  float:left; display:inline;}
-#sbb_t_b{width:35px; height:15px; margin-top:5px; overflow:hidden; border-left:1px solid #CEDCEE;  border-right:1px solid #EEDECF; color:#9BC683; text-align:center; font-size:12px;  float:left; display:inline;}
-#sbb_t_c{width:35px; height:15px; margin-top:5px; overflow:hidden; border-left:1px solid #CEDCEE;  border-right:1px solid #EEDECF; color:#9BC683; text-align:center; font-size:12px;  float:left; display:inline;}
-#sbb_t_d{width:35px; height:15px; margin-top:5px; overflow:hidden; border-left:1px solid #CEDCEE; border-right:1px solid #EEDECF; color:#9BC683; text-align:center; font-size:12px;  float:left; display:inline;}
-#sbb_t_f{width:45px; height:15px; margin-top:5px; overflow:hidden; border-left:1px solid #CEDCEE; color:#9BC683; text-align:center; font-size:12px;  float:left; display:inline;}
-#sbb_t_g{width:45px; height:15px; margin-top:5px; overflow:hidden; border-right:1px solid #EEDECF; color:#9BC683; text-align:center; font-size:12px;  float:left; display:inline;}
-#sbb_t_h{width:45px; height:15px; margin-top:5px; overflow:hidden; border-left:1px solid #CEDCEE;  border-right:1px solid #EEDECF; color:#9BC683; text-align:center; font-size:12px;  float:left; display:inline;}
-#sbb_t_j{width:45px; height:15px; margin-top:5px; overflow:hidden; border-left:1px solid #CEDCEE;  color:#9BC683; text-align:center; font-size:12px;  float:left; display:inline;}
+.sbb_t_a{width:45px; height:15px; margin-top:5px; overflow:hidden; color:#9BC683; text-align:center; font-size:12px;  float:left; display:inline;}
 
-#sbr_t_a{width:45px; height:15px; margin-top:5px; overflow:hidden; border-right:1px solid #EEDECF; color:#9BC683; text-align:center; font-size:12px;  float:left; display:inline;}
-#sbr_t_b{width:45px; height:15px; margin-top:5px; overflow:hidden; border-left:1px solid #CEDCEE;  border-right:1px solid #EEDECF; color:#9BC683; text-align:center; font-size:12px;  float:left; display:inline;}
-#sbr_t_c{width:45px; height:15px; margin-top:5px; overflow:hidden; border-left:1px solid #CEDCEE;  border-right:1px solid #EEDECF; color:#9BC683; text-align:center; font-size:12px;  float:left; display:inline;}
-#sbr_t_d{width:45px; height:15px; margin-top:5px; overflow:hidden; border-left:1px solid #CEDCEE; color:#9BC683; text-align:center; font-size:12px;  float:left; display:inline;}
+.sbr_t_a{width:45px; height:15px; margin-top:5px; overflow:hidden;  color:#9BC683; text-align:center; font-size:12px;  float:left; display:inline;}
 
 #sbl_tr{width:264px; height:7px; font-size:0px; line-height:0px; border:0px solid red; background:url(../images/index/r_top.png) no-repeat; float:left; display:inline;}
 #sbl_cr{width:262px; height:293px; border-left:1px solid #E4E4E4; overflow:hidden; border-right:1px solid #E4E4E4; float:left; display:inline;}
