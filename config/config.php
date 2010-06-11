@@ -59,7 +59,7 @@ $tb_video = $table_prex.'video';
 $tb_news = $table_prex.'news';
 
 $g_log_dir = dirname(__FILE__)."/../data/";
-$site_name = '福布斯中文网站';
+$site_name = '网趣宝贝';
 $bbs_uc_key = 'qboa97C9i0k1Ja6657W5083132r9Mb20i7y1e4BeL5q9Z3C2K8X3t7EbMdq9IdSe';
 $app_uc_key = 'fac1cJPngd5eHQyvQgA5xCQx3xDoL6XW1QlifoQ';
 $app_uc_id = '2';
