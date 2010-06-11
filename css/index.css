@@ -159,7 +159,8 @@
 .son_content{width:260px;  float:left; display:inline;}
 .son_c_z{width:250px; height:20px; margin-top:4px; float:left; display:inline;}
 .son_c_z_l{width:5px; height:5px; margin:7px; font-size:0px; line-height:0px; background:url(../images/index/dian.png) no-repeat; float:left; display:inline;}
-.son_c_z_r{width:227px; height:20px; line-height:20px; overflow:hidden; font-size:13px; font-weight:bold; color:#666666; float:left; display:inline;}
+.son_c_z_r{width:227px; height:20px; line-height:20px; overflow:hidden;  float:left; display:inline;}
+.son_c_z_r a{font-size:13px; font-weight:bold; color:#666666; text-decoration:none;}
 
 
 

@@ -91,9 +91,9 @@
 				<div id="t_l_pg">
 					<div id="t_content_left">
 						<div id="pic_top">请输入宝宝的出生日期:</div>
-						<div id="pic_bottom"> 
+						<div id="pic_bottom"> <a href="#">
 							<div id="pic_left"></div>
-							
+							</a>
 							<div id="pic_right">
 								<div id="pic_word">怀孕期测试</div>
 							</div>
@@ -275,16 +275,17 @@
 					</div>
 					<div class="son_content">
 						<?php 
-							$news=$db->query("SELECT id,title,description,content FROM eb_news e where category_id=208 and is_adopt=1 order by created_at desc");
+							$news=$db->query("SELECT id,title,description,content,short_title FROM eb_news e where category_id=208 and is_adopt=1 order by created_at desc");
 							$news_count=$db->record_count;
-							var_dump($news);
-							echo $news_count;
+							
+							for($j=0;$j<$news_count&&$j<8;$j++){
 						 ?>
 						<div class="son_c_z">
 							<div class="son_c_z_l"></div>
-							<div class="son_c_z_r">是的是的佛撒大姐你发来撒佛撒大姐你发来撒</div>
+							<div class="son_c_z_r"><a href="<?php get_news_url($news[j]) ?>"  ><?php echo $news[$j]->short_title;?></a></div>
 						</div>
-						
+						<?php
+						}?>
 					</div>
 				</div>
 				<div id="m_r_b"></div>
@@ -340,12 +341,11 @@
 							</div>
 							<div class="sblct_r">
 								<div class="sb_title">
+									<?php 
+									$ca=$db->query("SELECT name,id FROM eb_category where sort_id=119");
+									for($i=0;$i<2;$i++){ ?>
 									<div class="sb_t_content" id="sb_t_a">母乳喂养</div>
-									<div class="sb_t_content" id="sb_t_b">母乳喂养</div>
-									<div class="sb_t_content" id="sb_t_c">母乳喂养</div>
-									<div class="sb_t_content" id="sb_t_d">母乳喂养</div>
-									<div class="sb_t_content" id="sb_t_e">母乳喂养</div>
-									<div class="sb_t_content" id="sb_t_f">母乳喂养</div>
+									<?php } ?>
 								</div>
 								<div class="sb_content">母乳喂养母乳喂养母乳喂养母乳喂养母乳喂养母乳喂养</div>
 							</div>
@@ -398,54 +398,13 @@
 						<div class="son_t_l">关于<font style="color:#A4C853; font-weight:bold;" >新生儿</font></div>
 						<div class="son_t_r"><a href="#"><font style="color:#F33B0A; font-weight:bold;" >+</font> 更多</a></div>
 						<div class="son_content">
+							<?php for($k=0;$k<$news_count&&$k<11;$k++){
+							 ?>
 							<div class="son_c_z">
 								<div class="son_c_z_l"></div>
-								<div class="son_c_z_r">是的是的佛撒大姐你发来撒佛撒大姐你发来撒</div>
+								<div class="son_c_z_r"><a href="<?php get_news_url($news[$k]) ?>"><?php echo $news[$k]->short_title ?></a></div>
 							</div>
-							<div class="son_c_z">
-								<div class="son_c_z_l"></div>
-								<div class="son_c_z_r">是的是的佛撒大姐你发来撒佛撒大姐你发来撒</div>
-							</div>
-							<div class="son_c_z">
-								<div class="son_c_z_l"></div>
-								<div class="son_c_z_r">是的是的佛撒大姐你发来撒佛撒大姐你发来撒</div>
-							</div>
-							<div class="son_c_z">
-								<div class="son_c_z_l"></div>
-								<div class="son_c_z_r">是的佛是的佛撒大姐你发来撒撒大姐你发来撒</div>
-							</div>
-							<div class="son_c_z">
-								<div class="son_c_z_l"></div>
-								<div class="son_c_z_r">是的佛是的佛撒大姐你发来撒撒大姐你发来撒</div>
-							</div>
-							<div class="son_c_z">
-								<div class="son_c_z_l"></div>
-								<div class="son_c_z_r">是的佛v撒大姐你发来撒</div>
-							</div>
-							<div class="son_c_z">
-								<div class="son_c_z_l"></div>
-								<div class="son_c_z_r">是的佛是的佛撒大姐你发来撒撒大姐你发来撒</div>
-							</div>
-							<div class="son_c_z">
-								<div class="son_c_z_l"></div>
-								<div class="son_c_z_r">是的佛是的佛撒大姐你发来撒撒大姐你发来撒</div>
-							</div>
-							<div class="son_c_z">
-								<div class="son_c_z_l"></div>
-								<div class="son_c_z_r">是的佛是的佛撒大姐你发来撒撒大姐你发来撒</div>
-							</div>
-							<div class="son_c_z">
-								<div class="son_c_z_l"></div>
-								<div class="son_c_z_r">是的佛是的佛撒大姐你发来撒撒大姐你发来撒</div>
-							</div>
-							<div class="son_c_z">
-								<div class="son_c_z_l"></div>
-								<div class="son_c_z_r">是的佛是的佛撒大姐你发来撒撒大姐你发来撒</div>
-							</div>
-							<div class="son_c_z">
-								<div class="son_c_z_l"></div>
-								<div class="son_c_z_r">是的佛是的佛撒大姐你发来撒撒大姐你发来撒</div>
-							</div>
+							<?php } ?>
 						</div>
 					</div>
 				</div>
@@ -456,28 +415,15 @@
 		<div id="pic">
 			<div id="picc_left"></div>
 			<div id="picc_right">
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
-				<div class="picc_a"><img src="images/index/picc_a.gif"></div>
+				<?php
+					$imgdb=$db->query("select id,title,description,src,src2 from eb_images where is_adopt=1 order by created_at desc limit 22");
+					$imgdb_count=$db->record_count;
+					for($k=0;$k<$imgdb_count;$k++){
+				 ?>
+				<div class="picc_a"><a href="#"><img src="<?php echo $imgdb[$k]->src; ?>"></a></div>
+				<?php
+				} 
+					?>
 			</div>
 		</div>
 		<div id="bottom">关于我们 - 加入我们 - 友情链接 - 联系我们 - 服务条款 - 隐私保护 - 网站地图</div>
