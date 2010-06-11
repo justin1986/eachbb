@@ -91,9 +91,9 @@
 				<div id="t_l_pg">
 					<div id="t_content_left">
 						<div id="pic_top">请输入宝宝的出生日期:</div>
-						<div id="pic_bottom"> <a href="#">
+						<div id="pic_bottom"> 
 							<div id="pic_left"></div>
-							</a>
+							
 							<div id="pic_right">
 								<div id="pic_word">怀孕期测试</div>
 							</div>

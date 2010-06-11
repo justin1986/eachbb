@@ -21,9 +21,6 @@
 	if($files === false) die('执行失败');
 	$db = get_db();
 	$db->query("select file_name from db_migrate");
-	if($db->move_first()=== false){
-		die('执行成功，无新脚本');
-	};
 	do{
 		$executed_files[] = $db->field_by_name('file_name');
 	}while($db->move_next());
