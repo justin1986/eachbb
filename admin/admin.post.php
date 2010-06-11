@@ -66,4 +66,7 @@ if($_POST["type"]=="delleaderuser")
 	$Record = $db->execute($StrSql);
 	echo "OK";
 }
+if($_POST['type']=='del_new'){
+	
+}
 ?>

@@ -1,5 +1,7 @@
 <?php
+	session_start();
 	include_once('../../frame.php');
+	judge_role();
 	
 	$id = intval($_GET['id']);
 	$vote = new table_class('eb_vote');

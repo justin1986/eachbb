@@ -115,7 +115,7 @@
 #crrt_l{width:77px; height:60px; margin-top:3px; overflow:hidden; border:5px solid #E7E7DF; float:left; display:inline;}
 #crrt_l img{width:73px; height:56px; margin-top:2px; margin-left:2px; }
 #crrt_c{width:275px; height:18px; margin-left:10px; margin-top:6px; font-size:14px; font-weight:bold; overflow:hidden; float:left; display:inline;}
-#crrt_b{width:275px; height:44px; margin-left:10px; margin-top:5px; color:#8C8C8C; overflow:hidden; font-size:13px;  float:left; display:inline;}
+#crrt_b{width:275px; height:45px; margin-left:10px; margin-top:5px; line-height:15px; color:#8C8C8C; overflow:hidden; font-size:13px;  float:left; display:inline;}
 #crr_c{width:377px; height:1px; margin-top:2px; font-size:0px; line-height:0px; background:url(../images/class/cr_pg.jpg) repeat-x; float:left; display:inline;}
 .crr_b{width:188px; height:20px; margin-left:10px;  line-height:20px; overflow:hidden; float:left; display:inline;}
 #crrab_z{margin-toP:5px; float:left; display:inline;}

@@ -62,6 +62,10 @@
 			echo $_POST['del_id'];
 		
 	}
+	elseif("del_new"==$_POST['post_type']){
+		$db = get_db();
+		$db->execute("update {$_POST['db_table']} set del_flag=1 where id={$_POST['del_id']}");
+	}
 	elseif("edit"==$_POST['post_type'])
 	{
 		if($_POST['id']!='')$post -> find($_POST['id']);

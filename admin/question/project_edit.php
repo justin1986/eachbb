@@ -15,6 +15,7 @@
 	<?php
 		css_include_tag('admin','jquery_ui');
 		use_jquery_ui();
+		js_include_tag('../ckeditor/ckeditor.js');
 		validate_form("project_edit");
 	?>
 </head>
@@ -33,6 +34,10 @@
 		<tr class="tr4">
 			<td align="center" width="100">封面图片</td>
 			<td align="left"><input name="image" id="image" type="file"><?php if($project->photo_url){?><a href="<?php echo $project->photo_url;?>" target="_blank">点击查看</a><?php }?></td>
+		</tr>
+		<tr class=tr4>
+			<td align="center">介绍：</td>
+			<td align="left"><?php show_fckeditor('post[description]','Admin',false,"120",$project->description);?></td>
 		</tr>
 		<!--  
 		<tr class=tr3>

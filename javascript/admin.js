@@ -37,6 +37,8 @@
 				}
 			)
 		})
+		
+		
 		$("#tg").click(function(){
 			var title=$("#title").attr('value');
 			var starttime=$("#starttime").attr('value');

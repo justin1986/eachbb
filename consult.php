@@ -42,7 +42,7 @@
 						</a>
 						<div class="me_h"></div>
 						<a href="#">
-						<div class="me_b" style="background:url(images/bbs/mo_pg.jpg) no-repeat;"><font class="son">育儿</font><font class="bbs">咨询</font></div>
+						<div class="me_b" style="background:url(images/bbs/mo_pg.jpg) no-repeat;"><font class="son">育儿</font><font class="bbs">咨讯</font></div>
 						</a>
 						<div class="me_h"></div>
 						<a href="#">
@@ -289,11 +289,9 @@
 					<div class="bac_z" style="<?php if($i==0){ echo ' margin-top:5px;';}?>;">
 						<div class="bac_d"></div>
 						<div class="bac_v"><a href="#">友情链接友情链接友情链接</a></div>
-						<?php if($i!=6){
-																?>
+						<?php if($i!=6){?>
 						<div class="bac_c"></div>
-						<?php 
-															}?>
+						<?php }?>
 					</div>
 					<?php }?>
 				</div>

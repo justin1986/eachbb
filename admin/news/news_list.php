@@ -92,7 +92,7 @@
 					<span style="cursor:pointer" class="del" name="<?php echo $record[$i]->id;?>"  title="删除"><img src="/images/admin/btn_delete.png" border="0"></span>
 					<?php }?>
 					<?php
-						if(has_right('publish_news')){ 
+						if(has_right('publish_news')){
 							if($record[$i]->is_adopt=="1"){?>
 					<span style="cursor:pointer" class="unpublish_news" name="<?php echo $record[$i]->id;?>" title="撤销"><img src="/images/admin/btn_apply.png" border="0"></span>
 					<?php	}else{?>
@@ -100,14 +100,13 @@
 					<?php }
 						}?>
 					<?php
-					if(has_right('top_news')){ 
+					if(has_right('top_news')){
 					if($record[$i]->set_up=="1"){?>
 					<span style="cursor:pointer" class="set_down" name="<?php echo $record[$i]->id;?>" title="取消置顶"><img src="/images/admin/btn_up.png" border="0"></span>
 					<?php }else{?>
 					<span style="cursor:pointer" class="set_up" name="<?php echo $record[$i]->id;?>" title="置顶"><img src="/images/admin/btn_unup.png" border="0"></span>
 					<?php }
 					}?>
-					<a title="静态页面" href="<?php echo $static_site .static_news_url($record[$i]);?>" target="_blank"><img src="/images/admin/btn_static.png" border="0"></a>
 					<?php if(has_right('comment_news')){?>
 					<a href="/admin/comment/comment.php?id=<?php echo $record[$i]->id;?>&type=news" title="评论"><img src="/images/admin/btn_comment.png" border="0"></a>
 					<?php }?>
@@ -119,8 +118,8 @@
 			//--------------------
 		?>
 		<tr class="btools">
-			<td colspan=10>
-				<?php paginate("",null,"page",true);?>
+			<td colspan=10>				<?php paginate("",null,"page",true);?>
+
 				<button id=clear_priority style="display:none">清空优先级</button>
 				<button id=edit_priority  style="display:none">编辑优先级</button>
 				<input type="hidden" id="relation" value="news">
