@@ -2,6 +2,7 @@
 	define(CURRENT_DIR, dirname(__FILE__) ."/");
 	define(ROOT_DIR_NONE, dirname(__FILE__));	
 	define(ROOT_DIR,CURRENT_DIR);
+	define(FRAME_VERSION,'1.0');
 	require('config/config.php');
 	include_once(CURRENT_DIR ."lib/pubfun.php");
 	include_once(CURRENT_DIR ."lib/database_connection_class.php");

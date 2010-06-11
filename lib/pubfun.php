@@ -563,4 +563,7 @@ function fgetcsv_reg(& $handle, $length = null, $d = ',', $e = '"') {
 	}
 	return empty ($_line) ? false : $_csv_data;
 }
-?>
+
+function set_charset($charset='UTF-8'){
+	@header("Content-type: text/html;charset={$charset}");
+}
