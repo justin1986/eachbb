@@ -216,8 +216,8 @@
 #sb_t_f{border-left:1px solid #CEDCEE;}
 .sbb_t_a{width:45px; height:15px; margin-top:5px; overflow:hidden; color:#9BC683; text-align:center; font-size:12px;  float:left; display:inline;}
 
-.sbr_t_a{width:45px; height:15px; margin-top:5px; overflow:hidden;  color:#9BC683; text-align:center; font-size:12px;  float:left; display:inline;}
-
+.sbr_t_a{width:45px; height:15px; margin-top:5px; overflow:hidden;  text-align:center;  float:left; display:inline;}
+.sbr_t_a a{color:#9BC683; font-size:12px; text-decoration:none;}
 #sbl_tr{width:264px; height:7px; font-size:0px; line-height:0px; border:0px solid red; background:url(../images/index/r_top.png) no-repeat; float:left; display:inline;}
 #sbl_cr{width:262px; height:293px; border-left:1px solid #E4E4E4; overflow:hidden; border-right:1px solid #E4E4E4; float:left; display:inline;}
 #sbl_br{width:264px; height:8px; background:url(../images/index/r_bottom.png) no-repeat; float:left; display:inline;}
