@@ -16,16 +16,11 @@ ey_bbs/*
 top.inc.html
 bottom.inc.html
 tools/*
-config/config.php
 .*~
 discuz/*
 *.log
 data/dbcache/*.tb
-default.php
 htmldir
-admin/plugin/ipo
-admin/plugin/update_stock
 test.php
 test.post.php
-life/xml/
 test1.php
