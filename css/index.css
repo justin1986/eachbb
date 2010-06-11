@@ -34,7 +34,7 @@
 #flash_right{width:286px; height:413px; margin-right:2px; float:right; display:inline;}
 #r_test{width:286px; height:124px; background:url(../images/index/img_r_a.jpg) no-repeat; float:left; display:inline;}
 #test_value{width:180px; height:80px; margin-left:90px; margin-top:38px; float:left; display:inline;}
-.test_a{width:180px; height:18px; overflow:hidden; line-height:18px; float:left; display:inline;}
+.test_a{width:180px; height:18px; margin-top:1px; overflow:hidden; line-height:18px; float:left; display:inline;}
 .test_a a{font-size:13px; color:#000000; text-decoration:none;}
 #r_student{width:286px; height:120px; margin-top:13px; background:url(../images/index/r_pg.png) no-repeat; float:left; display:inline;}
 #st_top{width:270px; height:25px; margin-left:10px; float:left; display:inline;}
@@ -43,7 +43,7 @@
 #s_t_b{width:75px; height:20px; margin-left:28px; margin-top:6px; float:left; display:inline;}
 #s_t_c{width:75px; height:20px; margin-left:15px; margin-top:6px;  float:left; display:inline;}
 #student_value{width:200px; height:80px; margin-left:24px; margin-top:3px; float:left; display:inline;}
-.student_aa{width:196px; height:21px; overflow:hidden; line-height:18px; float:left; display:inline;}
+.student_aa{width:196px; height:22px; overflow:hidden; line-height:22px; float:left; display:inline;}
 .student_aa a{color:#000; font-size:13px; text-decoration:none;}
 #r_spring{width:284px; height:138px; margin-top:13px; background:url(../images/index/r_d.gif); float:left; display:inline;}
 
@@ -120,7 +120,7 @@
 #student_r{width:264px; height:242px; margin-top:13px; margin-right:2px; background:url(../images/index/r_pg.gif) no-repeat; float:right; display:inline;}
 #dict_a{width:250px; height:30px; margin-left:10px; margin-top:5px; float:left; display:inline;}
 #dict_title{width:180px; height:30px; line-height:30px; font-size:16px; font-weight:bold;  float:left; display:inline;}
-#dict_more{width:48px; height:10px; border:0px solid red;  margin-top:8px; margin-right:5px; z-index:100; background:url(../images/index/more.gif) no-repeat; float:right; display:inline;}
+#dict_more{width:48px; height:10px; border:0px solid red;  margin-top:8px; margin-right:5px; z-index:100; float:right; display:inline;}
 #dict_menu{width:250px; height:22px; margin-left:7px; margin-top:5px; float:left; display:inline;}
 #dict_menu a{color: #000000; text-decoration: none; }
 #dict_menu a:hover{background:url(../images/r_pg_f.png) no-repeat;}
@@ -135,7 +135,7 @@
 #mother{width:968px; height:238px; margin-top:5px; float:left; display:inline;}
 #mother_l{width:684px; height:236px; background:url(../images/index/l_p.gif) no-repeat; float:left; display:inline;}
 #m_l_t{width:682px; height:30px; margin-top:10px; float:left; display:inline;}
-#m_more{width:48px; height:10px; border:0px solid red; margin-top:10px; margin-right:5px; z-index:100; background:url(../images/index/more.gif) no-repeat; float:right; display:inline;}
+#m_more{width:48px; height:10px; border:0px solid red; margin-top:10px; margin-right:5px; z-index:100; float:right; display:inline;}
 #m_l_a{width:187px; height:158px; margin-left:23px; margin-top:20px; float:left; display:inline;}
 #m_l_pic{width:170px; height:115px; margin-left:7px; margin-top:7px; float:left; display:inline;}
 #m_l_pic img{width:170px; height:115px;}
