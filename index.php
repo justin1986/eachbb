@@ -378,8 +378,8 @@
 										$i=0;
 										foreach ($cb as $k=>$v){
 									 ?>
-									<div class="sbb_t_a" style="<?php if($i!=3){if($i!=7){ echo 'border-right:1px solid #EEDECF;'; }} ?>">
-										<a href="#" title="<?php echo $cb[$i]->name; ?>">
+									<div class="sbb_t_a" style="<?php if($i!=3 && $i!=7){ echo 'border-right:1px solid #EEDECF;'; } ?>">
+										<a href="#" title="<?php echo $v->name; ?>">
 											<?php echo $v; ?>
 										</a>
 									</div>
@@ -387,7 +387,9 @@
 								</div>
 								<div class="sb_content">
 										<?php 
-										$caa=$db->query("SELECT id,title,short_title,description,content FROM eb_news e where category_id in (128,129,130,131,132,133,134,135) order by created_at desc limit 3;");
+										$ids = array_keys($cb);
+										$ids = implode(',',$ids);
+										$caa=$db->query("SELECT id,title,short_title,description,content FROM eb_news e where category_id in ($ids) order by created_at desc limit 3;");
 										for($j=0;$j<3;$j++){ ?>
 										<div class="sb_ctt"><a href="" title="<?php echo $caa[$j]->title; ?>"><?php echo $caa[$j]->title; ?></a></div>
 										<?php }?>
