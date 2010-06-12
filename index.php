@@ -94,7 +94,7 @@
 						<div id="pic_bottom"><a href="#">
 							<img id="pic_left">
 							</a>
-							<div id="pic_right" style="background:url(<?php echo $pro[0]->photo_url?>);">
+							<div id="pic_right" style="background:url(<?php echo $pro[0]->photo_url?> no-repeat);">
 								<div id="pic_word">怀孕期测试</div>
 							</div>
 						</div>
@@ -343,11 +343,14 @@
 							</div>
 							<div class="sblct_r">
 								<div class="sb_title">
-									<?php 
-									$ca=$db->query("SELECT name,id FROM eb_category where sort_id=119 limit 6");
-									$ca_count=$db->record_count;
-									for($i=0;$i<$ca_count;$i++){ ?>
-									<div class="sb_t_content" style="<?php if($i!==2){ if($i!==5){ echo 'border-right:1px solid #EEDECF';}} ?>"><a href="#" title="<?php echo $ca[$i]->name; ?>"><?php echo $ca[$i]->name; ?></a></div>
+									<?php
+									$ca=array("120"=>"日常护理","121"=>"母婴交流","122"=>"母乳喂养","123"=>"人工喂养","124"=>"混合喂养","125"=>"母乳准备","126"=>"母乳技巧","127"=>"吐奶溢奶");
+									for($i=0;$i<count($ca);$i++){ ?>
+									<div class="sb_t_content" style="<?php if($i!==2){ if($i!==5){ echo 'border-right:1px solid #EEDECF';}} ?>">
+										<a href="#" title="<?php echo $ca[$i]->name; ?>">
+											<?php echo $ca[$i]->name; ?>
+										</a>
+									</div>
 									<?php }?>
 								</div>
 								<div class="sb_content">
