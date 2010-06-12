@@ -350,7 +350,7 @@
 										$news_id=implode(',',$new_id);
 										$news_s=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in (".$news_id.") order by created_at desc limit 1;");
 									?>
-									<a href="<?php get_news_url($news[0]); ?>"><img src="<?php echo $news_s[0]->video_photo_src;?>"/></a>
+									<a href="<?php get_news_url($news_s[0]); ?>" title="<?php get_news_url($news_s[0]); ?>"><img src="<?php echo $news_s[0]->video_photo_src;?>"/></a>
 								</div>
 							</div>
 							<div class="sblct_r">
@@ -366,7 +366,6 @@
 								</div>
 								<div class="sb_content">
 									<?php
-									
 									$news=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in (".$news_id.") order by created_at desc limit 3;");
 									for($j=0;$j<3;$j++){ ?>
 									<div class="sb_ctt"><a href="<?php get_news_url($news[$j]);?>" title="<?php echo $news[$j]->title;?>"><?php echo $news[$j]->title; ?></a></div>
@@ -384,7 +383,7 @@
 									$news_id=implode(',',$news);
 									$news=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in (".$news_id.") order by created_at desc limit 1;");
 								?>
-									<a href="<?php get_news_url($news[0]); ?>"><img src="<?php echo $news[0]->video_photo_src;?>"/></a>
+									<a href="<?php get_news_url($news[0]); ?>" title="<?php get_news_url($news[0]); ?>"><img src="<?php echo $news[0]->video_photo_src;?>"/></a>
 								</div>
 							</div>
 							<div class="sblct_r">
@@ -394,7 +393,7 @@
 										foreach ($new as $k=>$v){
 										?>
 									<div class="sbb_t_a" style="<?php if($i!=131 && $i!=135){ echo 'border-right:1px solid #EEDECF;'; } ?>">
-										<a href="<?php get_news_url($i); ?>" title="<?php echo $v; ?>">
+										<a href="<?php get_news_url($news[$i]); ?>" title="<?php echo $v; ?>">
 											<?php echo $v; ?>
 										</a>
 									</div>
@@ -421,7 +420,7 @@
 									$new=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in (".$news_id.") order by created_at desc limit 1;");
 								?>
 								<div class="sblct_bb">
-									<a href="<?php get_news_url($news[0]); ?>"><img src="<?php echo $new[0]->video_photo_src;?>"/></a>
+									<a href="<?php get_news_url($new[0]); ?>" title="<?php get_news_url($news[0]); ?>"><img src="<?php echo $new[0]->video_photo_src;?>"/></a>
 								</div>
 							</div>
 							<div class="sblct_r">
