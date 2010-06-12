@@ -4,6 +4,8 @@
 ?>
 <html>
 <head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta http-equiv=Content-Language content=zh-CN>
 <title>网趣宝贝</title>
 <link href="./css/index.css" rel="stylesheet" type="text/css" />
 </head>
@@ -92,10 +94,11 @@
 					<div id="t_content_left">
 						<div id="pic_top">请输入宝宝的出生日期:</div>
 						<div id="pic_bottom"><a href="#">
-							<img id="pic_left">
+							<img id="pic_left"/>
 							</a>
-							<div id="pic_right" style="background:url(<?php echo $pro[0]->photo_url?> no-repeat);">
-								<div id="pic_word">怀孕期测试</div>
+							<div id="picc">
+							<img id="pic_right" src="<?php echo $pro[0]->photo_url?>" title="<?php echo $pro[0]->photo_url?>"/>
+							<div id="pic_word"><a href="<?php get_test_url($pro[0])?>">怀孕期测试</a></div>
 							</div>
 						</div>
 					</div>
@@ -344,11 +347,11 @@
 							<div class="sblct_r">
 								<div class="sb_title">
 									<?php
-									$ca=array("120"=>"日常护理","121"=>"母婴交流","122"=>"母乳喂养","123"=>"人工喂养","124"=>"混合喂养","125"=>"母乳准备","126"=>"母乳技巧","127"=>"吐奶溢奶");
-									for($i=0;$i<count($ca);$i++){ ?>
-									<div class="sb_t_content" style="<?php if($i!==2){ if($i!==5){ echo 'border-right:1px solid #EEDECF';}} ?>">
-										<a href="#" title="<?php echo $ca[$i]->name; ?>">
-											<?php echo $ca[$i]->name; ?>
+									$ca=array("120"=>"母乳喂养","121"=>"人工喂养","122"=>"混合喂养","123"=>"母乳准备","124"=>"母乳技巧","125"=>"吐奶溢奶");
+									for($i=120;$i<126;$i++){ ?>
+									<div class="sb_t_content" style="<?php if($i!==122){ if($i!==125){ echo 'border-right:1px solid #EEDECF';}} ?>">
+										<a href="<?php get_news_url($ca[i])?>" title="<?php echo $ca[$i]->name; ?>">
+											<?php echo $ca[$i]; ?>
 										</a>
 									</div>
 									<?php }?>
@@ -370,18 +373,20 @@
 							<div class="sblct_r">
 								<div class="sb_title">
 									<?php 
-										$cb=$db->query("SELECT name,id FROM eb_category where sort_id=120  limit 8");
-										$cb_count=$db->record_count;
-										for($i=0;$i<$cb_count;$i++){
+										$cb=array("128"=>"脐带","129"=>"头部","130"=>"五官","131"=>"生殖器","132"=>"换尿布","133"=>"抱宝宝","134"=>"打襁褓","135"=>"剪指甲");
+										$i=0;
+										foreach ($cb as $k=>$v){
 									 ?>
 									<div class="sbb_t_a" style="<?php if($i!=3){if($i!=7){ echo 'border-right:1px solid #EEDECF;'; }} ?>">
-										<a href="#" title="<?php echo $cb[$i]->name; ?>"><?php echo $cb[$i]->name; ?></a>
+										<a href="#" title="<?php echo $cb[$i]->name; ?>">
+											<?php echo $v; ?>
+										</a>
 									</div>
-									<?php } ?>
+									<?php $i++;} ?>
 								</div>
 								<div class="sb_content">
 										<?php 
-										$caa=$db->query("SELECT id,title,short_title,description,content FROM eb_news e where category_id in (SELECT id FROM eb_category e where parent_id=120 order by created_at desc) limit 3;");
+										$caa=$db->query("SELECT id,title,short_title,description,content FROM eb_news e where category_id in (128,129,130,131,132,133,134,135) order by created_at desc limit 3;");
 										for($j=0;$j<3;$j++){ ?>
 										<div class="sb_ctt"><a href="" title="<?php echo $caa[$j]->title; ?>"><?php echo $caa[$j]->title; ?></a></div>
 										<?php }?>
@@ -398,16 +403,16 @@
 							<div class="sblct_r">
 								<div class="sb_title">
 									<?php
-									$cb=$db->query("SELECT name,id FROM eb_category where sort_id=121  limit 4");
-									$cb_count=$db->record_count;
-									for($i=0;$i<$cb_count;$i++){
+									$cb=array("136"=>"游戏","137"=>"抚摸","138"=>"训练","139"=>"对话");
+									$i=0;
+									foreach ($cb as $k=>$v){
 									 ?>
-									<div class="sbr_t_a" style="<?php if($i!=3){ echo 'border-right:1px solid #EEDECF;';} ?>"><a href="" title="<?php echo $cb[$i]->name; ?>"><?php echo $cb[$i]->name; ?></a></div>
-									<?php }?>
+									<div class="sbr_t_a" style="<?php if($i!=3){ echo 'border-right:1px solid #EEDECF;';} ?>"><a href="" title="<?php echo $v; ?>"><?php echo $v; ?></a></div>
+									<?php $i++; }?>
 								</div>
 								<div class="sb_content">
 									<?php 
-										$caa=$db->query("SELECT id,title,short_title,description,content FROM eb_news e where category_id in (SELECT id FROM eb_category e where parent_id=121 order by created_at desc) limit 3;");
+										$caa=$db->query("SELECT id,title,short_title,description,content FROM eb_news e where category_id in (136,137,138,139) order by created_at desc limit 3;");
 										for($j=0;$j<3;$j++){ ?>
 										<div class="sb_ctt"><a href="" title="<?php echo $caa[$j]->title; ?>"><?php echo $caa[$j]->title; ?></a></div>
 									<?php }?>
