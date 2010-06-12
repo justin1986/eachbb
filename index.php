@@ -5,6 +5,7 @@
 <html>
 <head>
 <title>网趣宝贝</title>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <link href="./css/index.css" rel="stylesheet" type="text/css" />
 </head>
 <body>

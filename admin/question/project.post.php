@@ -35,7 +35,7 @@
 			}
 			$project->photo_url = "/upload/images/" .$img;
 		}
-		$project->update_attributes($_POST['post'],false);
+		$project->update_attributes($_POST['post']);
 		/*
 		if($_POST['start_time']==""){
 			$project->start_time = "00-00-00";
@@ -65,7 +65,6 @@
 				}
 			}
 		}
-		$project->save();
 		
 		redirect('project_list.php');
 	}

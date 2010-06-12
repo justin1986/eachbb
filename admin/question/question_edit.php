@@ -23,6 +23,7 @@
 		css_include_tag('admin');
 		use_jquery();
 		validate_form("question_add");
+		js_include_tag('admin/question/question_edit');
 	?>
 </head>
 <body>
@@ -35,34 +36,21 @@
  	<table cellspacing="1" align="center">
 		<tr class=tr4>
 			<td align="center" width="15%">标题</td>
-			<td width="85%" align="left"><input type="text" name="question[title]" value="<?php echo $question->title;?>" class="required"></td>
+			<td width="85%" align="left">
+				<input type="text" name="question[title]" value="<?php echo $question->title;?>" class="required">
+				<img src="/images/admin/btn_add.png" style="cursor:pointer;" id="add_question_item" />
+			</td>
 		</tr>
 		<?php 
 		!$records && $records = array();
-		foreach($records as $item){?>
-		<tr class="tr4" >
-			<td align="center">选项-分值</td>
-			<td align="left">
-			<input type="text" name="old_item[]" value="<?php echo $item->name;?>">
-			<input type="text" name="old_value[]" value="<?php echo $item->attribute;?>">
-			<input type="hidden" name="item_id[]" value="<?php echo $item->id;?>">
-			<a class="old_item" name="<?php echo $item->id;?>" style="cursor:pointer;">删除</a>
-		　	</td>
-		</tr>
-		<?php }?>
-		<tr class="tr4" >
-			<td align="center">选项-分值</td>
-			<td align="left">
-			<input type="text" name="item[]">
-			<input type="text" name="value[]">
-			<button type="button"  id="add_item">继续添加</button>
-		　	</td>
-		</tr>
+		foreach($records as $question_item){
+			include '_question_item.php';
+		}?>
 		<tr class=btools>
 			<td colspan="2">
 				<input id="submit" type="submit" value="发布题目">
-				<input type="hidden" name="id" value="<?php echo $id;?>">
-				<input type="hidden" name="pid" value="<?php echo $pid;?>">
+				<input type="hidden" id="hidden_questioin_id" name="id" value="<?php echo $id;?>">
+				<input type="hidden" id="hidden_pid" name="pid" value="<?php echo $pid;?>">
 			</td>
 		</tr>	
 	</table>
@@ -70,23 +58,3 @@
 </form>
 </body>
 </html>
-
-<script>
-	$(function(){
-		var flag = false;
-		
-		$("#add_item").click(function(){
-			$(".btools").before('<tr class="tr4" ><td align="center">选项-分值</td><td><input type="text" name="item[]"><input type="text" name="value[]"><a class="del_item" style="cursor:pointer;">删除</a></td></tr>');
-		});
-
-		$(".del_item").live('click',function(){
-			$(this).parent().parent().remove();
-		});
-		
-		
-		$(".old_item").click(function(){
-			$.post("question.post.php",{'del_id':$(this).attr('name'),'post_type':'del_item'})
-			$(this).parent().parent().remove();
-		});
-	});	
-</script>
