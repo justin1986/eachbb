@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 	session_start();
 	include_once('../../frame.php');
 	judge_role();
@@ -43,7 +43,7 @@
 		</select>
 		<input type="button" value="搜索" id="search_button">
 </div>
-<div id=itable>
+<div id=itable> 
 	<table cellspacing="1" align="center">
 		<tr class=itable_title>
 			<td width="50%">测评名称</td><td width="20%">创建时间</td><td width="30%">操作</td>
