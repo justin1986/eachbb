@@ -145,7 +145,7 @@ body{width:1000px; margin: 0 auto;  background:url(../images/index/img_pg.jpg) r
 #m_more{width:48px; height:10px; border:0px solid red; margin-top:10px; margin-right:5px; z-index:100; float:right; display:inline;}
 #m_l_a{width:187px; height:158px; margin-left:23px; margin-top:20px; float:left; display:inline;}
 #m_l_pic{width:170px; height:115px; margin-left:7px; margin-top:7px; float:left; display:inline;}
-#m_l_pic img{width:170px; height:115px;}
+#m_l_pic img{width:170px; height:115px; border:0px solid red;}
 #m_l_title{width:155px; height:25px; margin-left:28px; margin-top:4px; line-height:25px;  overflow:hidden; float:left; display:inline;}
 #m_l_title a{font-family:����; font-size:16px; color:#333333; font-weight:bold; text-decoration:none;}
 #m_l_b{width:220px; height:175px; float:left; display:inline;}

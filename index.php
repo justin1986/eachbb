@@ -256,7 +256,9 @@
 					$news_m_count=$db->record_count;
 					?>
 					<div id="m_l_a">
-						<div id="m_l_pic"><img src="<?php echo $news_m[0]->video_photo_src; ?>"></div>
+						<div id="m_l_pic">
+							<a href="<?php get_news_url($news_m[0]); ?>"><img src="<?php echo $news_m[0]->video_photo_src; ?>"></a>
+						</div>
 						<div id="m_l_title"><a href="<?php get_news_url($news_m[0]);?>" title="<?php echo $news_m[0]->title; ?>"><?php echo $news_m[0]->title; ?></a></div>
 					</div>
 					<div id="m_l_b">
