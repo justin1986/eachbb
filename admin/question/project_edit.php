@@ -2,9 +2,15 @@
 	session_start();
 	require_once('../../frame.php');
 	judge_role();
-	$id = $_REQUEST['id'];
+	$id = intval($_GET['id']);
 	$project = new table_class('eb_problem');
-	$project->find($id);
+	if($id){
+		$project->find($id);
+		$result = new table_class('eb_problem_result');
+		$result = $result->find_by_problem_id($project->id);
+		$results = $result ? $result : array();	
+	}
+	
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -15,7 +21,7 @@
 	<?php
 		css_include_tag('admin','jquery_ui');
 		use_jquery_ui();
-		js_include_tag('../ckeditor/ckeditor.js');
+		js_include_tag('../ckeditor/ckeditor.js','admin/question/project_edit');
 		validate_form("project_edit");
 	?>
 </head>
@@ -27,7 +33,7 @@
 <form id="project_edit" action="project.post.php" enctype="multipart/form-data" method="post">
 <div id=itable>
  	<table cellspacing="1" align="center">
-		<tr class=tr4>
+		<tr class="tr4">
 			<td align="center" width="15%">标题：</td>
 			<td width="85%" align="left"><input type="text" name="post[name]" value="<?php echo $project->name;?>" class="required"></td>
 		</tr> 
@@ -35,6 +41,16 @@
 			<td align="center" width="100">封面图片</td>
 			<td align="left"><input name="image" id="image" type="file"><?php if($project->photo_url){?><a href="<?php echo $project->photo_url;?>" target="_blank">点击查看</a><?php }?></td>
 		</tr>
+		<tr class="tr4" id="result_tool">
+			<td align="center" width="100">结果报表</td>
+			<td align="left"><img id="img_add_result" src="/images/admin/btn_add.png" title="添加" style="cursor:pointer;" /></td>
+		</tr>
+		<?php 
+			!$results && $results = array();
+			foreach ($results as $result){
+				include '_problem_result.php';
+			}
+		?>
 		<tr class=tr4>
 			<td align="center">介绍：</td>
 			<td align="left"><?php show_fckeditor('post[description]','Admin',false,"120",$project->description);?></td>
@@ -82,23 +98,8 @@
 			<td colspan="2"><input id="submit" type="submit" value="发布测评"></td>
 		</tr>
 	</table>
-	<input type="hidden" name="id"  value="<?php echo $id;?>">
+	<input type="hidden" name="id" id="project_id"  value="<?php echo $id;?>">
 </div>
 </form>
 </body>
 </html>
-
-<script>
-/* 
-	$(".date_jquery").datepicker(
-		{
-			monthNames:['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'],
-			dayNames:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
-			dayNamesMin:["日","一","二","三","四","五","六"],
-			dayNamesShort:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
-			dateFormat: 'yy-mm-dd'
-		}
-	);
-	*/
-	//日历框函数
-</script>
