@@ -1,4 +1,4 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <?php
 	include_once('./frame.php');
 ?>
@@ -85,12 +85,16 @@
 		<div id="test">
 			<div id="test_left">
 				<div id="t_l_pg">
+				<?php 
+				$db=get_db();
+				$pro=$db->query("SELECT id,name,photo_url,description FROM eb_problem e where is_adopt=1 order by create_time desc limit 1");
+				?>
 					<div id="t_content_left">
 						<div id="pic_top">请输入宝宝的出生日期:</div>
 						<div id="pic_bottom"><a href="#">
 							<img id="pic_left">
 							</a>
-							<div id="pic_right">
+							<div id="pic_right" style="background:url(<?php echo $pro[0]->photo_url?>);">
 								<div id="pic_word">怀孕期测试</div>
 							</div>
 						</div>
@@ -105,15 +109,24 @@
 								<select id="select_c" name="select">
 								</select>
 							</div>
-							<div id="select_title">发生的反对撒地方</div>
+							<div id="select_title" title="<?php echo $pro[0]->name?>"><a href="<?php get_test_url($pro[0])?>"><?php echo $pro[0]->name?></a></div>
 						</div>
 						<a href="#">
 						<img id="initial"/>
 						</a>
-						<div id="select_word">使对方是否打使对方是否打算封杀可男可女使对方是否打算封杀可男可女使对方是否使对方是否打使对方是否打算封杀可男可女使对方是否打算封杀可男可女使对方是否打算封杀可男可女算<a href="#">
-							<img id="select_more" />
-							</a></div>
-						<div id="t_content_right"> <a href="#">
+						<div id="select_word" title="<?php echo strip_tags($pro[0]->description)  ?>">
+								<div id="st_t">
+								<a href="<?php get_test_url($pro[0])?>">
+									<?php echo strip_tags($pro[0]->description) ?>
+								</a>
+								</div>
+								<div id="st_b">
+								<a href="#">
+								<img id="select_more" />
+								</a>
+								</div>
+						</div>
+						<div id="t_content_right" > <a href="#">
 							<img id="initial_img" src="/images/index/l_r.png" />
 							</a> </div>
 					</div>
@@ -274,8 +287,7 @@
 							<div class="son_c_z_l"></div>
 							<div class="son_c_z_r"><a href="<?php get_news_url($news[j]) ?>" title="<?php echo $news[$j]->short_title;?>"><?php echo $news[$j]->short_title;?></a></div>
 						</div>
-						<?php
-						}?>
+						<?php }?>
 					</div>
 				</div>
 				<div id="m_r_b"></div>
