@@ -65,7 +65,7 @@
 						<?php
 							$teact=$db->query("select id,title,img_url,description from eb_teach where is_adopt=1 and del_flag=0 order by priority,create_time desc limit 8");
 							 for($i=0;$i<4;$i++){?>
-							<div class="student_aa"><a href="#" title="<?php echo $teact[$i]->title?>"><?php echo $teact[$i]->title?></a></div>
+							<div class="student_aa"><a href="<?php get_teach_url($teact[$i])?>" title="<?php echo $teact[$i]->title?>"><?php echo $teact[$i]->title?></a></div>
 						<?php }?>
 					</div>
 				</div>
@@ -174,25 +174,26 @@
 					<img id="dict_more"  src="/images/index/more.gif" style="margin-top:20px;"/>
 					</a> 
 				</div>
-				<?php for($i=1;$i<4;$i++){
+				<?php 
+				for($i=1;$i<4;$i++){
 				$teact=$db->query("select id,title,img_url,description from eb_teach where is_adopt=1 and del_flag=0 and age=".$i." order by create_time,priority desc limit 13");
 				$teact_count=$db->record_count;
 				?>
 				<div id="old" style="<?php if(1==$i){ echo 'display:inline;';}else{ echo 'display:none;';} ?>">
 				<div class="student_c">
-					<div class="s_pic_l"><img src="<?php echo $teact[0]->img_url;?>"></div>
+					<div class="s_pic_l"><a href="<?php get_teach_url($teact[0]);?>"><img src="<?php echo $teact[0]->img_url;?>"></a></div>
 					<div class="s_pic_r">
-						<div class="s_word_top"><a href="<?php get_teach_url($teach[0]) ?>" title="<?php echo $teact[0]->title?>"><?php echo $teact[0]->title?></a></div>
-						<div class="s_word_cotent"><a href="<?php get_teach_url($teach[0]) ?>" title="<?php echo strip_tags($teact[0]->description) ?>"><?php echo strip_tags($teact[0]->description) ?></a></div>
+						<div class="s_word_top"><a href="<?php get_teach_url($teact[0]);?>" title="<?php echo $teact[0]->title?>"><?php echo $teact[0]->title?></a></div>
+						<div class="s_word_cotent"><a href="<?php get_teach_url($teact[0]);?>" title="<?php echo strip_tags($teact[0]->description) ?>"><?php echo strip_tags($teact[0]->description) ?></a></div>
 					</div>
 				</div>
 				<div class="stuent_d">
 					<div class="word_z">
-						<?php for($x=1;$x<=12;$x++){?>
+						<?php for($k=1;$k<=12;$k++){?>
 						
 						<div class="s_a">
 							<div class="s_dian"></div>
-							<div class="s_value"><a href="<?php get_teach_url($teach[$x]) ?>" title="<?php echo $teact[$x]->title; ?>"><?php echo $teact[$x]->title; ?></a></div>
+							<div class="s_value"><a href="<?php get_teach_url($teact[$k]);?>" title="<?php echo $teact[$k]->title; ?>"><?php echo $teact[$k]->title; ?></a></div>
 						</div>
 						<?php }?>
 					</div>
@@ -251,23 +252,23 @@
 					</a> </div>
 				<div id="m_l_c">
 					<?php
-					$mdb=$db->query(" SELECT id,title,short_title,description,video_photo_src,content FROM eb_news e where category_id=157 and is_adopt=1 order by created_at desc limit 9;");
-					$mdb_count=$db->record_count;
+					$news_m=$db->query(" SELECT id,title,short_title,description,video_photo_src,content FROM eb_news e where category_id=157 and is_adopt=1 order by created_at desc limit 9;");
+					$news_m_count=$db->record_count;
 					?>
 					<div id="m_l_a">
-						<div id="m_l_pic"><img src="<?php echo $mdb[0]->video_photo_src; ?>"></div>
-						<div id="m_l_title"><a href="#" title="<?php echo $mdb[0]->title; ?>"><?php echo $mdb[0]->title; ?></a></div>
+						<div id="m_l_pic"><img src="<?php echo $news_m[0]->video_photo_src; ?>"></div>
+						<div id="m_l_title"><a href="<?php get_news_url($news_m[0])?>" title="<?php echo $news_m[0]->title; ?>"><?php echo $news_m[0]->title; ?></a></div>
 					</div>
 					<div id="m_l_b">
-						<div id="m_c_title"><a href="#" title="<?php echo $mdb[0]->title; ?>"><?php echo $mdb[0]->title; ?></a></div>
-						<div id="m_c_content"><?php echo strip_tags($mdb[0]->content); ?></div>
-						<div id="m_c_bottom"><a href="#">查看详细内容&gt;&gt;</a></div>
+						<div id="m_c_title"><a href="<?php get_news_url($news_m[0])?>" title="<?php echo $news_m[0]->title; ?>"><?php echo $news_m[0]->title; ?></a></div>
+						<div id="m_c_content"><a href="<?php get_news_url($news_m[0])?>"><?php echo strip_tags($news_m[0]->content); ?></a></div>
+						<div id="m_c_bottom"><a href="<?php get_news_url($news_m[0])?>">查看详细内容&gt;&gt;</a></div>
 					</div>
 					<div id="m_l_c_r"> 
 						<?php 
 							for($i=1;$i<8;$i++){ ?>
 						<div class="mlc">
-							<a href="" title="<?php echo $mdb[$i]->short_title;?>"><?php echo $mdb[$i]->short_title;?></a>
+							<a href="<?php get_news_url($news_m[$i])?>" title="<?php echo $news_m[$i]->short_title;?>"><?php echo $news_m[$i]->short_title;?></a>
 						</div>
 						<?php } ?>
 					</div>
@@ -288,7 +289,7 @@
 						 ?>
 						<div class="son_c_z">
 							<div class="son_c_z_l"></div>
-							<div class="son_c_z_r"><a href="<?php get_news_url($news[j]) ?>" title="<?php echo $news[$j]->short_title;?>"><?php echo $news[$j]->short_title;?></a></div>
+							<div class="son_c_z_r"><a href="<?php get_news_url($news[$j]);?>" title="<?php echo $news[$j]->short_title;?>"><?php echo $news[$j]->short_title;?></a></div>
 						</div>
 						<?php }?>
 					</div>
@@ -341,27 +342,29 @@
 					<div id="sblc_t">
 						<div id="sblct_a">
 							<div class="sblct_l">
-								<div class="sblct_t"><a href="#">更多</a></div>
+								<div class="sblct_t"><a href="<?php get_news_url()?>">更多</a></div>
 								<div class="sblct_bb"></div>
 							</div>
 							<div class="sblct_r">
 								<div class="sb_title">
 									<?php
-									$ca=array("120"=>"母乳喂养","121"=>"人工喂养","122"=>"混合喂养","123"=>"母乳准备","124"=>"母乳技巧","125"=>"吐奶溢奶");
+									$category=array("120"=>"母乳喂养","121"=>"人工喂养","122"=>"混合喂养","123"=>"母乳准备","124"=>"母乳技巧","125"=>"吐奶溢奶");
 									for($i=120;$i<126;$i++){ ?>
 									<div class="sb_t_content" style="<?php if($i!==122){ if($i!==125){ echo 'border-right:1px solid #EEDECF';}} ?>">
-										<a href="<?php get_news_url($ca[i])?>" title="<?php echo $ca[$i]->name; ?>">
-											<?php echo $ca[$i]; ?>
+										<a href="<?php get_news_url($category[$i]);?>" title="<?php echo $category[$i]->name;?>">
+											<?php echo $category[$i]; ?>
 										</a>
 									</div>
 									<?php }?>
 								</div>
 								<div class="sb_content">
-									<?php 
-									$caa=$db->query("SELECT id,title,short_title,description,content FROM eb_news e where category_id in (SELECT id FROM eb_category e where parent_id=119 order by created_at desc) limit 3;");
+									<?php
+									$category=array_keys($category);
+									$category_id=implode(',',$category);
+									$category=$db->query("SELECT id,title,short_title,description,content FROM eb_news e where category_id in (".$category_id.") order by created_at desc limit 3;");
 									for($j=0;$j<3;$j++){ ?>
-									<div class="sb_ctt"><a href="" title="<?php echo $caa[$j]->title; ?>"><?php echo $caa[$j]->title; ?></a></div>
-									<?php }?>
+									<div class="sb_ctt"><a href="<?php get_news_url($category[$j]);?>" title="<?php echo $category[$j]->title;?>"><?php echo $category[$j]->title; ?></a></div>
+									<?php  }?>
 								</div>
 							</div>
 						</div>
@@ -373,12 +376,12 @@
 							<div class="sblct_r">
 								<div class="sb_title">
 									<?php 
-										$cb=array("128"=>"脐带","129"=>"头部","130"=>"五官","131"=>"生殖器","132"=>"换尿布","133"=>"抱宝宝","134"=>"打襁褓","135"=>"剪指甲");
-										$i=0;
-										foreach ($cb as $k=>$v){
-									 ?>
-									<div class="sbb_t_a" style="<?php if($i!=3){if($i!=7){ echo 'border-right:1px solid #EEDECF;'; }} ?>">
-										<a href="#" title="<?php echo $cb[$i]->name; ?>">
+										$category=array("128"=>"脐带","129"=>"头部","130"=>"五官","131"=>"生殖器","132"=>"换尿布","133"=>"抱宝宝","134"=>"打襁褓","135"=>"剪指甲");
+										$i=128;
+										foreach ($category as $k=>$v){
+										?>
+									<div class="sbb_t_a" style="<?php if($i!=131){if($i!=135){ echo 'border-right:1px solid #EEDECF;'; }} ?>">
+										<a href="<?php get_news_url($category[$i]); ?>" title="<?php echo $v; ?>">
 											<?php echo $v; ?>
 										</a>
 									</div>
@@ -386,9 +389,11 @@
 								</div>
 								<div class="sb_content">
 										<?php 
-										$caa=$db->query("SELECT id,title,short_title,description,content FROM eb_news e where category_id in (128,129,130,131,132,133,134,135) order by created_at desc limit 3;");
+										$category=array_keys($category);
+										$category_id=implode(',',$category);
+										$category=$db->query("SELECT id,title,short_title,description,content FROM eb_news e where category_id in (".$category_id.") order by created_at desc limit 3;");
 										for($j=0;$j<3;$j++){ ?>
-										<div class="sb_ctt"><a href="" title="<?php echo $caa[$j]->title; ?>"><?php echo $caa[$j]->title; ?></a></div>
+										<div class="sb_ctt"><a href="<?php get_news_url($category[$j]); ?>" title="<?php echo $category[$j]->title; ?>"><?php echo $category[$j]->title; ?></a></div>
 										<?php }?>
 								</div>
 							</div>
@@ -403,18 +408,20 @@
 							<div class="sblct_r">
 								<div class="sb_title">
 									<?php
-									$cb=array("136"=>"游戏","137"=>"抚摸","138"=>"训练","139"=>"对话");
-									$i=0;
-									foreach ($cb as $k=>$v){
+									$category=array("136"=>"游戏","137"=>"抚摸","138"=>"训练","139"=>"对话");
+									$i=136;
+									foreach ($category as $k=>$v){
 									 ?>
-									<div class="sbr_t_a" style="<?php if($i!=3){ echo 'border-right:1px solid #EEDECF;';} ?>"><a href="" title="<?php echo $v; ?>"><?php echo $v; ?></a></div>
+									<div class="sbr_t_a" style="<?php if($i!=139){ echo 'border-right:1px solid #EEDECF;';} ?>"><a href="<?php get_news_url($category[$i]);?>" title="<?php echo $v; ?>"><?php echo $v; ?></a></div>
 									<?php $i++; }?>
 								</div>
 								<div class="sb_content">
 									<?php 
-										$caa=$db->query("SELECT id,title,short_title,description,content FROM eb_news e where category_id in (136,137,138,139) order by created_at desc limit 3;");
+										$category=array_keys($category);
+										$category_id=implode(',',$category);
+										$category=$db->query("SELECT id,title,short_title,description,content FROM eb_news e where category_id in (".$category_id.") order by created_at desc limit 3;");
 										for($j=0;$j<3;$j++){ ?>
-										<div class="sb_ctt"><a href="" title="<?php echo $caa[$j]->title; ?>"><?php echo $caa[$j]->title; ?></a></div>
+										<div class="sb_ctt"><a href="<?php get_news_url($category[$j]); ?>" title="<?php echo $category[$j]->title; ?>"><?php echo $category[$j]->title; ?></a></div>
 									<?php }?>
 								</div>
 							</div>
@@ -436,7 +443,7 @@
 							 ?>
 							<div class="son_c_z">
 								<div class="son_c_z_l"></div>
-								<div class="son_c_z_r"><a href="<?php get_news_url($news[$k]) ?>" title="<?php echo $news[$k]->short_title ?>"><?php echo $news[$k]->short_title ?></a></div>
+								<div class="son_c_z_r"><a href="<?php get_news_url($news[$k]);?>" title="<?php echo $news[$k]->short_title ?>"><?php echo $news[$k]->short_title ?></a></div>
 							</div>
 							<?php } ?>
 						</div>
