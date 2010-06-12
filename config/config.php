@@ -99,4 +99,3 @@ define('UC_DBCONNECT', '0');
 define('UC_API', $site_domain .'/ucenter');
 define('UC_CHARSET', 'utf-8');
 define('UC_PPP', '20');
-define('UC_IP', '');

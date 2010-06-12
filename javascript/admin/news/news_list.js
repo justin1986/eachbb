@@ -29,7 +29,7 @@ $(function(){
 	});
 	$('.unpublish_news').click(function(e){
 		e.preventDefault();
-		$.post('/admin/news/newscp.php?operation=publish&news_id='+ $(this).attr('name'),function(data){
+		$.post('/admin/news/newscp.php?operation=unpublish&news_id='+ $(this).attr('name'),function(data){
 			location.reload();
 		});
 	});

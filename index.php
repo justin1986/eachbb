@@ -63,7 +63,7 @@
 						<?php
 							$teact=$db->query("select id,title,img_url,description from eb_teach where is_adopt=1 and del_flag=0 order by priority,create_time desc limit 8");
 							 for($i=0;$i<4;$i++){?>
-							<div class="student_aa"><a href="#"><?php echo $teact[$i]->title?></a></div>
+							<div class="student_aa"><a href="#" title="<?php echo $teact[$i]->title?>"><?php echo $teact[$i]->title?></a></div>
 						<?php }?>
 					</div>
 				</div>
@@ -87,8 +87,8 @@
 				<div id="t_l_pg">
 					<div id="t_content_left">
 						<div id="pic_top">请输入宝宝的出生日期:</div>
-						<div id="pic_bottom"> <a href="#">
-							<div id="pic_left"></div>
+						<div id="pic_bottom"><a href="#">
+							<img id="pic_left">
 							</a>
 							<div id="pic_right">
 								<div id="pic_word">怀孕期测试</div>
@@ -108,13 +108,13 @@
 							<div id="select_title">发生的反对撒地方</div>
 						</div>
 						<a href="#">
-						<div id="initial"></div>
+						<img id="initial"/>
 						</a>
 						<div id="select_word">使对方是否打使对方是否打算封杀可男可女使对方是否打算封杀可男可女使对方是否使对方是否打使对方是否打算封杀可男可女使对方是否打算封杀可男可女使对方是否打算封杀可男可女算<a href="#">
-							<div id="select_more"></div>
+							<img id="select_more" />
 							</a></div>
 						<div id="t_content_right"> <a href="#">
-							<div id="initial_img"></div>
+							<img id="initial_img" src="/images/index/l_r.png" />
 							</a> </div>
 					</div>
 				</div>
@@ -140,9 +140,9 @@
 					<div id="pwd_right"><a href="#">忘记密码</a></div>
 				</div>
 				<div id="login_user"> <a href="#">
-					<div id="login_l"></div>
+					<img id="login_l"/>
 					</a> <a href="#">
-					<div id="login_r"></div>
+					<img id="login_r"/>
 					</a> </div>
 			</div>
 		</div>
@@ -166,8 +166,8 @@
 				<div class="student_c">
 					<div class="s_pic_l"><img src="<?php echo $teact[0]->img_url;?>"></div>
 					<div class="s_pic_r">
-						<div class="s_word_top"><a href="<?php get_teach_url($teach[0]) ?>"><?php echo $teact[0]->title?></a></div>
-						<div class="s_word_cotent"><a href="<?php get_teach_url($teach[0]) ?>"><?php echo strip_tags($teact[0]->description) ?></a></div>
+						<div class="s_word_top"><a href="<?php get_teach_url($teach[0]) ?>" title="<?php echo $teact[0]->title?>"><?php echo $teact[0]->title?></a></div>
+						<div class="s_word_cotent"><a href="<?php get_teach_url($teach[0]) ?>" title="<?php echo strip_tags($teact[0]->description) ?>"><?php echo strip_tags($teact[0]->description) ?></a></div>
 					</div>
 				</div>
 				<div class="stuent_d">
@@ -176,7 +176,7 @@
 						
 						<div class="s_a">
 							<div class="s_dian"></div>
-							<div class="s_value"><a href="<?php get_teach_url($teach[$x]) ?>"><?php echo $teact[$x]->title; ?></a></div>
+							<div class="s_value"><a href="<?php get_teach_url($teach[$x]) ?>" title="<?php echo $teact[$x]->title; ?>"><?php echo $teact[$x]->title; ?></a></div>
 						</div>
 						<?php }?>
 					</div>
@@ -189,19 +189,19 @@
 				<div id="dict_a">
 					<div id="dict_title">咨询排行</div>
 					<a href="#">
-					<div id="dict_more"></div>
+					<img id="dict_more"/>
 					</a> </div>
-				<div id="dict_menu"> <a href="#">
-					<div id="d_m_a" style="background:url(images/index/r_pg_f.png) no-repeat;">幼教</div>
-					</a> <a href="#">
-					<div class="d_m_b">论坛</div>
-					</a> <a href="#">
-					<div class="d_m_b">博客</div>
-					</a> <a href="#">
-					<div class="d_m_b">咨询</div>
-					</a> <a href="#">
-					<div class="d_m_b">测评</div>
-					</a> </div>
+				<div id="dict_menu"> 
+					<div id="d_m_a" style="background:url(images/index/r_pg_f.png) no-repeat;"><a href="#">幼教</a></div>
+					
+					<div class="d_m_b"><a href="#">论坛</a> </div>
+					
+					<div class="d_m_b"><a href="#">博客</a> </div>
+					
+					<div class="d_m_b"><a href="#">咨询</a></div>
+					
+					<div class="d_m_b"><a href="#">测评</a></div>
+					 </div>
 				<div id="dict_b">
 					<div class="dict_number" style="width:22px; height:22px; background:url(images/index/red.png) no-repeat;">1</div>
 					<div class="dict_value">使得法国vsdva</div>
@@ -240,10 +240,10 @@
 					?>
 					<div id="m_l_a">
 						<div id="m_l_pic"><img src="<?php echo $mdb[0]->video_photo_src; ?>"></div>
-						<div id="m_l_title"><a herf="#"><?php echo $mdb[0]->title; ?></a></div>
+						<div id="m_l_title"><a href="#" title="<?php echo $mdb[0]->title; ?>"><?php echo $mdb[0]->title; ?></a></div>
 					</div>
 					<div id="m_l_b">
-						<div id="m_c_title"><a herf="#"><?php echo $mdb[0]->title; ?></a></div>
+						<div id="m_c_title"><a href="#" title="<?php echo $mdb[0]->title; ?>"><?php echo $mdb[0]->title; ?></a></div>
 						<div id="m_c_content"><?php echo strip_tags($mdb[0]->content); ?></div>
 						<div id="m_c_bottom"><a href="#">查看详细内容&gt;&gt;</a></div>
 					</div>
@@ -251,7 +251,7 @@
 						<?php 
 							for($i=1;$i<8;$i++){ ?>
 						<div class="mlc">
-							<a href=""><?php echo $mdb[$i]->short_title;?></a>
+							<a href="" title="<?php echo $mdb[$i]->short_title;?>"><?php echo $mdb[$i]->short_title;?></a>
 						</div>
 						<?php } ?>
 					</div>
@@ -272,7 +272,7 @@
 						 ?>
 						<div class="son_c_z">
 							<div class="son_c_z_l"></div>
-							<div class="son_c_z_r"><a href="<?php get_news_url($news[j]) ?>"><?php echo $news[$j]->short_title;?></a></div>
+							<div class="son_c_z_r"><a href="<?php get_news_url($news[j]) ?>" title="<?php echo $news[$j]->short_title;?>"><?php echo $news[$j]->short_title;?></a></div>
 						</div>
 						<?php
 						}?>
@@ -285,16 +285,16 @@
 			<div id="qin_left">
 				<div id="q_menu_l">
 					<div class="q_m_pg" style="border-bottom:1px solid #ffffff; background:url(images/w_pg_l.gif) no-repeat;"><a href="#">
-						<div id="q_m_a"></div>
+						<img id="q_m_a"/>
 						</a></div>
 					<div class="q_m_p" style="border-bottom:1px solid #ffffff; border-top:1px solid #8DD310;"><a href="#">
-						<div id="q_m_b"></div>
+						<img id="q_m_b"/>
 						</a></div>
 					<div class="q_m_p" style="border-bottom:1px solid #ffffff; border-top:1px solid #8DD310;"><a href="#">
-						<div id="q_m_c"></div>
+						<img id="q_m_c"/>
 						</a></div>
 					<div class="q_m_p" style="border-top:1px solid #8DD310;"><a href="#">
-						<div id="q_m_d"></div>
+						<img id="q_m_d"/>
 						</a></div>
 				</div>
 				<div id="q_menu_r">
@@ -335,10 +335,16 @@
 									$ca=$db->query("SELECT name,id FROM eb_category where sort_id=119 limit 6");
 									$ca_count=$db->record_count;
 									for($i=0;$i<$ca_count;$i++){ ?>
-									<div class="sb_t_content" style="<?php if($i!==2){ if($i!==5){ echo 'border-right:1px solid #EEDECF';}} ?>"><a herf="#"><?php echo $ca[$i]->name; ?></a></div>
-									<?php } ?>
+									<div class="sb_t_content" style="<?php if($i!==2){ if($i!==5){ echo 'border-right:1px solid #EEDECF';}} ?>"><a href="#" title="<?php echo $ca[$i]->name; ?>"><?php echo $ca[$i]->name; ?></a></div>
+									<?php }?>
 								</div>
-								<div class="sb_content">母乳喂养母乳喂养母乳喂养母乳喂养母乳喂养母乳喂养</div>
+								<div class="sb_content">
+									<?php 
+									$caa=$db->query("SELECT id,title,short_title,description,content FROM eb_news e where category_id in (SELECT id FROM eb_category e where parent_id=119 order by created_at desc) limit 3;");
+									for($j=0;$j<3;$j++){ ?>
+									<div class="sb_ctt"><a href="" title="<?php echo $caa[$j]->title; ?>"><?php echo $caa[$j]->title; ?></a></div>
+									<?php }?>
+								</div>
 							</div>
 						</div>
 						<div id="sblct_b">
@@ -354,11 +360,17 @@
 										for($i=0;$i<$cb_count;$i++){
 									 ?>
 									<div class="sbb_t_a" style="<?php if($i!=3){if($i!=7){ echo 'border-right:1px solid #EEDECF;'; }} ?>">
-										<a hef="#"><?php echo $cb[$i]->name; ?></a>
+										<a href="#" title="<?php echo $cb[$i]->name; ?>"><?php echo $cb[$i]->name; ?></a>
 									</div>
 									<?php } ?>
 								</div>
-								<div class="sb_content">母乳喂养母乳喂养母乳喂养母乳喂养母乳喂养母乳喂养</div>
+								<div class="sb_content">
+										<?php 
+										$caa=$db->query("SELECT id,title,short_title,description,content FROM eb_news e where category_id in (SELECT id FROM eb_category e where parent_id=120 order by created_at desc) limit 3;");
+										for($j=0;$j<3;$j++){ ?>
+										<div class="sb_ctt"><a href="" title="<?php echo $caa[$j]->title; ?>"><?php echo $caa[$j]->title; ?></a></div>
+										<?php }?>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -375,10 +387,16 @@
 									$cb_count=$db->record_count;
 									for($i=0;$i<$cb_count;$i++){
 									 ?>
-									<div class="sbr_t_a" style="<?php if($i!=3){ echo 'border-right:1px solid #EEDECF;';} ?>"><a herf=""><?php echo $cb[$i]->name; ?></a></div>
-									<?php } ?>
+									<div class="sbr_t_a" style="<?php if($i!=3){ echo 'border-right:1px solid #EEDECF;';} ?>"><a href="" title="<?php echo $cb[$i]->name; ?>"><?php echo $cb[$i]->name; ?></a></div>
+									<?php }?>
 								</div>
-								<div class="sb_content">母乳喂养母乳喂养母乳喂养母乳喂养母乳喂养母乳喂养</div>
+								<div class="sb_content">
+									<?php 
+										$caa=$db->query("SELECT id,title,short_title,description,content FROM eb_news e where category_id in (SELECT id FROM eb_category e where parent_id=121 order by created_at desc) limit 3;");
+										for($j=0;$j<3;$j++){ ?>
+										<div class="sb_ctt"><a href="" title="<?php echo $caa[$j]->title; ?>"><?php echo $caa[$j]->title; ?></a></div>
+									<?php }?>
+								</div>
 							</div>
 						</div>
 						<div id="sblcb_d"></div>
@@ -398,7 +416,7 @@
 							 ?>
 							<div class="son_c_z">
 								<div class="son_c_z_l"></div>
-								<div class="son_c_z_r"><a href="<?php get_news_url($news[$k]) ?>"><?php echo $news[$k]->short_title ?></a></div>
+								<div class="son_c_z_r"><a href="<?php get_news_url($news[$k]) ?>" title="<?php echo $news[$k]->short_title ?>"><?php echo $news[$k]->short_title ?></a></div>
 							</div>
 							<?php } ?>
 						</div>
@@ -416,7 +434,7 @@
 					$imgdb_count=$db->record_count;
 					for($k=0;$k<$imgdb_count;$k++){
 				 ?>
-				<div class="picc_a"><a href="#"><img src="<?php echo  $imgdb[$k]->src; ?>"></a></div>
+				<div class="picc_a"><a href="#" title="<?php echo  $imgdb[$k]->src; ?>"><img src="<?php echo  $imgdb[$k]->src; ?>"></a></div>
 				<?php } ?>
 			</div>
 		</div>
