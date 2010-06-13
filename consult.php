@@ -1,4 +1,4 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html>
 <head>
 <title>consult</title>
@@ -17,37 +17,21 @@
 				<div id="menu_ct">
 					<div id="menu_ctt">
 						<input type="button" class="t_first" value="网站首页">
-						<a href="#">
-						<div class="me_a">特色测评</div>
-						</a>
+						<div class="me_a"><a href="#">特色测评</a></div>
 						<div class="me_h"></div>
-						<a href="#">
-						<div class="me_b">早教课程</div>
-						</a>
+						<div class="me_b"><a href="#">早教课程</a></div>
 						<div class="me_h"></div>
-						<a href="#">
-						<div class="me_b">妈妈助手</div>
-						</a>
+						<div class="me_b"><a href="#">妈妈助手</a></div>
 						<div class="me_h"></div>
-						<a href="#">
-						<div class="me_b">我家小院子</div>
-						</a>
+						<div class="me_b"><a href="#">我家小院子</a></div>
 						<div class="me_h"></div>
-						<a href="#">
-						<div class="me_b">我的宝宝</div>
-						</a>
+						<div class="me_b"><a href="#">我的宝宝</a></div>
 						<div class="me_h"></div>
-						<a href="#">
-						<div class="me_b">亲子论坛</div>
-						</a>
+						<div class="me_b"><a href="#">亲子论坛</a></div>
 						<div class="me_h"></div>
-						<a href="#">
-						<div class="me_b" style="background:url(images/bbs/mo_pg.jpg) no-repeat;"><font class="son">育儿</font><font class="bbs">咨讯</font></div>
-						</a>
+						<div class="me_b" style="background:url(images/bbs/mo_pg.jpg) no-repeat;"><a href="#"><font class="son">育儿</font><font class="bbs">咨讯</font></a></div>
 						<div class="me_h"></div>
-						<a href="#">
-						<div class="me_b" style="width:85px;">关于网趣宝宝</div>
-						</a>
+						<div class="me_b" style="width:85px;"><a href="#">关于网趣宝宝</a></div>
 						<div class="welcom">欢迎,<font>123</font></div>
 						<div class="exit"><a href="#" style="color:#000;">退出</a></div>
 						<div class="info">消息<a href="#" style="color:#FE843A">(1)</a></div>
@@ -93,7 +77,7 @@
 					<div id="blar_t"> <a href="#">
 						<div id="pg_f">今日热点</div>
 						</a>
-						<div id="blar_tit">准妈妈请远离这四类饮料</div>
+						<div id="blar_tit"><a href="#">准妈妈请远离这四类饮料</a></div>
 					</div>
 					<div id="blart_c">准妈妈请远离这四类饮料准妈妈请远离这四类饮料准妈妈请远离这四类饮料准妈妈请远离这四类饮料准妈妈请远离这四类饮料准妈妈请远离这四类饮料准妈妈请远离这四类饮料</div>
 					<div id="bla_hr"></div>

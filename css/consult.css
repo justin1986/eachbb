@@ -1,4 +1,4 @@
-﻿body{width:970px; margin: 0 auto; font-family:宋体;}
+body{width:970px; margin: 0 auto; font-family:宋体;}
 
 #ibody{width:970px; overflow:hidden; margin:0;}
 
@@ -74,7 +74,8 @@
 #blar_t{width:314px; height:20px; float:left; display:inline;}
 #pg_f{width:56px; height:14px; margin-top:3px; text-align:center; color:#ffffff; font-size:11px; line-height:14px; background:url(../images/bbs/pg_f.gif) no-repeat; float:left; display:inline;}
 #blar_t a{color:#ffffff; text-decoration:none;}
-#blar_tit{width:240px; height:20px; margin-left:10px; color:#333333; font-size:14px; font-weight:600; line-height:20px; float:left; display:inline;}
+#blar_tit{width:240px; height:20px; margin-left:10px; line-height:20px; float:left; display:inline;}
+#blar_tit a{color:#333333; font-size:14px; font-weight:600; text-decoration:none;}
 #blart_c{width:314px; height:40px; margin-top:10px; color:#444444; text-indent:30px; font-size:12px; line-height:20px; overflow:hidden; float:left; display:inline;}
 #bla_hr{width:314px; height:1px; margin-top:8px; font-size:0px; line-height:0px; background:url(../images/bbs/la_hr.jpg) repeat-x;  float:left; display:inline;}
 .bla_con{width:305px; height:20px; margin-left:6px; margin-top:1px; line-height:20px; font-size:12px; float:left; display:inline;}
@@ -91,10 +92,10 @@
 #bltc_hr{width:646px; height:1px; margin-top:-1px;  background:url(../images/consult/hr.jpg) repeat-x; font-size:0px; line-height:0px; float:left; display:inline;}
 .trade_z{width:644px; height:103px; margin-top:14px; float:left; display:inline;}
 .trade_l{width:194px; height:103px; background:url(../images/consult/l_pg.jpg) no-repeat; float:left; display:inline;}
-.tl_l{width:74px; height:103px;  overflow:hidden; float:left; display;Inline;}
+.tl_l{width:77px; height:103px;  overflow:hidden; float:left; display;Inline;}
 .tll_a{width:72px; height:18px; margin-top:25px; border:0px solid red; font-weight:600; line-height:18px; text-align:center; font-size:16px; color:#FF9900; text-decoration:none; float:right; display:inline;}
 .tll_b{width:40px; height:14px; margin-top:46px; margin-left:25px; float:left; display:inline;}
-.tll_b a{font-size:12px; color:#FF9900; text-decoration:none;}
+.tll_b a{font-size:11px; color:#FF9900; text-decoration:none;}
 .tl_r{width:105px; height:75px; margin-top:12px; margin-right:11px; float:right; display:inline;}
 .tl_r img{width:105px; height:75px; border:0px solid red;}
 .trade_c{width:210px; height:103px; margin-left:13px; float:left; display:inline;}
