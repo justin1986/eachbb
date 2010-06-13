@@ -28,11 +28,16 @@
 	<?php
 		css_include_tag('admin');
 		use_jquery();
+		js_include_tag('admin/question/question_list');
 	?>
 </head>
+<style type="text/css">
+	#tabs {font-size:20px;}
+	#tabs span{float:left;margin-left:10px;}
+</style>
 <body>
 <div id=icaption>
-    <div id=title>测试名：<?php echo $project_name?></div>
+    <div id=title>测评名：<?php echo $project_name?></div>
 	<a href="question_edit.php?pid=<?php echo $project_id;?>" id=btn_add></a>
 	<a href="project_list.php" id=btn_back></a>
 </div>
@@ -45,6 +50,13 @@
 		</select>
 		<input type="button" value="搜索" id="search_button">
 </div>
+<div id="tabs">
+	<span><a href="question_list.php?test_type='dadongzuo'">大动作</a></span>
+	<span><a href="question_list.php?test_type='dadongzuo'">惊喜动作</a></span>
+	<span><a href="question_list.php?test_type='dadongzuo'">语言</a></span>
+	<span><a href="question_list.php?test_type='dadongzuo'">认识</a></span>
+	<span><a href="question_list.php?test_type='dadongzuo'">社会活动和行为规范</a></span>
+</div>
 <div id=itable>
 	<table cellspacing="1" align="center">
 		<tr class=itable_title>
@@ -52,7 +64,7 @@
 		</tr>
 		<?php for($i=0;$i<$count;$i++){?>
 		<tr class="tr3" id="<?php echo $records[$i]->id;?>">
-			<td><?php echo $record[$i]->title;?></td>
+			<td><a href="<?php echo "/admin/question/_question_edit.php?problem_id={$record[$i]->problem_id}&question_id={$record[$i]->id}";?>" class="a_edit_question"><?php echo $record[$i]->title;?></a></td>
 			<td><?php echo substr($record[$i]->create_time,0,10);?></td>
 			<td>
 				<a href="question_edit.php?id=<?php echo $record[$i]->id;?>" title="编辑"><img src="/images/admin/btn_edit.png" border="0"></a>
@@ -67,8 +79,6 @@
 		</tr>
 	</table>
 </div>
-</body>
-</html>
 <script>
 	$(".del").click(function(){
 		if(!window.confirm("确定要删除吗"))
@@ -95,3 +105,5 @@
 		window.location.href = "?key="+encodeURI($("#key").val());
 	}
 </script>
+</body>
+</html>

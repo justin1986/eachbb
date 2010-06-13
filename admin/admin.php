@@ -12,7 +12,7 @@
 	<?php	
 		css_include_tag('admin','colorbox');
 		use_jquery();
-		js_include_tag('jquery.colorbox-min.js');
+		js_include_tag('jquery.colorbox-min.js','admin/question/question_edit');
   ?>
 </head>
 <body style="background:url(/images/admin/bg.jpg);">
