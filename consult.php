@@ -169,25 +169,16 @@
 			</div>
 			<div id="bl_d">
 				<?php
-				#$peo_new=$db->query("SELECT id,title,short_title,description,content,created_at,video_photo_src,last_edited_at FROM eb_news e  where is_adopt=1 and category_id=151;");
+				$peo_new=$db->query("SELECT id,title,author,video_photo_src,content FROM eb_news e where category_id =151 order by created_at desc limit 2;");
 				for($l=0;$l<2;$l++){?>
 				<div class="bld_z">
-					<div class="bld_t">
-						<div class="bt_l">5月5日 9:23 - 23:23</div>
-						<div class="bt_r">
-							<div><a href="#">进入咨询</a></div>
-							<img src="images/consult/l_j.jpg"></div>
-						 </div>
 					<div class="bld_c">
 						<div class="blc_l">
-							<div class="bll_t"> <a href="">江润丰</a><font>(儿童心理保健)</font> </div>
-							<div class="bll_c">斯蒂芬撒旦发射发声法反倒是防守对方</div>
-							<div class="bll_b">
-								<input type="button" class="btn_a" value="专家咨询">
-								<input type="button" class="btn_b" value="咨询实录">
-							</div>
+							<div class="bll_t"> <a href="<?php get_news_url($peo_new[$l])?>" title="<?php echo $peo_new[$l]->title;?>"><?php echo $peo_new[$l]->title;?></a><font><a href="<?php get_news_url($peo_new[$l])?>">(<?php echo $peo_new[$l]->author;?>)</a></font> </div>
+							<div class="blc_r"><a href="<?php get_news_url($peo_new[$l])?>"><img src="<?php echo $peo_new[$l]->video_photo_src;?>"></a></div>
+							<a href="<?php get_news_url($peo_new[$l])?>" id="peo" title="<?php echo strip_tags($peo_new[$l]->content);?>"><?php echo strip_tags($peo_new[$l]->content);?></a>
 						</div>
-						<div class="blc_r"><img src="images/consult/pg.jpg"></div>
+						
 					</div>
 				</div>
 				<?php }?>
