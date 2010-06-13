@@ -11,3 +11,7 @@ function get_news_url($news){
 function get_test_url($test){
 	echo '/test/test.php?id='.$test->id;
 }
+
+function get_news_list_url($category,$include_children= true){
+	echo '/news/news_list.php?category_id=' .$category->id;
+}

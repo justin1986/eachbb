@@ -351,6 +351,8 @@
 										$new_id=array_keys($news);
 										$news_id=implode(',',$new_id);
 										$news_s=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in (".$news_id.") order by created_at desc limit 1;");
+										
+										#$n=$db->query("SELECT id,name from eb_category where id in ($news_id)");
 									?>
 									<a href="<?php get_news_url($news_s[0]); ?>" title="<?php get_news_url($news_s[0]); ?>"><img src="<?php echo $news_s[0]->video_photo_src;?>"/></a>
 								</div>
@@ -358,10 +360,10 @@
 							<div class="sblct_r">
 								<div class="sb_title">
 									<?php
-									for($i=120;$i<126;$i++){ ?>
-									<div class="sb_t_content" style="<?php if($i!==122 && $i!==125){ echo 'border-right:1px solid #EEDECF';} ?>">
-										<a href="<?php get_news_url($news[$i]);?>" title="<?php echo $news[$i]->name;?>">
-											<?php echo $news[$i]; ?>
+									for($i=0;$i<6;$i++){ ?>
+									<div class="sb_t_content" style="<?php if($i!==2 && $i!==5){ echo 'border-right:1px solid #EEDECF';} ?>">
+										<a href="<?php get_news_url($n[$i]);?>" title="<?php echo $new_id[$i]->name;?>">
+											<?php echo $news[$new_id[$i]]; ?>
 										</a>
 									</div>
 									<?php }?>
@@ -381,21 +383,22 @@
 								<div class="sblct_bb">
 								<?php
 									$new=array("128"=>"脐带","129"=>"头部","130"=>"五官","131"=>"生殖器","132"=>"换尿布","133"=>"抱宝宝","134"=>"打襁褓","135"=>"剪指甲");
-									$news=array_keys($new);
-									$news_id=implode(',',$news);
+									$newsid=array_keys($new);
+									$news_id=implode(',',$newsid);
 									$news=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in ($news_id) order by created_at desc limit 1;");
+									$n=$db->query("SELECT id,name from eb_category where id in ($news_id)");
 								?>
 									<a href="<?php get_news_url($news[0]); ?>" title="<?php get_news_url($news[0]); ?>"><img src="<?php echo $news[0]->video_photo_src;?>"/></a>
 								</div>
 							</div>
 							<div class="sblct_r">
 								<div class="sb_title">
-									<?php 
-										$i=128;
+									<?php
+										$i=0;
 										foreach ($new as $k=>$v){
 										?>
-									<div class="sbb_t_a" style="<?php if($i!=131 && $i!=135){ echo 'border-right:1px solid #EEDECF;'; } ?>">
-										<a href="<?php get_news_url($news[$i]); ?>" title="<?php echo $v; ?>">
+									<div class="sbb_t_a" style="<?php if($i!=3 && $i!=7){ echo 'border-right:1px solid #EEDECF;'; } ?>">
+										<a href="<?php get_news_url($n[$i]); ?>" title="<?php echo $v; ?>">
 											<?php echo $v; ?>
 										</a>
 									</div>
@@ -403,7 +406,7 @@
 								</div>
 								<div class="sb_content">
 										<?php 
-										$news=$db->query("SELECT id,title,short_title,description,content FROM eb_news e where category_id in (".$news_id.") order by created_at desc limit 3;");
+										$news=$db->query("SELECT id,title,short_title,description,content FROM eb_news e where category_id in ($news_id) order by created_at desc limit 3;");
 										for($j=0;$j<3;$j++){ ?>
 										<div class="sb_ctt"><a href="<?php get_news_url($news[$j]); ?>" title="<?php echo $news[$j]->title; ?>"><?php echo $news[$j]->title; ?></a></div>
 										<?php }?>
@@ -420,6 +423,7 @@
 									$news_k=array_keys($news);
 									$news_id=implode(',',$news_k);
 									$new=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in (".$news_id.") order by created_at desc limit 1;");
+									$n=$db->query("SELECT id,name from eb_category where id in ($news_id)");
 								?>
 								<div class="sblct_bb">
 									<a href="<?php get_news_url($new[0]); ?>" title="<?php get_news_url($news[0]); ?>"><img src="<?php echo $new[0]->video_photo_src;?>"/></a>
@@ -428,10 +432,11 @@
 							<div class="sblct_r">
 								<div class="sb_title">
 									<?php
-									$i=136;
+									$i=0;
 									foreach ($news as $k=>$v){
 									 ?>
-									<div class="sbr_t_a" style="<?php if($i!=139){ echo 'border-right:1px solid #EEDECF;';} ?>"><a href="<?php get_news_url($news[$i]);?>" title="<?php echo $v; ?>"><?php echo $v; ?></a></div>
+									<div class="sbr_t_a" style="<?php if($i!=3){ echo 'border-right:1px solid #EEDECF;';} ?>">
+									<a href="<?php get_news_url($n[$i]);?>" title="<?php echo $v; ?>"><?php echo $v; ?></a></div>
 									<?php $i++; }?>
 								</div>
 								<div class="sb_content">
