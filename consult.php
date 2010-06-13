@@ -1,4 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<?php
+	include_once('./frame.php');
+?>
 <html>
 <head>
 <title>consult</title>
@@ -43,16 +46,16 @@
 						<div class="me_aa">网趣宝宝首页</div>
 						</a>
 						<div class="me_hh"></div>
-						<a href="#">
-						<div class="me_bb">用户测评报告</div>
-						</a>
+						
+						<div class="me_bb"><a href="#">用户测评报告</a></div>
+						
 						<div class="me_hh"></div>
-						<a href="#">
-						<div class="me_bb">用户课程订购</div>
-						</a>
+						
+						<div class="me_bb"><a href="#">用户课程订购</a></div>
+						
 						<div class="me_hh"></div>
-						<a href="#">
-						<div class="me_bb">重要信息提示</div>
+						
+						<div class="me_bb"><a href="#">重要信息提示</div>
 						</a>
 						<div class="me_hh"></div>
 						<a href="#">
@@ -74,24 +77,28 @@
 			<div id="bl_a">
 				<div id="bla_img"></div>
 				<div id="bla_r">
-					<div id="blar_t"> <a href="#">
-						<div id="pg_f">今日热点</div>
-						</a>
-						<div id="blar_tit"><a href="#">准妈妈请远离这四类饮料</a></div>
+					<?php 
+						$db=get_db();
+						$postion=$db->query("SELECT  a.id,title,short_title,description,content,video_photo_src FROM  eb_news a left JOIN eb_position ta ON a.id=ta.source_id where ta.pos_name='hart_news' order by a.created_at desc limit 7");
+					?>
+					<div id="blar_t"> 
+						<div id="pg_f"><a href="#">今日热点</a></div>
+						
+						<div id="blar_tit"><a href="#"><?php echo $postion[0]->title?></a></div>
 					</div>
-					<div id="blart_c">准妈妈请远离这四类饮料准妈妈请远离这四类饮料准妈妈请远离这四类饮料准妈妈请远离这四类饮料准妈妈请远离这四类饮料准妈妈请远离这四类饮料准妈妈请远离这四类饮料</div>
+					<div id="blart_c"><?php echo strip_tags($postion[0]->description)?></div>
 					<div id="bla_hr"></div>
 					<?php 
-																	for($i=0;$i<6;$i++)
-																	{
-																?>
+						for($i=1;$i<7;$i++)
+						{
+						?>
 					<div class="bla_con">
 						<div class="blaco_d"></div>
-						<div class="blaco_c">准妈妈请远离这四类饮料准妈妈请远离这四类饮料准妈妈请远离这四类饮料准妈妈请远离这四类饮料准妈妈请远离这四类饮料准妈妈请远离这四类饮料准妈妈请远离这四类饮料</div>
+						<div class="blaco_c"><a href="<?php ?>"><?php echo $postion[$i]->title?></a></div>
 					</div>
 					<?php
-																	}
-																?>
+						}
+						?>
 				</div>
 			</div>
 			<div id="bl_b">
