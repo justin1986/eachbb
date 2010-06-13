@@ -176,7 +176,7 @@
 				</div>
 				<?php 
 				for($i=1;$i<4;$i++){
-				$teact=$db->query("select id,title,img_url,description from eb_teach where is_adopt=1 and del_flag=0 and age=".$i." order by create_time,priority desc limit 13");
+				$teact=$db->query("select id,title,img_url,description from eb_teach where is_adopt=1 and del_flag=0 and age=".$i." order by create_time desc,priority desc limit 13");
 				$teact_count=$db->record_count;
 				?>
 				<div id="old" style="<?php if(1==$i){ echo 'display:inline;';}else{ echo 'display:none;';} ?>">
@@ -266,7 +266,7 @@
 						<div id="m_c_content"><a href="<?php get_news_url($news_m[0]);?>"><?php echo strip_tags($news_m[0]->content); ?></a></div>
 						<div id="m_c_bottom"><a href="<?php get_news_url($news_m[0]);?>">查看详细内容&gt;&gt;</a></div>
 					</div>
-					<div id="m_l_c_r"> 
+					<div id="m_l_c_r">
 						<?php 
 							for($i=1;$i<8;$i++){ ?>
 						<div class="mlc">
@@ -350,8 +350,8 @@
 										$news=array("120"=>"母乳喂养","121"=>"人工喂养","122"=>"混合喂养","123"=>"母乳准备","124"=>"母乳技巧","125"=>"吐奶溢奶");
 										$new_id=array_keys($news);
 										$news_id=implode(',',$new_id);
-										$news_s=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in (".$news_id.") order by created_at desc limit 1;");
-										$n=$db->query("SELECT id,name from eb_category where id in ($news_id)");
+										$news_s=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in ($news_id) order by created_at desc limit 1;");
+										$n=$db->query("SELECT id,name,parent_id from eb_category where id in ($news_id)");
 									?>
 									<a href="<?php get_news_url($news_s[0]); ?>" title="<?php get_news_url($news_s[0]); ?>"><img src="<?php echo $news_s[0]->video_photo_src;?>"/></a>
 								</div>
@@ -369,7 +369,7 @@
 								</div>
 								<div class="sb_content">
 									<?php
-									$news=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in (".$news_id.") order by created_at desc limit 3;");
+									$news=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in ($news_id) order by created_at desc limit 3;");
 									for($j=0;$j<3;$j++){ ?>
 									<div class="sb_ctt"><a href="<?php get_news_url($news[$j]);?>" title="<?php echo $news[$j]->title;?>"><?php echo $news[$j]->title; ?></a></div>
 									<?php  }?>
@@ -385,7 +385,7 @@
 									$newsid=array_keys($new);
 									$news_id=implode(',',$newsid);
 									$news=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in ($news_id) order by created_at desc limit 1;");
-									$n=$db->query("SELECT id,name from eb_category where id in ($news_id)");
+									$n=$db->query("SELECT id,name,parent_id from eb_category where id in ($news_id)");
 								?>
 									<a href="<?php get_news_url($news[0]); ?>" title="<?php get_news_url($news[0]); ?>"><img src="<?php echo $news[0]->video_photo_src;?>"/></a>
 								</div>
@@ -421,8 +421,8 @@
 									$news=array("136"=>"游戏","137"=>"抚摸","138"=>"训练","139"=>"对话");
 									$news_k=array_keys($news);
 									$news_id=implode(',',$news_k);
-									$new=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in (".$news_id.") order by created_at desc limit 1;");
-									$n=$db->query("SELECT id,name from eb_category where id in ($news_id)");
+									$new=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in ($news_id) order by created_at desc limit 1;");
+									$n=$db->query("SELECT id,name,parent_id from eb_category where id in ($news_id)");
 								?>
 								<div class="sblct_bb">
 									<a href="<?php get_news_url($new[0]); ?>" title="<?php get_news_url($news[0]); ?>"><img src="<?php echo $new[0]->video_photo_src;?>"/></a>
@@ -440,7 +440,7 @@
 								</div>
 								<div class="sb_content">
 									<?php 
-										$news=$db->query("SELECT id,title,short_title,description,content FROM eb_news e where category_id in (".$news_id.") order by created_at desc limit 3;");
+										$news=$db->query("SELECT id,title,short_title,description,content FROM eb_news e where category_id in ($news_id) order by created_at desc limit 3;");
 										for($j=0;$j<3;$j++){ ?>
 										<div class="sb_ctt"><a href="<?php get_news_url($news[$j]); ?>" title="<?php echo $news[$j]->title; ?>"><?php echo $news[$j]->title; ?></a></div>
 									<?php }?>
