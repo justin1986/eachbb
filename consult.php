@@ -1,6 +1,11 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<?php
+	include_once('./frame.php');
+?>
 <html>
 <head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta http-equiv=Content-Language content=zh-CN>
 <title>consult</title>
 <link href="./css/consult.css" rel="stylesheet" type="text/css" />
 </head>
@@ -17,37 +22,21 @@
 				<div id="menu_ct">
 					<div id="menu_ctt">
 						<input type="button" class="t_first" value="网站首页">
-						<a href="#">
-						<div class="me_a">特色测评</div>
-						</a>
+						<div class="me_a"><a href="#">特色测评</a></div>
 						<div class="me_h"></div>
-						<a href="#">
-						<div class="me_b">早教课程</div>
-						</a>
+						<div class="me_b"><a href="#">早教课程</a></div>
 						<div class="me_h"></div>
-						<a href="#">
-						<div class="me_b">妈妈助手</div>
-						</a>
+						<div class="me_b"><a href="#">妈妈助手</a></div>
 						<div class="me_h"></div>
-						<a href="#">
-						<div class="me_b">我家小院子</div>
-						</a>
+						<div class="me_b"><a href="#">我家小院子</a></div>
 						<div class="me_h"></div>
-						<a href="#">
-						<div class="me_b">我的宝宝</div>
-						</a>
+						<div class="me_b"><a href="#">我的宝宝</a></div>
 						<div class="me_h"></div>
-						<a href="#">
-						<div class="me_b">亲子论坛</div>
-						</a>
+						<div class="me_b"><a href="#">亲子论坛</a></div>
 						<div class="me_h"></div>
-						<a href="#">
-						<div class="me_b" style="background:url(images/bbs/mo_pg.jpg) no-repeat;"><font class="son">育儿</font><font class="bbs">咨讯</font></div>
-						</a>
+						<div class="me_b" style="background:url(images/bbs/mo_pg.jpg) no-repeat;"><a href="#"><font class="son">育儿</font><font class="bbs">咨讯</font></a></div>
 						<div class="me_h"></div>
-						<a href="#">
-						<div class="me_b" style="width:85px;">关于网趣宝宝</div>
-						</a>
+						<div class="me_b" style="width:85px;"><a href="#">关于网趣宝宝</a></div>
 						<div class="welcom">欢迎,<font>123</font></div>
 						<div class="exit"><a href="#" style="color:#000;">退出</a></div>
 						<div class="info">消息<a href="#" style="color:#FE843A">(1)</a></div>
@@ -55,29 +44,17 @@
 					</div>
 				<div id="menu_ctb">
 						<input type="button" id="t_first" value="我的网趣">
-						<a href="#">
-						<div class="me_aa">网趣宝宝首页</div>
-						</a>
+						<div class="me_aa"><a href="#">网趣宝宝首页</a></div>
 						<div class="me_hh"></div>
-						<a href="#">
-						<div class="me_bb">用户测评报告</div>
-						</a>
+						<div class="me_bb"><a href="#">用户测评报告</a></div>
 						<div class="me_hh"></div>
-						<a href="#">
-						<div class="me_bb">用户课程订购</div>
-						</a>
+						<div class="me_bb"><a href="#">用户课程订购</a></div>
 						<div class="me_hh"></div>
-						<a href="#">
-						<div class="me_bb">重要信息提示</div>
-						</a>
+						<div class="me_bb"><a href="#">重要信息提示</a></div>
 						<div class="me_hh"></div>
-						<a href="#">
-						<div class="me_bb">我家小院子</div>
-						</a>
+						<div class="me_bb"><a href="#">我家小院子</a></div>
 						<div class="me_hh"></div>
-						<a href="#">
-						<div class="me_bb" >管理设置</div>
-						</a>
+						<div class="me_bb" ><a href="#">管理设置</a></div>
 						<input type="text" id="me_in">
 						<input type="button" id="me_btn">
 					</div>
@@ -90,24 +67,26 @@
 			<div id="bl_a">
 				<div id="bla_img"></div>
 				<div id="bla_r">
-					<div id="blar_t"> <a href="#">
-						<div id="pg_f">今日热点</div>
-						</a>
-						<div id="blar_tit">准妈妈请远离这四类饮料</div>
+					<?php 
+						$db=get_db();
+						$pos_news=$db->query("SELECT  a.id,title,short_title,description,content,video_photo_src FROM  eb_news a left JOIN eb_position ta ON a.id=ta.source_id where ta.pos_name='hart_news' order by a.created_at desc limit 7");
+					?>
+					<div id="blar_t"> 
+						<div id="pg_f"><a href="<?php get_news_url($pos_news[0]);?>">今日热点</a></div>
+						
+						<div id="blar_tit"><a href="<?php get_news_url($pos_news[0]);?>" title="<?php echo $pos_news[0]->title;?>"><?php echo $pos_news[0]->title;?></a></div>
 					</div>
-					<div id="blart_c">准妈妈请远离这四类饮料准妈妈请远离这四类饮料准妈妈请远离这四类饮料准妈妈请远离这四类饮料准妈妈请远离这四类饮料准妈妈请远离这四类饮料准妈妈请远离这四类饮料</div>
+					<div id="blart_c"><a href="<?php get_news_url($pos_news[0]);?>" title="<?php echo $pos_news[0]->title;?>"><?php echo strip_tags($pos_news[0]->description);?></a></div>
 					<div id="bla_hr"></div>
 					<?php 
-																	for($i=0;$i<6;$i++)
-																	{
-																?>
+						for($i=1;$i<7;$i++)
+						{
+						?>
 					<div class="bla_con">
 						<div class="blaco_d"></div>
-						<div class="blaco_c">准妈妈请远离这四类饮料准妈妈请远离这四类饮料准妈妈请远离这四类饮料准妈妈请远离这四类饮料准妈妈请远离这四类饮料准妈妈请远离这四类饮料准妈妈请远离这四类饮料</div>
+						<div class="blaco_c"><a href="<?php get_news_url($pos_news[$i]);?>" title="<?php echo $pos_news[$i]->title;?>"><?php echo $pos_news[$i]->title;?></a></div>
 					</div>
-					<?php
-																	}
-																?>
+					<?php } ?>
 				</div>
 			</div>
 			<div id="bl_b">
@@ -139,79 +118,70 @@
 						<div class="trade_l">
 							<div class="tl_l">
 								<div class="tll_a"> 怀孕保养</div>
-								<div class="tll_b"><a href="#">更多>></a></div>
+								<div class="tll_b"><a href="#">更多&gt;&gt;</a></div>
 							</div>
-							<div class="tl_r"><img src="images/index/b_p.jpg"></div>
+							<?php 
+								$en_news=$db->query("SELECT id,category_id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id=153 and is_adopt=1 order by created_at desc limit 9;");
+							?>
+							<div class="tl_r" ><a href="<?php get_news_url($en_news[0]);?>"><img src="<?php echo $en_news[0]->video_photo_src; ?>"/></a></div>
 						</div>
-						<?php for($x=0;$x<2;$x++){?>
-						<div class="trade_c">
-							<?php for($i=0;$i<4;$i++){?>
-							<div class="tc_z">
+							<?php for($i=1;$i<9;$i++){?>
+							<div class="tc_z" style="<?php if($i%2==1){ echo "margin-left:17px;";}?>">
 								<div></div>
-								<a href="#">杀掉你发少女发生烦恼</a> </div>
-							<?php
-																					}?>
-						</div>
-						<?php
-																			}?>
+								<a href="<?php get_news_url($en_news[$i]);?>"  title="<?php echo strip_tags($en_news[$i]->title);?>"><?php echo strip_tags($en_news[$i]->title);?></a> 
+							</div>
+							<?php }?>
 					</div>
 					<div class="trade_z" >
 						<div class="trade_l" style="background:url(images/consult/l_pgb.jpg) no-repeat;">
-							<div class="tl_l">
+							<div class="tl_l">	
 								<div class="tll_a">胎    教</div>
-								<div class="tll_b"><a href="#">更多>></a></div>
+								<div class="tll_b"><a href="#">更多&gt;&gt;</a></div>
 							</div>
-							<div class="tl_r"><img src="images/index/b_p.jpg"></div>
+							<?php 
+								$en_news=$db->query("SELECT id,category_id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id=209 and is_adopt=1 order by created_at desc limit 9;");
+							?>
+							<div class="tl_r"><a href="<?php get_news_url($en_news[0]);?>"><img src="<?php echo $en_news[0]->video_photo_src;?>"/></a></div>
 						</div>
-						<?php for($x=0;$x<2;$x++){?>
-						<div class="trade_c">
-							<?php for($i=0;$i<4;$i++){?>
-							<div class="tc_z">
+						<?php for($i=1;$i<9;$i++){?>
+							<div class="tc_z" style="<?php if($i%2==1){ echo "margin-left:17px;";}?>">
 								<div></div>
-								<a href="#">杀掉你发少女发生烦恼</a> </div>
-							<?php
-																					}?>
-						</div>
-						<?php
-																			}?>
+								<a href="<?php get_news_url($en_news[$i]);?>" title="<?php echo strip_tags($en_news[$i]->title);?>"><?php echo strip_tags($en_news[$i]->title);?></a> 
+							</div>
+						<?php }?>
 					</div>
 				</div>
 			</div>
-			<div id="bl_c"> <a href="#">
-				<div id="blc_a"></div>
-				</a> <a href="#">
-				<div id="blc_b"></div>
-				</a> <a href="#">
-				<div id="blc_c"></div>
-				</a> <a href="#">
-				<div id="blc_d"></div>
+			<div id="bl_c">
+				<a href="#">
+				<img id="blc_a"/>
+				</a> 
+				<a href="#">
+				<img id="blc_b"/>
 				</a>
-				<div class="more"><a href="#">More></a></div>
+				<a href="#">
+				<img id="blc_c"/>
+				</a> 
+				<a href="#">
+				<img id="blc_d"/>
+				</a>
+				<div class="more"><a href="#">More&gt;</a></div>
 			</div>
 			<div id="bl_d">
-				<?php for($l=0;$l<2;$l++){?>
+				<?php
+				$peo_new=$db->query("SELECT id,title,author,video_photo_src,content FROM eb_news e where category_id =151 order by created_at desc limit 2;");
+				for($l=0;$l<2;$l++){?>
 				<div class="bld_z">
-					<div class="bld_t">
-						<div class="bt_l">5月5日 9:23 - 23:23</div>
-						<a href="#">
-						<div class="bt_r">
-							<div>进入咨询</div>
-							<img src="images/consult/l_j.jpg"></div>
-						</a> </div>
 					<div class="bld_c">
 						<div class="blc_l">
-							<div class="bll_t"> <a href="">江润丰</a><font>(儿童心理保健)</font> </div>
-							<div class="bll_c">斯蒂芬撒旦发射发声法反倒是防守对方</div>
-							<div class="bll_b">
-								<input type="button" class="btn_a" value="专家咨询">
-								<input type="button" class="btn_b" value="咨询实录">
-							</div>
+							<div class="bll_t"> <a href="<?php get_news_url($peo_new[$l])?>" title="<?php echo $peo_new[$l]->title;?>"><?php echo $peo_new[$l]->title;?></a><font><a href="<?php get_news_url($peo_new[$l])?>">(<?php echo $peo_new[$l]->author;?>)</a></font> </div>
+							<div class="blc_r"><a href="<?php get_news_url($peo_new[$l])?>"><img src="<?php echo $peo_new[$l]->video_photo_src;?>"></a></div>
+							<a href="<?php get_news_url($peo_new[$l])?>" id="peo" title="<?php echo strip_tags($peo_new[$l]->content);?>"><?php echo strip_tags($peo_new[$l]->content);?></a>
 						</div>
-						<div class="blc_r"><img src="images/consult/pg.jpg"></div>
+						
 					</div>
 				</div>
-				<?php 
-														}?>
+				<?php }?>
 			</div>
 			<div id="bl_e">
 				<div id="be_l">
@@ -220,20 +190,22 @@
 						<div id="bel_r"><a href="#">查看更多</a></div>
 					</div>
 					<div id="bel_c">
-						<div id="belc_img"> <img src="images/consult/peb.jpg"> </div>
+					<?php 
+						$ente_news=$db->query("SELECT id,title,content,video_photo_src FROM eb_news e where category_id=152 and is_adopt=1 order by created_at desc limit 4;");
+					?>
+						<div id="belc_img"><a href="<?php get_news_url($ente_news[0]);?>"><img src="<?php echo $ente_news[0]->video_photo_src;?>"></a></div>
 						<div id="belc_ir">
-							<div id=beir_t><a href="#">你看看你发送</a></div>
-							<a href="#">
-							<div id="beir_c">撒旦发射撒旦发射发声法沙发上撒旦发射发声法沙发上撒旦发射发声法沙发上撒旦发射发声法沙发上发声法沙发上</div>
-							</a> </div>
+							<div id=beir_t><a href="<?php get_news_url($ente_news[0]);?>" title="<?php echo $ente_news[0]->title;?>"><?php echo $ente_news[0]->title;?></a></div>
+							<div id="beir_c">
+								<a href="<?php get_news_url($ente_news[0]);?>" title="<?php echo strip_tags($ente_news[0]->content)?>"><?php echo strip_tags($ente_news[0]->content);?></a></div>
+							</div>
 					</div>
-					<?php for($i=0;$i<3;$i++){?>
+					<?php for($i=1;$i<=3;$i++){?>
 					<div class="bel_b">
 						<div class="bel_d"></div>
-						<div class="belc_c"><a href="#">斯蒂芬斯蒂芬撒旦发射斯蒂芬撒旦发射撒旦发射</a></div>
+						<div class="belc_c"><a href="<?php get_news_url($ente_news[$i]);?>"><?php echo $ente_news[$i]->title;?></a></div>
 					</div>
-					<?php 
-																				}?>
+					<?php }?>
 				</div>
 				<div id="be_c"></div>
 				<div id="be_r">
@@ -254,12 +226,13 @@
 						</div>
 					</div>
 					<div id="be_cc">
-						<?php for($i=0;$i<3;$i++){ ?>
-						<div class="becc_z"> <img src="images/consult/pg_b.jpg">
-							<div class="becc_b">sadfasdf</div>
-						</div>
 						<?php 
-																							}?>
+						$cate_news=$db->query("SELECT id,title,video_photo_src FROM eb_news e where category_id=155 and is_adopt=1  order by created_at desc  limit 3");
+						for($i=0;$i<3;$i++){ ?>
+						<div class="becc_z" ><a href="<?php get_news_url($cate_news[$i]);?>"><img src="<?php echo $cate_news[$i]->video_photo_src;?>"/></a>
+							<div class="becc_b" style="<?php if($i==0){ echo "background:#FE5F00;";}?>"><a href="<?php get_news_url($cate_news[$i]);?>"><?php echo $cate_news[$i]->title;?></a></div>
+						</div>
+						<?php }?>
 					</div>
 				</div>
 			</div>
@@ -267,10 +240,13 @@
 				<div id="bf_t"></div>
 				<div id="bf_z">
 					<div id="bf_zz">
-						<div id="bf_pic"><img src="images/consult/pic_c.jpg"></div>
+						<?php 
+						$up_news=$db->query("SELECT id,title,short_title,video_photo_src,content FROM eb_news e where category_id=156 and is_adopt=1 order by created_at desc limit 1;");
+						?>
+						<div id="bf_pic"><a href="<?php get_news_url($up_news[0]);?>"><img src="<?php echo $up_news[0]->video_photo_src;?>"></a></div>
 						<div id="bf_c">
-							<div id="bfc_t">网趣宝贝发展历史</div>
-							<div id="bfc_c">网网趣宝贝发展历史网趣宝贝发展历史网趣宝贝发展历史网趣宝贝发展历史网趣宝贝发展历史网趣宝贝发展历史网趣宝贝发展历网网趣宝贝发展历史网趣宝贝发展历史网趣宝贝发展历史网趣宝贝发展历史网趣宝贝发展历史网趣宝贝发展历史网趣宝贝发展历网网趣宝贝发展历史网趣宝贝发展历史网趣宝贝发展历史网趣宝贝发展历史网趣宝贝发展历史网趣宝贝发展历史网趣宝贝发展历史趣宝贝发展历史史趣宝贝发展历史史趣宝贝发展历史</div>
+							<div id="bfc_t"><a href="<?php get_news_url($up_news[0]);?>"><?php echo $up_news[0]->title;?></a></div>
+							<div id="bfc_c"><a href="<?php get_news_url($up_news[0]);?>" title="<?php echo  strip_tags($up_news[0]->content);?>"><?php echo strip_tags($up_news[0]->content);?></a></div>
 						</div>
 					</div>
 				</div>
@@ -285,10 +261,12 @@
 					<div id="bat_c"><a href="#"><img src="images/consult/rb_c.jpg"></a></div>
 				</div>
 				<div id="ba_c">
-					<?php for($i=0;$i<7;$i++){?>
+					<?php
+					$mom_news=$db->query("SELECT id,title FROM eb_news e where category_id=157 and is_adopt=1 limit 7;");
+					for($i=0;$i<7;$i++){?>
 					<div class="bac_z" style="<?php if($i==0){ echo ' margin-top:5px;';}?>;">
 						<div class="bac_d"></div>
-						<div class="bac_v"><a href="#">友情链接友情链接友情链接</a></div>
+						<div class="bac_v"><a href="<?php get_news_url($mom_news[$i]);?>" title="<?php echo $mom_news[$i]->title;?>"><?php echo $mom_news[$i]->title;?></a></div>
 						<?php if($i!=6){?>
 						<div class="bac_c"></div>
 						<?php }?>
@@ -300,30 +278,24 @@
 			<div id="bc_z">
 				<div id="bc_t">
 					<div id="bct2_l">最热排行</div>
-					<div id="bct2_r"><a href="#">More></a></div>
+					<div id="bct2_r"><a href="#">More&gt;</a></div>
 				</div>
 				<div id="bc_t2">
-					<div id="bct_z"> <a href="#">
-						<div id="bct_a">幼教排行</div>
-						</a>
+					<div id="bct_z">
+						<div id="bct_a"><a href="#">幼教排行</a></div>
 						<div id="bct_hr"></div>
-						<a href="#">
-						<div id="bct_b">论坛</div>
-						</a> <a href="#">
-						<div class="bct_c">博客</div>
-						</a> <a href="#">
-						<div class="bct_c">咨询</div>
-						</a> <a href="#">
-						<div class="bct_c">测评</div>
-						</a> </div>
+						<div id="bct_b"><a href="#">论坛</a></div>
+						<div class="bct_c"><a href="#">博客</a></div>
+						<div class="bct_c"><a href="#">咨询</a></div>
+						<div class="bct_c"><a href="#">测评</a></div>
+					</div>
 				</div>
 				<?php for($i=0;$i<10;$i++){?>
 				<div class="bct_cp">
 					<div class="bct_cpl"  style="<?php if($i==0){ echo 'background:url(images/index/red.png) no-repeat';}?>"><?php echo $i+1?></div>
 					<div class="bct_cpv"><a href="#">友情链接友情链接友情链接</a></div>
 				</div>
-				<?php
-													 }?>
+				<?php  }?>
 				<div id="bct_cb"></div>
 			</div>
 			<div class="bd">
@@ -337,14 +309,14 @@
 						<div class="bdt_hr2"></div>
 					</div>
 					<div id="bdc_z">
-						<?php for($i=0;$i<13;$i++){?>
+						<?php
+						$pro_news=$db->query("SELECT id,name FROM eb_problem e where is_adopt=1 order by create_time desc limit 13;");
+						for($i=0;$i<13;$i++){?>
 						<div class="bdcz_z">
 							<div class="bdcz_l"></div>
-							<div class="bdcz_r"><a href="#">友情链接友情链接友情链接</a></div>
+							<div class="bdcz_r"><a href="#" title="<?php echo $pro_news[$i]->name; ?>"><?php echo $pro_news[$i]->name; ?></a></div>
 						</div>
-						<?php 
-															}
-															?>
+						<?php } ?>
 					</div>
 				</div>
 				<div class="bd_b"></div>
@@ -360,25 +332,27 @@
 						<div class="bdt_hr2"></div>
 					</div>
 					<div id="user_z">
-						<div id="user_a"><a href="#">
-							<div id="pho"></div>
-							</a>
-							<div id="pho_title">用户调查用户调查?</div>
-						</div>
-						<div id="bd_n"></div>
-						<?php for($x=0;$x<3;$x++){?>
-						<div class="user_a">
-							<input type="radio" class="user_rdo">
-							<div class="user_rvalue">斯蒂芬妮斯的浪费那得分</div>
-						</div>
-						<?php 
-																			}?>
-						<div id="user_hr"></div>
-						<div id="user_pg">
-							<input type="button" id="u_pa" value="投  票">
-							<input type="button" id="u_pb" value="查看结果">
-						</div>
-						<div id="n"></div>
+						<form action="">
+							<div id="user_a">
+								<a href="#">
+								<img id="pho"/>
+								</a>
+								<div id="pho_title">用户调查用户调查?</div>
+							</div>
+							<div id="bd_n"></div>
+							<?php for($x=0;$x<3;$x++){?>
+							<div class="user_a">
+								<input type="radio" class="user_rdo">
+								<div class="user_rvalue">斯蒂芬妮斯的浪费那得分</div>
+							</div>
+							<?php  }?>
+							<div id="user_hr"></div>
+							<div id="user_pg">
+								<input type="button" id="u_pa" value="投  票">
+								<input type="button" id="u_pb" value="查看结果">
+							</div>
+							<div id="n"></div>
+						</form>
 					</div>
 				</div>
 				<div class="bd_b"></div>
@@ -395,181 +369,134 @@
 				<div id="bi_l">
 					<div class="bil_a">
 						<div class="bil_img"><font>妊娠反应</font></div>
-						<div class="bil_value"> <a href="#">
-							<div class="bil_yu">孕吐</div>
-							</a></a>
+						<div class="bil_value">
+							<?php 
+								$uty_news=$db->query("SELECT id,name FROM eb_category where parent_id=158;");
+								$uty_news_count=$db->record_count;
+								for($i=0;$i<$uty_news_count;$i++){
+							?>
+							<div class="bil_yu" style="<?php if(strlen($uty_news[$i]->name)===12){ echo "width:60px;";}?>"><a href="#" title="<?php echo $uty_news[$i]->name;?>"><?php echo $uty_news[$i]->name;?></a></div>
+							<?php if($i!==($uty_news_count-1)){?>
 							<div class="bil_hr"></div>
-							<a href="#">
-							<div class="bil_yu">尿频</div>
-							</a>
-							<div class="bil_hr"></div>
-							<a href="#">
-							<div class="bil_yu">嗜好</div>
-							</a>
-							<div class="bil_hr"></div>
-							<a href="#">
-							<div class="bil_y">食欲不振</div>
-							</a> </div>
+							<?php }}?>
+						</div>
 					</div>
 					<div class="bil_a">
 						<div class="bil_img"><font>孕期营养</font></div>
-						<div class="bil_value"> <a href="#">
-							<div class="bil_y">饮食习惯</div>
-							</a>
+						<div class="bil_value">
+							<?php 
+								$uty_news=$db->query("SELECT id,name FROM eb_category where parent_id=161;");
+								$uty_news_count=$db->record_count;
+								for($i=0;$i<$uty_news_count;$i++){
+							?>
+							<div class="bil_y"  style="<?php if(strlen($uty_news[$i]->name)>7){ echo "width:60px;";}?>"><a href="#" title="<?php echo $uty_news[$i]->name;?>"><?php echo $uty_news[$i]->name;?></a></div>
+							<?php if($i!==($uty_news_count-1)){?>
 							<div class="bil_hr"></div>
-							<a href="#">
-							<div class="bil_yu">补钙</div>
-							</a>
-							<div class="bil_hr"></div>
-							<a href="#">
-							<div class="bil_yu">叶酸</div>
-							</a>
-							<div class="bil_hr"></div>
-							<a href="#">
-							<div class="bil_yuu">月子餐</div>
-							</a> </div>
+							<?php }}?>
+						</div>
 					</div>
 					<div class="bil_a">
 						<div class="bil_img"><font>心里健康</font></div>
-						<div class="bil_value"> <a href="#">
-							<div class="bil_y">产前焦虑</div>
-							</a>
+						<div class="bil_value">
+							<?php 
+								$uty_news=$db->query("SELECT id,name FROM eb_category where parent_id=164;");
+								$uty_news_count=$db->record_count;
+								for($i=0;$i<$uty_news_count;$i++){
+							?>
+							<div class="bil_y" style="<?php if(strlen($uty_news[$i]->name)>7){ echo "width:60px;";}?>"><a href="#" title="<?php echo $uty_news[$i]->name;?>"><?php echo $uty_news[$i]->name;?></a></div>
+							<?php if($i!==($uty_news_count-1)){?>
 							<div class="bil_hr"></div>
-							<a href="#">
-							<div class="bil_y">产后抑郁</div>
-							</a> </DIV>
+							<?php }}?>
+						</DIV>
 					</div>
 				</div>
 				<div id="bi_cc">
 					<div class="bil_a">
 						<div class="bil_img"><font>孕期生活</font></div>
-						<div class="bil_value"> <a href="#">
-							<div class="bil_yu">睡眠</div>
-							</a>
+						<div class="bil_value"> 
+							<?php 
+								$uty_news=$db->query("SELECT id,name FROM eb_category where parent_id=159;");
+								$uty_news_count=$db->record_count;
+								for($i=0;$i<$uty_news_count;$i++){
+							?>
+							<div class="bil_yu" style="<?php if(strlen($uty_news[$i]->name)>7){ echo "width:60px;";}?>"><a href="#" title="<?php echo $uty_news[$i]->name;?>"><?php echo $uty_news[$i]->name;?></a></div>
+							<?php if($i!==($uty_news_count-1)){?>
 							<div class="bil_hr"></div>
-							<a href="#">
-							<div class="bil_yu">运动</div>
-							</a>
-							<div class="bil_hr"></div>
-							<a href="#">
-							<div class="bil_yuu">性生活</div>
-							</a>
-							<div class="bil_hr"></div>
-							<a href="#">
-							<div class="bil_yu">禁忌</div>
-							</a>
-							<div class="bil_hr"></div>
-							<a href="#">
-							<div class="bil_yu">外出</div>
-							</a> </div>
+							<?php }}?>
+						</div>
 					</div>
 					<div class="bil_a">
 						<div class="bil_img"><font>孕期不适</font></div>
-						<div class="bil_value"> <a href="#">
-							<div class="bil_yu">便秘</div>
-							</a>
+						<div class="bil_value">
+							<?php 
+								$uty_news=$db->query("SELECT id,name FROM eb_category where parent_id=162;");
+								$uty_news_count=$db->record_count;
+								for($i=0;$i<$uty_news_count;$i++){
+							?>
+							<div class="bil_yu" style="<?php if(strlen($uty_news[$i]->name)>7){ echo "width:60px;";}?>"><a href="#" title="<?php echo $uty_news[$i]->name;?>"><?php echo $uty_news[$i]->name;?></a></div>
+							<?php if($i!==($uty_news_count-1)){?>
 							<div class="bil_hr"></div>
-							<a href="#">
-							<div class="bil_yu">浮肿</div>
-							</a>
-							<div class="bil_hr"></div>
-							<a href="#">
-							<div class="bil_yu">抽筋</div>
-							</a>
-							<div class="bil_hr"></div>
-							<a href="#">
-							<div class="bil_yu">贫血</div>
-							</a>
-							<div class="bil_hr"></div>
-							<a href="#">
-							<div class="bil_yu">漏尿</div>
-							</a>
-							<div class="bil_hr"></div>
-							<a href="#">
-							<div class="bil_yu">疼痛</div>
-							</a> </div>
+							<?php }}?>
+						</div>
 					</div>
 					<div class="bil_a">
 						<div class="bil_img"><font>产检相关</font></div>
-						<div class="bil_value"> <a href="#">
-							<div class="bil_yu">B超</div>
-							</a>
+						<div class="bil_value">
+							<?php 
+								$uty_news=$db->query("SELECT id,name FROM eb_category where parent_id=165;");
+								$uty_news_count=$db->record_count;
+								for($i=0;$i<$uty_news_count;$i++){
+							?>
+							<div class="bil_yu"  style="<?php if(strlen($uty_news[$i]->name)>7){ echo "width:60px;";}?>"><a href="#" title="<?php echo $uty_news[$i]->name;?>"><?php echo $uty_news[$i]->name;?></a></div>
+							<?php if($i!==($uty_news_count-1)){?>
 							<div class="bil_hr"></div>
-							<a href="#">
-							<div class="bil_yu">胎动</div>
-							</a>
-							<div class="bil_hr"></div>
-							<a href="#">
-							<div class="bil_y">羊膜穿刺</div>
-							</a>
-							<div class="bil_hr"></div>
-							<a href="#">
-							<div class="bil_y">检查项目</div>
-							</a> </div>
+							<?php }}?>
+						</div>
 					</div>
 				</div>
 				<div id="bi_r">
 					<div class="bill_a">
 						<div class="bil_img"><font>孕期异常</font></div>
-						<div class="bill_value"> <a href="#">
-							<div class="bil_y">阴道出血</div>
-							</a>
+						<div class="bill_value">
+							<?php 
+								$uty_news=$db->query("SELECT id,name FROM eb_category where parent_id=160;");
+								$uty_news_count=$db->record_count;
+								for($i=0;$i<$uty_news_count;$i++){
+							?>
+							<div class="bil_y" style="<?php if(strlen($uty_news[$i]->name)>10){ echo "width:60px;";}elseif(strlen($uty_news[$i]->name)>8){ echo "width:50px;";}?>"><a href="#" title="<?php echo $uty_news[$i]->name;?>"><?php echo $uty_news[$i]->name;?></a></div>
+							<?php if($i!==($uty_news_count-1)){?>
 							<div class="bil_hr"></div>
-							<a href="#">
-							<div class="bil_yu">流产</div>
-							</a>
-							<div class="bil_hr"></div>
-							<a href="#">
-							<div class="bil_yuu">宫外孕</div>
-							</a>
-							<div class="bil_hr"></div>
-							<a href="#">
-							<div class="bil_y">宫索异常</div>
-							</a>
-							<div class="bil_hr"></div>
-							<a href="#">
-							<div class="bil_y">前置胎盘</div>
-							</a>
-							<div class="bil_hr"></div>
-							<a href="#">
-							<div class="bil_y">胎盘早剥</div>
-							</a> </div>
+							<?php }}?>
+						</div>
 					</div>
 					<div class="bill_a">
-						<div class="bil_img"><font>产检相关</font></div>
-						<div class="bill_value"> <a href="#">
-							<div class="bil_yu">B超</div>
-							</a>
+						<div class="bil_img"><font>孕期疾病</font></div>
+						<div class="bill_value">
+							<?php 
+								$uty_news=$db->query("SELECT id,name FROM eb_category where parent_id=163;");
+								$uty_news_count=$db->record_count;
+								for($i=0;$i<$uty_news_count;$i++){
+							?>
+							<div class="bil_yu" style="<?php if(strlen($uty_news[$i]->name)>14){ echo "width:70px;";}elseif(strlen($uty_news[$i]->name)>8){echo "width:50px;";}?>"><a href="#" title="<?php echo $uty_news[$i]->name;?>"><?php echo $uty_news[$i]->name;?></a></div>
+							<?php if($i!==($uty_news_count-1)){?>
 							<div class="bil_hr"></div>
-							<a href="#">
-							<div class="bil_yu">胎动</div>
-							</a>
-							<div class="bil_hr"></div>
-							<a href="#">
-							<div class="bil_y">羊膜穿刺</div>
-							</a>
-							<div class="bil_hr"></div>
-							<a href="#">
-							<div class="bil_y">检查项目</div>
-							</a> </div>
+							
+							<?php }}?>
+						</div>
 					</div>
 					<div class="bill_a">
-						<div class="bil_img"><font>产检相关</font></div>
-						<div class="bill_value"> <a href="#">
-							<div class="bil_yu">B超</div>
-							</a>
+						<div class="bil_img"><font>乳房保健</font></div>
+						<div class="bill_value">
+							<?php 
+								$uty_news=$db->query("SELECT id,name FROM eb_category where parent_id=166;");
+								$uty_news_count=$db->record_count;
+								for($i=0;$i<$uty_news_count;$i++){
+							?>
+							<div class="bil_yu" style="<?php if(strlen($uty_news[$i]->name)>10){ echo "width:60px;";}?>"><a href="#" title="<?php echo $uty_news[$i]->name;?>"><?php echo $uty_news[$i]->name;?></a></div>
+							<?php if($i!==($uty_news_count-1)){?>
 							<div class="bil_hr"></div>
-							<a href="#">
-							<div class="bil_yu">胎动</div>
-							</a>
-							<div class="bil_hr"></div>
-							<a href="#">
-							<div class="bil_y">羊膜穿刺</div>
-							</a>
-							<div class="bil_hr"></div>
-							<a href="#">
-							<div class="bil_y">检查项目</div>
-							</a> </div>
+							<?php }}?>
+						</div>
 					</div>
 				</div>
 			</div>
