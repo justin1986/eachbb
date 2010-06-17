@@ -1,0 +1,39 @@
+
+
+#center {width:970px; display:inline;float:left;margin-top:22px;}
+#cpg_top {width:970px;  height:43px; background:url("/images/zhuce/c_t.jpg"); background-repeat:no-repeat; font-size:0; line-height:0;  display:inline; float:left; }
+#cpg_b {width:970px;  height:43px; background:url("/images/zhuce/c_b.jpg") no-repeat; font-size:0; line-height:0; float:left;  display:inline;}
+#cpg_c { width:970px; background:#E5F3CD; float:left; display:inline; }
+#cpgc_c{width:928px; margin-left:22px; background:#fff; float:left; display:inline;}
+
+.c_a{width:928px; height:30px; margin-top:20px; line-height:30px; float:left; display:inline;}
+.ca_a{width:10px; height:30px; margin-left:80px; font-size:12px; color:red; float:left; display:inline;}
+.ca_b{width:100px; height:30px; margin-left:5px; font-size:14px; float:left; display:inline;}
+.ca_c{width:250px; height:30px;  float:left; display:inline;}
+.ca_c input{width:245px; height:22px; margin-top:2px; border:1px solid #CCCCFF;  float:left; display:inline;}
+.ca_d{width:450px; height:30px; margin-left:30px; font-size:12px; color:#999999; line-height:30px; float:left; display:inline;}
+.ca_s{width:250px; height:30px; font-size:12px; float:left; display:inline;}
+#validate{width:50px; height:25px; margin-top:3px; background:#000; float:left; display:inline;}
+#cad_v{width:250px; height:25px; margin-left:20px; float:left; display:inline; }
+
+#hr{width:900px; height:1px; margin-left:15px; margin-top:20px; font-size:0px; line-height:0px; background:url(/images/zhuce/d.jpg) repeat-x; float:left; display: inline;}
+
+
+#text{width:830px; height:200px; margin-left:50px; border:1px solid #EFEFEF; overflow-y:scroll; margin-top:15px; float:left; display:inline;}
+
+
+#check{width:928px; height:20px; margin-top:30px; font-size:13px; line-height:20px; float:left; display:inline;}
+#check input{margin-left:50px;}
+
+
+#confirm input{width:154px; height:26px; border:0px solid red; background:url(/images/zhuce/confirm.jpg) no-repeat; float:left; display:inline;}
+#confirm{width:154px; height:116px; margin-left:50px; margin-top:20px; float:left; display:inline;} 
+
+
+
+
+
+
+
+#bottom {color:#666666; display:inline; float:left; font-size:12px; margin-top:20px; text-align:center; width:970px; }
+#bottom_b {color:#666666; display:inline; float:left; font-size:12px; margin-bottom:50px; margin-top:10px; text-align:center; width:970px;}
