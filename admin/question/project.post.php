@@ -12,6 +12,8 @@
 		$db -> execute($sql);
 		$sql = 'delete from eb_question_record where problem_id='.$_POST['del_id'];
 		$db -> execute($sql);
+		$sql = 'delete from eb_question_result where problem_id='.$_POST['del_id'];
+		$db -> execute($sql);
 		close_db();
 	}else{
 		$project = new table_class('eb_problem');
@@ -33,7 +35,7 @@
 			}
 			$project->photo_url = "/upload/images/" .$img;
 		}
-		$project->update_attributes($_POST['post'],false);
+		$project->update_attributes($_POST['post']);
 		/*
 		if($_POST['start_time']==""){
 			$project->start_time = "00-00-00";
@@ -46,7 +48,23 @@
 			$project->end_time = $_POST['end_time'];
 		}
 		*/
-		$project->save();
+		if($_POST['result']['id']){
+			//处理结果报表
+			$len = count($_POST['result']['id']);
+			$result = new table_class('eb_problem_result');
+			$result->problem_id= $project->id;
+			for($i=0;$i<$len;$i++){
+				
+				if($_POST['result']['changed'][$i]){
+					$result->id= $_POST['result']['id'][$i] ? $_POST['result']['id'][$i]: 0;
+					$result->min_score= $_POST['result']['min'][$i];
+					$result->max_score= $_POST['result']['max'][$i];
+					$result->description= $_POST['result']['description'][$i];
+						
+					$result->save();				
+				}
+			}
+		}
 		
 		redirect('project_list.php');
 	}
