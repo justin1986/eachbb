@@ -6,8 +6,12 @@
 <head>
 <meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <meta http-equiv=Content-Language content=zh-CN>
-<title>网趣宝贝</title>
-<link href="./css/index.css" rel="stylesheet" type="text/css" />
+	<title>网趣宝贝</title>
+	<?php 
+		use_jquery();
+		css_include_tag('index');
+		js_include_tag('index');
+	?>
 </head>
 <body>
 <div id="ibody">
@@ -140,19 +144,19 @@
 				<div id="email">
 					<div id="email_l">邮件地址</div>
 					<div id="email_r">
-						<input type="text" >
+						<input id="login_name" type="text" />
 					</div>
 				</div>
 				<div id="password">
 					<div id="email_l">密&nbsp;&nbsp;&nbsp;&nbsp;码</div>
 					<div id="email_r">
-						<input type="text" >
+						<input type="text" id="login_password" />
 					</div>
 				</div>
 				<div id="pwd">
-					<input type="checkbox" id="check" name="checkbox" value="checkbox" />
+					<input type="checkbox" id="login_check" name="checkbox" value="checkbox" />
 					<div id="my_check">
-						<label for="check">记住我的帐号</label>
+						<label for="login_check">记住我的帐号</label>
 					</div>
 					<div id="pwd_right"><a href="#">忘记密码</a></div>
 				</div>

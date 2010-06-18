@@ -85,8 +85,9 @@ table{width:1026px; border:none; text-align:center; background:#e7e7e7;}
 
 td.list_head input{float:none;width:50px;} 
 
-
-
+#tabs{width:1024px; height:40px; margin:10px 0px 5px 10px; font-size:14px; line-height:40px; font-weight:bold; border:1px dotted #cdcdcd; background:#FBFBFB; }
+#tabs span a{color:#cccccc}
+#tabs span a.selected{color:black}
 /*!--
 
 .sub_menu li{margin-left:25px;}

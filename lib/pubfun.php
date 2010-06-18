@@ -567,3 +567,6 @@ function fgetcsv_reg(& $handle, $length = null, $d = ',', $e = '"') {
 function set_charset($charset='UTF-8'){
 	@header("Content-type: text/html;charset={$charset}");
 }
+function die_not_found(){
+		die("您访问的页面不存在!");
+	}

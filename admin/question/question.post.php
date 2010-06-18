@@ -25,24 +25,21 @@
 			
 		$question->update_attributes($_POST['question']);
 		
-		$question_item = new table_class('eb_question_item');
-		$question_item->question_id = $question->id;
-		
-		!$_POST['old_item'] && $_POST['old_item'] = array();
-		foreach($_POST['old_item'] as $i => $item){
-			$question_item->find($_POST['item_id'][$i]);
-			$question_item->name = $item;
-			$question_item->attribute = $_POST['old_value'][$i];
-			$question_item->save();
-		}
-		
-		!$_POST['item'] && $_POST['item'] = array();
-		foreach($_POST['item'] as $i => $item){
-			if($item){
-				$question_item->id = 0;
-				$question_item->name = $item;
-				$question_item->attribute = $_POST['value'][$i];
-				$question_item->save();
+		if($_POST['question_item']['id']){
+			//处理结果报表
+			$len = count($_POST['question_item']['id']);
+			$result = new table_class('eb_question_item');
+			$result->question_id= $question->id;
+			for($i=0;$i<$len;$i++){
+				
+				if($_POST['question_item']['changed'][$i]){
+					$result->id= $_POST['question_item']['id'][$i] ? $_POST['question_item']['id'][$i]: 0;
+					$result->name= $_POST['question_item']['name'][$i];
+					$result->display= $_POST['question_item']['display'][$i];
+					$result->attribute= $_POST['question_item']['attribute'][$i];
+						
+					$result->save();				
+				}
 			}
 		}
 		
