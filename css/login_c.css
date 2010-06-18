@@ -1,0 +1,30 @@
+
+
+#center {width:970px; display:inline;float:left;margin-top:22px;}
+#cpg_top {background:url("/images/login/c_t.jpg"); background-repeat:no-repeat; font-size:0; height:22px; line-height:0; width:970px; display:inline; float:left; }
+#cpg_b {width:970px;  height:24px; background:url("/images/login/c_b.jpg") no-repeat; font-size:0; line-height:0; float:left;  display:inline;}
+#cpg_c { width:970px; background:#E5F3CD; float:left; display:inline; }
+#cpg_l { margin-left:30px; margin-top:5px; width:380px; background:#ffffff; display:inline; float:left; }
+#cpg_t {height:36px; width:380px; line-height:36px; background:#D4EAAD; float:left; display:inline;}
+#cpgt_c {color:#336600; display:inline; float:left; font-size:20px; font-weight:bold; width:250px;}
+#cpgt_l {height:36px;  width:13px; background:url("/images/login/h_l.jpg") no-repeat; font-size:0;  line-height:0; display:inline; float:left;}
+#cpgt_r { width:13px; height:36px; background:url("/images/login/h_r.jpg") no-repeat;  font-size:0; line-height:0; display:inline; float:right;}
+#cpgc_b{width:380px; height:20px;  background:url(/images/login/cc_b.jpg) no-repeat; float:left; display:inline;}
+
+
+
+.user { width:312px;  height:25px; margin-left:30px; margin-top:20px; display:inline; float:left;}
+.u_l {  width:60px; height:25px; font-size:15px; line-height:25px; display:inline; float:left;}
+.u_r {width:245px; height:20px; margin-top:2px; display:inline; float:left;}
+.u_r input {height:15px; width:245px; display:inline; float:left;}
+.u_r select {height:20px; width:250px; display:inline; float:left;}
+.u_btn {height:30px; width:312px;  margin-left:30px; margin-top:20px; line-height:30px; float:left; display:inline;}
+.u_btn input { height:26px; width:94px;  margin-left:60px; border:0px solid red; background:url("/images/login/login.jpg") no-repeat; display:inline;  float:left; }
+#v_l {height:15px; width:70px; margin-left:60px; float:left; display:inline;}
+#v_l a {color:#3C7FB1; font-size:12px;}
+#v_r {width:70px; height:15px; margin-left:20px; float:left; display:inline;}
+#v_r a {color:#3C7FB1; font-size:12px; }
+.u_v {height:20px; width:312px; margin-left:30px; margin-top:10px; line-height:20px; float:left; display:inline;}
+#cpg_r{height:290px; width:523px; margin-top:10px; margin-left:20px; background:url(/images/login/v.jpg) no-repeat; float:left;  display:inline;}
+#bottom {color:#666666; display:inline; float:left; font-size:12px; margin-top:20px; text-align:center; width:970px; }
+#bottom_b {color:#666666; display:inline; float:left; font-size:12px; margin-bottom:50px; margin-top:10px; text-align:center; width:970px;}

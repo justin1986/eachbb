@@ -45,7 +45,34 @@
 							<div class="info">消息<a href="#" style="color:#FE843A">(1)</a></div>
 						</div>
 					</div>
-					
+					<div id="menu_ctb">
+						<input type="button" id="t_first" value="我的网趣">
+						
+						<div class="me_aa"><a href="#">网趣宝宝首页</a></div>
+						
+						<div class="me_hh"></div>
+						<a href="#">
+						<div class="me_bb">用户测评报告</div>
+						</a>
+						<div class="me_hh"></div>
+						<a href="#">
+						<div class="me_bb">用户课程订购</div>
+						</a>
+						<div class="me_hh"></div>
+						<a href="#">
+						<div class="me_bb">重要信息提示</div>
+						</a>
+						<div class="me_hh"></div>
+						<a href="#">
+						<div class="me_bb">我家小院子</div>
+						</a>
+						<div class="me_hh"></div>
+						<a href="#">
+						<div class="me_bb" >管理设置</div>
+						</a>
+						<input type="text" id="me_in">
+						<input type="button" id="me_btn">
+					</div>
 				</div>
 				<div id="menu_right"></div>
 			</div>

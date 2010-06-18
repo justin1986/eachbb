@@ -54,6 +54,7 @@
 						$db=get_db();
 						$test=$db->query("select id,name from eb_problem where is_adopt=1 order by priority,create_time desc limit 4;");
 						$test_count=$db->record_count;
+						
 						for($i=0;$i<$test_count;$i++){ ?>
 						<div class="test_a"><a href="<?php get_test_url($test[$i]);?>" title="<?php echo $test[$i]->name;?>"><?php echo $test[$i]->name;?></a></div>
 						<?php }?>

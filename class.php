@@ -1,13 +1,15 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html>
 <head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta http-equiv=Content-Language content=zh-CN>
 <title>课程</title>
 <link href="./css/class.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="ibody">
 	<div id="fbody">
-		<?php include_once('inc/top_inc.php');?>
+		<?php include_once('inc/top_class.php');?>
 		<div id="content">
 			<div id="c_l">
 				<div id="l_pho">
@@ -20,9 +22,9 @@
 					<div id="l_b_wb">我的博客</div>
 				</div>
 				<a href="#">
-				<div id="l_test"></div>
+				<img id="l_test"/>
 				</a> <a href="#">
-				<div id="l_look"></div>
+				<img id="l_look"/>
 				</a>
 				<div class="hlc_t"></div>
 				<div class="hlc_b">
@@ -74,7 +76,7 @@
 				<div id="l_f">
 					<div id="lf_l">我的<font>好友</font></div>
 					<div id="lf_c">（<font>345</font>）</div>
-					<div id="lf_r">More >></div>
+					<div id="lf_r">More &gt;&gt;</div>
 				</div>
 				<div id="pic_r">
 					<?php for($i=0;$i<6;$i++){ ?>
@@ -116,9 +118,9 @@
 						<div id="crr_c"></div>
 						<div id="crrab_z">
 							<?php for($i=0;$i<6;$i++){?>
-							<a href="#" >
-							<div class="crr_b">阿阿森纳副卡萨诺</div>
-							</a>
+							
+							<div class="crr_b"><a href="#" >阿阿森纳副卡萨诺</a></div>
+							
 							<?php 
 																									}?>
 						</div>
@@ -132,11 +134,11 @@
 							<div id="cric_title"><font>精编课程展示</font> 资源分享 分我所有</div>
 							<div id="cric_c">
 								<?php for($i=0;$i<6;$i++){?>
-								<a href="#">
+								
 								<div class="cricc_a">
-									<div> <img src="images/class/c_pg_a.jpg"> </div>
+									<div><a href="#"><img src="images/class/c_pg_a.jpg"></a></div>
 								</div>
-								</a>
+								
 								<?php 
 																									}?>
 							</div>

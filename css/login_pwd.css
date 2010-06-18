@@ -1,0 +1,50 @@
+body{width:970PX; margin: 0 auto; }
+
+#ibody{width:970px; overflow:hidden; margin:0;}
+
+#fbody{ width:970px; overflow:hidden;  background:#ffffff; float:left; display:inline;}
+
+
+
+
+#center{width:970px; margin-top:22px; float:left; display:inline;}
+#cpg_top{width:970px; height:22px; font-size:0px; line-height:0px; background:url(/images/login/c_t.jpg) no-repeat; float:left; display: inline;}
+#cpg_b{width:970px; height:24px;  font-size:0px; line-height:0px; background:url(/images/login/c_b.jpg) no-repeat; float:left; display: inline;}
+#cpg_c{width:970px; background:#E5F3CD; float:left; display:inline;}
+
+#cpg_l{width:380px; margin-left:30px; margin-top:5px; background:#ffffff; float:left; display:inline;}
+#cpg_t{width:380px; height:36px; line-height:36px; background:#D4EAAD; float:left; display:inline;}
+#cpgt_c{width:250px;font-size:20px; color:#336600; font-weight:bold; float:left; display: inline; }
+#cpgt_l{width:13px; height:36px; font-size:0px; line-height:0px; background:url(/images/login/h_l.jpg) no-repeat; float:left; display:inline;}
+#cpgt_r{width:13px; height:36px; font-size:0px; line-height:0px; background:url(/images/login/h_r.jpg) no-repeat; float:right; display:inline;}
+#cpgc_b{width:380px; height:20px;   font-size:0px; line-height:0px; background:url(/images/login/cc_b.jpg) no-repeat;  float:left; display:inline;}
+
+
+.user{width:342px; height:25px; margin-top:20px;  margin-left:30px; line-height:25px; float:left; display:inline;}
+.u_l{width:60px; height:25px; font-size:15px; line-height:25px; float:left; display:inline;}
+.u_r{width:245px; height:20px; margin-top:2px;  float:left; display: inline;}
+.u_c{width:80px; height:20px; margin-top:2px;  float:left; display: inline;}
+.u_c input{width:55px; height:16px; margin-top:2px;  float:left; display: inline;}
+#u_r{width:125px; height:20px; margin-top:2px; margin-left:5px;  float:left; display: inline;}
+#u_r a{font-size:12px; color:#3C7FB1; text-decoration:none;}
+
+
+.u_y{width:35px; height:20px; margin-top:4px; background: #000; float:left; display:inline;}
+
+
+.u_r input{width:245px; height:15px; float:left; display: inline;}
+.u_r select{width:250px; height:20px; float:left; display: inline;}
+.u_btn{width:312px; height:30px; margin-left:30px; margin-top:20px; line-height:30px; float: left; display: inline;}
+.u_btn input{width:94px; height:26px; margin-left:60px; border:0px solid #000000; background:url(/images/login/login.jpg) no-repeat;  float:left; display: inline;}
+
+#cpg_r{width:523px; height:290px; margin-left:20px; margin-top:10px; background:url(/images/login/v.jpg) no-repeat; float:left; display: inline;}
+
+
+
+
+
+
+
+
+#bottom{width:970px; text-align:center; margin-top:20px; font-size:12px; color:#666666; float:left; display:inline;}
+#bottom_b{width:970px; margin-top:10px; margin-bottom:50px; text-align:center; font-size:12px; color:#666666; float:left; display:inline;}
