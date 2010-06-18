@@ -21,13 +21,17 @@
 	<?php
 		css_include_tag('admin','jquery_ui');
 		use_jquery_ui();
-		js_include_tag('../ckeditor/ckeditor.js','admin/question/project_edit');
+		js_include_tag('../ckeditor/ckeditor.js');
 		validate_form("project_edit");
 	?>
+	<style type="text/css">
+		#tabs {font-size:20px;}
+		#tabs span{float:left;margin-left:10px;}
+	</style>	
 </head>
 <body>
 <div id=icaption>
-	<div id=title>添加评测表</div>
+	<div id=title>编辑评测</div>
 	  <a href="project_list.php" id=btn_back></a>
 </div>
 <form id="project_edit" action="project.post.php" enctype="multipart/form-data" method="post">
@@ -43,57 +47,12 @@
 		</tr>
 		<tr class="tr4" id="result_tool">
 			<td align="center" width="100">结果报表</td>
-			<td align="left"><img id="img_add_result" src="/images/admin/btn_add.png" title="添加" style="cursor:pointer;" /></td>
+			<td align="left"><a href="/admin/question/problem_result.php?id=<?php echo $id;?>"><img id="img_edit_result" src="/images/admin/btn_edit.png" border=0 title="编辑" style="cursor:pointer;" /></a></td>
 		</tr>
-		<?php 
-			!$results && $results = array();
-			foreach ($results as $result){
-				include '_problem_result.php';
-			}
-		?>
 		<tr class=tr4>
 			<td align="center">介绍：</td>
 			<td align="left"><?php show_fckeditor('post[description]','Admin',false,"120",$project->description);?></td>
 		</tr>
-		<!--  
-		<tr class=tr3>
-			<td>所属类别：</td>
-			<td align="left" >
-				<select  name="post[category_id]">
-					<?php for($i=0;$i<$count;$i++){?>
-					<option value="<?php echo $category_menu[$i]->id;?>" <?php if($category_menu[$i]->id==$record[0]->category_id){?>selected="selected"<?php }?> ><?php echo $category_menu[$i]->name;?></option>
-					<?php }?>
-				</select>
-			</td>
-		</tr>
-		<tr class="tr3">
-			<td>开始时间</td>
-			<td align="left" ><input type="text" name="post[start_time]" id="start"  class="date_jquery" value="<?php if(substr($record[0]->start_time,0,10)!='0000-00-00'){echo substr($record[0]->start_time,0,10);}?>" >若不填则发布就可参加
-			</td>
-		</tr>	
-		<tr class="tr3">
-			<td>结束时间</td>
-			<td align="left" ><input type="text" name="post[end_time]" id="end"  class="date_jquery" value="<?php if(substr($record[0]->end_time,0,10)!='0000-00-00'){echo substr($record[0]->end_time,0,10);}?>">若不填则长期有效
-			</td>
-		</tr>	
-		<tr class="tr3">
-			<td>答题时限</td>
-			<td align="left" ><input type="text" name="post[limit_time]" class="number" value="<?php echo $record[0]->limit_time;?>">若无时限则不需要输入/单位秒</td>
-		</tr>		
-		<tr class="tr3">
-			<td>单题分值</td>
-			<td align="left" ><input type="text" name="post[point]" class="number" value="<?php echo $record[0]->point;?>">若不输入则每题10分</td>
-		</tr>	
-		<tr class="tr3">
-			<td>题目类型</td>
-			<td align="left" >
-				<select id="problemtype" name="post[type]">
-					<option value="check" <?php if('check'==$record[0]->type){?>selected="selected"<?php }?> >选择题</option> 
-					<option value="judge" <?php if('judge'==$record[0]->type){?>selected="selected"<?php }?> >是非题</option>
-				</select>
-			</td>
-		</tr>		
-		-->
 		<tr class=btools>
 			<td colspan="2"><input id="submit" type="submit" value="发布测评"></td>
 		</tr>
