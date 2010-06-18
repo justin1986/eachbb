@@ -43,8 +43,12 @@
 							<li><a href="#">阅读器、</a></li>
 							<li><a href="#">新闻出版</a></li>
 						</ul>
-						<div></div>
+					
+					<div id="text_content">
+						<font>本文摘要：</font>
+						<a href="#">哈哈哈撒旦法哈哈哈撒旦法沃尔夫斯蒂芬哈哈哈撒旦法沃尔夫斯蒂芬哈哈哈撒旦法沃尔夫斯蒂芬哈哈哈撒旦法沃尔夫斯蒂芬沃尔夫斯蒂芬</a>
 					</div>
+				</div>
 				</div>
 				<div id="text_bpg"></div>
 			</div>

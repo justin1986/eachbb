@@ -143,6 +143,27 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 #text_word ul li font{font-size:14px; font-weight:bold; color:#666666; float:left; display:inline;}
 #text_word ul li a{font-size:12px; text-decoration: none; color:#990099; float:left; display:inline;}
 
+#text_content{width:615px; height:50px; margin-top:20px; line-height:25px; overflow:hidden; float:left; display:inline;}
+#text_content font{font-size:14px; font-weight:bold; color:#666666;}
+#text_content a{font-size:14px; text-decoration: none; color:#666666; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
