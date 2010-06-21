@@ -30,12 +30,13 @@
 		#tabs span{float:left;margin-left:10px;}
 		ul{list-style-type: none;}
 		ul li{margin-left:10px;}
+		.delete_recommand,.edit_recommand{color:blue; cursor: pointer;}
 	</style>	
 </head>
 <body>
 <div id=icaption>
 	<div id=title>评测报表管理</div>
-	  <a href="project_edit.php?id=<?php echo $id;?>" id=btn_back></a>
+	  <a href="project_edit.php?id=<?php echo $id;?>" id="btn_back"></a>
 	  <a href="#" id="btn_add"></a>
 </div>
 <div id="tabs">
