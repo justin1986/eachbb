@@ -38,14 +38,14 @@
 					<div class="c_a">
 						<div class="ca_a">*</div>
 						<div class="ca_b">登录密码</div>
-						<div class="ca_c"><input name="post[password]" type="text"/> </div>
-						<div class="ca_d">请设置4-20个字符，包含英文大小写字母、数字和部分标点符号组合</div>
+						<div class="ca_c"><input name="post[password]" id="password" type="password"/> </div>
+						<div class="ca_d" id="password_info">请设置4-20个字符，包含英文大小写字母、数字和部分标点符号组合</div>
 					</div>
 					<div class="c_a">
 						<div class="ca_a">*</div>
 						<div class="ca_b">确认密码</div>
-						<div class="ca_c"><input type="text"/> </div>
-						<div class="ca_d"></div>
+						<div class="ca_c"><input id="re_password" type="password"/> </div>
+						<div class="ca_d" id="re_password_info"></div>
 					</div>
 					<div class="c_a">
 						<div class="ca_a">*</div>

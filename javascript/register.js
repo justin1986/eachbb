@@ -17,6 +17,14 @@ $(function(){
 		check_email(false);
 	});
 	
+	$("#password").blur(function(){
+		check_password(false);
+	});
+	
+	$("#re_password").blur(function(){
+		check_re_password(false);
+	});
+	
 	$(".birthday").datepicker(
 	{
 		changeMonth: true,
@@ -114,8 +122,57 @@ function check_email(is_submit){
 	}
 }
 
+function check_password(is_submit){
+	var password = $("#password").val();
+	var re_password = $("#re_password").val();
+	if(password!=''){
+		if(password.length<4){
+			$("#password_info").html('<span style=color:red>密码太短</span>');
+			return false;
+		}
+		if(password.length>20){
+			$("#password_info").html('<span style=color:red>密码太长</span>');
+			return false;
+		}
+		if(!isNumberOrLetter2(password)){
+			$("#password_info").html('<span style=color:red>密码还有非法字符</span>');
+			return false;
+		}
+		if (re_password != '') {
+			if (password != re_password) {
+				$("#re_password_info").html('<span style=color:red>请2次输入相同密码</span>');
+				return false;
+			}
+			else {
+				$("#re_password_info").html('<span style=color:green>输入一致</span>');
+				return true;
+			}
+		}else{
+			$("#password_info").html('<span style=color:green>密码可以使用</span>');
+			return true;
+		}
+	}else{
+		if(is_submit){
+			alert('请输入密码！');
+			return false;
+		}else{
+			$("#password_info").text('请设置4-20个字符，包含英文大小写字母、数字和部分标点符号组合！');
+		}
+	}
+}
 
-
+function check_re_password(){
+	var password = $("#password").val();
+	var re_password = $("#re_password").val();
+	if(password!=''&&re_password!=''){
+		if(password!=re_password){
+			$("#re_password_info").html('<span style=color:red>请2次输入相同密码</span>');
+			return false;
+		}else{
+			$("#re_password_info").html('<span style=color:green>输入一致</span>');
+		}
+	}
+}
 
 function isNumberOrLetter(s){//判断是否是数字或字母 
 	var regu = "^[0-9a-zA-Z]+$";
