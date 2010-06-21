@@ -1,24 +1,19 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <?php
 	include_once('./frame.php');
-	$id = trim(intval($_GET['id']));
+	$id = 1032;#trim(intval($_GET['id']));
+	$db = get_db();
 	if(empty($id)){
 		$name = $_GET['name'];
 		if(empty($name) or strlen($name) > 20){
 			die();
 		}
-		$db = get_db();
 		$db->query("select id from eb_news where id='{$name}'");
 		if($db->record_count <= 0) die();
 		$id = $db->field_by_name('id');
 	}
-	$column = new table_class('fb_user');
-	$column->find($id);
-	if(!$column->id){
-		redirect('error.html');
-		die();
-	}
-?>
+	$column=$db->query("SELECT id,title,short_title,description,content,created_at,last_edited_at,video_photo_src,keywords,publisher FROM eb_news e where id=".$id." order by last_edited_at desc");	
+	?>
 <html>
 <head>
 <meta http-equiv=Content-Type content="text/html; charset=utf-8">
@@ -38,10 +33,10 @@
 			<div id="hr"></div>
 		</div>
 		<div id="b_l">
-			<div id="title"><a href="#">华为“跨界”切入电子阅读</a></div>
+			<div id="title"><a href="#"><?php echo $column[0]->title;?></a></div>
 			<div id="title_b">
-				<div id="ret">记者：<a href="#">阿斯多夫</a></div>
-				<div id="problem">发布与：2010-1-21</div>
+				<div id="ret">记者：<a href="#"><?php echo $column[0]->publisher;?></a></div>
+				<div id="problem">发布与：<?php echo $column[0]->created_at;?></div>
 			</div>
 			<div id="text">
 				<div id="text_tpg"></div>
@@ -49,16 +44,13 @@
 					<div id="text_word">
 						<ul>
 							<li><font>本文关键字：</font></li>
-							<li><a href="#">电子、</a></li>
-							<li><a href="#">财富、</a></li>
-							<li><a href="#">通信、</a></li>
-							<li><a href="#">华为、</a></li>
-							<li><a href="#">方案、</a></li>
-							<li><a href="#">用户、</a></li>
-							<li><a href="#">营销、</a></li>
-							<li><a href="#">客户端、</a></li>
-							<li><a href="#">阅读器、</a></li>
-							<li><a href="#">新闻出版</a></li>
+							<?php
+							$keyword=$db->query("select id,keywords from eb_news where id=967");
+							$lines=explode("||",$keyword[0]->keywords);
+							#var_dump($lines);
+							for($i=0;$i<count($keyword);$i++){  ?>
+							<li><a href=""><?php  echo $lines[$i]; ?></a></li>
+							<?php } ?>
 						</ul>
 					
 					
