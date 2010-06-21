@@ -45,10 +45,12 @@
 			<td align="center" width="100">封面图片</td>
 			<td align="left"><input name="image" id="image" type="file"><?php if($project->photo_url){?><a href="<?php echo $project->photo_url;?>" target="_blank">点击查看</a><?php }?></td>
 		</tr>
+		<?php if ($project->id){?>
 		<tr class="tr4" id="result_tool">
 			<td align="center" width="100">结果报表</td>
 			<td align="left"><a href="/admin/question/problem_result.php?id=<?php echo $id;?>"><img id="img_edit_result" src="/images/admin/btn_edit.png" border=0 title="编辑" style="cursor:pointer;" /></a></td>
 		</tr>
+		<?php }?>
 		<tr class=tr4>
 			<td align="center">介绍：</td>
 			<td align="left"><?php show_fckeditor('post[description]','Admin',false,"120",$project->description);?></td>

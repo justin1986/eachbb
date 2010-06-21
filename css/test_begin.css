@@ -26,7 +26,9 @@ li {list-style-image: none;  list-style-type: none;}
 .crb_ttt{width:151px; height:3px;   font-size:0px; line-height:0px; background:url(../images/test/tt.jpg) no-repeat; float:left; display:inline;}
 .crb_ccc{width:149px; height:23px; border-left:1px solid #C2C2C2; border-bottom:1px solid #C2C2C2;   text-align:center; line-height:23px; border-right:1px solid #C2C2C2; float:left; display:inline;}
 #cr_hr{width:267px; height:26px; background:#ffffff; border-bottom:1px solid #C2C2C2; float:left; display:inline;}
-#crbt{border-bottom:1px solid #ffffff;}
+.crb_cc.selected,.crb_ccc.selected{border-bottom:1px solid #ffffff;}
+#crb_t .crb_cc.selected a{color:black; font-weight: bold;}
+#crb_t .crb_ccc.selected a{color:black; font-weight: bold;}
 #crb_c{width:740px; height:144px; margin-top:15px; float:left; display:inline;}
 #crbc_a{width:139px; height:136px; margin:4px; float:left; display:inline;}
 #crbc_a img{width:139px; height:136px; border:0px solid red;}

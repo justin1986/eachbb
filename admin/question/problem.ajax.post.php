@@ -1,7 +1,7 @@
 <?php
 include_once '../../frame.php';
 if(!is_ajax()) die('invalid request!');
-$valid_ops = array('delete','edit_question','edit_result');
+$valid_ops = array('delete','edit_question','edit_result','delete_recommand');
 $op = $_POST['op'];
 $db = get_db();
 if(!in_array($op,$valid_ops)){
@@ -20,10 +20,9 @@ switch ($op) {
 	break;
 	case 'edit_question':
 		$question = new table_class('eb_question');
-		if($_POST['id']){
-			$question->find($_POST['id']);
+		if($_GET['item']['id']){
+			$question->find($_GET['item']['id']);
 		}else{
-			$question->problem_id = $_POST['pid'];
 			$question->create_time = now();
 		}
 			
@@ -53,6 +52,7 @@ switch ($op) {
 			$len = count($_GET['result']['id']);
 			$result = new table_class('eb_problem_result');
 			$result->problem_id= $_GET['id'];
+			$recommand = new table_class('eb_recommand');
 			for($i=0;$i<$len;$i++){
 				if($_GET['result']['changed'][$i]){
 					$result->id= $_GET['result']['id'][$i] ? $_GET['result']['id'][$i]: 0;
@@ -60,10 +60,32 @@ switch ($op) {
 					$result->max_score= $_GET['result']['max'][$i];
 					$result->description= $_GET['result']['description'][$i];
 					$result->result_type= $_GET['type'];						
-					$result->save();				
+					$result->save();
+					$var = $_GET['result']['rand_name'][$i];
+					$recommand_len = count($$var['title']);
+					for($j=0;$j<$recommand_len;$j++){
+						$recommand->id = $$var['id'][$j];
+						$recommand->title = $$var['title'][$j];
+						$recommand->result_id = $result->id;
+						$recommand->href = $$var['href'][$j];
+						$recommand->recommand_type = $$var['recommand_type'][$j];
+						$recommand->save();
+					}	
 				}
 			}
 		}
+		break;
+	case 'delete_recommand':
+		$id = intval($_GET['recommand_id']);
+		if(!$id){
+			die('invalid params');
+		}
+		$db->query("select image from eb_recommand where id={$id}");
+		if($db->record_count <=0 )die('invalid params');
+		if($image = $db->field_by_name('image')){
+			unlink(ROOT_DIR .$image);
+		}
+		$db->execute("delete from eb_recommand where id={$id}");
 		break;
 	default:
 		;
