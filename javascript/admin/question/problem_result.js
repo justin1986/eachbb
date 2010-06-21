@@ -45,4 +45,49 @@ $(function(){
 		});
 		return false;
 	});
+	
+	$('.add_assister').live('click',function(e){
+		var $this = $(this);
+		var result_id = $this.parent().find('.hidden_result_id').val();
+		parent.$.fn.colorbox({
+			href:'/admin/question/p_edit_recommand.php?recommand_type=assister&result_id=' + result_id,
+			width:'660px',
+			height:'350px',
+			iframe:'true'
+		});
+	});
+	
+	$('.add_course').live('click',function(e){
+		var $this = $(this);
+		var result_id = $this.parent().find('.hidden_result_id').val();
+		parent.$.fn.colorbox({
+			href:'/admin/question/p_edit_recommand.php?recommand_type=course&result_id=' + result_id,
+			width:'660px',
+			height:'350px',
+			iframe:'true'
+		});
+	});
+	
+	$('.edit_recommand').live('click',function(e){
+		e.preventDefault();
+		var recommand_id = $(this).attr('href');
+		parent.$.fn.colorbox({
+			href:'/admin/question/p_edit_recommand.php?recommand_id=' + recommand_id,
+			width:'660px',
+			height:'350px',
+			iframe:'true'
+		});
+	});
+	$('.delete_recommand').live('click',function(e){
+		e.preventDefault();
+		if(!confirm("删除后将无法恢复，是否确定删除？")) return;
+		var recommand_id = $(this).attr('href');
+		$.post('/admin/question/problem.ajax.post.php?recommand_id=' + recommand_id,{'op':'delete_recommand'},function(data){
+			if(data){
+				alert(data);
+			}else{
+				location.reload();
+			}
+		});
+	});
 });
