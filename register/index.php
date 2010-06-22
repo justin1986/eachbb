@@ -26,19 +26,19 @@
 					<div class="c_a">
 						<div class="ca_a">*</div>
 						<div class="ca_b">用户名</div>
-						<div class="ca_c"><input name="post[name]" id="name" type="text"/> </div>
+						<div class="ca_c"><input name="name" id="name" type="text"/> </div>
 						<div class="ca_d" id="name_info">4-20位，包含英文大小字母和数字组成</div>
 					</div>
 					<div class="c_a">
 						<div class="ca_a">*</div>
 						<div class="ca_b">邮箱</div>
-						<div class="ca_c"><input name="post[email]" type="text" id="email"/> </div>
+						<div class="ca_c"><input name="email" type="text" id="email"/> </div>
 						<div class="ca_d" id="email_info">邮箱作为您找回密码的唯一凭证，请填写真实有效邮箱地址并妥善保管！</div>
 					</div>
 					<div class="c_a">
 						<div class="ca_a">*</div>
 						<div class="ca_b">登录密码</div>
-						<div class="ca_c"><input name="post[password]" id="password" type="password"/> </div>
+						<div class="ca_c"><input name="password" id="password" type="password"/> </div>
 						<div class="ca_d" id="password_info">请设置4-20个字符，包含英文大小写字母、数字和部分标点符号组合</div>
 					</div>
 					<div class="c_a">
@@ -72,7 +72,7 @@
 						<div class="ca_c">
 							<input type="text" id="baby_birthday2" name=post[baby_birthday]>
 						</div>
-						<div class="ca_d"></div>
+						<div class="ca_d" id="baby_birthday_info"></div>
 					</div>
 					<div class="c_a">
 						<div class="ca_a"></div>
@@ -102,7 +102,7 @@
 						<div class="ca_a">*</div>
 						<div class="ca_b">出生年月日</div>
 						<div class="ca_c"><input type="text" id="birthday" name=post[birthday]> </div>
-						<div class="ca_d"></div>
+						<div class="ca_d" id="birthday_info"></div>
 					</div>
 					<div class="c_a">
 						<div class="ca_a">*</div>
@@ -113,7 +113,7 @@
 					<div id="hr"></div>
 					<textarea id="text"></textarea>
 					<div id="check"><input type="checkbox"/> 我接受用户注册和使用协议</div>
-					<div id="confirm"><input type="button"/></div>
+					<div id="confirm"><input type="submit"/></div>
 					</form>
 				</div>
 			</div>

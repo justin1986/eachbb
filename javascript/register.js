@@ -224,10 +224,11 @@ function check_babybirthday(){
 		}
 	}else{
 		if(!check_date($("#baby_birthday2").val())){
-			alert("请输入正确的日期格式!");
+			$("#baby_birthday_info").html('<span style=color:red>请输入正确的日期格式</span>');
 			$("#baby_birthday2").attr('value','');
 			return false;
 		}else{
+			$("#baby_birthday_info").html('');
 			return true;
 		}
 	}
@@ -239,10 +240,11 @@ function check_birthday(){
 		return false;
 	}else{
 		if(!check_date($("#birthday").val())){
-			alert("请输入正确的日期格式!");
+			$("#birthday_info").html('<span style=color:red>请输入正确的日期格式</span>');
 			$("#birthday").attr('value','');
 			return false;
 		}else{
+			$("#birthday_info").html('');
 			return true;
 		}
 	}
