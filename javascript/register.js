@@ -2,30 +2,54 @@ $(function(){
 	birthday_display();
 	
 	$("#cad_v").click(function(){
-		change_pic();
+		change_verify();
 	});
 	
 	$("#baby_status").change(function(){
 		birthday_display();
 	});
 	
-	$("#name").blur(function(){
+	$("#name").change(function(){
 		check_name(false);
 	});
 	
-	$("#email").blur(function(){
+	$("#email").change(function(){
 		check_email(false);
 	});
 	
-	$("#password").blur(function(){
+	$("#password").change(function(){
 		check_password(false);
 	});
 	
-	$("#re_password").blur(function(){
+	$("#re_password").change(function(){
 		check_re_password(false);
 	});
 	
-	$(".birthday").datepicker(
+	$("#baby_birthday2").change(function(){
+		check_babybirthday();
+	});
+	
+	$("#birthday").change(function(){
+		check_birthday();
+	});
+	
+	$("#phone").change(function(){
+		check_phone();
+	});
+	
+	$("#address").change(function(){
+		check_address();
+	});
+	
+	$("#zip").change(function(){
+		check_zip();
+	});
+	
+	$("#verify").change(function(){
+		check_verify();
+	});
+	
+	$("#birthday,#baby_birthday2").datepicker(
 	{
 		changeMonth: true,
 		changeYear: true,
@@ -37,7 +61,7 @@ $(function(){
 	});
 });
 
-function change_pic(){
+function change_verify(){
 	$("#validate img").attr('src','/inc/verify.php?name=register&reload='+Math.round(Math.random()*10000));
 }
 
@@ -145,6 +169,7 @@ function check_password(is_submit){
 			}
 			else {
 				$("#re_password_info").html('<span style=color:green>输入一致</span>');
+				$("#password_info").html('<span style=color:green>密码可以使用</span>');
 				return true;
 			}
 		}else{
@@ -157,6 +182,10 @@ function check_password(is_submit){
 			return false;
 		}else{
 			$("#password_info").text('请设置4-20个字符，包含英文大小写字母、数字和部分标点符号组合！');
+			if (re_password != '') {
+				$("#re_password_info").html('<span style=color:red>请2次输入相同密码</span>');
+				return false;
+			}
 		}
 	}
 }
@@ -170,7 +199,109 @@ function check_re_password(){
 			return false;
 		}else{
 			$("#re_password_info").html('<span style=color:green>输入一致</span>');
+			return true;
 		}
+	}
+}
+
+function check_status(){
+	if($("#baby_status").val()==0){
+		alert('请选择是否生育');
+		return false;
+	}else{
+		return true;
+	}
+}
+
+function check_babybirthday(){
+	if($("#baby_birthday2").val()==''){
+		if($("#baby_status").val()==1){
+			alert('请输入宝宝的生日！');
+			return false;
+		}else if($("#baby_status").val()==3){
+			alert('请输入宝宝的预产期！');
+			return false;
+		}
+	}else{
+		if(!check_date($("#baby_birthday2").val())){
+			alert("请输入正确的日期格式!");
+			$("#baby_birthday2").attr('value','');
+			return false;
+		}else{
+			return true;
+		}
+	}
+}
+
+function check_birthday(){
+	if($("#birthday").val()==''){
+		alert("请输入生日！");
+		return false;
+	}else{
+		if(!check_date($("#birthday").val())){
+			alert("请输入正确的日期格式!");
+			$("#birthday").attr('value','');
+			return false;
+		}else{
+			return true;
+		}
+	}
+}
+
+function check_phone(){
+	var phone = $("#phone").val();
+	if(phone!=''){
+		return check_str_length(phone.length,5,20,'电话');
+	}
+	return true;
+}
+
+function check_address(){
+	if($("#address").val()!=''){
+		return check_str_length($("#address").val().length,0,30,'地址');
+	}
+	return true;
+}
+
+function check_zip(){
+	if($("#zip").val()!=''){
+		return check_str_length($("#zip").val().length,0,30,'邮编');
+	}
+}
+
+function check_str_length(length,limit,limit2,info){
+	if(length<limit){
+		alert(info+"长度太短!");
+		return false;
+	}else if(length>limit2){
+		alert(info+"长度太长!");
+		return false;
+	}else{
+		return true;
+	}
+}
+
+function check_verify(){
+	$.post('check_verify.php',{'verify':$("#verify").val()},function(result){
+		if(result=='wrong'){
+			change_verify();
+			alert('验证码错误!');
+			$("#verify").attr('value','');
+			return false;
+		}else{
+			return true;
+		}
+	});
+}
+
+function check_date(s){
+	//var regu = "^/d{4}$";
+	var regu = "^[0-9]{4}-[0-9]{2}-[0-9]{2}$";
+	var re = new RegExp(regu);
+	if(re.test(s)){
+		return true;
+	}else{
+		return false;
 	}
 }
 
@@ -199,4 +330,4 @@ function isEmail(str){
 	var myReg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/; 
 	if(myReg.test(str)) return true; 
 	return false; 
-} 
+}

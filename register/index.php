@@ -50,7 +50,7 @@
 					<div class="c_a">
 						<div class="ca_a">*</div>
 						<div class="ca_b">性别</div>
-						<div class="ca_s"><input name="post[gender]" value="0" type="radio"/>男<input type="radio" name="post[gender]" value="1" style="margin-left:40px;"/>女</div>
+						<div class="ca_s"><input name="post[gender]" value="0" type="radio"/>男<input type="radio" name="post[gender]" selected="selected" value="1" style="margin-left:40px;"/>女</div>
 						<div class="ca_d"></div>
 					</div>
 					<div class="c_a">
@@ -70,7 +70,7 @@
 						<div class="ca_a"></div>
 						<div class="ca_b" id="baby_birthday">宝宝生日</div>
 						<div class="ca_c">
-							<input type="text" class="birthday" name=post[baby_birthday]>
+							<input type="text" id="baby_birthday2" name=post[baby_birthday]>
 						</div>
 						<div class="ca_d"></div>
 					</div>
@@ -78,7 +78,7 @@
 						<div class="ca_a"></div>
 						<div class="ca_b">联系电话</div>
 						<div class="ca_c">
-							<input type="text" name=post[phone]>
+							<input type="text" id="phone" name=post[phone]>
 						</div>
 						<div class="ca_d"></div>
 					</div>
@@ -86,7 +86,7 @@
 						<div class="ca_a"></div>
 						<div class="ca_b">联系地址</div>
 						<div class="ca_c">
-							<input type="text" name=post[address]>
+							<input type="text" id="address" name=post[address]>
 						</div>
 						<div class="ca_d"></div>
 					</div>
@@ -94,20 +94,20 @@
 						<div class="ca_a"></div>
 						<div class="ca_b">邮编</div>
 						<div class="ca_c">
-							<input type="text" name=post[zip]>
+							<input type="text" id="zip" name=post[zip]>
 						</div>
 						<div class="ca_d"></div>
 					</div>
 					<div class="c_a">
 						<div class="ca_a">*</div>
 						<div class="ca_b">出生年月日</div>
-						<div class="ca_c"><input type="text" class="birthday" name=post[birthday]> </div>
+						<div class="ca_c"><input type="text" id="birthday" name=post[birthday]> </div>
 						<div class="ca_d"></div>
 					</div>
 					<div class="c_a">
 						<div class="ca_a">*</div>
 						<div class="ca_b">验证码</div>
-						<div class="ca_c"><input type="text" name=verify> </div>
+						<div class="ca_c"><input type="text" id="verify" name=verify> </div>
 						<div class="ca_d"><div id="validate"><img src="/inc/verify.php?name=register"></div><div id="cad_v">看不清楚？换张图片</div></div>
 					</div>
 					<div id="hr"></div>
