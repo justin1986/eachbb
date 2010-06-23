@@ -42,8 +42,7 @@
 						<ul>
 							<li><font>本文关键字：</font></li>
 							<?php
-							$keyword=$db->query("select id,keywords from eb_news where id=967");
-							$lines=explode("||",$keyword[0]->keywords);
+							$lines=explode("||",$column[0]->keywords);
 							foreach ($lines as $li){ ?>
 							<li class="keyword_container"><a href="<?php echo get_search_keyword_url($li);?>" title="<?php  echo $li; ?>"><?php  echo $li; ?></a></li>
 							<?php  } ?>
@@ -94,7 +93,7 @@
 					<div class="cla_title">早教课程</div>
 					<div class="cla_img">
 						<?php
-						$list=$db->query("SELECT id,title,img_url,description,content FROM eb_teach e where is_adopt=1 order by create_time desc,click_count desc limit 15;");
+						#$list=$db->query("SELECT id,title,img_url,description,content FROM eb_teach e where is_adopt=1 order by create_time desc,click_count desc limit 15;");
 						for($i=0;$i<3;$i++){ ?>
 						<div class="ci_z">
 							<div class="ci_pg"><a href="#"><img src="<?php echo $list[$i]->img_url;?>"></a></div>
