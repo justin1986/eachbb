@@ -1,24 +1,26 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <?php
 	include_once('./frame.php');
-	$id = trim(intval($_GET['id']));
+	$id = 1010;#trim(intval($_GET['id']));
+	$db = get_db();
 	if(empty($id)){
 		$name = $_GET['name'];
 		if(empty($name) or strlen($name) > 20){
 			die();
 		}
-		$db = get_db();
-		$db->query("select id from eb_news where id='{$name}'");
+		$sql="select id from eb_news where id='{$name}'";
+		$db->query($sql);
 		if($db->record_count <= 0) die();
 		$id = $db->field_by_name('id');
 	}
-	$column = new table_class('fb_user');
-	$column->find($id);
-	if(!$column->id){
-		redirect('error.html');
-		die();
-	}
-?>
+	 isset($_GET['page'])?$page = intval( $_GET['page'] ):$page = 1; 
+	 $PageSize = 10; 
+	 $result = mysql_query($sql); 
+	# $row = mysql_fetch_row($result); 
+	 
+	$column=$db->query("SELECT id,title,click_count,short_title,description,content,created_at,last_edited_at,video_photo_src,keywords,publisher FROM eb_news e where id=".$id." order by last_edited_at desc");
+	
+	?>
 <html>
 <head>
 <meta http-equiv=Content-Type content="text/html; charset=utf-8">
@@ -38,10 +40,10 @@
 			<div id="hr"></div>
 		</div>
 		<div id="b_l">
-			<div id="title"><a href="#">华为“跨界”切入电子阅读</a></div>
+			<div id="title"><a href="#" title="<?php echo $column[0]->title;?>"><?php echo $column[0]->title;?></a></div>
 			<div id="title_b">
-				<div id="ret">记者：<a href="#">阿斯多夫</a></div>
-				<div id="problem">发布与：2010-1-21</div>
+				<div id="ret">记者：<a href="#" title="<?php echo $column[0]->publisher;?>"><?php echo $column[0]->publisher;?></a></div>
+				<div id="problem" title="<?php echo $column[0]->created_at;?>">发布与：<?php echo $column[0]->created_at;?></div>
 			</div>
 			<div id="text">
 				<div id="text_tpg"></div>
@@ -49,38 +51,37 @@
 					<div id="text_word">
 						<ul>
 							<li><font>本文关键字：</font></li>
-							<li><a href="#">电子、</a></li>
-							<li><a href="#">财富、</a></li>
-							<li><a href="#">通信、</a></li>
-							<li><a href="#">华为、</a></li>
-							<li><a href="#">方案、</a></li>
-							<li><a href="#">用户、</a></li>
-							<li><a href="#">营销、</a></li>
-							<li><a href="#">客户端、</a></li>
-							<li><a href="#">阅读器、</a></li>
-							<li><a href="#">新闻出版</a></li>
+							<?php
+							$keyword=$db->query("select id,keywords from eb_news where id=967");
+							$lines=explode("||",$keyword[0]->keywords);
+							foreach ($lines as $li){ ?>
+							<li class="keyword_container"><a href="<?php echo get_search_keyword_url($li);?>" title="<?php  echo $li; ?>"><?php  echo $li; ?></a></li>
+							<?php  } ?>
 						</ul>
 					
 					
 					</div>
 					<div id="text_content">
 						<font>本文摘要：</font>
-						<a href="#">哈哈哈撒旦法哈哈哈撒旦法沃尔夫斯蒂芬哈哈哈撒旦法沃尔夫斯蒂芬哈哈哈撒旦法沃尔夫斯蒂芬哈哈哈撒旦法沃尔夫斯蒂芬沃尔夫斯蒂芬</a>
+						<a href="<?php get_news_url($column[0]); ?>" title="<?php echo strip_tags($column[0]->description);?>"><?php echo strip_tags($column[0]->description);?></a>
 					</div>
 					<div id="text_menu">
 						<div class="tm_a"><a href="#">打印</a></div>
 						<div id="tm_b"><a href="#">收藏</a></div>
 						<div class="tm_a"><a href="#">分享</a></div>
-						<div id="tm_ticket"><a href="#">支持&nbsp;100</a></div>
+						<div id="tm_ticket"><a href="#">支持&nbsp;<?php echo $column[0]->click_count; ?></a></div>
 					</div>
 				</div>
 				<div id="text_bpg"></div>
 			</div>
 			<div id="content">
-				使得法网上风使得法网上风    新闻出版总署科技与数字出版司，2使得法网上风    新闻出版总署科技与数字出版司，2使得法网上风    新闻出版总署科技与数字出版司，2使得法网上风    新闻出版总署科技与数字出版司，2使得法网上风    新闻出版总署科技与数字出版司，2使得法网上风    新闻出版总署科技与数字出版司，2使得法网上风    新闻出版总署科技与数字出版司，2使得法网上风    新闻出版总署科技与数字出版司，2使得法网上风    新闻出版总署科技与数字出版司，2使得法网上风    新闻出版总署科技与数字出版司，2使得法网上风    新闻出版总署科技与数字出版司，2使得法网上风    新闻出版总署科技与数字出版司，2使得法网上风    新闻出版总署科技与数字出版司，2使得法网上风    新闻出版总署科技与数字出版司，2使得法网上风    新闻出版总署科技与数字出版司，2使得法网上风    新闻出版总署科技与数字出版司，2使得法网上风    新闻出版总署科技与数字出版司，2使得法网上风    新闻出版总署科技与数字出版司，2使得法网上风    新闻出版总署科技与数字出版司，2使得法网上风    新闻出版总署科技与数字出版司，2使得法网上风    新闻出版总署科技与数字出版司，2使得法网上风    新闻出版总署科技与数字出版司，2使得法网上风    新闻出版总署科技与数字出版司，2使得法网上风    新闻出版总署科技与数字出版司，2使得法网上风    新闻出版总署科技与数字出版司，2新闻出版总署科技与数字出版司，2
+				<?php
+					$content=$column[0]->content;
+					echo get__news_fck_content($content,'page');
+				?>	
 			</div>
 			<div id="pagination">
-				<a href="#">上一页</a>&nbsp;<a href="#">1</a>&nbsp;|&nbsp;<a href="#">2</a>&nbsp;<a href="#">下一页</a>
+				<?php  print_news_fck_pages2($content,'article.php?id='.$article->id."&lang={$_GET['lang']}",'page');?>
 			</div>
 			<div id="critique">
 				<div id="c_l">读者评论<a href="#">(共5条)</a></div>
@@ -104,17 +105,19 @@
 				<div class="cla_c">
 					<div class="cla_title">早教课程</div>
 					<div class="cla_img">
-						<?php for($i=0;$i<3;$i++){ ?>
+						<?php
+						$list=$db->query("SELECT  id,title,img_url,description,content FROM eb_teach e where is_adopt=1 order by create_time desc,click_count desc limit 15;");
+						for($i=0;$i<3;$i++){ ?>
 						<div class="ci_z">
-							<div class="ci_pg"><a href="#"><img src="/images/article/r1.jpg"></a></div>
-							<div class="ci_title"><a href="#">早教课程</a></div>
+							<div class="ci_pg"><a href="#"><img src="<?php echo $list[$i]->img_url;?>"></a></div>
+							<div class="ci_title"><a href="#"><?php echo $list[$i]->title;?></a></div>
 						</div>
 						<?php } ?>
 					</div>
 					<div class="cla_hr"></div>
 					<div class="cla_menu">
-						<?php for($i=0; $i<9; $i++){ ?>
-						<div class="cla_m_v"><a href="">早教课程</a></div>
+						<?php for($i=3; $i<15; $i++){ ?>
+						<div class="cla_m_v"><a href="" title="<?php echo $list[$i]->title; ?>"><?php echo $list[$i]->title; ?></a></div>
 						<div class="cla_r"></div>
 						<?php } ?>
 					</div>
@@ -128,7 +131,15 @@
 				<div id="tag_c">
 					<div id="tagc_t"><font>热门</font>关键字</div>
 					<div class="tag_menu">
-						<?php for($i=0; $i<9; $i++){ ?>
+						<?php
+						/*$sql="SELECT id,keywords FROM eb_news e where is_adopt=1 order by click_count desc, last_edited_at desc limit 12;";
+						$keywords=$db->query($sql);
+						for($i=0;$i<12;$i++){
+							$lines=explode("||",$keyword[$i]->keywords);
+							var_dump($lines);
+						}*/
+						for($i=0; $i<9; $i++){
+							?>
 						<div class="cla_m_v"><a href="">早教课程</a></div>
 						<div class="cla_r"></div>
 						<?php } ?>

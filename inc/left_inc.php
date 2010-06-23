@@ -26,7 +26,7 @@
 				</div>
 				
 				<div id="l_look">
-					<a href="#">网趣宝贝<font>意见反馈</a>&nbsp;&nbsp;</font>
+					<a href="#">网趣宝贝<font>意见反馈&nbsp;&nbsp;</font></a>
 				</div>
 				
 				<div class="hlc_t"></div>
