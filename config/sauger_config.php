@@ -1,2 +1,2 @@
 <?php
-$db_password  = 'xunao';
+$db_user_name = 'root';
