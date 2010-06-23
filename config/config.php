@@ -70,7 +70,7 @@ $app_uc_id = '2';
 $debug_tag = true;
 $db_server_name = 'localhost';
 $db_user_name = 'root'; 
-$db_password = 'abcdef';
+$db_password = 'test';
 $g_ucenter_ip = 'http://127.0.0.1:82';
 $site_domain = 'http://127.0.0.1:82';
 
