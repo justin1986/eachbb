@@ -1,13 +1,13 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <?php
 	include_once('../frame.php');
-	$id =intval(trim($_REQUEST['id']));
+	$id = intval(trim($_REQUEST['id']));
 	if(empty($id)){
 		#redirect('error.html');
 		#die();
 	}
 	$db = get_db();
-	$column=$db->query("SELECT id,title,click_count,short_title,description,content,created_at,last_edited_at,video_photo_src,keywords,publisher FROM eb_news e where id=".$id." order by last_edited_at desc");
+	$column = $db->query("SELECT id,title,click_count,short_title,description,content,created_at,last_edited_at,video_photo_src,keywords,publisher FROM eb_news e where id=".$id." order by last_edited_at desc");
 	?>
 <html>
 <head>
