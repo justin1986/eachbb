@@ -93,7 +93,7 @@
 					<div class="cla_title">早教课程</div>
 					<div class="cla_img">
 						<?php
-						#$list=$db->query("SELECT id,title,img_url,description,content FROM eb_teach e where is_adopt=1 order by create_time desc,click_count desc limit 15;");
+						$list=$db->query("SELECT id,title,img_url,description,content FROM eb_teach e where is_adopt=1 order by create_time desc,click_count desc limit 15;");
 						for($i=0;$i<3;$i++){ ?>
 						<div class="ci_z">
 							<div class="ci_pg"><a href="#"><img src="<?php echo $list[$i]->img_url;?>"></a></div>
