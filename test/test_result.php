@@ -33,6 +33,7 @@ echo "社会活动和行为规范得分：{$shehuihuodong}<br/>";
 		<?php include_once('../inc/top_blue.inc.php'); ?>
 		<div id="content">
 			<?php include_once('../inc/left_inc.php'); ?>
+			
 		</div>
 		<div id="bg_hr"></div>
 		<div id="bottom">关于我们 - 加入我们 - 友情链接 - 联系我们 - 服务条款 - 隐私保护 - 网站地图</div>
