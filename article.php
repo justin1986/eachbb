@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <?php
 	include_once('./frame.php');
-	$id = 1033;#trim(intval($_GET['id']));
+	$id = 1010;#trim(intval($_GET['id']));
 	$db = get_db();
 	if(empty($id)){
 		$name = $_GET['name'];
