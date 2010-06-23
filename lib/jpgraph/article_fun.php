@@ -16,7 +16,6 @@
 		$end = strpos($str,"</div>",$start);
 		$length = $end-$start+6;
 		$page_flag = substr($str, $start, $length);
-		
 		$contents = explode($page_flag,$str);
 		$record_count_token = $symbol . "_record_count";	
 		$pagecounttoken = $symbol . "_count";

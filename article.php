@@ -13,13 +13,7 @@
 		if($db->record_count <= 0) die();
 		$id = $db->field_by_name('id');
 	}
-	 isset($_GET['page'])?$page = intval( $_GET['page'] ):$page = 1; 
-	 $PageSize = 10; 
-	 $result = mysql_query($sql); 
-	# $row = mysql_fetch_row($result); 
-	 
 	$column=$db->query("SELECT id,title,click_count,short_title,description,content,created_at,last_edited_at,video_photo_src,keywords,publisher FROM eb_news e where id=".$id." order by last_edited_at desc");
-	
 	?>
 <html>
 <head>
