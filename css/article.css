@@ -10,8 +10,7 @@ body{width:970px; margin: 0 auto; font-family:ËÎÌו;}
 #tl_l{width:224px; height:83px; background:url(../images/bbs/loginb.jpg) no-repeat; float:left; display:inline;}
 #tl_r{width:721px; height:77px; background:url(../images/bbs/t.jpg) no-repeat; float:right; display:inline;}
 
-
-
+.keyword_container{margin-left:10px;}
 
 #top_menu{width:970px; height:61px; margin-top:5px; overflow:hidden;  float:left; display:inline;}
 #menu_left{width:5px; height:61px; background:url(../images/consult/t_a.jpg) no-repeat; float:left; display:inline;}
@@ -140,8 +139,11 @@ body{width:970px; margin: 0 auto; font-family:ËÎÌו;}
 #tm_ticket a{font-size:13px; color:#FF0000; font-weight:bold; text-decoration:none;}
 
 
-#content{width:635px; margin-top:15px; font-size:14px; line-height:30px; color:#333333; float:left; display:inline;}
-#pagination{width:635px; height:20px;  margin-top:20px; color:#666666; text-align:center; line-height:20px; float:left; display:inline;}
+#content{width:635px; margin-top:15px; text-indent:28px; font-size:14px; line-height:30px; color:#333333; float:left; display:inline;}
+#pagination{width:635px; height:20px;   margin-top:20px; color:#666666; text-align:center; line-height:20px; float:left; display:inline;}
+.page_span{margin-left: 5px;}
+.page_span2{margin-left: 5px;}
+.paginate_botton{margin-left: 5px;}
 #pagination a{font-size:14px; color:#003399; text-decoration: none;}
 
 
@@ -183,7 +185,7 @@ body{width:970px; margin: 0 auto; font-family:ËÎÌו;}
 .ci_z{width:85px; height: 83px; margin-left:5px; float:left; display: inline;}
 .ci_pg{width:82px; height:52px;  border:1px solid #C0C0C0; float:left; display:inline;}
 .ci_pg img{width:80px; height:50px; border:0px solid red; margin:1px;}
-.ci_title{width:85px; height:20px; margin-top:7px; text-align:center; line-height:20px; float:left; display: inline;}
+.ci_title{width:85px; height:20px; margin-top:7px; text-align:center; line-height:20px; overflow:hidden; float:left; display: inline;}
 .ci_title a{font-size:13px; color:#666666; text-decoration: none;}
 .cla_hr{width: 261px; height:1px; margin-left:17px; margin-top:10px; font-size:0px; line-height: 0px; background:url(/images/article/hr_r.jpg) repeat-x; float: left; display: inline;}
 .cla_menu{width:271px; margin-left:7px; margin-top:10px; float: left; display: inline;}

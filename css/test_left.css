@@ -1,0 +1,7 @@
+
+#c_l{width:205px;  overflow:hidden; float:left; display:inline;}
+
+
+#cr_b img{width:746px; height:167px; border:0px solid red;}
+#crb_img{width:746px; height:30px; line-height:30px; position:absolute; bottom:60px; text-align:center; left:0px; color:#000;}
+#c_r #cr_b a #crb_img{color:#fff; font-size:28px; text-decoration:none; font-weight:bold;}
