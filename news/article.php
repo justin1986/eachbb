@@ -7,7 +7,7 @@
 		#die();
 	}
 	$db = get_db();
-	$column=$db->query("SELECT id,title,click_count,short_title,description,content,created_at,last_edited_at,video_photo_src,keywords,publisher FROM eb_news e where id=".$id." order by last_edited_at desc");
+	$column = $db->query("SELECT id,title,click_count,short_title,description,content,created_at,last_edited_at,video_photo_src,keywords,publisher FROM eb_news e where id=".$id." order by last_edited_at desc");
 	?>
 <html>
 <head>
@@ -69,7 +69,7 @@
 				?>
 			</div>
 			<div id="pagination">
-				<?php  print_news_fck_pages2($content,'article.php?id='.$article->id."&lang={$_GET['lang']}",'page');?>
+				<?php  print_news_fck_pages2($content,'article.php?id='.$id,'page');?>
 			</div>
 			<div id="critique">
 				<div id="c_l">读者评论<a href="#">(共5条)</a></div>
