@@ -52,8 +52,6 @@
 							<li class="keyword_container"><a href="<?php echo get_search_keyword_url($li);?>" title="<?php  echo $li; ?>"><?php  echo $li; ?></a></li>
 							<?php  } ?>
 						</ul>
-					
-					
 					</div>
 					<div id="text_content">
 						<font>本文摘要：</font>
@@ -100,7 +98,7 @@
 					<div class="cla_title">早教课程</div>
 					<div class="cla_img">
 						<?php
-						$list=$db->query("SELECT  id,title,img_url,description,content FROM eb_teach e where is_adopt=1 order by create_time desc,click_count desc limit 15;");
+						$list=$db->query("SELECT id,title,img_url,description,content FROM eb_teach e where is_adopt=1 order by create_time desc,click_count desc limit 15;");
 						for($i=0;$i<3;$i++){ ?>
 						<div class="ci_z">
 							<div class="ci_pg"><a href="#"><img src="<?php echo $list[$i]->img_url;?>"></a></div>
@@ -118,8 +116,6 @@
 				</div>
 				<div class="cla_b"></div>
 			</div>
-			
-			
 			<div id="tag">
 				<div id="tag_l"></div>
 				<div id="tag_c">
@@ -141,8 +137,6 @@
 				</div>
 				<div id="tag_b"></div>
 			</div>
-			
-			
 			<div class="bd">
 				<div class="bd_t"></div>
 				<div class="bd_c">
@@ -184,10 +178,7 @@
 				</div>
 				<div id="comm_r"></div>
 			</div>
-			
-			
 		</div>
-		
 		</div>
 		<div id="bottom">关于我们 - 加入我们 - 友情链接 - 联系我们 - 服务条款 - 隐私保护 - 网站地图</div>
 		<div id="bottom_b">哈哈少儿旗下网站  Copyright © 1997-2010 HAHA.smg.com All Rights Reserved.</div>

@@ -1,11 +1,4 @@
 <?php
-	function str_news_fck($str)
-	{
-		$str=str_replace('\"','"',$str);
-		$str=str_replace('"font-size','"mso-bidi-font-size',$str);
-		$str=str_replace('FONT-SIZE','mso-bidi-font-size',$str);
-		return $str;
-	}
 	//获取FCK字符串内容
 	function get__news_fck_content($str,$symbol='fck_pageindex')
 	{
