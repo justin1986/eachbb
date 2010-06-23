@@ -1,18 +1,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <?php
-	include_once('./frame.php');
-	$id = 1010;#trim(intval($_GET['id']));
-	$db = get_db();
+	include_once('../frame.php');
+	$id =intval(trim($_REQUEST['id']));
 	if(empty($id)){
-		$name = $_GET['name'];
-		if(empty($name) or strlen($name) > 20){
-			die();
-		}
-		$sql="select id from eb_news where id='{$name}'";
-		$db->query($sql);
-		if($db->record_count <= 0) die();
-		$id = $db->field_by_name('id');
+		#redirect('error.html');
+		#die();
 	}
+	$db = get_db();
 	$column=$db->query("SELECT id,title,click_count,short_title,description,content,created_at,last_edited_at,video_photo_src,keywords,publisher FROM eb_news e where id=".$id." order by last_edited_at desc");
 	?>
 <html>
@@ -20,11 +14,13 @@
 <meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <meta http-equiv=Content-Language content=zh-CN>
 <title>consult</title>
-<link href="./css/article.css" rel="stylesheet" type="text/css" />
+<?php
+		css_include_tag('article');
+?>
 </head>
 <body>
 <div id="ibody">
-	<?php include_once('inc/top_consult.php'); ?>
+	<?php include_once('../inc/top_consult.php'); ?>
 		<div id="fbody">
 		<div id="log_top">
 			<div id="log_t">
@@ -70,7 +66,7 @@
 				<?php
 					$content=$column[0]->content;
 					echo get__news_fck_content($content,'page');
-				?>	
+				?>
 			</div>
 			<div id="pagination">
 				<?php  print_news_fck_pages2($content,'article.php?id='.$article->id."&lang={$_GET['lang']}",'page');?>
@@ -121,15 +117,7 @@
 				<div id="tag_c">
 					<div id="tagc_t"><font>热门</font>关键字</div>
 					<div class="tag_menu">
-						<?php
-						/*$sql="SELECT id,keywords FROM eb_news e where is_adopt=1 order by click_count desc, last_edited_at desc limit 12;";
-						$keywords=$db->query($sql);
-						for($i=0;$i<12;$i++){
-							$lines=explode("||",$keyword[$i]->keywords);
-							var_dump($lines);
-						}*/
-						for($i=0; $i<9; $i++){
-							?>
+						<?php for($i=0; $i<9; $i++){ ?>
 						<div class="cla_m_v"><a href="">早教课程</a></div>
 						<div class="cla_r"></div>
 						<?php } ?>
