@@ -121,8 +121,8 @@
 								{
 									$str=$str.$idd.",";
 								}
-								$sql="SELECT * FROM eb_news e where  is_adopt=1 and category_id in (".substr($str,0,-1) .") and id not in (".substr($not_id,0,-1).")  order by created_at desc limit 1,26;";
-								$title_list=$db->query($sql);
+								$sql="SELECT * FROM eb_news e where  is_adopt=1 and category_id in (".substr($str,0,-1) .") and id not in (".substr($not_id,0,-1).")  order by created_at desc";
+								$title_list=$db->paginate($sql,26);
 								for($i=0;$i<26;$i++){ ?>
 								<div class="list_title">
 									<div></div>
@@ -130,7 +130,7 @@
 								</div>
 								<?php } ?>
 						</div>
-						<div id="list_container_fun"><a href="#">1</a> <a href="#">2</a> <a href="#">3</a> </div>
+						<div id="list_container_fun"><?php paginate(); ?></div>
 					</div>
 					<!-- 底部 标题列表 右边的虚线 -->
 					<div class="list_container_l" style="float:right;"></div>
