@@ -7,6 +7,7 @@
 	{
 		#redirect('error.html');
 		#die();
+		$id=119;
 	}
 	?>
 <html>
@@ -15,7 +16,7 @@
 <meta http-equiv=Content-Language content=zh-CN>
 <title>consult</title>
 <?php
-		css_include_tag('news_list','news_list');
+		css_include_tag('news_list');
 ?>
 </head>
 <body>
@@ -57,7 +58,7 @@
 			<?php
 				$category=new category_class("news");
 				$item=$category->find($id);
-				$not_id;
+				$not_id="";
 				if(($item->level)==2)
 				{
 					$item_id=$category->tree_map($id);
