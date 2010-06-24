@@ -120,7 +120,7 @@
 								{
 									$str=$str.$idd.",";
 								}
-								$sql="SELECT * FROM eb_news e where  is_adopt=1 and category_id in (".substr($str,0,-1) .") and id not in (".substr($not_id,0,-1).")  order by created_at desc";
+								$sql="SELECT * FROM eb_news e where  is_adopt=1 and category_id in (".substr($str,0,-1).") and id not in (".substr($not_id,0,-1).")  order by created_at desc";
 								$title_list=$db->paginate($sql,26);
 								for($i=0;$i<26;$i++){ ?>
 								<div class="list_title">
