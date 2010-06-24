@@ -56,7 +56,6 @@
 			<!-- 左边 营养篇  和 其他三个 列表  大面板 -->
 			<?php
 				$category=new category_class("news");
-				$id=129;
 				$item=$category->find($id);
 				$not_id;
 				if(($item->level)==2)
