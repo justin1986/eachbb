@@ -1,6 +1,7 @@
 var name_flag = 'begin';
 var email_flag = 'begin';
 var verify_flag = 'begin';
+var register_flag = 'begin';
 
 $(function(){
 	birthday_display();
@@ -66,6 +67,7 @@ $(function(){
 	
 	
 	$("#register").click(function(){
+		register_flag = 'begin';
 		if(!check_name(true)){
 			$("#name").focus();
 			return false;
@@ -110,6 +112,7 @@ $(function(){
 			$("#verify").focus();
 			return false;
 		}
+		register_flag = 'success';
 		register_submit();
 	});
 });
@@ -119,24 +122,28 @@ function register_submit(){
 		$("#name").focus();
 		return false;
 	}else if(name_flag=='locked'){
-		setTimeout(register_submit(),2000);
 		return false;
 	}
 	if(email_flag=='wrong'){
 		$("#email").focus();
 		return false;
 	}else if(email_flag=='locked'){
-		setTimeout(register_submit(),2000);
 		return false;
 	}
 	if(verify_flag=='wrong'){
 		$("#verify").focus();
 		return false;
 	}else if(verify_flag=='locked'){
-		setTimeout(register_submit(),2000);
 		return false;
 	}
-	$("form").submit();
+	do_submit();
+}
+
+function do_submit(){
+	if(register_flag==name_flag==email_flag==verify_flag=='success'){
+		alert('ok');
+		$("form").submit();
+	}
 }
 
 function change_verify(){
@@ -171,17 +178,23 @@ function check_name(is_submit){
 			$("#name_info").html('<span style=color:red>用户名不能含有特殊字符</span>');
 			return false;
 		}
-		name_flag = 'locked'
-		$("#name_info").text('用户名验证中。。。');
-		$.post('check_name.php',{'name':name},function(data){
-			if(data>0){
-				$("#name_info").html('<span style=color:red>用户名已存在</span>');
-				name_flag = 'wrong';
-			}else{
-				$("#name_info").html('<span style=color:green>用户名可以使用</span>');
-				name_flag = 'success';
-			}
-		});
+		if (name_flag != 'locked') {
+			name_flag = 'locked'
+			$("#name_info").text('用户名验证中。。。');
+			$.post('check_name.php', {
+				'name': $("#name").val()
+			}, function(data){
+				if (data > 0) {
+					$("#name_info").html('<span style=color:red>用户名已存在</span>');
+					name_flag = 'wrong';
+				}
+				else {
+					$("#name_info").html('<span style=color:green>用户名可以使用</span>');
+					name_flag = 'success';
+					do_submit();
+				}
+			});
+		}
 		return true;
 	}else{
 		if(is_submit){
@@ -208,17 +221,23 @@ function check_email(is_submit){
 			$("#email_info").html('<span style=color:red>邮箱格式不对</span>');
 			return false;
 		}
-		email_flag = 'locked'
-		$("#email_info").text('邮箱验证中。。。');
-		$.post('check_email.php',{'email':email},function(data){
-			if(data>0){
-				$("#email_info").html('<span style=color:red>邮箱已存在</span>');
-				email_flag = 'wrong';
-			}else{
-				$("#email_info").html('<span style=color:green>邮箱可以使用</span>');
-				email_flag = 'success';
-			}
-		});
+		if (email_flag != 'locked') {
+			email_flag = 'locked'
+			$("#email_info").text('邮箱验证中。。。');
+			$.post('check_email.php', {
+				'email': $("#email").val()
+			}, function(data){
+				if (data > 0) {
+					$("#email_info").html('<span style=color:red>邮箱已存在</span>');
+					email_flag = 'wrong';
+				}
+				else {
+					$("#email_info").html('<span style=color:green>邮箱可以使用</span>');
+					email_flag = 'success';
+					do_submit();
+				}
+			});
+		}
 		return true;
 	}else{
 		if(is_submit){
@@ -386,22 +405,25 @@ function check_verify(is_submit){
 		$("#cad_v").html("看不清楚？换张图片<span style=color:red>　请输入验证码</span>")
 	}
 	else {
-		verify_flag = 'locked';
-		$("#cad_v").html("看不清楚？换张图片　验证中。。。")
-		$.post('check_verify.php', {
-			'verify': $("#verify").val()
-		}, function(result){
-			if (result == 'wrong') {
-				change_verify();
-				$("#cad_v").html("看不清楚？换张图片<span style=color:red>　验证码错误</span>")
-				$("#verify").attr('value', '');
-				verify_flag = 'wrong';
-			}
-			else {
-				$("#cad_v").html("看不清楚？换张图片")
-				verify_flag = 'success';
-			}
-		});
+		if (verify_flag != 'locked') {
+			verify_flag = 'locked';
+			$("#cad_v").html("看不清楚？换张图片　验证中。。。");
+			$.post('check_verify.php', {
+				'verify': $("#verify").val()
+			}, function(result){
+				if (result == 'wrong') {
+					change_verify();
+					$("#cad_v").html("看不清楚？换张图片<span style=color:red>　验证码错误</span>")
+					$("#verify").attr('value', '');
+					verify_flag = 'wrong';
+				}
+				else {
+					$("#cad_v").html("看不清楚？换张图片")
+					verify_flag = 'success';
+					do_submit();
+				}
+			});
+		}
 		return true;
 	}
 }
