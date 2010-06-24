@@ -54,12 +54,12 @@
 				</div>
 				<div id="recommend_bottom_pg"></div>
 			</div>
-			<!-- 左边 营养篇  和 其他三个 列表  大面板 -->
+			<!-- 新闻 列表  大面板 -->
 			<?php
 				$category=new category_class("news");
 				$item=$category->find($id);
 				$not_id="";
-				if(($item->level)==2)
+				if($item->level==2)
 				{
 					$item_id=$category->tree_map($id);
 					$id=$item_id[1];
@@ -73,7 +73,7 @@
 						$category_new=$db->query("SELECT id,name FROM eb_category e where id=$c");
 						?>
 						
-			<!-- 心里篇  开始 -->
+			<!-- 列表开始 -->
 			<div class="result_list" style="<?php if($i%2==0){ echo "margin-left:20px;";} ?>">
 				<div class="result_top_pg"><font><?php echo $category_new[0]->name?></font></div>
 				<div class="result_pg">
@@ -105,7 +105,7 @@
 					$i++;	
 				}
 			?>
-			<!-- 心里篇 结束 -->
+			<!-- 新闻列表 结束 -->
 			<!-- 中间虚线 显示内容开始 -->
 			<div id="list">
 				<div id="list_top"></div>
@@ -120,7 +120,7 @@
 								{
 									$str=$str.$idd.",";
 								}
-								$sql="SELECT * FROM eb_news e where  is_adopt=1 and category_id in (".substr($str,0,-1) .") and id not in (".substr($not_id,0,-1).")  order by created_at desc";
+								$sql="SELECT * FROM eb_news e where is_adopt=1 and category_id in (".substr($str,0,-1).") and id not in (".substr($not_id,0,-1).") order by created_at desc";
 								$title_list=$db->paginate($sql,26);
 								for($i=0;$i<26;$i++){ ?>
 								<div class="list_title">
