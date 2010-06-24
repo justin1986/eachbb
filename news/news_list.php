@@ -86,14 +86,14 @@
 						}
 					?>
 					<div class="result_left">
-						<a href="" title="<?php $list_category[0]->video_photo_src;?>"><img src="<?php echo $list_category[0]->video_photo_src;?>" /></a>
-						<a href="#" title="<?php echo $list_category[0]->title; ?>"><?php echo $list_category[0]->title; ?></a>
+						<a href="<?php get_news_url($list_category[0]); ?>" title="<?php $list_category[0]->video_photo_src;?>"><img src="<?php echo $list_category[0]->video_photo_src;?>" /></a>
+						<a href="<?php get_news_url($list_category[0]); ?>" title="<?php echo $list_category[0]->title; ?>"><?php echo $list_category[0]->title; ?></a>
 					</div>
 					<!-- 右边 列表的显示 -->
 					<div class="result_right">
 						<ul>
 							<?php for($j=1;$j<=7; $j++){ ?>
-							<li><div></div><a href="#"><?php echo $list_category[$j]->title; ?></a></li>
+							<li><div></div><a href="<?php get_news_url($list_category[$j]); ?>" title="<?php echo $list_category[$j]->title; ?>"><?php echo $list_category[$j]->title; ?></a></li>
 							<?php } ?>
 						</ul>
 					</div>
