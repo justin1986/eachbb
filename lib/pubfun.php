@@ -239,28 +239,47 @@ function show_video_player($width,$height,$image='',$file,$autostart = "false")
 		if (strtoupper(substr($file,-3)) == "MP3" || strtoupper(substr($file,-3)) == "WMV" || strtoupper(substr($file,-3)) == "WMA"  || strtoupper(substr($file,-3)) == "AVI" || strtoupper(substr($file,-3)) == "VYF")
 		{
 		?>
-			<OBJECT   id=MediaPlayer1   codeBase=http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=5,1,52,701standby=Loading   type=application/x-oleobject   height=<?php echo $height;?>   width=<?php echo $width;?>   classid=CLSID:6BF52A52-394A-11d3-B153-00C04F79FAA6   VIEWASTEXT>
-				<PARAM   NAME= "URL"   VALUE= "<?php echo $file;?>">
-				<PARAM   NAME= "playCount"   VALUE= "1">
-				<PARAM   NAME= "autoStart"   VALUE= "<? echo $autostart;?>">
-				<PARAM   NAME= "invokeURLs"   VALUE= "false">
-				<PARAM   NAME= "EnableContextMenu"   VALUE= "false">	
-				<embed src="<?php echo $file;?>" align="baseline" border="0" width="<?php echo $width;?>" height="<?php echo $height;?>" type="application/x-mplayer2"pluginspage="" name="MediaPlayer1" showcontrols="1" showpositioncontrols="0" showaudiocontrols="1" showtracker="1" showdisplay="0" showstatusbar="1" autosize="0" showgotobar="0" showcaptioning="0" autostart="<? echo $autostart;?>" autorewind="0" animationatstart="0" transparentatstart="0" allowscan="1" enablecontextmenu="1" clicktoplay="0" defaultframe="datawindow" invokeurls="0"></embed> 
-			</OBJECT>
-		<?php
+<OBJECT id=MediaPlayer1
+	codeBase=http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=5,1,52,701standby=Loading
+	type=application/x-oleobject height=<?php echo $height;?>
+	width=<?php echo $width;?>
+	classid=CLSID:6BF52A52-394A-11d3-B153-00C04F79FAA6 VIEWASTEXT>
+	<PARAM NAME="URL" VALUE="<?php echo $file;?>">
+	<PARAM NAME="playCount" VALUE="1">
+	<PARAM NAME="autoStart" VALUE="<? echo $autostart;?>">
+	<PARAM NAME="invokeURLs" VALUE="false">
+	<PARAM NAME="EnableContextMenu" VALUE="false">
+	<embed src="<?php echo $file;?>" align="baseline" border="0"
+		width="<?php echo $width;?>" height="<?php echo $height;?>"
+		type="application/x-mplayer2" pluginspage="" name="MediaPlayer1"
+		showcontrols="1" showpositioncontrols="0" showaudiocontrols="1"
+		showtracker="1" showdisplay="0" showstatusbar="1" autosize="0"
+		showgotobar="0" showcaptioning="0" autostart="<? echo $autostart;?>"
+		autorewind="0" animationatstart="0" transparentatstart="0"
+		allowscan="1" enablecontextmenu="1" clicktoplay="0"
+		defaultframe="datawindow" invokeurls="0"></embed> </OBJECT>
+<?php
 			}else 
 			{
 			?>
-		<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="<?php echo $width;?>" height="<?php echo $height;?>" id="FLVPlayer">
-		  <param name="movie" value="/flash/mediaplayer.swf" />
-		  <param name="salign" value="lt" />
-		  <param name="quality" value="high" />
-		  <param name="wmode" value="opaque" />
-		  <param name="scale" value="noscale" />
-		  <param name="FlashVars" value="&image=<?php echo $image;?>&file=<?php echo $file;?>&displayheight=<?php echo $height-15;?>&autostart=<? echo $autostart;?>" />
-		  <embed src="/flash/mediaplayer.swf" flashvars="&image=<?php echo $image;?>&file=<?php echo $file;?>&displayheight=<?php echo $height - 15;?>&autostart=<? echo $autostart;?>" quality="high" scale="noscale" width="<?php echo $width;?>" height="<?php echo $height;?>" name="FLVPlayer" wmode="opaque" salign="LT" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
-		</object>
-			<?php
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+	codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0"
+	width="<?php echo $width;?>" height="<?php echo $height;?>"
+	id="FLVPlayer">
+	<param name="movie" value="/flash/mediaplayer.swf" />
+	<param name="salign" value="lt" />
+	<param name="quality" value="high" />
+	<param name="wmode" value="opaque" />
+	<param name="scale" value="noscale" />
+	<param name="FlashVars"
+		value="&image=<?php echo $image;?>&file=<?php echo $file;?>&displayheight=<?php echo $height-15;?>&autostart=<? echo $autostart;?>" />
+	<embed src="/flash/mediaplayer.swf"
+		flashvars="&image=<?php echo $image;?>&file=<?php echo $file;?>&displayheight=<?php echo $height - 15;?>&autostart=<? echo $autostart;?>"
+		quality="high" scale="noscale" width="<?php echo $width;?>"
+		height="<?php echo $height;?>" name="FLVPlayer" wmode="opaque"
+		salign="LT" type="application/x-shockwave-flash"
+		pluginspage="http://www.macromedia.com/go/getflashplayer" /></object>
+<?php
 			}
 	}
 	
@@ -322,7 +341,7 @@ function print_news_static_page($content,$symbol='fck_pageindex'){
 			}else{
 				return static_news_url($news,$index);
 			}
-		};		
+		}
 	}
 	$page_str = "";
 	if($page_prev <= 0){
@@ -345,7 +364,6 @@ function print_news_static_page($content,$symbol='fck_pageindex'){
 		$page_str .= "<span class='paginate_botton'><a href='{$url}'>下页</a></span>";
 	}
 	echo $page_str;
-	
 }
 
 function print_fck_pages2($str,$url="",$symbol='fck_pageindex'){
@@ -437,38 +455,42 @@ function print_fck_pages1($str,$url="",$symbol='fck_pageindex')
 	$pagelast = $url .$symbol .($pagecount);
 	if ($pageindex == 1 || $pageindex ==null || $pageindex == "")
 	{ ?>
-	  <span><a href="<?php echo $pagenext; ?>">[下页]</a></span> 
-	  <span><a href="<?php echo $pagelast; ?>">[尾页]</a></span>
-	<?php	
+<span><a href="<?php echo $pagenext; ?>">[下页]</a></span>
+<span><a href="<?php echo $pagelast; ?>">[尾页]</a></span>
+<?php	
 	}
 	if ($pageindex < $pagecount && $pageindex > 1 )
 	{?>
-	  <span><a href="<?php echo $pagefirst; ?>">[首页]</a></span> 
-	  <span><a href="<?php echo $pageprev; ?>">[上页]</a></span>			
-	  <span><a href="<?php echo $pagenext; ?>">[下页]</a></span> 
-	  <span><a href="<?php echo $pagelast; ?>">[尾页]</a></span>		
-	 <?php
+<span><a href="<?php echo $pagefirst; ?>">[首页]</a></span>
+<span><a href="<?php echo $pageprev; ?>">[上页]</a></span>
+<span><a href="<?php echo $pagenext; ?>">[下页]</a></span>
+<span><a href="<?php echo $pagelast; ?>">[尾页]</a></span>
+<?php
 	}
 	if ($pageindex == $pagecount)
 	{?>
-	  <span><a href="<?php echo $pagefirst; ?>">[首页]</a></span> 
-	  <span><a href="<?php echo $pageprev; ?>">[上页]</a></span>		
-	<?php	
+<span><a href="<?php echo $pagefirst; ?>">[首页]</a></span>
+<span><a href="<?php echo $pageprev; ?>">[上页]</a></span>
+<?php	
 	}
 	?>
-  当前第<select name="pageselect" id="pageselect" onChange="jumppage('<?php echo $url.$symbol; ?>',this.options[this.options.selectedIndex].value);">
+  当前第
+<select name="pageselect" id="pageselect"
+	onChange="jumppage('<?php echo $url.$symbol; ?>',this.options[this.options.selectedIndex].value);">
 	<?php	
 	//产生所有页面链接
 	for($i=1;$i<=$pagecount;$i++)
 	{  
 		
 		?>
-		<option <?php if($pageindex== $i) echo 'selected="selected"';?> value="<?php echo $i;?>"><?php echo $i;?></option>
+		<option <?php if($pageindex== $i) echo 'selected="selected"';?>
+		value="<?php echo $i;?>"><?php echo $i;?></option>
 	 <?php	
 	}
 	?>
-	</select>页
-	<script>
+	</select>
+页
+<script>
 			function jumppage(urlprex,pageindex)
 			{
 				var surl=urlprex+pageindex;
@@ -476,7 +498,7 @@ function print_fck_pages1($str,$url="",$symbol='fck_pageindex')
 			} 
 	</script>
 
-	<?php	
+<?php	
 	
 }
 

@@ -68,11 +68,11 @@ $app_uc_id = '2';
 //*****************************一般需要重载的变量*************************//
 ////////////////////////////////////////////////////////////////////////
 $debug_tag = true;
-$db_server_name = 'localhost';
-$db_user_name = 'root'; 
-$db_password = 'test';
-$g_ucenter_ip = 'http://127.0.0.1:82';
-$site_domain = 'http://127.0.0.1:82';
+$db_server_name = '192.168.1.2';
+$db_user_name = 'eachbb'; 
+$db_password = 'xunao';
+$g_ucenter_ip = 'http://210.51.52.158';
+$site_domain = 'http://210.51.52.158';
 
 /*
  * load developer environment

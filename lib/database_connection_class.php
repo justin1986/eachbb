@@ -25,7 +25,7 @@ include_once dirname(__FILE__) . '/database_row_item_class.php';
   		if ($args_num == 1 && is_array(func_get_arg(0))){
   			//the parameter is a hash array
   			$params = func_get_arg(0);
-  			foreach ($params as $k => $v){  				
+  			foreach ($params as $k => $v){
   				if (isset($this->$k)) {
   					$this->$k = $v;
   				}
