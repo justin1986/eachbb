@@ -1,6 +1,13 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <?php
 	include_once('../frame.php');
+	$db=get_db();
+	$id=intval(trim($_REQUEST['id']));
+	if(empty($id))
+	{
+		#redirect('error.html');
+		#die();
+	}
 	?>
 <html>
 <head>
@@ -47,88 +54,53 @@
 				<div id="recommend_bottom_pg"></div>
 			</div>
 			<!-- 左边 营养篇  和 其他三个 列表  大面板 -->
-			<div class="result_list">
-				<div class="result_top_pg"><font>营养篇</font></div>
-				<div class="result_pg">
-					<!-- 左边图片的显示 和 标题-->
-					<div class="result_left">
-						<img src="/images/new_list/a.jpg" />
-						<a href="#">撒旦发射点发</a>
-					</div>
-					<!-- 右边 列表的显示 -->
-					<div class="result_right">
-						<ul>
-							<?php for($i=0;$i<7; $i++){ ?>
-							<li><div></div><a href="#">斯蒂芬沙发上速度</a></li>
-							<?php } ?>
-						</ul>
-					</div>
-				</div>
-				<div class="result_bottom_pg"></div>
-			</div>
-			<!-- 营养篇  结束 -->
-			<!-- 保健篇 开始 -->
-			<div class="result_list" style="margin-left:20px;">
-				<div class="result_top_pg"><font>保健篇</font></div>
-				<div class="result_pg">
-					<!-- 左边图片的显示 和 标题-->
-					<div class="result_left">
-						<img src="/images/new_list/a.jpg" />
-						<a href="#">撒旦发射点发</a>
-					</div>
-					<!-- 右边 列表的显示 -->
-					<div class="result_right">
-						<ul>
-							<?php for($i=0;$i<7; $i++){ ?>
-							<li><div></div><a href="#">斯蒂芬沙发上速度</a></li>
-							<?php } ?>
-						</ul>
-					</div>
-				</div>
-				<div class="result_bottom_pg"></div>
-			</div>
-			<!-- 保健篇 结束 -->
-			<!-- 常识篇  开始 -->
-			<div class="result_list">
-				<div class="result_top_pg"><font>常识篇</font></div>
-				<div class="result_pg">
-					<!-- 左边图片的显示 和 标题-->
-					<div class="result_left">
-						<img src="/images/new_list/a.jpg" />
-						<a href="#">撒旦发射点发</a>
-					</div>
-					<!-- 右边 列表的显示 -->
-					<div class="result_right">
-						<ul>
-							<?php for($i=0;$i<7; $i++){ ?>
-							<li><div></div><a href="#">斯蒂芬沙发上速度</a></li>
-							<?php } ?>
-						</ul>
-					</div>
-				</div>
-				<div class="result_bottom_pg"></div>
-			</div>
-			<!-- 常识片 结束 -->
+			<?php
+				$category=new category_class("news");
+				$id=129;
+				$item=$category->find($id);
+				if(($item->level)==2)
+				{
+					$item_id=$category->tree_map($id);
+					$id=$item_id[1];
+				}
+				$item=$category->children_map($id);
+				$i=0;
+				foreach ($item as $c)
+				{
+					if($i!=0)
+					{
+						$category_new=$db->query("SELECT id,name FROM eb_category e where id=$c");
+						?>
+						
 			<!-- 心里篇  开始 -->
-			<div class="result_list" style="margin-left:20px;">
-				<div class="result_top_pg"><font>心理篇</font></div>
+			<div class="result_list" style="<?php if($i%2==0){ echo "margin-left:20px;";} ?>">
+				<div class="result_top_pg"><font><?php echo $category_new[0]->name?></font></div>
 				<div class="result_pg">
 					<!-- 左边图片的显示 和 标题-->
+					<?php
+						$list_category=$db->query("select id,title,video_photo_src from eb_news where category_id =".$category_new[0]->id." and is_adopt=1 order by created_at desc  limit 8");
+					?>
 					<div class="result_left">
-						<img src="/images/new_list/a.jpg" />
-						<a href="#">撒旦发射点发</a>
+						<a href="" title="<?php $list_category[0]->video_photo_src;?>"><img src="<?php echo $list_category[0]->video_photo_src;?>" /></a>
+						<a href="#" title="<?php echo $list_category[0]->title; ?>"><?php echo $list_category[0]->title; ?></a>
 					</div>
 					<!-- 右边 列表的显示 -->
 					<div class="result_right">
 						<ul>
-							<?php for($i=0;$i<7; $i++){ ?>
-							<li><div></div><a href="#">斯蒂芬沙斯蒂芬沙发上速度发上速度</a></li>
+							<?php for($j=1;$j<=7; $j++){ ?>
+							<li><div></div><a href="#"><?php echo $list_category[$j]->title; ?></a></li>
 							<?php } ?>
 						</ul>
 					</div>
 				</div>
 				<div class="result_bottom_pg"></div>
 			</div>
+			<?PHP
+					}
+					$i++;	
+					
+				}
+			?>
 			<!-- 心里篇 结束 -->
 			<!-- 中间虚线 显示内容开始 -->
 			<div id="list">
@@ -161,7 +133,6 @@
 					<div class="cla_title">早教课程</div>
 					<div class="cla_img">
 						<?php
-						$db=get_db();
 						$list=$db->query("SELECT id,title,img_url,description,content FROM eb_teach e where is_adopt=1 order by create_time desc,click_count desc limit 15;");
 						for($i=0;$i<3;$i++){ ?>
 						<div class="ci_z">
