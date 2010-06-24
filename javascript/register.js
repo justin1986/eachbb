@@ -5,9 +5,14 @@ var register_flag = 'begin';
 
 $(function(){
 	birthday_display();
+	change_disabled();
 	
 	$("#cad_v").click(function(){
 		change_verify();
+	});
+	
+	$("#accept").click(function(){
+		change_disabled();
 	});
 	
 	$("#baby_status").change(function(){
@@ -120,6 +125,14 @@ $(function(){
 		register_submit();
 	});
 });
+
+function change_disabled(){
+	if($("#accept").attr('checked')){
+		$("#register").attr('disabled',false);
+	}else{
+		$("#register").attr('disabled','disabled');
+	}
+}
 
 function register_submit(){
 	if(name_flag=='wrong'){

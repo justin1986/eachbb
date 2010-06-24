@@ -112,8 +112,8 @@
 					</div>
 					<div id="hr"></div>
 					<textarea id="text"></textarea>
-					<div id="check"><input type="checkbox"/> 我接受用户注册和使用协议</div>
-					<div id="confirm"><input type="button" id="register" value="确认并注册"></div>
+					<div id="check"><input id="accept" type="checkbox"/> 我接受用户注册和使用协议</div>
+					<div id="confirm"><input type="button" id="register" disabled="disabled" value="确认并注册"></div>
 					</form>
 				</div>
 			</div>
