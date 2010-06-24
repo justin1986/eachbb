@@ -1,3 +1,7 @@
+var name_flag = 'begin';
+var email_flag = 'begin';
+var verify_flag = 'begin';
+
 $(function(){
 	birthday_display();
 	
@@ -59,7 +63,81 @@ $(function(){
 		dayNamesShort:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
 		dateFormat: 'yy-mm-dd'
 	});
+	
+	
+	$("#register").click(function(){
+		if(!check_name(true)){
+			$("#name").focus();
+			return false;
+		}
+		if(!check_email(true)){
+			$("#email").focus();
+			return false;
+		}
+		if(!check_password(true)){
+			$("#password").focus();
+			return false;
+		}
+		if(!check_re_password(true)){
+			$("#re_password").focus();
+			return false;
+		}
+		if(!check_status(true)){
+			$("#baby_status").focus();
+			return false;
+		}
+		if(!check_babybirthday()){
+			$("#baby_birthday2").focus();
+			return false;
+		}
+		if(!check_phone()){
+			$("#phone").focus();
+			return false;
+		}
+		if(!check_address()){
+			$("#address").focus();
+			return false;
+		}
+		if(!check_zip()){
+			$("#zip").focus();
+			return false;
+		}
+		if(!check_birthday()){
+			$("#birthday").focus();
+			return false;
+		}
+		if(!check_verify(true)){
+			$("#verify").focus();
+			return false;
+		}
+		register_submit();
+	});
 });
+
+function register_submit(){
+	if(name_flag=='wrong'){
+		$("#name").focus();
+		return false;
+	}else if(name_flag=='locked'){
+		setTimeout(register_submit(),2000);
+		return false;
+	}
+	if(email_flag=='wrong'){
+		$("#email").focus();
+		return false;
+	}else if(email_flag=='locked'){
+		setTimeout(register_submit(),2000);
+		return false;
+	}
+	if(verify_flag=='wrong'){
+		$("#verify").focus();
+		return false;
+	}else if(verify_flag=='locked'){
+		setTimeout(register_submit(),2000);
+		return false;
+	}
+	$("form").submit();
+}
 
 function change_verify(){
 	$("#validate img").attr('src','/inc/verify.php?name=register&reload='+Math.round(Math.random()*10000));
@@ -93,18 +171,21 @@ function check_name(is_submit){
 			$("#name_info").html('<span style=color:red>用户名不能含有特殊字符</span>');
 			return false;
 		}
+		name_flag = 'locked'
+		$("#name_info").text('用户名验证中。。。');
 		$.post('check_name.php',{'name':name},function(data){
 			if(data>0){
 				$("#name_info").html('<span style=color:red>用户名已存在</span>');
-				return false;
+				name_flag = 'wrong';
 			}else{
 				$("#name_info").html('<span style=color:green>用户名可以使用</span>');
-				return true;
+				name_flag = 'success';
 			}
 		});
+		return true;
 	}else{
 		if(is_submit){
-			alert('请输入用户名！');
+			$("#name_info").html('<span style=color:red>用户名不能为空</span>');
 			return false;
 		}else{
 			$("#name_info").text('4-20位，包含英文大小字母和数字组成');
@@ -127,18 +208,21 @@ function check_email(is_submit){
 			$("#email_info").html('<span style=color:red>邮箱格式不对</span>');
 			return false;
 		}
+		email_flag = 'locked'
+		$("#email_info").text('邮箱验证中。。。');
 		$.post('check_email.php',{'email':email},function(data){
 			if(data>0){
 				$("#email_info").html('<span style=color:red>邮箱已存在</span>');
-				return false;
+				email_flag = 'wrong';
 			}else{
 				$("#email_info").html('<span style=color:green>邮箱可以使用</span>');
-				return true;
+				email_flag = 'success';
 			}
 		});
+		return true;
 	}else{
 		if(is_submit){
-			alert('请输入邮箱地址！');
+			$("#email_info").html('<span style=color:red>邮箱不能为空</span>');
 			return false;
 		}else{
 			$("#email_info").text('邮箱作为您找回密码的唯一凭证，请填写真实有效邮箱地址并妥善保管！');
@@ -178,7 +262,7 @@ function check_password(is_submit){
 		}
 	}else{
 		if(is_submit){
-			alert('请输入密码！');
+			$("#password_info").html('<span style=color:red>密码不能为空</span>');
 			return false;
 		}else{
 			$("#password_info").text('请设置4-20个字符，包含英文大小写字母、数字和部分标点符号组合！');
@@ -190,7 +274,7 @@ function check_password(is_submit){
 	}
 }
 
-function check_re_password(){
+function check_re_password(is_submit){
 	var password = $("#password").val();
 	var re_password = $("#re_password").val();
 	if(password!=''&&re_password!=''){
@@ -201,14 +285,24 @@ function check_re_password(){
 			$("#re_password_info").html('<span style=color:green>输入一致</span>');
 			return true;
 		}
+	}else{
+		if(is_submit){
+			$("#re_password_info").html('<span style=color:red>请2次输入相同密码</span>');
+			return false;
+		}else{
+			$("#re_password_info").html('');
+		}
 	}
 }
 
-function check_status(){
+function check_status(is_submit){
 	if($("#baby_status").val()==0){
-		alert('请选择是否生育');
-		return false;
+		if(is_submit){
+			$("#status_info").html('<span style=color:red>请选择是否生育</span>');
+			return false;
+		}
 	}else{
+		$("#status_info").html('');
 		return true;
 	}
 }
@@ -216,11 +310,13 @@ function check_status(){
 function check_babybirthday(){
 	if($("#baby_birthday2").val()==''){
 		if($("#baby_status").val()==1){
-			alert('请输入宝宝的生日！');
+			$("#baby_birthday_info").html('<span style=color:red>请输入宝宝的生日</span>');
 			return false;
 		}else if($("#baby_status").val()==3){
-			alert('请输入宝宝的预产期！');
+			$("#baby_birthday_info").html('<span style=color:red>请输入宝宝的预产期</span>');
 			return false;
+		}else{
+			return true;
 		}
 	}else{
 		if(!check_date($("#baby_birthday2").val())){
@@ -236,7 +332,7 @@ function check_babybirthday(){
 
 function check_birthday(){
 	if($("#birthday").val()==''){
-		alert("请输入生日！");
+		$("#birthday_info").html('<span style=color:red>请输入生日</span>');
 		return false;
 	}else{
 		if(!check_date($("#birthday").val())){
@@ -253,47 +349,61 @@ function check_birthday(){
 function check_phone(){
 	var phone = $("#phone").val();
 	if(phone!=''){
-		return check_str_length(phone.length,5,20,'电话');
+		return check_str_length(phone.length,5,20,'电话','phone_info');
 	}
 	return true;
 }
 
 function check_address(){
 	if($("#address").val()!=''){
-		return check_str_length($("#address").val().length,0,30,'地址');
+		return check_str_length($("#address").val().length,0,30,'地址','address_info');
 	}
 	return true;
 }
 
 function check_zip(){
 	if($("#zip").val()!=''){
-		return check_str_length($("#zip").val().length,0,30,'邮编');
+		return check_str_length($("#zip").val().length,0,30,'邮编','zip_info');
 	}
+	return true;
 }
 
-function check_str_length(length,limit,limit2,info){
+function check_str_length(length,limit,limit2,info,name){
 	if(length<limit){
-		alert(info+"长度太短!");
+		$("#"+name).html('<span style=color:red>'+info+'长度太短</span>');
 		return false;
 	}else if(length>limit2){
-		alert(info+"长度太长!");
+		$("#"+name).html('<span style=color:red>'+info+'长度太长</span>');
 		return false;
 	}else{
+		$("#"+name).html('');
 		return true;
 	}
 }
 
-function check_verify(){
-	$.post('check_verify.php',{'verify':$("#verify").val()},function(result){
-		if(result=='wrong'){
-			change_verify();
-			alert('验证码错误!');
-			$("#verify").attr('value','');
-			return false;
-		}else{
-			return true;
-		}
-	});
+function check_verify(is_submit){
+	if ($("#verify").val() == ''&&is_submit) {
+		$("#cad_v").html("看不清楚？换张图片<span style=color:red>　请输入验证码</span>")
+	}
+	else {
+		verify_flag = 'locked';
+		$("#cad_v").html("看不清楚？换张图片　验证中。。。")
+		$.post('check_verify.php', {
+			'verify': $("#verify").val()
+		}, function(result){
+			if (result == 'wrong') {
+				change_verify();
+				$("#cad_v").html("看不清楚？换张图片<span style=color:red>　验证码错误</span>")
+				$("#verify").attr('value', '');
+				verify_flag = 'wrong';
+			}
+			else {
+				$("#cad_v").html("看不清楚？换张图片")
+				verify_flag = 'success';
+			}
+		});
+		return true;
+	}
 }
 
 function check_date(s){

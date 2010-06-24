@@ -50,7 +50,7 @@
 					<div class="c_a">
 						<div class="ca_a">*</div>
 						<div class="ca_b">性别</div>
-						<div class="ca_s"><input name="post[gender]" value="0" type="radio"/>男<input type="radio" name="post[gender]" selected="selected" value="1" style="margin-left:40px;"/>女</div>
+						<div class="ca_s"><input name="post[gender]" value="0" type="radio"/>男<input type="radio" name="post[gender]" checked="checked" value="1" style="margin-left:40px;"/>女</div>
 						<div class="ca_d"></div>
 					</div>
 					<div class="c_a">
@@ -64,7 +64,7 @@
 								<option value=3>怀孕中</option>
 							</select>
 						</div>
-						<div class="ca_d"></div>
+						<div class="ca_d" id="status_info"></div>
 					</div>
 					<div class="c_a" style="display:none;">
 						<div class="ca_a"></div>
@@ -80,7 +80,7 @@
 						<div class="ca_c">
 							<input type="text" id="phone" name=post[phone]>
 						</div>
-						<div class="ca_d"></div>
+						<div class="ca_d" id="phone_info"></div>
 					</div>
 					<div class="c_a">
 						<div class="ca_a"></div>
@@ -88,7 +88,7 @@
 						<div class="ca_c">
 							<input type="text" id="address" name=post[address]>
 						</div>
-						<div class="ca_d"></div>
+						<div class="ca_d" id="address_info"></div>
 					</div>
 					<div class="c_a">
 						<div class="ca_a"></div>
@@ -96,7 +96,7 @@
 						<div class="ca_c">
 							<input type="text" id="zip" name=post[zip]>
 						</div>
-						<div class="ca_d"></div>
+						<div class="ca_d" id="zip_info"></div>
 					</div>
 					<div class="c_a">
 						<div class="ca_a">*</div>
@@ -113,7 +113,7 @@
 					<div id="hr"></div>
 					<textarea id="text"></textarea>
 					<div id="check"><input type="checkbox"/> 我接受用户注册和使用协议</div>
-					<div id="confirm"><input type="submit"/></div>
+					<div id="confirm"><input type="button" id="register" value="确认并注册"></div>
 					</form>
 				</div>
 			</div>
