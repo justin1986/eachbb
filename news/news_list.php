@@ -58,6 +58,7 @@
 				$category=new category_class("news");
 				$id=129;
 				$item=$category->find($id);
+				$not_id;
 				if(($item->level)==2)
 				{
 					$item_id=$category->tree_map($id);
@@ -79,6 +80,10 @@
 					<!-- 左边图片的显示 和 标题-->
 					<?php
 						$list_category=$db->query("select id,title,video_photo_src from eb_news where category_id =".$category_new[0]->id." and is_adopt=1 order by created_at desc  limit 8");
+						for($k=0;$k<count($list_category);$k++)
+						{
+							$not_id=$not_id.$list_category[$k]->id.",";
+						}
 					?>
 					<div class="result_left">
 						<a href="" title="<?php $list_category[0]->video_photo_src;?>"><img src="<?php echo $list_category[0]->video_photo_src;?>" /></a>
@@ -110,14 +115,22 @@
 					<div class="list_container_l"></div>
 					<div id="list_container_title">
 						<div id="list_container_top">
-								<?php for($i=0;$i<26;$i++){ ?>
+								<?php 
+								$str="";
+								foreach ($item as $idd)
+								{
+									$str=$str.$idd.",";
+								}
+								$sql="SELECT * FROM eb_news e where  is_adopt=1 and category_id in (".substr($str,0,-1) .") and id not in (".substr($not_id,0,-1).")  order by created_at desc limit 1,26;";
+								$title_list=$db->query($sql);
+								for($i=0;$i<26;$i++){ ?>
 								<div class="list_title">
 									<div></div>
-									<a href="#">阿斯顿阿斯顿法守法外阿斯顿法守法外法守法外</a>
+									<a href="<?php get_news_url($title_list[$i]); ?>" title="<?php echo  $title_list[$i]->title; ?>"><?php echo $title_list[$i]->title; ?></a>
 								</div>
 								<?php } ?>
 						</div>
-						<div id="list_container_fun"> <a href="#">1</a> <a href="#">2</a> <a href="#">3</a> </div>
+						<div id="list_container_fun"><a href="#">1</a> <a href="#">2</a> <a href="#">3</a> </div>
 					</div>
 					<!-- 底部 标题列表 右边的虚线 -->
 					<div class="list_container_l" style="float:right;"></div>
