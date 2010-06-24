@@ -59,7 +59,7 @@
 				$category=new category_class("news");
 				$item=$category->find($id);
 				$not_id="";
-				if(($item->level)==2)
+				if($item->level==2)
 				{
 					$item_id=$category->tree_map($id);
 					$id=$item_id[1];
