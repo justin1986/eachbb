@@ -50,14 +50,14 @@
 					<div class="c_a">
 						<div class="ca_a">*</div>
 						<div class="ca_b">性别</div>
-						<div class="ca_s"><input name="post[gender]" value="0" type="radio"/>男<input type="radio" name="post[gender]" checked="checked" value="1" style="margin-left:40px;"/>女</div>
+						<div class="ca_s"><input name="gender" value="0" type="radio"/>男<input type="radio" name="gender" checked="checked" value="1" style="margin-left:40px;"/>女</div>
 						<div class="ca_d"></div>
 					</div>
 					<div class="c_a">
 						<div class="ca_a">*</div>
 						<div class="ca_b">是否生育</div>
 						<div class="ca_c">
-							<select name="post[baby_status]" id="baby_status">
+							<select name="baby_status" id="baby_status">
 								<option value=0>请选择</option>
 								<option value=1>已生育</option>
 								<option value=2>未生育</option>
@@ -70,7 +70,7 @@
 						<div class="ca_a"></div>
 						<div class="ca_b" id="baby_birthday">宝宝生日</div>
 						<div class="ca_c">
-							<input type="text" id="baby_birthday2" name=post[baby_birthday]>
+							<input type="text" id="baby_birthday2" name=baby_birthday>
 						</div>
 						<div class="ca_d" id="baby_birthday_info"></div>
 					</div>
@@ -78,7 +78,7 @@
 						<div class="ca_a"></div>
 						<div class="ca_b">联系电话</div>
 						<div class="ca_c">
-							<input type="text" id="phone" name=post[phone]>
+							<input type="text" id="phone" name=phone>
 						</div>
 						<div class="ca_d" id="phone_info"></div>
 					</div>
@@ -86,7 +86,7 @@
 						<div class="ca_a"></div>
 						<div class="ca_b">联系地址</div>
 						<div class="ca_c">
-							<input type="text" id="address" name=post[address]>
+							<input type="text" id="address" name=address>
 						</div>
 						<div class="ca_d" id="address_info"></div>
 					</div>
@@ -94,14 +94,14 @@
 						<div class="ca_a"></div>
 						<div class="ca_b">邮编</div>
 						<div class="ca_c">
-							<input type="text" id="zip" name=post[zip]>
+							<input type="text" id="zip" name=zip>
 						</div>
 						<div class="ca_d" id="zip_info"></div>
 					</div>
 					<div class="c_a">
 						<div class="ca_a">*</div>
 						<div class="ca_b">出生年月日</div>
-						<div class="ca_c"><input type="text" id="birthday" name=post[birthday]> </div>
+						<div class="ca_c"><input type="text" id="birthday" name=birthday> </div>
 						<div class="ca_d" id="birthday_info"></div>
 					</div>
 					<div class="c_a">
@@ -112,8 +112,8 @@
 					</div>
 					<div id="hr"></div>
 					<textarea id="text"></textarea>
-					<div id="check"><input type="checkbox"/> 我接受用户注册和使用协议</div>
-					<div id="confirm"><input type="button" id="register" value="确认并注册"></div>
+					<div id="check"><input id="accept" type="checkbox"/> 我接受用户注册和使用协议</div>
+					<div id="confirm"><input type="button" id="register" disabled="disabled" value="确认并注册"></div>
 					</form>
 				</div>
 			</div>
