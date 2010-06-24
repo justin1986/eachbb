@@ -26,6 +26,10 @@ $(function(){
 		check_password(false);
 	});
 	
+	$("#baby_status").change(function(){
+		check_status();
+	})
+	
 	$("#re_password").change(function(){
 		check_re_password(false);
 	});
@@ -140,8 +144,7 @@ function register_submit(){
 }
 
 function do_submit(){
-	if(register_flag==name_flag==email_flag==verify_flag=='success'){
-		alert('ok');
+	if(register_flag=='success'&&name_flag=='success'&&email_flag=='success'&&verify_flag=='success'){
 		$("form").submit();
 	}
 }
@@ -182,7 +185,7 @@ function check_name(is_submit){
 			name_flag = 'locked'
 			$("#name_info").text('用户名验证中。。。');
 			$.post('check_name.php', {
-				'name': $("#name").val()
+				'name': name
 			}, function(data){
 				if (data > 0) {
 					$("#name_info").html('<span style=color:red>用户名已存在</span>');
@@ -225,7 +228,7 @@ function check_email(is_submit){
 			email_flag = 'locked'
 			$("#email_info").text('邮箱验证中。。。');
 			$.post('check_email.php', {
-				'email': $("#email").val()
+				'email': email
 			}, function(data){
 				if (data > 0) {
 					$("#email_info").html('<span style=color:red>邮箱已存在</span>');
@@ -414,7 +417,6 @@ function check_verify(is_submit){
 				if (result == 'wrong') {
 					change_verify();
 					$("#cad_v").html("看不清楚？换张图片<span style=color:red>　验证码错误</span>")
-					$("#verify").attr('value', '');
 					verify_flag = 'wrong';
 				}
 				else {
