@@ -148,15 +148,15 @@
 						$list=$db->query("SELECT id,title,img_url,description,content FROM eb_teach e where is_adopt=1 order by create_time desc,click_count desc limit 15;");
 						for($i=0;$i<3;$i++){ ?>
 						<div class="ci_z">
-							<div class="ci_pg"><a href="#"><img src="<?php echo $list[$i]->img_url;?>"></a></div>
-							<div class="ci_title"><a href="#"><?php echo $list[$i]->title;?></a></div>
+							<div class="ci_pg"><a href="<?php get_news_url($list[$i]); ?>"><img src="<?php echo $list[$i]->img_url;?>"></a></div>
+							<div class="ci_title"><a href="<?php get_news_url($list[$i]); ?>" title="<?php echo $list[$i]->title;?>"><?php echo $list[$i]->title;?></a></div>
 						</div>
 						<?php } ?>
 					</div>
 					<div class="cla_hr"></div>
 					<div class="cla_menu">
 						<?php for($i=3; $i<15; $i++){ ?>
-						<div class="cla_m_v"><a href="" title="<?php echo $list[$i]->title; ?>"><?php echo $list[$i]->title; ?></a></div>
+						<div class="cla_m_v"><a href="<?php get_news_url($list[$i]); ?>" title="<?php echo $list[$i]->title; ?>"><?php echo $list[$i]->title; ?></a></div>
 						<div class="cla_r"></div>
 						<?php } ?>
 					</div>
