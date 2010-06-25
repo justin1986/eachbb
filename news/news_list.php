@@ -1,22 +1,34 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
-<?php
-	include_once('../frame.php');
-	$db=get_db();
-	$id=intval(trim($_REQUEST['id']));
-	if(empty($id))
-	{
-		#redirect('error.html');
-		#die();
-		$id=119;
-	}
-	?>
 <html>
 <head>
 <meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <meta http-equiv=Content-Language content=zh-CN>
 <title>consult</title>
 <?php
-		css_include_tag('news_list');
+	include_once('../frame.php');
+	$db=get_db();
+	$id=intval(trim($_REQUEST['id']));
+	if(empty($id))
+	{
+		die('invliad params!');
+	}
+	css_include_tag('news_list');
+	//获得顶级category id；
+	$category = new category_class("news");
+	$item = $category->find($id);
+	if($item->level >= 2)
+	{
+		$item_ids=$category->tree_map($id);
+		$category_id = end($item_ids);
+	}else{
+		$category_id = $id;
+	}
+	if(!$category_id){
+		die('invalid param');
+	}
+	$sub_category_items = $category->find_sub_category($category_id);
+	$all_category_ids = $category->children_map($category_id);
+	$exists_news_ids = array();
 ?>
 </head>
 <body>
@@ -56,52 +68,38 @@
 			</div>
 			<!-- 新闻 列表  大面板 -->
 			<?php
-				$category=new category_class("news");
-				$item=$category->find($id);
-				$not_id="";
-				if($item->level==2)
-				{
-					$item_id=$category->tree_map($id);
-					$id=$item_id[1];
-				}
-				$item=$category->children_map($id);
 				$i=0;
-				foreach ($item as $c)
+				foreach ($sub_category_items as $sub_category)
 				{
-					if($i!=0)
-					{
-						$category_new=$db->query("SELECT id,name FROM eb_category e where id=$c");
-						?>
-						
+			?>
 			<!-- 列表开始 -->
-			<div class="result_list" style="<?php if($i%2==0){ echo "margin-left:20px;";} ?>">
-				<div class="result_top_pg"><font><?php echo $category_new[0]->name?></font></div>
+			<div class="result_list" style="<?php if($i%2==1){ echo "margin-left:20px;";} ?>">
+				<div class="result_top_pg"><font><?php echo $sub_category->name?></font></div>
 				<div class="result_pg">
 					<!-- 左边图片的显示 和 标题-->
 					<?php
-						$list_category=$db->query("select id,title,video_photo_src from eb_news where category_id =".$category_new[0]->id." and is_adopt=1 order by created_at desc  limit 8");
-						for($k=0;$k<count($list_category);$k++)
-						{
-							$not_id=$not_id.$list_category[$k]->id.",";
-						}
+						$list_news=$db->query("select created_at,id,title,video_photo_src from eb_news where category_id =".$sub_category->id." and is_adopt=1 order by created_at desc  limit 8");
+						$len = count($list_news);
+						if($list_news[0]) $exists_news_ids[] = $list_news[0]->id;
 					?>
 					<div class="result_left">
-						<a href="<?php get_news_url($list_category[0]); ?>" title="<?php $list_category[0]->video_photo_src;?>"><img src="<?php echo $list_category[0]->video_photo_src;?>" /></a>
-						<a href="<?php get_news_url($list_category[0]); ?>" title="<?php echo $list_category[0]->title; ?>"><?php echo $list_category[0]->title; ?></a>
+						<a href="<?php get_news_url($list_news[0]); ?>" title="<?php $list_news[0]->video_photo_src;?>"><img src="<?php echo $list_news[0]->video_photo_src;?>" /></a>
+						<a href="<?php get_news_url($list_news[0]); ?>" title="<?php echo $list_news[0]->title; ?>"><?php echo $list_news[0]->title; ?></a>
 					</div>
 					<!-- 右边 列表的显示 -->
 					<div class="result_right">
 						<ul>
-							<?php for($j=1;$j<=7; $j++){ ?>
-							<li><div></div><a href="<?php get_news_url($list_category[$j]); ?>" title="<?php echo $list_category[$j]->title; ?>"><?php echo $list_category[$j]->title; ?></a></li>
-							<?php } ?>
+							<?php for($j=1;$j < 8; $j++){ ?>
+							<li><div></div><a href="<?php get_news_url($list_news[$j]); ?>" title="<?php echo $list_news[$j]->title; ?>"><?php echo $list_news[$j]->title; ?></a></li>
+							<?php 
+								if($list_news[$j]) $exists_news_ids[] = $list_news[$j]->id;
+							} ?>
 						</ul>
 					</div>
 				</div>
 				<div class="result_bottom_pg"></div>
 			</div>
 			<?PHP
-					}
 					$i++;
 				}
 			?>
@@ -114,18 +112,15 @@
 					<div class="list_container_l"></div>
 					<div id="list_container_title">
 						<div id="list_container_top">
-								<?php 
-								$str="";
-								foreach ($item as $idd)
-								{
-									$str=$str.$idd.",";
-								}
-								$sql="SELECT id,title FROM eb_news e where is_adopt=1 and category_id in (".substr($str,0,-1).") and id not in (".substr($not_id,0,-1).") order by created_at desc";
-								$title_list=$db->paginate($sql,26);
-								for($i=0;$i<26;$i++){ ?>
+								<?php
+								$all_category_ids = implode(',', $all_category_ids); 
+								$exists_news_ids = implode(',',$exists_news_ids);
+								$sql="SELECT created_at,id,title FROM eb_news e where is_adopt=1 and category_id in ({$all_category_ids}) and id not in ({$exists_news_ids}) order by created_at desc";
+								$list_news=$db->paginate($sql,26);
+								foreach ($list_news as $news){ ?>
 								<div class="list_title">
 									<div></div>
-									<a href="<?php get_news_url($title_list[$i]); ?>" title="<?php echo  $title_list[$i]->title; ?>"><?php echo $title_list[$i]->title; ?></a>
+									<a href="<?php get_news_url($news); ?>" title="<?php echo  $news->title; ?>"><?php echo $news->title; ?></a>
 								</div>
 								<?php } ?>
 						</div>
