@@ -591,4 +591,17 @@ function set_charset($charset='UTF-8'){
 }
 function die_not_found(){
 		die("您访问的页面不存在!");
+}
+function client_ip(){
+	if(getenv('HTTP_CLIENT_IP') && strcasecmp(getenv('HTTP_CLIENT_IP'), 'unknown')) {
+		$onlineip = getenv('HTTP_CLIENT_IP');
+	} elseif(getenv('HTTP_X_FORWARDED_FOR') && strcasecmp(getenv('HTTP_X_FORWARDED_FOR'), 'unknown')) {
+		$onlineip = getenv('HTTP_X_FORWARDED_FOR');
+	} elseif(getenv('REMOTE_ADDR') && strcasecmp(getenv('REMOTE_ADDR'), 'unknown')) {
+		$onlineip = getenv('REMOTE_ADDR');
+	} elseif(isset($_SERVER['REMOTE_ADDR']) && $_SERVER['REMOTE_ADDR'] && strcasecmp($_SERVER['REMOTE_ADDR'], 'unknown')) {
+		$onlineip = $_SERVER['REMOTE_ADDR'];
 	}
+	return $onlineip;
+}
+	
