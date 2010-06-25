@@ -63,12 +63,11 @@
 			</div>
 			<div id="content">
 				<?php
-					$content=$column[0]->content;
-					echo get__news_fck_content($content,'page');
+				 	echo get_fck_content($column[0]->content,'page');
 				?>
 			</div>
 			<div id="pagination">
-				<?php  print_news_fck_pages2($content,'article.php?id='.$id,'page');?>
+				<?php  print_fck_pages2($column[0]->content,'news.php?id='.$id,'page');?>
 			</div>
 			<div id="critique">
 				<div id="c_l">读者评论<a href="#">(共5条)</a></div>

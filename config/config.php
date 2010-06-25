@@ -41,6 +41,8 @@ global $app_uc_id;//应用application id
 global $g_log_dir;//日志目录，需要可写权限
 global $site_name;//网站后台显示名称
 global $site_domain;//网站域名，不同环境需要重载
+global $static_dir;
+global $static_url;
 
 /*
  * 变量赋值
@@ -74,6 +76,7 @@ $db_password = 'xunao';
 $g_ucenter_ip = 'http://210.51.52.158';
 $site_domain = 'http://210.51.52.158';
 
+
 /*
  * load developer environment
  */
@@ -85,7 +88,8 @@ if($developer){
 		require_once $file_name;
 	}
 }
-
+$static_dir = ROOT_DIR;
+$static_url = $site_domain;
 //ucenter configuration
 define('UC_CONNECT', 'mysql');
 define('UC_DBHOST', $db_server_name);
