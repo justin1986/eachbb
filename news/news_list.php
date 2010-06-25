@@ -78,20 +78,20 @@
 				<div class="result_pg">
 					<!-- 左边图片的显示 和 标题-->
 					<?php
-						$list_news=$db->query("select set_up,created_at,id,title,video_photo_src from eb_news where category_id =".$sub_category->id." and is_adopt=1 order by created_at desc,set_up desc  limit 8");
-						$len = count($list_news);
+						$len = count(8);
+						$list_news=$db->query("select set_up,created_at,id,title,video_photo_src from eb_news where category_id =".$sub_category->id." and is_adopt=1 and set_up=1 order by created_at desc,set_up desc  limit 1");
 						if($list_news[0]) $exists_news_ids[] = $list_news[0]->id;
 					?>
 					<div class="result_left">
-						<?php if($list_news[0]->set_up==1){ ?>
 						<a href="<?php get_news_url($list_news[0]); ?>" title="<?php $list_news[0]->video_photo_src;?>"><img src="<?php echo $list_news[0]->video_photo_src;?>" /></a>
 						<a href="<?php get_news_url($list_news[0]); ?>" title="<?php echo $list_news[0]->title; ?>"><?php echo $list_news[0]->title; ?></a>
-						<?php  }?>
 					</div>
 					<!-- 右边 列表的显示 -->
 					<div class="result_right">
 						<ul>
-							<?php for($j=1;$j < 8; $j++){ ?>
+							<?php
+							$list_news=$db->query("select created_at,id,title,video_photo_src from eb_news where category_id =".$sub_category->id." and is_adopt=1 order by created_at desc  limit 7");
+							 for($j=1;$j < 8; $j++){ ?>
 							<li><div></div><a href="<?php get_news_url($list_news[$j]); ?>" title="<?php echo $list_news[$j]->title; ?>"><?php echo $list_news[$j]->title; ?></a></li>
 							<?php 
 								if($list_news[$j]) $exists_news_ids[] = $list_news[$j]->id;
