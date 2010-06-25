@@ -93,15 +93,12 @@ class category_class
 			}
 			return $ret;
 		}
-		if(array_key_exists($parent_id, $this->items)){
-			return null;
-		}
-
 		foreach ($this->items as $v) {
 			if($v->parent_id == $parent_id){
 				array_push($ret ,$v );
 			};
 		}
+		return $ret;
 	}
 	
 	public function echo_jsdata($var_name='category'){
