@@ -157,6 +157,7 @@ body{width:970px; margin: 0 auto; font-family:ËÎÌו;}
 
 
 .cri_content{width:635px;  margin-top:5px; float:left; display:inline;}
+.fun{width:635px; height:20px; margin-top:20px; text-align:center; font-size:12px; float:left; dispaly:inine;}
 .cri_tz{width:635px; margin-top:32px; line-height:20px; float:left; display:inline;}
 .crit_l{width:228px; height:20px; font-size:10px; font-family:arial; color:#999999; float:left; display:inline;}
 .crit_l a{font-size:16px; color:#6600FF;  font-weight: bold;		}
