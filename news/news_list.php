@@ -78,9 +78,8 @@
 				<div class="result_pg">
 					<!-- 左边图片的显示 和 标题-->
 					<?php
-						$len = count(8);
 						$list_news=$db->query("select set_up,created_at,id,title,video_photo_src from eb_news where category_id =".$sub_category->id." and is_adopt=1 and set_up=1 order by created_at desc,set_up desc  limit 1");
-						if($list_news[0]) $exists_news_ids[] = $list_news[0]->id;
+						if($list_news[0]) $exists_news_ids[] = $list_news->id;
 					?>
 					<div class="result_left">
 						<a href="<?php get_news_url($list_news[0]); ?>" title="<?php $list_news[0]->video_photo_src;?>"><img src="<?php echo $list_news[0]->video_photo_src;?>" /></a>
@@ -91,10 +90,10 @@
 						<ul>
 							<?php
 							$list_news=$db->query("select created_at,id,title,video_photo_src from eb_news where category_id =".$sub_category->id." and is_adopt=1 order by created_at desc  limit 7");
-							 for($j=1;$j < 8; $j++){ ?>
-							<li><div></div><a href="<?php get_news_url($list_news[$j]); ?>" title="<?php echo $list_news[$j]->title; ?>"><?php echo $list_news[$j]->title; ?></a></li>
+							 foreach ($list_news as $news){ ?>
+							<li><div></div><a href="<?php get_news_url($news); ?>" title="<?php echo $news->title; ?>"><?php echo $news->title; ?></a></li>
 							<?php 
-								if($list_news[$j]) $exists_news_ids[] = $list_news[$j]->id;
+								if($news) $exists_news_ids[] = $news->id;
 							} ?>
 						</ul>
 					</div>
@@ -105,7 +104,6 @@
 					$i++;
 				}
 			?>
-			<!-- 新闻列表 结束 -->
 			<!-- 中间虚线 显示内容开始 -->
 			<div id="list">
 				<div id="list_top"></div>
