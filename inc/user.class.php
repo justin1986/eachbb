@@ -136,7 +136,7 @@ class User {
 	}
 	
 	//注册新用户,返回数组
-	public static function register($name,$email,$password,$uid=0){	
+	public static function register($name,$email,$password,$uid=0,$baby_status=0,$baby_birthday='',$birthday='',$zip='',$phone='',$address='',$gender=2,$ip=''){	
 		$result = new RegisterResult();	
 		$name = strtolower($name);
 		$email = strtolower($email);
@@ -195,8 +195,8 @@ class User {
 		
 		$authentic_str = rand_str(20);
 		$password = md5($password);
-		$sql = "insert into " .self::$s_table_name ." (name,password,email,created_at,uid,authenticate_string) value(";
-		$sql .= "'$name','$password','$email',now(),{$result->uid},'{$authentic_str}')";
+		$sql = "insert into " .self::$s_table_name ." (name,password,email,created_at,uid,authenticate_string,baby_status,baby_birthday,birthday,zip,phone,address,gender,ip) value(";
+		$sql .= "'$name','$password','$email',now(),{$result->uid},'{$authentic_str}',$baby_status,'$baby_birthday','$birthday','$zip','$phone','$address',$gender,'$ip')";
 		$db->execute($sql);
 		$result->id = $db->last_insert_id;
 		$result->result = true;

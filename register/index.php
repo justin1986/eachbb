@@ -50,7 +50,7 @@
 					<div class="c_a">
 						<div class="ca_a">*</div>
 						<div class="ca_b">性别</div>
-						<div class="ca_s"><input name="gender" value="0" type="radio"/>男<input type="radio" name="gender" checked="checked" value="1" style="margin-left:40px;"/>女</div>
+						<div class="ca_s"><input name="gender" value="1" type="radio"/>男<input type="radio" name="gender" checked="checked" value="2" style="margin-left:40px;"/>女</div>
 						<div class="ca_d"></div>
 					</div>
 					<div class="c_a">
