@@ -16,6 +16,7 @@
 <title>consult</title>
 <?php
 		css_include_tag('article');
+		use_jquery();
 ?>
 </head>
 <body>
@@ -70,20 +71,29 @@
 			<div id="pagination">
 				<?php  print_news_fck_pages2($content,'article.php?id='.$id,'page');?>
 			</div>
+			<?php 
+				$sql="SELECT id,resource_id,title,nick_name,comment,created_at FROM eb_comment e where resource_type='news' and resource_id ={$id} order by created_at desc";
+				$list_news=$db->paginate($sql,7);
+			?>
+			<script type="text/javascript">
+				
+			</script>
 			<div id="critique">
-				<div id="c_l">读者评论<a href="#">(共5条)</a></div>
+				<div id="c_l">读者评论<a href="#">(共<?php echo $page_record_count; ?>条)</a></div>
 				<div id="c_r"><a href="#">查看所有评论</a></div>
 			</div>
 			<div class="cri_content">
-				<?php for($i=0;$i<4;$i++){ ?>
+				<?php foreach ($list_news as $news){ ?>
 				<div class="cri_tz">
-					<div class="crit_l"><a href="#">哈哈阿萨法</a>&nbsp;&nbsp;&nbsp;2010-03-12 10:43:15</div>
+					<div class="crit_l"><a href="<?php get_news_url($news) ?>" title="<?php echo $news->title; ?>"><?php echo $news->title; ?></a>&nbsp;&nbsp;&nbsp;<?php echo $news-> created_at;?></div>
 					<div class="crit_r"><a href="#">支持(0)</a><a href="#">反对(0)</a></div>
-					<div class="cri_c"><a href="#">哈哈阿萨法哈哈阿萨法哈哈阿萨法哈哈阿萨法哈哈阿萨法</a></div>
+					<div class="cri_c"><a href="<?php get_news_url($news) ?>" title="<?php echo $news->comment;?>"><?php echo $news->comment;?></a></div>
 					<div class="c_hr"></div>
 				</div>
 				<?php } ?>
+				<div class="fun"><?php paginate(); ?></div>
 			</div>
+			
 		</div>
 		<div id="b_r">
 			<div id="br_img"></div>
