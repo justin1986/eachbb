@@ -78,7 +78,7 @@
 				<div class="result_pg">
 					<!-- 左边图片的显示 和 标题-->
 					<?php
-						$list_news=$db->query("select set_up,created_at,id,title,video_photo_src from eb_news where category_id =".$sub_category->id." and is_adopt=1 and set_up=1 order by created_at desc,set_up desc  limit 1");
+						$list_news=$db->query("select created_at,id,title,video_photo_src from eb_news where category_id =".$sub_category->id." and is_adopt=1 and set_up=1 order by created_at desc limit 1");
 						if($list_news[0]) $exists_news_ids[] = $list_news->id;
 					?>
 					<div class="result_left">
