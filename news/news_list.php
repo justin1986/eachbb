@@ -33,7 +33,7 @@
 </head>
 <body>
 <div id="ibody">
-	<?php include_once('../inc/top_consult.php'); ?>
+	<?php include_once('../inc/top_consult.php'); ?>	
 		<div id="log_top">
 			<div id="log_t">
 				<div id="log"></div>
@@ -114,7 +114,7 @@
 						<div id="list_container_top">
 								<?php
 								$all_category_ids = implode(',', $all_category_ids); 
-								$exists_news_ids = implode(',',$exists_news_ids);
+								$exists_news_ids = implode(',', $exists_news_ids);
 								$sql="SELECT created_at,id,title FROM eb_news e where is_adopt=1 and category_id in ({$all_category_ids}) and id not in ({$exists_news_ids}) order by created_at desc";
 								$list_news=$db->paginate($sql,26);
 								foreach ($list_news as $news){ ?>
