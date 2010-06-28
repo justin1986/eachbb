@@ -56,23 +56,24 @@
 						<div id="cpgt_r"></div>
 					</div>
 					<div id="cpgc_c">
+					<form action="get_pwd.post.php" method="post">
 						<div class="user">
 							<div class="u_l">用户名：</div>
-							<div class="u_r"><input name="name" type="text" /></div>
+							<div class="u_r"><input name="name" id="name" type="text" /></div>
 						</div>
 						<div class="user">
 							<div class="u_l">邮&nbsp;&nbsp;箱：</div>
-							<div class="u_r"><input name="email" type="text" /></div>
+							<div class="u_r"><input name="email" id="email" type="text" /></div>
 						</div>
 						<div class="user">
 							<div class="u_l">验证码：</div>
-							<div class="u_c"><input name="verify" type="text"></div>
-							<div class="u_y"><img src="/inc/verify.php?name=get_pwd"></div>
+							<div class="u_c"><input name="verify" id="verify_text" type="text"></div>
+							<div class="u_y"><img id="verify_img" src="/inc/verify.php?name=get_pwd"></div>
 							<div id="u_r">看不清楚？换张图片</div>
 						</div>
 					
-						<div class="u_btn"><input type="button"> </div>
-						
+						<div class="u_btn"><input id="get_pwd" type="button"> </div>
+					</form>
 					</div>
 					<div id="cpgc_b"></div>
 				</div>

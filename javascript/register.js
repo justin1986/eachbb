@@ -242,7 +242,7 @@ function check_email(is_submit){
 			$("#email_info").html('<span style=color:red>邮箱太短</span>');
 			return false;
 		}
-		if(email.length>20){
+		if(email.length>40){
 			$("#email_info").html('<span style=color:red>邮箱太长</span>');
 			return false;
 		}
