@@ -323,22 +323,22 @@ function paginate($url="",$ajax_dom=null,$page_var="page",$force_show = false,$t
 		if($pageindex == 1){
 			echo "<span class='paginate_botton'>上页</span>";
 		}else {
-			$url = get_page_url($url, $pageindex-1, $page_var,$type);
-			echo "<span class='paginate_botton'><a href='$url'>上页</a></span>";
+			$turl = get_page_url($url, $pageindex-1, $page_var,$type);
+			echo "<span class='paginate_botton'><a href='$turl'>上页</a></span>";
 		}
 		for($i=1;$i<=$pagecount;$i++){
 			if($i==$pageindex){	
 				echo "<span class='page_span2'>{$i}</span>";
 			}else{
-				$url = get_page_url($url, $i, $page_var,$type);
-				echo "<span class='page_span'><a href='$url'>$i</a></span>";
+				$turl = get_page_url($url, $i, $page_var,$type);
+				echo "<span class='page_span'><a href='$turl'>$i</a></span>";
 			}
 		}
 		if($pageindex == $pagecount){
 			echo "<span class='paginate_botton'>下页</span>";
 		}else {
-			$url = get_page_url($url, $pageindex+1, $page_var,$type);
-			echo "<span class='paginate_botton'><a href='$url'>下页</a></span>";
+			$turl = get_page_url($url, $pageindex+1, $page_var,$type);
+			echo "<span class='paginate_botton'><a href='$turl'>下页</a></span>";
 		}
 	}
 }
