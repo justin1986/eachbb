@@ -7,7 +7,7 @@
 <?php
 	include_once('../frame.php');
 	$db=get_db();
-	$id=intval(trim($_REQUEST['id']));
+	$id=intval(trim($_REQUEST['category_id']));
 	if(empty($id))
 	{
 		die('invliad params!');

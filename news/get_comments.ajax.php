@@ -16,12 +16,12 @@
 	foreach ($list_news as $news){ ?>
 	<div class="cri_tz">
 		<div class="crit_l"><a href="<?php get_news_url($news) ?>" title="<?php echo $news->title; ?>"><?php echo $news->title; ?></a>&nbsp;&nbsp;&nbsp;<?php echo $news-> created_at;?></div>
-		<div class="crit_r"><a href="#">支持(0)</a><a href="#">反对(0)</a></div>
+		<div class="crit_r"><a href="#">支持(0)</a> <a href="#">反对(0)</a></div>
 		<div class="cri_c"><a href="<?php get_news_url($news) ?>" title="<?php echo $news->comment;?>"><?php echo $news->comment;?></a></div>
 		<div class="c_hr"></div>
 	</div>
 	<?php } ?>
-	<div class="fun"><?php paginate("/news/get_comments.ajax.php",'res','comment_page'); ?></div>
+	<div class="fun"><?php paginate("/news/get_comments.ajax.php?id=$id",'res','comment_page'); ?></div>
 	
 </div>
  

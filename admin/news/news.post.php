@@ -33,8 +33,11 @@
 		$news->created_at = date("Y-m-d H:i:s");
 		$news->click_count = 0;					
 	}
-	$news->save();
-	
+	if($news->is_adopt){
+		publish_news($news);
+	}else{
+		$news->save();
+	}
 	/*
 	 * news saved
 	 */

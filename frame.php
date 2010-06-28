@@ -278,7 +278,7 @@ function paginate($url="",$ajax_dom=null,$page_var="page",$force_show = false,$t
 		<?php	
 		}
 		?>共找到<?php echo $$record_count_token; ?>条记录　
-	  当前第<select name="pageselect" id="pageselect" onChange="jumppage('<?php echo $url ."&" .$page_var ."="; ?>',this.options[this.options.selectedIndex].value);">
+	  当前第<select name="pageselect" id="pageselect" onChange="jumppage('<?php echo (strpos($url,'?') === false ? $url ."?" : $url)  ."&" .$page_var ."="; ?>',this.options[this.options.selectedIndex].value);">
 		<?php	
 		//产生所有页面链接
 		for($i=1;$i<=$pagecount;$i++){ ?>
@@ -291,7 +291,7 @@ function paginate($url="",$ajax_dom=null,$page_var="page",$force_show = false,$t
 				function jumppage(urlprex,pageindex)
 				{
 				<?php 
-					if($page_type=='static' && !preg_match($pattern,$turl)){
+					if($page_type=='static' && !preg_match($pattern,$url)){
 						$str = "'{$url}/page/' + pageindex;";	
 					}else{
 						$str = "urlprex + pageindex;";

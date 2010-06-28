@@ -75,7 +75,7 @@ body{width:970px; margin: 0 auto; font-family:����;}
 #log_top{width:970px; height:41px; margin-top:20px; float:left; display:inline;}
 #log{width:80px; height:20px; background:url(/images/article/log.jpg) no-repeat; float:left; display:inline;}
 #log_address{width:400px; height:20px; line-height:20px; font-size:12px; float:left; display:inline;}
-#log_address a{color:#000; font-size:12px; text-decoration: none;}
+#log_address a{color:blue; font-size:12px; text-decoration: none;}
 #log_t{width:970px; height:20px; float:left; display:inline;}
 #hr{width:970px; height:6px; margin-top:10px; background:url(/images/article/hr.jpg) no-repeat; font-size:0px; line-height: 0px; float:left; display: inline;}
 #bl_img{width:658px; height:86px; margin-top:10px; overflow:hidden; float:left; display:inline;}
