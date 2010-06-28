@@ -22,7 +22,9 @@ body{width:970PX; margin: 0 auto; }
 
 .user{width:342px; height:25px; margin-top:20px;  margin-left:30px; line-height:25px; float:left; display:inline;}
 .u_l{width:60px; height:25px; font-size:15px; line-height:25px; float:left; display:inline;}
+.u_l2{width:80px; height:25px; font-size:15px; line-height:25px; float:left; display:inline;}
 .u_r{width:245px; height:20px; margin-top:2px;  float:left; display: inline;}
+.u_r2{width:225px; height:20px; margin-top:2px;  float:left; display: inline;}
 .u_c{width:80px; height:20px; margin-top:2px;  float:left; display: inline;}
 .u_c input{width:55px; height:16px; margin-top:2px;  float:left; display: inline;}
 #u_r{width:125px; height:20px; margin-top:2px; cursor:pointer; margin-left:5px; font-size:12px; color:#3C7FB1; float:left; display: inline;}
@@ -32,6 +34,7 @@ body{width:970PX; margin: 0 auto; }
 
 
 .u_r input{width:245px; height:15px; float:left; display: inline;}
+.u_r2 input{width:225px; height:15px; float:left; display: inline;}
 .u_r select{width:250px; height:20px; float:left; display: inline;}
 .u_btn{width:312px; height:30px; margin-left:30px; margin-top:20px; line-height:30px; float: left; display: inline;}
 .u_btn input{width:94px; height:26px; margin-left:60px; border:0px solid #000000; background:url(/images/login/login.jpg) no-repeat;  float:left; display: inline;}
