@@ -17,7 +17,7 @@
 <?php
 	use_jquery();
 	css_include_tag('article');
-	js_include_tag('new/news');
+	js_include_tag('news/news');
 ?>
 </head>
 <body>
