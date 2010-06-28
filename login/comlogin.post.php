@@ -1,6 +1,8 @@
 <?php
 	session_start();
 	include("../frame.php");
+	include_once('../inc/user.class.php');
+	
 	if(!is_post()){
 		redirect('/error/'); 
 		die();
@@ -50,7 +52,7 @@
 		$err = "用户名或密码错误";
 		$last_url = $fail_url;
 	}
-	if(front_login($name,$password)){
+	if(User::login($name,$password)){
 		$last_url = $suess_url;
 	}else{
 		$err = "用户名或密码错误";
