@@ -21,7 +21,7 @@
 		<div class="c_hr"></div>
 	</div>
 	<?php } ?>
-	<div class="fun"><?php paginate("get_comments.ajax.php?id=$id",'res','comment_page'); ?></div>
+	<div class="fun"><?php paginate("/news/get_comments.ajax.php",'res','comment_page'); ?></div>
 	
 </div>
  
