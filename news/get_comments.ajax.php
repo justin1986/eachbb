@@ -4,7 +4,7 @@
 	$id = $_GET["id"];
 	if(!is_numeric($id)) die('invlid request!');
 	$db=get_db();
-	$sql = "SELECT id,resource_id,title,nick_name,comment,created_at FROM eb_comment e where resource_type='news' and resource_id ={$id} order by created_at desc";
+	$sql = "SELECT n.id,n.resource_id,n.title,n.comment,n.created_at,e.comment_id,e.up,e.down FROM eb_comment n left join eb_comment_dig e on n.id=e.comment_id where resource_type='news' and resource_id ={$id} order by created_at desc";
 	$list_news = $db->paginate($sql,7,'comment_page');
 ?>
 <div id="critique">
@@ -15,13 +15,11 @@
 	<?php 
 	foreach ($list_news as $news){ ?>
 	<div class="cri_tz">
-		<div class="crit_l"><a href="<?php get_news_url($news) ?>" title="<?php echo $news->title; ?>"><?php echo $news->title; ?></a>&nbsp;&nbsp;&nbsp;<?php echo $news-> created_at;?></div>
-		<div class="crit_r"><a href="#">支持(0)</a><a href="#">反对(0)</a></div>
-		<div class="cri_c"><a href="<?php get_news_url($news) ?>" title="<?php echo $news->comment;?>"><?php echo $news->comment;?></a></div>
+		<div class="crit_l"><?php echo $news->title; ?>&nbsp;&nbsp;&nbsp;<font><?php echo date('Y-m-d',$news-> created_at);?></font></div>
+		<div class="crit_r"><div name="<?php echo $news->id;?>" class="up">支持(<font><?php if($news->up>0){echo $news->up;}else{ echo 0;} ?></font>)</div> <div name="<?php echo $news->id;?>" class="down">反对(<font><?php if($news->down>0){echo $news->down;}else{echo 0;}?></font>)</div></div>
+		<div class="cri_c"><?php echo $news->comment;?></div>
 		<div class="c_hr"></div>
 	</div>
 	<?php } ?>
 	<div class="fun"><?php paginate("/news/get_comments.ajax.php",'res','comment_page'); ?></div>
-	
 </div>
- 
