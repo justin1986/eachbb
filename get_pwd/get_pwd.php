@@ -1,6 +1,10 @@
 <?php
 	session_start();
 	include_once('../frame.php');
+	$db =get_db();
+	if(!isset($_SESSION['getpwd'])){
+		$_SESSION['getpwd'] = rand_str();
+	}
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html>
@@ -46,6 +50,18 @@
 				<div id="menu_right"></div>
 			</div>
 		</div>
+		 <?php
+		 	$verify = $_GET['verify'];
+			if(empty($verify)){
+				alert('您的申请不合法或者已经过期');
+				redirect('/'); 
+			}else{
+				$db->query("select * from eb_get_pwd where verify='$verify' and now()<end_time");
+				if(!$db->move_first()){
+					alert('您的申请不合法或者已经过期');
+					redirect('/'); 
+				}else{$uid = $db->field_by_name('user_id');
+		 ?>
 		<div id="center">
 			<div id="cpg_top"></div>
 			<div id="cpg_c">
@@ -56,23 +72,18 @@
 						<div id="cpgt_r"></div>
 					</div>
 					<div id="cpgc_c">
-					<form action="get_pwd.post.php" method="post">
+					<form action="getpwd.post.php" method="post">
 						<div class="user">
-							<div class="u_l">用户名：</div>
-							<div class="u_r"><input name="name" id="name" type="text" /></div>
+							<div class="u_l2">修改密码：</div>
+							<div class="u_r2"><input name="password" id="password1" type="password" /></div>
 						</div>
 						<div class="user">
-							<div class="u_l">邮&nbsp;&nbsp;箱：</div>
-							<div class="u_r"><input name="email" id="email" type="text" /></div>
+							<div class="u_l2">确认密码：</div>
+							<div class="u_r2"><input id="password2" type="password" /></div>
 						</div>
-						<div class="user">
-							<div class="u_l">验证码：</div>
-							<div class="u_c"><input name="verify" id="verify_text" type="text"></div>
-							<div class="u_y"><img id="verify_img" src="/inc/verify.php?name=get_pwd"></div>
-							<div id="u_r">看不清楚？换张图片</div>
-						</div>
-					
-						<div class="u_btn"><input id="get_pwd" type="button"> </div>
+						<div class="u_btn"><input id="getpwd" type="button"> </div>
+						<input type="hidden" name="session" value="<?php echo $_SESSION['getpwd'];?>">
+						<input type="hidden" name="uid" value="<?php echo $uid;?>">
 					</form>
 					</div>
 					<div id="cpgc_b"></div>
@@ -82,6 +93,7 @@
 			</div>
 			<div id="cpg_b"></div>
 		</div>
+		<?php }}?>
 		<div id="bg_hr"></div>
 		<div id="bottom">关于我们 - 加入我们 - 友情链接 - 联系我们 - 服务条款 - 隐私保护 - 网站地图</div>
 		<div id="bottom_b">哈哈少儿旗下网站  Copyright © 1997-2010 HAHA.smg.com All Rights Reserved.</div>

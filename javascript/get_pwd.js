@@ -14,6 +14,13 @@ $(function(){
 		
 		form_submit();
 	});
+	
+	$("#getpwd").click(function(){
+		if(!check_password()){
+			return false;
+		}
+		$("form").submit();
+	});
 });
 
 
@@ -65,6 +72,32 @@ function check_email(){
 	}
 }
 
+function check_password(){
+	var password = $("#password1").val();
+	var password2 = $("#password2").val();
+	if(password==''){
+		alert('请输入新密码！');
+		return false;
+	}
+	if(password.length<4){
+		alert('新密码太短！');
+		return false;
+	}
+	if(password.length>20){
+		alert('新密码太长！');
+		return false;
+	}
+	if(!isNumberOrLetter2(password)){
+		alert('新密码含有特殊字符!');
+		return false;
+	}
+	if(password!=password2){
+		alert('请2次输入相同密码！');
+		return false;
+	}
+	return true;
+}
+
 function form_submit(){
 	if($("#verify_text").val()==''){
 		alert('验证码不能为空');
@@ -87,6 +120,16 @@ function form_submit(){
 
 function isNumberOrLetter(s){//判断是否是数字或字母 
 	var regu = "^[0-9a-zA-Z]+$";
+	var re = new RegExp(regu);
+	if(re.test(s)){
+		return true;
+	}else{
+		return false;
+	}
+}
+
+function isNumberOrLetter2(s){//判断是否是数字或字母及少量特殊符号
+	var regu = "^[0-9a-zA-Z.!@#$%^&*]+$";
 	var re = new RegExp(regu);
 	if(re.test(s)){
 		return true;
