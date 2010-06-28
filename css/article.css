@@ -4,7 +4,6 @@ body{width:970px; margin: 0 auto; font-family:����;}
 
 #fbody{ width:970px; overflow:hidden;  background:#ffffff; float:left; display:inline;}
 
-
 #top_login{width:970px; height:83px; margin-top:10px; font-size:13px; color:#ffffff; float:right; display:inline;}
 #top_login a{color:#ffffff; text-decoration:none;}
 #tl_l{width:224px; height:83px; background:url(../images/bbs/loginb.jpg) no-repeat; float:left; display:inline;}
@@ -40,12 +39,6 @@ body{width:970px; margin: 0 auto; font-family:����;}
 #me_in{width:150px; height:15px; margin-left:14px; margin-top:3px; font-size:12px; float:left; display:inline;}
 #me_btn{width:47px; height:24px; margin-left:4px; margin-top:1px; background:url(../images/consult/mo_sou.jpg) no-repeat; border:0px solid red; float:left; display:inline;}
 
-
-
-
-
-
-
 #bl_a{width:646px; height:207px; float:left; display:inline;}
 #bla_img{width:297px; height:207px; background:url(../images/bbs/pg_d.gif) no-repeat; float:left; display:inline;}
 #bla_r{width:314px; height:207px;  float:right; display:inline;}
@@ -59,20 +52,8 @@ body{width:970px; margin: 0 auto; font-family:����;}
 .blaco_d{width:4px; height:3px; margin-top:7px; background:url(../images/bbs/pg_g.jpg) no-repeat; float:left; display:inline;}
 .blaco_c{width:295px; height:20px; margin-left:5px; font-size:12px; font-weight:500; line-height:20px; overflow:hidden; float:left; display:inline;}
 
-
-
-
-
 #b_l{width:650px; margin-top:15px; overflow:hidden; float:left; display:inline;}
 #b_r{width:291px;  margin-top:15px; overflow:hidden; float:right; display:inline;}
-
-
-
-
-
-
-
-
 
 .bd{width:289px; margin-top:20px; float:left; display:inline;}
 .bd_t{width:289px; height:5px; background:url(../images/consult/r_t.jpg) no-repeat; font-size:0px; line-height:0px; float:left; display:inline;}
@@ -91,18 +72,12 @@ body{width:970px; margin: 0 auto; font-family:����;}
 .book_title a{font-size:13px; color:#555555; font-weight:600; text-decoration: none;}
 
 
-
-
-
 #log_top{width:970px; height:41px; margin-top:20px; float:left; display:inline;}
 #log{width:80px; height:20px; background:url(/images/article/log.jpg) no-repeat; float:left; display:inline;}
 #log_address{width:400px; height:20px; line-height:20px; font-size:12px; float:left; display:inline;}
-#log_address a{color:#000; font-size:12px; text-decoration: none;}
+#log_address a{color:blue; font-size:12px; text-decoration: none;}
 #log_t{width:970px; height:20px; float:left; display:inline;}
 #hr{width:970px; height:6px; margin-top:10px; background:url(/images/article/hr.jpg) no-repeat; font-size:0px; line-height: 0px; float:left; display: inline;}
-
-
-
 #bl_img{width:658px; height:86px; margin-top:10px; overflow:hidden; float:left; display:inline;}
 #bl_img img{width:658px; height:86px;}
 
@@ -138,15 +113,12 @@ body{width:970px; margin: 0 auto; font-family:����;}
 #tm_ticket{width:85px; height:25px; line-height:25px; float:right; display:inline;}
 #tm_ticket a{font-size:13px; color:#FF0000; font-weight:bold; text-decoration:none;}
 
-
 #content{width:635px; margin-top:15px; text-indent:28px; font-size:14px; line-height:30px; color:#333333; float:left; display:inline;}
 #pagination{width:635px; height:20px;   margin-top:20px; color:#666666; text-align:center; font-size:14px; line-height:20px; float:left; display:inline;}
 .page_span{margin-left: 5px;}
 .page_span2{margin-left: 5px;}
 .paginate_botton{margin-left: 5px;}
 #pagination a{font-size:14px; color:#003399; text-decoration: none;}
-
-
 
 #critique{width:635px; height:20px; margin-top:35px; line-height:20px; float:left; display:inline;}
 #c_l{width:130px; height:20px; line-height:20px; font-size:14px; color:#666666; font-weight:bold; float:left; display:inline;}
@@ -159,23 +131,17 @@ body{width:970px; margin: 0 auto; font-family:����;}
 .cri_content{width:635px;  margin-top:5px; float:left; display:inline;}
 .fun{width:635px; height:20px; margin-top:20px; text-align:center; font-size:12px; float:left; dispaly:inine;}
 .cri_tz{width:635px; margin-top:32px; line-height:20px; float:left; display:inline;}
-.crit_l{width:228px; height:20px; font-size:10px; font-family:arial; color:#999999; float:left; display:inline;}
-.crit_l a{font-size:16px; color:#6600FF;  font-weight: bold;		}
-.crit_r{width:90px; height:20px; line-height:20px; float:right; display:inline;}
-.crit_r a{font-size:12px; color:#6600FF; text-decoration:none;}
-.cri_c{width:635px; height:20px; margin-top:15px; line-height:25px; overflow:hidden; float:left; display:inline;}
-.cri_c a{font-size:14px; color:#666666; text-decoration: none;}
+.crit_l{width:228px; height:20px; font-size:16px; color:#6600FF;  font-weight: bold; float:left; display:inline;}
+.crit_l font{font-size:10px; font-family:arial; color:#999999;}
+.crit_r{width:130px; height:20px; font-size:12px; color:#6600FF;  font-weight: bold; line-height:20px; float:right; display:inline;}
+.up font{font-size:12px; color:#6600FF; text-decoration:none;}
+.up{float:right; display:inline;}
+.down font{font-size:12px; color:#6600FF; text-decoration:none;}
+.up{float:left; display: inline;}
+.cri_c{width:635px; height:20px; margin-top:15px; line-height:25px; font-size:14px; color:#666666; overflow:hidden; float:left; display:inline;}
 .c_hr{width:635px; height:1px; margin-top:20px; background:url(/images/article/hr_l.jpg) repeat-x; font-size:0px; line-height:0px; float:left; display:inline;}
 
-
-
-
-
-
 #br_img{width:297px; height:195px; background:url(/images/article/r1.jpg) no-repeat; float:right; display:inline;}
-
-
-
 
 #class{width:289px;  margin-top:22px; background:red; float:right; display:inline;}
 .cla_t{width:289px; height: 9px; font-size:0px; line-height:0px; background:url(/images/article/rb_t.jpg) no-repeat; float:left; display:inline;}
@@ -194,10 +160,6 @@ body{width:970px; margin: 0 auto; font-family:����;}
 .cla_m_v a{font-size: 12px; color:#A654EB; text-decoration: none;}
 .cla_r{width:1px; height:15px; margin-top:4px; font-size:0px; line-height:0px; border-left:1px solid #000; float:left; display: inline;}
 
-
-
-
-
 #tag{width:289px; height: 133px; margin-top:20px;  float:right; display: inline;}
 #tag_l{width:11px; height: 133px; font-size:0px; line-height:0px; background:url(/images/article/rc_l.jpg) no-repeat; float:left; display: inline;}
 #tag_b{width:12px; height: 133px; font-size:0px; line-height:0px; background:url(/images/article/rc_r.jpg) no-repeat;  float:right; display: inline;}
@@ -205,9 +167,6 @@ body{width:970px; margin: 0 auto; font-family:����;}
 #tagc_t{width:256px; height:25px;  margin-top: 10px; font-weight:900; font-size:19px;  color:#000; line-height:25px; float:left; display: inline;}
 #tagc_t font{ margin-top: 10px; font-size:19px;  color:#A654EB; font-weight:bold;}
 .tag_menu{width:266px;  margin-top:10px; float: left; display: inline;}
-
-
-
 
 #comment{width:289px; height: 333px; margin-top:20px;  float:right; display: inline;}
 #comm_l{width: 16px; height:333px; background:url(/images/article/rd_l.jpg) no-repeat; font-size:0px; line-height:0px; float: left; display: inline;}
@@ -220,22 +179,6 @@ body{width:970px; margin: 0 auto; font-family:����;}
 #comm_t img{width:49px; height:13px; margin-top:5px; margin-top:6px; margin-left:4px; border:0px solid red; background:url(/images/article/more.jpg) no-repeat; float:left; display:inline;}
 #comm_con{width:260px; height: 28px; line-height:28px; overflow:hidden; float:left; display: inline;}
 #comm_con a{font-size:12px; color:#666666; text-decoration:none;}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #bottom{width:950px; text-align:center; margin-top:20px; font-size:12px; color:#666666; float:left; display:inline;}
 #bottom_b{width:950px; margin-top:10px; margin-bottom:50px; text-align:center; font-size:12px; color:#666666; float:left; display:inline;}

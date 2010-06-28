@@ -7,13 +7,13 @@
 		#die();
 	}
 	$db = get_db();
-	$column = $db->query("SELECT id,title,click_count,short_title,description,content,created_at,last_edited_at,video_photo_src,keywords,publisher FROM eb_news e where id=".$id." order by last_edited_at desc");
+	$column = $db->query("SELECT id,title,click_count,short_title,category_id,description,content,created_at,last_edited_at,video_photo_src,keywords,publisher FROM eb_news e where id=".$id." order by last_edited_at desc");
 	?>
 <html>
 <head>
 <meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <meta http-equiv=Content-Language content=zh-CN>
-<title>consult</title>
+<title><?php echo $column[0]->title;?></title>
 <?php
 	use_jquery();
 	css_include_tag('article');
@@ -27,7 +27,19 @@
 		<div id="log_top">
 			<div id="log_t">
 				<div id="log"></div>
-				<div id="log_address">创业 &gt; 创业投资 &gt; 美国创业基金的中国风格</div>
+				<div id="log_address">
+					<a href="/">首页</a>
+					<?php 
+						$category = new category_class('news');
+						$cate_tree = $category->tree_map_item($column[0]->category_id);
+						$cate_tree = array_reverse($cate_tree);
+						foreach ($cate_tree as $cate){
+							$list_url = get_news_list_url($cate_tree[0]->id);
+							echo " &gt;&gt; <a href='{$list_url}'>{$cate->name}</a>";
+						}
+					?>
+					<span> &gt;&gt; <?php echo $column[0]->title;?></span>
+				</div>
 			</div>
 			<div id="hr"></div>
 		</div>

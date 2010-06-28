@@ -143,45 +143,10 @@ function valid_input(){
 	priority = $('#priority').attr('value');
 	if(priority == '') priority = 100;
 	
-	
-	/* fitler words
-	 */
-	for(i=0;i< filte_len; i++){
-		if(filte_words[i].length <= 0) continue;
-		if(title.indexOf(filte_words[i])!=-1){
-			if(confirm('标题中包含敏感词"' + filte_words[i]+'",是否忽略敏感词？') === false)
-			return false;
-		}
-		if(short_title.indexOf(filte_words[i])!=-1){
-			if(confirm('短标题中包含敏感词"' + filte_words[i]+'",是否忽略敏感词？!') === false)
-			return false;
-		}
-		if($('#news_wap_title').val().indexOf(filte_words[i])!=-1){
-			if(confirm('wap标题中包含敏感词"' + filte_words[i]+'",是否忽略敏感词？!') === false)
-			return false;
-		}
-		if(description.indexOf(filte_words[i])!=-1){
-			if(confirm('简短描述中包含敏感词"' + filte_words[i]+'",是否忽略敏感词？!') === false)
-			return false;
-		}
-		if(content.indexOf(filte_words[i])!=-1){
-			if(confirm('内容中包含敏感词"' + filte_words[i]+'",是否忽略敏感词？!') === false)
-			return false;
-		}
-	};
-	//handle the news_copy
-	
 	return true;
 }
 
 $(function(){
-	//initial calls 
-	var filte_words;
-	var filte_len;
-	$.post('/admin/filte_words/words.php',function(data){
-		filte_words = data.split('|');
-		filte_len = filte_words.length;
-	});
 	//register events
 	$('#auto_keywords').autocomplete({
 		source:'/admin/keywords/filter_keywords.php'
