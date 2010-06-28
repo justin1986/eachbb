@@ -68,7 +68,7 @@
 				?>
 			</div>
 			<div id="pagination">
-				<?php  print_fck_pages2($column[0]->content,'news.php?id='.$id,'page');?>
+				<?php  paginate_news($column[0]);?>
 			</div>
 			<?php 
 				$sql="SELECT id,resource_id,title,nick_name,comment,created_at FROM eb_comment e where resource_type='news' and resource_id ={$id} order by created_at desc";

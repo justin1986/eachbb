@@ -14,7 +14,6 @@ function get_news_url($news,$type=null,$index=0){
 			$news = $table->find($news);
 		}
 		if(!$news) return false;
-		alert($index);
 		$ret = "/review/".date('Ym',strtotime($news->created_at))."/".str_pad($news->id,7,'0',STR_PAD_LEFT);
 		if($index>1) $ret .= "_{$index}";
 		$ret .= ".shtml";
@@ -92,3 +91,19 @@ function unpublish_news($news){
 	$news->is_adopt = 0;
 	return $news->save(); 
 };
+
+function paginate_news($news){
+	if(is_numeric($news)){
+		$table = new table_class('eb_news');
+		$news = $table->find($news);
+	}
+	global $page_page_count;
+	global $page_type;
+	$_REQUEST['page_type'] && $page_type=$_REQUEST['page_type'];
+	$page_page_count = get_fck_page_count($news->content);
+	if($page_type == 'static'){
+		return paginate(get_news_url($news,'static'),null,'page',false,'static',2);
+	}else{
+		return paginate(null,null,'page',false,'normal',2);
+	}
+}
