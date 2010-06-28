@@ -336,11 +336,7 @@ function print_news_static_page($content,$symbol='fck_pageindex'){
 	}else{
 		function static_url($index){
 			global $news;
-			if($_GET['lang'] == 'en'){
-				return get_news_en_static_url($news,$index);
-			}else{
-				return static_news_url($news,$index);
-			}
+			return get_news_url($news,'static',$index);
 		}
 	}
 	$page_str = "";
@@ -368,6 +364,7 @@ function print_news_static_page($content,$symbol='fck_pageindex'){
 
 function print_fck_pages2($str,$url="",$symbol='fck_pageindex'){
 	global $page_type;
+	!$page_type && $_REQUEST['page_type'] && $page_type = $_REQUEST['page_type']; 
 	if($page_type=='static'){
 		print_news_static_page($str, $symbol);
 		return;

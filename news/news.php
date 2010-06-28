@@ -15,8 +15,9 @@
 <meta http-equiv=Content-Language content=zh-CN>
 <title>consult</title>
 <?php
-		css_include_tag('article');
-		use_jquery();
+	use_jquery();
+	css_include_tag('article');
+	js_include_tag('news/news');
 ?>
 </head>
 <body>
@@ -64,33 +65,14 @@
 			</div>
 			<div id="content">
 				<?php
-					$content=$column[0]->content;
-					echo get__news_fck_content($content,'page');
+				 	echo get_fck_content($column[0]->content,'page');
 				?>
 			</div>
 			<div id="pagination">
-				<?php  print_news_fck_pages2($content,'article.php?id='.$id,'page');?>
+				<?php  paginate_news($column[0]);?>
 			</div>
-			<?php 
-				$sql = "SELECT id,resource_id,title,nick_name,comment,created_at FROM eb_comment e where resource_type='news' and resource_id ={$id} order by created_at desc";
-				$list_news = $db->paginate($sql,7);
-			?>
-			<div id="critique">
-				<div id="c_l">读者评论<a href="#">(共<?php echo $page_record_count; ?>条)</a></div>
-				<div id="c_r"><a href="#">查看所有评论</a></div>
-			</div>
-			<div class="cri_content">
-				<?php foreach ($list_news as $news){ ?>
-				<div class="cri_tz">
-					<div class="crit_l"><a href="<?php get_news_url($news) ?>" title="<?php echo $news->title; ?>"><?php echo $news->title; ?></a>&nbsp;&nbsp;&nbsp;<?php echo $news-> created_at;?></div>
-					<div class="crit_r"><a href="#">支持(0)</a><a href="#">反对(0)</a></div>
-					<div class="cri_c"><a href="<?php get_news_url($news) ?>" title="<?php echo $news->comment;?>"><?php echo $news->comment;?></a></div>
-					<div class="c_hr"></div>
-				</div>
-				<?php } ?>
-				<div class="fun"><?php paginate(); ?></div>
-			</div>
-			
+			<input type="hidden" value="<?php echo $id;?>" id="newsid">
+			<span id="res"></span>
 		</div>
 		<div id="b_r">
 			<div id="br_img"></div>

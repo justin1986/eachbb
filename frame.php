@@ -197,7 +197,33 @@
 		$editor->editor($name,$value);
 	}
 
-function paginate($url="",$ajax_dom=null,$page_var="page",$force_show = false)
+function get_page_url($url,$page,$token,$type='normal'){
+	switch ($type){
+		case 'normal':
+			strpos($url, '?') === false && $url .= "?";
+			$query = $_SERVER['QUERY_STRING'];
+			$pattern = '/(&?' .$token.'=\d*)/';
+			$query = preg_replace($pattern, '', $query);
+			$query = $query ? $query ."&".$token ."={$page}" : $token ."={$page}" ;
+			
+			return substr($url, -1)=='?' ? $url ."{$query}" : $url ."&{$query}" ;				
+			break;
+		case 'fake_static': //伪静态方式，在url后添加/page/2方式；
+			$pattern = '/\/'.$token .'\/\d*\/?$/';
+			$url = preg_replace($pattern, '',$url);
+			return $url ."/". $token ."/{$page}";
+			break;
+		case 'static': //静态方式，类似00213_2.shtml
+			$pattern = '/(\.[^\/]*)$/';
+			$ret = $page == 1 ? $url :preg_replace($pattern, "_$page$1", $url);
+			return $ret;
+			break;
+		default:
+			break;
+	}
+}
+	
+function paginate($url="",$ajax_dom=null,$page_var="page",$force_show = false,$type='normal',$show_type=1)
 {
 	global $page_type;
 	$pageindextoken = empty($page_var) ? "page" : $page_var;
@@ -213,104 +239,107 @@ function paginate($url="",$ajax_dom=null,$page_var="page",$force_show = false)
 	if(empty($url)){
 		$url = $_SERVER['PHP_SELF'] ."?";
 	}
-	$turl = $_SERVER['PHP_SELF'];
-	$pattern = '/(.+)\.php$/';
-	if($page_type=='static' && !preg_match($pattern,$turl)){
-		$url = $_SERVER['PHP_SELF'];
-		$pattern = '/(.+)\/page\/(\d+)/';
-		if(preg_match($pattern,$url)){
-			$url = preg_replace($pattern,'$1',$url);
-		}
-		$pagefirst = $url . "/page/1";
-		$pagenext = $url ."/page/" .($pageindex + 1);
-		$pageprev = $url ."/page/" .($pageindex-1);
-		$pagelast = $url ."/page/" .($pagecount);
-		
-	}else{
-		parse_str($_SERVER['QUERY_STRING'], $params);
-		unset($params[$pageindextoken]);
-		
-		foreach ($params as $k => $v) {
-			$url .= "&" .$k . "=" . urlencode($v);
-		}
-		$pagefirst = $url . "&$pageindextoken=1";
-		$pagenext = $url ."&$pageindextoken=" .($pageindex + 1);
-		$pageprev = $url ."&$pageindextoken=" .($pageindex-1);
-		$pagelast = $url ."&$pageindextoken=" .($pagecount);
-	}
+	$pagefirst = get_page_url($url, 1, $page_var,$type);
+	$pagenext = get_page_url($url, $pageindex + 1, $page_var,$type);
+	$pageprev = get_page_url($url, $pageindex-1, $page_var,$type);
+	$pagelast = get_page_url($url, $pagecount, $page_var,$type);
 	
-	
-	if ($pageindex == 1 || $pageindex ==null || $pageindex == "")
-	{?>
-	  <span>[首页]</span> 
-	  <span>[上页]</span>	
-	  <?php 
-	  	if($pagecount > 1){
-	  ?>
-	  <span><a class="paginate_link" href="<?php echo $pagenext; ?>">[下页]</a></span> 
-	  <span><a class="paginate_link" href="<?php echo $pagelast; ?>">[尾页]</a></span>
-	  <?php }else{?>
-	  <span>[下页]</span> 
-	  <span>[尾页]</span>		  
-	<?php	
-	  }
-	}
-	if ($pageindex < $pagecount && $pageindex > 1 )
-	{?>
-	  <span><a class="paginate_link" href="<?php echo $pagefirst; ?>">[首页]</a></span> 
-	  <span><a class="paginate_link" href="<?php echo $pageprev; ?>">[上页]</a></span>			
-	  <span><a class="paginate_link" href="<?php echo $pagenext; ?>">[下页]</a></span> 
-	  <span><a class="paginate_link" href="<?php echo $pagelast; ?>">[尾页]</a></span>		
-	 <?php
-	}
-	if ($pageindex == $pagecount && $pageindex != 1)
-	{?>
-	  <span><a class="paginate_link" href="<?php echo $pagefirst; ?>">[首页]</a></span> 
-	  <span><a class="paginate_link" href="<?php echo $pageprev; ?>">[上页]</a></span>
-	  <span>[下页]</span> 
-	  <span>[尾页]</span>	  		
-	<?php	
-	}
-	?>共找到<?php echo $$record_count_token; ?>条记录　
-  当前第<select name="pageselect" id="pageselect" onChange="jumppage('<?php echo $url ."&" .$page_var ."="; ?>',this.options[this.options.selectedIndex].value);">
-	<?php	
-	//产生所有页面链接
-	for($i=1;$i<=$pagecount;$i++){ ?>
-		<option <?php if($pageindex== $i) echo 'selected="selected"';?> value="<?php echo $i;?>" ><?php echo $i;?></option>
+	if($show_type==1){
+		
+		if ($pageindex == 1)
+		{?>
+		  <span>[首页]</span> 
+		  <span>[上页]</span>	
+		  <?php 
+		  	if($pagecount > 1){
+		  ?>
+		  <span><a class="paginate_link" href="<?php echo $pagenext; ?>">[下页]</a></span> 
+		  <span><a class="paginate_link" href="<?php echo $pagelast; ?>">[尾页]</a></span>
+		  <?php }else{?>
+		  <span>[下页]</span> 
+		  <span>[尾页]</span>		  
 		<?php	
-	}
-	?>
-	</select>页　共<?php echo $pagecount;?>页
-	<script>
-			function jumppage(urlprex,pageindex)
-			{
-			<?php 
-				if($page_type=='static' && !preg_match($pattern,$turl)){
-					$str = "'{$url}/page/' + pageindex;";	
-				}else{
-					$str = "urlprex + pageindex;";
-				}
-				echo "var surl = $str";
-				if($ajax_dom){
-					echo "$('#{$ajax_dom}').load(surl);";
-				}else{ 
-					echo "window.location.href=surl;";
-				}
-				?>	
-				
-			} 
-	</script>
-	
-	<?php
-	if(!empty($ajax_dom)){
+		  }
+		}
+		if ($pageindex < $pagecount && $pageindex > 1 )
+		{?>
+		  <span><a class="paginate_link" href="<?php echo $pagefirst; ?>">[首页]</a></span> 
+		  <span><a class="paginate_link" href="<?php echo $pageprev; ?>">[上页]</a></span>			
+		  <span><a class="paginate_link" href="<?php echo $pagenext; ?>">[下页]</a></span> 
+		  <span><a class="paginate_link" href="<?php echo $pagelast; ?>">[尾页]</a></span>		
+		 <?php
+		}
+		if ($pageindex == $pagecount && $pageindex != 1)
+		{?>
+		  <span><a class="paginate_link" href="<?php echo $pagefirst; ?>">[首页]</a></span> 
+		  <span><a class="paginate_link" href="<?php echo $pageprev; ?>">[上页]</a></span>
+		  <span>[下页]</span> 
+		  <span>[尾页]</span>	  		
+		<?php	
+		}
+		?>共找到<?php echo $$record_count_token; ?>条记录　
+	  当前第<select name="pageselect" id="pageselect" onChange="jumppage('<?php echo $url ."&" .$page_var ."="; ?>',this.options[this.options.selectedIndex].value);">
+		<?php	
+		//产生所有页面链接
+		for($i=1;$i<=$pagecount;$i++){ ?>
+			<option <?php if($pageindex== $i) echo 'selected="selected"';?> value="<?php echo $i;?>" ><?php echo $i;?></option>
+			<?php	
+		}
 		?>
+		</select>页　共<?php echo $pagecount;?>页
 		<script>
-			$(".paginate_link").click(function(e){
-				e.preventDefault();
-				$("#<?php echo $ajax_dom;?>").load($(this).attr('href'));
-			});
+				function jumppage(urlprex,pageindex)
+				{
+				<?php 
+					if($page_type=='static' && !preg_match($pattern,$turl)){
+						$str = "'{$url}/page/' + pageindex;";	
+					}else{
+						$str = "urlprex + pageindex;";
+					}
+					echo "var surl = $str";
+					if($ajax_dom){
+						echo "$('#{$ajax_dom}').load(surl);";
+					}else{ 
+						echo "window.location.href=surl;";
+					}
+					?>	
+					
+				} 
 		</script>
+		
 		<?php
+		if(!empty($ajax_dom)){
+			?>
+			<script>
+				$(".paginate_link").click(function(e){
+					e.preventDefault();
+					$("#<?php echo $ajax_dom;?>").load($(this).attr('href'));
+				});
+			</script>
+			<?php
+		}
+	}else if($show_type==2){
+		//文章翻页样式,只有上页 下页 和中间的
+		if($pageindex == 1){
+			echo "<span class='paginate_botton'>上页</span>";
+		}else {
+			$url = get_page_url($url, $pageindex-1, $page_var,$type);
+			echo "<span class='paginate_botton'><a href='$url'>上页</a></span>";
+		}
+		for($i=1;$i<=$pagecount;$i++){
+			if($i==$pageindex){	
+				echo "<span class='page_span2'>{$i}</span>";
+			}else{
+				$url = get_page_url($url, $i, $page_var,$type);
+				echo "<span class='page_span'><a href='$url'>$i</a></span>";
+			}
+		}
+		if($pageindex == $pagecount){
+			echo "<span class='paginate_botton'>下页</span>";
+		}else {
+			$url = get_page_url($url, $pageindex+1, $page_var,$type);
+			echo "<span class='paginate_botton'><a href='$url'>下页</a></span>";
+		}
 	}
 }
 

@@ -1,4 +1,4 @@
-body{width:970px; margin: 0 auto; font-family:ËÎÌå;}
+body{width:970px; margin: 0 auto; font-family:ï¿½ï¿½ï¿½ï¿½;}
 
 #ibody{width:970px; overflow:hidden; margin:0;}
 
@@ -110,12 +110,12 @@ body{width:970px; margin: 0 auto; font-family:ËÎÌå;}
 
 
 #title{width:640px; height:35px; line-height:35px; float:left; display:inline;}
-#title a{font-size:30px; font-family: Î¢ÈíÑÅºÚ; color:#A755EC; font-weight:900; text-decoration: none;}
+#title a{font-size:30px; font-family: Î¢ï¿½ï¿½ï¿½Åºï¿½; color:#A755EC; font-weight:900; text-decoration: none;}
 
 #title_b{width:640px; height:20px; margin-top:10px; line-height:20px; float:left; display:inline;}
-#ret{width:150px; height:20px;  font-size:14px; color:#97ABCA; font-family:ËÎÌå; float:left; display:inline;}
-#problem{width:360px; height:20px;  font-size:14px; color:#97ABCA; font-family:ËÎÌå; float:left; display:inline;}
-#ret a{ font-size:14px; color:#97ABCA; font-family:ËÎÌå; text-decoration: none;}
+#ret{width:150px; height:20px;  font-size:14px; color:#97ABCA; font-family:ï¿½ï¿½ï¿½ï¿½; float:left; display:inline;}
+#problem{width:360px; height:20px;  font-size:14px; color:#97ABCA; font-family:ï¿½ï¿½ï¿½ï¿½; float:left; display:inline;}
+#ret a{ font-size:14px; color:#97ABCA; font-family:ï¿½ï¿½ï¿½ï¿½; text-decoration: none;}
 
 #text{width:635px;  margin-top:10px; float:left; display:inline;}
 #text_tpg{width:635px; height:13px; font-size:0px; line-height:0px; background:url(/images/article/l_t.jpg) no-repeat; float:left; display:inline;}
@@ -140,7 +140,7 @@ body{width:970px; margin: 0 auto; font-family:ËÎÌå;}
 
 
 #content{width:635px; margin-top:15px; text-indent:28px; font-size:14px; line-height:30px; color:#333333; float:left; display:inline;}
-#pagination{width:635px; height:20px;   margin-top:20px; color:#666666; text-align:center; line-height:20px; float:left; display:inline;}
+#pagination{width:635px; height:20px;   margin-top:20px; color:#666666; text-align:center; font-size:14px; line-height:20px; float:left; display:inline;}
 .page_span{margin-left: 5px;}
 .page_span2{margin-left: 5px;}
 .paginate_botton{margin-left: 5px;}
@@ -181,7 +181,7 @@ body{width:970px; margin: 0 auto; font-family:ËÎÌå;}
 .cla_t{width:289px; height: 9px; font-size:0px; line-height:0px; background:url(/images/article/rb_t.jpg) no-repeat; float:left; display:inline;}
 .cla_c{width:289px;  background:#F4F4F4; float:left; display:inline}
 .cla_b{width:289px; height: 9px; font-size:0px; line-height:0px; background:url(/images/article/rb_b.jpg) no-repeat; float:left; display:inline;}
-.cla_title{width:270px; height: 20px; margin-left:15px; line-height: 20px; font-size: 13px; color: #A654EB;  font-family:ËÎÌå; font-weight:600; float: left; display: inline;}
+.cla_title{width:270px; height: 20px; margin-left:15px; line-height: 20px; font-size: 13px; color: #A654EB;  font-family:ï¿½ï¿½ï¿½ï¿½; font-weight:600; float: left; display: inline;}
 .cla_img{width:270px; height:85px; margin-left:8px;  margin-top:10px; overflow:hidden; float: left; display: inline;}
 .ci_z{width:85px; height: 83px; margin-left:5px; float:left; display: inline;}
 .ci_pg{width:82px; height:52px;  border:1px solid #C0C0C0; float:left; display:inline;}
