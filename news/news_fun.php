@@ -1,12 +1,14 @@
 <?php 
 	include_once('../frame.php');
-	$id = $_REQUEST["id"];
+	if(!is_ajax()) die('invlid request!');
+	$id = $_GET["id"];
+	if(!is_numeric($id)) die('invlid request!');
 	$db=get_db();
 	$sql = "SELECT id,resource_id,title,nick_name,comment,created_at FROM eb_comment e where resource_type='news' and resource_id ={$id} order by created_at desc";
-	$list_news = $db->paginate($sql,7);
+	$list_news = $db->paginate($sql,7,'comment_page');
 ?>
 <div id="critique">
-	<div id="c_l">读者评论<a href="#">(共<?php echo $page_record_count; ?>条)</a></div>
+	<div id="c_l">读者评论<a href="#">(共<?php echo $comment_page_record_count; ?>条)</a></div>
 	<div id="c_r"><a href="#">查看所有评论</a></div>
 	</div>
 	<div class="cri_content">
@@ -19,6 +21,7 @@
 		<div class="c_hr"></div>
 	</div>
 	<?php } ?>
-	<div class="fun"><?php paginate(); ?></div>
+	<div class="fun"><?php paginate("news_fun.php?id=$id",'res','comment_page'); ?></div>
+	
 </div>
  
