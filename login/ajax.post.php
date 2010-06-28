@@ -13,7 +13,12 @@ switch ($op) {
 	case 'logout':
 		User::logout();
 	case 'load_login_status_box':
-		echo $_COOKIE['member_name'];
+		$user = User::current_user();
+		if(!$user){
+			include "_unlogin.php";
+		}else{
+			include '_logined.php';
+		}
 		break;
 	default:
 		;
