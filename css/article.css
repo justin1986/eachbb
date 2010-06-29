@@ -103,7 +103,7 @@ body{width:970px; margin: 0 auto; font-family:����;}
 #text_word ul li font{font-size:14px; font-weight:bold; color:#666666; float:left; display:inline;}
 #text_word ul li a{font-size:12px; text-decoration: none; color:#990099; float:left; display:inline;}
 
-#text_content{width:615px; height:50px; margin-top:20px; margin-left:10px; line-height:25px; overflow:hidden; float:left; display:inline;}
+#text_content{width:615px; height:50px; margin-top:20px; margin-left:10px; line-height:25px; color:#666666; overflow:hidden; float:left; display:inline;}
 #text_content font{font-size:14px; font-weight:bold; color:#666666;}
 #text_content a{font-size:14px; text-decoration: none; color:#666666; }
 #text_menu{width:615px; height:25px; margin-left:10px; margin-top:10px; line-height:25px; float:left; display:inline;}

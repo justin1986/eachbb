@@ -26,5 +26,17 @@ $(function(){
 		e.preventDefault();
 		alert('请不要重复提交！');
 	});
+	
+	$('#a_print').click(function(e){
+		e.preventDefault();
+		window.print();
+	});
+	
+	$('#a_collect').click(function(e){
+		e.preventDefault();
+		$.post('ajax.post.php',{'type':'collect','news_id': $('#newsid').val()},function(d){
+			alert(d);
+		});
+	});
 });
 

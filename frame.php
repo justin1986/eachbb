@@ -278,33 +278,28 @@ function paginate($url="",$ajax_dom=null,$page_var="page",$force_show = false,$t
 		<?php	
 		}
 		?>共找到<?php echo $$record_count_token; ?>条记录　
-	  当前第<select name="pageselect" id="pageselect" onChange="jumppage('<?php echo (strpos($url,'?') === false ? $url ."?" : $url)  ."&" .$page_var ."="; ?>',this.options[this.options.selectedIndex].value);">
+	  当前第<select name="pageselect" class="pageselect">
 		<?php	
 		//产生所有页面链接
-		for($i=1;$i<=$pagecount;$i++){ ?>
-			<option <?php if($pageindex== $i) echo 'selected="selected"';?> value="<?php echo $i;?>" ><?php echo $i;?></option>
+		for($i=1;$i<=$pagecount;$i++){ 
+			$ourl = get_page_url($url, $i, $page_var,$type);
+		?>
+			<option <?php if($pageindex== $i) echo 'selected="selected"';?> value="<?php echo $ourl;?>" ><?php echo $i;?></option>
 			<?php	
 		}
 		?>
 		</select>页　共<?php echo $pagecount;?>页
 		<script>
-				function jumppage(urlprex,pageindex)
-				{
+			$('.pageselect').change(function(){
+				var ourl = $(this).val();
 				<?php 
-					if($page_type=='static' && !preg_match($pattern,$url)){
-						$str = "'{$url}/page/' + pageindex;";	
-					}else{
-						$str = "urlprex + pageindex;";
-					}
-					echo "var surl = $str";
 					if($ajax_dom){
-						echo "$('#{$ajax_dom}').load(surl);";
+						echo "$('#{$ajax_dom}').load(ourl)";
 					}else{ 
-						echo "window.location.href=surl;";
+						echo "window.location.href=ourl;";
 					}
-					?>	
-					
-				} 
+				?>
+			}); 
 		</script>
 		
 		<?php
