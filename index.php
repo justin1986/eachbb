@@ -80,7 +80,7 @@
 							for( $i = 0 ; $i < 4 ; $i++){ ?>
 							<div class = "student_pg">
 								<img class = "student_l"/>
-								<a href = "#" title="<?php if($j == 0){ echo $course[$i] -> title;}else if($j == 1){ echo $course[$i] -> name;} ?>"><?php if($j == 0){ echo $course[$i] -> title;}else if($j == 1){ echo $course[$i] -> name;} ?></a>
+								<a href = "<?php get_news_class_problem_url($course[$i]); ?>" title="<?php if($j == 0){ echo $course[$i] -> title;}else if($j == 1){ echo $course[$i] -> name;} ?>"><?php if($j == 0){ echo $course[$i] -> title;}else if($j == 1){ echo $course[$i] -> name;} ?></a>
 							</div>
 							<?php if($i!=3){?>
 							<div class = "student_hr"></div>		
