@@ -66,7 +66,6 @@
 					</div>
 					<div id="student_value">
 						<div class="student_left" id="student_left_0" style="display:inline;">
-						
 						<?php
 						 	$sql = "select id,title from eb_teach where is_adopt=1 and del_flag=0 order by priority,create_time desc limit 8";
 							$course = $db -> query($sql);
@@ -81,7 +80,6 @@
 						</div>
 						<div class="student_left" id="student_left_1" style="display:none;">
 						<?php
-						
 							for( $i = 4 ; $i < 9 ; $i++){ ?>
 							<div class = "student_pg">
 								<img class = "student_l"/>
@@ -102,7 +100,6 @@
 							<div class = "student_hr"></div>	
 							<?php }}?>
 						</div>
-						
 						<div id="student_right"></div>
 					</div>
 				</div>
