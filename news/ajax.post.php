@@ -1,24 +1,19 @@
 <?php
-
 	include_once('../frame.php');
-	$type = $_POST["type"];
-	$id = $_POST["id"];
-	$db=get_db();
-	$num = $_POST["num"];
+	$valid_types = array('up','down');
+	
+	$type = strtolower($_POST["type"]);
+	if(!in_array($type, $valid_types)) die('invalid request!');	
+	$id = intval($_POST["id"]);
 	if(!is_ajax()) die('invlid request!');
-	if(is_numeric($id)&&is_numeric($num)&&!empty($num)){
-		$num=$num==0?1:0;
-		if(is_numeric($id)&&is_numeric($num)){
-		if($type=="up"){
-		$sql="insert into eb_comment_dig (comment_id,up) values ('{$id}',{$num})ON DUPLICATE KEY update up = up +1";
-		}elseif($type=="down"){
-		$sql="insert into eb_comment_dig (comment_id,up) values ('{$id}',{$num})ON DUPLICATE KEY update down = down +1";
-		}
-		$db->execute($sql);
-		$comment=$db->query("select comment_id,up,down from eb_comment_dig where comment_id={$id}");
-		echo $type=="up"?$comment[0]->up:$comment[0]->down;
-		}
-	}else{
-		echo $num;
+	$db=get_db();
+	if(!$id) die('invalid params');
+	if($type == "up"){
+		$sql = "insert into eb_comment_dig (comment_id,up) values ('{$id}',1)ON DUPLICATE KEY update up = up +1";
+	}elseif($type == "down"){
+		$sql="insert into eb_comment_dig (comment_id,down) values ('{$id}',1)ON DUPLICATE KEY update down = down +1";
 	}
+	$db->execute($sql);
+	$comment =$db->query("select comment_id,up,down from eb_comment_dig where comment_id={$id}");
+	echo $type == "up" ? $comment[0]->up : $comment[0]->down;
 ?>
