@@ -60,7 +60,7 @@
 						</form>
 						<div class="u_v">
 							<div id="v_l"><a href="/register">新用户注册</a></div>
-							<div id="v_r"><a href="#">忘记密码？</a></div>
+							<div id="v_r"><a href="/get_pwd">忘记密码？</a></div>
 						</div>
 					</div>
 					<div id="cpgc_b"></div>
