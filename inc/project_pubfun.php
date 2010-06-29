@@ -98,9 +98,7 @@ function unpublish_news($news){
 };
 
 function paginate_news($news){
-function get_news_class_url($problem){
-	echo "";
-}	if(is_numeric($news)){
+	if(is_numeric($news)){
 		$table = new table_class('eb_news');
 		$news = $table->find($news);
 	}
