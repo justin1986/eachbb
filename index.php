@@ -102,7 +102,7 @@
 								<a href = "<?php get_news_class_problem_url($course[$i]); ?>" title="<?php  echo $course[$i] -> name; ?>"><?php echo $course[$i] -> name; ?> </a>
 							</div>
 							<?php if($i != 3){?>
-							<div class = "student_hr"></div>		
+							<div class = "student_hr"></div>	
 							<?php }}?>
 						</div>
 						
