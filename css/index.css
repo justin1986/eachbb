@@ -55,7 +55,7 @@ body{width:1000px; margin: 0 auto;  background:url(/images/index/img_pg.jpg) rep
 #sousuo_b{WIDTH:620PX; height:41px; margin-left:10px; float:left; display:inline;}
 #sousuo_left{width:8px; height:39px; margin-top:1px; background:url(/images/index/b_hr_l.jpg) no-repeat; float:left; display:inline;}
 #sousuo_center{width:600px; height:41px; background:url(/images/index/b_hr_b.jpg) repeat-x; float:left; display:inline;}
-#sousuo_center input{width:590px; height:25px; margin-top:6px; border:0px solid red; }
+#sousuo_center input{width:590px; height:25px; margin-top:6px; line-height:25px; border:0px solid red; }
 #sousuo_right{width:10px; height:40px; background:url(/images/index/b_hr_r.jpg) no-repeat; float:left; display:inline;}
 #sousuo_c{width:51px; height:47px; margin-left:30px; background:url(/images/index/z_f.gif) no-repeat; float:left; display:inline;}
 #sousuo_d{width:60px; height:34px; margin-top:3px; margin-left:10px; background:url(/images/index/z_s.gif) no-repeat; float:left; display:inline;}
