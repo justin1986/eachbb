@@ -41,6 +41,10 @@ function get_test_url($test){
 	echo '/test/test.php?id='.$test->id;
 }
 
+function get_course_url($course){
+	
+}
+
 function get_news_list_url($category,$include_children= true){
 	$category_id = is_object($category) ? $category->id : $category;
 	return '/news/news_list.php?category_id=' .$category_id;
