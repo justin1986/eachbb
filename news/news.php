@@ -64,12 +64,12 @@
 					</div>
 					<div id="text_content">
 						<font>本文摘要：</font>
-						<a href="<?php get_news_url($column[0]); ?>" title="<?php echo strip_tags($column[0]->description);?>"><?php echo strip_tags($column[0]->description);?></a>
+						<?php echo strip_tags($column[0]->description);?>
 					</div>
 					<div id="text_menu">
-						<div class="tm_a"><a href="#">打印</a></div>
-						<div id="tm_b"><a href="#">收藏</a></div>
-						<div class="tm_a"><a href="#">分享</a></div>
+						<div class="tm_a"><a id="a_print" href="#">打印</a></div>
+						<div id="tm_b"><a id="a_collect" href="#">收藏</a></div>
+						<div class="tm_a"><a href="/news/share.php?news_id=<?php echo $column[0]->id?>">分享</a></div>
 					</div>
 				</div>
 				<div id="text_bpg"></div>
