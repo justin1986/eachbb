@@ -54,7 +54,6 @@
 						$db=get_db();
 						$test=$db->query("select id,name from eb_problem where is_adopt=1 order by priority,create_time desc limit 4;");
 						$test_count=$db->record_count;
-						
 						for($i=0;$i<$test_count;$i++){ ?>
 						<div class="test_a"><a href="<?php get_test_url($test[$i]);?>" title="<?php echo $test[$i]->name;?>"><?php echo $test[$i]->name;?></a></div>
 						<?php }?>
@@ -62,16 +61,27 @@
 				</div>
 				<div id="r_student">
 					<div id="st_top">
-						<div id="s_t_a"><img src="images/index/img_b_a.gif"></div>
-						<div id="s_t_b"><img src="images/index/img_b_b.gif"></div>
-						<div id="s_t_c"><img src="images/index/img_b_c.gif"></div>
+						<div><img src="images/index/class_tab_0_sel.jpg" class="student_tab"/></div>
+						<div><img src="images/index/class_tab_1.jpg" class="student_tab"/></div>
+						<div><img src="images/index/class_tab_2.jpg" class="student_tab"/></div>
 					</div>
 					<div id="student_value">
 						<?php
-							$course=$db->query("select id,title from eb_teach where is_adopt=1 and del_flag=0 order by priority,create_time desc limit 8");
-							 for($i=0;$i<4;$i++){?>
-							<div class="student_aa"><a href="<?php get_teach_url($course[$i]);?>" title="<?php echo $course[$i]->title;?>"><?php echo $course[$i]->title;?></a></div>
-						<?php }?>
+							 for($j = 0; $j < 4 ; $j++){
+							 $course = $db->query("select id,title from eb_teach where is_adopt=1 and del_flag=0 order by priority,create_time desc limit 12");
+							 	?>
+						<div class="student_left" id="student_left_<?php echo $j; ?>" style="<?php if($j==0){ echo 'display:inline;';}else{ echo 'display:none;'; } ?>">
+							<?php for( $i = 0 ; $i < 4 ; $i++){ ?>
+							<div class="student_pg">
+								<img class="student_l"/>
+								<a href="#"><?php echo $j."__".$i; ?></a>
+							</div>
+							<?php if($i!=3){?>
+							<div class="student_hr"></div>		
+							<?php }}?>
+						</div>
+						<?php } ?>
+						<div id="student_right"></div>
 					</div>
 				</div>
 				<div id="r_spring"></div>

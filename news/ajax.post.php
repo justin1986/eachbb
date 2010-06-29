@@ -1,7 +1,6 @@
 <?php
 	include_once('../frame.php');
 	$valid_types = array('up','down');
-	
 	$type = strtolower($_POST["type"]);
 	if(!in_array($type, $valid_types)) die('invalid request!');	
 	$id = intval($_POST["id"]);

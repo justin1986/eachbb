@@ -70,7 +70,6 @@
 						<div class="tm_a"><a href="#">打印</a></div>
 						<div id="tm_b"><a href="#">收藏</a></div>
 						<div class="tm_a"><a href="#">分享</a></div>
-						<div id="tm_ticket"><a href="#">支持&nbsp;<?php echo $column[0]->click_count; ?></a></div>
 					</div>
 				</div>
 				<div id="text_bpg"></div>
