@@ -1,8 +1,5 @@
 <?php
 
-function get_news_class_problem_url($problem){
-	echo "";
-}
 
 function get_teach_url($teach){
 	echo '/teach/teach.php?id='.$teach->id;
@@ -102,9 +99,7 @@ function unpublish_news($news){
 };
 
 function paginate_news($news){
-function get_news_class_url($problem){
-	echo "";
-}	if(is_numeric($news)){
+	if(is_numeric($news)){
 		$table = new table_class('eb_news');
 		$news = $table->find($news);
 	}
@@ -118,5 +113,7 @@ function get_news_class_url($problem){
 		return paginate(null,null,'page',false,'normal',2);
 	}
 }
+
+
 
 ?>
