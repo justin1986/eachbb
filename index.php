@@ -73,7 +73,7 @@
 							for( $i = 0 ; $i < 4 ; $i++){ ?>
 							<div class = "student_pg">
 								<img class = "student_l"/>
-								<a href = "<?php get_news_class_problem_url($course[$i]); ?>" title="<?php  echo $course[$i] -> title; ?>"><?php echo $course[$i] -> title; ?></a>
+								<a href = "<?php get_course_url($course[$i]); ?>" title="<?php  echo $course[$i] -> title; ?>"><?php echo $course[$i] -> title; ?></a>
 							</div>
 							<?php if($i != 3){?>
 							<div class = "student_hr"></div>		
@@ -82,11 +82,11 @@
 						<div class="student_left" id="student_left_1" style="display:none;">
 						<?php
 						 	$sql = "select id,name from eb_problem where is_adopt=1 order by priority,create_time desc limit 4,4;";
-							$course = $db -> query($sql);
+							$tests = $db -> query($sql);
 							for( $i = 0 ; $i < 4 ; $i++){ ?>
 							<div class = "student_pg">
 								<img class = "student_l"/>
-								<a href = "<?php get_news_class_problem_url($course[$i]); ?>" title="<?php  echo $course[$i] -> name; ?>"><?php echo $course[$i] -> name; ?> </a>
+								<a href = "<?php get_test_url($tests[$i]); ?>" title="<?php  echo $tests[$i] -> name; ?>"><?php echo $tests[$i] -> name; ?> </a>
 							</div>
 							<?php if($i != 3){?>
 							<div class = "student_hr"></div>		
