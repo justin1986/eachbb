@@ -8,8 +8,8 @@ $(function(){
 	
 	$('img.course_tab').hover(function(){
 		var selected = $('img.course_tab').index($(this));
-		for(var i=0;i<3;i++){
-			if(i==selected){
+		for(var i = 0 ;i < 3; i++){
+			if(i == selected){
 				continue;
 			}
 			$('img.course_tab:eq('+i+')').attr('src','/images/index/course_tab_'+i+'.jpg');
@@ -17,5 +17,18 @@ $(function(){
 		$(this).attr('src','/images/index/course_tab_'+selected+'_sel.jpg');
 		$('.course_list').hide();
 		$('#course_list_' + selected).show();
+	},function(){});
+	
+	$('img.student_tab').hover(function(){
+		var selected = $('img.student_tab').index($(this));
+		for(var i = 0;i < 3; i++){
+			if(i == selected){
+				continue;
+			}
+			$('img.student_tab:eq('+i+')').attr('src','/images/index/class_tab_'+i+'.jpg');
+		}
+		$(this).attr('src','/images/index/class_tab_'+selected+'_sel.jpg');
+		$('.student_left').hide();
+		$('#student_left_' + selected).show();
 	},function(){});
 });
