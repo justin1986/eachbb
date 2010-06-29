@@ -1,6 +1,5 @@
 <?php
 
-
 function get_teach_url($teach){
 	echo '/teach/teach.php?id='.$teach->id;
 }
