@@ -278,7 +278,7 @@ function paginate($url="",$ajax_dom=null,$page_var="page",$force_show = false,$t
 		<?php	
 		}
 		?>共找到<?php echo $$record_count_token; ?>条记录　
-	  当前第<select name="pageselect" id="pageselect" onChange="jumppage('<?php echo $url ."&" .$page_var ."="; ?>',this.options[this.options.selectedIndex].value);">
+	  当前第<select name="pageselect" id="pageselect" onChange="jumppage('<?php echo (strpos($url,'?') === false ? $url ."?" : $url)  ."&" .$page_var ."="; ?>',this.options[this.options.selectedIndex].value);">
 		<?php	
 		//产生所有页面链接
 		for($i=1;$i<=$pagecount;$i++){ ?>
@@ -291,7 +291,7 @@ function paginate($url="",$ajax_dom=null,$page_var="page",$force_show = false,$t
 				function jumppage(urlprex,pageindex)
 				{
 				<?php 
-					if($page_type=='static' && !preg_match($pattern,$turl)){
+					if($page_type=='static' && !preg_match($pattern,$url)){
 						$str = "'{$url}/page/' + pageindex;";	
 					}else{
 						$str = "urlprex + pageindex;";
@@ -323,22 +323,22 @@ function paginate($url="",$ajax_dom=null,$page_var="page",$force_show = false,$t
 		if($pageindex == 1){
 			echo "<span class='paginate_botton'>上页</span>";
 		}else {
-			$url = get_page_url($url, $pageindex-1, $page_var,$type);
-			echo "<span class='paginate_botton'><a href='$url'>上页</a></span>";
+			$turl = get_page_url($url, $pageindex-1, $page_var,$type);
+			echo "<span class='paginate_botton'><a href='$turl'>上页</a></span>";
 		}
 		for($i=1;$i<=$pagecount;$i++){
 			if($i==$pageindex){	
 				echo "<span class='page_span2'>{$i}</span>";
 			}else{
-				$url = get_page_url($url, $i, $page_var,$type);
-				echo "<span class='page_span'><a href='$url'>$i</a></span>";
+				$turl = get_page_url($url, $i, $page_var,$type);
+				echo "<span class='page_span'><a href='$turl'>$i</a></span>";
 			}
 		}
 		if($pageindex == $pagecount){
 			echo "<span class='paginate_botton'>下页</span>";
 		}else {
-			$url = get_page_url($url, $pageindex+1, $page_var,$type);
-			echo "<span class='paginate_botton'><a href='$url'>下页</a></span>";
+			$turl = get_page_url($url, $pageindex+1, $page_var,$type);
+			echo "<span class='paginate_botton'><a href='$turl'>下页</a></span>";
 		}
 	}
 }

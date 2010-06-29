@@ -38,7 +38,8 @@ function get_test_url($test){
 }
 
 function get_news_list_url($category,$include_children= true){
-	echo '/news/news_list.php?category_id=' .$category->id;
+	$category_id = is_object($category) ? $category->id : $category;
+	return '/news/news_list.php?category_id=' .$category_id;
 }
 
 function get_search_keyword_url($keyword){

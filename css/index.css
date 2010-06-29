@@ -106,11 +106,11 @@ body{width:1000px; margin: 0 auto;  background:url(../images/index/img_pg.jpg) r
 #u{width:300px; height:31px; margin-left:140px; margin-top:14px; padding:0px;list-style-type:none; float:left; display:inline;}
 #u div{margin-left:30px; float:left; display:inline;}
 #u div a{font-size:20px; color:#8C8C8C; font-family:�����п�; text-decoration:none;}
-#u div img{width:40px; height:18px; border:0px solid red;}
+#u div img{width:40px; height:18px; border:0px solid red; cursor:pointer;}
 #student{width:968px; height:255px; margin-top:10px; float:left; display:inline;}
 #student_l{width:694px; height:253px;  float:left; display:inline;}
 .student_c{width:676px; height:100px; margin-left:10px; margin-top:10px; overflow:hidden; float:left; display:inline;}
-#old{float:left; display:inline;}
+.course_list{float:left; display:inline;}
 .s_pic_l{width:151px; height:100px; margin-left:10px; overflow:hidden; float:left; display:inline;}
 .s_pic_l img{width:151px; height:100px; border:0px solid red; overflow:hidden;}
 
