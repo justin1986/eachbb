@@ -50,13 +50,12 @@
 			<div id="flash_right">
 				<div id="r_test">
 					<div id="test_value">
-						<?php
+					<?php
 						$db=get_db();
-						$test=$db->query("select id,name from eb_problem where is_adopt=1 order by priority,create_time desc limit 4;");
-						$test_count=$db->record_count;
-						for($i=0;$i<$test_count;$i++){ ?>
+						$test=$db->query("select id,name from eb_problem where is_adopt=1 order by priority,create_time desc limit 8;");
+						for($i=0;$i<4;$i++){ ?>
 						<div class="test_a"><a href="<?php get_test_url($test[$i]);?>" title="<?php echo $test[$i]->name;?>"><?php echo $test[$i]->name;?></a></div>
-						<?php }?>
+					<?php }?>
 					</div>
 				</div>
 				<div id="r_student">
@@ -67,8 +66,9 @@
 					</div>
 					<div id="student_value">
 						<div class="student_left" id="student_left_0" style="display:inline;">
+						
 						<?php
-						 	$sql = "select id,title from eb_teach where is_adopt=1 and del_flag=0 order by priority,create_time desc limit 4";
+						 	$sql = "select id,title from eb_teach where is_adopt=1 and del_flag=0 order by priority,create_time desc limit 8";
 							$course = $db -> query($sql);
 							for( $i = 0 ; $i < 4 ; $i++){ ?>
 							<div class = "student_pg">
@@ -81,25 +81,22 @@
 						</div>
 						<div class="student_left" id="student_left_1" style="display:none;">
 						<?php
-						 	$sql = "select id,name from eb_problem where is_adopt=1 order by priority,create_time desc limit 4,4;";
-							$tests = $db -> query($sql);
-							for( $i = 0 ; $i < 4 ; $i++){ ?>
+						
+							for( $i = 4 ; $i < 9 ; $i++){ ?>
 							<div class = "student_pg">
 								<img class = "student_l"/>
-								<a href = "<?php get_test_url($tests[$i]); ?>" title="<?php  echo $tests[$i] -> name; ?>"><?php echo $tests[$i] -> name; ?> </a>
+								<a href = "<?php get_test_url($test[$i]); ?>" title="<?php  echo $test[$i] -> name; ?>"><?php echo $test[$i] -> name; ?> </a>
 							</div>
-							<?php if($i != 3){?>
+							<?php if($i != 8){?>
 							<div class = "student_hr"></div>		
 							<?php }}?>
 						</div>
 						<div class="student_left" id="student_left_2" style="display:none;">
 						<?php
-						 	$sql = "select id,name from eb_problem where is_adopt=1 order by priority,create_time desc limit 4,4;";
-							$course = $db -> query($sql);
 							for( $i = 0 ; $i < 4 ; $i++){ ?>
 							<div class = "student_pg">
 								<img class = "student_l"/>
-								<a href = "<?php get_news_class_problem_url($course[$i]); ?>" title="<?php  echo $course[$i] -> name; ?>"><?php echo $course[$i] -> name; ?> </a>
+								<a href = "<?php get_course_url($course[$i]); ?>" title="<?php  echo $course[$i] -> title; ?>"><?php echo $course[$i] -> title; ?> </a>
 							</div>
 							<?php if($i != 3){?>
 							<div class = "student_hr"></div>	

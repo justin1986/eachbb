@@ -1,6 +1,6 @@
 <?php
 
-function get_news_class_problem_url($problem){
+function get_course_url($problem){
 	echo "";
 }
 
