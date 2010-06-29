@@ -113,4 +113,6 @@ function paginate_news($news){
 	}
 }
 
+
+
 ?>
