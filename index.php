@@ -67,17 +67,23 @@
 					</div>
 					<div id="student_value">
 						<?php
-							 for($j = 0; $j < 4 ; $j++){
-							 $course = $db->query("select id,title from eb_teach where is_adopt=1 and del_flag=0 order by priority,create_time desc limit 12");
+							 for($j = 0; $j < 3 ; $j++){
 							 	?>
 						<div class="student_left" id="student_left_<?php echo $j; ?>" style="<?php if($j==0){ echo 'display:inline;';}else{ echo 'display:none;'; } ?>">
-							<?php for( $i = 0 ; $i < 4 ; $i++){ ?>
-							<div class="student_pg">
-								<img class="student_l"/>
-								<a href="#"><?php echo $j."__".$i; ?></a>
+						<?php
+							if($j == 0){
+						 		$sql = "select id,title from eb_teach where is_adopt=1 and del_flag=0 order by priority,create_time desc limit 4";
+						 	}else if($j == 1){
+						 		$sql = "select id,name from eb_problem where is_adopt=1 order by priority,create_time desc limit 4,4;";
+						 	}
+							$course = $db -> query($sql);
+							for( $i = 0 ; $i < 4 ; $i++){ ?>
+							<div class = "student_pg">
+								<img class = "student_l"/>
+								<a href = "#" title="<?php if($j == 0){ echo $course[$i] -> title;}else if($j == 1){ echo $course[$i] -> name;} ?>"><?php if($j == 0){ echo $course[$i] -> title;}else if($j == 1){ echo $course[$i] -> name;} ?></a>
 							</div>
 							<?php if($i!=3){?>
-							<div class="student_hr"></div>		
+							<div class = "student_hr"></div>		
 							<?php }}?>
 						</div>
 						<?php } ?>
