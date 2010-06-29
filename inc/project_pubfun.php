@@ -1,6 +1,6 @@
 <?php
 
-function get_course_url($problem){
+function get_course_url($course){
 	echo "";
 }
 
@@ -39,10 +39,6 @@ function get_news_url($news,$type=null,$index=0){
 
 function get_test_url($test){
 	echo '/test/test.php?id='.$test->id;
-}
-
-function get_course_url($course){
-	
 }
 
 function get_news_list_url($category,$include_children= true){
