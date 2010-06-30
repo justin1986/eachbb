@@ -357,7 +357,7 @@
 						 ?>
 						<div class="son_c_z">
 							<div class="son_c_z_l"></div>
-							<div class="son_c_z_r"><a href="<?php get_news_url($news_son[$j]);?>" title="<?php echo $news_son[$j]->short_title;?>"><?php echo $news_son[$j]->short_title;?></a></div>
+							<div class="son_c_z_r"><a href="<?php echo get_news_url($news_son[$j]);?>" title="<?php echo $news_son[$j]->short_title;?>"><?php echo $news_son[$j]->short_title;?></a></div>
 						</div>
 						<?php }?>
 					</div>
@@ -470,6 +470,7 @@
 										$news=array("120"=>"母乳喂养","121"=>"人工喂养","122"=>"混合喂养","123"=>"母乳准备","124"=>"母乳技巧","125"=>"吐奶溢奶");
 										$new_id=array_keys($news);
 										$news_id=implode(',',$new_id);
+										$db=get_db();
 										$news_s=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in ($news_id) order by created_at desc limit 1;");
 										$n=$db->query("SELECT id,name,parent_id from eb_category where id in ($news_id)");
 									?>
