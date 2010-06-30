@@ -210,8 +210,7 @@
 					</div>
 				</div>
 				</div>
-				<?php
-				 }?>
+				<?php }?>
 			</div>
 			<div id="student_r">
 				<div id="dict_a">
@@ -239,7 +238,7 @@
 						<div class="dict_number">2</div>
 						<div class="dict_value">使得法国vsdva</div>
 					</div>
-					<?php for($i = 2; $i< 6; $i++){ ?>
+					<?php for($i = 2; $i < 6; $i++){ ?>
 					<div class="dict_c">
 						<div class="dict_number"><?php echo $i; ?></div>
 						<div class="dict_value">使得法国vsdva</div>
@@ -255,7 +254,7 @@
 						<div class="dict_number">2</div>
 						<div class="dict_value">使得法国vsdva</div>
 					</div>
-					<?php for($i = 2; $i< 6; $i++){ ?>
+					<?php for($i = 2; $i < 6; $i++){ ?>
 					<div class="dict_c">
 						<div class="dict_number"><?php echo $i; ?></div>
 						<div class="dict_value">使得sd国vsdva</div>
@@ -271,7 +270,7 @@
 						<div class="dict_number">2</div>
 						<div class="dict_value">使得法国vsdva</div>
 					</div>
-					<?php for($i = 2; $i< 6; $i++){ ?>
+					<?php for($i = 2; $i < 6; $i++){ ?>
 					<div class="dict_c">
 						<div class="dict_number"><?php echo $i; ?></div>
 						<div class="dict_value">使得法国vsdva</div>
@@ -287,7 +286,7 @@
 						<div class="dict_number">2</div>
 						<div class="dict_value">使得法国vsdva</div>
 					</div>
-					<?php for($i = 2; $i< 6; $i++){ ?>
+					<?php for($i = 2; $i < 6; $i++){ ?>
 					<div class="dict_c">
 						<div class="dict_number"><?php echo $i; ?></div>
 						<div class="dict_value">使得法国vsdva</div>
@@ -310,8 +309,6 @@
 					</div>
 					<?php } ?>
 				</div>
-				
-				
 			</div>
 		</div>
 		<div id="mother">
