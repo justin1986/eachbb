@@ -181,7 +181,7 @@
 						<div><img src="/images/index/course_tab_1.jpg" class="course_tab"></div>
 						<div><img src="/images/index/course_tab_2.jpg" class="course_tab"></div>
 					</div>
-					<a href="#">
+					<a href="<?php get_news_list_url() ?>">
 						<img id="dict_more"  src="/images/index/more.gif" style="margin-top:20px;"/>
 					</a> 
 				</div>
@@ -210,8 +210,7 @@
 					</div>
 				</div>
 				</div>
-				<?php
-				 }?>
+				<?php }?>
 			</div>
 			<div id="student_r">
 				<div id="dict_a">
@@ -220,45 +219,101 @@
 					<img id="dict_more"/>
 					</a> </div>
 				<div id="dict_menu"> 
-					<div id="d_m_a" style="background:url(images/index/r_pg_f.png) no-repeat;"><a href="#">幼教</a></div>
+					<div id="d_m_a"  class="dict_tab" style="background:url(images/index/r_pg_f.png) no-repeat;">幼教</div>
 					
-					<div class="d_m_b"><a href="#">论坛</a> </div>
+					<div  class="dict_tab">论坛</div>
 					
-					<div class="d_m_b"><a href="#">博客</a> </div>
+					<div  class="dict_tab">博客</div>
 					
-					<div class="d_m_b"><a href="#">咨询</a></div>
+					<div  class="dict_tab">咨询</div>
 					
-					<div class="d_m_b"><a href="#">测评</a></div>
+					<div  class="dict_tab">测评</div>
 					 </div>
-				<div id="dict_b">
-					<div class="dict_number" style="width:22px; height:22px; background:url(images/index/red.png) no-repeat;">1</div>
-					<div class="dict_value">使得法国vsdva</div>
+				<div class="desc" id="desc_0">
+					<div id="dict_b">
+						<div class="dict_number" style="background:url(images/index/red.png) no-repeat;">1</div>
+						<div class="dict_value">使得法国vsdva</div>
+					</div>
+					<div class="dict_c">
+						<div class="dict_number">2</div>
+						<div class="dict_value">使得法国vsdva</div>
+					</div>
+					<?php for($i = 2; $i < 6; $i++){ ?>
+					<div class="dict_c">
+						<div class="dict_number"><?php echo $i; ?></div>
+						<div class="dict_value">使得法国vsdva</div>
+					</div>
+					<?php } ?>
 				</div>
-				<div class="dict_c">
-					<div class="dict_number">2</div>
-					<div class="dict_value">使得法国vsdva</div>
+				<div class="desc" id="desc_1" style="display:none;">
+					<div id="dict_b">
+						<div class="dict_number" style="background:url(images/index/red.png) no-repeat;">1</div>
+						<div class="dict_value">使得法国vsdva</div>
+					</div>
+					<div class="dict_c">
+						<div class="dict_number">2</div>
+						<div class="dict_value">使得法国vsdva</div>
+					</div>
+					<?php for($i = 2; $i < 6; $i++){ ?>
+					<div class="dict_c">
+						<div class="dict_number"><?php echo $i; ?></div>
+						<div class="dict_value">使得sd国vsdva</div>
+					</div>
+					<?php } ?>
 				</div>
-				<div class="dict_c">
-					<div class="dict_number">3</div>
-					<div class="dict_value">使得法国vsdva</div>
+				<div class="desc" id="desc_2" style="display:none;">
+					<div id="dict_b">
+						<div class="dict_number" style="background:url(images/index/red.png) no-repeat;">1</div>
+						<div class="dict_value">使得法国vsdva</div>
+					</div>
+					<div class="dict_c">
+						<div class="dict_number">2</div>
+						<div class="dict_value">使得法国vsdva</div>
+					</div>
+					<?php for($i = 2; $i < 6; $i++){ ?>
+					<div class="dict_c">
+						<div class="dict_number"><?php echo $i; ?></div>
+						<div class="dict_value">使得法国vsdva</div>
+					</div>
+					<?php } ?>
 				</div>
-				<div class="dict_c">
-					<div class="dict_number">4</div>
-					<div class="dict_value">使得法国vsdva</div>
+				<div class="desc" id="desc_3" style="display:none;">
+					<div id="dict_b">
+						<div class="dict_number" style="background:url(images/index/red.png) no-repeat;">1</div>
+						<div class="dict_value">使得法国vsdva</div>
+					</div>
+					<div class="dict_c">
+						<div class="dict_number">2</div>
+						<div class="dict_value">使得法国vsdva</div>
+					</div>
+					<?php for($i = 2; $i < 6; $i++){ ?>
+					<div class="dict_c">
+						<div class="dict_number"><?php echo $i; ?></div>
+						<div class="dict_value">使得法国vsdva</div>
+					</div>
+					<?php } ?>
 				</div>
-				<div class="dict_c">
-					<div class="dict_number">5</div>
-					<div class="dict_value">使得法国vsdva</div>
-				</div>
-				<div class="dict_c">
-					<div class="dict_number">6</div>
-					<div class="dict_value">使得法国vsdva</div>
+				<div class="desc" id="desc_4" style="display:none;">
+					<div id="dict_b">
+						<div class="dict_number" style="background:url(images/index/red.png) no-repeat;">1</div>
+						<div class="dict_value">使得法国vsdva</div>
+					</div>
+					<div class="dict_c">
+						<div class="dict_number">2</div>
+						<div class="dict_value">使得法国vsdva</div>
+					</div>
+					<?php for($i = 2; $i< 6; $i++){ ?>
+					<div class="dict_c">
+						<div class="dict_number"><?php echo $i; ?></div>
+						<div class="dict_value">使得法国vsdva</div>
+					</div>
+					<?php } ?>
 				</div>
 			</div>
 		</div>
 		<div id="mother">
 			<div id="mother_l">
-				<div id="m_l_t"> <a href="#">
+				<div id="m_l_t"> <a href="<?php echo  get_news_list_url(157);?>">
 					<img id="m_more" src="/images/index/more.gif"/>
 					</a> </div>
 				<div id="m_l_c">
@@ -292,7 +347,7 @@
 				<div id="m_r_c">
 					<div class="son_top">
 						<div class="son_t_l">关于<font style="color:#A4C853; font-weight:bold;" >新生儿</font></div>
-						<div class="son_t_r"><a href="#"><font style="color:#F33B0A; font-weight:bold;" >+</font> 更多</a></div>
+						<div class="son_t_r"><a href="<?php echo get_news_list_url(208); ?>"><font style="color:#F33B0A; font-weight:bold;" >+</font> 更多</a></div>
 					</div>
 					<div class="son_content">
 						<?php 
@@ -302,7 +357,7 @@
 						 ?>
 						<div class="son_c_z">
 							<div class="son_c_z_l"></div>
-							<div class="son_c_z_r"><a href="<?php get_news_url($news_son[$j]);?>" title="<?php echo $news_son[$j]->short_title;?>"><?php echo $news_son[$j]->short_title;?></a></div>
+							<div class="son_c_z_r"><a href="<?php echo get_news_url($news_son[$j]);?>" title="<?php echo $news_son[$j]->short_title;?>"><?php echo $news_son[$j]->short_title;?></a></div>
 						</div>
 						<?php }?>
 					</div>
@@ -313,29 +368,83 @@
 		<div id="qinzi">
 			<div id="qin_left">
 				<div id="q_menu_l">
-					<div class="q_m_pg" style="border-bottom:1px solid #ffffff; background:url(images/w_pg_l.gif) no-repeat;"><a href="#">
+					<div class="q_m_p" id="q_m_p" style="background:url(/images/index/w_pg_l.gif) no-repeat;"><a href="#">
 						<img id="q_m_a"/>
 						</a></div>
-					<div class="q_m_p" style="border-bottom:1px solid #ffffff; border-top:1px solid #8DD310;"><a href="#">
+					<div class="q_m_p"><a href="#">
 						<img id="q_m_b"/>
 						</a></div>
-					<div class="q_m_p" style="border-bottom:1px solid #ffffff; border-top:1px solid #8DD310;"><a href="#">
+					<div class="q_m_p"><a href="#">
 						<img id="q_m_c"/>
 						</a></div>
-					<div class="q_m_p" style="border-top:1px solid #8DD310;"><a href="#">
+					<div class="q_m_p" id="qum"><a href="#">
 						<img id="q_m_d"/>
 						</a></div>
 				</div>
-				<div id="q_menu_r">
-					<div id="q_m_pg_d">
-						<div id="child_t">
-							<div id="ch_t_pic"></div>
-							<div id="ch_t_r">
-								<div id="child_title">虽多次发生的风采</div>
-								<div id="child_content">虽虽虽多次发生的风采虽多次发生的风采多次发生的风采多次发生的风采虽虽多次发生的风采虽多次发生的风采多虽多次发生的风采次发生的风采</div>
+				<div class="q_menu_r" id="q_0">
+					<div class="q_m_pg_d">
+						<div class="child_t">
+							<div class="ch_t_pic"></div>
+							<div class="ch_t_r">
+								<div class="child_title"><a href="#">虽多次发111111111111的风采</a></div>
+								<div class="child_content"><a href="#">虽虽虽多次发生的风采虽多次发生的风采多次发生的风采多次发生的风采虽虽多次发生的风采虽多次发生的风采多虽多次发生的风采次发生的风采</a></div>
 							</div>
 						</div>
-						<div id="child_c">
+						<div class="child_c">
+							<div class="child_img"></div>
+							<div class="child_img"></div>
+							<div class="child_img"></div>
+							<div class="child_img"></div>
+							<div class="child_img"></div>
+						</div>
+					</div>
+				</div>
+				<div class="q_menu_r" id="q_1">
+					<div class="q_m_pg_d">
+						<div class="child_t">
+							<div class="ch_t_pic"></div>
+							<div class="ch_t_r">
+								<div class="child_title"><a href="#">虽多222222222222222发生的风采</a></div>
+								<div class="child_content"><a href="#">虽虽虽多次发生的风采虽多次发生的风采多次发生的风采多次发生的风采虽虽多次发生的风采虽多次发生的风采多虽多次发生的风采次发生的风采</a></div>
+							</div>
+						</div>
+						<div class="child_c">
+							<div class="child_img"></div>
+							<div class="child_img"></div>
+							<div class="child_img"></div>
+							<div class="child_img"></div>
+							<div class="child_img"></div>
+						</div>
+					</div>
+				</div>
+				<div class="q_menu_r" id="q_2">
+					<div class="q_m_pg_d">
+						<div class="child_t">
+							<div class="ch_t_pic"></div>
+							<div class="ch_t_r">
+								<div class="child_title"><a href="#">33333333333</a></div>
+								<div class="child_content"><a href="#">虽虽虽多次发生的风采虽多次发生的风采多次发生的风采多次发生的风采虽虽多次发生的风采虽多次发生的风采多虽多次发生的风采次发生的风采</a></div>
+							</div>
+						</div>
+						<div class="child_c">
+							<div class="child_img"></div>
+							<div class="child_img"></div>
+							<div class="child_img"></div>
+							<div class="child_img"></div>
+							<div class="child_img"></div>
+						</div>
+					</div>
+				</div>
+				<div class="q_menu_r" id="q_3">
+					<div class="q_m_pg_d">
+						<div class="child_t">
+							<div class="ch_t_pic"></div>
+							<div class="ch_t_r">
+								<div class="child_title"><a href="#">虽444444444444444</a></div>
+								<div class="child_content"><a href="#">虽虽虽多次发生的风采虽多次发生的风采多次发生的风采多次发生的风采虽虽多次发生的风采虽多次发生的风采多虽多次发生的风采次发生的风采</a></div>
+							</div>
+						</div>
+						<div class="child_c">
 							<div class="child_img"></div>
 							<div class="child_img"></div>
 							<div class="child_img"></div>
@@ -355,12 +464,13 @@
 					<div id="sblc_t">
 						<div id="sblct_a">
 							<div class="sblct_l">
-								<div class="sblct_t"><a href="<?php echo get_news_url();?>">更多</a></div>
+								<div class="sblct_t"><a href="<?php echo get_news_list_url(119);?>">更多</a></div>
 								<div class="sblct_bb">
 									<?php 
 										$news=array("120"=>"母乳喂养","121"=>"人工喂养","122"=>"混合喂养","123"=>"母乳准备","124"=>"母乳技巧","125"=>"吐奶溢奶");
 										$new_id=array_keys($news);
 										$news_id=implode(',',$new_id);
+										$db=get_db();
 										$news_s=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in ($news_id) order by created_at desc limit 1;");
 										$n=$db->query("SELECT id,name,parent_id from eb_category where id in ($news_id)");
 									?>
@@ -389,7 +499,7 @@
 						</div>
 						<div id="sblct_b">
 							<div class="sblct_l">
-								<div class="sblct_t"><a href="#">更多</a></div>
+								<div class="sblct_t"><a href="<?php echo get_news_list_url(120);?>">更多</a></div>
 								<div class="sblct_bb">
 								<?php
 									$new=array("128"=>"脐带","129"=>"头部","130"=>"五官","131"=>"生殖器","132"=>"换尿布","133"=>"抱宝宝","134"=>"打襁褓","135"=>"剪指甲");
@@ -427,7 +537,7 @@
 					<div id="sblc_b">
 						<div id="sblcb_c">
 							<div class="sblct_l">
-								<div class="sblct_t"><a href="#">更多</a></div>
+								<div class="sblct_t"><a href="<?php echo get_news_list_url(121);?>">更多</a></div>
 								<?php 
 									$news=array("136"=>"游戏","137"=>"抚摸","138"=>"训练","139"=>"对话");
 									$news_k=array_keys($news);
@@ -468,7 +578,7 @@
 				<div id="sbl_cr">
 					<div class="son_top">
 						<div class="son_t_l">关于<font style="color:#A4C853; font-weight:bold;" >新生儿</font></div>
-						<div class="son_t_r"><a href="#"><font style="color:#F33B0A; font-weight:bold;" >+</font> 更多</a></div>
+						<div class="son_t_r"><a href="<?php echo get_news_url(208); ?>"><font style="color:#F33B0A; font-weight:bold;" >+</font> 更多</a></div>
 						<div class="son_content">
 							<?php 
 								for($k=8;$k<19;$k++){
