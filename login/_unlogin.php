@@ -19,5 +19,5 @@
 </div>
 <div id="login_user"> 
 	<img id="login_l" src="/images/index/btn_login.gif"/>
-	<img id="login_r" src="/images/index/btn_zhuce.gif"/>
+	<a href="/register/"><img id="login_r" border="0" src="/images/index/btn_zhuce.gif"/></a>
 </div>
