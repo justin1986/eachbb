@@ -115,7 +115,11 @@
 								<?php
 								$all_category_ids = implode(',', $all_category_ids); 
 								$exists_news_ids = implode(',', $exists_news_ids);
-								$sql="SELECT created_at,id,title FROM eb_news e where is_adopt=1 and category_id in ({$all_category_ids}) and id not in ({$exists_news_ids}) order by created_at desc";
+								$sql="SELECT created_at,id,title FROM eb_news e where is_adopt=1 and category_id in ({$all_category_ids})";
+								if($exists_news_ids){
+									$sql .= " and id not in ({$exists_news_ids})";
+								}
+								$sql .= " order by created_at desc";								
 								$list_news=$db->paginate($sql,26);
 								foreach ($list_news as $news){ ?>
 								<div class="list_title">

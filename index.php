@@ -111,7 +111,7 @@
 			<div id="sousuo_b">
 				<div id="sousuo_left"></div>
 				<div id="sousuo_center">
-					<input type="text">
+					<input type="text" id="input_search">
 				</div>
 				<div id="sousuo_right"></div>
 			</div>
