@@ -107,6 +107,7 @@
 					<span style="cursor:pointer" class="set_up" name="<?php echo $record[$i]->id;?>" title="置顶"><img src="/images/admin/btn_unup.png" border="0"></span>
 					<?php }
 					}?>
+					<a title="静态页面" href="<?php echo get_news_url($record[$i],'static');?>" target="_blank"><img src="/images/admin/btn_static.png" border="0"></a>
 					<?php if(has_right('comment_news')){?>
 					<a href="/admin/comment/comment.php?id=<?php echo $record[$i]->id;?>&type=news" title="评论"><img src="/images/admin/btn_comment.png" border="0"></a>
 					<?php }?>
