@@ -16,9 +16,8 @@ body{width:970PX; margin: 0 auto; }
 #crg_tt{width:190px; height:25px;  line-height:20px; float:left; display:inline;}
 #crg_tt a{font-weight:bold; font-size:14px; color:#000; text-decoration:none;}
 #crf_d{width:120px; height:22px; margin-right:15px; margin-top:10px; float:right; display:inline;}
-.cr_num{width:22px; height:22px; margin-left:7px; background:url(/images/test/r_nb.jpg) no-repeat; text-align:center; line-height:22px; float:left; display:inline; float:left;}
+.cr_num{width:22px; height:22px; margin-left:7px; font-size:12px; font-weight:bold; text-decoration:none; color:#71CAE4; background:url(/images/test/r_nb.jpg) no-repeat; text-align:center; line-height:22px; float:left; display:inline; float:left;}
 #cr_num{width:22px; height:22px; margin-left:7px; background:url(/images/test/r_na.jpg) no-repeat; text-align:center; line-height:22px; float:left; display:inline; float:left;}
-#crf_d a{font-size:12px; font-weight:bold; text-decoration:none; color:#71CAE4;}
 
 
 
@@ -71,8 +70,7 @@ body{width:970PX; margin: 0 auto; }
 
 #cre{width:746px; height:167px; margin-top:10px; position:relative; float:right; display:inline;}
 #cre img{width:746px; height:167px;  border:0px solid red;}
-#crb_h{width:746px; height:35px; text-align:center; left:0px; line-height:35px; position:absolute; bottom:5px; opacity:0.60; filter:alpha(opacity = 60); background:#000;}
-#cre a #crb_h{ color:#ffffff; font-weight:bold; font-size:20px; text-decoration:none;}
+#cre a{ color:#ffffff; font-weight:bold; font-size:20px; text-decoration:none;}
 
 
 #crf{width:746px; height:180px; margin-top:25px; float:right; display:inline;}

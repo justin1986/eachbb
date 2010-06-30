@@ -23,19 +23,15 @@
 					<div id="crf_r">
 						<div id="crf_t">特色评价<font>特色介绍</font></div>
 						<div id="crf_c">
-							<div id="crf_ti"><img src="images/test/3.jpg"></div>
+							<div id="crf_ti"><img src="/images/test/3.jpg"></div>
 							<div id="crg_tt"><a href="#">发生在妈妈视线内的九种意</a></div>
 							发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意 </div>
 						<div id="crf_d">
-							<a href="#" style="color:#0086F8;">
-							<div class="cr_num" id="cr_num">1</div>
-							</a> <a href="#">
+							<div class="cr_num" id="cr_num"><font style="color:#0086F8;">1</font></div>
 							<div class="cr_num">2</div>
-							</a> <a href="#">
 							<div class="cr_num">3</div>
-							</a> <a href="#">
 							<div class="cr_num">4</div>
-							</a> </div>
+							 </div>
 					</div>
 				</div>
 				<div id="cr_b">
@@ -62,7 +58,7 @@
 						<div class="crb_hh"></div>
 						<div class="crb_vv">
 							<div class="crb_ttt"></div>
-							<div class="crb_ccc"  id="crbt" ><a href="#">社会活动和行为规范</a></div>
+							<div class="crb_ccc" id="crbt" ><a href="#">社会活动和行为规范</a></div>
 						</div>
 						<div id="cr_hr">
 							<div class="crb_g">
@@ -74,13 +70,13 @@
 					<div id="crb_c">
 							<div id="crbc_a">
 								<a href="#">
-									<img src="images/test/tr_a.jpg">
+									<img src="/images/test/tr_a.jpg">
 								</a>
 							</div>
 							<div id="crbc_z">
 								<?php for($i=0;$i<5;$i++){?>
 								<div class="crbc_ii">
-									<a href="#"><img src="images/test/as.jpg"></a>
+									<a href="#"><img src="/images/test/as.jpg"></a>
 									<div class="crbci_t">
 										来自 <a href="#">前秘密</a>
 									</div>
@@ -96,15 +92,12 @@
 					</div>
 			<div id="crc"></div>
 			<div id="crd">
-				<div class="crd_z" id="crd_z"><img src="images/test/43.jpg"><div class="crd_f"><a href="#">宝宝测评案例</a></div></div>
-				<div class="crd_z"><img src="images/test/43.jpg"><div class="crd_f"><a href="#">宝宝测评案例</a></div></div>
-				<div class="crd_z"><img src="images/test/43.jpg"><div class="crd_f"><a href="#">宝宝测评案例</a></div></div>
+				<div class="crd_z" id="crd_z"><img src="/images/test/43.jpg"><div class="crd_f"><a href="#">宝宝测评案例</a></div></div>
+				<div class="crd_z"><img src="/images/test/43.jpg"><div class="crd_f"><a href="#">宝宝测评案例</a></div></div>
+				<div class="crd_z"><img src="/images/test/43.jpg"><div class="crd_f"><a href="#">宝宝测评案例</a></div></div>
 			</div>
 			<div id="cre">
-				<a href="#">
-					<img src="images/test/tc_b.jpg">
-					<div id="crb_h">免费课程订购等你来拿，快快行动哟！！！</div>
-				</a>
+					<img src="/images/test/tc_b.jpg"></a>
 			</div>
 			<div id="crf">
 				<div class="cf_z">
@@ -128,7 +121,7 @@
 				<div class="cf_z" id="cf_z">
 					<div class="cfz_t">
 						<font>父母养育测试</font>
-						<a href="#">更多>></a>
+						<a href="#">更多&gt;&gt;</a>
 					</div>
 					<div class="cfz_cz">
 						<ul>

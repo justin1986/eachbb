@@ -5,7 +5,7 @@
 						<div id="lp_c">
 							<div id="lp_t">个人信息管理</div>
 							<div id="lp_p">
-								<div id="lp_l"><img src="images/class/l_peo.jpg"></div>
+								<div id="lp_l"><img src="/images/class/l_peo.jpg"></div>
 								<div id="lp_word">司法撒旦发射发声法</div>
 							</div>
 							<div id="lp_cc">
@@ -33,7 +33,7 @@
 				<div class="hlc_b">
 					<div class="hlcb_pg">
 						<div class="hlct_t">热门课程排行榜</div>
-						<img src="images/helper/lb_hd.jpg"> </div>
+						<img src="/images/helper/lb_hd.jpg"> </div>
 					<div class="hlcb_z">
 						<div class="hlcb_l">
 							<div class="r">1</div>
@@ -69,13 +69,13 @@
 				<div id="l_f">
 					<div id="lf_l">我的<font>好友</font></div>
 					<div id="lf_c">（<font>345</font>）</div>
-					<div id="lf_r">More >></div>
+					<div id="lf_r">More &gt;&gt;</div>
 				</div>
 				<div id="pic_r">
 					<?php for($i=0;$i<6;$i++){ ?>
 					<div class="ppg">
 						<div class="pic_pg">
-							<div class="pic_img"><img src="images/yard/pho.jpg"></div>
+							<div class="pic_img"><img src="/images/yard/pho.jpg"></div>
 						</div>
 						<div class="ppg_w">safsadfas</div>
 					</div>
