@@ -128,7 +128,7 @@
 				<div class="bd_t"></div>
 				<div class="bd_c">
 					<div class="bdt_t">
-						<div class="bdt_tl">文章列表</div>
+						<div class="bdt_tl">相关文章列表</div>
 						<div class="bdt_more"><a href="#"><font>+</font>更多</a></div>
 					</div>
 					<div class="bdt_hr">
