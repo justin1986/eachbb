@@ -229,7 +229,7 @@
 						 </div>
 					<div class="desc" id="desc_0">
 						<div id="dict_b">
-							<div class="dict_number" style="background:url(images/index/red.png) no-repeat;">1</div>
+							<div class="dict_number" style="background:url(images/index/red.jpg) no-repeat;">1</div>
 							<div class="dict_value"><a href="#">使得法国vsdva</a></div>
 						</div>
 						<div class="dict_c">
@@ -245,7 +245,7 @@
 					</div>
 					<div class="desc" id="desc_1" style="display:none;">
 						<div id="dict_b">
-							<div class="dict_number" style="background:url(images/index/red.png) no-repeat;">1</div>
+							<div class="dict_number" style="background:url(images/index/red.jpg) no-repeat;">1</div>
 							<div class="dict_value"><a href="#">使得法国vsdva</a></div>
 						</div>
 						<div class="dict_c">
@@ -261,7 +261,7 @@
 					</div>
 					<div class="desc" id="desc_2" style="display:none;">
 						<div id="dict_b">
-							<div class="dict_number" style="background:url(images/index/red.png) no-repeat;">1</div>
+							<div class="dict_number" style="background:url(images/index/red.jpg) no-repeat;">1</div>
 							<div class="dict_value"><a href="#">使得法国vsdva</a></div>
 						</div>
 						<div class="dict_c">
@@ -277,7 +277,7 @@
 					</div>
 					<div class="desc" id="desc_3" style="display:none;">
 						<div id="dict_b">
-							<div class="dict_number" style="background:url(images/index/red.png) no-repeat;">1</div>
+							<div class="dict_number" style="background:url(images/index/red.jpg) no-repeat;">1</div>
 							<div class="dict_value"><a href="#">使得法国vsdva</a></div>
 						</div>
 						<div class="dict_c">
@@ -293,7 +293,7 @@
 					</div>
 					<div class="desc" id="desc_4" style="display:none;">
 						<div id="dict_b">
-							<div class="dict_number" style="background:url(images/index/red.png) no-repeat;">1</div>
+							<div class="dict_number" style="background:url(images/index/red.jpg) no-repeat;">1</div>
 							<div class="dict_value"><a href="#">使得法sadf国vsdva</a></div>
 						</div>
 						<div class="dict_c">
