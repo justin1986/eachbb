@@ -1,0 +1,15 @@
+@CHARSET "UTF-8";
+div{float:left;}
+#bread {width:100%;margin-top:10px; font-size:14px; color:#666666; float:left;}
+#l{width:665px; margin-top:10px; overflow:hidden;}
+.news_caption {width:500px; height:28px; margin-top:5px; margin-left:10px;}
+.news_caption .captions{height:18px; margin-top:5px; padding-left:18px; line-height:18px; font-size:14px; color:#666666; font-weight:bold;  background:url(/images/public/square.jpg) no-repeat 0 5px;}
+.news_caption .captions span{margin-left:10px; font-weight:normal; font-size:12px; color:#7F7F7F;}
+#list_content{width:640px;}
+.list_box{width:612px; margin-left:10px; margin-top:15px; padding-bottom:15px; background:url(/images/news/dash.gif) repeat-x bottom;}
+	.head_line{width:612px;float:left;}
+		.title{height:30px; line-height:30px; font-size:14px; font-weight:bold; color:#246BB0; overflow:hidden;}
+			.title a{color:#246BB0; text-decoration:none;}
+			.title a:hover{color:#246BB0; text-decoration:underline;}
+		.info{line-height:30px; text-align:right; font-size:12px; color:#666666; white-space:nowrap;  float:right; }
+	.description{width:612px; height:50px; font-size:12px; color:#333333; line-height:25px; margin-top:2px; padding-left:10px; padding-right:10px; border-top:5px solid #efefef; border-bottom:5px solid #efefef; background:#EFEFEF; overflow:hidden; float:left;}

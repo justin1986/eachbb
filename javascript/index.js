@@ -1,3 +1,12 @@
+function search_news(){
+	var text = encodeURI($('#input_search').val());
+	if(text == '') {
+		alert('请输入搜索内容！');
+		$('#input_search').focus();
+		return false;
+	}
+	window.location.href = "/news/search.php?key=" + text;
+}
 $(function(){
 	$('#login_l').click(function(e){
 		e.preventDefault();
@@ -64,5 +73,14 @@ $(function(){
 		}
 		$('.q_menu_r').hide();
 		$('#q_' + selected).show();
-	},function(){})
+	},function(){});
+	
+	$('#sousuo_c,#sousuo_d').click(function(){
+		search_news();
+	});
+	$('#input_search').keypress(function(e){
+		if(e.keyCode == 13){
+			search_news();
+		}
+	});
 });
