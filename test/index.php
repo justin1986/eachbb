@@ -8,7 +8,9 @@
 <meta http-equiv=Content-Language content=zh-CN>
 <title>课程</title>
 <?php
+	use_jquery();
 	css_include_tag('test','top_inc/test_blue.top','top_inc/test_left');
+	js_include_tag('test/test');
 ?>
 </head>
 <body>
@@ -27,11 +29,11 @@
 							<div id="crg_tt"><a href="#">发生在妈妈视线内的九种意</a></div>
 							发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意 </div>
 						<div id="crf_d">
-							<div class="cr_num" id="cr_num"><font style="color:#0086F8;">1</font></div>
+							<div class="cr_num" style="background:url(/images/test/r_na.jpg) no-repeat; color:#0086F8;">1</div>
 							<div class="cr_num">2</div>
 							<div class="cr_num">3</div>
 							<div class="cr_num">4</div>
-							 </div>
+						</div>
 					</div>
 				</div>
 				<div id="cr_b">
@@ -60,12 +62,7 @@
 							<div class="crb_ttt"></div>
 							<div class="crb_ccc" id="crbt" ><a href="#">社会活动和行为规范</a></div>
 						</div>
-						<div id="cr_hr">
-							<div class="crb_g">
-								<div id="crbi_v"><a href="#">更多</a></div>
-								<div class="crb_img"></div>
-							</div>
-						</div>
+						<div id="cr_hr"></div>
 					</div>
 					<div id="crb_c">
 							<div id="crbc_a">
@@ -103,7 +100,6 @@
 				<div class="cf_z">
 					<div class="cfz_t">
 						<font>父母养育测试</font>
-						<a href="#">更多&gt;&gt;</a>
 					</div>
 					<div class="cfz_cz">
 						<ul>
@@ -121,7 +117,6 @@
 				<div class="cf_z" id="cf_z">
 					<div class="cfz_t">
 						<font>父母养育测试</font>
-						<a href="#">更多&gt;&gt;</a>
 					</div>
 					<div class="cfz_cz">
 						<ul>
