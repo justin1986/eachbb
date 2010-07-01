@@ -2,8 +2,10 @@ body{width:1000px; margin: 0 auto;  background:url(/images/index/img_pg.jpg) rep
 
 #ibody{width:1000px; overflow:hidden; margin:0;}
 
-#fbody{ width:972px; margin-left:25px; overflow:hidden;  background:#ffffff; float:left; display:inline;}
-
+#fbody{ width:990px;  overflow:hidden;  background:#ffffff; float:left; display:inline;}
+#f_l_pg{width:15px; height:2200px;  background:url(/images/index/h_1.jpg) no-repeat; font-size:0px; line-height:0px; float:left; display:inline;}
+#f_r_pg{width:10px; height:2200px;  font-size:0px; line-height:0px; background:url(/images/index/f_r.jpg) no-repeat; float:left; display:inline;}
+#f_c_m{width:965px; overflow:hidden; float:left; display: inline;}
 
 #top_login{width:980px; height:20px; margin-top:15px; margin-left:20px;  font-size:13px; color:#ffffff; float:right; display:inline;}
 #login{width:400px; height:20px; z-index:12; float:right; display:inline;}
@@ -21,15 +23,12 @@ body{width:1000px; margin: 0 auto;  background:url(/images/index/img_pg.jpg) rep
 #member_word{width:55px; height:25px; line-height:23px;  float:left; display:inline; }
 
 
-
-
-#top_menu{width:1010px; height:103px; margin-top:10px;  float:left; display:inline;}
-#menu_left{width:285px; height:103px; background:url(/images/index/top.jpg) no-repeat; float:left; display:inline;}
-#wangqu{width:133px; height:48px; margin-left:130px; margin-top:40px; background:url(/images/index/top_j.gif) no-repeat; float:left; display:inline;}
-#menu_center{width:673px; height:103px; background:url(/images/index/top_pg_a_center.jpg) repeat-x;  float:left; display:inline;}
+#top_menu{width:995px; height:103px; margin-left:5px; margin-top:10px;  float:left; display:inline;}
+#menu_left{width:267px; height:97px; margin-top:6px; font-size:0px; line-height:0px; background:url(/images/index/top.jpg) no-repeat; float:left; display:inline;}
+#menu_center{width:672px; height:103px; background:url(/images/index/top_pg_a_center.jpg) repeat-x;  float:left; display:inline;}
 #menu_right{width:40px; height:103px; background:url(/images/index/top_pg_a_right.jpg) no-repeat;  float:left; display:inline;}
 
-#flash{width:973px; height:410px; margin-top:20px; float:left; display:inline;}
+#flash{width:965px; height:410px; margin-top:11px; overflow:hidden; float:left; display:inline;}
 #flash_left{width:665px; height:400px; margin-top:5px; margin-left:2px; background:#000000; float:left; display:inline;}
 #flash_right{width:286px; height:413px; margin-right:2px; float:right; display:inline;}
 #r_test{width:286px; height:124px; background:url(/images/index/img_r_a.jpg) no-repeat; float:left; display:inline;}
@@ -38,9 +37,9 @@ body{width:1000px; margin: 0 auto;  background:url(/images/index/img_pg.jpg) rep
 .test_a a{font-size:13px; color:#000000; text-decoration:none;}
 
 #r_student{width:286px; height:120px; margin-top:13px; float:left; display:inline;}
-#st_top{width:286px; height:25px; background:url(/images/index/class_top.jpg) no-repeat; float:left; display:inline;}
-#st_top div{width:67px; height:20px; margin-left:21px; margin-top:3px; background:url(/images/index/img_r_b.jpg) no-repeat; float:left; display:inline;}
-#st_top div img{ border:0px solid red; cursor:pointer; font-size:0px; line-height:0px; float:left; display:inline;}
+#st_top{width:286px; height:25px; overflow:hidden; font-size:0px; line-height:0px; background:url(/images/index/class_top.jpg) no-repeat; float:left; display:inline;}
+#st_top div{width:67px; height:20px; margin-left:21px; margin-top:3px;  font-size:0px; line-height:0px; background:url(/images/index/img_r_b.jpg) no-repeat; float:left; display:inline;}
+#st_top div img{ border:0px solid red; cursor:pointer;  font-size:0px; line-height:0px; float:left; display:inline;}
 .student_left{width:230px; height:90px; overflow:hidden; float:left; display:inline;}
 #student_right{width:44px; height:80px; background:url(/images/index/class_r.jpg) no-repeat; float:left; display:inline;}
 #student_value{width:286px; height:90px;  margin-top:3px; float:left; display:inline;}
@@ -48,20 +47,20 @@ body{width:1000px; margin: 0 auto;  background:url(/images/index/img_pg.jpg) rep
 .student_pg{width:210px; height:22px; margin-left:10px; overflow:hidden; line-height:18px; float:left; display:inline;}
 .student_pg a{margin-left:5px; color:#000; font-size:13px; text-decoration:none;}
 .student_hr{width:215px; height:1px; margin-left:5px; background:url(/images/index/class_hr.jpg) repeat-x; font-size:0px; line-height:0px; float:left; display:inline;}
-#r_spring{width:284px; height:138px; margin-top:13px; background:url(/images/index/r_d.gif); float:left; display:inline;}
+#r_spring{width:284px; height:138px; margin-top:13px; font-size:0px; line-height:0px; background:url(/images/index/r_d.gif); float:left; display:inline;}
 
-#sousuo{width:970px; height:50px; margin-top:15px; background:url(/images/index/b_hr.jpg) repeat-x;  float:left; display:inline;}
+#sousuo{width:970px; height:50px; margin-top:12px; background:url(/images/index/b_hr.jpg) repeat-x;  float:left; display:inline;}
 #sousuo_a{width:103px; height:30px; margin-top:5px; margin-left:30px; background:url(/images/index/z_i.gif) no-repeat; float:left; display:inline;}
 #sousuo_b{WIDTH:620PX; height:41px; margin-left:10px; float:left; display:inline;}
 #sousuo_left{width:8px; height:39px; margin-top:1px; background:url(/images/index/b_hr_l.jpg) no-repeat; float:left; display:inline;}
 #sousuo_center{width:600px; height:41px; background:url(/images/index/b_hr_b.jpg) repeat-x; float:left; display:inline;}
 #sousuo_center input{width:590px; height:25px; margin-top:6px; line-height:25px; border:0px solid red; }
 #sousuo_right{width:10px; height:40px; background:url(/images/index/b_hr_r.jpg) no-repeat; float:left; display:inline;}
-#sousuo_c{width:51px; height:47px; margin-left:30px; background:url(/images/index/z_f.gif) no-repeat; cursor:pointer; float:left; display:inline;}
+#sousuo_c{width:51px; height:47px; margin-left:30px; background:url(/images/index/z_f.png) no-repeat center !important; background-image:none; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=image, src=/images/index/z_f.png); cursor:pointer; float:left; display:inline;}
 #sousuo_d{width:60px; height:34px; margin-top:3px; margin-left:10px; background:url(/images/index/z_s.gif) no-repeat; cursor:pointer; float:left; display:inline;}
 
 
-#test{width:970px; height:174px; margin-top:15px; float:left; display:inline;}
+#test{width:965px; height:174px; margin-top:10px; float:left; display:inline;}
 #test_left{width:684px; height:174px; margin-left:4px; float:left; display:inline;}
 #t_l_pg{width:684px; height:167px; margin-top:7px; background:url(/images/index/test_a.gif) no-repeat; float:left; display:inline;}
 #t_content_left{width:253px; height:150px; margin-left:20px;  float:left; display:inline;}
@@ -72,8 +71,8 @@ body{width:1000px; margin: 0 auto;  background:url(/images/index/img_pg.jpg) rep
 #picc{width:185px; height:90px;  margin-left:30px; margin-top:5px;  position:relative; float:left; display:inline;}
 #pic_word{width:180px; height:25px; text-align:center;  position:absolute; bottom:5px; left:0px;  opacity:0.90; filter:alpha(opacity = 90); overflow:hidden; line-height:25px; float:left; display:inline;}
 #pic_word a{font-weight:bold; font-size:16px;  color:#000; text-decoration:none;}
-#test_right{width:237px; height:174px; padding-top:50px; padding-left:30px; background:url(/images/index/user.png) no-repeat; float:right; display:inline;}
-#t_content_center{width:320px; height:160px; z-index:11; margin-left:17px; float:left; display:inline;}
+#test_right{width:237px; height:124px; padding-top:50px; padding-left:30px; background:url(/images/index/user.png) no-repeat; float:right; display:inline;}
+#t_content_center{width:320px; height:160px;  z-index:11; margin-left:17px; float:left; display:inline;}
 #select_a{width:130px; height:20px; margin-top:15px; float:left; display:inline;}
 #select_b{width:70px; height:20px; margin-top:15px; margin-left:10px; float:left; display:inline;}
 #select_c{width:70px; height:20px; margin-top:15px; margin-left:10px; float:left; display:inline;}
@@ -84,10 +83,10 @@ body{width:1000px; margin: 0 auto;  background:url(/images/index/img_pg.jpg) rep
 #t_cc_z{width:410px; height:162px; float:left; display:inline;}
 #select_word{width:340px; height:75px; margin-top:5px;  line-height:18px;  overflow:hidden; float:left; display:inline;}
 #select_word a{font-size:12px; color:#000; font-weight:bold; text-decoration:none;}
-#select_more{width:48px; height:10px;  margin-right:2px;  border:0px solid red;  background:url(/images/index/more.gif) no-repeat; float:right; display:inline;}
+#select_more{width:48px; height:10px;  margin-right:2px;  border:0px solid red;  background:url(/images/index/more.gif) no-repeat; cursor:pointer; float:right; display:inline;}
 #st_t{width:340px; height:60px; line-height:19px; border:0px solid red; overflow:hidden; float:left; display: inline;}
 #st_b{width:340px; height:10px; border:0px solid red;  float:left; display: inline;}
-#initial{width:73px; height:45px; border:0px solid blue; margin-top:25px; margin-left:15px; background:url(/images/index/test.png) no-repeat; float:left; display:inline;}
+#initial{width:73px; height:45px; border:0px solid blue; margin-top:25px; margin-left:15px; float:left; display:inline;}
 #initial_img{width:17px; height:21px; border:0px solid red; float:left; display:inline;}
 #t_content_right{width:17px; height:21px; margin-left:27px; margin-top:12px; float:left; display:inline;}
 #email{width:216px; height:25px;  overflow:hidden; font-size:12px;  color:#96AE67; float:left; display:inline;}
@@ -111,7 +110,7 @@ body{width:1000px; margin: 0 auto;  background:url(/images/index/img_pg.jpg) rep
 #u div{margin-left:30px; float:left; display:inline;}
 #u div a{font-size:20px; color:#8C8C8C; font-family:�����п�; text-decoration:none;}
 #u div img{width:40px; height:18px; border:0px solid red; cursor:pointer;}
-#student{width:968px; height:255px; margin-top:10px; float:left; display:inline;}
+#student{width:968px; height:255px;  margin-top:10px; float:left; display:inline;}
 #student_l{width:694px; height:253px;  float:left; display:inline;}
 .student_c{width:676px; height:100px; margin-left:10px; margin-top:10px; overflow:hidden; float:left; display:inline;}
 .course_list{float:left; display:inline;}
@@ -131,7 +130,7 @@ body{width:1000px; margin: 0 auto;  background:url(/images/index/img_pg.jpg) rep
 #student_r{width:264px; height:242px; margin-top:13px; margin-right:2px; background:url(/images/index/r_pg.gif) no-repeat; float:right; display:inline;}
 #dict_a{width:250px; height:30px; margin-left:10px; margin-top:5px; float:left; display:inline;}
 #dict_title{width:180px; height:30px; line-height:30px; font-size:16px; font-weight:bold;  float:left; display:inline;}
-#dict_more{width:48px; height:10px; border:0px solid red;  margin-top:8px; margin-right:5px; z-index:100; float:right; display:inline;}
+#dict_more{width:48px; height:10px; border:0px solid red; background:url(/images/index/more.png) no-repeat center !important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/index/more.png); cursor:pointer;  margin-top:8px; margin-right:5px; background:url(/images/index/more.png) no-repeat center !important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/index/more.png); font-size:0px; line-height:0px;  cursor:pointer; z-index:100; float:right; display:inline;}
 #dict_menu{width:250px; height:22px; margin-left:7px; margin-top:5px; cursor:pointer; float:left; display:inline;}
 #dict_menu a{color: #000000; text-decoration: none; }
 
@@ -139,15 +138,15 @@ body{width:1000px; margin: 0 auto;  background:url(/images/index/img_pg.jpg) rep
 .dict_tab{width:50px; height:24px; text-align:center; font-size:13px; font-weight:bold; line-height:24px; background:url(/images/index/r_hui.png) no-repeat; float:left; display:inline;}
 #dict_b{width:246px; height:26px; margin-top:5px; margin-left:8px; overflow:hidden; float:left; display:inline;}
 .dict_c{width:246px; height:26px; margin-left:8px; margin-top:2px; overflow:hidden; float:left; display:inline;}
-.dict_number{width:22px; height:22px; margin-left:3px; text-align:center; line-height:22px; font-size:12px; color:#ffffff; font-weight:bold; background:url(/images/index/block.png) no-repeat; float:left; display:inline;}
+.dict_number{width:22px; height:22px; margin-left:3px; text-align:center; line-height:22px; font-size:12px; color:#ffffff; font-weight:bold; background:url(/images/index/block.jpg) no-repeat; float:left; display:inline;}
 .dict_value{width:200px; height:22px; margin-left:5px; overflow:hidden; text-align:left; line-height:22px; float:left; display:inline;}
 .dict_value a{font-size:14px; color:#000; text-decoration:none;}
 
 
-#mother{width:968px; height:238px; margin-top:5px; float:left; display:inline;}
+#mother{width:965px; height:238px; margin-top:5px; float:left; display:inline;}
 #mother_l{width:684px; height:236px; background:url(/images/index/l_p.gif) no-repeat; float:left; display:inline;}
 #m_l_t{width:682px; height:30px; margin-top:10px; float:left; display:inline;}
-#m_more{width:48px; height:10px; border:0px solid red; margin-top:10px; margin-right:5px; z-index:100; float:right; display:inline;}
+#m_more{width:48px; height:10px; border:0px solid red; margin-top:10px; margin-right:5px;  background:url(/images/index/more.png) no-repeat center !important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/index/more.png); cursor:pointer; z-index:100; float:right; display:inline;}
 #m_l_a{width:187px; height:158px; margin-left:23px; margin-top:20px; float:left; display:inline;}
 #m_l_pic{width:170px; height:115px; margin-left:7px; margin-top:7px; float:left; display:inline;}
 #m_l_pic img{width:170px; height:115px; border:0px solid red;}
@@ -183,7 +182,7 @@ body{width:1000px; margin: 0 auto;  background:url(/images/index/img_pg.jpg) rep
 #qinzi{width:965px; height:226px; margin-top:10px; float:left; display:inline;}
 #qin_left{width:684px; height:226px; background:url(/images/index/w_pg.png) no-repeat; float:left; display:inline;}
 #q_menu_l{width:100px; height:226px; margin-left:15px; float:left; display:inline;}
-.q_m_p{width:100px; height:40px; border-bottom:1px solid #ffffff; border-top:1px solid #8DD310; overflow:hidden; float:left; display:inline;}
+.q_m_p{width:100px; height:40px; border-bottom:1px solid #ffffff; border-top:1px solid #8DD310; overflow:hidden; cursor:pointer; float:left; display:inline;}
 #q_m_p{margin-top:50px; border-bottom:1px solid #ffffff;}
 #qum{border-bottom:0px solid red;}
 #q_m_a{width:90px; height:27px; margin-top:6px; margin-left:7px; border:0px solid red; background:url(/images/index/w_a.png) no-repeat; float:left; display:inline;}
@@ -199,7 +198,7 @@ body{width:1000px; margin: 0 auto;  background:url(/images/index/img_pg.jpg) rep
 .child_c{width:530px; height:80px; margin-left:15px; margin-top:10px; float:left; display:inline;}
 .child_img{width:98px; height:65px; margin-left:5px; margin-top:5px; border:1px solid #999999; background:url(/images/index/ch_p.gif) no-repeat; float:left; display:inline;}
 .ch_t_pic{width:152px; height:99px; background:url(/images/index/ch.gif) no-repeat; float:left; display:inline;}
-.q_menu_r{width:560px; height:226px; overflow:hidden; float:left; display:inline;}
+.q_menu_r{width:560px; height:226px; overflow:hidden; float:left; display:none;}
 #qin_right{width:264px; height:226px; background:url(/images/index/r_pic.png) no-repeat; float:right; display:inline; }
 
 .quwen{width:965px; height:90px; margin-top:20px; background:url(/images/index/hr.png) no-repeat; float:left; display:inline;}

@@ -44,14 +44,267 @@ echo "社会活动和行为规范得分：{$shehuihuodong}<br/>";
 			<!-- 右侧放置内容的地方 -->
 				<div id="content">
 					<div id="result_container">
-						<div class="result">
-							<div class="title">撒旦发射发生</div>
-							<div class="content">撒旦发射发生撒旦发射发生</div>
+						<div id="result_top"></div>
+						<div id="result_pg">
+							<div id="result">
+								<!--  中间  左边  有边的  每个 内容 的 大DIV  "大动作" 开始 -->
+								<div class="result_ledger">
+									<div class="title">大动作</div>
+									<div class="content"><font>点评：</font>撒旦发射撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生发生撒旦发射发生</div>
+								</div>
+								<!-- 中间  左边  有边的  每个 内容 的 大DIV  "大动作"  结束 -->
+								
+								<!--  中间  左边  有边的  每个 内容 的 大DIV  "精细动作" 开始 -->
+								<div class="result_ledger" style="margin-top:20px;">
+									<div class="title">精细动作</div>
+									<div class="content"><font>点评：</font>撒旦发射撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生发生撒旦发射发生</div>
+								</div>
+								<!-- 中间  左边  有边的  每个 内容 的 大DIV “精细动作” 结束 -->
+								<!--  中间  左边  有边的  每个 内容 的 大DIV  "语言" 开始 -->
+								<div class="result_ledger" style="margin-top:20px;">
+									<div class="title">语言</div>
+									<div class="content"><font>点评：</font>撒旦发射撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生发生撒旦发射发生</div>
+								</div>
+								<!-- 中间  左边  有边的  每个 内容 的 大DIV “语言” 结束 -->
+								<!--  中间  左边  有边的  每个 内容 的 大DIV  "认识" 开始 -->
+								<div class="result_ledger" style="margin-top:20px;">
+									<div class="title">认识</div>
+									<div class="content"><font>点评：</font>撒旦发射撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生发生撒旦发射发生</div>
+								</div>
+								<!-- 中间  左边  有边的  每个 内容 的 大DIV “认识” 结束 -->
+								<!--  中间  左边  有边的  每个 内容 的 大DIV  "社会形为和生活习惯" 开始 -->
+								<div class="result_ledger" style="margin-top:20px;">
+									<div class="title">社会形为和生活习惯</div>
+									<div class="content"><font>点评：</font>撒旦发射撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生发生撒旦发射发生</div>
+								</div>
+								<!-- 中间  左边  有边的  每个 内容 的 大DIV “社会形为和生活习惯” 结束 -->
+								<input id="btn_recommand" type="button" value="回顾题目"/>
+							</div>
+							<div id="c_hr"></div>
+							<div id="recommand_container">
+								<div class="recommand">
+									<div class="recommand_pg_top"><div>大动作</div></div>
+									<div class="recommand_pg">
+										<div class="recommand_pg_son">
+											<!-- 大动作   总的 面板 开始-->
+											<div class="recommand_banner">
+												<img src="/images/test_result/p.jpg"/>
+												<a href="">真是的发生哦对佛真是的发生哦对佛啊说真是的发生哦对佛啊说啊说</a>
+											</div>
+											<!-- 大动作   总的 面板 结束-->
+											<!-- 横色 背景线条-->
+											<div class="recommand_hr"></div>
+											<!-- 大动作   总的 面板 开始-->
+											<div class="recommand_banner">
+												<img src="/images/test_result/p.jpg"/>
+												<a href="">真是的发生哦对佛真是的发生哦对佛啊说真是的发生哦对佛啊说啊说</a>
+											</div>
+											<!-- 大动作   总的 面板 结束-->
+											<!-- 横色 背景线条-->
+											<div class="recommand_hr"></div>
+											<!-- 菜单大面板 -->
+											<div class="menu_recommand" style="margin-top:10px;">
+												<img src="/images/test_result/p_a.jpg"/>
+												<a href="#">妈妈助手</a>
+											</div>
+											<!-- 菜单横色 背景线条 -->
+											<div class="menu_hr"></div>
+											<!-- 菜单大面板 -->
+											<div class="menu_recommand">
+												<img src="/images/test_result/p_a.jpg"/>
+												<a href="#">妈妈助手</a>
+											</div>
+											<!-- 菜单横色 背景线条 -->
+											<div class="menu_hr"></div>
+											<!-- 菜单大面板 -->
+											<div class="menu_recommand">
+												<img src="/images/test_result/p_b.jpg"/>
+												<a href="#">课程推荐</a>
+											</div>
+											
+										</div>	
+									</div>
+									<div class="recommand_pg_bottom"></div>
+								</div>
+								<div class="recommand" style="margin-top:10px;">
+									<div class="recommand_pg_top"><div>精细动作</div></div>
+									<div class="recommand_pg">
+										<div class="recommand_pg_son">
+											<!-- 大动作   总的 面板 开始-->
+											<div class="recommand_banner">
+												<img src="/images/test_result/p.jpg"/>
+												<a href="">真是的发生哦对佛真是的发生哦对佛啊说真是的发生哦对佛啊说啊说</a>
+											</div>
+											<!-- 大动作   总的 面板 结束-->
+											<!-- 横色 背景线条-->
+											<div class="recommand_hr"></div>
+											<!-- 大动作   总的 面板 开始-->
+											<div class="recommand_banner">
+												<img src="/images/test_result/p.jpg"/>
+												<a href="">真是的发生哦对佛真是的发生哦对佛啊说真是的发生哦对佛啊说啊说</a>
+											</div>
+											<!-- 大动作   总的 面板 结束-->
+											<!-- 横色 背景线条-->
+											<div class="recommand_hr"></div>
+											<!-- 菜单大面板 -->
+											<div class="menu_recommand" style="margin-top:10px;">
+												<img src="/images/test_result/p_a.jpg"/>
+												<a href="#">妈妈助手</a>
+											</div>
+											<!-- 菜单横色 背景线条 -->
+											<div class="menu_hr"></div>
+											<!-- 菜单大面板 -->
+											<div class="menu_recommand">
+												<img src="/images/test_result/p_a.jpg"/>
+												<a href="#">妈妈助手</a>
+											</div>
+											<!-- 菜单横色 背景线条 -->
+											<div class="menu_hr"></div>
+											<!-- 菜单大面板 -->
+											<div class="menu_recommand">
+												<img src="/images/test_result/p_b.jpg"/>
+												<a href="#">课程推荐</a>
+											</div>
+											
+										</div>	
+									</div>
+									<div class="recommand_pg_bottom"></div>
+								</div>
+								<div class="recommand" style="margin-top:10px;">
+									<div class="recommand_pg_top"><div>语言</div></div>
+									<div class="recommand_pg">
+										<div class="recommand_pg_son">
+											<!-- 大动作   总的 面板 开始-->
+											<div class="recommand_banner">
+												<img src="/images/test_result/p.jpg"/>
+												<a href="">真是的发生哦对佛真是的发生哦对佛啊说真是的发生哦对佛啊说啊说</a>
+											</div>
+											<!-- 大动作   总的 面板 结束-->
+											<!-- 横色 背景线条-->
+											<div class="recommand_hr"></div>
+											<!-- 大动作   总的 面板 开始-->
+											<div class="recommand_banner">
+												<img src="/images/test_result/p.jpg"/>
+												<a href="">真是的发生哦对佛真是的发生哦对佛啊说真是的发生哦对佛啊说啊说</a>
+											</div>
+											<!-- 大动作   总的 面板 结束-->
+											<!-- 横色 背景线条-->
+											<div class="recommand_hr"></div>
+											<!-- 菜单大面板 -->
+											<div class="menu_recommand" style="margin-top:10px;">
+												<img src="/images/test_result/p_a.jpg"/>
+												<a href="#">妈妈助手</a>
+											</div>
+											<!-- 菜单横色 背景线条 -->
+											<div class="menu_hr"></div>
+											<!-- 菜单大面板 -->
+											<div class="menu_recommand">
+												<img src="/images/test_result/p_a.jpg"/>
+												<a href="#">妈妈助手</a>
+											</div>
+											<!-- 菜单横色 背景线条 -->
+											<div class="menu_hr"></div>
+											<!-- 菜单大面板 -->
+											<div class="menu_recommand">
+												<img src="/images/test_result/p_b.jpg"/>
+												<a href="#">课程推荐</a>
+											</div>
+											
+										</div>	
+									</div>
+									<div class="recommand_pg_bottom"></div>
+								</div>
+								<div class="recommand" style="margin-top:10px;">
+									<div class="recommand_pg_top"><div>认识</div></div>
+									<div class="recommand_pg">
+										<div class="recommand_pg_son">
+											<!-- 大动作   总的 面板 开始-->
+											<div class="recommand_banner">
+												<img src="/images/test_result/p.jpg"/>
+												<a href="">真是的发生哦对佛真是的发生哦对佛啊说真是的发生哦对佛啊说啊说</a>
+											</div>
+											<!-- 大动作   总的 面板 结束-->
+											<!-- 横色 背景线条-->
+											<div class="recommand_hr"></div>
+											<!-- 大动作   总的 面板 开始-->
+											<div class="recommand_banner">
+												<img src="/images/test_result/p.jpg"/>
+												<a href="">真是的发生哦对佛真是的发生哦对佛啊说真是的发生哦对佛啊说啊说</a>
+											</div>
+											<!-- 大动作   总的 面板 结束-->
+											<!-- 横色 背景线条-->
+											<div class="recommand_hr"></div>
+											<!-- 菜单大面板 -->
+											<div class="menu_recommand" style="margin-top:10px;">
+												<img src="/images/test_result/p_a.jpg"/>
+												<a href="#">妈妈助手</a>
+											</div>
+											<!-- 菜单横色 背景线条 -->
+											<div class="menu_hr"></div>
+											<!-- 菜单大面板 -->
+											<div class="menu_recommand">
+												<img src="/images/test_result/p_a.jpg"/>
+												<a href="#">妈妈助手</a>
+											</div>
+											<!-- 菜单横色 背景线条 -->
+											<div class="menu_hr"></div>
+											<!-- 菜单大面板 -->
+											<div class="menu_recommand">
+												<img src="/images/test_result/p_b.jpg"/>
+												<a href="#">课程推荐</a>
+											</div>
+										</div>	
+									</div>
+									<div class="recommand_pg_bottom"></div>
+								</div>
+								<div class="recommand" style="margin-top:10px;">
+									<div class="recommand_pg_top"><div>社会形为和生活习惯</div></div>
+									<div class="recommand_pg">
+										<div class="recommand_pg_son">
+											<!-- 大动作   总的 面板 开始-->
+											<div class="recommand_banner">
+												<img src="/images/test_result/p.jpg"/>
+												<a href="">真是的发生哦对佛真是的发生哦对佛啊说真是的发生哦对佛啊说啊说</a>
+											</div>
+											<!-- 大动作   总的 面板 结束-->
+											<!-- 横色 背景线条-->
+											<div class="recommand_hr"></div>
+											<!-- 大动作   总的 面板 开始-->
+											<div class="recommand_banner">
+												<img src="/images/test_result/p.jpg"/>
+												<a href="">真是的发生哦对佛真是的发生哦对佛啊说真是的发生哦对佛啊说啊说</a>
+											</div>
+											<!-- 大动作   总的 面板 结束-->
+											<!-- 横色 背景线条-->
+											<div class="recommand_hr"></div>
+											<!-- 菜单大面板 -->
+											<div class="menu_recommand" style="margin-top:10px;">
+												<img src="/images/test_result/p_a.jpg"/>
+												<a href="#">妈妈助手</a>
+											</div>
+											<!-- 菜单横色 背景线条 -->
+											<div class="menu_hr"></div>
+											<!-- 菜单大面板 -->
+											<div class="menu_recommand">
+												<img src="/images/test_result/p_a.jpg"/>
+												<a href="#">妈妈助手</a>
+											</div>
+											<!-- 菜单横色 背景线条 -->
+											<div class="menu_hr"></div>
+											<!-- 菜单大面板 -->
+											<div class="menu_recommand">
+												<img src="/images/test_result/p_b.jpg"/>
+												<a href="#">课程推荐</a>
+											</div>
+										</div>	
+									</div>
+									<div class="recommand_pg_bottom"></div>
+								</div>
+							</div>
 						</div>
+						<div id="result_bottom"></div>
 					</div>
-					<div id="recommand_container">
-						<div class=""></div>
-					</div>
+					
 				</div>
 				<!-- 右侧放置内容结束 -->
 				<div id="bottom_banner"><img src="/images/test/pp.jpg"/></div>
