@@ -43,7 +43,15 @@
 		</tr> 
 		<tr class="tr4">
 			<td align="center" width="100">封面图片</td>
-			<td align="left"><input name="image" id="image" type="file"><?php if($project->photo_url){?><a href="<?php echo $project->photo_url;?>" target="_blank">点击查看</a><?php }?></td>
+			<td align="left">
+				<input name="image" id="image" type="file"><?php if($project->photo_url){?><a href="<?php echo $project->photo_url;?>" target="_blank">点击查看</a><?php }?>
+			</td>
+		</tr>
+		<tr class="tr4">
+			<td align="center" width="100">适用月龄</td>
+			<td align="left">
+				<input type="text" name="post[start_month]" value="<?php echo $project->start_month;?>" style="float:none; width:50px;" />-<input type="text" name="post[end_month]" value="<?php echo $project->end_month;?>"  style="float:none; width:50px;"/> 月 (<span style="color:blue">如果为某特定月，请填写相同月份，如1-1</span>) 
+			</td>
 		</tr>
 		<?php if ($project->id){?>
 		<tr class="tr4" id="result_tool">
