@@ -4,6 +4,8 @@ include_once '../inc/user.class.php';
 var_dump($_SESSION['question_queue']);
 $user = User::current_user();
 if(! $test_id = intval($_SESSION['doing_test'])) die('invalid request!');
+$db = get_db();
+$db->execute("delete from eb_test_record where problem_id={$test_id} and user_id={$user->id}");
 $test_record = new table_class('eb_test_record');
 $test_record->problem_id = $test_id;
 $test_record->user_id = $user->id;

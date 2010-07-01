@@ -1,25 +1,33 @@
 <?php
 include "../frame.php";
-/*
+include_once '../inc/user.class.php';
 
-if(! $test_id = intval($_SESSION['doing_test'])) die('invalid request!');
-$test = new table_class('eb_problem');
-$test->find($test_id);
-if(!$test->id){
-	die_not_found();
-}
-set_charset();
-foreach ($_SESSION['question_queue'] as $question) {
-	$var = $question['question_type'];
-	$$var += $question['score'];
+class Report {
+	var $id;
+	var $description;
+	var $result_type;
+	var $recommands = array();
 }
 
-echo "大动作得分：{$dadongzuo}<br/>";
-echo "精细动作得分：{$jingxidongzuo}<br/>";
-echo "语言得分：{$yuyan}<br/>";
-echo "认识得分：{$renshi}<br/>";
-echo "社会活动和行为规范得分：{$shehuihuodong}<br/>";
-*/
+$test_id = intval($_GET['test_id']);
+$user = User::current_user();
+$sql = "select sum(score) as score, question_type from eb_test_record  where problem_id={$test_id} and user_id={$user->id} group by question_type";
+$db = get_db();
+$results = $db->query($sql);
+!$results && $results = array();
+foreach ($results as $result){
+	$sql = "select * from eb_problem_result where problem_id={$test_id} and min_score <={$result->score} and max_score >= {$result->score} limit 1";
+	$db->query($sql);
+	if($db->record_count == 1){
+		$result_type = $db->field_by_name('result_type');
+		$item = new Report();
+		$item->id = $db->field_by_name('id');
+		$item->description = $db->field_by_name('description');
+		$item->result_type = $db->field_by_name('result_type');
+		$item->recommands = $db->query("select * from eb_recommand where result_id={$item->id}");
+		$reports[$result_type] = $item; 
+	}
+}
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html>
@@ -42,183 +50,108 @@ echo "社会活动和行为规范得分：{$shehuihuodong}<br/>";
 				<div id="result_top"></div>
 				<div id="result_middle">
 					<div id="result">
+						<?php 
+							if(array_key_exists('dadongzuo', $reports)){
+						?>
 						<div class="result_box">
 							<div class="title">大动作</div>
 							<div class="content">
-								<font>点评：</font>撒旦发射撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生发生撒旦发射发生
+								<font>点评：</font>
+								<?php echo $reports['dadongzuo']->description;?>
 							</div>
 						</div>
-						
+						<?php }
+							if(array_key_exists('jingxidongzuo', $reports)){
+						?>
 						<div class="result_box" style="margin-top:20px;">
 							<div class="title">精细动作</div>
-							<div class="content"><font>点评：</font>撒旦发射撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生发生撒旦发射发生</div>
+							<div class="content">
+								<font>点评：</font>
+								<?php echo $reports['jingxidongzuo']->description;?>
+							</div>
 						</div>
+						<?php }
+							if(array_key_exists('yuyan', $reports)){
+						?>
 						<div class="result_box" style="margin-top:20px;">
 							<div class="title">语言</div>
-							<div class="content"><font>点评：</font>撒旦发射撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生发生撒旦发射发生</div>
+							<div class="content">
+								<font>点评：</font>
+								<?php echo $reports['yuyan']->description;?>
+							</div>
 						</div>
+						<?php }
+							if(array_key_exists('renshi', $reports)){
+						?>
 						<div class="result_box" style="margin-top:20px;">
 							<div class="title">认识</div>
-							<div class="content"><font>点评：</font>撒旦发射撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生发生撒旦发射发生</div>
+							<div class="content">
+								<font>点评：</font>
+								<?php echo $reports['renshi']->description;?>
+							</div>
 						</div>
+						<?php }
+							if(array_key_exists('shehuihuodong', $reports)){
+						?>
 						<div class="result_box" style="margin-top:20px;">
 							<div class="title">社会形为和生活习惯</div>
-							<div class="content"><font>点评：</font>撒旦发射撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生发生撒旦发射发生</div>
+							<div class="content">
+								<font>点评：</font>
+								<?php echo $reports['shehuihuodong']->description;?>
+							</div>
 						</div>
+						<?php }?>
 						<div id="btn_recommand"><a href="">回顾题目</a></div>
 					</div>
 				  	<div id="c_hr"></div>
 					<div id="recommand_container">
+						<?php 
+							$recommd_types = array("dadongzuo" => "大动作","jingxidongzuo"=>"精细动作","yuyan"=>"语言","renshi" => "认识","shehuihuodong" => "社会形为和生活习惯");
+							foreach ($recommd_types as $key => $val){
+								if($reports[$key]->recommands){
+						?>
 						<div class="recommand">
-							<div class="recommand_pg_top">大动作</div>
+							<div class="recommand_pg_top"><?php echo $val?></div>
 							<div class="recommand_pg_middle">
 								<div class="recommand_pg_son">
-									<?php 	for($i=0;$i<2;$i++){?>
+									<?php
+									//handle the image recommand
+									foreach ($reports[$key]->recommands as $recommand){
+										if($recommand->image){
+									?>
 									<div class="recommand_image">
-										<img src="/images/test_result/p.jpg"/>
-										<a href="#">真是的发生哦对佛真是的发生哦对佛啊说真是的发生哦对佛啊说啊说</a>
+										<img src="<?php echo $recommand->image;?>"/>
+										<a href="<?php echo $recommand->href;?>"><?php echo $recommand->title;?></a>
 									</div>
 									<div class="recommand_hr"></div>
-									<?php }?>
-									
-									<?php for($i=0;$i<2;$i++){?>
+									<?php 
+										}
+									}
+									?>
+									<?php foreach ($reports[$key]->recommands as $recommand){
+									 	if(!$recommand->image && $recommand->recommand_type=='assister'){?>
 									<div class="recommand_assistant">
-										<a href="#">妈妈助手</a>
+										<a href="<?php echo $recommand->href;?>"><?php echo $recommand->title;?></a>
 									</div>
 									<div class="menu_hr"></div>
-									<?php }?>
-									
-									<?php for($i=0;$i<2;$i++){?>
+									<?php 
+									 	} 
+									 	if(!$recommand->image && $recommand->recommand_type=='course'){?>
 									<div class="recommand_course">
-										<a href="#">课程推荐</a>
+										<a href="<?php echo $recommand->href;?>"><?php echo $recommand->title;?></a>
 									</div>
 									<div class="menu_hr"></div>
-									<?php }?>
+									<?php 
+										}
+									}
+									?>
 								</div>	
 							</div>
 							<div class="recommand_pg_bottom"></div>
 						</div>
-						
-						<div class="recommand" style="margin-top:20px;">
-							<div class="recommand_pg_top">精细动作</div>
-							<div class="recommand_pg_middle">
-								<div class="recommand_pg_son">
-									<?php 	for($i=0;$i<2;$i++){?>
-									<div class="recommand_image">
-										<img src="/images/test_result/p.jpg"/>
-										<a href="#">真是的发生哦对佛真是的发生哦对佛啊说真是的发生哦对佛啊说啊说</a>
-									</div>
-									<div class="recommand_hr"></div>
-									<?php }?>
-									
-									<?php for($i=0;$i<2;$i++){?>
-									<div class="recommand_assistant">
-										<a href="#">妈妈助手</a>
-									</div>
-									<div class="menu_hr"></div>
-									<?php }?>
-									
-									<?php for($i=0;$i<2;$i++){?>
-									<div class="recommand_course">
-										<a href="#">课程推荐</a>
-									</div>
-									<div class="menu_hr"></div>
-									<?php }?>
-								</div>	
-							</div>
-							<div class="recommand_pg_bottom"></div>
-						</div>
-						
-						<div class="recommand" style="margin-top:20px;">
-							<div class="recommand_pg_top">语言</div>
-							<div class="recommand_pg_middle">
-								<div class="recommand_pg_son">
-									<?php 	for($i=0;$i<2;$i++){?>
-									<div class="recommand_image">
-										<img src="/images/test_result/p.jpg"/>
-										<a href="#">真是的发生哦对佛真是的发生哦对佛啊说真是的发生哦对佛啊说啊说</a>
-									</div>
-									<div class="recommand_hr"></div>
-									<?php }?>
-									
-									<?php for($i=0;$i<2;$i++){?>
-									<div class="recommand_assistant">
-										<a href="#">妈妈助手</a>
-									</div>
-									<div class="menu_hr"></div>
-									<?php }?>
-									
-									<?php for($i=0;$i<2;$i++){?>
-									<div class="recommand_course">
-										<a href="#">课程推荐</a>
-									</div>
-									<div class="menu_hr"></div>
-									<?php }?>
-								</div>	
-							</div>
-							<div class="recommand_pg_bottom"></div>
-						</div>
-						
-						<div class="recommand" style="margin-top:20px;">
-							<div class="recommand_pg_top">认识</div>
-							<div class="recommand_pg_middle">
-								<div class="recommand_pg_son">
-									<?php 	for($i=0;$i<2;$i++){?>
-									<div class="recommand_image">
-										<img src="/images/test_result/p.jpg"/>
-										<a href="#">真是的发生哦对佛真是的发生哦对佛啊说真是的发生哦对佛啊说啊说</a>
-									</div>
-									<div class="recommand_hr"></div>
-									<?php }?>
-									
-									<?php for($i=0;$i<2;$i++){?>
-									<div class="recommand_assistant">
-										<a href="#">妈妈助手</a>
-									</div>
-									<div class="menu_hr"></div>
-									<?php }?>
-									
-									<?php for($i=0;$i<2;$i++){?>
-									<div class="recommand_course">
-										<a href="#">课程推荐</a>
-									</div>
-									<div class="menu_hr"></div>
-									<?php }?>
-								</div>	
-							</div>
-							<div class="recommand_pg_bottom"></div>
-						</div>
-						
-						<div class="recommand" style="margin-top:20px;">
-							<div class="recommand_pg_top">社会形为和生活习惯</div>
-							<div class="recommand_pg_middle">
-								<div class="recommand_pg_son">
-									<?php 	for($i=0;$i<2;$i++){?>
-									<div class="recommand_image">
-										<img src="/images/test_result/p.jpg"/>
-										<a href="#">真是的发生哦对佛真是的发生哦对佛啊说真是的发生哦对佛啊说啊说</a>
-									</div>
-									<div class="recommand_hr"></div>
-									<?php }?>
-									
-									<?php for($i=0;$i<2;$i++){?>
-									<div class="recommand_assistant">
-										<a href="#">妈妈助手</a>
-									</div>
-									<div class="menu_hr"></div>
-									<?php }?>
-									
-									<?php for($i=0;$i<2;$i++){?>
-									<div class="recommand_course">
-										<a href="#">课程推荐</a>
-									</div>
-									<div class="menu_hr"></div>
-									<?php }?>
-								</div>	
-							</div>
-							<div class="recommand_pg_bottom"></div>
-						</div>
-						
+						<?php 
+								}
+							}?>
 					</div>
 					
 				</div>
