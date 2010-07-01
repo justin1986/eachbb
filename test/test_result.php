@@ -1,7 +1,5 @@
 <?php
-
 include "../frame.php";
-
 /*
 
 if(! $test_id = intval($_SESSION['doing_test'])) die('invalid request!');
@@ -100,6 +98,127 @@ echo "社会活动和行为规范得分：{$shehuihuodong}<br/>";
 							</div>
 							<div class="recommand_pg_bottom"></div>
 						</div>
+						
+						<div class="recommand" style="margin-top:20px;">
+							<div class="recommand_pg_top">精细动作</div>
+							<div class="recommand_pg_middle">
+								<div class="recommand_pg_son">
+									<?php 	for($i=0;$i<2;$i++){?>
+									<div class="recommand_image">
+										<img src="/images/test_result/p.jpg"/>
+										<a href="#">真是的发生哦对佛真是的发生哦对佛啊说真是的发生哦对佛啊说啊说</a>
+									</div>
+									<div class="recommand_hr"></div>
+									<?php }?>
+									
+									<?php for($i=0;$i<2;$i++){?>
+									<div class="recommand_assistant">
+										<a href="#">妈妈助手</a>
+									</div>
+									<div class="menu_hr"></div>
+									<?php }?>
+									
+									<?php for($i=0;$i<2;$i++){?>
+									<div class="recommand_course">
+										<a href="#">课程推荐</a>
+									</div>
+									<div class="menu_hr"></div>
+									<?php }?>
+								</div>	
+							</div>
+							<div class="recommand_pg_bottom"></div>
+						</div>
+						
+						<div class="recommand" style="margin-top:20px;">
+							<div class="recommand_pg_top">语言</div>
+							<div class="recommand_pg_middle">
+								<div class="recommand_pg_son">
+									<?php 	for($i=0;$i<2;$i++){?>
+									<div class="recommand_image">
+										<img src="/images/test_result/p.jpg"/>
+										<a href="#">真是的发生哦对佛真是的发生哦对佛啊说真是的发生哦对佛啊说啊说</a>
+									</div>
+									<div class="recommand_hr"></div>
+									<?php }?>
+									
+									<?php for($i=0;$i<2;$i++){?>
+									<div class="recommand_assistant">
+										<a href="#">妈妈助手</a>
+									</div>
+									<div class="menu_hr"></div>
+									<?php }?>
+									
+									<?php for($i=0;$i<2;$i++){?>
+									<div class="recommand_course">
+										<a href="#">课程推荐</a>
+									</div>
+									<div class="menu_hr"></div>
+									<?php }?>
+								</div>	
+							</div>
+							<div class="recommand_pg_bottom"></div>
+						</div>
+						
+						<div class="recommand" style="margin-top:20px;">
+							<div class="recommand_pg_top">认识</div>
+							<div class="recommand_pg_middle">
+								<div class="recommand_pg_son">
+									<?php 	for($i=0;$i<2;$i++){?>
+									<div class="recommand_image">
+										<img src="/images/test_result/p.jpg"/>
+										<a href="#">真是的发生哦对佛真是的发生哦对佛啊说真是的发生哦对佛啊说啊说</a>
+									</div>
+									<div class="recommand_hr"></div>
+									<?php }?>
+									
+									<?php for($i=0;$i<2;$i++){?>
+									<div class="recommand_assistant">
+										<a href="#">妈妈助手</a>
+									</div>
+									<div class="menu_hr"></div>
+									<?php }?>
+									
+									<?php for($i=0;$i<2;$i++){?>
+									<div class="recommand_course">
+										<a href="#">课程推荐</a>
+									</div>
+									<div class="menu_hr"></div>
+									<?php }?>
+								</div>	
+							</div>
+							<div class="recommand_pg_bottom"></div>
+						</div>
+						
+						<div class="recommand" style="margin-top:20px;">
+							<div class="recommand_pg_top">社会形为和生活习惯</div>
+							<div class="recommand_pg_middle">
+								<div class="recommand_pg_son">
+									<?php 	for($i=0;$i<2;$i++){?>
+									<div class="recommand_image">
+										<img src="/images/test_result/p.jpg"/>
+										<a href="#">真是的发生哦对佛真是的发生哦对佛啊说真是的发生哦对佛啊说啊说</a>
+									</div>
+									<div class="recommand_hr"></div>
+									<?php }?>
+									
+									<?php for($i=0;$i<2;$i++){?>
+									<div class="recommand_assistant">
+										<a href="#">妈妈助手</a>
+									</div>
+									<div class="menu_hr"></div>
+									<?php }?>
+									
+									<?php for($i=0;$i<2;$i++){?>
+									<div class="recommand_course">
+										<a href="#">课程推荐</a>
+									</div>
+									<div class="menu_hr"></div>
+									<?php }?>
+								</div>	
+							</div>
+							<div class="recommand_pg_bottom"></div>
+						</div>
+						
 					</div>
 					
 				</div>
