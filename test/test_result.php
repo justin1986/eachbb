@@ -89,7 +89,7 @@ echo "社会活动和行为规范得分：{$shehuihuodong}<br/>";
 											<!-- 大动作   总的 面板 开始-->
 											<div class="recommand_banner">
 												<img src="/images/test_result/p.jpg"/>
-												<a href="">真是的发生哦对佛真是的发生哦对佛啊说真是的发生哦对佛啊说啊说</a>
+												<a href="#">真是的发生哦对佛真是的发生哦对佛啊说真是的发生哦对佛啊说啊说</a>
 											</div>
 											<!-- 大动作   总的 面板 结束-->
 											<!-- 横色 背景线条-->
@@ -97,7 +97,7 @@ echo "社会活动和行为规范得分：{$shehuihuodong}<br/>";
 											<!-- 大动作   总的 面板 开始-->
 											<div class="recommand_banner">
 												<img src="/images/test_result/p.jpg"/>
-												<a href="">真是的发生哦对佛真是的发生哦对佛啊说真是的发生哦对佛啊说啊说</a>
+												<a href="#">真是的发生哦对佛真是的发生哦对佛啊说真是的发生哦对佛啊说啊说</a>
 											</div>
 											<!-- 大动作   总的 面板 结束-->
 											<!-- 横色 背景线条-->
