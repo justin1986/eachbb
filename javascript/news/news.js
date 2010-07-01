@@ -38,5 +38,33 @@ $(function(){
 			alert(d);
 		});
 	});
+	
+	$('#div_btn_comment').click(function(){
+		if($('#div_write_comment').css('display')!='none') return;
+		if(!$.cookie('cache_name')){
+			alert('请先登录!');
+			return;
+		}
+		$('#div_write_comment').show();
+	});
+	
+	$('#submit_comment').click(function(){
+		var comment = $(this).parent().find('textarea').val();
+		if(comment.length >1000){
+			alert('请不要超过1000个字符');
+			return;
+		}
+		if(comment.length == 0){
+			alert('请输入评论内容!');
+			return;
+		}
+		$.post('/news/ajax.post.php',{'type':'comment','comment':encodeURI(comment),'news_id':$('#newsid').val()},function(d){
+			if(d){
+				alert(d);
+			}else{
+				$('#res').load('/news/get_comments.ajax.php?id=' + $('#newsid').val());
+			}
+		});
+	});
 });
 
