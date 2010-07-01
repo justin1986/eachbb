@@ -78,6 +78,7 @@ echo "社会活动和行为规范得分：{$shehuihuodong}<br/>";
 									<div class="content"><font>点评：</font>撒旦发射撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生撒旦发射发生发生撒旦发射发生</div>
 								</div>
 								<!-- 中间  左边  有边的  每个 内容 的 大DIV “社会形为和生活习惯” 结束 -->
+								<input id="btn_recommand" type="button" value="回顾题目"/>
 							</div>
 							<div id="c_hr"></div>
 							<div id="recommand_container">

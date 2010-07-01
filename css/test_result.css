@@ -18,7 +18,7 @@ body{width:970PX; margin: 0 auto; }
 #c_hr{width:2px; height:1606px; margin-left:20px; background:url(/images/test_result/hr.jpg) no-repeat; font-size:0px; line-height:0px;  float:left; display:inline;}
 
 .result_ledger{width:355px; overflow:hidden; float:left; display:inline;}
-.title{font-size:20px; color:#71B7E0; font-family:ºÚÌå; font-weight:bold;}
+.title{font-size:20px; color:#71B7E0; font-family:ï¿½ï¿½ï¿½ï¿½; font-weight:bold;}
 .content{width:355px; font-size:12px; color:#333333; line-height:20px; overflow:hidden; float:left;  display:inline;}
 .content font{font-size:16px; color:#F16A27; font-weight:bold;}
 
@@ -41,6 +41,8 @@ body{width:970PX; margin: 0 auto; }
 .menu_recommand img{width:19px; height:22px; float:left; display:inline;}
 .menu_recommand a{ margin-left:10px; font-size:12px; color:#FF6600; text-decoration:none;}
 .menu_hr{width:102px; height:2px; margin-top:4px; margin-left:15px; background:url(/images/test_result/r_d_h.jpg) no-repeat;  font-size:0px; line-height:0px; float:left; display:inline;}
+
+#btn_recommand{width:82px; height:26px; margin-top:24px; margin-left:265px; background:url(/images/test_result/btn.jpg) no-repeat; border:0px solid red; color:#fff; font-weight:bold; float:left; display:inline; }
 
 #bottom{width:970px; text-align:center; margin-top:20px; font-size:12px; color:#666666; float:left; display:inline;}
 #bottom_b{width:970px; margin-top:10px; margin-bottom:50px; text-align:center; font-size:12px; color:#666666; float:left; display:inline;}
