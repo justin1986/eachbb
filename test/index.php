@@ -97,13 +97,13 @@
 				<div class="crd_z"><img src="/images/test/43.jpg"><div class="crd_f"><a href="#">宝宝测评案例</a></div></div>
 			</div>
 			<div id="cre">
-					<img src="/images/test/tc_b.jpg"></a>
+					<img src="/images/test/tc_b.jpg">
 			</div>
 			<div id="crf">
 				<div class="cf_z">
 					<div class="cfz_t">
 						<font>父母养育测试</font>
-						<a href="#">更多>></a>
+						<a href="#">更多&gt;&gt;</a>
 					</div>
 					<div class="cfz_cz">
 						<ul>
