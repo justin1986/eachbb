@@ -1,6 +1,6 @@
 <?php
 	include_once('../frame.php');
-	$valid_types = array('up','down','collect');
+	$valid_types = array('up','down','collect','comment');
 	$type = strtolower($_POST["type"]);
 	if(!in_array($type, $valid_types)) die('invalid request!');
 	if($type == 'up' || $type == 'down'){	
@@ -38,5 +38,22 @@
 		$collect->user_id = $user->id;
 		$collect->save();
 		echo "恭喜您，文章收藏成功！";
+	}elseif ($type=='comment'){
+		include_once '../inc/user.class.php';
+		$user = User::current_user();
+		if(!$user){
+			echo '请先登录';
+			die();
+		}
+		$news_id = intval($_POST['news_id']);
+		$comment = new table_class('eb_comment');
+		$comment->resource_id = $news_id;
+		$comment->resource_type= 'news';
+		$comment->nick_name = $user->name;
+		$comment->user_id = $user->id;
+		$comment->ip = client_ip();
+		$comment->created_at = now();
+		$comment->comment = htmlspecialchars(urldecode($_POST['comment']));
+		$comment->save();
 	}
 ?>

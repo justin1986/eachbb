@@ -180,3 +180,8 @@ body{width:970px; margin: 0 auto; font-family:����;}
 
 #bottom{width:950px; text-align:center; margin-top:20px; font-size:12px; color:#666666; float:left; display:inline;}
 #bottom_b{width:950px; margin-top:10px; margin-bottom:50px; text-align:center; font-size:12px; color:#666666; float:left; display:inline;}
+
+#write_comment{float:left;padding-top:10px;}
+	#div_btn_comment{width:122px; height:22px; background: url(/images/news/btn_comment.jpg) no-repeat; cursor:pointer;}
+	#div_write_comment{margin-top:10px; display: none;}
+		textarea{width:930px; height:100px;}

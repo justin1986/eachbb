@@ -17,7 +17,7 @@
 <?php
 	use_jquery();
 	css_include_tag('article');
-	js_include_tag('news/news');
+	js_include_tag('jquery.cookie', 'news/news');
 ?>
 </head>
 <body>
@@ -83,7 +83,14 @@
 				<?php  paginate_news($column[0]);?>
 			</div>
 			<input type="hidden" value="<?php echo $id;?>" id="newsid">
-			<span id="res"></span>
+			<div id="res"></div>
+			<div id="write_comment">
+				<div id="div_btn_comment"></div>
+				<div id="div_write_comment">
+					<textarea id="text_comment" style="width: 630px;"></textarea>
+					<button id="submit_comment">提交</button>
+				</div>
+			</div>
 		</div>
 		<div id="b_r">
 			<div id="br_img"></div>
