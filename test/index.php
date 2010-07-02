@@ -21,7 +21,7 @@
 			<?php include_once('../inc/left_inc.php'); ?>
 			<div id="c_r">
 				<div id="cr_flash">
-					<div id="crf_l">falsh</div>
+					<div id="crf_l">flash</div>
 					<div id="crf_r">
 						<div id="crf_t">特色评价<font>特色介绍</font></div>
 						<?php for($i =0 ; $i < 4; $i++){?>
