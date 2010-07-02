@@ -24,9 +24,9 @@ $(function(){
 		}
 		$('#crb_5').attr('style','width:149px;');
 		if(selected==4){
-			$('#crb_5').attr('style','width:149px; border-bottom:1px solid #ffffff;');
+			$('#crb_5').attr('style','width:149px; color:#43A0D6; border-bottom:1px solid #ffffff;');
 		}else{
-			$(this).attr('style','width:79px; border-bottom:1px solid #ffffff;');
+			$(this).attr('style','width:79px; color:#43A0D6; border-bottom:1px solid #ffffff;');
 		}
 		$('.crb_c').hide();
 		$('#crbc_'+selected).show();

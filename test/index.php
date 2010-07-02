@@ -43,7 +43,7 @@
 					<div id="crb_t"> 
 						<div class="crb_value">
 							<div class="crb_tt"></div>
-							<div class="crb_cc" style="border-bottom:1px solid #ffffff;">大动作</div>
+							<div class="crb_cc" style="border-bottom:1px solid #ffffff; color:#43A0D6;">大动作</div>
 						</div>
 						<div class="crb_hh"></div>
 						<div class="crb_value">
