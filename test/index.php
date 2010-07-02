@@ -21,13 +21,18 @@
 			<?php include_once('../inc/left_inc.php'); ?>
 			<div id="c_r">
 				<div id="cr_flash">
-					<div id="crf_l">falsh</div>
+					<div id="cr_banner">
+					<a href="#"><img src="/images/test/m_pg_p.png"/></a>
+						<div id="crf_l">flash</div>
 					<div id="crf_r">
 						<div id="crf_t">特色评价<font>特色介绍</font></div>
-						<div id="crf_c">
-							<div id="crf_ti"><img src="/images/test/3.jpg"></div>
-							<div id="crg_tt"><a href="#">发生在妈妈视线内的九种意</a></div>
-							发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意 </div>
+						<?php for($i =0 ; $i < 4; $i++){?>
+						<div class="crf_c" id="cr_<?php echo $i;?>" style="<?php if($i==0){ echo "display:inline;"; }?>">
+							<div class="crf_ti"><img src="/images/test/3.jpg"></div>
+							<div class="crg_tt"><a href="#">发生在妈妈视<?php echo $i+1; ?>内的九种意</a></div>
+							发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意 
+						</div>
+						<?php }?>
 						<div id="crf_d">
 							<div class="cr_num" style="background:url(/images/test/r_na.jpg) no-repeat; color:#0086F8;">1</div>
 							<div class="cr_num">2</div>
@@ -35,57 +40,48 @@
 							<div class="cr_num">4</div>
 						</div>
 					</div>
+					</div>
 				</div>
 				<div id="cr_b">
 					<div id="crb_t"> 
 						<div class="crb_value">
 							<div class="crb_tt"></div>
-							<div class="crb_cc" ><a href="#">大动作</a></div>
+							<div class="crb_cc" style="border-bottom:1px solid #ffffff; color:#43A0D6;">大动作</div>
 						</div>
 						<div class="crb_hh"></div>
 						<div class="crb_value">
 							<div class="crb_tt"></div>
-							<div class="crb_cc"><a href="#">精细动作</a></div>
+							<div class="crb_cc">精细动作</div>
 						</div>
 						<div class="crb_hh"></div>
 						<div class="crb_value">
 							<div class="crb_tt"  ></div>
-							<div class="crb_cc" ><a href="#">语言</a></div>
+							<div class="crb_cc">语言</div>
 						</div>
 						<div class="crb_hh" ></div>
 						<div class="crb_value">
 							<div class="crb_tt"></div>
-							<div class="crb_cc"><a href="#">认识</a></div>
+							<div class="crb_cc">认识</div>
 						</div>
 						<div class="crb_hh"></div>
 						<div class="crb_vv">
 							<div class="crb_ttt"></div>
-							<div class="crb_ccc" id="crbt" ><a href="#">社会活动和行为规范</a></div>
+							<div class="crb_cc" style="width:149px;" id="crb_5">社会活动和行为规范</div>
 						</div>
 						<div id="cr_hr"></div>
 					</div>
-					<div id="crb_c">
-							<div id="crbc_a">
+					<?php for($i = 0; $i < 5; $i++){ ?>
+					<div class="crb_c" id="crbc_<?php echo $i; ?>" style="<?php if($i == 0){ echo 'display:inline;';}else{ echo 'display:none;';} ?>">
+							<div class="crbc_a">
 								<a href="#">
 									<img src="/images/test/tr_a.jpg">
 								</a>
 							</div>
-							<div id="crbc_z">
-								<?php for($i=0;$i<5;$i++){?>
-								<div class="crbc_ii">
-									<a href="#"><img src="/images/test/as.jpg"></a>
-									<div class="crbci_t">
-										来自 <a href="#">前秘密</a>
-									</div>
-									<div class="crbci_c">
-										2010-05-27
-									</div>
-								</div>
-								<?php 
-								}?>
+							<div class="crbci_t">
+								<a href="#"><?php echo $i; ?>前前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前前前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前前前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密秘密秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密秘密秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密秘密</a>
 							</div>
 					</div>
-					
+					<?php } ?>
 					</div>
 			<div id="crc"></div>
 			<div id="crd">
