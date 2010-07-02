@@ -13,6 +13,7 @@
 		$pos = new table_class('eb_page_pos');
 		$pos->find('first',array('conditions'=>"page='{$_GET['page']}' and name='{$_GET['pos_name']}'"));
 		$fields['default']=array("标题","描述","链接","静态链接","图片一","图片二","备用字段","备用字段2");
+		$fields['link_d_i']=array("标题","描述","链接","","图片","","","");
 		$names = array_key_exists($_GET['name'],$fields) ?  $fields[$_GET['name']] : $fields['default'];
 	?>
 </head>

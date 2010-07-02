@@ -11,6 +11,7 @@
 	use_jquery();
 	css_include_tag('test','top_inc/test_blue.top','top_inc/test_left');
 	js_include_tag('test/test');
+	init_page_items('test_index');
 ?>
 </head>
 <body>
@@ -26,11 +27,13 @@
 						<div id="crf_l">flash</div>
 					<div id="crf_r">
 						<div id="crf_t">特色评价<font>特色介绍</font></div>
-						<?php for($i =0 ; $i < 4; $i++){?>
-						<div class="crf_c" id="cr_<?php echo $i;?>" style="<?php if($i==0){ echo "display:inline;"; }?>">
-							<div class="crf_ti"><img src="/images/test/3.jpg"></div>
-							<div class="crg_tt"><a href="#">发生在妈妈视<?php echo $i+1; ?>内的九种意</a></div>
-							发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意发生在妈妈视线内的九种意 
+						<?php for($i =0 ; $i < 4; $i++){
+							$pos = "top_intr_$i";
+						?>
+						<div class="crf_c" id="cr_<?php echo $i;?>"<?php show_page_pos($pos,'link_d_i')?> style="<?php if($i==0){ echo "display:inline;"; }?>">
+							<div class="crf_ti"><img src="<?php echo $pos_items[$pos]->image1?>"></div>
+							<div class="crg_tt"><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href)?></div>
+							<?php echo_href($pos_items[$pos]->description, $pos_items[$pos]->href)?>
 						</div>
 						<?php }?>
 						<div id="crf_d">
@@ -70,8 +73,10 @@
 						</div>
 						<div id="cr_hr"></div>
 					</div>
-					<?php for($i = 0; $i < 5; $i++){ ?>
-					<div class="crb_c" id="crbc_<?php echo $i; ?>" style="<?php if($i == 0){ echo 'display:inline;';}else{ echo 'display:none;';} ?>">
+					<?php for($i = 0; $i < 5; $i++){
+						$pos = "middle_intr_$i";
+					?>
+					<div class="crb_c"<?php show_page_pos($pos,'link_d_i')?> id="crbc_<?php echo $i; ?>" style="<?php if($i == 0){ echo 'display:inline;';}else{ echo 'display:none;';} ?>">
 							<div class="crbc_a">
 								<a href="#">
 									<img src="/images/test/tr_a.jpg">
@@ -100,7 +105,9 @@
 					<div class="cfz_cz">
 						<ul>
 							<?php
-							 for($i=0;$i<7;$i++){ ?>
+							 for($i=0;$i<7;$i++){
+							 	$pos = "left_list_$i"; 
+							 ?>
 							<li>
 								<div class="frzcd"></div>
 								<div class="frzc_c"><a href="#"><font>[知识榜单]</font> 好啊好哦啊粉色的发生</a></div>
