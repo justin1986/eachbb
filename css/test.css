@@ -5,10 +5,10 @@ body{width:970PX; margin: 0 auto; }
 #fbody{ width:970px; overflow:hidden;  background:#ffffff; float:left; display:inline;}
 
 #crf_l{width:410px; height:260px; margin-left:2px; margin-top:2px; font-size:52px; color:#ffffff; text-align:center; line-height:240px;  background:#000000; float:left; display:inline;}
-#crf_r{width:315px; height:250px; margin-top:10px; margin-left:5px; float:left; display:inline;}
+#crf_r{width:315px; height:250px; margin-top:10px; margin-left:5px; position:absolute; float:left; display:inline;}
 #crf_t{width:280px; height:30px; margin-left:32px; margin-top:5px; font-size:16px; font-weight:bold; color:#000; float:left; display:inline;}
 #crf_t font{ font-size:16px; color:#EC4610; font-weight:bold;}
-.crf_c{width:290px; height:183px; margin-left:14px; overflow:hidden; font-size:13px; color:#666666; line-height:18px; float:left; display:none;}
+.crf_c{width:290px; height:185px; margin-left:14px; overflow:hidden; font-size:13px; color:#666666; line-height:18px; float:left; display:none;}
 .crf_ti{width:77px; height:60px; margin-right:5px; border:6px solid #E7E7DF; float:left; display:inline; }
 .crf_ti img{width:73px; height:56px; margin:2px; float:left; display:inline;}
 .crg_tt{width:190px; height:25px;  line-height:20px; float:left; display:inline;}
@@ -110,7 +110,9 @@ crb_c{width:740px; height:144px; margin-top:15px; float:left; display:none;}
 .hlcb_t{width:160px; height:16px; margin-top:1px; font-size:12px; font-weight:bold; color:#666666; overflow:hidden; line-height:16px; float:left; display:inline;}
 .hlcb_t font{color:#F34B2E; font-size:12px;}
 
-#cr_flash{width:741px; height:265px; background:url(/images/test/m_pg_p.jpg) no-repeat; float:right; display:inline;}
+#cr_flash{width:741px; height:265px; overflow:hidden; border-left:1px solid #71CAE4; border-bottom:1px solid #71CAE4; border-top:2px solid #71CAE4; border-right:2px solid #71CAE4;  float:right; display:inline;}
+#cr_banner{width:739px; height:263px;  position:relative; overflow:hidden; border:1px solid #0086F8; float: left;}
+#cr_flash img{width:61px; height:61px; margin-top:-1px; margin-right:-1px;  border:0px solid red; float:right;}
 
 #pric_l{width:3px; height:175px; background:#ffffff; float:left; display:inline;}
 #pric_rl{width:3px; height:154px; background:#ffffff; float:right; display:inline;}

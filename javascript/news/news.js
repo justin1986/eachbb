@@ -3,8 +3,10 @@ $(function(){
 		$("#res").html(news);
 	});
 	$('.a_comment_up').live('click',function(e){
+		
 		e.preventDefault();
 		var comment_id = $(this).attr('href');
+		comment_id=comment_id.substring(comment_id.lastIndexOf('/')+1,comment_id.length);
 		var $this = $(this);		
 		$.post('/news/ajax.post.php',{"id":comment_id,"type":"up"},function(comment){
 			$this.attr('class','a_clicked');
@@ -14,6 +16,7 @@ $(function(){
 	$('.a_comment_down').live('click',function(e){
 		e.preventDefault();
 		var comment_id = $(this).attr('href');
+		comment_id=comment_id.substring(comment_id.lastIndexOf('/')+1,comment_id.length);
 		var down_num = $(this).find('.span_down_num').html();
 		var $this = $(this);
 		$.post('/news/ajax.post.php',{"id":comment_id,"type":"down","num":down_num},function(comment){
