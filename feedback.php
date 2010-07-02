@@ -1,8 +1,15 @@
 ﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<?php
+	include_once('./frame.php');
+?>
 <html>
 <head>
-<title>课程</title>
-<link href="./css/feedback.css" rel="stylesheet" type="text/css" />
+<title>问题反馈</title>
+<?php
+	use_jquery();
+	css_include_tag('feedback');
+	js_include_tag('jquery.cookie', 'feedback/feedback');
+?>
 </head>
 <body>
 <div id="ibody">
@@ -149,12 +156,13 @@
 					<input type="button" id="but" value="提交">
 					<div id="cv_bz">与主题无关的评论，一律予以删除！(最多2000字)</div>
 				</div>
+				<div id="res"></div>
 				<div id="class_type">
 					<div id="ct_t"></div>
 					<div id="ct_c">
 						<div id="ctc_tz">
-							<div id="ctct_t">下期<font>课程</font>展示</div>
-							<input id="ctct_r" type="button" value="购  买"/>
+							<div class="ctct_t">下期<font>课程</font>展示</div>
+							<div id="buy"><a target="_blank" href="#">购  买</a></div>
 						</div>
 						<div class="ctc_bz">
 							<div class="ctb_t"></div>

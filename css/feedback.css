@@ -108,15 +108,15 @@
 #ct_c{width:736px; height:428px; background:#F7FCDD; border-left:1px solid #C8E491; border-right:1px solid #C8E491; overflow:hidden; float:left; display:inline;}
 #ct_b{width:738px; height:3px; font-size:0px; line-height:0px; background:url(../images/yetrb/yet_pg2.jpg) no-repeat; float:left; display:inline;}
 #ctc_tz{width:730px; height:22px; margin-top:5px; float:left; display:inline;}
-#ctct_t{width:95px; height:22px;  margin-left:10px; line-height:22px; font-size:14px; font-weight:bold; float:left; display:inline;}
+.ctct_t{width:95px; height:22px;  margin-left:10px; line-height:22px; font-size:14px; font-weight:bold; float:left; display:inline;}
 #ctct_r{width:69px; height:22px; margin-right:3px; border:0px solid red; font-size:14px; color:#666666; text-align:center; line-height:22px; background:url(../images/yetrb/b.jpg) no-repeat; float:right; display:inline;}
 .ctc_bz{width:734px; height:96px; margin-top:5px; margin-right:5px; float:right; display:inline;}
-#ctct_t font{color:#559A2E;}
+.ctct_t font{color:#559A2E;}
 .ctb_t{width:724px; height:3px; margin-left:6px; font-size:0px; line-height:0px; background:url(../images/yetrb/3a.jpg) no-repeat; float:left; display:inline;}
 .ctb_c{width:722px; margin-left:6px; border-left:1px solid #9ACC2A; overflow:hidden; border-right:1px solid #9ACC2A; float:left; display:inline;}
 .ctb_b{width:724px;  height:3px; margin-left:6px; background:url(../images/yetrb/3b.jpg) no-repeat; float:left; display:inline;}
 .ctbb{width:41px; height:41px; margin-toP:-38px; margin-left:683px; z-index:100px; position:absolute; background:url(../images/yetrb/gd.gif) no-repeat; float:right; display:inline;}
-#ctct_t a{text-decoration:none;}
+.ctct_t a{text-decoration:none;}
 
 #ctb_l{margin:4px; float:left; display:inline;}
 #ctl_a{width:83px; height:83PX; float:left; display:inline;}
@@ -141,6 +141,7 @@
 .cmz_r{width:298px; height:16px; overflow:hidden; line-height:16px; font-size:12px; float:left; display:inline;}
 .cmz_r a{color:#666666; font-weight:bold; text-decoration:none;}
 
+
 #c_pic{width:720px; height:31px; margin-top:15px; float:left; display:inline;}
 #c_p_a{width:69px; height:31px; margin-left:10px; text-align:center; color:#666666; font-size:12px; line-height:23px; float:left; display:inline;}
 .c_p_b{width:69px; height:31px; margin-left:40px; color:#666666; font-size:12px; text-align:center; line-height:23px; background:url(../images/yetrb/b.jpg) no-repeat;  float:left; display:inline;}
@@ -153,7 +154,28 @@
 #ctbc_c{width:730px; height:80px; margin-top:7px; float:left; display:inline; float:left;}
 .ctb_img{width:79px; height:78px; margin-left:8px; border:1px solid #DBDBDB; overflow:hidden; float:left; display:inline;}
 
-
+#buy{width:71px; height:22px; margin-right:10px; font-size:14px; line-height:22px; background:url('/images/feedback/buy_bg.jpg') no-repeat; text-align:center; float:right; display:inline;}
+#buy a{color:#000000; text-decoration:none;}
 
 #bottom{width:1000px; text-align:center; margin-top:20px; font-size:12px; color:#666666; float:left; display:inline;}
 #bottom_b{width:1000px; margin-top:10px; margin-bottom:50px; text-align:center; font-size:12px; color:#666666; float:left; display:inline;}
+
+#critique{width:635px; height:20px; margin-top:35px; line-height:20px; float:left; display:inline;}
+#critique_l{width:130px; height:20px; margin-left:30px; line-height:20px; font-size:14px; color:#666666; font-weight:bold; float:left; display:inline;}
+#critique_l a{font-size:12px; color:#BA2636; font-weight:lighter; text-decoration:none;}
+#critique_r{width:100px; height:20px; line-height:20px; text-align:right; float:right; display:inline;}
+#critique_r a{font-size:13px; color:#6600FF;}
+
+
+
+.cri_content{width:635px;  margin-top:5px; float:left; display:inline;}
+.fun{width:635px; height:20px; margin-top:20px; text-align:center; font-size:12px; float:left; dispaly:inine;}
+.cri_tz{width:635px; margin-top:32px; margin-left:30px; line-height:20px; float:left; display:inline;}
+.crit_l{width:228px; height:20px; font-size:16px; color:#6600FF;  font-weight: bold; float:left; display:inline;}
+.crit_l font{font-size:10px; font-family:arial; color:#999999;}
+.crit_r{width:130px; height:20px; font-size:12px; color:#6600FF;  font-weight: bold; text-align:center; line-height:20px; float:right; display:inline;}
+.up font{font-size:12px; color:#6600FF; text-decoration:none;}
+.down font{font-size:12px; color:#6600FF; text-decoration:none;}
+.up{float:left; display: inline;}
+.cri_c{width:635px; height:20px; margin-top:15px; line-height:25px; font-size:14px; color:#666666; overflow:hidden; float:left; display:inline;}
+.c_hr{width:635px; height:1px; margin-top:20px; background:url(/images/article/hr_l.jpg) repeat-x; font-size:0px; line-height:0px; float:left; display:inline;}
