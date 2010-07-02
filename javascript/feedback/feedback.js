@@ -2,6 +2,8 @@
 	$.post('/feedback/feedback_comment.php',function(feedback){
 		$("#res").html(feedback);
 	});
+	$('#c_p_a').css('margin-left','10px');
+	$('#c_p_a').addClass('selected');
 	$('.a_comment_up').live('click',function(e){
 		e.preventDefault();
 		var comment_id = $(this).attr('href');
@@ -43,5 +45,9 @@
 				$('#res').load('/feedback/feedback_comment.php');	
 			}
 		});
+	});
+	$(".c_p_b").mouseover(function(){
+		$(".c_p_b").attr('class','c_p_b');
+		$(this).addClass('selected');
 	});
 });

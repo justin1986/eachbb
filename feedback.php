@@ -162,7 +162,7 @@
 					<div id="ct_c">
 						<div id="ctc_tz">
 							<div class="ctct_t">下期<font>课程</font>展示</div>
-							<div id="buy"><a target="_blank" href="#">购  买</a></div>
+							<a target="_blank" href="#"><div id="buy">购  买</div></a>
 						</div>
 						<div class="ctc_bz">
 							<div class="ctb_t"></div>
@@ -209,13 +209,13 @@
 								<div class="ctbb"></div>
 								</a></div>
 							<div id="c_pic"> <a href="#">
-								<div id="c_p_a" style="background:url(images/yetrb/a.jpg) no-repeat;">图书玩具</div>
+								<div class="c_p_b" param="1" id="c_p_a">图书玩具</div>
 								</a> <a href="#">
-								<div class="c_p_b">我家院子</div>
+								<div class="c_p_b" param="2">我家院子</div>
 								</a> <a href="#">
-								<div class="c_p_b">论坛精华</div>
+								<div class="c_p_b" param="3">论坛精华</div>
 								</a> <a href="#">
-								<div class="c_p_b">其他照片</div>
+								<div class="c_p_b" param="4">其他照片</div>
 								</a> </div>
 							<div id="ctc_bz">
 								<div id="ctb_t"></div>

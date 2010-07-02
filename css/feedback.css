@@ -108,6 +108,7 @@
 #ct_c{width:736px; height:428px; background:#F7FCDD; border-left:1px solid #C8E491; border-right:1px solid #C8E491; overflow:hidden; float:left; display:inline;}
 #ct_b{width:738px; height:3px; font-size:0px; line-height:0px; background:url(../images/yetrb/yet_pg2.jpg) no-repeat; float:left; display:inline;}
 #ctc_tz{width:730px; height:22px; margin-top:5px; float:left; display:inline;}
+
 .ctct_t{width:95px; height:22px;  margin-left:10px; line-height:22px; font-size:14px; font-weight:bold; float:left; display:inline;}
 #ctct_r{width:69px; height:22px; margin-right:3px; border:0px solid red; font-size:14px; color:#666666; text-align:center; line-height:22px; background:url(../images/yetrb/b.jpg) no-repeat; float:right; display:inline;}
 .ctc_bz{width:734px; height:96px; margin-top:5px; margin-right:5px; float:right; display:inline;}
@@ -116,7 +117,7 @@
 .ctb_c{width:722px; margin-left:6px; border-left:1px solid #9ACC2A; overflow:hidden; border-right:1px solid #9ACC2A; float:left; display:inline;}
 .ctb_b{width:724px;  height:3px; margin-left:6px; background:url(../images/yetrb/3b.jpg) no-repeat; float:left; display:inline;}
 .ctbb{width:41px; height:41px; margin-toP:-38px; margin-left:683px; z-index:100px; position:absolute; background:url(../images/yetrb/gd.gif) no-repeat; float:right; display:inline;}
-.ctct_t a{text-decoration:none;}
+#ctc_tz a{text-decoration:none;}
 
 #ctb_l{margin:4px; float:left; display:inline;}
 #ctl_a{width:83px; height:83PX; float:left; display:inline;}
@@ -143,8 +144,8 @@
 
 
 #c_pic{width:720px; height:31px; margin-top:15px; float:left; display:inline;}
-#c_p_a{width:69px; height:31px; margin-left:10px; text-align:center; color:#666666; font-size:12px; line-height:23px; float:left; display:inline;}
 .c_p_b{width:69px; height:31px; margin-left:40px; color:#666666; font-size:12px; text-align:center; line-height:23px; background:url(../images/yetrb/b.jpg) no-repeat;  float:left; display:inline;}
+.c_p_b.selected{background:url(/images/yetrb/a.jpg) no-repeat;}
 #ctc_bz{width:734px; height:96px;  margin-top:-5Px; float:right; display:inline;}
 #ctb_t{width:724px; height:3px; margin-left:6px; font-size:0px; line-height:0px; background:url(../images/yetrb/3a.jpg) no-repeat; float:left; display:inline;}
 #ctb_c{width:722px; height:93px; margin-left:6px; border-left:1px solid #9ACC2A; overflow:hidden; border-right:1px solid #9ACC2A; float:left; display:inline;}
@@ -154,8 +155,7 @@
 #ctbc_c{width:730px; height:80px; margin-top:7px; float:left; display:inline; float:left;}
 .ctb_img{width:79px; height:78px; margin-left:8px; border:1px solid #DBDBDB; overflow:hidden; float:left; display:inline;}
 
-#buy{width:71px; height:22px; margin-right:10px; font-size:14px; line-height:22px; background:url('/images/feedback/buy_bg.jpg') no-repeat; text-align:center; float:right; display:inline;}
-#buy a{color:#000000; text-decoration:none;}
+#buy{width:71px; height:22px; margin-right:10px; color:#000000; font-size:14px; line-height:22px; background:url('/images/feedback/buy_bg.jpg') no-repeat; text-align:center; float:right; display:inline;}
 
 #bottom{width:1000px; text-align:center; margin-top:20px; font-size:12px; color:#666666; float:left; display:inline;}
 #bottom_b{width:1000px; margin-top:10px; margin-bottom:50px; text-align:center; font-size:12px; color:#666666; float:left; display:inline;}
