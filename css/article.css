@@ -97,7 +97,7 @@ body{width:970px; margin: 0 auto; font-family:����;}
 #text_bpg{width:635px; height:13px; font-size:0px; line-height:0px; background:url(/images/article/l_b.jpg) no-repeat; float:left; display:inline;}
 #text_cpg{width:631px;  background:#F6FAFE; border-left:2px solid #DDEDF9; border-right:2px solid #DDEDF9;  float:left; display:inline;}
 
-#text_word{width:635px; height:20px; margin-left:10px; margin-top:10px; line-height:20px; float:left; display:inline;}
+#text_word{width:615px; height:20px; margin-left:10px; margin-top:10px; line-height:20px; float:left; display:inline;}
 #text_word ul{list-style-type:none; margin-left:10px; margin:0px; padding:0px; float:left; display:inline;}
 #text_word ul li{ float:left; display:inline;}
 #text_word ul li font{font-size:14px; font-weight:bold; color:#666666; float:left; display:inline;}
