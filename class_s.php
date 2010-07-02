@@ -1,8 +1,16 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html>
 <head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta http-equiv=Content-Language content=zh-CN>
 <title>课程</title>
 <link href="./css/class_s.css" rel="stylesheet" type="text/css" />
+<?php 
+	include_once('frame.php');
+	use_jquery();
+	css_include_tag('class_s');
+	js_include_tag('class/class_s');
+?>
 </head>
 <body>
 <div id="ibody">
@@ -37,14 +45,13 @@
 							<div class="hlcb_t"><font>下载次数：</font>1232</div>
 						</div>
 					</div>
-					<?php 
-																}?>
+					<?php }?>
 				</div>
 				<div class="hlc_bb"></div>
 				<div id="l_f">
 					<div id="lf_l">我的<font>好友</font></div>
 					<div id="lf_c">（<font>345</font>）</div>
-					<div id="lf_r">More >></div>
+					<div id="lf_r">More &gt;&gt;</div>
 				</div>
 				<div id="pic_r">
 					<?php for($i=0;$i<6;$i++){ ?>
@@ -54,39 +61,55 @@
 						</div>
 						<div class="ppg_w">safsadfas</div>
 					</div>
-					<?php 
-																				}?>
+					<?php }?>
 				</div>
 				<div id="pg_a"></div>
 			</div>
 			<div id="c_r">
 				<div id="cr_top"> flash </div>
 				<div id="crcb_t">
-					<?php for($i=0;$i<6;$i++){?>
-					<a href="#"  style="<?php if($i==0){ echo 'color:#ffffff;';} ?>">
-					<div class="cr_a" style="<?php if($i==0){ echo 'margin-left:0px;';} if($i==5){echo 'margin-left:16px;';}?>">我的宝宝</div>
-					</a>
-					<?php 
-																}
-																?>
+					<div class="cr_a" ><a href="#"  style="color:#ffffff;">我的宝宝</a></div>
+					<div class="cr_a" ><a href="#" >我的宝宝</a></div>
+					<div class="cr_a" ><a href="#" >我的宝宝</a></div>
+					<div class="cr_a" ><a href="#" >我的宝宝</a></div>
+					<div class="cr_a" ><a href="#" >我的宝宝</a></div>
 				</div>
-				<div id="cr_cb">
-					<div id="crb_img"><img src="images/class/rcb_img.jpg"></div>
-					<div id="crr_z">
-						<div id="crr_t">
-							<div id="crrt_l"><img src="images/class/cr_l.jpg"></div>
-							<div id="crrt_c">阿森纳副卡萨诺的发生</div>
-							<div id="crrt_b">阿阿森纳副卡萨诺的发生阿森纳副卡萨诺的发生森阿阿森纳副卡萨诺的发生阿森纳副卡萨诺的发生森纳副卡萨诺的发生阿森纳副卡萨诺的发生纳副卡萨诺的发生阿森纳副卡萨诺的发生</div>
+				<div class="cr_cb">
+					<div class="crc_pg">
+						<div class="crb_img">
+							<?php for($i = 0; $i < 4; $i++){ ?>
+							<img class="banner" id="banner_<?php echo $i;?>" style="<?php if($i == 0){echo 'display:inline;';}else{ echo 'display:none;'; } ?>" src="/images/class/l_pg_c.jpg">
+							<?php } ?>
+							<div id="num_banner">
+								<div class="num">4</div>
+								<div class="num">3</div>
+								<div class="num">2</div>
+								<div class="num" style="background:#CE0609;">1</div>
+							</div>
 						</div>
-						<div id="crr_c"></div>
-						<div id="crrab_z">
-							<?php for($i=0;$i<6;$i++){?>
-							<a href="#" >
-							<div class="crr_b">阿阿森纳副卡萨诺</div>
-							</a>
-							<?php 
-																									}?>
-						</div>
+						<div class="crr_z">
+							<a href="#"><img class="class_img" src="/images/class/class.png"/></a>
+							<div class="crb_title">
+								推荐<font>课程</font>
+							</div>
+							<?php for($j = 0; $j < 5; $j++){?>
+							<div class="class_val" id="class_val_<?php echo $j;?>" style="<?php if($j==0){ echo 'display:inline;';} ?>">
+							<script type="text/javascript">
+							</script>
+								<div class="crr_t">
+									<div class="crrt_l"><img src="images/class/cr_l.jpg"></div>
+									<div class="crrt_c">阿森纳副<?php echo $j; ?>卡萨诺的发生</div>
+									<div class="crrt_b">阿阿森纳副卡萨诺的发生阿森纳副卡萨诺的发生森阿阿森纳副卡萨诺的发生阿森纳副卡萨诺的发生森纳副卡萨诺的发生阿森纳副卡萨诺的发生纳副卡萨诺的发生阿森纳副卡萨诺的发生</div>
+								</div>
+								<div class="crr_c"></div>
+								<div class="crrab_z">
+									<?php for($i=0;$i<6;$i++){?>
+									<div class="crr_b"><a href="#" >阿阿森纳副卡萨诺</a></div>
+									<?php }?>
+								</div>
+							</div>
+							<?php }?>
+					</div>
 					</div>
 				</div>
 				<div id="cr_ci">
@@ -102,8 +125,7 @@
 									<div> <img src="images/class/c_pg_a.jpg"> </div>
 								</div>
 								</a>
-								<?php 
-																									}?>
+								<?php }?>
 							</div>
 							<div id="pric_rl"></div>
 						</div>
