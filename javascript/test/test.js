@@ -30,6 +30,6 @@ $(function(){
 		}
 		$('.crb_c').hide();
 		$('#crbc_'+selected).show();
-	},function(){})
+	},function(){});
 	
 });
