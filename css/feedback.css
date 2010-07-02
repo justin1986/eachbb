@@ -1,8 +1,8 @@
-﻿body{width:1000PX; margin: 0 auto;  background:url(../images/index/img_pg.jpg) repeat-x;}
+﻿body{width:995px; margin: 0 auto;  background:url(../images/index/img_pg.jpg) repeat-x;}
 
-#ibody{width:1000px; overflow:hidden; margin:0;}
+#ibody{width:995px; overflow:hidden; margin:0;}
 
-#fbody{ width:1000px; margin-left:25px; overflow:hidden;  background:#ffffff; float:left; display:inline;}
+#fbody{ width:975px; margin-left:10px; overflow:hidden;  background:#ffffff; float:left; display:inline;}
 
 
 #top_login{width:1000px; height:20px; margin-top:15px; margin-left:20px;  font-size:13px; color:#ffffff; float:right; display:inline;}
@@ -24,14 +24,13 @@
 
 
 
-#top_menu{width:1010px; height:103px; margin-top:10px;  float:left; display:inline;}
-#menu_left{width:285px; height:103px; background:url(../images/index/top.jpg) no-repeat; float:left; display:inline;}
-#wangqu{width:133px; height:48px; margin-left:130px; margin-top:40px; background:url(../images/index/top_j.gif) no-repeat; float:left; display:inline;}
-#menu_center{width:678px; height:103px; background:url(../images/index/top_pg_a_center.jpg) repeat-x;  float:left; display:inline;}
-#menu_right{width:40px; height:103px; background:url(../images/index/top_pg_a_right.jpg) no-repeat;  float:left; display:inline;}
+#top_menu{width:995px; height:103px; margin-left:5px; margin-top:10px;  float:left; display:inline;}
+#menu_left{width:267px; height:97px; margin-top:6px; font-size:0px; line-height:0px; background:url(/images/index/top.jpg) no-repeat; float:left; display:inline;}
+#menu_center{width:672px; height:103px; background:url(/images/index/top_pg_a_center.jpg) repeat-x;  float:left; display:inline;}
+#menu_right{width:40px; height:103px; background:url(/images/index/top_pg_a_right.jpg) no-repeat;  float:left; display:inline;}
 
 
-#content{width:970px;  margin-top:12px; float:left; display:inline;}
+#content{width:970px;  margin-top:12px; overflow:hidden; float:left; display:inline;}
 #c_l{width:205px;  margin-left:7px; overflow:hidden; float:left; display:inline;}
 #c_r{width:756px; float:right; display:inline;}
 #l_pho{width:200px; height:228px; margin-left:5px; background:url(../images/yetrb/ll.jpg) no-repeat; float:left; display:inline;}
@@ -96,7 +95,7 @@
 #h_title{width:748px; height:20px; margin-top:15px; line-height:20px; overflow:hidden; text-align:center; font-size:15px; font-weight:bold; float:left; display:inline;}
 #c_title{width:748px; height:20px; margin-top:10px; text-align:center; font-size:18px; font-weight:bold; color:#40A10F; float:left; display:inline;}
 #cc_hr{width:748px; height:1px; margin-left:10px; margin-top:20px; background:url(../images/feedback/hr_b.jpg) repeat-x; float:left; display:inline;}
-#cc_c{width:748px;  margin-left:10px; overflow:hidden; font-size:13px; color:#666666; line-height:20px; margin-top:10px; float:left; display:inline;}
+#cc_c{width:728px;  margin-left:20px; text-indent:2em; overflow:hidden; font-size:13px; color:#666666; line-height:20px; margin-top:10px; float:left; display:inline;}
 #c_view{width:710px; height:135px; margin-top:20px; margin-bottom:15px; margin-left:10px; background:#F0F0F0; float:left; display:inline;}
 #cv_title{width:680px; height:20px; margin-top:25px; margin-bottom:5px; margin-left:10px; font-size:12px; font-weight:bold; line-height:20px; float:left; display:inline;}
 #cv_text{width:590px; height:40px; margin-left:35px; float:left; display:inline;}
