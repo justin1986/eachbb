@@ -10,30 +10,26 @@
 		<div id="login">
 			<div id="login_login">
 				<div id="login_img"></div>
-				<div id="login_word"><a href="#">登录</a></div>
+				<div id="login_word">登录</div>
 			</div>
 			<div id="register">
 				<div id="register_img"></div>
-				<div id="register_word"><a href="#">注册</a></div>
+				<div id="register_word">注册</div>
 			</div>
 			<div id="comeback">
 				<div id="comeback_img"></div>
-				<div id="comeback_word"><a href="#">返回首页</a></div>
+				<div id="comeback_word">返回首页</div>
 			</div>
 			<div id="member">
 				<div id="member_img"></div>
-				<div id="member_word"><a href="#">用户中心</a></div>
+				<div id="member_word">用户中心</div>
 			</div>
 		</div>
 	</div>
 	<div id="top_menu">
-		<div id="menu_pg">
-			<div id="menu_left">
-				<div id="wangqu"></div>
-			</div>
+			<div id="menu_left"></div>
 			<div id="menu_center"></div>
 			<div id="menu_right"></div>
-		</div>
 	</div>
 	<div id="fbody">
 		<div id="content">
