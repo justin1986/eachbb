@@ -1,0 +1,10 @@
+ALTER TABLE `eachbb`.`eb_teach` ADD COLUMN `month` integer  NOT NULL DEFAULT 1 COMMENT '适龄月份，取值范围在1～12之间' AFTER `del_flag`,
+ ADD COLUMN `key_teach` text  COMMENT '宝宝关键期指导' AFTER `month`,
+ ADD COLUMN `big_action` text  COMMENT '宝宝大运动' AFTER `key_teach`,
+ ADD COLUMN `detail_action` text  COMMENT '宝宝精细动作' AFTER `big_action`,
+ ADD COLUMN `knowledge` text  COMMENT '宝宝认知' AFTER `detail_action`,
+ ADD COLUMN `language` text  COMMENT '宝宝语言' AFTER `knowledge`,
+ ADD COLUMN `music` text  COMMENT '宝宝音乐欣赏' AFTER `language`,
+ ADD COLUMN `social_behavior` text  COMMENT '宝宝社会行为' AFTER `music`,
+ ADD COLUMN `book` text  COMMENT '宝宝图书欣赏和推荐' AFTER `social_behavior`,
+ ADD COLUMN `toy` text  COMMENT '宝宝玩具推荐' AFTER `book`;
