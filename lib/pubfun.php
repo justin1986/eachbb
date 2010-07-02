@@ -605,4 +605,29 @@ function client_ip(){
 function check_email($email){
 	return strlen($email) > 6 && preg_match("/^[\w\-\.]+@[\w\-\.]+(\.\w+)+$/", $email);
 }
-	
+
+function echo_href($title,$href,$max_len=0,$html_params=null){
+	$out = "<a href='{$href}' title='{$title}'";
+	if(func_num_args()==3){
+		$third = func_get_arg(2);
+		if(is_array($third)){
+			$html_params = $third;
+		}
+	}
+	if($html_params){
+		foreach ($html_params as $key => $val){
+			$out .= " $key='$val'";
+		}
+	}
+	if($max_len > 0){
+		$len = mb_strlen($title,'utf-8');
+		if($len > $max_len){
+			$display = mb_substr($title,0,$max_len-1,'utf-8')  ."...";
+		}else{
+			$display = $title;
+		}
+	}else{
+		$display = $title;
+	}
+	$out .=">$display</a>";
+}

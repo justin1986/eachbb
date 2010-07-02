@@ -113,6 +113,35 @@ function paginate_news($news){
 	}
 }
 
+function get_page_type(){
+	global $page_type;
+	return $_REQUEST['page_type'] ? $_REQUEST['page_type'] : ($page_type ? $page_type : 'dynamic');  
+}
 
+function init_page_items($page){
+	if(!class_exists('PagePos')){
+		include_once dirname(__FILE__).'/../lib/page_pos.class.php';
+	}
+	global $pos_items;
+	global $pos_page;
+	$pos_page = $page;
+	if($pos_items) return;
+	$pos_items = PagePos::load($page);
+	$page_type = get_page_type();
+	if($page_type == 'admin'){
+		js_include_tag('jquery.colorbox-min');
+		css_include_tag('colorbox');
+		js_include_tag('admin/page_admin');	
+	}
+}
+
+function show_page_pos($pos,$name='default'){
+	global $page_type;
+	global $pos_page;
+	$type = $_REQUEST['page_type'] ? $_REQUEST['page_type']: $page_type ;
+	if($type == 'admin'){
+		echo " page=\"{$pos_page}\" pos=\"{$pos}\" pos_tag='{$name}'";
+	}	
+}
 
 ?>
