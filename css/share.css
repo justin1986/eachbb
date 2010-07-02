@@ -1,0 +1,6 @@
+@CHARSET "UTF-8";
+#bread {width:100%;margin-top:10px; font-size:14px; color:#666666; float:left;}
+#mail_box{width:100%; padding-top:10px; float:left; color:#666666;}
+.share_line{width:90%; margin-top:15px; float:left;}
+.share_line span{color:black;}
+.share_mail, .share_name{width:45%; float:left;}

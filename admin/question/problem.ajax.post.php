@@ -35,14 +35,12 @@ switch ($op) {
 			$result->question_id= $question->id;
 			for($i=0;$i<$len;$i++){
 				
-				if($_GET['question_item']['changed'][$i]){
 					$result->id= $_GET['question_item']['id'][$i] ? $_GET['question_item']['id'][$i]: 0;
 					$result->name= $_GET['question_item']['name'][$i];
 					$result->display= $_GET['question_item']['display'][$i];
 					$result->attribute= $_GET['question_item']['attribute'][$i];
 					$result->question_id = $question->id;	
 					$result->save();				
-				}
 			}
 		}
 		break;

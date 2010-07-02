@@ -601,4 +601,8 @@ function client_ip(){
 	}
 	return $onlineip;
 }
+
+function check_email($email){
+	return strlen($email) > 6 && preg_match("/^[\w\-\.]+@[\w\-\.]+(\.\w+)+$/", $email);
+}
 	

@@ -103,15 +103,13 @@ body{width:970px; margin: 0 auto; font-family:����;}
 #text_word ul li font{font-size:14px; font-weight:bold; color:#666666; float:left; display:inline;}
 #text_word ul li a{font-size:12px; text-decoration: none; color:#990099; float:left; display:inline;}
 
-#text_content{width:615px; height:50px; margin-top:20px; margin-left:10px; line-height:25px; overflow:hidden; float:left; display:inline;}
+#text_content{width:615px; height:50px; margin-top:20px; margin-left:10px; line-height:25px; color:#666666; overflow:hidden; float:left; display:inline;}
 #text_content font{font-size:14px; font-weight:bold; color:#666666;}
 #text_content a{font-size:14px; text-decoration: none; color:#666666; }
 #text_menu{width:615px; height:25px; margin-left:10px; margin-top:10px; line-height:25px; float:left; display:inline;}
 .tm_a{width:55px; height:15px; line-height:15px; text-align:center; float:left; display:inline;}
 #tm_b{width:55px; height:15px; line-height:15px;  text-align:center; border-left:1px solid #014991; border-right:1px solid #014991; float:left; display:inline;}
 .tm_a a,#tm_b a{text-decoration:none; font-size:12px; color:#014991; }
-#tm_ticket{width:85px; height:25px; line-height:25px; float:right; display:inline;}
-#tm_ticket a{font-size:13px; color:#FF0000; font-weight:bold; text-decoration:none;}
 
 #content{width:635px; margin-top:15px; text-indent:28px; font-size:14px; line-height:30px; color:#333333; float:left; display:inline;}
 #pagination{width:635px; height:20px;   margin-top:20px; color:#666666; text-align:center; font-size:14px; line-height:20px; float:left; display:inline;}
@@ -182,3 +180,8 @@ body{width:970px; margin: 0 auto; font-family:����;}
 
 #bottom{width:950px; text-align:center; margin-top:20px; font-size:12px; color:#666666; float:left; display:inline;}
 #bottom_b{width:950px; margin-top:10px; margin-bottom:50px; text-align:center; font-size:12px; color:#666666; float:left; display:inline;}
+
+#write_comment{float:left;padding-top:10px;}
+	#div_btn_comment{width:122px; height:22px; background: url(/images/news/btn_comment.jpg) no-repeat; cursor:pointer;}
+	#div_write_comment{margin-top:10px; display: none;}
+		textarea{width:930px; height:100px;}

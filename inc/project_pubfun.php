@@ -1,5 +1,9 @@
 <?php
 
+function get_course_url($course){
+	echo "";
+}
+
 function get_teach_url($teach){
 	echo '/teach/teach.php?id='.$teach->id;
 }
@@ -108,3 +112,7 @@ function paginate_news($news){
 		return paginate(null,null,'page',false,'normal',2);
 	}
 }
+
+
+
+?>

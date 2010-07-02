@@ -17,7 +17,7 @@
 <?php
 	use_jquery();
 	css_include_tag('article');
-	js_include_tag('news/news');
+	js_include_tag('jquery.cookie', 'news/news');
 ?>
 </head>
 <body>
@@ -64,13 +64,12 @@
 					</div>
 					<div id="text_content">
 						<font>本文摘要：</font>
-						<a href="<?php get_news_url($column[0]); ?>" title="<?php echo strip_tags($column[0]->description);?>"><?php echo strip_tags($column[0]->description);?></a>
+						<?php echo strip_tags($column[0]->description);?>
 					</div>
 					<div id="text_menu">
-						<div class="tm_a"><a href="#">打印</a></div>
-						<div id="tm_b"><a href="#">收藏</a></div>
-						<div class="tm_a"><a href="#">分享</a></div>
-						<div id="tm_ticket"><a href="#">支持&nbsp;<?php echo $column[0]->click_count; ?></a></div>
+						<div class="tm_a"><a id="a_print" href="#">打印</a></div>
+						<div id="tm_b"><a id="a_collect" href="#">收藏</a></div>
+						<div class="tm_a"><a href="/news/share.php?news_id=<?php echo $column[0]->id?>">分享</a></div>
 					</div>
 				</div>
 				<div id="text_bpg"></div>
@@ -84,7 +83,14 @@
 				<?php  paginate_news($column[0]);?>
 			</div>
 			<input type="hidden" value="<?php echo $id;?>" id="newsid">
-			<span id="res"></span>
+			<div id="res"></div>
+			<div id="write_comment">
+				<div id="div_btn_comment"></div>
+				<div id="div_write_comment">
+					<textarea id="text_comment" style="width: 630px;"></textarea>
+					<button id="submit_comment">提交</button>
+				</div>
+			</div>
 		</div>
 		<div id="b_r">
 			<div id="br_img"></div>
@@ -129,7 +135,7 @@
 				<div class="bd_t"></div>
 				<div class="bd_c">
 					<div class="bdt_t">
-						<div class="bdt_tl">文章列表</div>
+						<div class="bdt_tl">相关文章列表</div>
 						<div class="bdt_more"><a href="#"><font>+</font>更多</a></div>
 					</div>
 					<div class="bdt_hr">

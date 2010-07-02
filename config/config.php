@@ -73,8 +73,8 @@ $debug_tag = true;
 $db_server_name = '192.168.1.2';
 $db_user_name = 'eachbb'; 
 $db_password = 'xunao';
-$g_ucenter_ip = 'http://210.51.52.158';
-$site_domain = 'http://210.51.52.158';
+$g_ucenter_ip = 'http://210.51.48.244';
+$site_domain = 'http://210.51.48.244';
 
 
 /*
