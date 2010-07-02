@@ -25,3 +25,5 @@
 			#validate{width:50px; height:25px; margin-left:10px; background:#000000; float:left; display:inline;}
 			#logon_btn{width:94px; height:26px; margin-right:200px; margin-top:40px; backgound:url(/images/zhuce/r_btn) no-repeat; float:right; display:inline;}
 #banner_bottom{width:800px; height:43px; background:url(/images/zhuce/r_b.jpg) no-repeat; float:left;}
+
+.baby_birth{display:none;}

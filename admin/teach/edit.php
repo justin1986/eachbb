@@ -11,7 +11,7 @@
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-CN>
-	<title>smg</title>
+	<title>eachbb</title>
 	<?php
 		css_include_tag('admin','colorbox');
 		use_jquery();
@@ -49,6 +49,25 @@
 				</select>
 			</td>
 		</tr>
+		<tr class="tr4">
+			<td align="center">适龄月份</td>
+			<td align="left">
+				<select name="post[month]">
+					<option <?php if($teach->month==1)echo 'selected = "selected"';?> value=1>1月</option>
+					<option <?php if($teach->month==2)echo 'selected = "selected"';?> value=2>2月</option>
+					<option <?php if($teach->month==3)echo 'selected = "selected"';?> value=3>3月</option>
+					<option <?php if($teach->month==4)echo 'selected = "selected"';?> value=4>4月</option>
+					<option <?php if($teach->month==5)echo 'selected = "selected"';?> value=5>5月</option>
+					<option <?php if($teach->month==6)echo 'selected = "selected"';?> value=6>6月</option>
+					<option <?php if($teach->month==7)echo 'selected = "selected"';?> value=7>7月</option>
+					<option <?php if($teach->month==8)echo 'selected = "selected"';?> value=8>8月</option>
+					<option <?php if($teach->month==9)echo 'selected = "selected"';?> value=9>9月</option>
+					<option <?php if($teach->month==10)echo 'selected = "selected"';?> value=10>10月</option>
+					<option <?php if($teach->month==11)echo 'selected = "selected"';?> value=11>11月</option>
+					<option <?php if($teach->month==12)echo 'selected = "selected"';?> value=12>12月</option>
+				</select>
+			</td>
+		</tr>
 		<tr class=tr4>
 			<td align="center" width="15%">优先级</td>
 			<td width="85%" align="left"><input type="text" name="post[priority]" value="<?php if($teach->priority!=100) echo $teach->priority;?>" class="number"></td>
@@ -56,6 +75,42 @@
 		<tr class=tr4>
 			<td align="center">介绍：</td>
 			<td align="left"><?php show_fckeditor('post[description]','Admin',false,"120",$teach->description);?></td>
+		</tr>
+		<tr class=tr4>
+			<td align="center">宝宝关键期教育：</td>
+			<td align="left"><?php show_fckeditor('post[key_teach]','Admin',false,"120",$teach->key_teach);?></td>
+		</tr>
+		<tr class=tr4>
+			<td align="center">宝宝大运动：</td>
+			<td align="left"><?php show_fckeditor('post[big_action]','Admin',false,"120",$teach->big_action);?></td>
+		</tr>
+		<tr class=tr4>
+			<td align="center">宝宝精细动作：</td>
+			<td align="left"><?php show_fckeditor('post[detail_action]','Admin',false,"120",$teach->detail_action);?></td>
+		</tr>
+		<tr class=tr4>
+			<td align="center">宝宝认知：</td>
+			<td align="left"><?php show_fckeditor('post[knowledge]','Admin',false,"120",$teach->knowledge);?></td>
+		</tr>
+		<tr class=tr4>
+			<td align="center">宝宝语言：</td>
+			<td align="left"><?php show_fckeditor('post[language]','Admin',false,"120",$teach->language);?></td>
+		</tr>
+		<tr class=tr4>
+			<td align="center">宝宝音乐欣赏：</td>
+			<td align="left"><?php show_fckeditor('post[music]','Admin',false,"120",$teach->music);?></td>
+		</tr>
+		<tr class=tr4>
+			<td align="center">宝宝社会行为：</td>
+			<td align="left"><?php show_fckeditor('post[social_behavior]','Admin',false,"120",$teach->social_behavior);?></td>
+		</tr>
+		<tr class=tr4>
+			<td align="center">宝宝图书欣赏和推荐：</td>
+			<td align="left"><?php show_fckeditor('post[book]','Admin',false,"120",$teach->book);?></td>
+		</tr>
+		<tr class=tr4>
+			<td align="center">宝宝玩具推荐：</td>
+			<td align="left"><?php show_fckeditor('post[toy]','Admin',false,"120",$teach->toy);?></td>
 		</tr>
 		<tr class=btools>
 			<td colspan="2"><input id="submit" type="submit" value="发布测评"></td>

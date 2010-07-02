@@ -646,7 +646,7 @@ class ImgData_Balls extends ImgData {
      'fvwAAAAHdElNRQfTAwkUGho0tvl2AAAAtklEQVR4nGNgIBaoSg'.
      'mLKGpowfkGMty8AqJKpi4mRlAROR5ONg4JFUv3YHOIgDo/HwsT'.
      'q6yps29EsjZYREFIkJ2ZS9/OMzA20wEsIi8uKSZtaOPmH5WSFw'.
-     'YW0VRW07Vw8vCLSMguLwCL6FlaObp6B0TGZxSXQ9TouHv6+IXG'.
+     'YW0VRW07Vw8vCLfbuLwCL6FlaObp6B0TGZxSXQ9TouHv6+IXG'.
      'JGYWlpdDzNEKCgmPjkvLKS0vL4LYxWAen5SelV8OBNZQFxrZ5h'.
      'aC+GX2MDczMBh7pZakehkTHQ4AA0Am/jsB5gkAAAAASUVORK5C'.
      'YII=' ; 

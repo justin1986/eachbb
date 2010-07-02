@@ -1,8 +1,10 @@
 <?php
 include_once '../frame.php';
 include_once '../inc/user.class.php';
-var_dump($_SESSION['question_queue']);
 $user = User::current_user();
+if(!$user){
+	redirect('save_result_nologin.php');
+}
 if(! $test_id = intval($_SESSION['doing_test'])) die('invalid request!');
 $db = get_db();
 $db->execute("delete from eb_test_record where problem_id={$test_id} and user_id={$user->id}");
