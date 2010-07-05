@@ -3,10 +3,13 @@
 	<head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-CN>
-	<title>网趣宝贝</title>
+	<title>网趣宝贝-妈妈助手</title>
 	<?php
-		include_once '../frame.php';
+		include_once dirname(__FILE__).'/../frame.php';
 		css_include_tag('assistant'); 
+		use_jquery();
+		$db = get_db();
+		init_page_items('assistant_index');
 	?>
 </head>
 <body>
@@ -67,15 +70,15 @@
 		<div id="top2_t">
 			<div id="tt_l"></div>
 			<div id="tt_c">
-				<div id="ttc_a"><a href="#">准备怀孕</a></div>
+				<div id="ttc_a"><a href="?age=-2">准备怀孕</a></div>
 				<div class="ttc_hr"></div>
-				<div id="ttc_b"><a href="#">怀孕期</a></div>
+				<div id="ttc_b"><a href="?age=-1">怀孕期</a></div>
 				<div class="ttc_hr"></div>
-				<div id="ttc_c"><a href="#">0～1岁</a></div>
+				<div id="ttc_c"><a href="?age=1">0～1岁</a></div>
 				<div class="ttc_hr"></div>
-				<div id="ttc_d"><a href="#">1～2岁</a></div>
+				<div id="ttc_d"><a href="?age=2">1～2岁</a></div>
 				<div class="ttc_hr"></div>
-				<div id="ttc_e"><a href="#">2～3岁</a></div>
+				<div id="ttc_e"><a href="?age=3">2～3岁</a></div>
 				<a href="#">
 				<img id="ttc_f" src="/images/helper/t_1.jpg"/>
 				</a>
@@ -113,66 +116,52 @@
 						<div class="ht_l_t">课程助手连接</div>
 						<div class="ht_l_h"></div>
 						<div class="htl_pg_c">
+							<?php 
+								$sql = "select * from eb_category where category_type='assistant' and level=1";
+								$top_cates = $db->query($sql);
+								$sql = "select * from eb_category where category_type='assistant' and level=2";
+								$sub_cates = $db->query($sql);
+								$top_len = count($top_cates);
+								$sub_len = count($sub_cates);
+								for($i=0;$i<$top_len;$i++){
+							?>
 							<div class="ht_c_z">
 								<div class="ht_c_t">
 									<div class="htct_l"></div>
-									<div class="htct_t">助手分类导航类别</div>
+									<div class="htct_t"><?php echo $top_cates[$i]->name;?></div>
 									<div class="htct_b">
-										<div class="htct_ca">撒额的发生a</div>
-										<div class="htct_c">b</div>
-										<div class="htct_cc">c</div>
-										<div class="htct_ca">d</div>
-										<div class="htct_c">e</div>
-										<div class="htct_cc">f</div>
+										<?php
+										$itemp = 0; 
+										$var = "category_$i";
+										$$var = array();
+										for($j=0;$j<$sub_len;$j++){
+											if($sub_cates[$j]->parent_id != $top_cates[$i]->id) continue;
+											array_push($$var, $sub_cates[$j]->id);
+											$mod = $itemp % 3;
+											$itemp++;
+											switch ($mod) {
+												case 0:
+													$class="htct_ca";
+												break;
+												case 1:
+													$class="htct_c";
+												break;
+												case 2:
+													$class="htct_cc";
+												break;
+												default:
+													;
+												break;
+											}
+										?>
+										<div class="<?php echo $class;?>"><a href="/assistant/list.php?category_id=<?php echo $sub_cates[$i]->id;?>" title="<?php echo $sub_cates[$j]->name;?>"><?php echo $sub_cates[$j]->name;?></a></div>
+										<?php }?>
 									</div>
 								</div>
 							</div>
+							
 							<div class="htct_hr"></div>
-							<div class="ht_c_z">
-								<div class="ht_c_t">
-									<div class="htct_l"></div>
-									<div class="htct_t">助手分类导航类别</div>
-									<div class="htct_b">
-										<div class="htct_ca">撒额的发生a</div>
-										<div class="htct_c">b</div>
-										<div class="htct_cc">c</div>
-										<div class="htct_ca">d</div>
-										<div class="htct_c">e</div>
-										<div class="htct_cc">f</div>
-									</div>
-								</div>
-							</div>
-							<div class="htct_hr"></div>
-							<div class="ht_c_z">
-								<div class="ht_c_t">
-									<div class="htct_l"></div>
-									<div class="htct_t">助手分类导航类别</div>
-									<div class="htct_b">
-										<div class="htct_ca">撒额的发生a</div>
-										<div class="htct_c">b</div>
-										<div class="htct_cc">c</div>
-										<div class="htct_ca">d</div>
-										<div class="htct_c">e</div>
-										<div class="htct_cc">f</div>
-									</div>
-								</div>
-							</div>
-							<div class="htct_hr"></div>
-							<div class="ht_c_z">
-								<div class="ht_c_t">
-									<div class="htct_l"></div>
-									<div class="htct_t">助手分类导航类别</div>
-									<div class="htct_b">
-										<div class="htct_ca">撒额的发生a</div>
-										<div class="htct_c">b</div>
-										<div class="htct_cc">c</div>
-										<div class="htct_ca">d</div>
-										<div class="htct_c">e</div>
-										<div class="htct_cc">f</div>
-									</div>
-								</div>
-							</div>
-							<div class="htct_hr"></div>
+							<?php }?>
 							<div class="htctc_hr"></div>
 						</div>
 					</div>
@@ -266,16 +255,15 @@
 						<div class="h_pg_t"></div>
 						<div class="h_pg_c">
 							<div class="h_pg_cc">
-								<div class="ht_l_t">助手类别导航</div>
+								<div class="ht_l_t">助手链接</div>
 								<div class="ht_l_h"></div>
 								<div class="htl_pg_c">
-									<div class="htct_hr"></div>
-									<img class="htc_img" src="/images/class/l_pg_c.jpg"/>
-									<img class="htc_img" src="/images/class/l_pg_c.jpg"/>
+									<div <?php $pos="top_image";show_page_pos($pos,'link_i2')?>><img class="htc_img" src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : '/images/class/l_pg_c.jpg';?>" /></div>
+									<div ><img class="htc_img" src="<?php echo $pos_items[$pos]->image2 ?$pos_items[$pos]->image2 :'/images/class/l_pg_c.jpg';?>" /></div>
 									<div class="ht_c_z" style="height:53px;">
 										<div class="ht_c_t">
 											<div class="htct_l"></div>
-											<div class="htct_t"><a href="#">个漫长而辛苦的十月怀胎是个漫长而辛苦的别</a></div>
+											<div class="htct_t"<?php $pos="top_list";show_page_pos($pos,'link')?>><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href)?></div>
 										</div>
 									</div>
 								</div>
@@ -286,114 +274,43 @@
 				</div>
 			</div>
 			<div id="fr_c">
-				<div class="fc_l">
-					<div class="fc_t">
-						<div class="fct_l">网趣宝贝测评课程论坛热帖列表</div>
-						<div class="fct_r"><a href="#">更多&gt;&gt;</a></div>
+				<?php 
+				$c = 'a';
+				for($i=0;$i<6;$i++){
+				?>
+				<div class="fc_l" <?php echo "id='fct_$c'";?>>
+					<div class="fc_t" <?php echo "id='fc_$c'";?>>
+						<div class="fct_l" <?php echo "id='fct_l$c'";?>><?php echo $top_cates[$i]->name;?></div>
+						<div class="fct_r" <?php echo "id='fct_r$c'";?>><a href="list.php?category_id=<?php echo $top_cates[$i]->id;?>">更多&gt;&gt;</a></div>
 					</div>
 					<div class="fcl_l">
-						<div class="fci_a"><img src="/images/helper/peo.jpg"></div>
-						<div class="fci_b"><img src="/images/helper/peo.jpg"></div>
+						<div class="fci_a"<?php $pos = "list_image_{$i}_a";show_page_pos($pos,'link_i')?>><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
+						<div class="fci_b"<?php $pos = "list_image_{$i}_b";show_page_pos($pos,'link_i')?>><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
 					</div>
 					<div class="fcl_r">
-						<?php for($i=0;$i<7;$i++){?>
+						<?php
+						$var = "category_$i";
+						$ids = implode(',', $$var);
+						$sql = "select a.id,a.title,b.name from eb_assistant a left join eb_category b on a.category_id = b.id where a.is_adopt=1 and a.category_id in({$ids})";
+						$valid_ages=array(-2,-1,1,2,3);
+						if(in_array($_GET['age'], $valid_ages)){
+							$sql .=" and age=" .$_GET['age'];
+						}
+						$sql .=" order by a.priority,created_at desc limit 7";
+						$assistants = $db->query($sql);
+						$assistants || $assistants = array(); 
+						foreach($assistants as $assistant){?>
 						<div class="fcr_c">
 							<div class="fcrc_d"></div>
-							<div class="fcrc_c">douyoun不好阿斯多夫</div>
+							<div class="fcrc_c">[<?php echo $assistant->name;?>] <a href="assistant.php?id=<?php echo $assistant->id;?>" title="<?php echo $assistant->title?>" ><?php echo $assistant->title?></a></div>
 						</div>
 						<?php  }?>
 					</div>
 				</div>
-				<div class="fc_l"  id="fct_b">
-					<div class="fc_t" id="fc_b">
-						<div class="fct_l" id="fct_lb">网趣宝贝测评课程论坛热帖列表</div>
-						<div class="fct_r" id="fct_rb"><a href="#">更多&gt;&gt;</a></div>
-					</div>
-					<div class="fcl_l">
-						<div class="fci_a"><img src="/images/helper/peo.jpg"></div>
-						<div class="fci_b"><img src="/images/helper/peo.jpg"></div>
-					</div>
-					<div class="fcl_r">
-						<?php for($i=0;$i<7;$i++){?>
-						<div class="fcr_c">
-							<div class="fcrc_d"></div>
-							<div class="fcrc_c">douyoun不好阿斯多夫</div>
-						</div>
-						<?php }?>
-					</div>
-				</div>
-				<div class="fc_l"  id="fct_c">
-					<div class="fc_t"  id="fc_c">
-						<div class="fct_l"  id="fct_lc">网趣宝贝测评课程论坛热帖列表</div>
-						<div class="fct_r"  id="fct_rc"><a href="#">更多&gt;&gt;</a></div>
-					</div>
-					<div class="fcl_l">
-						<div class="fci_a"><img src="/images/helper/peo.jpg"></div>
-						<div class="fci_b"><img src="/images/helper/peo.jpg"></div>
-					</div>
-					<div class="fcl_r">
-						<?php for($i=0;$i<7;$i++){?>
-						<div class="fcr_c">
-							<div class="fcrc_d"></div>
-							<div class="fcrc_c">douyoun不好阿斯多夫</div>
-						</div>
-						<?php  }?>
-					</div>
-				</div>
-				<div class="fc_l"   id="fct_d">
-					<div class="fc_t"  id="fc_d">
-						<div class="fct_l"  id="fct_ld">网趣宝贝测评课程论坛热帖列表</div>
-						<div class="fct_r"  id="fct_rd"><a href="#">更多&gt;&gt;</a></div>
-					</div>
-					<div class="fcl_l">
-						<div class="fci_a"><img src="/images/helper/peo.jpg"></div>
-						<div class="fci_b"><img src="/images/helper/peo.jpg"></div>
-					</div>
-					<div class="fcl_r">
-						<?php for($i=0;$i<7;$i++){?>
-						<div class="fcr_c">
-							<div class="fcrc_d"></div>
-							<div class="fcrc_c">douyoun不好阿斯多夫</div>
-						</div>
-						<?php }?>
-					</div>
-				</div>
-				<div class="fc_l"   id="fct_le">
-					<div class="fc_t"  id="fct_re">
-						<div class="fct_l"  id="fct_le">网趣宝贝测评课程论坛热帖列表</div>
-						<div class="fct_r"  id="fct_le"><a href="#">更多&gt;&gt;</a></div>
-					</div>
-					<div class="fcl_l">
-						<div class="fci_a"><img src="/images/helper/peo.jpg"></div>
-						<div class="fci_b"><img src="/images/helper/peo.jpg"></div>
-					</div>
-					<div class="fcl_r">
-						<?php for($i=0;$i<7;$i++){?>
-						<div class="fcr_c">
-							<div class="fcrc_d"></div>
-							<div class="fcrc_c">douyoun不好阿斯多夫</div>
-						</div>
-						<?php }?>
-					</div>
-				</div>
-				<div class="fc_l"  id="fct_f">
-					<div class="fc_t"  id="fc_f">
-						<div class="fct_l"  id="fct_lf">网趣宝贝测评课程论坛热帖列表</div>
-						<div class="fct_r" id="fct_rf"><a href="#">更多&gt;&gt;</a></div>
-					</div>
-					<div class="fcl_l">
-						<div class="fci_a"><img src="/images/helper/peo.jpg"></div>
-						<div class="fci_b"><img src="/images/helper/peo.jpg"></div>
-					</div>
-					<div class="fcl_r">
-						<?php for($i=0;$i<7;$i++){?>
-						<div class="fcr_c">
-							<div class="fcrc_d"></div>
-							<div class="fcrc_c">douyoun不好阿斯多夫</div>
-						</div>
-						<?php }?>
-					</div>
-				</div>
+				<?php 
+					$c++;
+				}
+				?>
 			</div>
 			<div id="fr_b">
 				<div id="frb_tz">
@@ -407,15 +324,13 @@
 				</div>
 				<?php for($w=0;$w<2;$w++){?>
 				<div class="frb_z">
-					<?php for($j=0;$j<5;$j++){?>
+					<?php for($j=0;$j<5;$j++){
+						$pos= "bottom_list_{$w}_$j";
+					?>
 					<div class="frb_zz">
 						<div class="frbzz_d"></div>
-						<div class="frbzz_c">
-							<a href="#">
-								<font  style="color:#888893;text-decoration:none;">[</font>
-								<font>hello</font>
-								<font  style="color:#000000;text-decoration:none;">]
-								</font> 撒旦法发射阿斯多夫</a>
+						<div class="frbzz_c"<?php show_page_pos($pos,'link')?>>
+							<?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href)?>
 						</div>
 					</div>
 					<?php }?>

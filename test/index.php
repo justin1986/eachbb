@@ -6,7 +6,7 @@
  ?>
 <meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <meta http-equiv=Content-Language content=zh-CN>
-<title>课程</title>
+<title>特色测评</title>
 <?php
 	use_jquery();
 	css_include_tag('test','top_inc/test_blue.top','top_inc/test_left');
@@ -17,9 +17,9 @@
 <body>
 <div id="ibody">
 	<div id="fbody">
-		<?php include_once('../inc/top_blue.inc.php'); ?>
+		<?php include_once(dirname(__FILE__).'/../inc/top_blue.inc.php'); ?>
 		<div id="content">
-			<?php include_once('../inc/left_inc.php'); ?>
+			<?php include_once(dirname(__FILE__).'/../inc/left_inc.php'); ?>
 			<div id="c_r">
 				<div id="cr_flash">
 					<div id="cr_banner">
@@ -79,11 +79,11 @@
 					<div class="crb_c"<?php show_page_pos($pos,'link_d_i')?> id="crbc_<?php echo $i; ?>" style="<?php if($i == 0){ echo 'display:inline;';}else{ echo 'display:none;';} ?>">
 							<div class="crbc_a">
 								<a href="#">
-									<img src="/images/test/tr_a.jpg">
+									<img src="<?php echo $pos_items[$pos]->image1?>">
 								</a>
 							</div>
 							<div class="crbci_t">
-								<a href="#"><?php echo $i; ?>前前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前前前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前前前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密秘密秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密秘密秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密秘密</a>
+								<?php echo_href($pos_items[$pos]->description, $pos_items[$pos]->href)?>
 							</div>
 					</div>
 					<?php } ?>
@@ -110,7 +110,7 @@
 							 ?>
 							<li>
 								<div class="frzcd"></div>
-								<div class="frzc_c"><a href="#"><font>[知识榜单]</font> 好啊好哦啊粉色的发生</a></div>
+								<div class="frzc_c"<?php show_page_pos($pos,'link')?>><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href)?></div>
 							</li>
 							<?php
 							}?>
@@ -124,10 +124,12 @@
 					<div class="cfz_cz">
 						<ul>
 							<?php
-							 for($i=0;$i<7;$i++){ ?>
+							 for($i=0;$i<7;$i++){
+								$pos = "left_list_$i"; 
+							 ?>
 							<li>
 								<div class="frzcd"></div>
-								<div class="frzc_c"><a href="#"><font>[知识榜单]</font> 好啊好哦啊粉色的发生</a></div>
+								<div class="frzc_c"<?php show_page_pos($pos,'link')?>><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href)?></div>
 							</li>
 							<?php
 							}?>

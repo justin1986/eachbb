@@ -7,7 +7,7 @@
 	$teach->find($id);
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-CN>
@@ -73,6 +73,10 @@
 			<td width="85%" align="left"><input type="text" name="post[priority]" value="<?php if($teach->priority!=100) echo $teach->priority;?>" class="number"></td>
 		</tr>
 		<tr class=tr4>
+			<td align="center" width="15%">成长关键词</td>
+			<td width="85%" align="left"><input type="text" name="post[keyword]" value="<?php echo $teach->keyword;?>"></td>
+		</tr> 
+		<tr class=tr4>
 			<td align="center">介绍：</td>
 			<td align="left"><?php show_fckeditor('post[description]','Admin',false,"120",$teach->description);?></td>
 		</tr>
@@ -112,6 +116,10 @@
 			<td align="center">宝宝玩具推荐：</td>
 			<td align="left"><?php show_fckeditor('post[toy]','Admin',false,"120",$teach->toy);?></td>
 		</tr>
+		<tr class=tr4>
+			<td align="center">妈妈温馨反馈：</td>
+			<td align="left"><?php show_fckeditor('post[recommand_comment]','Admin',false,"120",$teach->recommand_comment);?></td>
+		</tr>
 		<tr class=btools>
 			<td colspan="2"><input id="submit" type="submit" value="发布测评"></td>
 		</tr>
@@ -120,7 +128,6 @@
 </div>
 </form>
 </body>
-</html>
 
 <script>
 $(function(){
@@ -132,3 +139,4 @@ $(function(){
 	});
 });
 </script>
+</html>

@@ -4,6 +4,7 @@ include_once '../inc/user.class.php';
 $user = User::current_user();
 if(!$user){
 	redirect('save_result_nologin.php');
+	die();
 }
 if(! $test_id = intval($_SESSION['doing_test'])) die('invalid request!');
 $db = get_db();
@@ -19,4 +20,4 @@ foreach ($_SESSION['question_queue'] as $item){
 	$test_record->question_type = $item['question_type'];
 	$test_record->save();
 }
-redirect('/test/test_result.php?id=' .$test_id);
+redirect('/test/test_result.php?test_id=' .$test_id);

@@ -11,7 +11,6 @@ $(function(){
 	});
 	
 	$('#admin_edit_div img').live('click',function(e){
-		alert('ok');
 		e.preventDefault();
 		var $this = $(this);
 		parent.$.fn.colorbox({
