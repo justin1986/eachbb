@@ -72,7 +72,9 @@ body{width:970PX; margin: 0 auto; }
 #pric_l{width:1px; height:175px; background:#ffffff; float:left; display:inline;}
 #pric_rl{width:1px; height:151px; background:#ffffff; float:right; display:inline;}
 
-#cr_top{width:750px; height:363px; background:#000; line-height:363px; text-align:center; font-size:72px; color:#ffffff; float:right; display:inline;}
+#cr_top{width:750px; height:363px;  float:right; display:inline;}
+#cr_flash{width:510px; height:363px; background:#000; line-height:363px;  font-size:72px; color:#ffffff; text-align:center; float:left;}
+
 #bg_hr{width:958px; height:4px; margin-top:17px; margin-left:10px; background:url(../images/class/b_hr.jpg) repeat-x; float:left; display:inline;}
 
 .hlc_t{width:200px; height:4px; margin-left:5px; margin-top:10px; font-size:0px; line-height:0px; background:url(../images/helper/lb_t.jpg) no-repeat; float:left; display:inline;}
