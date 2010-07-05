@@ -14,6 +14,8 @@
 	    case "video":
 	        $category_name = "视频";
 			break;
+	    case "assistant":
+	    	$category_name = "妈妈助手";
 		default:
 			$category_name = "其他";
 	}

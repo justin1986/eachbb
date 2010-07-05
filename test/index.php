@@ -79,11 +79,11 @@
 					<div class="crb_c"<?php show_page_pos($pos,'link_d_i')?> id="crbc_<?php echo $i; ?>" style="<?php if($i == 0){ echo 'display:inline;';}else{ echo 'display:none;';} ?>">
 							<div class="crbc_a">
 								<a href="#">
-									<img src="/images/test/tr_a.jpg">
+									<img src="<?php echo $pos_items[$pos]->image1?>">
 								</a>
 							</div>
 							<div class="crbci_t">
-								<a href="#"><?php echo $i; ?>前前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前前前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前前前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密秘密秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密秘密秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密秘密</a>
+								<?php echo_href($pos_items[$pos]->description, $pos_items[$pos]->href)?>
 							</div>
 					</div>
 					<?php } ?>
