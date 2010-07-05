@@ -1,4 +1,4 @@
-﻿body{width:970PX; margin: 0 auto;}
+body{width:970PX; margin: 0 auto;}
 #ibody{width:970px; overflow:hidden; margin:0;}
 #top_banner{width:970px; height:83px; margin-top:10px; font-size:13px; color:#ffffff; float:left; display:inline;}
 	#logo{width:224px; height:83px; background:url(../images/bbs/loginb.jpg) no-repeat; float:left;}
@@ -50,11 +50,11 @@
 #ttc_d{width:108px; height:39px; line-height:39px; text-align:center; float:left; display:inline;}
 #ttc_e{width:108px; height:39px; line-height:39px; text-align:center; float:left; display:inline;}
 #tt_c a{font-size:20px;  font-weight:600; color:#ffffff; text-decoration:none;}
-#ttc_f{width:90px; height:30px; margin-top:4px; margin-left:16px;  background:url(../images/helper/t_1.jpg) no-repeat; float:left; display:inline;}
-#ttc_g{width:90px; height:30px; margin-top:4px; margin-left:6px;  background:url(../images/helper/t_2.jpg) no-repeat; float:left; display:inline;}
-#ttc_h{width:90px; height:30px; margin-top:4px; margin-left:6px;  background:url(../images/helper/t_3.jpg) no-repeat; float:left; display:inline;}
-#ttc_j{width:90px; height:30px; margin-top:4px; margin-left:6px;  background:url(../images/helper/t_4.jpg) no-repeat; float:left; display:inline;}
-#t2b_l{width:95px; height:55px; margin-left:10px; font-size:12px; line-height:55px; color:#98D067; float:left; display:inline;}
+#ttc_f{width:90px; height:30px; margin-top:4px; margin-left:16px; border:0px solid red; float:left; display:inline;}
+#ttc_g{width:90px; height:30px; margin-top:4px; margin-left:6px;  border:0px solid red; float:left; display:inline;}
+#ttc_h{width:90px; height:30px; margin-top:4px; margin-left:6px;  border:0px solid red; float:left; display:inline;}
+#ttc_j{width:90px; height:30px; margin-top:4px; margin-left:6px;  border:0px solid red; float:left; display:inline;}
+#t2b_l{width:95px; height:55px; margin-left:10px; font-size:12px; border:0px solid red; line-height:55px; color:#98D067; float:left; display:inline;}
 #t2b_r{width:850px; height:55px; margin-left:10px; float:left; display:inline;}
 #t2b_hr{width:846px; height:10px; margin-left:3px; margin-top:10px; background:url(../images/helper/h.jpg) repeat-x; float:left; display:inline;}
 #t2bv_a{width:45px; height:12px; margin-top:5px; float:left; display:inline;}
@@ -84,14 +84,16 @@
 .ht_l_t{width:150px; height:20px; margin-top:5px; margin-left:16px; line-height:20px; color:#FF5227; font-size:12px; font-weight:bold; float:left; display:inline;}
 .ht_l_h{width:180px; height:1px; margin-left:6px; margin-top:2px; font-size:0px; line-height:0px; background:url(../images/helper/h_d.jpg) repeat-x; float:left; display:inline;}
 .htl_pg_c{width:180px; margin-bottom:6px; margin-top:10px; margin-left:6px; background:#F5F5F5; float:left; display:inline;}
+.htc_img{width:176px; height:61px; margin-top:10px; float:left; display:inline;}
 .ht_c_z{width:180px; height:65px; margin-top:10px; float:left; display:inline;}
 .ht_c_t{width:178px; height:15px; float:left; display:inline;}
 .htct_l{width:7px; height:7px; margin-left:10px; margin-top:3px; line-height:0px; font-size:0px; background:url(../images/helper/l_j.jpg) no-repeat; float:left; display:inline;}
-.htct_t{height:15px; margin-left:5px; line-height:15px; font-size:12px; font-weight:bold; color:#7C7C7C; float:left; display:inline;}
+.htct_t{width:150px; height:15px; margin-left:5px; line-height:15px; font-size:12px; font-weight:bold; color:#7C7C7C; float:left; display:inline;}
+.htct_t a{font-size:12px; color:#666666; font-weight:normal; text-decoration: none;}
 .htct_b{width:160px; height:50px; margin-left:13px; font-size:12px; float:left; display:inline;}
 .htct_c{width:50px; height:12px; margin-toP:10px; color:#999999; overflow:hidden; border-right:1px solid #E7E7E7; border-left:1px solid #C7C7C7; text-align:center; float:left; display:inline;}
-.htct_cc{width:50px; height:12px; margin-toP:10px; color:#999999; overflow:hidden;  border-left:1px solid #C7C7C7; text-align:center; float:left; display:inline;}
-.htct_ca{width:50px; height:12px; margin-toP:10px; color:#999999; overflow:hidden;  border-right:1px solid #E7E7E7;  text-align:center; float:left; display:inline;}
+.htct_cc{width:50px; height:14px; margin-toP:10px; color:#999999; overflow:hidden;  border-left:1px solid #C7C7C7; text-align:center; float:left; display:inline;}
+.htct_ca{width:50px; height:14px; margin-toP:10px; color:#999999; overflow:hidden;  border-right:1px solid #E7E7E7;  text-align:center; float:left; display:inline;}
 .htct_hr{width:160px; height:1px; margin-bottom:1px;  margin-left:10px; margin-top:5px; background:url(../images/helper/l_d.jpg) repeat-x; font-size:0px; line-height:0px; float:left; display:inline;}
 .htctc_hr{width:160px; height:10px;  margin-left:10px; margin-top:5px; font-size:0px; line-height:0xp; float:left; display:inline;}
 
@@ -129,7 +131,7 @@
 
 .fc_l{width:336px; height:192px; margin:15px; margin-top:15px; margin-bottom:0px; border:3px solid #FADCB5; float:left; display:inline; }
 .fc_t{width:336px; height:26px; background:url(../images/helper/h_1.jpg) repeat-x; float:left; display:inline;}
-.fct_l{width:210px; height:26px; margin-left:10px; font-size:14px; color:#FF6600; line-height:26px; font-weight:600; float:left; display:inline;}
+.fct_l{width:230px; height:26px; margin-left:10px; font-size:14px; color:#FF6600; line-height:26px; font-weight:600; float:left; display:inline;}
 .fct_r{width:50px; height:26px; line-height:26px; float:right; display:inline;}
 .fct_r a{ font-size:12px; color:#FF6600; text-decoration:none;}
 .fcl_l{width:88px; height:164px; float:left; display:inline;}
@@ -182,19 +184,8 @@
 .frb_zz{width:331px; height:20px; float:left; display:inline; }
 .frbzz_d{width:3px; height:3px; margin-top:8px; font-size:0px; line-height:0px; background:#888888; float:left; display:inline;}
 .frbzz_c{width:310px; height:20px; margin-left:6px; overflow:hidden; float:left; display:inline;}
-.frbzz_c a{text-decoration:none;  font-size:14px; font-weight:600; line-height:20px; color:#513351; }
+.frbzz_c a{text-decoration:none;  font-size:14px; font-weight:600; line-height:20px; color:#000000; }
 .frbzz_c a font{color:#888893; text-decoration:underline;}
-#gd{width:26px; height:14px; float:left; display:inline;}
-#gd a{text-decoration:none;}
-
-
-
-
-
-
-
-
-
 
 
 #bg_hr{width:958px; height:4px; margin-top:25px; margin-left:10px; background:url(../images/class/b_hr.jpg) repeat-x; float:left; display:inline;}
