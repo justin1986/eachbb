@@ -17,6 +17,7 @@ body{width:970PX; margin: 0 auto; }
 #crf_t{width:280px; height:30px; margin-left:15px; margin-top:5px; font-size:16px; font-weight:bold; color:#000; float:left; display:inline;}
 #crf_t font{ font-size:16px; color:#EC4610; font-weight:bold;}
 .crf_c{width:290px; height:185px; margin-left:14px; overflow:hidden; font-size:13px; color:#666666; line-height:18px; float:left; display:inline;}
+	.crf_c a{color:#666666; text-decoration: none;}
 .crf_ti{width:77px; height:60px; margin-right:5px; border:6px solid #E7E7DF; float:left; display:inline; }
 .crf_ti img{width:73px; height:56px; margin-left:2px; margin-top:2px; float:left; display:inline;}
 .crg_tt{width:190px; height:25px;  line-height:20px; float:left; display:inline;}

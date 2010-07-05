@@ -630,4 +630,5 @@ function echo_href($title,$href,$max_len=0,$html_params=null){
 		$display = $title;
 	}
 	$out .=">$display</a>";
+	echo $out;
 }
