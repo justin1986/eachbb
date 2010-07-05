@@ -73,7 +73,9 @@ body{width:970PX; margin: 0 auto; }
 #pric_rl{width:1px; height:151px; background:#ffffff; float:right; display:inline;}
 
 #cr_top{width:750px; height:363px;  float:right; display:inline;}
-#cr_flash{width:510px; height:363px; background:#000; line-height:363px;  font-size:72px; color:#ffffff; text-align:center; float:left;}
+#cr_flash{width:500px; height:363px; background:#000; line-height:363px;  font-size:72px; color:#ffffff; text-align:center; float:left;}
+#img_flash{width:235px; height:363px; float:right;}
+#img_flash img{width:235px; height:363px; border:0px solid red;}
 
 #bg_hr{width:958px; height:4px; margin-top:17px; margin-left:10px; background:url(../images/class/b_hr.jpg) repeat-x; float:left; display:inline;}
 
