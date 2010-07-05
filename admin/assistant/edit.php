@@ -4,7 +4,7 @@
 	judge_role();
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-CN>
@@ -65,12 +65,14 @@
 			<tr class="tr4">
 				<td class="td1">年龄段</td>
 				<td>
-					<select name="news[age]">
+					<select name="news[age]" id="news_age">
+						<option value="-2">准备怀孕</option>
+						<option value="-1">怀孕中</option>
 						<option value="1">0~1岁</option>
 						<option value="2">1～2岁</option>
 						<option value="3">2～3岁</option>
 					</select>
-					<script type="text/javascript">$('#sel_news_type').val(<?php echo "'$news->news_type'"?>);</script>
+					<script type="text/javascript">$('#news_age').val(<?php echo "'$news->age'"?>);</script>
 				</td>
 			</tr>
 			
