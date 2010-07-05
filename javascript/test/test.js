@@ -12,7 +12,6 @@ $(function(){
 		$('.crf_c').hide();
 		$('#cr_'+selected).show();
 	},function(){});
-	
 	$('.crb_cc').hover(function(e){
 		e.preventDefault();
 		var selected=$('.crb_cc').index($(this));
