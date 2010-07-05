@@ -89,4 +89,5 @@ if($type == 'login'){
 	if(!$result->result){
 		die($result->error_msg);
 	}
+	User::login($name, $password);
 }

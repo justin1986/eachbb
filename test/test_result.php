@@ -12,6 +12,7 @@ class Report {
 $test_id = intval($_GET['test_id']);
 $user = User::current_user();
 $sql = "select sum(score) as score, question_type from eb_test_record  where problem_id={$test_id} and user_id={$user->id} group by question_type";
+echo $sql;
 $db = get_db();
 $results = $db->query($sql);
 !$results && $results = array();
@@ -101,7 +102,7 @@ foreach ($results as $result){
 							</div>
 						</div>
 						<?php }?>
-						<div id="btn_recommand"><a href="">回顾题目</a></div>
+						<div id="btn_recommand"><a href="/test/review.php?id=<?php echo $test_id;?>">回顾题目</a></div>
 					</div>
 				  	<div id="c_hr"></div>
 					<div id="recommand_container">

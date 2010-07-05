@@ -19,4 +19,4 @@ foreach ($_SESSION['question_queue'] as $item){
 	$test_record->question_type = $item['question_type'];
 	$test_record->save();
 }
-redirect('/test/test_result.php?id=' .$test_id);
+redirect('/test/test_result.php?test_id=' .$test_id);
