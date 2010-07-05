@@ -66,7 +66,10 @@
 				<div id="pg_a"></div>
 			</div>
 			<div id="c_r">
-				<div id="cr_top"> flash </div>
+				<div id="cr_top">
+					<div id="cr_flash">flash</div>
+					<div id="img_flash"></div>				
+				</div>
 				<div id="crcb_t">
 					<div class="cr_a" ><a href="#"  style="color:#ffffff;">我的宝宝</a></div>
 					<div class="cr_a" ><a href="#" >我的宝宝</a></div>
