@@ -1,4 +1,4 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <?php
 	include_once('../frame.php');
 	$id =intval(trim($_REQUEST['id']));
@@ -60,16 +60,7 @@
 							<div class="hlcb_t"><font>下载次数：</font>1232</div>
 						</div>
 					</div>
-					<div class="hlcb_z">
-						<div class="hlcb_l">
-							<div class="r">2</div>
-						</div>
-						<div class="hlcb_r">
-							<div class="hlcb_t">按时法十分</div>
-							<div class="hlcb_t">上传者：哈哈</div>
-							<div class="hlcb_t"><font>下载次数：</font>1232</div>
-						</div>
-					</div>
+					
 					<div class="hlcb_z">
 						<div class="hlcb_l">
 							<div class="r">3</div>
