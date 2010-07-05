@@ -68,7 +68,7 @@
 			<div id="c_r">
 				<div id="cr_top">
 					<div id="cr_flash">flash</div>
-					<div id="img_flash"></div>				
+					<div id="img_flash"><img src="/images/class/c_pg_a.jpg"/></div>				
 				</div>
 				<div id="crcb_t">
 					<div class="cr_a" ><a href="#"  style="color:#ffffff;">我的宝宝</a></div>
