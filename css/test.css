@@ -10,7 +10,7 @@ body{width:970PX; margin: 0 auto; }
 
 #cr_flash{width:741px; height:265px; overflow:hidden; border-left:1px solid #71CAE4; border-bottom:1px solid #71CAE4; border-top:2px solid #71CAE4; border-right:2px solid #71CAE4;  float:right; display:inline;}
 #cr_banner{width:739px; height:263px;  overflow:hidden; border:1px solid #0086F8; float: left;}
-#cr_banner a img{width:61px; height:61px; margin-top:-1px; right:156px; line-height:0px; border:0px solid red; float:right; display:inline;}
+#cr_banner a img{width:61px; height:61px; margin-right:-4px; margin-top:-1px; line-height:0px; border:0px solid red; float:right; display:inline;}
 
 #crf_l{width:410px; height:260px; margin-left:2px; margin-top:2px; font-size:52px; color:#ffffff; text-align:center; line-height:240px;  background:#000000; float:left; display:inline;}
 #crf_r{width:315px; height:250px; margin-top:-50px; margin-left:5px;  float:left; display:inline;}
