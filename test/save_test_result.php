@@ -4,6 +4,7 @@ include_once '../inc/user.class.php';
 $user = User::current_user();
 if(!$user){
 	redirect('save_result_nologin.php');
+	die();
 }
 if(! $test_id = intval($_SESSION['doing_test'])) die('invalid request!');
 $db = get_db();
