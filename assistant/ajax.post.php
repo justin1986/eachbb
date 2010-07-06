@@ -21,7 +21,7 @@
 		$user = User::current_user();
 		if(!$user) die('请先登录!');
 		$news_id = intval($_POST['news_id']);
-		$news = new table_class('eb_news');
+		$news = new table_class('eb_assistant');
 		$news->find($news_id);
 		if(!$news->id){
 			die('invalid param');
@@ -33,7 +33,7 @@
 		}
 		$collect = new table_class('eb_collection');
 		$collect->created_at = now();
-		$collect->resource_type = 'news';
+		$collect->resource_type = 'assistant';
 		$collect->resource_id = $news->id;
 		$collect->user_id = $user->id;
 		$collect->save();
