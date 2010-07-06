@@ -8,9 +8,10 @@
 	}
 	$age=intval($_GET['age']);
 	$month=intval($_GET['month']);
+	$month = $month % 12;
 	$valid_age = array(1,2,3);
 	$age = in_array($age,$valid_age) ? $age : 1;
-	$month = 1 <= $month && $month <= 36 ? $month=$month+1 : 1;
+	$month = 0 <= $month && $month <= 11 ? $month=$month+1 : 1;
 	$db = get_db();
 	$column = $db->query("SELECT id,title,click_count,short_title,category_id,description,content,created_at,last_edited_at,video_photo_src,keywords,publisher FROM eb_news e where id=".$id." order by last_edited_at desc");
 	?>
@@ -112,7 +113,7 @@
 				</div>
 				<div id=month_l></div>
 				<div class=month_c id="month_0" style="<?php if($age==1)echo "display:inline;"; ?>">
-					<div class=month style="margin-left:53px;">1月</div>
+					<div class="month" style="margin-left:53px;">1月</div>
 					<div class=month>2月</div>
 					<div class=month>3月</div>
 					<div class=month>4月</div>
@@ -157,6 +158,7 @@
 				<?php
 					$db=get_db();
 					$sql="SELECT id,title,description,img_url,key_teach,big_action,detail_action,knowledge,language,music,social_behavior,book,toy,age FROM eb_teach e where is_adopt=1 and month={$month} and age={$age} order by create_time desc limit 1;";
+					echo $sql;
 					$teach=$db->query($sql);
 				?>
 				<div id=key>
@@ -173,7 +175,7 @@
 					<div class=c_title style="background:#B4E888;">
 						<div class=context style="color:#72aa1d;">宝宝关键期指导</div>	
 					</div>
-					<div class=piccontent><a href="<?php echo get_news_url($teach[0]);?>" title="<?php echo $teach[0]->key_teach;?>"><?php echo $teach[0]->key_teach;?></a></div>
+					<div class=piccontent><a href="<?php echo get_news_url($teach[0]);?>" title="<?php echo $teach[0]->key_teach;?>"><?php echo strip_tags($teach[0]->key_teach);?></a></div>
 				</div>
 				<div class=content>
 					<div class=c_title style="background:#93d7eb;">
