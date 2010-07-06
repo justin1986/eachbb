@@ -110,10 +110,10 @@
 					<div class="cr_title<?php if($age == 1){ echo " selected" ;}?>" id="cr_t_1">0-1岁</div>
 					<div class="cr_title<?php if($age == 2){ echo " selected" ;}?>" id="cr_t_2">1-2岁</div>
 					<div class="cr_title<?php if($age == 3){ echo " selected" ;}?>" id="cr_t_3">2-3岁</div>
-					<input type="hidden" id="age_val"/>
+					<input type="hidden" id="age_val" value="<?php echo $age;?>">
 				</div>
 				<div id=month_l></div>
-				<div class=month_c id="month_0" style="<?php if($age == 1)echo "display:inline;"; ?>">
+				<div class=month_c id="month_0" style="<?php if($age == 1){ echo "display:inline;";} ?>">
 					<div class="month" style="margin-left:53px; <?php if($mon == 1) echo "background: url(/images/info/month_bg_red.jpg) no-repeat;";?>">1月</div>
 					<div class="month" style="<?php if($mon == 2){ echo "background: url(/images/info/month_bg_red.jpg) no-repeat;";}?>">2月</div>
 					<div class="month" style="<?php if($mon == 3){ echo "background: url(/images/info/month_bg_red.jpg) no-repeat;";}?>">3月</div>
@@ -127,7 +127,7 @@
 					<div class="month" style="<?php if($mon == 11){ echo "background: url(/images/info/month_bg_red.jpg) no-repeat;";}?>">11月</div>
 					<div class="month" style="<?php if($mon == 12){ echo "background: url(/images/info/month_bg_red.jpg) no-repeat;";}?>">12月</div>
 				</div>
-				<div class=month_c id="month_1"  style="<?php if($age == 2)echo "display:inline;"; ?>">
+				<div class=month_c id="month_1"  style="<?php if($age == 2){ echo "display:inline;";} ?>">
 					<div class="month" style="margin-left:53px; <?php if($mon == 13){ echo "background: url(/images/info/month_bg_red.jpg) no-repeat;";}?>">13月</div>
 					<div class="month" style="<?php if($mon == 14){ echo "background: url(/images/info/month_bg_red.jpg) no-repeat;";}?>">14月</div>
 					<div class="month" style="<?php if($mon == 15){ echo "background: url(/images/info/month_bg_red.jpg) no-repeat;";}?>">15月</div>
@@ -141,7 +141,7 @@
 					<div class="month" style="<?php if($mon == 23){ echo "background: url(/images/info/month_bg_red.jpg) no-repeat;";}?>">23月</div>
 					<div class="month" style="<?php if($mon == 24){ echo "background: url(/images/info/month_bg_red.jpg) no-repeat;";}?>">24月</div>
 				</div>
-				<div class=month_c id="month_2" style="<?php if($age == 3)echo "display:inline;"; ?>">
+				<div class=month_c id="month_2" style="<?php if($age == 3){ echo "display:inline;";} ?>">
 					<div class="month" style="margin-left:53px; <?php if($mon == 25){ echo "background: url(/images/info/month_bg_red.jpg) no-repeat;";}?>">25月</div>
 					<div class="month" style="<?php if($mon == 26){ echo "background: url(/images/info/month_bg_red.jpg) no-repeat;";}?>">26月</div>
 					<div class="month" style="<?php if($mon == 27){ echo "background: url(/images/info/month_bg_red.jpg) no-repeat;";}?>">27月</div>
