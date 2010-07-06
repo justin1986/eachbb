@@ -2,7 +2,7 @@
 <html>
 <head>
 <?php
-	include_once('../frame.php');
+	include_once(dirname(__FILE__).'/../frame.php');
  ?>
 <meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <meta http-equiv=Content-Language content=zh-CN>

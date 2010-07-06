@@ -6,16 +6,17 @@
 <title>课程</title>
 <link href="./css/class_s.css" rel="stylesheet" type="text/css" />
 <?php 
-	include_once('../frame.php');
+	include_once(dirname(__FILE__).'/../frame.php');
 	use_jquery();
 	css_include_tag('class_s');
 	js_include_tag('class/class_s');
+	init_page_items('course_index');
 ?>
 </head>
 <body>
 <div id="ibody">
 	<div id="fbody">
-		<?php include_once('../inc/top_class.php'); ?>
+		<?php include_once(dirname(__FILE__).'/../inc/top_class.php'); ?>
 		<div id="content">
 			<div id="c_l">
 				<div id="l_pho">
@@ -68,7 +69,7 @@
 			<div id="c_r">
 				<div id="cr_top">
 					<div id="cr_flash">flash</div>
-					<div id="img_flash"><img src="/images/class/c_pg_a.jpg"/></div>				
+					<div id="img_flash"<?php $pos="top_image"; show_page_pos($pos,'link_i')?>><a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/class/c_pg_a.jpg';?>" border="0"/></a></div>				
 				</div>
 				<div id="crcb_t">
 					<div class="cr_a" ><a href="#"  style="color:#ffffff;">我的宝宝</a></div>
@@ -81,7 +82,7 @@
 					<div class="crc_pg">
 						<div class="crb_img">
 							<?php for($i = 0; $i < 4; $i++){ ?>
-							<img class="banner" id="banner_<?php echo $i;?>" style="<?php if($i == 0){echo 'display:inline;';}else{ echo 'display:none;'; } ?>" src="/images/class/l_pg_c.jpg">
+							<div class="banner"<?php $pos="middle_image_$i";show_page_pos($pos,'link_i');?> id="banner_<?php echo $i;?>" style="<?php if($i == 0){echo 'display:inline;';}else{ echo 'display:none;'; } ?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : '/images/class/l_pg_c.jpg';?>" /></div>
 							<?php } ?>
 							<div id="num_banner">
 								<div class="num">4</div>
@@ -95,23 +96,19 @@
 							<div class="crb_title">
 								推荐<font>课程</font>
 							</div>
-							<?php for($j = 0; $j < 5; $j++){?>
-							<div class="class_val" id="class_val_<?php echo $j;?>" style="<?php if($j==0){ echo 'display:inline;';} ?>">
-							<script type="text/javascript">
-							</script>
-								<div class="crr_t">
-									<div class="crrt_l"><img src="/images/class/cr_l.jpg"></div>
-									<div class="crrt_c">阿森纳副<?php echo $j; ?>卡萨诺的发生</div>
-									<div class="crrt_b">阿阿森纳副卡萨诺的发生阿森纳副卡萨诺的发生森阿阿森纳副卡萨诺的发生阿森纳副卡萨诺的发生森纳副卡萨诺的发生阿森纳副卡萨诺的发生纳副卡萨诺的发生阿森纳副卡萨诺的发生</div>
+							<div class="class_val">
+								<div class="crr_t"<?php $pos="middle_headline";show_page_pos($pos,'link_d_i');?>>
+									<div class="crrt_l"><a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : '/images/class/cr_l.jpg';?>" border="0"></a></div>
+									<div class="crrt_c"><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href);?></div>
+									<div class="crrt_b"><?php echo $pos_items[$pos]->description;?></div>
 								</div>
 								<div class="crr_c"></div>
 								<div class="crrab_z">
 									<?php for($i=0;$i<6;$i++){?>
-									<div class="crr_b"><a href="#" >阿阿森纳副卡萨诺</a></div>
+									<div class="crr_b"<?php $pos="middle_list_$i";show_page_pos($pos,'link');?>><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href)?></div>
 									<?php }?>
 								</div>
 							</div>
-							<?php }?>
 					</div>
 					</div>
 				</div>
@@ -124,7 +121,7 @@
 							<div id="cric_c">
 								<?php for($i=0;$i<6;$i++){?>
 								<div class="cricc_a">
-									<div><a href="#"><img src="/images/class/c_pg_a.jpg"></a></div>
+									<div <?php $pos="bottom_img_$i";show_page_pos($pos,'link_i');?>><a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : '/images/class/c_pg_a.jpg';?>"></a></div>
 								</div>
 								<?php }?>
 							</div>
