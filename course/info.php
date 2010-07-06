@@ -142,7 +142,8 @@
 					<div id=key_l></div>
 					<div id=key_c>
 						<div id=key_c_l>
-							成长关键词：<a href="">宝宝秀</a>·<a href="">宝宝秀</a>·<a href="">宝宝秀</a>·<a href="">宝宝秀</a>
+							成长关键词：							
+							<a href="<?php get_teach_url($teach[0]); ?>" title="<?php echo $teach[0]->key_teach; ?>"><?php echo $teach[0]->key_teach; ?></a>
 						</div>
 						<div id=key_c_r><button></button></div>
 					</div>
