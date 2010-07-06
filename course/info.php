@@ -8,22 +8,21 @@
 	}
 	$age=intval($_GET['age']);
 	$month=intval($_GET['month']);
+	$mon = 0 <= $mon && $mon <= 35 ? $mon=$month+1 : 1;
 	$month = $month % 12;
 	$valid_age = array(1,2,3);
 	$age = in_array($age,$valid_age) ? $age : 1;
 	$month = 0 <= $month && $month <= 11 ? $month=$month+1 : 1;
-	$db = get_db();
-	$column = $db->query("SELECT id,title,click_count,short_title,category_id,description,content,created_at,last_edited_at,video_photo_src,keywords,publisher FROM eb_news e where id=".$id." order by last_edited_at desc");
 	?>
 <html>
 <head>
 <meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <meta http-equiv=Content-Language content=zh-CN>
-<title><?php echo $column[0]->title;?></title>
+<title></title>
 <?php
 	use_jquery();
 	css_include_tag('info');
-	js_include_tag('jquery.cookie', 'news/news','course/info');
+	js_include_tag('course/info');
 ?>
 </head>
 <body>
@@ -44,7 +43,7 @@
 					<div class="l_b_wb"><a href="#">宝宝下期课程提示</a></div>
 				</div>
 				<a href="#">
-				<div id="l_look"></div>
+				<img id="l_look" src="/images/yetrb/asdf.jpg"/>
 				</a>
 				<div class="hlc_t"></div>
 				<div class="hlc_b">
@@ -105,60 +104,35 @@
 			</div>
 			<div id=cr>
 				<div id=title>
-					<div class="cr_title<?php if($age ==0) echo " selected" ;?>" style="margin-left:3px;" id="cr_t_0">首 页</div>
-					<div class="cr_title<?php if($age ==1) echo " selected" ;?>" id="cr_t_1">0-1岁</div>
-					<div class="cr_title<?php if($age ==2) echo " selected" ;?>" id="cr_t_2">1-2岁</div>
-					<div class="cr_title<?php if($age ==3) echo " selected" ;?>" id="cr_t_3">2-3岁</div>
-					<input type="hidden" id="age_val">
+					<div class="cr_title<?php if($age == 0){ echo " selected" ;}?>" style="margin-left:3px;" id="cr_t_0">首 页</div>
+					<div class="cr_title<?php if($age == 1){ echo " selected" ;}?>" id="cr_t_1">0-1岁</div>
+					<div class="cr_title<?php if($age == 2){ echo " selected" ;}?>" id="cr_t_2">1-2岁</div>
+					<div class="cr_title<?php if($age == 3){ echo " selected" ;}?>" id="cr_t_3">2-3岁</div>
+					<input type="hidden" id="age_val" value="<?php echo $age;?>">
 				</div>
 				<div id=month_l></div>
-				<div class=month_c id="month_0" style="<?php if($age==1)echo "display:inline;"; ?>">
-					<div class="month" style="margin-left:53px;">1月</div>
-					<div class=month>2月</div>
-					<div class=month>3月</div>
-					<div class=month>4月</div>
-					<div class=month>5月</div>
-					<div class=month>6月</div>
-					<div class=month>7月</div>
-					<div class=month>8月</div>
-					<div class=month>9月</div>
-					<div class=month>10月</div>
-					<div class=month>11月</div>
-					<div class=month>12月</div>
+				<div class=month_c id="month_0" style="<?php if($age == 1){ echo "display:inline;";} ?>">
+					<div class="month" style="margin-left:53px; <?php if($mon == 1) echo "background: url(/images/info/month_bg_red.jpg) no-repeat;";?>">1月</div>
+					<?php for($i = 2 ; $i <= 12 ; $i++){ ?>
+					<div class="month" style="<?php if($mon == $i){ echo "background: url(/images/info/month_bg_red.jpg) no-repeat;";}?>"><?php echo $i; ?>月</div>
+					<?php } ?>
 				</div>
-				<div class=month_c id="month_1"  style="<?php if($age==2)echo "display:inline;"; ?>">
-					<div class=month style="margin-left:53px;">13月</div>
-					<div class=month>14月</div>
-					<div class=month>15月</div>
-					<div class=month>16月</div>
-					<div class=month>17月</div>
-					<div class=month>18月</div>
-					<div class=month>19月</div>
-					<div class=month>20月</div>
-					<div class=month>21月</div>
-					<div class=month>22月</div>
-					<div class=month>23月</div>
-					<div class=month>24月</div>
+				<div class=month_c id="month_1"  style="<?php if($age == 2){ echo "display:inline;";} ?>">
+					<div class="month" style="margin-left:53px; <?php if($mon == 13){ echo "background: url(/images/info/month_bg_red.jpg) no-repeat;";}?>">13月</div>
+					<?php for($i = 14 ; $i <= 24 ; $i++){ ?>
+					<div class="month" style="<?php if($mon == $i){ echo "background: url(/images/info/month_bg_red.jpg) no-repeat;";}?>"><?php echo $i; ?>月</div>
+					<?php } ?>
 				</div>
-				<div class=month_c id="month_2" style="<?php if($age==3)echo "display:inline;"; ?>">
-					<div class=month style="margin-left:53px;">25月</div>
-					<div class=month>26月</div>
-					<div class=month>27月</div>
-					<div class=month>28月</div>
-					<div class=month>29月</div>
-					<div class=month>30月</div>
-					<div class=month>31月</div>
-					<div class=month>32月</div>
-					<div class=month>33月</div>
-					<div class=month>34月</div>
-					<div class=month>35月</div>
-					<div class=month>36月</div>
+				<div class=month_c id="month_2" style="<?php if($age == 3){ echo "display:inline;";} ?>">
+					<div class="month" style="margin-left:53px; <?php if($mon == 25){ echo "background: url(/images/info/month_bg_red.jpg) no-repeat;";}?>">25月</div>
+					<?php for($i = 26 ; $i <= 36 ; $i++){ ?>
+					<div class="month" style="<?php if($mon == $i){ echo "background: url(/images/info/month_bg_red.jpg) no-repeat;";}?>"><?php echo $i; ?>月</div>
+					<?php } ?>
 				</div>
 				<div id=month_r></div>
 				<?php
 					$db=get_db();
 					$sql="SELECT id,title,description,img_url,key_teach,big_action,detail_action,knowledge,language,music,social_behavior,book,toy,age FROM eb_teach e where is_adopt=1 and month={$month} and age={$age} order by create_time desc limit 1;";
-					echo $sql;
 					$teach=$db->query($sql);
 				?>
 				<div id=key>

@@ -83,7 +83,7 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 #l_b_wa{margin-top:11px;}
 #l_b_wa font{color:red;}
 #l_look{width:200px; height:42px; font-size:0px; line-height:0px; margin-left:5px; float:left; display:inline;}
-#l_look{margin-top:13px; background:url(../images/yetrb/asdf.jpg) no-repeat;}
+#l_look{margin-top:13px; border:0px solid red;}
 #class_sort{width:200px; margin-top:15px; margin-left:5px; float:left; display:inline;} 	
 #sort_top{width:200px; height:27px; font-size:0px; line-height:0px; background:url(../images/class/l_desc.jpg) no-repeat; float:left; display:inline;}
 #sort_con{width:198px; border-left:1px solid #E7E7E7; border-right:1px solid #E7E7E7; float:left; display:inline;}
@@ -131,11 +131,11 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 #cr{width:750px; margin-top:15px; float:right; display:inline;}
 #cr #title{width:750px; height:33px; float:left; display:inline;}
 #cr .cr_title{width:106px; height:33px; margin-left:5px; cursor:pointer; font-size:16px; line-height:33px; font-weight:bold; text-align:center; background:url('/images/info/c_r_title_bg.jpg') no-repeat; float:left; display:inline;}
-#cr .cr_title.selected{background:url('/images/info/c_r_title_bg1.jpg') no-repeat;}
+#cr .cr_title.selected{background:url(/images/info/c_r_title_bg1.jpg) no-repeat;}
 #cr #month_l{width:4px; height:38px; margin-left:3px;  border-top:1px solid #9a9a9a; background:url('/images/info/c_r_title_l.jpg') no-repeat; overflow:hidden; float:left; display:inline;}
 #cr .month_c{width:725px; height:38px; border-top:1px solid #9a9a9a; background:url('/images/info/c_r_title_c_bg.jpg') repeat-x; float:left; display:none;}
 #cr #month_r{width:3px; height:38px; border-top:1px solid #9a9a9a; background:url('/images/info/c_r_title_r.jpg') no-repeat; float:left; display:inline;}
-#cr .month{width:47px; height:24px; margin-top:7px; margin-right:5px; cursor:pointer; color:#000000; text-align:center; line-height:24px; background:url('/images/info/month_bg.jpg') no-repeat; float:left; display:inline;}
+#cr .month{width:47px; height:24px; margin-top:7px; margin-right:5px; cursor:pointer; border:0px solid red; color:#000000; text-align:center; line-height:24px; background:url('/images/info/month_bg.jpg') no-repeat; float:left; display:inline;}
 #cr #key{width:750px; margin-top:10px; float:left; display:inline;}
 #cr #key_l{width:3px; height:34px; background:url('/images/info/key_l_bg.jpg') no-repeat; float:left; display:inline;}
 #cr #key_c{width:700px; height:34px; font-size:12px; color:#000000; font-weight:bold; line-height:34px; padding-left:32px; background:url('/images/info/key_c_bg.jpg') repeat-x; float:left; display:inline;}
@@ -148,7 +148,7 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 #cr .content .c_title{width:737px; height:14px; float:left; display:inline;}
 #cr .content .c_title .context{height:14px; margin-left:20px; background:#ffffff; font-weight:bold; line-height:14px; float:left; display:inline;}
 #cr .content .pic img{width:205px; height:130px; border:0px;}
-#cr .content .piccontent{width:710px; height:130px; margin-top:20px; margin-left:10px; vertical-align:middle; line-height:13px; overflow:hidden; float:left; display:inline;}
+#cr .content .piccontent{width:710px; height:140px; margin-top:20px; margin-left:10px; line-height:20px; vertical-align:middle;  overflow:hidden; float:left; display:inline;}
 #cr .content .piccontent a{color:#333333; text-decoration:none;}
 
 #bottom{width:1000px; text-align:center; margin-top:20px; font-size:12px; color:#666666; float:left; display:inline;}
