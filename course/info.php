@@ -104,7 +104,7 @@
 			</div>
 			<div id=cr>
 				<div id=title>
-					<div class="cr_title" style="margin-left:3px;" id="cr_t_0">首 页</div>
+					<div class="cr_title<?php if($age ==0) echo " selected" ;?>" style="margin-left:3px;" id="cr_t_0">首 页</div>
 					<div class="cr_title<?php if($age ==1) echo " selected" ;?>" id="cr_t_1">0-1岁</div>
 					<div class="cr_title<?php if($age ==2) echo " selected" ;?>" id="cr_t_2">1-2岁</div>
 					<div class="cr_title<?php if($age ==3) echo " selected" ;?>" id="cr_t_3">2-3岁</div>

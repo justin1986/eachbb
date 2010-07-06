@@ -9,6 +9,7 @@
 		css_include_tag('assistant'); 
 		use_jquery();
 		$db = get_db();
+		js_include_tag('assistant/assistant');
 		init_page_items('assistant_index');
 	?>
 </head>
@@ -70,15 +71,15 @@
 		<div id="top2_t">
 			<div id="tt_l"></div>
 			<div id="tt_c">
-				<div id="ttc_a"><a href="?age=-2">准备怀孕</a></div>
+				<div class="ttc_a"><a href="?age=-2">准备怀孕</a></div>
 				<div class="ttc_hr"></div>
-				<div id="ttc_b"><a href="?age=-1">怀孕期</a></div>
+				<div class="ttc_a"><a href="?age=-1">怀孕期</a></div>
 				<div class="ttc_hr"></div>
-				<div id="ttc_c"><a href="?age=1">0～1岁</a></div>
+				<div class="ttc_a"><a href="?age=1">0～1岁</a></div>
 				<div class="ttc_hr"></div>
-				<div id="ttc_d"><a href="?age=2">1～2岁</a></div>
+				<div class="ttc_a"><a href="?age=2">1～2岁</a></div>
 				<div class="ttc_hr"></div>
-				<div id="ttc_e"><a href="?age=3">2～3岁</a></div>
+				<div class="ttc_a"><a href="?age=3">2～3岁</a></div>
 				<a href="#">
 				<img id="ttc_f" src="/images/helper/t_1.jpg"/>
 				</a>

@@ -43,12 +43,8 @@ body{width:970PX; margin: 0 auto;}
 #tt_c{width:956px; height:39px; background:#A9D780; float:left; display:inline;}
 #tt_r{width:5px; height:39px; background:url(../images/helper/h_r.jpg) no-repeat; float:right; display:inline;}
 #top2_b{width:966px; height:55px; float:left; display:inline;}
-#ttc_a{width:108px; height:39px; line-height:39px; text-align:center; float:left; display:inline;}
+.ttc_a{width:108px; height:39px; line-height:39px; text-align:center; float:left; display:inline;}
 .ttc_hr{width:2px; height:15px; margin-top:12px; background:#ffffff; float:left; display:inline;}
-#ttc_b{width:108px; height:39px; line-height:39px; text-align:center; float:left; display:inline;}
-#ttc_c{width:108px; height:39px; line-height:39px; text-align:center; float:left; display:inline;}
-#ttc_d{width:108px; height:39px; line-height:39px; text-align:center; float:left; display:inline;}
-#ttc_e{width:108px; height:39px; line-height:39px; text-align:center; float:left; display:inline;}
 #tt_c a{font-size:20px;  font-weight:600; color:#ffffff; text-decoration:none;}
 #ttc_f{width:90px; height:30px; margin-top:4px; margin-left:16px; border:0px solid red; float:left; display:inline;}
 #ttc_g{width:90px; height:30px; margin-top:4px; margin-left:6px;  border:0px solid red; float:left; display:inline;}
