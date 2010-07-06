@@ -30,6 +30,9 @@
 	<?php include_once('../inc/top_consult.php'); ?>
 	<div id="fbody">
 		<div id="c_l">
+				<div id="l_img">
+					<img src="/images/info/t_<?php echo $mon;?>.jpg"/>
+				</div>
 				<div id="l_pho">
 					<div id="lp_t">个人信息管理</div>
 					<div id="lp_p">
@@ -100,7 +103,7 @@
 						<div class="ppg_w">safsadfas</div>
 					</div>
 				</div>
-				<div id="pg_a"></div>
+				<img id="pg_a" src="/images/info/img_<?php echo $age;?>.jpg"/>
 			</div>
 			<div id=cr>
 				<div id=title>
