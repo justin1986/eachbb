@@ -11,6 +11,8 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 
 .keyword_container{margin-left:10px;}
 
+#l_img{width:200px; height:197px; margin-top:5px; float:right; display:inline;}
+#l_img img{width:200px; height:197px;}
 #top_menu{width:970px; height:61px; margin-top:5px; overflow:hidden;  float:left; display:inline;}
 #menu_left{width:5px; height:61px; background:url(../images/consult/t_a.jpg) no-repeat; float:left; display:inline;}
 #menu_center{width:960px; height:60px; border-bottom:1px solid #D4D4D4; float:left; display:inline;}
@@ -125,7 +127,7 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 
 
 
-#pg_a{width:200px; height:141px; margin-top:7px; background:url(../images/class/l_pg.jpg) no-repeat; float:left; display:inline;}
+#pg_a{width:200px; height:141px; margin-top:7px; float:left; display:inline;}
 #bg_hr{width:958px; height:4px; margin-left:10px; margin-top:40px; background:url(../images/class/b_hr.jpg) repeat-x; float:left; display:inline;}
 
 #cr{width:750px; margin-top:15px; float:right; display:inline;}
