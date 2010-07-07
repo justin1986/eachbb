@@ -58,9 +58,9 @@
 					</div>
 					<div id="r_student">
 						<div id="st_top">
-							<div><img src="images/index/class_tab_0_sel.jpg" class="student_tab"/></div>
-							<div><img src="images/index/class_tab_1.jpg" class="student_tab"/></div>
-							<div><img src="images/index/class_tab_2.jpg" class="student_tab"/></div>
+							<div><img src="/images/index/class_tab_0_sel.jpg" class="student_tab"/></div>
+							<div><img src="/images/index/class_tab_1.jpg" class="student_tab"/></div>
+							<div><img src="/images/index/class_tab_2.jpg" class="student_tab"/></div>
 						</div>
 						<div id="student_value">
 							<div class="student_left" id="student_left_0" style="display:inline;">
@@ -217,7 +217,7 @@
 						<div id="dict_more"></div>
 						</a> </div>
 					<div id="dict_menu"> 
-						<div id="d_m_a"  class="dict_tab" style="background:url(images/index/r_pg_f.png) no-repeat;">幼教</div>
+						<div id="d_m_a"  class="dict_tab" style="background:url(/images/index/r_pg_f.png) no-repeat; color:#FF6600;">幼教</div>
 						
 						<div  class="dict_tab">论坛</div>
 						
@@ -229,7 +229,7 @@
 						 </div>
 					<div class="desc" id="desc_0">
 						<div id="dict_b">
-							<div class="dict_number" style="background:url(images/index/red.jpg) no-repeat;">1</div>
+							<div class="dict_number" style="background:url(/images/index/red.jpg) no-repeat;">1</div>
 							<div class="dict_value"><a href="#">使得法国vsdva</a></div>
 						</div>
 						<div class="dict_c">
@@ -245,7 +245,7 @@
 					</div>
 					<div class="desc" id="desc_1" style="display:none;">
 						<div id="dict_b">
-							<div class="dict_number" style="background:url(images/index/red.jpg) no-repeat;">1</div>
+							<div class="dict_number" style="background:url(/images/index/red.jpg) no-repeat;">1</div>
 							<div class="dict_value"><a href="#">使得法国vsdva</a></div>
 						</div>
 						<div class="dict_c">
@@ -261,7 +261,7 @@
 					</div>
 					<div class="desc" id="desc_2" style="display:none;">
 						<div id="dict_b">
-							<div class="dict_number" style="background:url(images/index/red.jpg) no-repeat;">1</div>
+							<div class="dict_number" style="background:url(/images/index/red.jpg) no-repeat;">1</div>
 							<div class="dict_value"><a href="#">使得法国vsdva</a></div>
 						</div>
 						<div class="dict_c">
@@ -277,7 +277,7 @@
 					</div>
 					<div class="desc" id="desc_3" style="display:none;">
 						<div id="dict_b">
-							<div class="dict_number" style="background:url(images/index/red.jpg) no-repeat;">1</div>
+							<div class="dict_number" style="background:url(/images/index/red.jpg) no-repeat;">1</div>
 							<div class="dict_value"><a href="#">使得法国vsdva</a></div>
 						</div>
 						<div class="dict_c">
@@ -293,7 +293,7 @@
 					</div>
 					<div class="desc" id="desc_4" style="display:none;">
 						<div id="dict_b">
-							<div class="dict_number" style="background:url(images/index/red.jpg) no-repeat;">1</div>
+							<div class="dict_number" style="background:url(/images/index/red.jpg) no-repeat;">1</div>
 							<div class="dict_value"><a href="#">使得法sadf国vsdva</a></div>
 						</div>
 						<div class="dict_c">

@@ -5,8 +5,11 @@
 	<meta http-equiv=Content-Language content=zh-CN>
 	<title>consult</title>
 	<?php
+	include_once('../frame.php');
+		use_jquery();
 		include_once(dirname(__FILE__).'/../frame.php'); 
 		css_include_tag('consult');
+		js_include_tag('news/index');
 	?>
 </head>
 <body>
@@ -206,18 +209,44 @@
 		<div id="b_r">
 			<div id="br_a">
 				<div id="ba_t">
-					<div id="bat_a"><a href="#"><img src="images/consult/rb_a.gif"></a></div>
-					<div id="bat_b"><a href="#"><img src="images/consult/rb_b.jpg"></a></div>
-					<div id="bat_c"><a href="#"><img src="images/consult/rb_c.jpg"></a></div>
+					<div><img src="/images/consult/0.jpg" class="student_tab"/></div>
+					<div><img src="/images/consult/1a.jpg" class="student_tab"/></div>
+					<div><img src="/images/consult/2a.jpg" class="student_tab"/></div>
 				</div>
-				<div id="ba_c">
+				<div class="ba_c" id="bac_0" style="display:inline;">
 					<?php
 					$mom_news=$db->query("SELECT id,title FROM eb_news e where category_id=157 and is_adopt=1 limit 7;");
-					for($i=0;$i<7;$i++){?>
-					<div class="bac_z" style="<?php if($i==0){ echo ' margin-top:5px;';}?>;">
+					for($i = 0 ; $i < 7 ; $i++){?>
+					<div class="bac_z" style="<?php if($i == 0){ echo ' margin-top:5px;';}?>;">
 						<div class="bac_d"></div>
-						<div class="bac_v"><a href="<?php get_news_url($mom_news[$i]);?>" title="<?php echo $mom_news[$i]->title;?>"><?php echo $mom_news[$i]->title;?></a></div>
-						<?php if($i!=6){?>
+						<div class="bac_v"><a href="<?php get_news_url($mom_news[$i]);?>" title="<?php echo $mom_news[$i] -> title;?>"><?php echo $mom_news[$i] -> title;?></a></div>
+						<?php if($i != 6){?>
+						<div class="bac_c"></div>
+						<?php }?>
+					</div>
+					<?php }?>
+				</div>
+				<div class="ba_c" id="bac_1">
+					<?php
+					$mom_news=$db->query("SELECT id,name FROM eb_problem e where is_adopt=1 order by create_time desc limit 7;");
+					for($i = 0 ; $i < 7 ; $i++){?>
+					<div class="bac_z" style="<?php if($i == 0){ echo ' margin-top:5px;';}?>;">
+						<div class="bac_d"></div>
+						<div class="bac_v"><a href="#" title="<?php echo $mom_news[$i] -> name;?>"><?php echo $mom_news[$i] -> name;?></a></div>
+						<?php if($i != 6){?>
+						<div class="bac_c"></div>
+						<?php }?>
+					</div>
+					<?php }?>
+				</div>
+				<div class="ba_c" id="bac_2">
+					<?php
+					$mom_news=$db->query("SELECT id,title FROM eb_teach e where is_adopt=1  order by create_time desc limit 7;");
+					for($i = 0 ; $i < 7 ; $i++){?>
+					<div class="bac_z" style="<?php if($i == 0){ echo ' margin-top:5px;';}?>;">
+						<div class="bac_d"></div>
+						<div class="bac_v"><a href="<?php get_teach_url($mom_news[$i]);?>" title="<?php echo $mom_news[$i] -> title;?>"><?php echo $mom_news[$i] -> title;?></a></div>
+						<?php if($i != 6){?>
 						<div class="bac_c"></div>
 						<?php }?>
 					</div>
@@ -232,20 +261,54 @@
 				</div>
 				<div id="bc_t2">
 					<div id="bct_z">
-						<div id="bct_a"><a href="#">幼教排行</a></div>
+						<div class="bct_c" id="bc_0" style="width:74px; height:24px; margin-left:4px; background:url(../images/consult/rc_l.jpg) no-repeat; line-height:27px; color:#FF6600; float:left; display:inline;">幼教排行</div>
 						<div id="bct_hr"></div>
-						<div id="bct_b"><a href="#">论坛</a></div>
-						<div class="bct_c"><a href="#">博客</a></div>
-						<div class="bct_c"><a href="#">咨询</a></div>
-						<div class="bct_c"><a href="#">测评</a></div>
+						<div class="bct_c" id="bc_1">论坛</div>
+						<div class="bct_c" id="bc_2">博客</div>
+						<div class="bct_c" id="bc_3">咨询</div>
+						<div class="bct_c" id="bc_4">测评</div>
 					</div>
 				</div>
+				<div class="bct_number" id="bn_0" style="display:inline;">
 				<?php for($i=0;$i<10;$i++){?>
 				<div class="bct_cp">
-					<div class="bct_cpl"  style="<?php if($i==0){ echo 'background:url(images/index/red.png) no-repeat';}?>"><?php echo $i+1?></div>
-					<div class="bct_cpv"><a href="#">友情链接友情链接友情链接</a></div>
+					<div class="bct_cpl"  style="<?php if($i==0){ echo 'background:url(/images/index/red.png) no-repeat';}?>"><?php echo $i+1?></div>
+					<div class="bct_cpv"><a href="#">友情链8接友情链接友情链接</a></div>
 				</div>
 				<?php  }?>
+				</div>
+				<div class="bct_number" id="bn_1">
+				<?php for($i=0;$i<10;$i++){?>
+				<div class="bct_cp">
+					<div class="bct_cpl"  style="<?php if($i==0){ echo 'background:url(/images/index/red.png) no-repeat';}?>"><?php echo $i+1?></div>
+					<div class="bct_cpv"><a href="#">友情6链接友情链接友情链接</a></div>
+				</div>
+				<?php  }?>
+				</div>
+				<div class="bct_number" id="bn_2">
+				<?php for($i=0;$i<10;$i++){?>
+				<div class="bct_cp">
+					<div class="bct_cpl"  style="<?php if($i==0){ echo 'background:url(/images/index/red.png) no-repeat';}?>"><?php echo $i+1?></div>
+					<div class="bct_cpv"><a href="#">友情2链接友情链接友情链接</a></div>
+				</div>
+				<?php  }?>
+				</div>
+				<div class="bct_number" id="bn_3">
+				<?php for($i=0;$i<10;$i++){?>
+				<div class="bct_cp">
+					<div class="bct_cpl"  style="<?php if($i==0){ echo 'background:url(/images/index/red.png) no-repeat';}?>"><?php echo $i+1?></div>
+					<div class="bct_cpv"><a href="#">友3链接友斯蒂芬情链接友情链接</a></div>
+				</div>
+				<?php  }?>
+				</div>
+				<div class="bct_number" id="bn_4">
+				<?php for($i=0;$i<10;$i++){?>
+				<div class="bct_cp">
+					<div class="bct_cpl"  style="<?php if($i==0){ echo 'background:url(/images/index/red.png) no-repeat';}?>"><?php echo $i+1?></div>
+					<div class="bct_cpv"><a href="#">友情2链接友情链接友情链接</a></div>
+				</div>
+				<?php  }?>
+				</div>
 				<div id="bct_cb"></div>
 			</div>
 			<div class="bd">
