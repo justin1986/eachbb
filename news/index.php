@@ -261,7 +261,7 @@
 				</div>
 				<div id="bc_t2">
 					<div id="bct_z">
-						<div class="bct_c" id="bc_0" style="width:74px; height:24px; margin-left:4px; background:url(../images/consult/rc_l.jpg) no-repeat; line-height:27px; color:#FF6600; float:left; display:inline;">幼教排行</div>
+						<div class="bct_c" id="bc_0" style="width:74px; height:24px; margin-left:4px; background:url(../images/consult/rc_l.jpg) no-repeat; line-height:24px; color:#FF6600; float:left; display:inline;">幼教排行</div>
 						<div id="bct_hr"></div>
 						<div class="bct_c" id="bc_1">论坛</div>
 						<div class="bct_c" id="bc_2">博客</div>
