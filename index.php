@@ -1,15 +1,13 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
-<?php
-	include_once(dirname(__FILE__).'/frame.php');
-?>
 <html>
 <head>
 <meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <meta http-equiv=Content-Language content=zh-CN>
 	<title>网趣宝贝-首页</title>
 	<?php 
-		use_jquery();
-		css_include_tag('index');
+		include_once(dirname(__FILE__).'/frame.php');
+		use_jquery_ui();
+		css_include_tag('index','jquery_ui');
 		js_include_tag('index');
 		init_page_items('index');
 	?>
@@ -126,24 +124,39 @@
 					?>
 						<div id="t_content_left">
 							<div id="pic_top">请输入宝宝的出生日期:</div>
-							<div id="pic_bottom"><a href="#">
-								<img id="pic_left"/>
+							<div id="pic_bottom">
+								<a href="#">
+									<img id="pic_left"/>
 								</a>
 								<div id="picc">
-								<img id="pic_right" src="<?php echo $pro[0]->photo_url;?>" title="<?php echo $pro[0]->photo_url;?>"/>
-								<div id="pic_word"><a href="<?php get_test_url($pro[0]);?>">怀孕期测试</a></div>
+									<img id="pic_right" src="<?php echo $pro[0]->photo_url;?>" title="<?php echo $pro[0]->photo_url;?>"/>
+									<div id="pic_word">
+										<a href="<?php get_test_url($pro[0]);?>">怀孕期测试</a>
+									</div>
 								</div>
 							</div>
 						</div>
 						<div id="t_cc_z">
 							<div id="select_st">
 								<div id="select_s">
-									<select id="select_a" name="select">
+									<input style="margin-top:5px;" type="text" id="date_picker" />
+									<!-- 
+									<select id="select_a">
+									<?php 
+										$year = date('Y');
+										for($i=0;$i<3;$i++){
+									?>
+										<option value="<?php echo $year - $i;?>"><?php echo $year - $i;?>年</option>
+									<?php }?>
 									</select>
-									<select id="select_b" name="select">
+									<select id="select_b">
+										<?php for($i=1;$i<13;$i++){?>
+										<option value="<?php echo $i; ?>"><?php echo $i;?>月</option>
+										<?php }?>
 									</select>
 									<select id="select_c" name="select">
 									</select>
+									 -->
 								</div>
 								<div id="select_title" title="<?php echo $pro[0]->name;?>"><a href="<?php get_test_url($pro[0]);?>"><?php echo $pro[0]->name;?></a></div>
 							</div>
@@ -182,7 +195,7 @@
 							<div><img src="/images/index/course_tab_1.jpg" class="course_tab"></div>
 							<div><img src="/images/index/course_tab_2.jpg" class="course_tab"></div>
 						</div>
-						<a href="#">
+						<a href="/course/">
 							<img id="dict_more"  style="margin-top:20px;" src="/images/index/more.gif" />
 						</a> 
 					</div>
