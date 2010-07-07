@@ -17,7 +17,7 @@
 		$fields['link']=array("标题","","链接","","","","","");
 		$fields['link_i']=array("","","链接","","图片","","","");
 		$fields['link_t_i']=array("标题","","链接","","图片","","","");
-		$fields['link_t_d']=array("标题","描述","链接","","图片","","","");
+		$fields['link_t_d']=array("标题","描述","链接","","","","","");
 		$fields['link_i2']=array("","","链接","","图片1","图片2","","");
 		$names = array_key_exists($_GET['name'],$fields) ?  $fields[$_GET['name']] : $fields['default'];
 	?>

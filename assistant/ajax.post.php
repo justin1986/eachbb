@@ -3,7 +3,7 @@
 	$valid_types = array('up','down','collect','comment');
 	$type = strtolower($_POST["type"]);
 	if(!in_array($type, $valid_types)) die('invalid request!');
-	if($type == 'up' || $type == 'down'){	
+	if($type == 'up' || $type == 'down'){
 		$id = intval($_POST["id"]);
 		if(!is_ajax()) die('invlid request!');
 		$db=get_db();

@@ -188,13 +188,14 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 
 #br_a{width:289px; float:left; display:inline;}
 #ba_t{width:289px; height:25px; background:url(../images/consult/rb_pdg.jpg) no-repeat; font-size:0px; line-height:0px; float:left; display:inline;}
-#bat_a{width:75px; height:22px; margin-top:3px; margin-left:10px; border:0px solid red; background:url(../images/consult/rb_pg.jpg) no-repeat; float:left; display:inline;}
+#ba_t div img{width:70px; height:22px; border:0px solid red;}
+#ba_t div{width:75px; height:20px; margin-top:3px; margin-left:17px; cursor:pointer; border:0px solid red;  float:left; display:inline;}
 #bat_b{width:58px; height:16px; margin-left:27px; margin-top:7px; float:left; display:inline;}
 #bat_c{width:58px; height:16px; margin-left:36px; margin-top:6px; float:left; display:inline;}
 #bat_a img{width:56px; height:13px; margin-left:8px; margin-top:5px; border:0px solid red; font-size:0px; line-height:0px; float:left; display:inline;}
 #bat_c img{width:56px; height:16px; margin-left:8px; font-size:0px; border:0px solid red; line-height:0px; float:left; display:inline;}
 #bat_b img{margin-left:2px; font-size:0px; line-height:0px;  border:0px solid red; float:left; display:inline;}
-#ba_c{width:287px; height:180px; overflow:hidden; border-left:1px solid #A457EC; border-right:1px solid #A457EC; float:left; display:inline;}
+.ba_c{width:287px; height:180px; overflow:hidden; border-left:1px solid #A457EC; border-right:1px solid #A457EC; float:left; display:none;}
 #ba_b{width:289px; height:5px; font-size:0px; line-height:0px; background:url(../images/consult/r_pg.jpg) no-repeat; float:left; display:inline;}
 .bac_z{width:268px; height:23px; margin-left:12px; float:left; display:inline;}
 .bac_d{width:6px; height:6px; margin-top:8px; font-size:0px; line-height:0px; background:url(../images/consult/dian.jpg) no-repeat; float:left; display:inline;}
@@ -209,19 +210,17 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 #bct2_r{width:56px; height:16px; margin-top:10px; margin-left:130px; float:left; display:inline;}
 #bct2_r a{ font-weight:600; font-size:14px; color:#AD5AEE; text-decoration:none;}
 #bct_z{width:280px; height:27px; margin-top:5px; margin-left:3px; text-align:center; color:#000; float:left; display:inline;}
-#bct_a{width:74px; height:27px; margin-top:1px; margin-left:4px; background:url(../images/consult/rc_l.jpg) no-repeat; line-height:27px; float:left; display:inline;}
 #bct_z a{text-decoration:none; font-size:14px; color:#000; font-weight:600; }
-#bct_b{width:50px; height:24px; margin-top:4px; line-height:24px; background:url(../images/consult/c_ptttg.jpg) no-repeat; float:left; display:inline;}
 #bct_a a{color:#FF6600;}
-.bct_c a{width:50px; height:24px; margin-top:4px; line-height:24px; background:url(../images/consult/c_pttg.jpg) no-repeat; float:left; display:inline;}
-.bct_c a {color:#000;}
+.bct_c{width:50px; height:24px; margin-top:4px; cursor:pointer; color:#00000; font-size:14px; font-weight:bold; line-height:24px; background:url(../images/consult/c_pttg.jpg) no-repeat; float:left; display:inline;}
+.bct_cpl a{color:#ffffff; text-decoration:none; font-size:12px;}
 .bct_cp{width:286px; height:28px; border-right:1px solid #E0DBF5; border-left:1px solid #E0DBF5; background:url(../images/consult/rb_bc.jpg) repeat-y; float:left; display:inline;}
 #bct_cb{width:288px; height:11px; background:url(../images/consult/rb_bb.jpg) no-repeat; float:Left; display:inline;}
-.bct_cpl{width:22px; height:22px; margin-left:20px; margin-top:5px; font-size:12px; color:#ffffff; font-weight:600; text-align:center; line-height:22px; background:url(../images/index/block.png) no-repeat; float:left; display:inline;}
+.bct_cpl{width:22px; bct_cpheight:22px; margin-left:20px; margin-top:5px; font-size:12px; color:#ffffff; font-weight:600; text-align:center; line-height:22px; background:url(../images/index/block.png) no-repeat; float:left; display:inline;}
 .bct_cpv{width:180px; margin-top:10px; margin-left:6px; height:14px; float:left; display:inline;}
 .bct_cpv a{ font-size:12px; line-height:14px; color:#000; text-decoration:none;}
 
-
+.bct_number{display:none;}
 
 
 .bd{width:289px; margin-top:20px; float:left; display:inline;}

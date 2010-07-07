@@ -21,6 +21,7 @@ body{width:1000px; margin: 0 auto;  background:url(/images/index/img_pg.jpg) rep
 #member{width:90px; height:25px; margin-left:20px; float:left; display:inline; }
 #member_img{width:25px; height:20px; background:url(/images/index/img_w_d.jpg) no-repeat; float:left; display:inline;}
 #member_word{width:55px; height:25px; line-height:23px;  float:left; display:inline; }
+#top_login a{color:white; text-decoration: none;}
 
 
 #top_menu{width:995px; height:103px; margin-left:5px; margin-top:10px;  float:left; display:inline;}

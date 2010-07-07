@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <meta http-equiv=Content-Language content=zh-CN>
-	<title>网趣宝贝</title>
+	<title>网趣宝贝-首页</title>
 	<?php 
 		use_jquery();
 		css_include_tag('index');
@@ -20,19 +20,19 @@
 		<div id="login">
 			<div id="login_login">
 				<div id="login_img"></div>
-				<div id="login_word">登录</div>
+				<div id="login_word"><a href="/login/">登录</a></div>
 			</div>
 			<div id="register">
 				<div id="register_img"></div>
-				<div id="register_word">注册</div>
+				<div id="register_word"><a href="/register/">注册</a></div>
 			</div>
 			<div id="comeback">
 				<div id="comeback_img"></div>
-				<div id="comeback_word">返回首页</div>
+				<div id="comeback_word"><a href="/">返回首页</a></div>
 			</div>
 			<div id="member">
 				<div id="member_img"></div>
-				<div id="member_word">用户中心</div>
+				<div id="member_word"><a href="#">用户中心</a></div>
 			</div>
 		</div>
 	</div>
@@ -223,14 +223,10 @@
 						</div>
 					</div>
 					<div id="dict_menu"> 
-						<div id="d_m_a"  class="dict_tab" style="background:url(/images/index/r_pg_f.png) no-repeat;">幼教</div>
-						
+						<div id="d_m_a"  class="dict_tab" style="background:url(/images/index/r_pg_f.png) no-repeat; color:#FF6600;">幼教</div>
 						<div  class="dict_tab">论坛</div>
-						
 						<div  class="dict_tab">博客</div>
-						
 						<div  class="dict_tab">咨询</div>
-						
 						<div  class="dict_tab">测评</div>
 					</div>
 					<?php for($j=0;$j<5;$j++){?>
@@ -259,7 +255,7 @@
 						?>
 						<div id="m_l_a"<?php $pos="assistant_head_image";show_page_pos($pos,'link_t_i');?>>
 							<div id="m_l_pic">
-								<a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php $pos_items[$pos]->image1?>" border="0"></a>
+								<a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1?>" border="0"></a>
 							</div>
 							<div id="m_l_title"><?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?></div>
 						</div>
@@ -271,8 +267,8 @@
 						<div id="m_l_c_r">
 							<?php 
 								for($i=1;$i<8;$i++){ ?>
-							<div class="mlc">
-								<a href="<?php echo get_news_url($news_m[$i]);?>" title="<?php echo $news_m[$i]->short_title;?>"><?php echo $news_m[$i]->short_title;?></a>
+							<div class="mlc"<?php $pos="assistant_list_$i";show_page_pos($pos,'link')?>>
+								<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?>
 							</div>
 							<?php } ?>
 						</div>
@@ -287,13 +283,15 @@
 						</div>
 						<div class="son_content">
 							<?php 
-								$news_son=$db->query("SELECT id,title,description,content,short_title FROM eb_news e where category_id=208 and is_adopt=1 order by created_at desc limit 19");
-								$news_son_count=$db->record_count;
+								#$news_son=$db->query("SELECT id,title,description,content,short_title FROM eb_news e where category_id=208 and is_adopt=1 order by created_at desc limit 19");
+								#$news_son_count=$db->record_count;
 								for($j=0;$j<8;$j++){
 							 ?>
-							<div class="son_c_z">
+							<div class="son_c_z"<?php $pos="right_news_list_$j";show_page_pos($pos,'link')?>>
 								<div class="son_c_z_l"></div>
-								<div class="son_c_z_r"><a href="<?php echo get_news_url($news_son[$j]);?>" title="<?php echo $news_son[$j]->short_title;?>"><?php echo $news_son[$j]->short_title;?></a></div>
+								<div class="son_c_z_r">
+									<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?>
+								</div>
 							</div>
 							<?php }?>
 						</div>
@@ -403,32 +401,35 @@
 									<div class="sblct_t"><a href="<?php echo get_news_list_url(119);?>">更多</a></div>
 									<div class="sblct_bb">
 										<?php 
-											$news=array("120"=>"母乳喂养","121"=>"人工喂养","122"=>"混合喂养","123"=>"母乳准备","124"=>"母乳技巧","125"=>"吐奶溢奶");
-											$new_id=array_keys($news);
-											$news_id=implode(',',$new_id);
-											$db=get_db();
-											$news_s=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in ($news_id) order by created_at desc limit 1;");
-											$n=$db->query("SELECT id,name,parent_id from eb_category where id in ($news_id)");
+											$category=array("120"=>"母乳喂养","121"=>"人工喂养","122"=>"混合喂养","123"=>"母乳准备","124"=>"母乳技巧","125"=>"吐奶溢奶");
+											#$category_ids=array_keys($category);
+											#$category_ids=implode(',',$category_ids);
+											#$db=get_db();
+											#$news_s=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in ($category_ids) order by created_at desc limit 1;");
 										?>
-										<a href="<?php echo get_news_url($news_s[0]); ?>" title="<?php $news_s[0]->title; ?>"><img src="<?php echo $news_s[0]->video_photo_src;?>"/></a>
 									</div>
 								</div>
 								<div class="sblct_r">
 									<div class="sb_title">
 										<?php
-										for($i=0;$i<6;$i++){ ?>
+										$i =0;
+										foreach($category as $id => $val){ ?>
 										<div class="sb_t_content" style="<?php if($i!==2 && $i!==5){ echo 'border-right:1px solid #EEDECF';} ?>">
-											<a href="<?php echo get_news_list_url($n[$i]);?>" title="<?php echo $new_id[$i]->name;?>">
-												<?php echo $news[$new_id[$i]]; ?>
+											<a href="<?php echo get_news_list_url($id);?>" title="<?php echo $val?>">
+												<?php echo $val?>
 											</a>
 										</div>
-										<?php }?>
+										<?php 
+											$i++;
+										}?>
 									</div>
 									<div class="sb_content">
 										<?php
-										$news=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in ($news_id) order by created_at desc limit 3;");
+										#$news=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in ($news_id) order by created_at desc limit 3;");
 										for($j=0;$j<3;$j++){ ?>
-										<div class="sb_ctt"><a href="<?php echo get_news_url($news[$j]);?>" title="<?php echo $news[$j]->title;?>"><?php echo $news[$j]->title; ?></a></div>
+										<div class="sb_ctt"<?php $pos="bottom_news_list_0_$j";show_page_pos($pos,'link')?>>
+											<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?>
+										</div>
 										<?php  }?>
 									</div>
 								</div>
@@ -438,20 +439,19 @@
 									<div class="sblct_t"><a href="<?php echo get_news_list_url(120);?>">更多</a></div>
 									<div class="sblct_bb">
 									<?php
-										$new=array("128"=>"脐带","129"=>"头部","130"=>"五官","131"=>"生殖器","132"=>"换尿布","133"=>"抱宝宝","134"=>"打襁褓","135"=>"剪指甲");
-										$newsid=array_keys($new);
-										$news_id=implode(',',$newsid);
-										$news=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in ($news_id) order by created_at desc limit 1;");
-										$n=$db->query("SELECT id,name,parent_id from eb_category where id in ($news_id)");
+										$category=array("128"=>"脐带","129"=>"头部","130"=>"五官","131"=>"生殖器","132"=>"换尿布","133"=>"抱宝宝","134"=>"打襁褓","135"=>"剪指甲");
+										#$newsid=array_keys($new);
+										##$news_id=implode(',',$newsid);
+										#$news=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in ($news_id) order by created_at desc limit 1;");
+										#$n=$db->query("SELECT id,name,parent_id from eb_category where id in ($news_id)");
 									?>
-										<a href="<?php echo get_news_url($news[0]); ?>" title="<?php $news[0]->title; ?>"><img src="<?php echo $news[0]->video_photo_src;?>"/></a>
 									</div>
 								</div>
 								<div class="sblct_r">
 									<div class="sb_title">
 										<?php
 											$i=0;
-											foreach ($new as $k=>$v){
+											foreach ($category as $k=>$v){
 											?>
 										<div class="sbb_t_a" style="<?php if($i!=3 && $i!=7){ echo 'border-right:1px solid #EEDECF;'; } ?>">
 											<a href="<?php echo get_news_url($n[$i]); ?>" title="<?php echo $v; ?>">
@@ -462,9 +462,11 @@
 									</div>
 									<div class="sb_content">
 											<?php 
-											$news=$db->query("SELECT id,title,short_title,description,content FROM eb_news e where category_id in ($news_id) order by created_at desc limit 3;");
+											#$news=$db->query("SELECT id,title,short_title,description,content FROM eb_news e where category_id in ($news_id) order by created_at desc limit 3;");
 											for($j=0;$j<3;$j++){ ?>
-											<div class="sb_ctt"><a href="<?php echo get_news_url($news[$j]); ?>" title="<?php echo $news[$j]->title; ?>"><?php echo $news[$j]->title; ?></a></div>
+											<div class="sb_ctt"<?php $pos="bottom_news_list_1_$j";show_page_pos($pos,'link')?>>
+												<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?>
+											</div>
 											<?php }?>
 									</div>
 								</div>
@@ -475,21 +477,20 @@
 								<div class="sblct_l">
 									<div class="sblct_t"><a href="<?php echo get_news_list_url(121);?>">更多</a></div>
 									<?php 
-										$news=array("136"=>"游戏","137"=>"抚摸","138"=>"训练","139"=>"对话");
-										$news_k=array_keys($news);
-										$news_id=implode(',',$news_k);
-										$new=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in ($news_id) order by created_at desc limit 1;");
-										$n=$db->query("SELECT id,name,parent_id from eb_category where id in ($news_id)");
+										$category=array("136"=>"游戏","137"=>"抚摸","138"=>"训练","139"=>"对话");
+										#$news_k=array_keys($news);
+										#$news_id=implode(',',$news_k);
+										#$new=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in ($news_id) order by created_at desc limit 1;");
+										#$n=$db->query("SELECT id,name,parent_id from eb_category where id in ($news_id)");
 									?>
 									<div class="sblct_bb">
-										<a href="<?php get_news_url($new[0]); ?>" title="<?php get_news_url($news[0]); ?>"><img src="<?php echo $new[0]->video_photo_src;?>"/></a>
 									</div>
 								</div>
 								<div class="sblct_r">
 									<div class="sb_title">
 										<?php
 										$i=0;
-										foreach ($news as $k=>$v){
+										foreach ($category as $k=>$v){
 										 ?>
 										<div class="sbr_t_a" style="<?php if($i!=3){ echo 'border-right:1px solid #EEDECF;';} ?>">
 										<a href="<?php echo get_news_url($n[$i]);?>" title="<?php echo $v; ?>"><?php echo $v; ?></a></div>
@@ -497,9 +498,11 @@
 									</div>
 									<div class="sb_content">
 										<?php 
-											$news=$db->query("SELECT id,title,short_title,description,content FROM eb_news e where category_id in ($news_id) order by created_at desc limit 3;");
+											#$news=$db->query("SELECT id,title,short_title,description,content FROM eb_news e where category_id in ($news_id) order by created_at desc limit 3;");
 											for($j=0;$j<3;$j++){ ?>
-											<div class="sb_ctt"><a href="<?php echo get_news_url($news[$j]); ?>" title="<?php echo $news[$j]->title; ?>"><?php echo $news[$j]->title; ?></a></div>
+											<div class="sb_ctt"<?php $pos="bottom_news_list_2_$j";show_page_pos($pos,'link')?>>
+												<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?>
+											</div>
 										<?php }?>
 									</div>
 								</div>
@@ -514,14 +517,16 @@
 					<div id="sbl_cr">
 						<div class="son_top">
 							<div class="son_t_l">关于<font style="color:#A4C853; font-weight:bold;" >新生儿</font></div>
-							<div class="son_t_r"><a href="<?php echo get_news_url(208); ?>"><font style="color:#F33B0A; font-weight:bold;" >+</font> 更多</a></div>
+							<div class="son_t_r"><a href="<?php echo get_news_list_url(208); ?>"><font style="color:#F33B0A; font-weight:bold;" >+</font> 更多</a></div>
 							<div class="son_content">
 								<?php 
 									for($k=8;$k<19;$k++){
 								 ?>
-								<div class="son_c_z">
+								<div class="son_c_z"<?php $pos="right_bottom_list_$k";show_page_pos($pos,'link');?>>
 									<div class="son_c_z_l"></div>
-									<div class="son_c_z_r"><a href="<?php echo get_news_url($news_son[$k]);?>" title="<?php echo $news_son[$k]->short_title;?>"><?php echo $news_son[$k]->short_title; ?></a></div>
+									<div class="son_c_z_r">
+										<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?>
+									</div>
 								</div>
 								<?php } ?>
 							</div>

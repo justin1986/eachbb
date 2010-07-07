@@ -47,9 +47,9 @@ $(function(){
 			if(i == selected){
 				continue;
 			}
-			$('#dict_menu .dict_tab').attr('style','background:url(images/index/r_hui.png) no-repeat;');
+			$('#dict_menu .dict_tab').attr('style','background:url(images/index/r_hui.png) no-repeat; color:#000000;');
 		}
-		$(this).attr('style','background:url(/images/index/r_pg_f.png) no-repeat;');
+		$(this).attr('style','background:url(/images/index/r_pg_f.png) no-repeat; color:#FF6600;');
 		$('.desc').hide();
 		$('#desc_'+selected).show();
 	},function(){});
