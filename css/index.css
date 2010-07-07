@@ -48,7 +48,7 @@ body{width:1000px; margin: 0 auto;  background:url(/images/index/img_pg.jpg) rep
 .student_pg a{margin-left:5px; color:#000; font-size:13px; text-decoration:none;}
 .student_hr{width:215px; height:1px; margin-left:5px; background:url(/images/index/class_hr.jpg) repeat-x; font-size:0px; line-height:0px; float:left; display:inline;}
 #r_spring{width:284px; height:138px; margin-top:13px; font-size:0px; line-height:0px; background:url(/images/index/r_d.gif); float:left; display:inline;}
-
+#dict_more{width:48px; height:10px; border:0px solid red;cursor:pointer;  margin-top:8px; margin-right:5px; background-image:none; font-size:0px; line-height:0px;  cursor:pointer; z-index:100; float:right; display:inline;}
 #sousuo{width:970px; height:50px; margin-top:12px; background:url(/images/index/b_hr.jpg) repeat-x;  float:left; display:inline;}
 #sousuo_a{width:103px; height:30px; margin-top:5px; margin-left:30px; background:url(/images/index/z_i.gif) no-repeat; float:left; display:inline;}
 #sousuo_b{WIDTH:620PX; height:41px; margin-left:10px; float:left; display:inline;}
@@ -83,9 +83,9 @@ body{width:1000px; margin: 0 auto;  background:url(/images/index/img_pg.jpg) rep
 #t_cc_z{width:410px; height:162px; float:left; display:inline;}
 #select_word{width:340px; height:75px; margin-top:5px;  line-height:18px;  overflow:hidden; float:left; display:inline;}
 #select_word a{font-size:12px; color:#000; font-weight:bold; text-decoration:none;}
-#select_more{width:48px; height:10px;  margin-right:2px;  border:0px solid red;  background:url(/images/index/more.gif) no-repeat; cursor:pointer; float:right; display:inline;}
+#select_more{width:48px; height:10px;  margin-right:2px;  border:0px solid red;   cursor:pointer; }
 #st_t{width:340px; height:60px; line-height:19px; border:0px solid red; overflow:hidden; float:left; display: inline;}
-#st_b{width:340px; height:10px; border:0px solid red;  float:left; display: inline;}
+#st_b{width:340px; height:10px; border:0px solid red; text-align:right;   float:left; display: inline;}
 #initial{width:73px; height:45px; border:0px solid blue; margin-top:25px; margin-left:15px; float:left; display:inline;}
 #initial_img{width:17px; height:21px; border:0px solid red; float:left; display:inline;}
 #t_content_right{width:17px; height:21px; margin-left:27px; margin-top:12px; float:left; display:inline;}
@@ -130,7 +130,7 @@ body{width:1000px; margin: 0 auto;  background:url(/images/index/img_pg.jpg) rep
 #student_r{width:264px; height:242px; margin-top:13px; margin-right:2px; background:url(/images/index/r_pg.gif) no-repeat; float:right; display:inline;}
 #dict_a{width:250px; height:30px; margin-left:10px; margin-top:5px; float:left; display:inline;}
 #dict_title{width:180px; height:30px; line-height:30px; font-size:16px; font-weight:bold;  float:left; display:inline;}
-#dict_more{width:48px; height:10px; border:0px solid red; background:url(/images/index/more.png) no-repeat center !important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/index/more.png); cursor:pointer;  margin-top:8px; margin-right:5px; background:url(/images/index/more.png) no-repeat center !important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/index/more.png); font-size:0px; line-height:0px;  cursor:pointer; z-index:100; float:right; display:inline;}
+#div_dict_more{width:48px; height:10px; border:0px solid red;cursor:pointer;  margin-top:8px; margin-right:5px; background-image:none; font-size:0px; line-height:0px;  cursor:pointer; z-index:100; float:right; display:inline;}
 #dict_menu{width:250px; height:22px; margin-left:7px; margin-top:5px; cursor:pointer; float:left; display:inline;}
 #dict_menu a{color: #000000; text-decoration: none; }
 
@@ -145,7 +145,7 @@ body{width:1000px; margin: 0 auto;  background:url(/images/index/img_pg.jpg) rep
 
 #mother{width:965px; height:238px; margin-top:5px; float:left; display:inline;}
 #mother_l{width:684px; height:236px; background:url(/images/index/l_p.gif) no-repeat; float:left; display:inline;}
-#m_l_t{width:682px; height:30px; margin-top:10px; float:left; display:inline;}
+#m_l_t{width:677px; height:22px; margin-top:10px; float:left; text-align:right; padding-top:8px; padding-right:5px; display:inline;}
 #m_more{width:48px; height:10px; border:0px solid red; margin-top:10px; margin-right:5px;  background:url(/images/index/more.png) no-repeat center !important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/index/more.png); cursor:pointer; z-index:100; float:right; display:inline;}
 #m_l_a{width:187px; height:158px; margin-left:23px; margin-top:20px; float:left; display:inline;}
 #m_l_pic{width:170px; height:115px; margin-left:7px; margin-top:7px; float:left; display:inline;}
