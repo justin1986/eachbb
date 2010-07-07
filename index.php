@@ -454,7 +454,7 @@
 											foreach ($category as $k=>$v){
 											?>
 										<div class="sbb_t_a" style="<?php if($i!=3 && $i!=7){ echo 'border-right:1px solid #EEDECF;'; } ?>">
-											<a href="<?php echo get_news_url($n[$i]); ?>" title="<?php echo $v; ?>">
+											<a href="<?php echo get_news_list_url($k); ?>" title="<?php echo $v; ?>">
 												<?php echo $v; ?>
 											</a>
 										</div>
@@ -493,7 +493,7 @@
 										foreach ($category as $k=>$v){
 										 ?>
 										<div class="sbr_t_a" style="<?php if($i!=3){ echo 'border-right:1px solid #EEDECF;';} ?>">
-										<a href="<?php echo get_news_url($n[$i]);?>" title="<?php echo $v; ?>"><?php echo $v; ?></a></div>
+										<a href="<?php echo get_news_list_url($k);?>" title="<?php echo $v; ?>"><?php echo $v; ?></a></div>
 										<?php $i++; }?>
 									</div>
 									<div class="sb_content">

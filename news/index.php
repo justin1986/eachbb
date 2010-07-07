@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-CN>
-	<title>consult</title>
+	<title>网趣宝贝-育儿资讯</title>
 	<?php
 	include_once('../frame.php');
 		use_jquery();
