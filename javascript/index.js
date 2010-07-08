@@ -7,10 +7,29 @@ function search_news(){
 	}
 	window.location.href = "/news/search.php?key=" + text;
 }
+
+function send_login(){
+	$.post('/login/ajax.post.php?op=login&name='+ encodeURI($('#login_name').val()) + '&password=' +encodeURI($('#login_password').val()),function(data){
+		$('#test_right').load('/login/ajax.post.php?op=load_login_status_box');
+	});
+};
+
 $(function(){
 	$('#login_l').live('click',function(e){
 		e.preventDefault();
-		$.post('/login/ajax.post.php?op=login&name='+ encodeURI($('#login_name').val()) + '&password=' +encodeURI($('#login_password').val()),function(data){
+		
+		send_login();
+	});
+	
+	$('#login_password').live('keypress',function(e){
+		if(e.keyCode==13){
+			send_login();
+		}
+	});
+	
+	$('#a_ajax_logout,#a_change_user').live('click',function(e){
+		e.preventDefault();
+		$.post('/login/ajax.post.php?op=logout',function(data){
 			$('#test_right').load('/login/ajax.post.php?op=load_login_status_box');
 		});
 	});
@@ -81,6 +100,25 @@ $(function(){
 	$('#input_search').keypress(function(e){
 		if(e.keyCode == 13){
 			search_news();
+		}
+	});
+	
+	$('#date_picker').datepicker({
+		changeMonth: true,
+		changeYear: true,
+		monthNamesShort:['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
+		dayNames:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
+		dayNamesMin:["日","一","二","三","四","五","六"],
+		dayNamesShort:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
+		dateFormat: 'yy-mm-dd',
+		onSelect: function(date){
+			var time;
+			if($(this).data('endtime')){
+				time = $(this).data('endtime');
+			}else{
+				time = "00:00:00";
+			}
+			$(this).val(date + " " + time);
 		}
 	});
 });
