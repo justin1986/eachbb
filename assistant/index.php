@@ -15,9 +15,9 @@
 </head>
 <body>
 <div id="ibody">
-	<?php include_once('../inc/assistant_top.php'); ?>
+	<?php include_onceassistant_top.php; ?>
 	<div id="fbody">
-		<?php include_once('../inc/assistant_left.php'); ?>
+		<?php include_onceassistant_left.php; ?>
 		<div id="f_r">
 			<div id="fr_t">
 				<div id="fr_tp"></div>

@@ -5,7 +5,7 @@
 	<meta http-equiv=Content-Language content=zh-CN>
 	<title>妈妈助手</title>
 	<?php
-		include_once dirname(__FILE__).'/../frame.php';
+		include_once('./../frame.php');
 		css_include_tag('assistant_list','assistant_content','assistant_question','right_inc/assistant_right','top_inc/assistant_top','left_inc/assistant_left','bottom'); 
 		use_jquery();
 		js_include_tag('assistant/assistant');
@@ -14,9 +14,9 @@
 </head>
 <body>
 <div id="ibody">
-	<?php include_once('../inc/assistant_top.php'); ?>
+	<?php include_once('./_assistant_top.php'); ?>
 	<div id="fbody">
-		<?php include_once('../inc/assistant_left.php'); ?>
+		<?php include_once('./_assistant_left.php'); ?>
 		<div id="result">
 			<div id="result_top_btn">
 				<input type="button" value="按年龄查看"/>
@@ -42,11 +42,11 @@
 						<div class="result_pg_bottom"></div>
 					</div>
 					<?php } ?>
-					<?php include_once('../inc/assistant_content.php'); ?>
+					<?php include_once('./_assistant_content.php'); ?>
 				</div>
-				<?php include_once('../inc/assistant_right.php'); ?>
+				<?php include_once('./_assistant_right.php'); ?>
 			</div>
-			<?php include_once('../inc/assistant_question.php'); ?>
+			<?php include_once('./_assistant_question.php'); ?>
 		</div>
 		<?php include_once('../inc/bottom.php'); ?>
 	</div>

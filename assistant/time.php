@@ -5,7 +5,7 @@
 	<meta http-equiv=Content-Language content=zh-CN>
 	<title>妈妈助手</title>
 	<?php
-		include_once dirname(__FILE__).'/../frame.php';
+		include_once('./../frame.php');
 		css_include_tag('assistance_time','assistant_content','assistant_question','right_inc/assistant_right','top_inc/assistant_top','left_inc/assistant_left','bottom'); 
 		use_jquery();
 		js_include_tag('assistant/assistant');
@@ -14,9 +14,9 @@
 </head>
 <body>
 <div id="ibody">
-	<?php include_once('../inc/assistant_top.php'); ?>
+	<?php include_once('./_assistant_top.php'); ?>
 	<div id="fbody">
-		<?php include_once('../inc/assistant_left.php'); ?>
+		<?php include_once('./_assistant_left.php'); ?>
 		<div id="result">
 			<div id="container">
 				<div id="container_result">
@@ -75,20 +75,17 @@
 							</div>
 						</div>
 						<div id="help_title"></div>
-						<div id="help_value">
-							<div class="help_banner">
-								<div class="help_dian"></div>
-								<div class="help"></div>
-							</div>
-							
+						<div class="help_banner">
+							<div class="help_dian"></div>
+							<div class="help">你很帅哦的你很帅哦的护发素你很帅哦的护发素你很帅哦的护发素你很帅哦的护发素你很帅哦的护发素护发素iuhinnsd你很帅哦的护发素</div>
 						</div>
 					</div>
 					
-					<?php include_once('../inc/assistant_content.php'); ?>
+					<?php include_once('./_assistant_content.php'); ?>
 				</div>
-				<?php include_once('../inc/assistant_right.php'); ?>
+				<?php include_once('./_assistant_right.php'); ?>
 			</div>
-			<?php include_once('../inc/assistant_question.php'); ?>
+			<?php include_once('./_assistant_question.php'); ?>
 		</div>
 		<?php include_once('../inc/bottom.php'); ?>
 	</div>
