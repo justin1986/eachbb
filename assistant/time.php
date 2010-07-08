@@ -76,6 +76,10 @@
 						</div>
 						<div id="help_title"></div>
 						<div id="help_value">
+							<div class="help_banner">
+								<div class="help_dian"></div>
+								<div class="help"></div>
+							</div>
 							
 						</div>
 					</div>

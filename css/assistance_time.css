@@ -19,5 +19,7 @@ body{width:970PX; margin: 0 auto;}
 						.questionary_banner a{margin-left:5px; font-size: 12px; text-decoration:none; color:#5B5B5B;}
 		#help_title{width:481px; height:21px; margin-left:40px; margin-top:20px; background:url(/images/assistant_time/title.jpg) no-repeat; float:left;}
 		#help_value{width:427px; margin-left:40px; margin-top:10px; float:left;}
+			.help_banner{width:427px; overflow:hidden; margin-top:10px;}
+				.help_dian{width:4px; height:4px; margin-top:8px; background:#5B5B5B; float:left;}
 .v_kong{width:188px; height:15px; line-height:0px; float:left;}
 .kong{width:503px; height:15px; line-height:0px; float:left;}
