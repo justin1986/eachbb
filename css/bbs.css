@@ -4,14 +4,10 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 
 #fbody{ width:970px; overflow:hidden;  background:#ffffff; float:left; display:inline;}
 
-
 #top_login{width:970px; height:83px; margin-top:10px; font-size:13px; color:#ffffff; float:right; display:inline;}
 #top_login a{color:#ffffff; text-decoration:none;}
 #tl_l{width:224px; height:83px; background:url(../images/bbs/loginb.jpg) no-repeat; float:left; display:inline;}
 #tl_r{width:721px; height:77px; background:url(../images/bbs/t.jpg) no-repeat; float:right; display:inline;}
-
-
-
 
 #top_menu{width:970px; height:61px; margin-top:5px; overflow:hidden;  float:left; display:inline;}
 #menu_left{width:5px; height:61px; background:url(../images/bbs/t_a.jpg) no-repeat; float:left; display:inline;}
@@ -40,23 +36,8 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 #me_in{width:150px; height:15px; margin-left:14px; margin-top:3px; font-size:12px; float:left; display:inline;}
 #me_btn{width:47px; height:24px; margin-left:4px; margin-top:1px; background:url(../images/bbs/mo_sou.jpg) no-repeat; border:0px solid red; float:left; display:inline;}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #b_l{width:646px; margin-top:15px; overflow:hidden; float:left; display:inline;}
 #b_r{width:291px;  margin-top:15px; overflow:hidden; float:right; display:inline;}
-
 
 #bl_a{width:646px; height:207px; float:left; display:inline;}
 #bla_img{width:297px; height:207px; background:url(../images/bbs/pg_d.gif) no-repeat; float:left; display:inline;}
@@ -73,7 +54,6 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 .blaco_c{width:295px; height:20px; margin-left:5px; line-height:20px; overflow:hidden; float:left; display:inline;}
 .blaco_c a{font-size:12px; font-weight:500; color:#666666; text-decoration:none;}
 
-
 #bl_b{width:646px;  margin-top:10px; float:left; display:inline;  float:left; display:inline;}
 #bl_ti{width:646px;  float:left; display:inline;}
 #blt_img{width:80px; height:30px; text-align:center; line-height:30px; font-size:16px; font-weight:600; color:#FF8FC1; background:url(../images/bbs/ha.jpg) no-repeat; float:left; display:inline;}
@@ -81,7 +61,6 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 #blt_c a{color:#FFABD1; font-size:12px; font-weight:600; text-decoration:none; float:left; display:inline;}
 .bltc_z{width:1px; height:10px; margin-top:10px; margin-left:5px; margin-right:5px; border-left:1px solid #CCCCCC; font-size:0px; line-height:0px; float:left; display:inline;}
 #bltc_hr{width:646px; height:1px; margin-top:-1px;  background:url(../images/bbs/hr.jpg) repeat-x; font-size:0px; line-height:0px; float:left; display:inline;}
-
 
 .special{width:310px; height:180px;  margin-left:10px; margin-top:15px; overflow:hidden; float:left; display:inline;}
 .bl_sp_t{width:290px; height:17px; float:left; display:inline;}
@@ -107,10 +86,6 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 .blb_v a{ font-size:12px; font-weight:600; color:#8C8C8C; text-decoration:none;}
 #bit_ban{width:646px; margin-top:20px; float:left; display:inline;}
 
-
-
-
-
 #bit_c{width:646px; float:left; display:inline;}
 .bitc_a{width:290px; height:215px; margin-top:15px; float:left; display:inline;}
 .bitca_t{width:290px; height:17px;  line-height:0px; font-size:0px; background:url(../images/bbs/c1.jpg) no-repeat; float:left; display:inline;}
@@ -127,25 +102,8 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 .bical_value{width:170px; height:20px; line-height:20px; overflow:hidden; float:right; display:inline;}
 .bical_value a{font-size:12px; color:#333333; text-decoration:none;}
 
-
-
-
-
-
-
 #bl_img{width:648px; height:86px; margin-top:20px; overflow:hidden; float:left; display:inline;}
 #bl_img img{width:648px; height:86px;}
-
-
-
-
-
-
-
-
-
-
-
 
 #br_login{width:287px; height:174px; background:url(../images/bbs/login.jpg) no-repeat; float:left; display:inline;}
 #login_a{width:273px; height:23px; margin-top:55px; margin-left:8px; float:left; display:inline;}
@@ -160,17 +118,7 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 #lo_login{width:57px; height:19px; margin-left:95px; border:0px solid red; text-align:center; background:url(../images/bbs/pg_bl.jpg) no-repeat; float:left; display:inline;}
 #lo_reg{width:57px; height:19px; margin-left:30px; border:0px solid red; text-align:center; background:url(../images/bbs/sd.jpg) no-repeat; float:left; display:inline;}
 
-
-
-
-
-
-
-
-
-
 #br_c{width:287px; height:136px; margin-top:17px; background:url(../images/bbs/r_b.gif) no-repeat; float:left; display:inline;}
-
 
 #br_e{width:288px; height:146px; margin-top:12px; overflow:hidden; background:url(../images/bbs/pg_b.jpg) no-repeat; float:left; display:inline;}
 .br_bz{width:270px; height:18px; margin-left:15px; margin-top:1px; float:left; display:inline;}
@@ -178,14 +126,10 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 .br_bzr{width:260px; height:18px; margin-left:5px; line-height:18px; overflow:hidden;;float:left; display:inline;}
 .br_bzr a{font-size:12px;  text-decoration:none; color:#333333;}
 
-
-
 #br_f{width:290px; height:100px; margin-top:17px; overflow:hidden; font-size:0px; line-height:0px; float:left; display:inline;}
 #br_f img{width:290px; height:100px; border:0px solid red; float:left; display:inline;}
 #br_g{width:290px; height:100px; margin-top:17px; font-size:0px; line-height:0px; float:left; display:inline;}
 #br_g img{width:290px; height:100px; border:0px solid red; float:left; display:inline;}
-
-
 
 #br_h{ width:285px; margin-left:3px; margin-top:17px; overflow:hidden; float:left; display:inline;}
 #rh_t{width:285px; height:36px; background:url(../images/bbs/pg_c.jpg) no-repeat; float:left; display:inline;}
@@ -202,7 +146,6 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 
 #i{width:283px; height:24px; margin-left:3px; background:url(../images/bbs/pg_dd.jpg) no-repeat; float:left; display:inline;}
 
-
 .o{width:283px; height:20px; margin-left:5px; margin-top:2px; font-weight:600; float:left; display:inline;}
 .i_l{width:120px; height:20px; margin-left:10px; font-size:16px; line-height:20px; float:left; display:inline;}
 .i_r{width:100px; height:20px; margin-left:20px; line-height:20px; font-size:14px; color:#CCCCCC; font-size:16px; float:left; display:inline;}
@@ -215,9 +158,6 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 #i_r{width:60px; height:20px; margin-left:20px; color:#CCCCCC; line-height:20px; font-size:16px; float:right; display:inline;}
 #i_r a{font-size:14px; color:#CCCCCC; text-decoration:none;}
 
-
-
-
 .p{width:273px;  margin-left:15px; font-size:13px; float:left; display:inline;}
 .p_l{width:11px; height:10px; margin-top:7px; font-size:0px; line-height:0px; background:url(../images/bbs/q.gif) no-repeat; float:left; display:inline;}
 .p_r{width:250px;  margin-top:3px; margin-left:4px; line-height:20px; overflow:hidden; float:left; display:inline; }
@@ -228,13 +168,6 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 .q_r{width:250px;  margin-top:3px; margin-left:4px; color:#444444; font-size:13px; font-weight:600; line-height:16px; overflow:hidden; float:left; display:inline; }
 .p_hr{width:273px; height:4px; margin-left:10px; margin-top:5px; margin-bottom:5px; background:url(../images/bbs/q_h.jpg) repeat-x; float:left; display:inline;}
 
-
-
-
-
-
-
-
 #fb_pg{width:954px; height:144px; margin-top:10px; border:3px solid #FF78B5; font-size:0px; float:left; display:inline;}
 #fbp_l{width:25px; height:144px; background:url(../images/bbs/p_a.jpg) no-repeat; float:left; display:inline;}
 #fbp_r{width:25px; height:144px; background:url(../images/bbs/p_b.jpg) no-repeat; float:right; display:inline;}
@@ -243,10 +176,6 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 #fbp_c{width:902px; height:144px; margin-left:1px; float:left; display:inline;}
 .fb_pg{width:178px; height:142px; margin-top:1px; margin-left:2px; cursor:pointer;  float:left; display:inline;}
 .fb_pg img{width:178px; height:142px; border:0px solid red;}
-
-
-
-
 
 #bottom{width:960px; text-align:center; margin-top:20px; font-size:12px; color:#666666; float:left; display:inline;}
 #bottom_b{width:960px; margin-top:10px; margin-bottom:50px; text-align:center; font-size:12px; color:#666666; float:left; display:inline;}
