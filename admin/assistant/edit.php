@@ -61,6 +61,10 @@
 				<td><input type="text" name=news[priority] id="priority"  class="number" value="<?php echo $news->priority;?>">(0~100)</td>
 			</tr>
 			
+			<tr class="tr4">
+				<td class="td1">图片</td>
+				<td><input type="file" name=news[image]><?php if($news->image!=''){?><a target="_blank" href='<?php echo $news->image;?>'>点击查看</a><?php }?></td>
+			</tr>
 			
 			<tr class="tr4">
 				<td class="td1">年龄段</td>

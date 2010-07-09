@@ -9,16 +9,21 @@ body{width:970PX; margin: 0 auto;}
 
 #container{width:745px; margin-top:10px; float:right; display:inline;}
 	#container_result{width:521px; float:left;}
-		#result_list{width:503px; height:27px; padding-left:18px; background:#FFE5C5; line-height:27px; font-size:14px; color:#FF3907; font-weight:bold; float:left;}
+		.result_list{width:503px; height:27px; padding-left:18px; background:#FFE5C5; line-height:27px; font-size:14px; color:#FF3907; font-weight:bold; float:left;}
 		.result_banner{width:520px; margin-top:10px; float:left; display:inline;}
 			.result_pg_top{width:485px; height:35px; padding-left:35px; font-size:14px; line-height:35px; font-weight:bold; color:#FF6600; background:url(/images/assistant_list/con_top.jpg) no-repeat; float:left;}
+			.result_pg_top a{width:50px; height:26px; font-size:12px; color:#777777; text-decoration:none; font-weight:normal; float:right;}
 			.result_pg_content{width:518px; border-left:1px solid #FFDBB0; border-right: 1px solid #FFDBB0; float:left;}
+				#paginage{width:100%; text-align:center; margin-top:10px; font-size:12px; color:#999999; line-height:30px; float:left;}
+				#paginage a{text-decoration:none; color:#666666;}
 				.result_container{width:490px; height:64px; margin-left:15px; float:left; display: inline;}
 				.result_container img{width: 71px; height:54px; margin-top:10px; border:0px solid #000000; float:left; display:inline;}
 				.result_title{width:400px; height:18px; margin-top:10px; margin-left:15px; line-height:18px; float:left; display:inline;}
 				.result_title a{font-size:12px; color:#FF9143; text-decoration: none; font-weight:bold;}
 				.result_value{width:400px; height:32px; margin-left:15px; font-size:12px; color:#666666; line-height:16px; overflow:hidden; float:left; display: inline;}
 				.result_value a{margin-left:10px; color:#999999; font-size:12px; text-decoration:none; dispaly:inline;}
+				.category_name{float:left; margin-left:10px; height:25px; font-size:13px; line-height:25px;}
+				.category_name a{text-decoration:none; color:#999999;}
 			.result_pg_bottom{width:520px; height:6px; background:url(/images/assistant_list/con_btm.jpg) no-repeat; float:left;}
 		
 .v_kong{width:188px; height:15px; line-height:0px; float:left;}
