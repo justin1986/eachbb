@@ -3,7 +3,7 @@ body{width:970PX; margin: 0 auto;}
 #ibody{width:970px; overflow:hidden; margin:0;}
 
 #result{width:745px;  float:right; display:inline;}
-	
+
 #container{width:745px; margin-top:10px;  float:right; display:inline;}
 	#container_result{width:521px; float:left;}
 		#result_list{width:521px; overflow:hidden; border:1px solid #FFE5C5; float:left;}
