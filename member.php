@@ -7,8 +7,17 @@
 	<?php 
 		include_once dirname(__FILE__).'/frame.php';
 		css_include_tag('member');
+		use_jquery();
 	?>
 </head>
+<?php
+	$id = intval($_GET['id']);
+	if(empty($id)){
+		die('非法访问');
+	}
+	$member = new table_class('eb_member');
+	$member->find($id);
+?>
 <body>
 <div id="top_login">
 	<div id="login">
@@ -97,64 +106,82 @@
 		<table class=r_table>
 			<tr>
 				<td class=td1>昵称：</td>
-				<td class=td2><span>564828</span></td>
+				<td class=td2><span><?php echo $member->name;?></span></td>
 			</tr>
 			<tr>
 				<td class=td1>电子邮箱：</td>
-				<td class=td2><span>robbin_szf@hotmail.com</span></td>
+				<td class=td2><span><?php echo $member->email;?></span></td>
 			</tr>
 			<tr>
 				<td class=td1>性别：</td>
-				<td class=td2><input class="radio" type="radio" name="sex" checked=checked value="1" />
+				<td class=td2><input class="radio" type="radio" name="gender" <?php if($member->gender==1){?>checked=checked<?php }?> value="1" />
 					男
-					<input class="radio" type="radio" name="sex" value="0" />
+					<input class="radio" type="radio" name="gender" value="2" <?php if($member->gender==2){?>checked=checked<?php }?>/>
 					女</td>
 			</tr>
 			<tr>
-				<td class=td1>出生日期：</td>
-				<td class=td2><select>
-						<option>请选择</option>
-					</select>
-					年
-					<select>
-						<option>请选择</option>
-					</select>
-					月
-					<select>
-						<option>请选择</option>
-					</select>
-					日 </td>
-			</tr>
-			<tr>
 				<td class=td1>固定电话：</td>
-				<td class=td2><input type="text"/></td>
+				<td class=td2><input name='fix_phone' value="<?php echo $member->fix_phone;?>" type="text"/></td>
 			</tr>
 			<tr>
 				<td class=td1>联系手机：</td>
-				<td class=td2><input type="text" /></td>
+				<td class=td2><input type="text" name='phone' value="<?php echo $member->phone;?>" /></td>
 			</tr>
 			<tr>
 				<td class=td1>身份证号：</td>
-				<td class=td2><input type="text" /></td>
+				<td class=td2><input type="text" name='id_num' value="<?php echo $member->id_num;?>" /></td>
 			</tr>
 			<tr>
 				<td class=td1>教育程度：</td>
-				<td class=td2><select>
-						<option>请选择</option>
+				<td class=td2><select name='education' id='education'>
+						<option value=''>请选择</option>
+						<option value='高中/中专'>高中/中专</option>
+						<option value='大学本科/大学专科'>大学本科/大学专科</option>
+						<option value='硕士'>硕士</option>
+						<option value='博士'>博士</option>
 					</select></td>
 			</tr>
+			<script>$("#education").val('<?php echo $member->education;?>')</script>
 			<tr>
 				<td class=td1>行业：</td>
-				<td class=td2><select>
-						<option>请选择</option>
+				<td class=td2><select name='industry' id="industry">
+						  <option value=''>请选择</option>
+						  <option value="1.制造业">1.制造业</option>
+	                      <option value="2.进出口贸易">2.进出口贸易</option>
+	                      <option value="3.批发 零售分销">3.批发/零售/分销</option>
+	                      <option value="4.产品代理">4.产品代理</option>
+	                      <option value="5.银行 金融">5.银行/金融</option>
+	                      <option value="6.保险业">6.保险业</option>
+	                      <option value="7.电信服务业">7.电信服务业</option>
+	                      <option value="8.邮政服务">8.邮政服务</option>
+	                      <option value="9.网络 信息服务 电子商务">9.网络/信息服务/电子商务</option>
+	                      <option value="10.公用事业">10.公用事业</option>
+	                      <option value="11.酒店 旅游">11.酒店/旅游</option>
+	                      <option value="12.房地产">12.房地产</option>
+	                      <option value="13.建筑">13.建筑</option>
+	                      <option value="14.政府机构">14.政府机构</option>
+	                      <option value="15.文化 教育 培训">15.文化/教育/培训</option>
+	                      <option value="16.交通运输 航空 船务 铁路 货运等">16.交通运输(航空，船务，铁路，货运等)</option>
+	                      <option value="17.法律 会计">17.法律/会计</option>
+	                      <option value="18.商业咨询 顾问服务">18.商业咨询/顾问服务</option>
+	                      <option value="19.媒体 公关 出版 广播 广告等">19.媒体/公关（出版，广播，广告等）</option>
+	                      <option value="20.其他">20.其他</option>
 					</select></td>
 			</tr>
+			<script>$("#industry").val('<?php echo $member->industry;?>')</script>
 			<tr>
 				<td class=td1>家庭月收入：</td>
-				<td class=td2><select>
-						<option>请选择</option>
+				<td class=td2><select name='income' id='income'>
+						<option value=''>请选择</option>
+						<option value='1000元以下'>1000元以下</option>
+						<option value='1000-3000元'>1000-3000元</option>
+						<option value='3000-5000元'>3000-5000元</option>
+						<option value='5000-8000元'>5000-8000元</option>
+						<option value='8000-10000元'>8000-10000元</option>
+						<option value='10000元以上'>10000元以上</option>
 					</select></td>
 			</tr>
+			<script>$("#income").val('<?php echo $member->income;?>')</script>
 		</table>
 		<div class=r_title>会员<span>信息</span></div>
 		<table class=r_table>
