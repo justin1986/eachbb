@@ -22,7 +22,7 @@ body{width:970PX; margin: 0 auto;}
 				.result_title a{font-size:12px; color:#FF9143; text-decoration: none; font-weight:bold;}
 				.result_value{width:400px; height:32px; margin-left:15px; font-size:12px; color:#666666; line-height:16px; overflow:hidden; float:left; display: inline;}
 				.result_value a{margin-left:10px; color:#999999; font-size:12px; text-decoration:none; dispaly:inline;}
-				.category_name{float:left; margin-left:10px; height:25px; line-height:25px;}
+				.category_name{float:left; margin-left:10px; height:25px; font-size:13px; line-height:25px;}
 				.category_name a{text-decoration:none; color:#999999;}
 			.result_pg_bottom{width:520px; height:6px; background:url(/images/assistant_list/con_btm.jpg) no-repeat; float:left;}
 		
