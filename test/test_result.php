@@ -42,7 +42,7 @@ foreach ($results as $result){
 <body>
 <div id="ibody">
 	<div id="fbody">
-		<?php include_once('../inc/top_blue.inc.php'); ?>
+		<?php include_once('./_test_top.php'); ?>
 		<!-- 外部容器 -->
 		<div id="container">
 			<?php include_once('../inc/left_inc.php'); ?>

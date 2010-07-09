@@ -27,16 +27,14 @@
 </head>
 <body>
 <div id="ibody">
-	<?php include_once('../inc/top_consult.php'); ?>
+	<?php include_once('./_top_course.php'); ?>
 	<div id="fbody">
 		<div id="c_l">
 				<div id="l_img">
 					<img src="/images/info/t_<?php echo $mon;?>.jpg"/>
 				</div>
 				<div id="l_pho">
-					<div id="lp_t">个人信息管理</div>
-					<div id="lp_p">
-						<div id="lp_l"><img src="/images/class/l_peo.jpg"></div>
+					<div id="lp_t">个人信息管理</di../news/top_consult.php						<div id="lp_l"><img src="/images/class/l_peo.jpg"></div>
 						<div id="lp_word">司法撒旦发射发声法</div>
 					</div>
 					<div id="l_b_wa"><a href="#">您有<font>0</font>新条评论</a></div>

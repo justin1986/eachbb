@@ -8,12 +8,12 @@
 			<div id="menu_center">
 				<div id="menu_ct">
 					<div id="menu_ctt">
-						<input type="button" class="t_first" value="网站首页">
-						<div class="me_a"><a href="#">特色测评</a></div>
+						<div class="t_first"><a href="/" style="color:#000000; font-weight:normal;">网站首页</a></div>
+						<div class="me_a"><a href="/test">特色测评</a></div>
 						<div class="me_h"></div>
-						<div class="me_b"><a href="#">早教课程</a></div>
+						<div class="me_b"><a href="/course">早教课程</a></div>
 						<div class="me_h"></div>
-						<div class="me_b" style="background:url(images/bbs/mo_pg.jpg) no-repeat;"><a href="#"><font class="son">妈妈</font><font class="bbs">助手</font></a></div>
+						<div class="me_b" style="background:url(/images/assistant_list/top_t.jpg) no-repeat;"><a href="/assistant"><font class="son">妈妈</font><font class="bbs">助手</font></a></div>
 						<div class="me_h"></div>
 						<div class="me_b"><a href="#">我家小院子</a></div>
 						<div class="me_h"></div>
@@ -21,7 +21,7 @@
 						<div class="me_h"></div>
 						<div class="me_b"><a href="#">亲子论坛</a></div>
 						<div class="me_h"></div>
-						<div class="me_b"><a href="#">育儿咨询</a></div>
+						<div class="me_b"><a href="/news">育儿咨询</a></div>
 						<div class="me_h"></div>
 						<div class="me_b" style="width:85px;"><a href="#">关于网趣宝宝</a></div>
 						<div class="welcom">欢迎,<font>123</font></div>
@@ -30,7 +30,7 @@
 					</div>
 				</div>
 				<div id="menu_ctb">
-					<input type="button" id="t_first" value="我的网趣">
+					<div  id="t_first" ><a href="" style="font-weight: normal;">我的网趣</a></div>
 					<div class="me_aa"><a href="#">网趣宝宝首页</a></div>
 					<div class="me_hh"></div>
 					<div class="me_bb"><a href="#">用户测评报告</a></div>

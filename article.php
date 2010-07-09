@@ -24,7 +24,7 @@
 </head>
 <body>
 <div id="ibody">
-	<?php include_once('inc/top_consult.php'); ?>
+	<?php include_once('news/top_consult.php'); ?>
 		<div id="fbody">
 		<div id="log_top">
 			<div id="log_t">
