@@ -14,7 +14,7 @@
 		<div id="content">
 			<?php include_once('./inc/left_inc.php'); ?>
 			<div id="c_r">
-				<div id="crb_t"> 
+				<div id="crb_t">
 						<div class="crb_value">
 							<div class="crb_tt"></div>
 							<div class="crb_cc" ><a href="#">大动作</a></div>

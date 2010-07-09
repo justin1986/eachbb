@@ -9,6 +9,7 @@
 		$news->find($news_id);
 	}
 	$news->update_attributes($_POST['news'],false);
+	$news->update_file_attributes('news');
 	
 	if ($news->priority == ""){
 		$news->priority = 100;
