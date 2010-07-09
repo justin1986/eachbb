@@ -139,7 +139,7 @@
 						<div id="t_cc_z">
 							<div id="select_st">
 								<div id="select_s">
-									<input style="margin-top:5px;" type="text" id="date_picker" />
+									<input style="margin-top:10px;" type="text" id="date_picker" />
 									<!-- 
 									<select id="select_a">
 									<?php 
