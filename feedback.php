@@ -1,9 +1,11 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <?php
 	include_once('./frame.php');
 ?>
 <html>
 <head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta http-equiv=Content-Language content=zh-CN>
 <title>问题反馈</title>
 <?php
 	use_jquery();
@@ -47,19 +49,15 @@
 						<div id="lp_l"><img src="images/class/l_peo.jpg"></div>
 						<div id="lp_word">司法撒旦发射发声法</div>
 					</div>
-					<a href="#">
-					<div id="l_b_wa">您有<font>0</font>新条评论</div>
-					</a> <a href="#">
-					<div class="l_b_wb">我的博客</div>
-					</a> <a href="#">
-					<div class="l_b_wb">宝宝最新测试报告</div>
-					</a> <a href="#">
-					<div class="l_b_wb">宝宝本期课程</div>
-					</a> <a href="#">
-					<div class="l_b_wb">宝宝下期课程提示</div>
-					</a> </div>
+					
+					<div id="l_b_wa"><a href="#">您有<font>0</font>新条评论</a> </div>
+					<div class="l_b_wb"><a href="#">我的博客</a> </div>
+					<div class="l_b_wb"><a href="#">宝宝最新测试报告</a> </div>
+					<div class="l_b_wb"><a href="#">宝宝本期课程</a> </div>
+					<div class="l_b_wb"><a href="#">宝宝下期课程提示</a> </div>
+				</div>
 				<a href="#">
-				<div id="l_look"></div>
+				<img id="l_look" src="/images/yetrb/asdf.jpg"/>
 				</a>
 				<div class="hlc_t"></div>
 				<div class="hlc_b">
@@ -101,7 +99,7 @@
 				<div id="l_f">
 					<div id="lf_l">我的<font>好友</font></div>
 					<div id="lf_c">（<font>345</font>）</div>
-					<div id="lf_r">More >></div>
+					<div id="lf_r">More &gt;&gt;</div>
 				</div>
 				<div id="pic_r">
 					<div class="ppg">
@@ -144,7 +142,7 @@
 				<div id="pg_a"></div>
 			</div>
 			<div id="c_r">
-				<div id="address">当前位置：首页 > 育儿百科 > 帮助中心 > <font>意见反馈</font></div>
+				<div id="address">当前位置：首页 &gt; 育儿百科 &gt; 帮助中心 &gt; <font>意见反馈</font></div>
 				<div id="c_hr"></div>
 				<div id="h_title">感谢使用我们的教程，希望我们的共同努力能使您的孩子从哇哇落地就得到装专业的教育和早教指导</div>
 				<div id="c_title">您的意见是我们最珍贵的礼物</div>
@@ -173,9 +171,11 @@
 									<div id="ctb_rc">撒旦发射的发生的发声法额外发往俄方撒旦发射的发生的发声法额外发往俄方撒旦发射的发生的发声法额外发往俄方撒旦发射的发生的发声法额外发往俄方撒旦发射的发生的发声法额外发往俄方撒旦发射的发生的发声法额外发往俄方撒旦发射的发生的发声法额外发往俄方撒旦发射的发生的发声法额外发往俄方</div>
 								</div>
 							</div>
-							<div class="ctb_b"><a href="#">
-								<div class="ctbb"></div>
-								</a></div>
+							<div class="ctb_b">
+								<a href="#">
+								<img class="ctbb" src="/images/yetrb/gd.gif"/>
+								</a>
+							</div>
 						</div>
 						<div id="ctb_m">妈妈<font>助手</font>管理</div>
 						<div class="ctc_bz">
@@ -205,18 +205,17 @@
 									</div>
 								</div>
 							</div>
-							<div class="ctb_b"><a href="#">
-								<div class="ctbb"></div>
-								</a></div>
-							<div id="c_pic"> <a href="#">
-								<div class="c_p_b selected" param="1" style="margin-left:10px;">图书玩具</div>
-								</a> <a href="#">
-								<div class="c_p_b" param="2">我家院子</div>
-								</a> <a href="#">
-								<div class="c_p_b" param="3">论坛精华</div>
-								</a> <a href="#">
-								<div class="c_p_b" param="4">其他照片</div>
-								</a> </div>
+							<div class="ctb_b">
+								<a href="#">
+								<img class="ctbb" src="/images/yetrb/gd.gif"/>
+								</a>
+							</div>
+							<div id="c_pic"> 
+								<div class="c_p_b selected" param="1" style="margin-left:10px;"><a href="#">图书玩具</a></div>
+								<div class="c_p_b" param="2"><a href="#">我家院子</a></div>
+								<div class="c_p_b" param="3"><a href="#">论坛精华</a></div>
+								<div class="c_p_b" param="4"><a href="#">其他照片</a></div>
+							</div>
 							<div id="ctc_bz">
 								<div id="ctb_t"></div>
 								<div id="ctb_c">
@@ -231,9 +230,11 @@
 										<div class="ctb_img"><img src="images/yetrb/dd.jpg"></div>
 									</div>
 								</div>
-								<div id="ctb_b"><a href="#">
-									<div class="ctbb"></div>
-									</a></div>
+								<div id="ctb_b">
+									<a href="#">
+									<img class="ctbb" src="/images/yetrb/gd.gif"/>
+									</a>
+								</div>
 							</div>
 						</div>
 					</div>
