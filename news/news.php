@@ -13,13 +13,12 @@
 <head>
 <meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <meta http-equiv=Content-Language content=zh-CN>
-
 <meta name="Keywords" content="<?php
 $lines=explode("||",$column[0]->keywords);
 foreach ($lines as $li){ 
 	echo $li;
 } ?>"/>
-<meta name="Description" content="<?php echo strip_tags($column[0]->description);?>"/>
+<meta name="Description" content="<?php echo  preg_replace('/\r|\n/', '',str_replace(" ","",strip_tags($column[0]->description)));?>"/>
 <title><?php echo $column[0]->title;?></title>
 <?php
 	use_jquery();

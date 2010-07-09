@@ -103,7 +103,7 @@ body{width:970px; margin: 0 auto; font-family:����;}
 #text_word ul li font{font-size:14px; font-weight:bold; color:#666666; float:left; display:inline;}
 #text_word ul li a{font-size:12px; text-decoration: none; color:#990099; float:left; display:inline;}
 
-#text_content{width:615px; height:50px; margin-top:20px; margin-left:10px; line-height:25px; color:#666666; overflow:hidden; float:left; display:inline;}
+#text_content{width:615px; margin-top:20px; margin-left:10px; line-height:25px; color:#666666; overflow:hidden; float:left; display:inline;}
 #text_content font{font-size:14px; font-weight:bold; color:#666666;}
 #text_content a{font-size:14px; text-decoration: none; color:#666666; }
 #text_menu{width:615px; height:25px; margin-left:10px; margin-top:10px; line-height:25px; float:left; display:inline;}
@@ -111,7 +111,8 @@ body{width:970px; margin: 0 auto; font-family:����;}
 #tm_b{width:55px; height:15px; line-height:15px;  text-align:center; border-left:1px solid #014991; border-right:1px solid #014991; float:left; display:inline;}
 .tm_a a,#tm_b a{text-decoration:none; font-size:12px; color:#014991; }
 
-#content{width:635px; margin-top:15px; text-indent:28px; font-size:14px; line-height:30px; color:#333333; float:left; display:inline;}
+#content{width:635px; margin-top:15px; text-indent:28px; font-size:14px; line-height:24px; color:#333333; float:left; display:inline;}
+#content p{ line-height:24px;}
 #pagination{width:635px; height:20px;   margin-top:20px; color:#666666; text-align:center; font-size:14px; line-height:20px; float:left; display:inline;}
 .page_span{margin-left: 5px;}
 .page_span2{margin-left: 5px;}
