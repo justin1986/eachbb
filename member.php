@@ -211,7 +211,6 @@
 					<input class="radio" type="radio" name="nowstate" value="宝宝生日" />
 					宝宝生日</td>
 			</tr>
-			</tr>
 			
 			<tr>
 				<td class=td1>出生日期：</td>
