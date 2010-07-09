@@ -1,8 +1,13 @@
 ﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html>
 <head>
-<title>网趣宝贝</title>
-<link href="./css/member.css" rel="stylesheet" type="text/css" />
+	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+	<meta http-equiv=Content-Language content=zh-CN>
+	<title>网趣宝贝-用户中心</title>
+	<?php 
+		include_once dirname(__FILE__).'/frame.php';
+		css_include_tag('member');
+	?>
 </head>
 <body>
 <div id="top_login">
@@ -205,7 +210,6 @@
 					预产期
 					<input class="radio" type="radio" name="nowstate" value="宝宝生日" />
 					宝宝生日</td>
-			</tr>
 			</tr>
 			
 			<tr>

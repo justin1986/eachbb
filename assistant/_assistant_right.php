@@ -25,8 +25,8 @@
 			</div>
 		</div>
 	</div>
-	<a href="#"><img class="recommand" src="/images/assistant_list/r_input.jpg"/></a>
-	<a href="#"><img class="recommand" src="/images/assistant_list/btn_test.jpg"/></a>
+	<a href="/course/"><img class="recommand" src="/images/assistant_list/r_input.jpg"/></a>
+	<a href="/test/"><img class="recommand" src="/images/assistant_list/btn_test.jpg"/></a>
 	<a href="#"><img class="recommand" style="height:137px;" src="/images/assistant_list/217.jpg"/></a>
 	<div id="attention">
 		<div id="att_top">热点关注<a href="#">更多&gt;&gt;</a></div>

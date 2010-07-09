@@ -81,7 +81,22 @@
 		<div id="top2_b">
 			<div id="t2b_l">你的宝宝多大了?</div>
 			<div id="t2b_r">
-				<div id="t2b_hr"></div>
+				<div id="t2b_hr">
+					<?php for($i=0;$i<40;$i++){?>
+					<div class="age_block" id="<?php echo $i;?>"></div>
+					<?php }?>
+				</div>
+				<script type="text/javascript">
+					$('.age_block').hover(function(){
+						$(this).css('width','10px');
+						$(this).css('background-color','#76B037');
+					},function(){
+						$(this).css('width','8px');
+						$(this).css('background-color','#D8EDC6');
+					}).click(function(){
+						window.location.href = "topic.php?id=" + $(this).attr('id');
+					});
+				</script>
 				<div id="t2bv_a"><a href="#">怀孕期</a></div>
 				<div id="t2bv_b"><a href="#">新生儿</a></div>
 				<div id="t2bv_c"><a href="#">1岁</a></div>
