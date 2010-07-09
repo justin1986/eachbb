@@ -1,4 +1,4 @@
-﻿body{width:995px; margin: 0 auto;  background:url(../images/index/img_pg.jpg) repeat-x;}
+body{width:995px; margin: 0 auto;  background:url(../images/index/img_pg.jpg) repeat-x;}
 
 #ibody{width:995px; overflow:hidden; margin:0;}
 
@@ -42,9 +42,10 @@
 #l_b_wa,.l_b_wb{width:150px; height:20px; line-height:20px; margin-left:35px;font-size:12px; color:#666666; font-weight:bold; float:left; display:inline;}
 #l_pho a{text-decoration:none;}
 #l_b_wa{margin-top:11px;}
+#l_b_wa a{color:#9F9F9F;}
+.l_b_wb a{color:#9F9F9F;}
 #l_b_wa font{color:red;}
-#l_look{width:200px; height:42px; font-size:0px; line-height:0px; margin-left:5px; float:left; display:inline;}
-#l_look{margin-top:13px; background:url(../images/yetrb/asdf.jpg) no-repeat;}
+#l_look{width:200px; height:42px; margin-top:13px; border:0px solid #000000; font-size:0px; line-height:0px; margin-left:5px; float:left; display:inline;}
 #class_sort{width:200px; margin-top:15px; margin-left:5px; float:left; display:inline;} 	
 #sort_top{width:200px; height:27px; font-size:0px; line-height:0px; background:url(../images/class/l_desc.jpg) no-repeat; float:left; display:inline;}
 #sort_con{width:198px; border-left:1px solid #E7E7E7; border-right:1px solid #E7E7E7; float:left; display:inline;}
@@ -116,7 +117,7 @@
 .ctb_t{width:724px; height:3px; margin-left:6px; font-size:0px; line-height:0px; background:url(../images/yetrb/3a.jpg) no-repeat; float:left; display:inline;}
 .ctb_c{width:722px; margin-left:6px; border-left:1px solid #9ACC2A; overflow:hidden; border-right:1px solid #9ACC2A; float:left; display:inline;}
 .ctb_b{width:724px;  height:3px; margin-left:6px; background:url(../images/yetrb/3b.jpg) no-repeat; float:left; display:inline;}
-.ctbb{width:41px; height:41px; margin-toP:-38px; margin-left:683px; z-index:100px; position:absolute; background:url(../images/yetrb/gd.gif) no-repeat; float:right; display:inline;}
+.ctbb{width:41px; height:41px; margin-toP:-38px; margin-left:683px; z-index:100px; position:absolute; border:0px solid red; float:right; display:inline;}
 #ctc_tz a{text-decoration:none;}
 
 #ctb_l{margin:4px; float:left; display:inline;}
@@ -144,14 +145,14 @@
 
 
 #c_pic{width:720px; height:31px; margin-top:15px; float:left; display:inline;}
-.c_p_b{width:69px; height:31px; margin-left:40px; color:#666666; font-size:12px; text-align:center; line-height:23px; background:url(../images/yetrb/b.jpg) no-repeat;  float:left; display:inline;}
+.c_p_b{width:69px; height:31px; margin-left:40px;  text-align:center; line-height:23px; background:url(../images/yetrb/b.jpg) no-repeat;  float:left; display:inline;}
+.c_p_b a{color:#666666; font-size:12px; text-decoration:none;}
 .c_p_b.selected{background:url(/images/yetrb/a.jpg) no-repeat;}
 #ctc_bz{width:734px; height:96px;  margin-top:-5Px; float:right; display:inline;}
 #ctb_t{width:724px; height:3px; margin-left:6px; font-size:0px; line-height:0px; background:url(../images/yetrb/3a.jpg) no-repeat; float:left; display:inline;}
 #ctb_c{width:722px; height:93px; margin-left:6px; border-left:1px solid #9ACC2A; overflow:hidden; border-right:1px solid #9ACC2A; float:left; display:inline;}
 #ctb_b{width:724px; height:3px; margin-left:6px; background:url(../images/yetrb/3b.jpg) no-repeat; float:left; display:inline;}
 #ctbb{width:41px; height:41px; margin-top:-38px; margin-left:693px; z-index:100px; position:absolute; background:url(../images/yetrb/gd.gif) no-repeat; float:right; display:inline;}
-#c_pic a{text-decoration:none;}
 #ctbc_c{width:730px; height:80px; margin-top:7px; float:left; display:inline; float:left;}
 .ctb_img{width:79px; height:78px; margin-left:8px; border:1px solid #DBDBDB; overflow:hidden; float:left; display:inline;}
 
