@@ -8,7 +8,7 @@ body{width:970PX; margin: 0 auto;}
 	#container_result{width:521px; float:left;}
 		#result_list{width:521px; overflow:hidden; border:1px solid #FFE5C5; float:left;}
 			#weekly{width:521px; height:101px; border-bottom:1px solid #FFE5C5; float:left;}
-				#weekly img{width:519px; height:101px;}
+				#weekly img{width:519px; height:101px; border:0px solid red;}
 			#result_news{width:501px; padding-left:20px; margin-top:40px; line-height:20px; overflow: hidden; font-size:12px; color:#666666; float:left; display:inline;}
 				#result_news div {width:501px;  font-size:12px; font-weight:bold; color:#666666; float:left;}
 		#questionary{width:487px; height:292px; margin-left:15px; margin-top:20px; background: url(/images/topic/daohan.jpg) no-repeat; float:left;}

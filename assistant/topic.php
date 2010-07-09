@@ -22,7 +22,7 @@
 				<div id="container_result">
 					<div id="result_list">
 						<div id="weekly">
-							<img src="/images/topic/top.jpg" />
+							<a href="#"><img src="/images/topic/top.jpg" /></a>
 						</div>
 						<div id="result_news">
 							<div>标题标题标题标题标题</div>
