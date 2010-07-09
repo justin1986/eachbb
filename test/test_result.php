@@ -12,7 +12,6 @@ class Report {
 $test_id = intval($_GET['test_id']);
 $user = User::current_user();
 $sql = "select sum(score) as score, question_type from eb_test_record  where problem_id={$test_id} and user_id={$user->id} group by question_type";
-echo $sql;
 $db = get_db();
 $results = $db->query($sql);
 !$results && $results = array();
