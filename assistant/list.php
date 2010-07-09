@@ -55,11 +55,14 @@
 							$sql = "select * from eb_assistant where is_adopt=1 and category_id = {$child->id} limit 4";
 							$assistants = $db->query($sql);
 							$len = count($assistants);
-							for($i = 0; $i < $len; $i++){ ?>
+							for($i = 0; $i < $len; $i++){
+								$desc = trim(strip_tags($assistants[$i]->description));
+								if(empty($desc)) $desc = trim(strip_tags($assistants[$i]->content));
+							?>
 							<div class="result_container" style="<?php if($i == 0) echo "margin-top:10px;"; ?>">
 								<img src="<?php if($assistants[$i]->image!=''){echo $assistants[$i]->image;}else{?>/images/assistant_list/pho.jpg<?php }?>"/>
 								<div class="result_title"><a href="/assistant/assistant.php?id=<?php echo $assistants[$i]->id;?>"><?php echo $assistants[$i]->title;?></a></div>
-								<div class="result_value"><?php echo mb_substr(trim(strip_tags($assistants[$i]->description)),0,45,'utf-8');?>……<a href="/assistant/assistant.php?id=<?php echo $assistants[$i]->id;?>">[查看全文]</a></div>
+								<div class="result_value"><?php echo mb_substr($desc,0,45,'utf-8');?>……<a href="/assistant/assistant.php?id=<?php echo $assistants[$i]->id;?>">[查看全文]</a></div>
 							</div>
 							<?php } ?>
 						</div>
@@ -76,11 +79,14 @@
 							}
 							$assistants = $db->paginate($sql,10);
 							$len = count($assistants);
-							for($i = 0; $i < $len; $i++){ ?>
+							for($i = 0; $i < $len; $i++){
+								$desc = trim(strip_tags($assistants[$i]->description));
+								if(empty($desc)) $desc = trim(strip_tags($assistants[$i]->content));
+							?>
 							<div class="result_container" style="<?php if($i == 0) echo "margin-top:10px;"; ?>">
 								<img src="<?php if($assistants[$i]->image!=''){echo $assistants[$i]->image;}else{?>/images/assistant_list/pho.jpg<?php }?>"/>
 								<div class="result_title"><a href="/assistant/assistant.php?id=<?php echo $assistants[$i]->id;?>"><?php echo $assistants[$i]->title;?></a></div>
-								<div class="result_value"><?php echo mb_substr(trim(strip_tags($assistants[$i]->description)),0,45,'utf-8');?>……<a href="/assistant/assistant.php?id=<?php echo $assistants[$i]->id;?>">[查看全文]</a></div>
+								<div class="result_value"><?php echo mb_substr($desc,0,45,'utf-8');?>……<a href="/assistant/assistant.php?id=<?php echo $assistants[$i]->id;?>">[查看全文]</a></div>
 							</div>
 							<?php } ?>
 							<div id="paginage"><?php paginate();?></div>
@@ -88,11 +94,11 @@
 						<div class="result_pg_bottom"></div>
 					</div>
 					<?php }else if($level==0){?>
-						<?php foreach($categorys as $cate){
+						<?php foreach($categorys as $k=>$cate){
 								$parent = $category->find($cate->id);
 								$childs = $category->find_sub_category($cate->id);
 						?>
-							<div class="result_list"><?php echo $parent->name;?></div>
+							<div class="result_list" <?php if($k!=0)echo "style='margin-top:15px;'"?>><?php echo $parent->name;?></div>
 							<?php foreach($childs as $child){?>
 							<div class="result_banner">
 								<div class="result_pg_top"><?php echo $child->name;?><a href="list.php?category_id=<?php echo $child->id;?>">更多&gt;&gt;</a></div>
@@ -116,7 +122,7 @@
 					<?php }else if($level==-1){
 						for($i=-2;$i<=3;$i++){if($i!=0){
 					?>
-						<div class="result_list">
+						<div class="result_list" <?php if($i!=-2)echo "style='margin-top:15px'";?>>
 							<?php 
 								switch($i){
 									case -2:echo '准备怀孕';break;
