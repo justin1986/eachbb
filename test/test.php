@@ -7,7 +7,8 @@ include_once '../frame.php';
 <head>
 	<title>特色测评</title>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
-	<meta http-equiv=Content-Language content=zh-CN><?php 
+	<meta http-equiv=Content-Language content=zh-CN>
+	<?php 
 	$method = strtolower($_SERVER['REQUEST_METHOD']);
 	$db = get_db();
 	//params initial

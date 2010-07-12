@@ -37,7 +37,7 @@
 <div id="ibody">
 		<?php include_once("../inc/_assistant_top.php"); ?>
 	<div id="fbody">
-		<?php include_once('../inc/_assistant_left.php'); ?>
+		<?php include_once('./_assistant_left.php'); ?>
 		<div id="result">
 			<div id="result_top_btn">
 				<input type="button" id="button_age" value="按年龄查看"/>
@@ -148,11 +148,11 @@
 						</div>
 						<?php }?>
 					<?php }}}?>
-					<?php include_once('../inc/_assistant_content.php'); ?>
+					<?php include_once('./_assistant_content.php'); ?>
 				</div>
-				<?php include_once('../inc/_assistant_right.php'); ?>
+				<?php include_once('./_assistant_right.php'); ?>
 			</div>
-			<?php include_once('../inc/_assistant_question.php'); ?>
+			<?php include_once('./_assistant_question.php'); ?>
 		</div>
 		<?php include_once('../inc/bottom.php'); ?>
 	</div>

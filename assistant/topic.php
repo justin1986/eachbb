@@ -5,7 +5,7 @@
 	<meta http-equiv=Content-Language content=zh-CN>
 	<title>妈妈助手</title>
 	<?php
-		include_once('./../frame.php');
+		include_once('../frame.php');
 		css_include_tag('topic','assistant/assistant_content','assistant/assistant_question','right_inc/assistant_right','left_inc/assistant_left'); 
 		use_jquery();
 		js_include_tag('assistant/assistant');
@@ -16,7 +16,7 @@
 <div id="ibody">
 	<?php include_once('../inc/_assistant_top.php'); ?>
 	<div id="fbody">
-		<?php include_once('/_assistant_left.php'); ?>
+		<?php include_once('./_assistant_left.php'); ?>
 		<div id="result">
 			<div id="container">
 				<div id="container_result">
@@ -122,7 +122,7 @@
 						</div>
 						<div class="kong"></div>
 					</div>
-					<?php include_once('/_assistant_content.php'); ?>
+					<?php include_once('./_assistant_content.php'); ?>
 				</div>
 				<div id="container_recommand">
 					<a href="#"><img class="recommand" style="margin-top:0px;" src="/images/assistant_list/r_input.jpg"/></a>
@@ -151,7 +151,7 @@
 					<a href="#"><img class="recommand" style="height:137px;" src="/images/assistant_list/217.jpg"/></a>
 				</div>
 			</div>
-			<?php include_once('/_assistant_question.php'); ?>
+			<?php include_once('./_assistant_question.php'); ?>
 		</div>
 		<?php include_once('../inc/bottom.php'); ?>
 	</div>

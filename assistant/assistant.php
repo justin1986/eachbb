@@ -17,7 +17,7 @@
 <title>妈妈助手-<?php echo $column[0]->title;?></title>
 <?php
 	use_jquery();
-	css_include_tag('article');
+	css_include_tag('article','bottom');
 	js_include_tag('jquery.cookie', 'assistant/news');
 ?>
 </head>
@@ -165,8 +165,7 @@
 			</div>
 		</div>
 		</div>
-		<div id="bottom">关于我们 - 加入我们 - 友情链接 - 联系我们 - 服务条款 - 隐私保护 - 网站地图</div>
-		<div id="bottom_b">哈哈少儿旗下网站  Copyright © 1997-2010 HAHA.smg.com All Rights Reserved.</div>
+		<?php include_once('../inc/bottom.php'); ?>
 </div>
 </body>
 </html>
