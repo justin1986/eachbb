@@ -38,12 +38,6 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 #me_in{width:150px; height:15px; margin-left:14px; margin-top:3px; font-size:12px; float:left; display:inline;}
 #me_btn{width:47px; height:24px; margin-left:4px; margin-top:1px; background:url(../images/consult/mo_sou.jpg) no-repeat; border:0px solid red; float:left; display:inline;}
 
-
-
-
-
-
-
 #bl_a{width:646px; height:207px; float:left; display:inline;}
 #bla_img{width:297px; height:207px; background:url(../images/bbs/pg_d.gif) no-repeat; float:left; display:inline;}
 #bla_r{width:314px; height:207px;  float:right; display:inline;}
@@ -57,13 +51,8 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 .blaco_d{width:4px; height:3px; margin-top:7px; background:url(../images/bbs/pg_g.jpg) no-repeat; float:left; display:inline;}
 .blaco_c{width:295px; height:20px; margin-left:5px; font-size:12px; font-weight:500; line-height:20px; overflow:hidden; float:left; display:inline;}
 
-
-
-
-
 #b_l{width:650px; margin-top:15px; overflow:hidden; float:left; display:inline;}
 #b_r{width:291px;  margin-top:15px; overflow:hidden; float:right; display:inline;}
-
 
 #bl_a{width:646px; height:207px; float:left; display:inline;}
 #bla_img{width:297px; height:207px; background:url(../images/bbs/pg_d.gif) no-repeat; float:left; display:inline;}
@@ -101,8 +90,6 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 .tc_z div{width:4px; height:4px; margin-top:10px; margin-left:8px; font-size:0px; line-height:0px; background:#888888; float:left; display:inline;}
 .tc_z a{margin-left:10px; font-size:14px; text-decoration:none; color:#7D7666; font-weight:600;}
 
-
-
 #bl_c{width:646px; height:41px; margin-top:15px; background:url(../images/consult/l_e.jpg) no-repeat; float:left; display:inline;}
 #blc_a{width:55px; height:14px; margin-top:17px; margin-left:200px; background:url(../images/consult/l_a.jpg) no-repeat; border:0px solid red; float:left; display:inline;}
 #blc_b{width:55px; height:14px; margin-top:17px; margin-left:15px; background:url(../images/consult/l_b.jpg) no-repeat; border:0px solid red; float:left; display:inline;}
@@ -110,7 +97,6 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 #blc_d{width:55px; height:14px; margin-top:17px; margin-left:15px;  background:url(../images/consult/l_d.jpg) no-repeat; border:0px solid red; float:left; display:inline;}
 .more a{font-size:14px; color:#CE0CF7; font-weight:600; text-decoration:none;}
 .more{width:45px; height:14px; margin-right:15px; margin-top:16px; float:right; display:inline;}
-
 
 #bl_d{width:646px; height:130px; margin-top:14px; overflow:hidden; float:left; display:inline;}
 .bld_z{width:290px; height:130px; margin-left:20px; float:left; display:inline;	}
@@ -123,10 +109,6 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 .bll_t font a{color:#E5BFB0; font-size:12px; text-decoration: none;}
 .bll_c{width:180px; height:90px; line-height:20px; overflow:hidden; float:left; display:inline;}
 .blc_l a{font-size:12px; font-size:12px; line-height:18px; color:#333333; text-decoration:none;}
-
-
-
-
 
 #bl_e{width:646px; height:234px; margin-top:25px; float:left; display:inline;}
 #be_l{width:287px; height:234px; background:url(../images/consult/ls_sf.jpg) no-repeat; float:left; display:inline;}
@@ -167,7 +149,6 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 .belc_c{width:265px; height:18px; margin-left:5px; line-height:18px;  overflow:hidden; float:left; display:inline;}
 .belc_c a{font-size:13px; font-weight:600; color:#333333; text-decoration:none;}
 
-
 #bl_f{width:649px; margin-top:20px; float:left; display:inline;}
 #bf_t{width:649px; height:39px; background:url(../images/consult/ls_b.jpg) no-repeat; font-size:0px; line-height:0px; float:left; display:inline;}
 #bf_b{width:648px; height:6px; background:url(../images/consult/ls_bb.jpg) no-repeat; font-size:0px; line-height:0px; float:left; display:inline;}
@@ -180,8 +161,6 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 #bfc_t a{font-size:30px; font-weight:600; color:#FF8911; text-decoration:none;}
 #bfc_c{width:360px; height:85px; margin-top:10px; overflow:hidden; line-height:18px; float:left; display:inline;}
 #bfc_c a{color:#666666; font-size:12px; font-weight:600; text-decoration:none;}
-
-
 
 #br_a{width:289px; float:left; display:inline;}
 #ba_t{width:289px; height:25px; background:url(../images/consult/rb_pdg.jpg) no-repeat; font-size:0px; line-height:0px; float:left; display:inline;}
@@ -219,7 +198,6 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 
 .bct_number{display:none;}
 
-
 .bd{width:289px; margin-top:20px; float:left; display:inline;}
 .bd_t{width:289px; height:5px; background:url(../images/consult/r_t.jpg) no-repeat; font-size:0px; line-height:0px; float:left; display:inline;}
 .bd_c{width:287px; border-left:1px solid #E4E4E4; border-right:1px solid #E4E4E4; float:left; display:inline;}
@@ -237,8 +215,6 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 .bdcz_r{width:260px; height:25px; margin-left:5px; line-height:25px; overflow:hidden; float:left; display:inline;}
 .bdcz_r a{ font-size:12px; color:#000; text-decoration:none;}
 
-
-
 #user_z{width:270px;  margin-left:14px; float:left; display:inline;}
 .user_a{width:270px; height:25px; margin-top:5px; float:left; display:inline;}
 #user_a{width:255px; height:25px; margin-top:10px; background:#F3F3F2; float:left; display:inline;}
@@ -252,10 +228,6 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 #u_pb{width:75px; height:18px; margin-left:20px; border:0px solid red; line-height:18px; text-align:center; background:url(../images/consult/u_pg.jpg) no-repeat; float:left; display:inline;}
 #n{width:200px; height:10px; font-size:0px; line-height:0px; float:left; display:inline;}
 #bd_n{width:200px; height:15px; font-size:0px; line-height:0px; float:left; display:inline;}
-
-
-
-
 
 #bt_i{width:960px; height:230px; margin-top:20px; float:left; display:inline;}
 #bi_t{width:960px; height:28px; float:left; display:inline;}
@@ -280,23 +252,8 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 .bil_value a{font-size:12px; text-decoration:none; color:#000;}
 .bill_value  a{font-size:12px; text-decoration:none; color:#000;}
 
-
-
-
-
-
-
-
 #bl_img{width:658px; height:86px; margin-top:10px; overflow:hidden; float:left; display:inline;}
 #bl_img img{width:658px; height:86px;}
-
-
-
-
-
-
-
-
 
 #bottom{width:950px; text-align:center; margin-top:20px; font-size:12px; color:#666666; float:left; display:inline;}
 #bottom_b{width:950px; margin-top:10px; margin-bottom:50px; text-align:center; font-size:12px; color:#666666; float:left; display:inline;}
