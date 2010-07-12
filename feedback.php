@@ -25,7 +25,6 @@
 						<div id="lp_l"><img src="images/class/l_peo.jpg"></div>
 						<div id="lp_word">司法撒旦发射发声法</div>
 					</div>
-					
 					<div id="l_b_wa"><a href="#">您有<font>0</font>新条评论</a> </div>
 					<div class="l_b_wb"><a href="#">我的博客</a> </div>
 					<div class="l_b_wb"><a href="#">宝宝最新测试报告</a> </div>
