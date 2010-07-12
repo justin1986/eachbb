@@ -40,9 +40,10 @@
 					<div class="hlcb_pg">
 						<div class="hlct_t">热门课程排行榜</div>
 						<img src="images/helper/lb_hd.jpg"> </div>
+					<?php for($i = 1 ; $i <= 3 ; $i++){?>
 					<div class="hlcb_z">
 						<div class="hlcb_l">
-							<div class="r">1</div>
+							<div class="r"><?php echo $i;?></div>
 						</div>
 						<div class="hlcb_r">
 							<div class="hlcb_t">按时法十分</div>
@@ -50,26 +51,7 @@
 							<div class="hlcb_t"><font>下载次数：</font>1232</div>
 						</div>
 					</div>
-					<div class="hlcb_z">
-						<div class="hlcb_l">
-							<div class="r">2</div>
-						</div>
-						<div class="hlcb_r">
-							<div class="hlcb_t">按时法十分</div>
-							<div class="hlcb_t">上传者：哈哈</div>
-							<div class="hlcb_t"><font>下载次数：</font>1232</div>
-						</div>
-					</div>
-					<div class="hlcb_z">
-						<div class="hlcb_l">
-							<div class="r">3</div>
-						</div>
-						<div class="hlcb_r">
-							<div class="hlcb_t">按时法十分</div>
-							<div class="hlcb_t">上传者：哈哈</div>
-							<div class="hlcb_t"><font>下载次数：</font>1232</div>
-						</div>
-					</div>
+					<?php }?>
 				</div>
 				<div class="hlc_bb"></div>
 				<div id="l_f">
@@ -78,42 +60,14 @@
 					<div id="lf_r">More &gt;&gt;</div>
 				</div>
 				<div id="pic_r">
+					<?php for($i = 1 ; $i <= 6 ; $i++){?>
 					<div class="ppg">
 						<div class="pic_pg">
 							<div class="pic_img"><img src="images/yard/pho.jpg"></div>
 						</div>
 						<div class="ppg_w">safsadfas</div>
 					</div>
-					<div class="ppg">
-						<div class="pic_pg">
-							<div class="pic_img"><img src="images/yard/pho.jpg"></div>
-						</div>
-						<div class="ppg_w">safsadfas</div>
-					</div>
-					<div class="ppg">
-						<div class="pic_pg">
-							<div class="pic_img"><img src="images/yard/pho.jpg"></div>
-						</div>
-						<div class="ppg_w">safsadfas</div>
-					</div>
-					<div class="ppg">
-						<div class="pic_pg">
-							<div class="pic_img"><img src="images/yard/pho.jpg"></div>
-						</div>
-						<div class="ppg_w">safsadfas</div>
-					</div>
-					<div class="ppg">
-						<div class="pic_pg">
-							<div class="pic_img"><img src="images/yard/pho.jpg"></div>
-						</div>
-						<div class="ppg_w">safsadfas</div>
-					</div>
-					<div class="ppg">
-						<div class="pic_pg">
-							<div class="pic_img"><img src="images/yard/pho.jpg"></div>
-						</div>
-						<div class="ppg_w">safsadfas</div>
-					</div>
+					<?php }?>
 				</div>
 				<div id="pg_a"></div>
 			</div>
@@ -163,22 +117,12 @@
 									<div id="cmc_c">哈哈哈按时打发哈哈按时打发哈哈哈按时打发哈哈按时打发哈按时打发哈哈按时哈哈哈按时打发哈哈按时打发哈哈哈按时打发哈哈按时打发哈按时打发哈哈按时打发哈按时打哈哈哈按时打发哈哈按时打发哈哈哈按时打发哈哈按时打发哈按时打发哈哈按时哈哈哈按时打发哈哈按时打发哈哈哈按时打发哈哈按时打发哈按时打发哈哈按时打发哈按时打发哈哈按时打发打发哈按时打发哈哈按时打发发哈哈按时打发打发哈按时打发哈哈按时打发</div>
 								</div>
 								<div id="cm_b">
+									<?php for($i = 1 ; $i <= 4 ; $i++){?>
 									<div class="cm_z">
 										<div class="cmz_l"></div>
 										<div class="cmz_r"><a href="#">哈哈按时打发哈哈按时打发</a></div>
 									</div>
-									<div class="cm_z">
-										<div class="cmz_l"></div>
-										<div class="cmz_r"><a href="#">哈哈按时打发哈哈按时打发</a></div>
-									</div>
-									<div class="cm_z">
-										<div class="cmz_l"></div>
-										<div class="cmz_r"><a href="#">哈哈按时打发哈哈按时打发</a></div>
-									</div>
-									<div class="cm_z">
-										<div class="cmz_l"></div>
-										<div class="cmz_r"><a href="#">哈哈按时打发哈哈按时打发</a></div>
-									</div>
+									<?php }?>
 								</div>
 							</div>
 							<div class="ctb_b">
@@ -187,23 +131,18 @@
 								</a>
 							</div>
 							<div id="c_pic"> 
-								<div class="c_p_b selected" param="1" style="margin-left:10px;">图书玩具</div>
-								<div class="c_p_b" param="2">我家院子</div>
-								<div class="c_p_b" param="3">论坛精华</div>
-								<div class="c_p_b" param="4">其他照片</div>
+								<div class="c_p_b selected" style="margin-left:10px;">图书玩具</div>
+								<div class="c_p_b" >我家院子</div>
+								<div class="c_p_b" >论坛精华</div>
+								<div class="c_p_b" >其他照片</div>
 							</div>
 							<div id="ctc_bz">
 								<div id="ctb_t"></div>
 								<div id="ctb_c">
 									<div id="ctbc_c">
+										<?php for($i = 1 ; $i <= 8 ; $i++){?>
 										<div class="ctb_img"><img src="images/yetrb/dd.jpg"></div>
-										<div class="ctb_img"><img src="images/yetrb/dd.jpg"></div>
-										<div class="ctb_img"><img src="images/yetrb/dd.jpg"></div>
-										<div class="ctb_img"><img src="images/yetrb/dd.jpg"></div>
-										<div class="ctb_img"><img src="images/yetrb/dd.jpg"></div>
-										<div class="ctb_img"><img src="images/yetrb/dd.jpg"></div>
-										<div class="ctb_img"><img src="images/yetrb/dd.jpg"></div>
-										<div class="ctb_img"><img src="images/yetrb/dd.jpg"></div>
+										<?php }?>
 									</div>
 								</div>
 								<div id="ctb_b">
