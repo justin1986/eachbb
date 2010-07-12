@@ -16,13 +16,13 @@
 <title><?php echo $column[0]->title;?></title>
 <?php
 	use_jquery();
-	css_include_tag('article','top_inc/assistant_top');
+	css_include_tag('article');
 	js_include_tag('jquery.cookie', 'assistant/news');
 ?>
 </head>
 <body>
 <div id="ibody">
-		<?php include_once dirname(__FILE__)."/_assistant_top.php"; ?>
+		<?php include_once("../inc/_assistant_top.php"); ?>
 		<div id="fbody">
 		<div id="log_top">
 			<div id="log_t">

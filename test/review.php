@@ -57,7 +57,7 @@ include_once '../inc/user.class.php';
 <body>
 <div id="ibody">
 	<div id="fbody">
-		<?php include_once('./_test_top.php'); ?>
+		<?php include_once('../inc/_test_top.php'); ?>
 		<div id="content">
 			<?php include_once('../inc/left_inc.php'); ?>
 			<div id="c_r">

@@ -36,13 +36,13 @@ foreach ($results as $result){
 <meta http-equiv=Content-Language content=zh-CN>
 	<title>测评报告</title>
 	<?php 
-		css_include_tag('test_result','top_inc/test_blue.top','top_inc/test_left');
+		css_include_tag('test_result','top_inc/test_left');
 	?>
 </head>
 <body>
 <div id="ibody">
 	<div id="fbody">
-		<?php include_once('./_test_top.php'); ?>
+		<?php include_once('../inc/_test_top.php'); ?>
 		<!-- 外部容器 -->
 		<div id="container">
 			<?php include_once('../inc/left_inc.php'); ?>

@@ -6,7 +6,7 @@
 	<title>网趣宝贝-妈妈助手</title>
 	<?php
 		include_once('./../frame.php');
-		css_include_tag('assistant_list','assistant_content','assistant_question','right_inc/assistant_right','top_inc/assistant_top','left_inc/assistant_left','bottom'); 
+		css_include_tag('assistant_list','assistant/assistant_content','assistant/assistant_question','right_inc/assistant_right','left_inc/assistant_left'); 
 		use_jquery();
 		js_include_tag('assistant/assistant');
 		$type = $_GET['type'];
@@ -35,9 +35,9 @@
 </head>
 <body>
 <div id="ibody">
-	<?php include_once('./_assistant_top.php'); ?>
+		<?php include_once("../inc/_assistant_top.php"); ?>
 	<div id="fbody">
-		<?php include_once('./_assistant_left.php'); ?>
+		<?php include_once('../inc/_assistant_left.php'); ?>
 		<div id="result">
 			<div id="result_top_btn">
 				<input type="button" id="button_age" value="按年龄查看"/>
@@ -148,11 +148,11 @@
 						</div>
 						<?php }?>
 					<?php }}}?>
-					<?php include_once('./_assistant_content.php'); ?>
+					<?php include_once('../inc/_assistant_content.php'); ?>
 				</div>
-				<?php include_once('./_assistant_right.php'); ?>
+				<?php include_once('../inc/_assistant_right.php'); ?>
 			</div>
-			<?php include_once('./_assistant_question.php'); ?>
+			<?php include_once('../inc/_assistant_question.php'); ?>
 		</div>
 		<?php include_once('../inc/bottom.php'); ?>
 	</div>

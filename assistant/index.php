@@ -6,7 +6,7 @@
 	<title>网趣宝贝-妈妈助手</title>
 	<?php
 		include_once dirname(__FILE__).'/../frame.php';
-		css_include_tag('assistant','top_inc/assistant_top','left_inc/assistant_left','bottom'); 
+		css_include_tag('assistant','left_inc/assistant_left'); 
 		use_jquery();
 		$db = get_db();
 		js_include_tag('assistant/assistant');
@@ -15,7 +15,7 @@
 </head>
 <body>
 <div id="ibody">
-	<?php include_once dirname(__FILE__)."/_assistant_top.php"; ?>
+	<?php include_once("../inc/_assistant_top.php"); ?>
 	<div id="fbody">
 		<?php include_once dirname(__FILE__)."/_assistant_left.php"; ?>
 		<div id="f_r">

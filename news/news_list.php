@@ -33,7 +33,7 @@
 </head>
 <body>
 <div id="ibody">
-	<?php include_once('_consult_top.php'); ?>
+	<?php include_once('../inc/_consult_top.php'); ?>
 		<div id="log_top">
 			<div id="log_t">
 				<div id="log"></div>

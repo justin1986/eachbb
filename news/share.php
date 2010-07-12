@@ -19,7 +19,7 @@
 </head>
 <body>
 <div id="ibody">
-		<?php include_once('_consult_top.php'); ?>
+		<?php include_once('../inc/_consult_top.php'); ?>
 		<div id="bread"><img src="/images/article/log.jpg" /> 分享</div>
 		
 		<div id="mail_box">
