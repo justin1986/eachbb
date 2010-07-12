@@ -28,7 +28,7 @@
 </head>
 <body>
 	<div id="ibody">
-		<?php include_once('../inc/top_consult.php'); ?>
+		<?php include_once('_consult_top.php'); ?>
 		<div id="bread"><img src="/images/article/log.jpg" /> 新闻检索</div>
 		<div id="bread_line"></div>
 		

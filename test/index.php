@@ -17,9 +17,9 @@
 <body>
 <div id="ibody">
 	<div id="fbody">
-		<?php include_once(dirname(__FILE__).'/../inc/top_blue.inc.php'); ?>
+		<?php include_once('./_test_top.php'); ?>
 		<div id="content">
-			<?php include_once(dirname(__FILE__).'/../inc/left_inc.php'); ?>
+			<?php include_once('../inc/left_inc.php'); ?>
 			<div id="c_r">
 				<div id="cr_flash">
 					<div id="cr_banner">

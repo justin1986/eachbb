@@ -21,7 +21,6 @@ function send_login(){
 $(function(){
 	$('#login_l').live('click',function(e){
 		e.preventDefault();
-		
 		send_login();
 	});
 	

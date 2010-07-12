@@ -28,7 +28,7 @@ foreach ($lines as $li){
 </head>
 <body>
 <div id="ibody">
-	<?php include_once('../inc/top_consult.php'); ?>
+	<?php include_once('_consult_top.php'); ?>
 		<div id="fbody">
 		<div id="log_top">
 			<div id="log_t">

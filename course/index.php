@@ -16,7 +16,7 @@
 <body>
 <div id="ibody">
 	<div id="fbody">
-		<?php include_once(dirname(__FILE__).'/../inc/top_class.php'); ?>
+		<?php include_once('./_top_course.php'); ?>
 		<div id="content">
 			<div id="c_l">
 				<div id="l_pho">
@@ -35,7 +35,7 @@
 					<div class="hlcb_pg">
 						<div class="hlct_t">热门课程排行榜</div>
 						<img src="/images/helper/lb_hd.jpg"> </div>
-					<?php for($i=0;$i<5;$i++){?>
+					<?php for($i = 0 ; $i < 5 ; $i++){?>
 					<div class="hlcb_z">
 						<div class="hlcb_l">
 							<div class="r" style="<?php if($i==4||$i==3){ echo 'background:#ABABAB; border:1px solid #A4A4A4;';}?>"><?php echo $i+1 ?></div>
@@ -55,7 +55,7 @@
 					<div id="lf_r">More &gt;&gt;</div>
 				</div>
 				<div id="pic_r">
-					<?php for($i=0;$i<6;$i++){ ?>
+					<?php for($i = 0 ; $i < 6 ; $i ++){ ?>
 					<div class="ppg">
 						<div class="pic_pg">
 							<div class="pic_img"><img src="/images/yard/pho.jpg"></div>
