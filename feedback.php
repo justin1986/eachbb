@@ -211,10 +211,10 @@
 								</a>
 							</div>
 							<div id="c_pic"> 
-								<div class="c_p_b selected" param="1" style="margin-left:10px;"><a href="#">图书玩具</a></div>
-								<div class="c_p_b" param="2"><a href="#">我家院子</a></div>
-								<div class="c_p_b" param="3"><a href="#">论坛精华</a></div>
-								<div class="c_p_b" param="4"><a href="#">其他照片</a></div>
+								<div class="c_p_b selected" param="1" style="margin-left:10px;">图书玩具</div>
+								<div class="c_p_b" param="2">我家院子</div>
+								<div class="c_p_b" param="3">论坛精华</div>
+								<div class="c_p_b" param="4">其他照片</div>
 							</div>
 							<div id="ctc_bz">
 								<div id="ctb_t"></div>
