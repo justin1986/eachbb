@@ -10,7 +10,7 @@
 <?php
 	use_jquery();
 	css_include_tag('feedback');
-	js_include_tag('jquery.cookie','java','feedback/feedback');
+	js_include_tag('jquery.cookie','feedback/feedback');
 ?>
 </head>
 <body>
