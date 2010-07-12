@@ -9,7 +9,11 @@ function search_news(){
 }
 
 function send_login(){
-	$.post('/login/ajax.post.php?op=login&name='+ encodeURI($('#login_name').val()) + '&password=' +encodeURI($('#login_password').val()),function(data){
+	var expire = 0;
+	if($('#login_check').val()){
+		expire = 30;
+	}
+	$.post('/login/ajax.post.php?op=login&name='+ encodeURI($('#login_name').val()) + '&password=' +encodeURI($('#login_password').val()+'&expire='+expire),function(data){
 		$('#test_right').load('/login/ajax.post.php?op=load_login_status_box');
 	});
 };

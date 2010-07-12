@@ -7,7 +7,7 @@ $op = strtolower($_GET['op']);
 if(!in_array($op,$allow_ops)) die('invalid operation');
 switch ($op) {
 	case 'login':
-		$user = User::login($_GET['name'],$_GET['password']);
+		$user = User::login($_GET['name'],$_GET['password'],intval($_GET['expire']));
 		echo $user->id;
 	break;
 	case 'logout':

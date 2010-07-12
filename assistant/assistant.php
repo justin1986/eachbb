@@ -8,12 +8,13 @@
 	}
 	$db = get_db();
 	$column = $db->query("SELECT id,title,click_count,short_title,category_id,description,content,created_at,last_edited_at,age FROM eb_assistant e where id=".$id." order by last_edited_at desc");
+	
 	?>
 <html>
 <head>
 <meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <meta http-equiv=Content-Language content=zh-CN>
-<title><?php echo $column[0]->title;?></title>
+<title>妈妈助手-<?php echo $column[0]->title;?></title>
 <?php
 	use_jquery();
 	css_include_tag('article');
