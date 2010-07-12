@@ -21,7 +21,5 @@ discuz/*
 *.log
 data/dbcache/*.tb
 htmldir
-test.php
-test.post.php
 test1.php
 review
