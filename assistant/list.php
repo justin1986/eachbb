@@ -6,9 +6,10 @@
 	<title>网趣宝贝-妈妈助手</title>
 	<?php
 		include_once('./../frame.php');
-		css_include_tag('assistant_list','assistant/assistant_content','assistant/assistant_question','right_inc/assistant_right','left_inc/assistant_left'); 
+		css_include_tag('top_inc/assistant_top','assistant_list','assistant/assistant_content','assistant/assistant_question','right_inc/assistant_right','left_inc/assistant_left'); 
 		use_jquery();
-		js_include_tag('assistant/assistant');
+		js_include_tag('assistant/list');
+	
 		$type = $_GET['type'];
 		$category_id = intval($_GET['category_id']);
 		$age = intval($_GET['age']);
@@ -34,6 +35,7 @@
 	?>
 </head>
 <body>
+<input type="hidden" id="user_id" value="<?php echo $user->id;?>">
 <div id="ibody">
 		<?php include_once("../inc/_assistant_top.php"); ?>
 	<div id="fbody">

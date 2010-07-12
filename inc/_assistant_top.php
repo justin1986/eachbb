@@ -1,6 +1,3 @@
-<?php
-	css_include_once_tag('top_inc/assistant_top');
-?>
 <div id="top_banner">
 		<div id="logo"></div>
 		<div id="top_ad"><a href="#"><img src="/images/bbs/t.jpg" /></a></div>
