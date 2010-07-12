@@ -16,7 +16,7 @@
 <body>
 <div id="ibody">
 	<div id="fbody">
-		<?php include_once('./_top_course.php'); ?>
+		<?php include_once('../inc/_top_course.php'); ?>
 		<div id="content">
 			<div id="c_l">
 				<div id="l_pho">
