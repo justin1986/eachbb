@@ -229,8 +229,6 @@ body{width:1000px; margin: 0 auto;  background:url(/images/index/img_pg.jpg) rep
 .sb_t_content{width:60px; height:15px; margin-top:5px;  text-align:center;  float:left; display:inline;}
 .sb_t_content a{color:#9BC683; font-size:12px; text-decoration:none;}
 
-
-
 #sb_t_b{border-left:1px solid #CEDCEE; border-right:1px solid #EEDECF;}
 #sb_t_c{border-left:1px solid #CEDCEE;}
 #sb_t_d{border-right:1px solid #EEDECF;}
@@ -249,10 +247,3 @@ body{width:1000px; margin: 0 auto;  background:url(/images/index/img_pg.jpg) rep
 #picc_right{width:926px; height:170px; margin-left:5px; overflow:hidden; margin-top:4px; float:left; display:inline;}
 .picc_a{width:78px; height:78px; margin:3px; float:left; display:inline;}
 .picc_a img{width:78px; height:78px; border:0px solid red;}
-
-
-
-
-
-#bottom{width:970px; text-align:center; font-size:12px; color:#666666; float:left; display:inline;}
-#bottom_b{width:970px; margin-top:10px; margin-bottom:50px; text-align:center; font-size:12px; color:#666666; float:left; display:inline;}
