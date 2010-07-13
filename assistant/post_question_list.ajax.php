@@ -12,6 +12,5 @@
 			$question->question=$value;
 			$question->created_at=now();
 			$question->save();
-			echo $value;
 		}
 ?>
