@@ -7,7 +7,7 @@
 	<?php 
 		include_once(dirname(__FILE__).'/frame.php');
 		use_jquery_ui();
-		css_include_tag('index','jquery_ui');
+		css_include_tag('index','jquery_ui','buttom');
 		js_include_tag('index');
 		init_page_items('index');
 	?>

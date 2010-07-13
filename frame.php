@@ -49,7 +49,6 @@
 			if($last_time == ''){				
 				write_to_file(dirname(__FILE__) .'/config/last_disconnect.txt',now(),'w');
 				@mail($note_emails,'数据库连接失败','主备数据库均无法连接，请立即检查'.$this->servername);
-				
 			}
 			/*
 			$servername = get_config('db_server_name_bak');
@@ -62,7 +61,7 @@
 			}
 			*/
 		};	
-		return $g_db;	
+		return $g_db;
 	}
 	
 	function close_db() {
@@ -76,9 +75,8 @@
 	
 	function use_jquery_ui(){
 		js_include_once_tag('jquery');
-		js_include_once_tag('jquery-ui');	
+		js_include_once_tag('jquery-ui');
 		css_include_tag('jquery_ui');
-	
 	}
 	
 	function validate_form($form_name) {
@@ -104,16 +102,16 @@
 	}
 	function _get_js_file($js){
 		if (strtolower($js) == "default") {
-			return ROOT_PATH ."javascript/jquery.js";		
-		}else {		
+			return ROOT_PATH ."javascript/jquery.js";	
+		}else {
 			$ljs = strtolower($js);
 			if (strpos($ljs, "http://") !== false || strpos($ljs,"www.") !== false) {	
-				return $js;		
+				return $js;
 			}else {
 				if (substr($ljs,-3) == ".js"){$js = substr_replace($js,"",-3);}			
 				return  ROOT_PATH ."javascript/" .$js .".js";			
-			}		
-		}	
+			}
+		}
 	}
 #only include once
 	function js_include_once_tag($js){
