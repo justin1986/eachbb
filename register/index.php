@@ -78,7 +78,7 @@
 						<div class="ca_a"></div>
 						<div class="ca_b">联系电话</div>
 						<div class="ca_c">
-							<input type="text" id="phone" name=phone>
+							<input type="text" maxlength="11" id="phone" name=phone>
 						</div>
 						<div class="ca_d" id="phone_info"></div>
 					</div>
