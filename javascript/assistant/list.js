@@ -7,7 +7,7 @@ $(function(){
 			$.post('/assistant/post_question_list.ajax.php',{"value":value},function(login){
 				if('no_login'==login){
 					alert("对不起！请登陆后在提交问题！");
-					window.location="../login/index.php";
+					window.location="/login/index.php";
 				}else{
 					alert("提交成功！");
 					$('#que_text').val("");

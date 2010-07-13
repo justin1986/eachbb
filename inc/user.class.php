@@ -123,7 +123,7 @@ class User {
 		$result &= @setcookie("member_id",$user_id,0,'/');
 		$result &= @setcookie("member_uid",$uid,0,'/');
 		if($password){
-			#$result &= @setcookie("member_password",$password,$expire,'/');
+			$result &= @setcookie("member_password",$password,$expire,'/');
 		} 
 		if($result === false) return false;
 		$db = get_db();

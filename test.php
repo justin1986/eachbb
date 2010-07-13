@@ -8,9 +8,6 @@ init_page_items('test');
 #paginate();
 #set_charset('utf-8');
 use_jquery();
-for($i='a';$i<'z';$i++){
-	echo $i;
-}
 #$news =  new table_class('eb_news');
 #$news->find(1);
 #$news->title;
@@ -32,15 +29,10 @@ if($user){
 }
 */
 ?>
-
-<div class="test" <?php show_page_pos('abc')?>>1</div>
-<div class="test">2</div>
-<div class="test">3</div>
-<input type="file" id="file" />
-<script>
-	$(function(){
-		$('.test').click(function(){
-			alert($('#file').val()+$('#file').attr('DIR'));
-		});
-	});
-</script>
+<div>
+	<?php echo strip_tags($_POST['text']);?>
+</div>
+<form action="test.php" method="post">
+	<input type="text" name="text" />
+	<input type="submit" value="提交"/>
+</form>

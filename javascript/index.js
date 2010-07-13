@@ -115,4 +115,19 @@ $(function(){
 		dayNamesShort:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
 		dateFormat: 'yy-mm-dd'
 	});
+	
+	$('#initial').click(function(e){
+		e.preventDefault();
+		var birth = new Date($('#date_picker').val());
+		if(typeof(birth) != 'Invalid Date' || birth == "NaN"){
+			alert('fail');
+		}
+		alert(birth);
+		//alert(birth.toLocaleDateString());
+		var now = new Date();
+		var year = now.getFullYear() - 3;
+		now.setYear(year);
+		
+		//alert(now.toLocaleDateString());
+	});
 });

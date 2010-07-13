@@ -1,4 +1,3 @@
-<?php #var_dump($_COOKIE)?>
 <div id="email">
 	<div id="email_l">邮件地址</div>
 	<div id="email_r">
@@ -12,11 +11,11 @@
 	</div>
 </div>
 <div id="pwd">
-	<input type="checkbox" id="login_check" name="checkbox" value="checkbox" />
+	<input type="checkbox" id="login_check" name="checkbox" value="checkbox" checked="checked" />
 	<div id="my_check">
 		<label for="login_check">记住我的帐号</label>
 	</div>
-	<div id="pwd_right"><a href="#">忘记密码</a></div>
+	<div id="pwd_right"><a href="/get_pwd/">忘记密码</a></div>
 </div>
 <div id="login_user"> 
 	<img id="login_l" src="/images/index/btn_login.gif"/>
