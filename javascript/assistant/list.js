@@ -10,6 +10,7 @@ $(function(){
 					window.location="../login/index.php";
 				}else{
 					alert("提交成功！");
+					$('#que_text').val("");
 				}
 			});
 		}
