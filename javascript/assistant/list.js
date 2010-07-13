@@ -8,6 +8,8 @@ $(function(){
 				if('no_login'==login){
 					alert("对不起！请登陆后在提交问题！");
 					window.location="../login/index.php";
+				}else{
+					alert("提交成功！");
 				}
 			});
 		}
