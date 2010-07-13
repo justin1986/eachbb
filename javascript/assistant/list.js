@@ -6,7 +6,8 @@ $(function(){
 		}else{
 			$.post('/assistant/post_question_list.ajax.php',{"value":value},function(login){
 				if('no_login'==login){
-					window.location="../login/_logined.php";
+					alert("对不起！请登陆后在提交问题！");
+					window.location="../login/index.php";
 				}
 			});
 		}

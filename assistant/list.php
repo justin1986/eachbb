@@ -9,7 +9,6 @@
 		css_include_tag('top_inc/assistant_top','assistant_list','assistant/assistant_content','assistant/assistant_question','right_inc/assistant_right','left_inc/assistant_left'); 
 		use_jquery();
 		js_include_tag('assistant/list');
-	
 		$type = $_GET['type'];
 		$category_id = intval($_GET['category_id']);
 		$age = intval($_GET['age']);
