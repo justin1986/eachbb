@@ -4,12 +4,14 @@ $(function(){
 		if(value.length<=0){
 			alert('输入有误！');
 		}else{
+			$("#btn_button").attr('disabled',true);
 			$.post('/assistant/post_question_list.ajax.php',{"value":value},function(login){
 				if('no_login'==login){
 					alert("对不起！请登陆后在提交问题！");
 					window.location="/login/index.php";
 				}else{
 					alert("提交成功！");
+					$("#btn_button").attr('disabled',false);
 					$('#que_text').val("");
 				}
 			});
