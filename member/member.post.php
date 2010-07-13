@@ -16,14 +16,14 @@ $fix_phone = $_POST['fix_phone'];
 if(strlen($fix_phone)>13){
 	die('电话格式有误');
 }else{
-	$member->fix_phone = $fix_phone;
+	$member->fix_phone = addslashes($fix_phone);
 }
 ////////////////////////////////////////////////////
 $phone = $_POST['phone'];
 if((strlen($phone)!=11||!is_numeric($phone))&&!empty($phone)){
 	die('手机格式有误,请认真填写');
 }else{
-	$member->phone = $phone;
+	$member->phone = addslashes($phone);
 }
 ////////////////////////////////////////////////////
 $id_num = $_POST['id_num'];
@@ -33,7 +33,7 @@ if((strlen($id_num)!=15&&strlen($id_num)!=18)&&!empty($id_num)){
 	if(!is_numeric(substr($id_num,0,15))){
 		die('身份证格式有误,请认真填写');
 	}
-	$member->id_num = $id_num;
+	$member->id_num = addslashes($id_num);
 }
 ////////////////////////////////////////////////////
 $education = $_POST['education'];
@@ -48,7 +48,7 @@ $industry = $_POST['industry'];
 if(strlen($industry)>46){
 	die('非法访问！');
 }else{
-	$member->industry = $industry;
+	$member->industry = addslashes($industry);
 }
 ////////////////////////////////////////////////////
 $income = $_POST['income'];
@@ -63,7 +63,7 @@ $true_name = $_POST['true_name'];
 if(strlen($true_name)>18){
 	die('请输入真实姓名');
 }else{
-	$member->true_name = $true_name;
+	$member->true_name = addslashes($true_name);
 }
 ////////////////////////////////////////////////////
 $province = $_POST['province'];
@@ -79,13 +79,13 @@ if(strlen($address)>90){
 	die('非法访问！');
 }
 $address = $province.'-'.$city.'-'.$address;
-$member->address = $address;
+$member->address = addslashes($address);
 ////////////////////////////////////////////////////
 $zip = $_POST['zip'];
 if((strlen($zip)!=6||!is_numeric($zip))&&!empty($zip)){
 	die('邮编格式有误，请认真填写');
 }else{
-	$member->zip = $zip;
+	$member->zip = addslashes($zip);
 }
 ////////////////////////////////////////////////////
 $year = $_POST['year'];
@@ -123,7 +123,7 @@ $baby_name = $_POST['baby_name'];
 if(strlen("baby_name")>18){
 	die('请输入宝宝姓名');
 }else{
-	$member->baby_name = $baby_name;
+	$member->baby_name = addslashes($baby_name);
 }
 ////////////////////////////////////////////////////
 $babysex = $_POST['babysex'];

@@ -124,15 +124,15 @@
 			</tr>
 			<tr>
 				<td class=td1>固定电话：</td>
-				<td class=td2><input name='fix_phone' maxlength="13" value="<?php echo $member->fix_phone;?>" type="text"/></td>
+				<td class=td2><input name='fix_phone' maxlength="13" value="<?php echo htmlspecialchars($member->fix_phone);?>" type="text"/></td>
 			</tr>
 			<tr>
 				<td class=td1>联系手机：</td>
-				<td class=td2><input type="text" name='phone' maxlength="11" value="<?php echo $member->phone;?>" /></td>
+				<td class=td2><input type="text" name='phone' maxlength="11" value="<?php echo htmlspecialchars($member->phone);?>" /></td>
 			</tr>
 			<tr>
 				<td class=td1>身份证号：</td>
-				<td class=td2><input type="text" name='id_num' maxlength="18" value="<?php echo $member->id_num;?>" /></td>
+				<td class=td2><input type="text" name='id_num' maxlength="18" value="<?php echo htmlspecialchars($member->id_num);?>" /></td>
 			</tr>
 			<tr>
 				<td class=td1>教育程度：</td>
@@ -190,7 +190,7 @@
 		<table class=r_table>
 			<tr>
 				<td class=td1><span>*</span> 真实姓名：</td>
-				<td class=td2><input name="true_name" maxlength="6" value="<?php echo $member->true_name;?>" type="text"/></td>
+				<td class=td2><input name="true_name" maxlength="6" value="<?php echo htmlspecialchars($member->true_name);?>" type="text"/></td>
 			</tr>
 			<?php 
 				$address = $member->address;
@@ -213,11 +213,11 @@
 					</select>
 					<script>show_city('<?php echo $address[1];?>');</script>
 					<br>
-					<input name="address" maxlength="30" value="<?php echo $address[2];?>" type="text"/></td>
+					<input name="address" maxlength="30" value="<?php echo htmlspecialchars($address[2]);?>" type="text"/></td>
 			</tr>
 			<tr>
 				<td class=td1><span>*</span> 邮政编码：</td>
-				<td class=td2><input name="zip" maxlength="6" value="<?php echo $member->zip;?>" type="text"/></td>
+				<td class=td2><input name="zip" maxlength="6" value="<?php echo htmlspecialchars($member->zip);?>" type="text"/></td>
 			</tr>
 			<tr>
 			<?php 
@@ -300,7 +300,7 @@
 			</tr>
 			<tr class="bbs">
 				<td class=td1>宝宝姓名：</td>
-				<td class=td2><input name="baby_name" maxlength="6" value="<?php echo $member->baby_name;?>" type="text" /></td>
+				<td class=td2><input name="baby_name" maxlength="6" value="<?php echo htmlspecialchars($member->baby_name);?>" type="text" /></td>
 			</tr>
 			<tr class="bbs">
 				<td class=td1>宝宝性别：</td>
