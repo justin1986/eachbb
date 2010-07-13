@@ -9,7 +9,7 @@
 <title>特色测评</title>
 <?php
 	use_jquery();
-	css_include_tag('test','top_inc/test_left');
+	css_include_tag('top_inc/test_top','test','top_inc/test_left');
 	js_include_tag('test/test');
 	init_page_items('test_index');
 ?>

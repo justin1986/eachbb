@@ -10,7 +10,7 @@ include_once '../inc/user.class.php';
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-CN>
 <?php 
-	css_include_tag('test_begin','top_inc/test_blue.top','top_inc/test_left');
+	css_include_tag('top_inc/test_top','test_begin','top_inc/test_left');
 	use_jquery();
 	js_include_tag('front/test');
 	$method = strtolower($_SERVER['REQUEST_METHOD']);

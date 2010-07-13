@@ -21,7 +21,7 @@
 <title>网趣宝贝-课程列表</title>
 <?php
 	use_jquery();
-	css_include_tag('info');
+	css_include_tag('course/course_top','info');
 	js_include_tag('course/info');
 ?>
 </head>

@@ -8,9 +8,9 @@
 		}else{
 			$db = get_db();
 			$question = new table_class('eb_user_question');
-			$question->user_id = $user->id;
-			$question->question = $value;
-			$question->created_at = now();
-			$question->save();
+			$question -> user_id = $user->id;
+			$question -> question = $value;
+			$question -> created_at = now();
+			$question -> save();
 		}
 ?>

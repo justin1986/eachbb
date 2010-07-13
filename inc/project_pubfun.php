@@ -22,7 +22,6 @@ function get_news_url($news,$type=null,$index=0){
 		if($index>1) $ret .= "_{$index}";
 		$ret .= ".shtml";
 		return $ret;
-			
 	}else{
 		if(is_numeric($news)){
 			$ret = '/news/news.php?id='.$news;

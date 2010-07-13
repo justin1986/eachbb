@@ -36,7 +36,7 @@ foreach ($results as $result){
 <meta http-equiv=Content-Language content=zh-CN>
 	<title>测评报告</title>
 	<?php 
-		css_include_tag('test_result','top_inc/test_left');
+		css_include_tag('top_inc/test_top','test_result','top_inc/test_left');
 	?>
 </head>
 <body>

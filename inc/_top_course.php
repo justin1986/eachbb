@@ -1,6 +1,3 @@
-<?php
-	css_include_tag('course/course_top');
-?>
 <div id="top_login">
 	<div id="tl_l"></div>
 	<div id="tl_r"></div>

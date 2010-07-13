@@ -7,7 +7,7 @@
 	include_once '../frame.php';
 	include_once '../inc/user.class.php';
 	use_jquery_ui();
-	css_include_tag('colorbox','login_register');
+	css_include_tag('top_inc/test_top','colorbox','login_register');
 	js_include_tag('jquery.colorbox-min');
 	?>
 </head>

@@ -1,6 +1,3 @@
-<?php
-	css_include_once_tag('top_inc/test_top');
-?>
 <div id="top_login">
 			<div id="tl_l"></div>
 			<div id="tl_r"></div>

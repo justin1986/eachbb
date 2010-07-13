@@ -8,7 +8,7 @@
 <?php 
 	include_once(dirname(__FILE__).'/../frame.php');
 	use_jquery();
-	css_include_tag('class_s');
+	css_include_tag('course/course_top','class_s');
 	js_include_tag('class/class_s');
 	init_page_items('course_index');
 ?>

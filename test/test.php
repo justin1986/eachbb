@@ -11,7 +11,6 @@ include_once '../frame.php';
 	<?php 
 	$method = strtolower($_SERVER['REQUEST_METHOD']);
 	$db = get_db();
-	//params initial
 	if($method == 'get'){
 		$test_id = intval($_GET['id']);
 		$test = new table_class('eb_problem');
@@ -28,7 +27,6 @@ include_once '../frame.php';
 		$question_queue = @array_merge($questions_tmp['dadongzuo'],$questions_tmp['jingxidongzuo'],$questions_tmp['yuyan'],$questions_tmp['renshi'],$questions_tmp['shehuihuodong']);
 		$_SESSION['doing_test'] = $test->id;
 		$_SESSION['question_queue'] = $question_queue;
-		
 	}else{
 		$question_queue = $_SESSION['question_queue'];
 		$step = $_POST['step'];
@@ -51,7 +49,7 @@ include_once '../frame.php';
 	if(!$question->id) die_not_found();
 	$table = new table_class("eb_question_item");
 	$question_items = $table->find('all',array("conditions"=>"question_id={$question->id}"));
-	css_include_tag('test_begin','top_inc/test_left');
+	css_include_tag('top_inc/test_top','test_begin','top_inc/test_left');
 	use_jquery();
 	js_include_tag('front/test'); 
 ?>
