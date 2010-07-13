@@ -2,7 +2,7 @@
 		include_once('./../frame.php');
 		include_once '../inc/user.class.php';
 		$user = User::current_user();
-		$value = $_POST['value'];
+		$value = htmlspecialchars_decode($_POST['value']);
 		if(!$user){
 			echo "no_login";
 		}else{
