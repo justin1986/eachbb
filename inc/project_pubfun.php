@@ -21,7 +21,6 @@ function get_news_url($news,$type=null,$index=0){
 		$ret = "/review/".date('Ym',strtotime($news->created_at))."/".str_pad($news->id,7,'0',STR_PAD_LEFT);
 		if($index>1) $ret .= "_{$index}";
 		$ret .= ".shtml";
-		
 		return $ret;
 			
 	}else{

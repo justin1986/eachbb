@@ -27,7 +27,7 @@
 					<div class="share_mail"><span>好友邮件：</span><input name="mail[]" type="text"></div>
 					<div class="share_name"><span>好友昵称：</span><input name="name[]" type="text"></div>
 				</div>
-				<div class="share_line" style="text-align:center; padding-left:150px;"><button type="button" id="add">继续添加</button> <button id="share_submit" type="button">提交</button></div>
+				<div class="share_line" style="text-align:center; padding-left:150px;"><button type="button" id="add">继续添加</button><button id="share_submit" type="button">提交</button></div>
 				<input type="hidden" name="news_id" value="<?php echo $news_id;?>">
 				<input type="hidden" name="type" value="<?php echo $type;?>">
 			</form>

@@ -22,6 +22,7 @@
 		$news_share->email = htmlspecialchars($_POST['mail'][$i]);
 		$news_share->created_at = now();
 		$news_share->news_id = $news_id;
+		$news_share->share_type='news';
 		$news_share->save();
 		$content = addslashes($_POST['name'][$i]."，你好：<br/><br/>　　您的好友".$user->name."想与您分享网趣宝贝的文章《".$news->title."》，您可以点击以下连接阅读<br/><br/>　　<a href='$site_domain".get_news_url($news,'static')."'>http://www.forbeschina.com".get_news_url($news,'static')."</a><br/>　　如果点击以上链接不起作用，请将此网址复制并粘贴到新的浏览器窗口中。");
 		$title = $news->title;
