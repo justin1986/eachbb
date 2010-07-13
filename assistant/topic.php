@@ -6,7 +6,7 @@
 	<title>妈妈助手</title>
 	<?php
 		include_once('../frame.php');
-		css_include_tag('topic','assistant/assistant_content','assistant/assistant_question','right_inc/assistant_right','left_inc/assistant_left'); 
+		css_include_tag('top_inc/assistant_top','topic','assistant/assistant_content','assistant/assistant_question','right_inc/assistant_right','left_inc/assistant_left'); 
 		use_jquery();
 		js_include_tag('assistant/assistant');
 		$db = get_db();

@@ -17,7 +17,7 @@
 <title>妈妈助手-<?php echo $column[0]->title;?></title>
 <?php
 	use_jquery();
-	css_include_tag('article');
+	css_include_tag('top_inc/assistant_top','article');
 	js_include_tag('jquery.cookie', 'assistant/news');
 ?>
 </head>
