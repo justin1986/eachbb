@@ -1,0 +1,9 @@
+CREATE TABLE `eachbb`.`eb_user_question_answer` (
+  `id` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  `question_id` INTEGER UNSIGNED NOT NULL,
+  `answer` VARCHAR(1000) NOT NULL,
+  `user_id` INTEGER UNSIGNED NOT NULL,
+  `created_at` DATETIME NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `Index_2`(`question_id`)
+)

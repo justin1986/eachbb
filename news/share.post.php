@@ -27,7 +27,6 @@
 		$title = $news->title;
 		insert_email($news_share->email, $email_from, $title, $content);
 	}
-	
 	function insert_email($email_to,$email_from,$email_subject,$email_content){
 		$db = get_db();
 		$db->execute("insert into `eachbb_email`.eb_email (email_to,email_from,email_subject,email_content,created_at) values('$email_to','$email_from','$email_subject','$email_content',now())");

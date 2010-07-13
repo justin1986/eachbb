@@ -1,25 +1,26 @@
-﻿#top_login{width:970px; height:83px; margin-top:10px; font-size:13px; color:#ffffff; float:left; display:inline;}
+#top_login{width:970px; height:83px; margin-top:10px; font-size:13px; color:#ffffff; float:left; display:inline;}
 #top_login a{color:#ffffff; text-decoration:none;}
 #tl_l{width:224px; height:83px; background:url(/images/bbs/loginb.jpg) no-repeat; float:left; display:inline;}
 #tl_r{width:721px; height:77px; background:url(/images/bbs/t.jpg) no-repeat; float:right; display:inline;}
 
-
-
 #top_menu{width:970px; height:61px; margin-top:5px; overflow:hidden;  float:left; display:inline;}
-#menu_left{width:5px; height:61px; background:url(/images/class/tt_a.jpg) no-repeat; float:left; display:inline;}
+#menu_left{width:5px; height:61px; background:url(/images/test/tt_a.jpg) no-repeat; float:left; display:inline;}
 #menu_center{width:960px; height:60px; border-bottom:1px solid #D4D4D4; float:left; display:inline;}
-#menu_ct{width:960px; height:29px; background:#C7F6F2; border-top:1px solid #34CFAD; border-bottom:1px solid #34CFAD; float:left; display:inline;}
+#menu_ct{width:960px; height:29px; background:#E6EFFA; border-top:1px solid #83ADE7; border-bottom:1px solid #83ADE7; float:left; display:inline;}
 #menu_ctt{width:960px; height:26px; margin-top:1px; border-bottom:1px solid #ffffff; border-top:1px solid #ffffff; float:left; display:inline;}
 #menu_ctb{width:960px; height:26px; margin-top:2px; background:#F9F9F9; float:left; display:inline;}
-#menu_right{width:5px; height:61px; background:url(/images/class/tt_b.jpg) no-repeat;  float:left; display:inline;}
-#menu_ctt a{color:#555555; text-decoration:none; font-weight:600; font-size:13px;}
+#menu_right{width:5px; height:61px; background:url(/images/test/tt_b.jpg) no-repeat;  float:left; display:inline;}
 #menu_ctb a{color:#000000; text-decoration:none; font-weight:600; font-size:13px;}
-.t_first{width:98px; height:23px; margin-top:2px; margin-left:15px; text-align:center; color:#000; font-size:12px; border:0px solid red; font-family:宋体; line-height:23px; background:url(/images/class/btns.jpg) no-repeat; float:left; display:Inline;}
-#t_first{width:98px; height:23px; margin-top:2px; margin-left:15px; text-align:center; font-size:12px; border:0px solid red; font-family:宋体; line-height:23px; background:url(/images/bbs/btn_b.jpg) no-repeat; float:left; display:Inline;}
+.t_first{width:98px; height:23px; margin-top:2px; margin-left:15px; cursor:pointer; text-align:center;  border:0px solid red; font-family:����; line-height:23px; background:url(/images/test/btns.jpg) no-repeat; float:left; display:Inline;}
+.t_first a{color:#000000; font-size:12px; text-decoration: none;}
+#t_first{width:98px; height:23px; margin-top:2px; margin-left:15px; cursor:pointer; text-align:center; font-size:12px; border:0px solid red; font-family:����; line-height:23px; background:url(/images/bbs/btn_b.jpg) no-repeat; float:left; display:Inline;}
 
-.me_a{width:70px; height:23px; margin-top:2px; margin-left:15px; text-align:center;  font-size:13px; border:0px solid red; font-family:宋体; line-height:23px; float:left; display:Inline;}
+
+#bg_hr{width:970px; height:4px; margin-top:10px; background:url(/images/test/hr.jpg) repeat-x; float:LEFT; display: inline;}
+
 .me_h{width:1px; height:12px; margin-left:2px; margin-top:7px; margin-right:3px; background:url(/images/bbs/pg_bs.jpg) no-repeat;  font-size:0px; border:0px solid red;  line-height:0px; float:left; display:Inline;}
-.me_b{width:70px; height:23px; margin-top:2px; text-align:center;  font-size:13px; border:0px solid red; font-family:宋体; line-height:23px; float:left; display:Inline;}
+.me_b{width:70px; height:23px; margin-top:2px; text-align:center;  border:0px solid red;  line-height:23px; float:left; display:Inline;}
+.me_b a{ font-size:13px; font-weight:600; color:#7AA4D3; text-decoration: none;}
 .son{font-size:13px; color:#FE9322; font-weight:600;}
 .bbs{font-size:13px; color:#64B033; font-weight:600;}
 .welcom{width:80px; height:14px; margin-top:5px; margin-left:10px; font-weight:600; border-right:1px solid #999999; text-align:center; font-size:13px;  float:left; display:inline;}
@@ -29,11 +30,7 @@
 .info{width:60px; height:14px; margin-top:5px; font-weight:600;  text-align:center; font-size:13px;  float:left; display:inline;}
 .info a{ text-decoration:none;}
 .me_hh{width:3px; height:14px; margin-left:2px; margin-top:5px; margin-right:3px; background:url(/images/bbs/hr_t.jpg) no-repeat;  font-size:0px; border:0px solid red;  line-height:0px; float:left; display:Inline;}
-.me_aa{width:90px; height:23px; margin-top:2px; margin-left:15px; text-align:center;  font-size:12px; border:0px solid red; font-family:宋体; line-height:23px; float:left; display:Inline;}
-.me_bb{width:90px; height:23px; margin-top:2px; text-align:center;  font-size:12px; border:0px solid red; font-family:宋体; line-height:23px; float:left; display:Inline;}
+.me_aa{width:90px; height:23px; margin-top:2px; margin-left:15px; text-align:center;  font-size:12px; border:0px solid red; font-family:����; line-height:23px; float:left; display:Inline;}
+.me_bb{width:90px; height:23px; margin-top:2px; text-align:center;  font-size:12px; border:0px solid red; font-family:����; line-height:23px; float:left; display:Inline;}
 #me_in{width:150px; height:15px; margin-left:14px; margin-top:3px; font-size:12px; float:left; display:inline;}
-#me_btn{width:47px; height:24px; margin-left:4px; margin-top:1px; background:url(/images/consult/mo_sou.jpg) no-repeat; border:0px solid red; float:left; display:inline;}
-
-
-
-
+#me_btn{width:47px; height:24px; margin-left:4px; margin-top:1px; background:url(/images/test/mo_sou.jpg) no-repeat; border:0px solid red; float:left; display:inline;}

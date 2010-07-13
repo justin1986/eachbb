@@ -9,7 +9,11 @@ function search_news(){
 }
 
 function send_login(){
-	$.post('/login/ajax.post.php?op=login&name='+ encodeURI($('#login_name').val()) + '&password=' +encodeURI($('#login_password').val()),function(data){
+	var expire = 0;
+	if($('#login_check').val()){
+		expire = 30;
+	}
+	$.post('/login/ajax.post.php?op=login&name='+ encodeURI($('#login_name').val()) + '&password=' +encodeURI($('#login_password').val()+'&expire='+expire),function(data){
 		$('#test_right').load('/login/ajax.post.php?op=load_login_status_box');
 	});
 };
@@ -17,7 +21,6 @@ function send_login(){
 $(function(){
 	$('#login_l').live('click',function(e){
 		e.preventDefault();
-		
 		send_login();
 	});
 	
@@ -111,5 +114,20 @@ $(function(){
 		dayNamesMin:["日","一","二","三","四","五","六"],
 		dayNamesShort:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
 		dateFormat: 'yy-mm-dd'
+	});
+	
+	$('#initial').click(function(e){
+		e.preventDefault();
+		var birth = new Date($('#date_picker').val());
+		if(typeof(birth) != 'Invalid Date' || birth == "NaN"){
+			alert('fail');
+		}
+		alert(birth);
+		//alert(birth.toLocaleDateString());
+		var now = new Date();
+		var year = now.getFullYear() - 3;
+		now.setYear(year);
+		
+		//alert(now.toLocaleDateString());
 	});
 });

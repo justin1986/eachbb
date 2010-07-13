@@ -8,21 +8,22 @@
 	}
 	$db = get_db();
 	$column = $db->query("SELECT id,title,click_count,short_title,category_id,description,content,created_at,last_edited_at,age FROM eb_assistant e where id=".$id." order by last_edited_at desc");
+	
 	?>
 <html>
 <head>
 <meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <meta http-equiv=Content-Language content=zh-CN>
-<title><?php echo $column[0]->title;?></title>
+<title>妈妈助手-<?php echo $column[0]->title;?></title>
 <?php
 	use_jquery();
-	css_include_tag('article');
+	css_include_tag('top_inc/assistant_top','article');
 	js_include_tag('jquery.cookie', 'assistant/news');
 ?>
 </head>
 <body>
 <div id="ibody">
-	<?php include_once('../inc/top_consult.php'); ?>
+		<?php include_once("../inc/_assistant_top.php"); ?>
 		<div id="fbody">
 		<div id="log_top">
 			<div id="log_t">
@@ -164,8 +165,7 @@
 			</div>
 		</div>
 		</div>
-		<div id="bottom">关于我们 - 加入我们 - 友情链接 - 联系我们 - 服务条款 - 隐私保护 - 网站地图</div>
-		<div id="bottom_b">哈哈少儿旗下网站  Copyright © 1997-2010 HAHA.smg.com All Rights Reserved.</div>
+		<?php include_once('../inc/bottom.php'); ?>
 </div>
 </body>
 </html>

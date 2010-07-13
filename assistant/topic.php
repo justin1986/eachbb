@@ -5,8 +5,8 @@
 	<meta http-equiv=Content-Language content=zh-CN>
 	<title>妈妈助手</title>
 	<?php
-		include_once('./../frame.php');
-		css_include_tag('topic','assistant_content','assistant_question','right_inc/assistant_right','top_inc/assistant_top','left_inc/assistant_left','bottom'); 
+		include_once('../frame.php');
+		css_include_tag('top_inc/assistant_top','topic','assistant/assistant_content','assistant/assistant_question','right_inc/assistant_right','left_inc/assistant_left'); 
 		use_jquery();
 		js_include_tag('assistant/assistant');
 		$db = get_db();
@@ -14,7 +14,7 @@
 </head>
 <body>
 <div id="ibody">
-	<?php include_once('./_assistant_top.php'); ?>
+	<?php include_once('../inc/_assistant_top.php'); ?>
 	<div id="fbody">
 		<?php include_once('./_assistant_left.php'); ?>
 		<div id="result">

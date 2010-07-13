@@ -9,7 +9,7 @@
 <title>特色测评</title>
 <?php
 	use_jquery();
-	css_include_tag('test','top_inc/test_blue.top','top_inc/test_left');
+	css_include_tag('test','top_inc/test_left');
 	js_include_tag('test/test');
 	init_page_items('test_index');
 ?>
@@ -17,9 +17,9 @@
 <body>
 <div id="ibody">
 	<div id="fbody">
-		<?php include_once(dirname(__FILE__).'/../inc/top_blue.inc.php'); ?>
+		<?php include_once('../inc/_test_top.php'); ?>
 		<div id="content">
-			<?php include_once(dirname(__FILE__).'/../inc/left_inc.php'); ?>
+			<?php include_once('../inc/left_inc.php'); ?>
 			<div id="c_r">
 				<div id="cr_flash">
 					<div id="cr_banner">
@@ -139,9 +139,7 @@
 			</div>
 			</div>
 		</div>
-		<div id="bg_hr"></div>
-		<div id="bottom">关于我们 - 加入我们 - 友情链接 - 联系我们 - 服务条款 - 隐私保护 - 网站地图</div>
-		<div id="bottom_b">哈哈少儿旗下网站  Copyright © 1997-2010 HAHA.smg.com All Rights Reserved.</div>
+		<?php include_once('../inc/bottom.php');?>
 	</div>
 </div>
 </body>

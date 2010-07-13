@@ -33,7 +33,7 @@
 </head>
 <body>
 <div id="ibody">
-	<?php include_once('../inc/top_consult.php'); ?>	
+	<?php include_once('../inc/_consult_top.php'); ?>
 		<div id="log_top">
 			<div id="log_t">
 				<div id="log"></div>
@@ -192,8 +192,7 @@
 				<?php } ?>
 				</div>
 		</div>
-		<div id="bottom">关于我们 - 加入我们 - 友情链接 - 联系我们 - 服务条款 - 隐私保护 - 网站地图</div>
-		<div id="bottom_b">哈哈少儿旗下网站  Copyright © 1997-2010 HAHA.fb.com All Rights Reserved.</div>
+		<?php include_once('../inc/bottom.php');?>
 </div>
 </body>
 </html>

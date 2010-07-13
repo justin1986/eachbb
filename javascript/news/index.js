@@ -7,7 +7,7 @@ $(function(){
 				continue;
 			}
 				$('#bc_'+i).attr('style','background:url(/images/consult/c_pttg.jpg);  color:#000000;');
-				$('#bc_0').attr('style','width:74px; height:27px; margin-left:5px;  color:#000000; background:url(/images/consult/c_pttdg.jpg)');
+				$('#bc_0').attr('style','width:74px; height:24px; margin-left:5px;  color:#000000; background:url(/images/consult/c_pttdg.jpg)');
 		}
 		if(selected == 0){
 			$(this).attr('style','width:74px; height:24px; margin-left:5px; color:#FF6600; background:url(/images/consult/c_ptg.jpg)');

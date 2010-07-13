@@ -10,36 +10,12 @@
 <?php
 	use_jquery();
 	css_include_tag('feedback');
-	js_include_tag('jquery.cookie','java','feedback/feedback');
+	js_include_tag('jquery.cookie','feedback/feedback');
 ?>
 </head>
 <body>
 <div id="ibody">
-	<div id="top_login">
-		<div id="login">
-			<div id="login_login">
-				<div id="login_img"></div>
-				<div id="login_word">登录</div>
-			</div>
-			<div id="register">
-				<div id="register_img"></div>
-				<div id="register_word">注册</div>
-			</div>
-			<div id="comeback">
-				<div id="comeback_img"></div>
-				<div id="comeback_word">返回首页</div>
-			</div>
-			<div id="member">
-				<div id="member_img"></div>
-				<div id="member_word">用户中心</div>
-			</div>
-		</div>
-	</div>
-	<div id="top_menu">
-			<div id="menu_left"></div>
-			<div id="menu_center"></div>
-			<div id="menu_right"></div>
-	</div>
+	<?php include_once('./inc/_feedback_top.php');?>
 	<div id="fbody">
 		<div id="content">
 			<div id="c_l">
@@ -49,7 +25,6 @@
 						<div id="lp_l"><img src="images/class/l_peo.jpg"></div>
 						<div id="lp_word">司法撒旦发射发声法</div>
 					</div>
-					
 					<div id="l_b_wa"><a href="#">您有<font>0</font>新条评论</a> </div>
 					<div class="l_b_wb"><a href="#">我的博客</a> </div>
 					<div class="l_b_wb"><a href="#">宝宝最新测试报告</a> </div>
@@ -64,9 +39,10 @@
 					<div class="hlcb_pg">
 						<div class="hlct_t">热门课程排行榜</div>
 						<img src="images/helper/lb_hd.jpg"> </div>
+					<?php for($i = 1 ; $i <= 3 ; $i++){?>
 					<div class="hlcb_z">
 						<div class="hlcb_l">
-							<div class="r">1</div>
+							<div class="r"><?php echo $i;?></div>
 						</div>
 						<div class="hlcb_r">
 							<div class="hlcb_t">按时法十分</div>
@@ -74,26 +50,7 @@
 							<div class="hlcb_t"><font>下载次数：</font>1232</div>
 						</div>
 					</div>
-					<div class="hlcb_z">
-						<div class="hlcb_l">
-							<div class="r">2</div>
-						</div>
-						<div class="hlcb_r">
-							<div class="hlcb_t">按时法十分</div>
-							<div class="hlcb_t">上传者：哈哈</div>
-							<div class="hlcb_t"><font>下载次数：</font>1232</div>
-						</div>
-					</div>
-					<div class="hlcb_z">
-						<div class="hlcb_l">
-							<div class="r">3</div>
-						</div>
-						<div class="hlcb_r">
-							<div class="hlcb_t">按时法十分</div>
-							<div class="hlcb_t">上传者：哈哈</div>
-							<div class="hlcb_t"><font>下载次数：</font>1232</div>
-						</div>
-					</div>
+					<?php }?>
 				</div>
 				<div class="hlc_bb"></div>
 				<div id="l_f">
@@ -102,42 +59,14 @@
 					<div id="lf_r">More &gt;&gt;</div>
 				</div>
 				<div id="pic_r">
+					<?php for($i = 1 ; $i <= 6 ; $i++){?>
 					<div class="ppg">
 						<div class="pic_pg">
 							<div class="pic_img"><img src="images/yard/pho.jpg"></div>
 						</div>
 						<div class="ppg_w">safsadfas</div>
 					</div>
-					<div class="ppg">
-						<div class="pic_pg">
-							<div class="pic_img"><img src="images/yard/pho.jpg"></div>
-						</div>
-						<div class="ppg_w">safsadfas</div>
-					</div>
-					<div class="ppg">
-						<div class="pic_pg">
-							<div class="pic_img"><img src="images/yard/pho.jpg"></div>
-						</div>
-						<div class="ppg_w">safsadfas</div>
-					</div>
-					<div class="ppg">
-						<div class="pic_pg">
-							<div class="pic_img"><img src="images/yard/pho.jpg"></div>
-						</div>
-						<div class="ppg_w">safsadfas</div>
-					</div>
-					<div class="ppg">
-						<div class="pic_pg">
-							<div class="pic_img"><img src="images/yard/pho.jpg"></div>
-						</div>
-						<div class="ppg_w">safsadfas</div>
-					</div>
-					<div class="ppg">
-						<div class="pic_pg">
-							<div class="pic_img"><img src="images/yard/pho.jpg"></div>
-						</div>
-						<div class="ppg_w">safsadfas</div>
-					</div>
+					<?php }?>
 				</div>
 				<div id="pg_a"></div>
 			</div>
@@ -187,22 +116,12 @@
 									<div id="cmc_c">哈哈哈按时打发哈哈按时打发哈哈哈按时打发哈哈按时打发哈按时打发哈哈按时哈哈哈按时打发哈哈按时打发哈哈哈按时打发哈哈按时打发哈按时打发哈哈按时打发哈按时打哈哈哈按时打发哈哈按时打发哈哈哈按时打发哈哈按时打发哈按时打发哈哈按时哈哈哈按时打发哈哈按时打发哈哈哈按时打发哈哈按时打发哈按时打发哈哈按时打发哈按时打发哈哈按时打发打发哈按时打发哈哈按时打发发哈哈按时打发打发哈按时打发哈哈按时打发</div>
 								</div>
 								<div id="cm_b">
+									<?php for($i = 1 ; $i <= 4 ; $i++){?>
 									<div class="cm_z">
 										<div class="cmz_l"></div>
 										<div class="cmz_r"><a href="#">哈哈按时打发哈哈按时打发</a></div>
 									</div>
-									<div class="cm_z">
-										<div class="cmz_l"></div>
-										<div class="cmz_r"><a href="#">哈哈按时打发哈哈按时打发</a></div>
-									</div>
-									<div class="cm_z">
-										<div class="cmz_l"></div>
-										<div class="cmz_r"><a href="#">哈哈按时打发哈哈按时打发</a></div>
-									</div>
-									<div class="cm_z">
-										<div class="cmz_l"></div>
-										<div class="cmz_r"><a href="#">哈哈按时打发哈哈按时打发</a></div>
-									</div>
+									<?php }?>
 								</div>
 							</div>
 							<div class="ctb_b">
@@ -211,23 +130,18 @@
 								</a>
 							</div>
 							<div id="c_pic"> 
-								<div class="c_p_b selected" param="1" style="margin-left:10px;"><a href="#">图书玩具</a></div>
-								<div class="c_p_b" param="2"><a href="#">我家院子</a></div>
-								<div class="c_p_b" param="3"><a href="#">论坛精华</a></div>
-								<div class="c_p_b" param="4"><a href="#">其他照片</a></div>
+								<div class="c_p_b selected" param="1" style="margin-left:10px;">图书玩具</div>
+								<div class="c_p_b" param="2">我家院子</div>
+								<div class="c_p_b" param="3">论坛精华</div>
+								<div class="c_p_b" param="4">其他照片</div>
 							</div>
 							<div id="ctc_bz">
 								<div id="ctb_t"></div>
 								<div id="ctb_c">
 									<div id="ctbc_c">
+										<?php for($i = 1 ; $i <= 8 ; $i++){?>
 										<div class="ctb_img"><img src="images/yetrb/dd.jpg"></div>
-										<div class="ctb_img"><img src="images/yetrb/dd.jpg"></div>
-										<div class="ctb_img"><img src="images/yetrb/dd.jpg"></div>
-										<div class="ctb_img"><img src="images/yetrb/dd.jpg"></div>
-										<div class="ctb_img"><img src="images/yetrb/dd.jpg"></div>
-										<div class="ctb_img"><img src="images/yetrb/dd.jpg"></div>
-										<div class="ctb_img"><img src="images/yetrb/dd.jpg"></div>
-										<div class="ctb_img"><img src="images/yetrb/dd.jpg"></div>
+										<?php }?>
 									</div>
 								</div>
 								<div id="ctb_b">
@@ -242,9 +156,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="bg_hr"></div>
-		<div id="bottom">关于我们 - 加入我们 - 友情链接 - 联系我们 - 服务条款 - 隐私保护 - 网站地图</div>
-		<div id="bottom_b">哈哈少儿旗下网站  Copyright © 1997-2010 HAHA.smg.com All Rights Reserved.</div>
+		<?php include_once('./inc/bottom.php');?>
 	</div>
 </div>
 </body>

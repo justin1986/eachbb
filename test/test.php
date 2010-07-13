@@ -1,4 +1,4 @@
-﻿<?php 
+<?php
 session_start();
 include_once '../frame.php';
 ?>
@@ -8,10 +8,7 @@ include_once '../frame.php';
 	<title>特色测评</title>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-CN>
-<?php 
-	css_include_tag('test_begin','top_inc/test_blue.top','top_inc/test_left');
-	use_jquery();
-	js_include_tag('front/test');
+	<?php 
 	$method = strtolower($_SERVER['REQUEST_METHOD']);
 	$db = get_db();
 	//params initial
@@ -28,7 +25,7 @@ include_once '../frame.php';
 		foreach($questions as $question){
 			$questions_tmp[$question->question_type][] = array('id'=> $question->id,'question_type'=>$question->question_type,'score'=> 0,'choice'=>0);
 		} 
-		$question_queue = array_merge($questions_tmp['dadongzuo'],$questions_tmp['jingxidongzuo'],$questions_tmp['yuyan'],$questions_tmp['renshi'],$questions_tmp['shehuihuodong']);
+		$question_queue = @array_merge($questions_tmp['dadongzuo'],$questions_tmp['jingxidongzuo'],$questions_tmp['yuyan'],$questions_tmp['renshi'],$questions_tmp['shehuihuodong']);
 		$_SESSION['doing_test'] = $test->id;
 		$_SESSION['question_queue'] = $question_queue;
 		
@@ -53,13 +50,16 @@ include_once '../frame.php';
 	$question->find($question_queue[$step]['id']);
 	if(!$question->id) die_not_found();
 	$table = new table_class("eb_question_item");
-	$question_items = $table->find('all',array("conditions"=>"question_id={$question->id}")); 
+	$question_items = $table->find('all',array("conditions"=>"question_id={$question->id}"));
+	css_include_tag('test_begin','top_inc/test_left');
+	use_jquery();
+	js_include_tag('front/test'); 
 ?>
 </head>
 <body>
 <div id="ibody">
 	<div id="fbody">
-		<?php include_once('../inc/top_blue.inc.php'); ?>
+		<?php include_once('../inc/_test_top.php'); ?>
 		<div id="content">
 			<?php include_once('../inc/left_inc.php'); ?>
 			<div id="c_r">
@@ -150,9 +150,7 @@ include_once '../frame.php';
 				</div>
 			</div>
 		</div>
-		<div id="bg_hr"></div>
-		<div id="bottom">关于我们 - 加入我们 - 友情链接 - 联系我们 - 服务条款 - 隐私保护 - 网站地图</div>
-		<div id="bottom_b">哈哈少儿旗下网站  Copyright © 1997-2010 HAHA.smg.com All Rights Reserved.</div>
+		<?php include_once('../inc/bottom.php');?>
 	</div>
 </div>
 </body>
