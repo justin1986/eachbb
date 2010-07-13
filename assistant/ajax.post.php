@@ -21,7 +21,7 @@
 		$user = User::current_user();
 		if(!$user) die('请先登录!');
 		$news_id = intval($_POST['news_id']);
-		$news = new table_class('eb_assistant');
+		$news = new table_class('eb_category');
 		$news->find($news_id);
 		if(!$news->id){
 			die('invalid param');

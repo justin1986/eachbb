@@ -1,11 +1,8 @@
 <?php
 	include_once '../frame.php';
 	include_once '../inc/user.class.php';
-	if($_SESSION['news_share'] != $_POST['session']){
-		die('invalid request!');
-	}
 	$news_id = intval($_POST['news_id']);
-	$news = new table_class('eb_news');
+	$news = new table_class('eb_category');
 	$news->find($news_id);
 	if(!$news->id) die('invalid param');
 	$len = count($_POST['mail']);
