@@ -45,10 +45,7 @@
 .ttc_a{width:108px; height:39px; line-height:39px; text-align:center; float:left; display:inline;}
 .ttc_hr{width:2px; height:15px; margin-top:12px; background:#ffffff; float:left; display:inline;}
 #tt_c a{font-size:20px;  font-weight:600; color:#ffffff; text-decoration:none;}
-#ttc_f{width:90px; height:30px; margin-top:4px; margin-left:16px; border:0px solid red; float:left; display:inline;}
-#ttc_g{width:90px; height:30px; margin-top:4px; margin-left:6px;  border:0px solid red; float:left; display:inline;}
-#ttc_h{width:90px; height:30px; margin-top:4px; margin-left:6px;  border:0px solid red; float:left; display:inline;}
-#ttc_j{width:90px; height:30px; margin-top:4px; margin-left:6px;  border:0px solid red; float:left; display:inline;}
+#ttc_g{width:90px; height:30px; margin-top:4px; margin-right:6px;  border:0px solid red; float:right; display:inline;}
 #t2b_l{width:95px; height:55px; margin-left:10px; font-size:12px; border:0px solid red; line-height:55px; color:#98D067; float:left; display:inline;}
 #t2b_r{width:850px; height:55px; margin-left:10px; float:left; display:inline;}
 #t2b_hr{width:846px; height:10px; margin-left:3px; margin-top:10px; float:left; display:inline;}

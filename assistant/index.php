@@ -98,7 +98,7 @@
 				?>
 				
 				<div class=fc_c>
-					<div id="fc_b" style="width:708px">
+					<div class="fc_c_t">
 						<div class="fct_l" id="fct_lb" style="width:600px;"><?php echo $top_cates[6]->name;?></div>	
 						<div class="fct_r" id="fct_rb"><a href="list.php?category_id=<?php echo $top_cates[6]->id;?>">更多&gt;&gt;</a></div>
 						<?php
