@@ -97,46 +97,24 @@
 			<div id="cre">
 					<img src="/images/test/tc_b.jpg">
 			</div>
-			<div id="crf">
-				<div class="cf_z">
-					<div class="cfz_t">
-						<font>父母养育测试</font>
+			<div id="cr_ci">
+					<div id="cri_t"></div>
+					<div id="cri_c">
+						<div id="cric_pg">
+							<div id="pric_l"></div>
+							<div id="cric_title"><font>精编课程展示</font> 资源分享 分我所有</div>
+							<div id="cric_c">
+								<?php for($i=0;$i<6;$i++){?>
+								<div class="cricc_a">
+									<div <?php $pos="bottom_img_$i";show_page_pos($pos,'link_i');?>><a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : '/images/class/c_pg_a.jpg';?>"></a></div>
+								</div>
+								<?php }?>
+							</div>
+							<div id="pric_rl"></div>
+						</div>
 					</div>
-					<div class="cfz_cz">
-						<ul>
-							<?php
-							 for($i=0;$i<7;$i++){
-							 	$pos = "left_list_$i"; 
-							 ?>
-							<li>
-								<div class="frzcd"></div>
-								<div class="frzc_c"<?php show_page_pos($pos,'link')?>><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href)?></div>
-							</li>
-							<?php
-							}?>
-						</ul>
-					</div>		
+					<div id="cri_b"></div>
 				</div>
-				<div class="cf_z" id="cf_z">
-					<div class="cfz_t">
-						<font>父母养育测试</font>
-					</div>
-					<div class="cfz_cz">
-						<ul>
-							<?php
-							 for($i=0;$i<7;$i++){
-								$pos = "left_list_$i"; 
-							 ?>
-							<li>
-								<div class="frzcd"></div>
-								<div class="frzc_c"<?php show_page_pos($pos,'link')?>><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href)?></div>
-							</li>
-							<?php
-							}?>
-						</ul>
-					</div>		
-				</div>
-			</div>
 			</div>
 		</div>
 		<?php include_once('../inc/bottom.php');?>
