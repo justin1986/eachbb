@@ -20,7 +20,20 @@
 		<?php include_once dirname(__FILE__)."/_assistant_left.php"; ?>
 		<div id="f_r">
 			<div id="fr_t">
-				<div id="fr_tp"></div>
+				<div id="fr_tp">
+					<?php for($i=1;$i<6;$i++){ ?>
+						<div class="fr_tpimg" id="fr_tpimg<?php echo $i;?>" <?php $pos = "tab_image_{$i}";show_page_pos($pos,'link_i')?> >
+							<a href="<?php echo $pos_items[$pos]->href; ?>"><img src="<?php echo $pos_items[$pos]->image1; ?>"></a>
+						</div>
+					<?php } ?>
+					<div id="fd_num">
+							<div class="num" id="num5">5</div>
+							<div class="num" id="num4">4</div>	
+							<div class="num" id="num3">3</div>	
+							<div class="num" id="num2">2</div>	
+							<div class="num selected" id="num1">1</div>	
+					</div>
+				</div>
 				<div id="fr_trp">
 					<div id="h_type">
 						<div class="h_pg_t"></div>
@@ -51,8 +64,8 @@
 				?>
 				<div class="fc_l" <?php echo "id='fct_$c'";?>>
 					<div class="fc_t" <?php echo "id='fc_$c'";?>>
-						<div class="fct_l" <?php echo "id='fct_l$c'";?>><?php echo $top_cates[$i]->name;?></div>
-						<div class="fct_r" <?php echo "id='fct_r$c'";?>><a href="list.php?category_id=<?php echo $top_cates[$i]->id;?>">更多&gt;&gt;</a></div>
+						<div class="fct_l" <?php echo "id='fct_l$c'";?> ><?php echo $top_cates[$i]->name;?></div>
+						<div class="fct_r" <?php echo "id='fct_r$c'";?> ><a href="list.php?category_id=<?php echo $top_cates[$i]->id;?>">更多&gt;&gt;</a></div>
 					</div>
 					<div class="fcl_l">
 						<div class="fci_a"<?php $pos = "list_image_{$i}_a";show_page_pos($pos,'link_i')?>><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
@@ -81,7 +94,42 @@
 				<?php 
 					$c++;
 				}
+				
 				?>
+				
+				<div class=fc_c>
+					<div class="fc_t" style="width:708px;">
+						<div class="fct_l" id="fct_la" style="width:600px;"><?php echo $top_cates[6]->name;?></div>	
+						<div class="fct_r" id="fct_ra"><a href="list.php?category_id=<?php echo $top_cates[6]->id;?>">更多&gt;&gt;</a></div>
+						<?php
+							$var = "category_6";
+							$ids = implode(',', $$var);
+							$sql = "select a.id,a.title,b.name from eb_assistant a left join eb_category b on a.category_id = b.id where a.is_adopt=1 and a.category_id in ($ids)";
+							$valid_ages=array(-2,-1,1,2,3);
+							if(in_array($_GET['age'], $valid_ages)){
+										$sql .=" and age=" .$_GET['age'];
+							}
+							$sql .=" order by a.priority,created_at desc limit 14";
+							$assistants = $db->query($sql);
+						 for($i=6;$i<8;$i++){ ?>
+						<div class=content>
+						<div class="fcl_l">
+							<div class="fci_a"<?php $pos = "list_image_{$i}_a";show_page_pos($pos,'link_i')?>><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
+							<div class="fci_b"<?php $pos = "list_image_{$i}_b";show_page_pos($pos,'link_i')?>><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
+						</div>
+						<div class="fcl_r">
+						<?php 
+							for($j=($i-6)*7;$j<($i-6)*7+7;$j++){ ?>
+						<div class="fcr_c">
+							<div class="fcrc_d"></div>
+							<div class="fcrc_c">[<?php echo $assistants[$j]->name;?>] <a href="assistant.php?id=<?php echo $assistants[$j]->id;?>" title="<?php echo $assistants[$j]->title?>" ><?php echo $assistants[$j]->title?></a></div>
+						</div>
+					<?php  }?>
+						</div>
+					</div>
+					<?php }?>
+					</div>
+				</div>
 			</div>
 			<div id="fr_b">
 				<div id="frb_tz">

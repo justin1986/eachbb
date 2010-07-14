@@ -18,33 +18,16 @@
 							<div class="ht_c_z">
 								<div class="ht_c_t">
 									<div class="htct_l"></div>
-									<div class="htct_t"><?php echo $top_cates[$i]->name;?></div>
-									<div class="htct_b">
+									<div class="htct_t" param=<?php echo $i; ?>><?php echo $top_cates[$i]->name;?></div>
+									<div class="htct_b" <?php if($i==0){?>style="display:inline;"<?php }?> >
 										<?php
-										$itemp = 0; 
 										$var = "category_$i";
 										$$var = array();
 										for($j=0;$j<$sub_len;$j++){
 											if($sub_cates[$j]->parent_id != $top_cates[$i]->id) continue;
 											array_push($$var, $sub_cates[$j]->id);
-											$mod = $itemp % 3;
-											$itemp++;
-											switch ($mod) {
-												case 0:
-													$class="htct_ca";
-												break;
-												case 1:
-													$class="htct_c";
-												break;
-												case 2:
-													$class="htct_cc";
-												break;
-												default:
-													;
-												break;
-											}
 										?>
-										<div class="<?php echo $class;?>"><a href="/assistant/list.php?category_id=<?php echo $sub_cates[$i]->id;?>" title="<?php echo $sub_cates[$j]->name;?>"><?php echo $sub_cates[$j]->name;?></a></div>
+										<div class="htct_c"><a href="/assistant/list.php?category_id=<?php echo $sub_cates[$i]->id;?>" title="<?php echo $sub_cates[$j]->name;?>"><?php echo $sub_cates[$j]->name;?></a></div>
 										<?php }?>
 									</div>
 								</div>
