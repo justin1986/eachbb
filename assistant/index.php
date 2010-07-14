@@ -98,9 +98,9 @@
 				?>
 				
 				<div class=fc_c>
-					<div class="fc_t" style="width:708px;">
-						<div class="fct_l" id="fct_la" style="width:600px;"><?php echo $top_cates[6]->name;?></div>	
-						<div class="fct_r" id="fct_ra"><a href="list.php?category_id=<?php echo $top_cates[6]->id;?>">更多&gt;&gt;</a></div>
+					<div id="fc_b" style="width:708px">
+						<div class="fct_l" id="fct_lb" style="width:600px;"><?php echo $top_cates[6]->name;?></div>	
+						<div class="fct_r" id="fct_rb"><a href="list.php?category_id=<?php echo $top_cates[6]->id;?>">更多&gt;&gt;</a></div>
 						<?php
 							$var = "category_6";
 							$ids = implode(',', $$var);
