@@ -106,7 +106,7 @@
 							<div id="cric_c">
 								<?php for($i=0;$i<6;$i++){?>
 								<div class="cricc_a">
-									<div <?php $pos="bottom_img_$i";show_page_pos($pos,'link_i');?>><a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : '/images/class/c_pg_a.jpg';?>"></a></div>
+									<div <?php $pos="test_bottom_img_$i";show_page_pos($pos,'link_i');?>><a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : '/images/class/c_pg_a.jpg';?>"></a></div>
 								</div>
 								<?php }?>
 							</div>
