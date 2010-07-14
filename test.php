@@ -29,10 +29,7 @@ if($user){
 }
 */
 ?>
-<div>
-	<?php echo strip_tags($_POST['text']);?>
+<div style="border:1px solid black; border-bottom:1px solid red; font-size:20px;color:green;height:200px; padding-left:20px;">
+	abcd
 </div>
-<form action="test.php" method="post">
-	<input type="text" name="text" />
-	<input type="submit" value="提交"/>
-</form>
+<span  style="border:1px solid red; height:200px;padding-left:10px;margin-top:10px;">1234</span>
