@@ -1,5 +1,5 @@
 <div id="email">
-	<div id="email_l">邮件地址</div>
+	<div id="email_l">用户名</div>
 	<div id="email_r">
 		<input id="login_name" type="text" value="<?php echo $_COOKIE['member_name'];?>" />
 	</div>

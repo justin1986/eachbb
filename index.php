@@ -10,6 +10,7 @@
 		css_include_tag('index','jquery_ui','buttom');
 		js_include_tag('index');
 		init_page_items('index');
+		$db = get_db();
 	?>
 </head>
 <body>
@@ -46,14 +47,7 @@
 				<div id="flash_left"></div>
 				<div id="flash_right">
 					<div id="r_test">
-						<div id="test_value">
-						<?php
-							$db=get_db();
-							#$test=$db->query("select id,name from eb_problem where is_adopt=1 order by priority,create_time desc limit 8;");
-							for($i=0;$i<4;$i++){ ?>
-							<div class="test_a"<?php $pos="top_test_$i";show_page_pos($pos,'link');?>><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href);?></div>
-						<?php }?>
-						</div>
+						<a href="#"><img src="/images/index/img_r_a.jpg" /></a>
 					</div>
 					<div id="r_student">
 						<div id="st_top">
@@ -116,73 +110,39 @@
 				<div id="sousuo_d"></div>
 			</div>
 			<div id="test">
+			
 				<div id="test_left">
-					<div id="t_l_pg">
-					<?php 
-					$db=get_db();
-					$pro=$db->query("SELECT id,name,photo_url,description FROM eb_problem e where is_adopt=1 order by create_time desc limit 1");
-					?>
-						<div id="t_content_left">
-							<div id="pic_top">请输入宝宝的出生日期:</div>
-							<div id="pic_bottom">
-								<a href="#">
-									<img id="pic_left"/>
-								</a>
-								<div id="picc">
-									<img id="pic_right" src="<?php echo $pro[0]->photo_url;?>" title="<?php echo $pro[0]->photo_url;?>"/>
-									<div id="pic_word">
-										<a href="<?php get_test_url($pro[0]);?>">怀孕期测试</a>
-									</div>
-								</div>
-							</div>
+					<div id="test_left_top">
+						请输入宝宝的出生日期:　<input type="text" id='datepicker' />
+					</div>
+					<div id="btn_begin_test">
+						<a href="#" id="a_begin_test"><img src="/images/index/test.png" border="0" /></a>
+					</div>
+					
+					<div id="div_left_arrow">
+						<a href="#" id="a_left_arrow"><img src="/images/index/l_l.png" border="0" /></a>
+					</div>
+					<?php for($i=0;$i<4;$i++){?>
+					<div id="test_tab_<?php echo $i;?>" class="test_tab" <?php if($i==0) echo ' style="display:inline;"';?> <?php $pos="test_tab_{$i}"; show_page_pos($pos,'link_d_i')?>>
+						<div class="test_img">
+							<a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1: '/images/index/test_sample.jpg';?>" border="0" /></a>
 						</div>
-						<div id="t_cc_z">
-							<div id="select_st">
-								<div id="select_s">
-									<input style="margin-top:10px;" type="text" id="date_picker" />
-									<!-- 
-									<select id="select_a">
-									<?php 
-										$year = date('Y');
-										for($i=0;$i<3;$i++){
-									?>
-										<option value="<?php echo $year - $i;?>"><?php echo $year - $i;?>年</option>
-									<?php }?>
-									</select>
-									<select id="select_b">
-										<?php for($i=1;$i<13;$i++){?>
-										<option value="<?php echo $i; ?>"><?php echo $i;?>月</option>
-										<?php }?>
-									</select>
-									<select id="select_c" name="select">
-									</select>
-									 -->
-								</div>
-								<div id="select_title" title="<?php echo $pro[0]->name;?>"><a href="<?php get_test_url($pro[0]);?>"><?php echo $pro[0]->name;?></a></div>
-							</div>
-							<a href="#">
-							<img id="initial" src="/images/index/test.png"/>
-							</a>
-							<div id="select_word">
-									<div id="st_t">
-									<a href="<?php get_test_url($pro[0]);?>">
-										<?php echo strip_tags($pro[0]->description);?>
-									</a>
-									</div>
-									<div id="st_b">
-										<a href="/test/index.php">
-											<img id="select_more" src="/images/index/more.gif" />
-										</a>
-									</div>
-							</div>
-							<div id="t_content_right" > 
-								<a href="#">
-									<img id="initial_img" src="/images/index/l_r.png" />
-								</a> 
+						<div class="test_context">
+							<div class="context_title"><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href);?></div>
+							<div class="context_content"><?php echo_href($pos_items[$pos]->description, $pos_items[$pos]->href);?></div>
+							<div class="test_content_more">
+								<a href="<?php echo $pos_items[$pos]->href;?>"><img src="/images/index/more.gif" border="0" /></a>
 							</div>
 						</div>
 					</div>
+					<?php }?>
+					<div id="div_right_arrow">
+						<a href="#" id="a_right_arrow"><img src="/images/index/l_r.png" border="0" /></a>
+					</div>
+					
 				</div>
+				
+				
 				<div id="test_right">
 					<script type="text/javascript">$('#test_right').load('/login/ajax.post.php?op=load_login_status_box');</script>
 				</div>

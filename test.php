@@ -29,7 +29,7 @@ if($user){
 }
 */
 ?>
-<div style="border:1px solid black; border-bottom:1px solid red; font-size:20px;color:green;height:200px; padding-left:20px;">
+<div id="div1" class="a b c" style="border:1px solid black; border-bottom:1px solid red; font-size:20px; color:green;height:200px; padding-left:20px;">
 	abcd
 </div>
 <span  style="border:1px solid red; height:200px;padding-left:10px;margin-top:10px;">1234</span>
