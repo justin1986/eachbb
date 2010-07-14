@@ -30,18 +30,18 @@
 					</div>
 				</div>
 				<div id="menu_ctb">
-					<input type="button" id="t_first" value="我的网趣">
-					<div class="me_aa"><a href="#">网趣宝宝首页</a></div>
+					<input type="button" id="t_first" value="我的网趣">
+					<div class="me_aa"><a href="#">网趣宝宝首页页</a></div>
 					<div class="me_hh"></div>
-					<div class="me_bb"><a href="#">用户测评报告</a></div>
+					<div class="me_bb"><a href="#">用户测评报告告</a></div>
 					<div class="me_hh"></div>
-					<div class="me_bb"><a href="#">用户课程订购</a></div>
+					<div class="me_bb"><a href="#">用户课程订购购</a></div>
 					<div class="me_hh"></div>
-					<div class="me_bb"><a href="#">重要信息提示</a></div>
+					<div class="me_bb"><a href="#">重要信息提示示</a></div>
 					<div class="me_hh"></div>
-					<div class="me_bb"><a href="#">我家小院子</a></div>
+					<div class="me_bb"><a href="#">我家小院子子</a></div>
 					<div class="me_hh"></div>
-					<div class="me_bb" ><a href="#">管理设置</a></div>
+					<div class="me_bb" ><a href="#">管理设置置</a></div>
 					<input type="text" id="me_in">
 					<input type="button" id="me_btn">
 				</div>
