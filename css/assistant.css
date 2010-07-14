@@ -13,7 +13,8 @@ body{width:970PX; margin: 0 auto;}
 
 .fc_l{width:336px; height:192px; margin:15px; margin-top:15px; margin-bottom:0px; border:3px solid #FADCB5; float:left; display:inline; }
 .fc_t{width:336px; height:26px; background:url(../images/helper/h_1.jpg) repeat-x; float:left; display:inline;}
-.fc_c{width:708px; height:192px; margin-top:15px; margin-left:15px; border:3px solid #b4cbf4; float:left; display:inline;}
+.fc_c{width:708px; height:192px; margin-top:15px; margin-left:15px; border:3px solid #bbd3f7; float:left; display:inline;}
+.fc_c .fc_c_t{width:708px; height:26px; background:url(../images/helper/h_7.jpg) repeat-x; float:left; display:inline;}
 .fc_c .content{width:354px; height:164px; float:left; display:inline;}
 .fct_l{width:230px; height:26px; margin-left:10px; font-size:14px; color:#FF6600; line-height:26px; font-weight:600; float:left; display:inline;}
 .fct_r{width:50px; height:26px; line-height:26px; float:right; display:inline;}
