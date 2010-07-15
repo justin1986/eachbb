@@ -8,9 +8,9 @@ $(function(){
 				continue;
 			}
 			if(i == 0 || i == 1){
-				$('.dict_tab.long').attr('style','width:135px; height:24px; background:url(/images/news/r_hui_long.gif) no-repeat; color:#000000;');
+				$('.dict_tab.long').attr('style','width:136px; height:24px; background:url(/images/news/r_hui_long.gif) no-repeat; color:#000000;');
 			}else{
-				$('.dict_tab.short').attr('style','width:90px; height:24px; background:url(/images/news/r_f.gif) no-repeat; color:#000000;');
+				$('.dict_tab.short').attr('style','width:91px; height:24px; background:url(/images/news/r_f.gif) no-repeat; color:#000000;');
 			}
 		}
 		if(selected == 0 || selected == 1){

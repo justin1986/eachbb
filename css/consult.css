@@ -16,8 +16,8 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 .bla_con{width:305px; height:20px; margin-left:6px; margin-top:1px; line-height:20px; font-size:12px; float:left; display:inline;}
 .blaco_d{width:4px; height:3px; margin-top:7px; background:url(../images/bbs/pg_g.jpg) no-repeat; float:left; display:inline;}
 .blaco_c{width:295px; height:20px; margin-left:5px; font-size:12px; font-weight:500; line-height:20px; overflow:hidden; float:left; display:inline;}
-.dict_tab.long{width:135px; height:24px; text-align:center; font-size:13px; font-weight:bold; line-height:24px; background:url(/images/news/r_hui_long.gif) no-repeat; float:left; display:inline;}
-.dict_tab.short{width:90px; height:24px; text-align:center; font-size:13px; font-weight:bold; line-height:24px; background:url(/images/news/r_f.gif) no-repeat; float:left; display:inline;}
+.dict_tab.long{width:136px; height:24px; text-align:center; font-size:13px; font-weight:bold; line-height:24px; background:url(/images/news/r_hui_long.gif) no-repeat; float:left; display:inline;}
+.dict_tab.short{width:91px; height:24px; text-align:center; font-size:13px; font-weight:bold; line-height:24px; background:url(/images/news/r_f.gif) no-repeat; float:left; display:inline;}
 
 #b_l{width:650px; margin-top:15px; overflow:hidden; float:left; display:inline;}
 #b_r{width:291px;  margin-top:15px; overflow:hidden; float:right; display:inline;}
