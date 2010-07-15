@@ -30,18 +30,19 @@
 					</div>
 				</div>
 				<div id="menu_ctb">
-					<div  id="t_first" ><a href="" style="font-weight: bold;">我的网趣</a></div>
-					<div class="me_aa"><a href="#">网趣宝宝首页</a></div>
+					<div class="me_aa"><a href="#">积极备孕页</a></div>
 					<div class="me_hh"></div>
-					<div class="me_bb"><a href="#">用户测评报告</a></div>
+					<div class="me_bb"><a href="#">孕期生活告</a></div>
 					<div class="me_hh"></div>
-					<div class="me_bb"><a href="#">用户课程订购</a></div>
+					<div class="me_bb"><a href="#">生长发育购</a></div>
 					<div class="me_hh"></div>
-					<div class="me_bb"><a href="#">重要信息提示</a></div>
+					<div class="me_bb"><a href="#">日常护理示</a></div>
 					<div class="me_hh"></div>
-					<div class="me_bb"><a href="#">我家小院子</a></div>
+					<div class="me_bb"><a href="#">疾病与接种子</a></div>
 					<div class="me_hh"></div>
-					<div class="me_bb" ><a href="#">管理设置</a></div>
+					<div class="me_bb" ><a href="#">早期教育置</a></div>
+					<div class="me_hh"></div>
+					<div class="me_bb" ><a href="#">宠爱自己</a></div>
 					<input type="text" id="me_in">
 					<input type="button" id="me_btn">
 				</div>
@@ -64,16 +65,7 @@
 				<div class="ttc_hr"></div>
 				<div class="ttc_a"><a href="?age=3">2～3岁</a></div>
 				<a href="#">
-				<img id="ttc_f" src="/images/helper/t_1.jpg"/>
-				</a>
-				<a href="#">
 				<img id="ttc_g" src="/images/helper/t_2.jpg"/>
-				</a>
-				<a href="#">
-				<img id="ttc_h" src="/images/helper/t_3.jpg"/>
-				</a>
-				<a href="#">
-				<img id="ttc_j" src="/images/helper/t_4.jpg"/>
 				</a>
 			</div>
 			<div id="tt_r"></div>

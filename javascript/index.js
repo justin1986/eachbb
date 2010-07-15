@@ -1,3 +1,12 @@
+var test_tab_index = 0;
+const test_tab_count = 4;
+function refresh_test_tab(){
+	if(test_tab_index < 0) test_tab_index = test_tab_count -1;
+	if(test_tab_index >= test_tab_count) test_tab_index = 0;
+	$('.test_tab').hide();
+	$('#test_tab_'+test_tab_index).show();
+}
+
 function search_news(){
 	var text = encodeURI($('#input_search').val());
 	if(text == '') {
@@ -114,6 +123,18 @@ $(function(){
 		dayNamesMin:["日","一","二","三","四","五","六"],
 		dayNamesShort:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
 		dateFormat: 'yy-mm-dd'
+	});
+	
+	//test tab
+	$('#a_left_arrow').click(function(e){
+		e.preventDefault();
+		test_tab_index--;
+		refresh_test_tab();
+	});
+	$('#a_right_arrow').click(function(e){
+		e.preventDefault();
+		test_tab_index++;
+		refresh_test_tab();
 	});
 	
 	$('#initial').click(function(e){

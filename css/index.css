@@ -32,7 +32,8 @@ body{width:1000px; margin: 0 auto;  background:url(/images/index/img_pg.jpg) rep
 #flash{width:965px; height:410px; margin-top:11px; overflow:hidden; float:left; display:inline;}
 #flash_left{width:665px; height:400px; margin-top:5px; margin-left:2px; background:#000000; float:left; display:inline;}
 #flash_right{width:286px; height:413px; margin-right:2px; float:right; display:inline;}
-#r_test{width:286px; height:124px; background:url(/images/index/img_r_a.jpg) no-repeat; float:left; display:inline;}
+#r_test{width:286px; height:124px;  float:left; display:inline;}
+	#r_test img{width:286px; height:124px; border:none;}
 #test_value{width:180px; height:80px; margin-left:90px; margin-top:38px; float:left; display:inline;}
 .test_a{width:180px; height:18px; margin-top:1px; overflow:hidden; line-height:18px; float:left; display:inline;}
 .test_a a{font-size:13px; color:#000000; text-decoration:none;}
@@ -62,8 +63,21 @@ body{width:1000px; margin: 0 auto;  background:url(/images/index/img_pg.jpg) rep
 
 
 #test{width:965px; height:174px; margin-top:10px; float:left; display:inline;}
-#test_left{width:684px; height:174px; margin-left:4px; float:left; display:inline;}
-#t_l_pg{width:684px; height:167px; margin-top:7px; background:url(/images/index/test_a.gif) no-repeat; float:left; display:inline;}
+#test_left{width:684px; height:174px; margin-top:7px; margin-left:4px; float:left; display:inline;background:url(/images/index/test_a.gif) no-repeat;}
+	#test_left_top{width:460px;margin-left:120px; margin-top:15px;  font-size:13px; font-weight:bold; float:left; display:inline;}
+	#btn_begin_test{width:80px; margin-right:5px; margin-top:7px;float:right;}
+	#div_left_arrow{width:17px; margin-left:25px; margin-top:45px;float:left; display:inline;}
+	.test_tab{width:580px;height:110px; margin-top:-11px; float:left; display:none;}
+		.test_img{float:left; margin-left:18px; margin-top:3px;display:inline;}
+			.test_img img{width:200px;height:105px;}
+		.test_context{width:340px; height:110px; margin-left:18px; float:left;}
+			.test_context a{text-decoration: none;}
+			.context_title{width:305px; height:20x; line-height:20px; margin-top:5px; overflow: hidden;}
+				.context_title a{color:black; font-size:14px; font-weight: bold;}
+			.context_content{width:340px; height:60px;  line-height:16px; }
+				.context_content a{font-size:12px;color:#666666;}
+			.test_content_more{margin-left:285px; margin-top:10px; display:inline;float:left}
+	#div_right_arrow{width:17px; margin-right:35px; margin-top:30px;float:right; display:inline;}
 #t_content_left{width:253px; height:150px; margin-left:20px;  float:left; display:inline;}
 #pic_top{width:158px; height:20px; text-align:left; margin-top:15px; overflow:HIDDEN;  line-height:20px; font-size:13px; font-weight:bold; float:right; display:inline;}
 #pic_bottom{width:240px; height:95px; margin-top:15px; float:left; display:inline;}

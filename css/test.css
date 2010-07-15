@@ -116,8 +116,20 @@ body{width:970PX; margin: 0 auto; }
 .hlcb_t font{color:#F34B2E; font-size:12px;}
 
 
-#pric_l{width:3px; height:175px; background:#ffffff; float:left; display:inline;}
-#pric_rl{width:3px; height:154px; background:#ffffff; float:right; display:inline;}
+#pric_l{width:1px; height:175px; background:#ffffff; float:left; display:inline;}
+#pric_rl{width:1px; height:154px; background:#ffffff; float:right; display:inline;}
 
 #bottom{width:970px; text-align:center; margin-top:20px; font-size:12px; color:#666666; float:left; display:inline;}
 #bottom_b{width:970px; margin-top:10px; margin-bottom:50px; text-align:center; font-size:12px; color:#666666; float:left; display:inline;}
+
+#cr_ci{width:748px; height:208px; margin-top:15px; float:right; display:inline;}
+#cri_t{width:748px; height:14px; font-size:0px; line-height:0px; background:url(/images/class/m2_p.jpg) no-repeat; float:left; display:inline;}
+#cri_c{width:746px; border-left:1px solid #D6D6D6; background:#E4E4E4; border-right:1px solid #D6D6D6; float:left; display:inline;}
+#cric_pg{width:736px;  margin-left:4px; border-left:1px solid #D6D6D6; border-right:1px solid #D6D6D6; background:url(/images/class/sousuo_pg.jpg) repeat-x; float:left; display:inline;}
+#cri_b{width:748px; height:16px; background:url(/images/class/sousuo_pg_b.jpg) no-repeat; float:left; display:inline;}
+#cric_title{width:735px; height:20px; margin-top:1px; font-family:ËÎÌו; font-size:20px; font-weight:bold; text-align:center; color:#617381; float:left; display:inline;}
+#cric_title font{color:#379516;}
+#cric_c{width:730px; height:128px; margin-top:13px; float:left; display:inline;}
+.cricc_a{width:103px; height:128px; margin-left:18px; border:0px solid red; background:url(/images/class/c_pg.jpg) no-repeat; overflow:hidden; float:left; display:inline;}
+.cricc_a div{width:88px; height:128px; overflow:hidden; border:0px solid red; float:left; display:inline;}
+.cricc_a div img{border:0px solid red;}
