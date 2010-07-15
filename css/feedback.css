@@ -145,7 +145,7 @@ body{width:995px; margin: 0 auto;  background:url(../images/index/img_pg.jpg) re
 
 
 #c_pic{width:720px; height:31px; margin-top:15px; float:left; display:inline;}
-.c_p_b{width:69px; height:31px; margin-left:40px; color:#666666; font-size:12px; cursor:pointer;  text-align:center; line-height:23px; background:url(../images/yetrb/b.jpg) no-repeat;  float:left; display:inline;}
+.c_p_b{width:80px; height:31px; margin-left:40px; color:#666666; font-size:12px; cursor:pointer;  text-align:center; line-height:23px; background:url(../images/yetrb/b.jpg) no-repeat;  float:left; display:inline;}
 .c_p_b.selected{background:url(/images/yetrb/a.jpg) no-repeat;}
 #ctc_bz{width:734px; height:96px;  margin-top:-5Px; float:right; display:inline;}
 #ctb_t{width:724px; height:3px; margin-left:6px; font-size:0px; line-height:0px; background:url(../images/yetrb/3a.jpg) no-repeat; float:left; display:inline;}
