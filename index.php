@@ -154,6 +154,7 @@
 							<div><img src="/images/index/course_tab_0_sel.jpg" class="course_tab"></div>
 							<div><img src="/images/index/course_tab_1.jpg" class="course_tab"></div>
 							<div><img src="/images/index/course_tab_2.jpg" class="course_tab"></div>
+							<div><img src="/images/index/course_tab_3.jpg" class="course_tab"></div>
 						</div>
 						<a href="/course/">
 							<img id="dict_more"  style="margin-top:20px;" src="/images/index/more.gif" />
@@ -174,7 +175,7 @@
 					</div>
 					<div class="stuent_d">
 						<div class="word_z">
-							<?php for($k=1;$k<=12;$k++){?>
+							<?php for($k=1;$k<=15;$k++){?>
 							
 							<div class="s_a"<?php $pos="course_tab_list_{$i}_{$k}";show_page_pos($pos,'link');?>>
 								<div class="s_dian"></div>
@@ -202,7 +203,6 @@
 						<div  class="dict_tab short">潮爸潮妈</div>
 						<div  class="dict_tab short">网趣动态</div>
 					</div>
-					
 					<?php for($j=0;$j<5;$j++){?>
 					<div class="desc" id="desc_<?php echo $j;?>" <?php if($j>0) echo " style='display:none;'"?>>
 						<?php for($i = 1; $i < 7; $i++){ ?>
@@ -217,7 +217,14 @@
 			</div>
 			<div id="mother">
 				<div id="mother_l">
-					<div id="m_l_t"> 
+					<div id="m_l_t">
+						<div>
+							<a href="#">怀孕前</a>
+							<a href="#">怀孕中</a>
+							<a href="#">0-1岁</a>
+							<a href="#">1-2岁</a>
+							<a href="#">2-3岁</a>
+						</div>
 						<a href="/assistant/">
 							<img src="/images/index/more.gif" border="0" />
 						</a> 
@@ -372,6 +379,7 @@
 						<div id="sblc_t">
 							<div id="sblct_a">
 								<div class="sblct_l">
+									<div class="sblct_t_title">育儿早班车</div>
 									<div class="sblct_t"><a href="<?php echo get_news_list_url(119);?>">更多</a></div>
 									<div class="sblct_bb">
 										<?php 
@@ -385,6 +393,7 @@
 								</div>
 								<div class="sblct_r">
 									<div class="sb_title">
+									<!--  
 										<?php
 										$i =0;
 										foreach($category as $id => $val){ ?>
@@ -396,6 +405,7 @@
 										<?php 
 											$i++;
 										}?>
+										-->
 									</div>
 									<div class="sb_content">
 										<?php
@@ -410,6 +420,7 @@
 							</div>
 							<div id="sblct_b">
 								<div class="sblct_l">
+									<div class="sblct_t_title">邻家育儿</div>
 									<div class="sblct_t"><a href="<?php echo get_news_list_url(120);?>">更多</a></div>
 									<div class="sblct_bb">
 									<?php
@@ -423,6 +434,7 @@
 								</div>
 								<div class="sblct_r">
 									<div class="sb_title">
+										<!-- 
 										<?php
 											$i=0;
 											foreach ($category as $k=>$v){
@@ -433,6 +445,7 @@
 											</a>
 										</div>
 										<?php $i++;} ?>
+										 -->
 									</div>
 									<div class="sb_content">
 											<?php 
@@ -449,6 +462,7 @@
 						<div id="sblc_b">
 							<div id="sblcb_c">
 								<div class="sblct_l">
+								<div class="sblct_t_title">海外传真</div>
 									<div class="sblct_t"><a href="<?php echo get_news_list_url(121);?>">更多</a></div>
 									<?php 
 										$category=array("136"=>"游戏","137"=>"抚摸","138"=>"训练","139"=>"对话");
@@ -462,6 +476,7 @@
 								</div>
 								<div class="sblct_r">
 									<div class="sb_title">
+										<!-- 
 										<?php
 										$i=0;
 										foreach ($category as $k=>$v){
@@ -469,6 +484,7 @@
 										<div class="sbr_t_a" style="<?php if($i!=3){ echo 'border-right:1px solid #EEDECF;';} ?>">
 										<a href="<?php echo get_news_list_url($k);?>" title="<?php echo $v; ?>"><?php echo $v; ?></a></div>
 										<?php $i++; }?>
+										 -->
 									</div>
 									<div class="sb_content">
 										<?php 
@@ -481,7 +497,44 @@
 									</div>
 								</div>
 							</div>
-							<div id="sblcb_d"></div>
+							<div id="sblcb_d">
+								<div class="sblct_l">
+									<div class="sblct_t_title">潮爸潮妈</div>
+									<div class="sblct_t"><a href="<?php echo get_news_list_url(121);?>">更多</a></div>
+									<?php 
+										$category=array("136"=>"游戏","137"=>"抚摸","138"=>"训练","139"=>"对话");
+										#$news_k=array_keys($news);
+										#$news_id=implode(',',$news_k);
+										#$new=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in ($news_id) order by created_at desc limit 1;");
+										#$n=$db->query("SELECT id,name,parent_id from eb_category where id in ($news_id)");
+									?>
+									<div class="sblct_bb">
+									</div>
+								</div>
+								<div class="sblct_r">
+									<div class="sb_title">
+										<!-- 
+										<?php
+										$i=0;
+										foreach ($category as $k=>$v){
+										 ?>
+										<div class="sbr_t_a" style="<?php if($i!=3){ echo 'border-right:1px solid #EEDECF;';} ?>">
+										<a href="<?php echo get_news_list_url($k);?>" title="<?php echo $v; ?>"><?php echo $v; ?></a></div>
+										<?php $i++; }?>
+										 -->
+									</div>
+									<div class="sb_content">
+										<?php 
+											#$news=$db->query("SELECT id,title,short_title,description,content FROM eb_news e where category_id in ($news_id) order by created_at desc limit 3;");
+											for($j=0;$j<3;$j++){ ?>
+											<div class="sb_ctt"<?php $pos="bottom_news_list_2_$j";show_page_pos($pos,'link')?>>
+												<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?>
+											</div>
+										<?php }?>
+									</div>
+								</div>
+							</div>
+
 						</div>
 					</div>
 					<div id="sbl_r"></div>
@@ -522,8 +575,8 @@
 					<?php } ?>
 				</div>
 			</div>
-		<div id="bottom">关于我们 - 加入我们 - 友情链接 - 联系我们 - 服务条款 - 隐私保护 - 网站地图</div>
-		<div id="bottom_b">哈哈少儿旗下网站  Copyright © 1997-2010 HAHA.smg.com All Rights Reserved.</div>
+		<div id="bottom">关于网趣宝贝 - 加入我们 - 友情链接 - 联系我们 - 服务条款 - 隐私保护 - 网站地图</div>
+		<div id="bottom_b">Copyright © 1997-2010 HAHA.smg.com All Rights Reserved.</div>
 	</div>
 	<div id="f_r_pg"></div>
 	</div>

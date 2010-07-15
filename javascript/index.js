@@ -48,7 +48,7 @@ $(function(){
 	
 	$('img.course_tab').hover(function(){
 		var selected = $('img.course_tab').index($(this));
-		for(var i = 0 ;i < 3; i++){
+		for(var i = 0 ;i < 4; i++){
 			if(i == selected){
 				continue;
 			}
@@ -105,10 +105,15 @@ $(function(){
 			}
 			
 		}
+		$('#q_m_p').attr('style','border-top:0px solid #8DD310;');
 		if(selected == 3){
 			$(this).attr('style','background:url(/images/index/w_pg_l.gif) no-repeat; border-top:1px solid #8DD310;');
 		}else{
-			$(this).attr('style','background:url(/images/index/w_pg_l.gif) no-repeat; border-bottom:1px solid #ffffff; border-top:1px solid #8DD310;');
+			if(selected == 0){
+				$(this).attr('style','background:url(/images/index/w_pg_l.gif) no-repeat; border-bottom:1px solid #ffffff;');
+			}else{
+				$(this).attr('style','background:url(/images/index/w_pg_l.gif) no-repeat; border-bottom:1px solid #ffffff; border-top:1px solid #8DD310;');
+			}
 		}
 		$('.q_menu_r').hide();
 		$('#q_' + selected).show();
