@@ -59,7 +59,6 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 #blt_img{width:80px; height:30px; text-align:center; line-height:30px; font-size:16px; font-weight:600; color:#FF8FC1; background:url(../images/bbs/ha.jpg) no-repeat; float:left; display:inline;}
 #blt_c{width:380px; height:30px; line-height:30px; float:right; display:inline;}
 #blt_c a{color:#FFABD1; font-size:12px; font-weight:600; text-decoration:none; float:left; display:inline;}
-.bltc_z{width:1px; height:10px; margin-top:10px; margin-left:5px; margin-right:5px; border-left:1px solid #CCCCCC; font-size:0px; line-height:0px; float:left; display:inline;}
 #bltc_hr{width:646px; height:1px; margin-top:-1px;  background:url(../images/bbs/hr.jpg) repeat-x; font-size:0px; line-height:0px; float:left; display:inline;}
 
 .special{width:310px; height:180px;  margin-left:10px; margin-top:15px; overflow:hidden; float:left; display:inline;}

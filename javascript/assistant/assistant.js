@@ -41,11 +41,6 @@ $(function(){
 	$(this).attr('style','background:#95D171');
 	},function(){});
 	
-	
-	$(".htct_t").click(function(){
-		$(".htct_b").css('display','none');
-		$(this).next().css('display','inline');
-	});
 	$(".num").click(function(){
 		var num=$(this).html();
 		$(".fr_tpimg").hide();

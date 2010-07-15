@@ -30,20 +30,9 @@
 						</div>
 					</div>
 					<div id="menu_ctb">
-						<div id="t_first"><a href=""  style="font-weight: bold;">我的网趣</a></div>
-						<div class="me_aa"><a href="#">网趣宝宝首页</a></div>
-						<div class="me_hh"></div>
-						<div class="me_bb"><a href="#">用户测评报告</a></div>
-						<div class="me_hh"></div>
-						<div class="me_bb"><a href="#">用户课程订购</a></div>
-						<div class="me_hh"></div>
-						<div class="me_bb"><a href="#">重要信息提示</a></div>
-						<div class="me_hh"></div>
-						<div class="me_bb"><a href="#">我家小院子</a></div>
-						<div class="me_hh"></div>
-						<div class="me_bb" ><a href="#">管理设置</a></div>
-						<input type="text" id="me_in">
-						<input type="button" id="me_btn">
+						<input type="button" id="me_btn"  style="margin-right:10px; float:right;">
+						<input type="text" id="me_in"  style="float:right;">
+						
 					</div>
 				</div>
 				<div id="menu_right"></div>
