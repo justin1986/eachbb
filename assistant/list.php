@@ -47,9 +47,9 @@
 			</div> -->
 			<div id="container">
 				<div id="container_result">
-				<?php if($level==1){?>
+				<?php if($level==1){//一级分类?>
 					<div class="result_list"><?php echo $parent->name;?></div>
-					<?php if($age=='0'){?>
+					<?php if($age=='0'){//未选择年龄段?>
 						<?php for($i=-2;$i<=3;$i++){if($i!=0){?>
 						<div class="result_banner">
 							<div class="result_pg_top">
@@ -83,7 +83,7 @@
 							<div class="result_pg_bottom"></div>
 						</div>
 						<?php }}?>
-					<?php }else{?>
+					<?php }else{//选择了年龄段?>
 					<div class="result_banner">
 						<div class="result_pg_top">
 							<?php 
@@ -116,8 +116,8 @@
 						<div class="result_pg_bottom"></div>
 					</div>
 					<?php }?>
-				<?php }else if($level==2){?>
-					<?php if($age!=0){?>
+				<?php }else if($level==2){//二级分类?>
+					<?php if($age!=0){//选择了年龄段?>
 					<div class="result_banner" style="margin:0;">
 						<div class="result_pg_top">
 							<?php 
@@ -156,7 +156,7 @@
 						</div>
 						<div class="result_pg_bottom"></div>
 					</div>
-					<?php }else{?>
+					<?php }else{//未选择年龄段?>
 						<?php for($i=-2;$i<=3;$i++){if($i!=0){?>
 						<div class="result_banner"  <?php if($i==-2){?>style="margin:0;"<?php }?>>
 							<div class="result_pg_top">
@@ -196,7 +196,7 @@
 						</div>
 						<?php }}?>
 					<?php }?>
-				<?php }else if($level==0){?>
+				<?php }else if($level==0){//显示所有分类，已不用?>
 						<?php foreach($categorys as $k=>$cate){
 								$parent = $category->find($cate->id);
 								$childs = $category->find_sub_category($cate->id);
@@ -222,7 +222,7 @@
 							</div>
 							<?php }?>
 						<?php }?>
-					<?php }else if($level==-1){
+					<?php }else if($level==-1){//按年龄段显示所有分类，已不用
 						for($i=-2;$i<=3;$i++){if($i!=0){
 					?>
 						<div class="result_list" <?php if($i!=-2)echo "style='margin-top:15px'";?>>
