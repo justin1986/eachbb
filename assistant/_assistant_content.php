@@ -25,12 +25,12 @@
 			<a href="#">尿布选择</a>
 		</div>
 	</div>
-</div> -->
+</div>
 <input type="hidden" value="<?php echo $category_id;?>" id="newsid">
 <div id="question_btn_text">
 	<a href="#" style="margin-left:140px;">上一时间段</a>
-	<a href="#" style="margin-left:40px;">下一时间段</a>
+	<a href="#" style="margin-left:40px;">下一时间段</a> 
 	<div id="btn_print" type="button">打印</div>
 	<div id="a_collect">收藏</div>
 	<div id="a_public">分享</div>
-</div>
+</div> -->
