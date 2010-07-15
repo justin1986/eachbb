@@ -8,7 +8,7 @@
 		include_once(dirname(__FILE__).'/frame.php');
 		use_jquery_ui();
 		css_include_tag('index','jquery_ui','bottom');
-		js_include_tag('index');
+		js_include_tag('index','flashobj.js');
 		init_page_items('index');
 		$db = get_db();
 	?>
@@ -44,7 +44,26 @@
 		<div id="f_l_pg"></div>
 		<div id="f_c_m">
 			<div id="flash">
-				<div id="flash_left"></div>
+				<div id="flash_left">
+					<?php 
+						$images = $db->query("select a.title,a.url,a.src from eb_images a left join eb_category b on a.category_id=b.id where a.is_adopt=1 and b.name='首页flash图片' order by a.priority asc, created_at desc limit 5");
+						foreach ($images as $image){
+							$src[] = $image->src;
+							$title[]=$image->title;
+							$url[] = $image->url;
+						}
+					?>
+					<script type="text/javascript">
+						var flash = new sohuFlash("flash/index.swf", "27", 665, 384, "7");
+						flash.addParam("quality", "high");
+						flash.addParam("wmode", "opaque");
+						flash.addVariable("image","<?php echo implode('|',$src);?>");
+						flash.addVariable("url","<?php echo implode('|',$url);?>");
+						flash.addVariable("info", "<?php echo implode('|',$title);?>");
+						flash.addVariable("stopTime","5000");
+						flash.write("flash_left");
+					</script>
+				</div>
 				<div id="flash_right">
 					<div id="r_test">
 						<a href="#"><img src="/images/index/img_r_a.jpg" /></a>
