@@ -65,9 +65,10 @@
 						<div class="result_pg_content">
 							<?php
 							foreach($childs as $k=>$child){
-							$sql = "select * from eb_assistant where is_adopt=1 and category_id = {$child->id} and age=$i limit 3";
+							$sql = "select * from eb_assistant where is_adopt=1 and category_id = {$child->id} and age=$i order by priority asc,created_at desc limit 3";
 							$assistants = $db->query($sql);
 							!$assistants && $assistants = array();
+							if(!empty($assistants)){
 							?>
 							<div class="result_container" style="<?php if($k == 0) echo "margin-top:10px;"; ?>">
 								<img src="<?php if($child->show_image!=''){echo $child->show_image;}else{?>/images/assistant_list/pho.jpg<?php }?>"/>
@@ -76,7 +77,7 @@
 								<?php }?>
 							</div>
 							<div class="cate_more" <?php if($k == 0) echo "style='margin-top:54px;'"; ?>><a href="list.php?category_id=<?php echo $child->id?>&age=<?php echo $i;?>">更多</a></div>
-							<?php }?>
+							<?php }}?>
 						</div>
 						<div class="result_pg_bottom"></div>
 					</div>
@@ -104,6 +105,7 @@
 							if($age!=0){
 								$sql .= " and age=$age";
 							}
+							$sql .= " order by priority asc,created_at desc";
 							$assistants = $db->paginate($sql,10);
 							$len = count($assistants);
 							for($i = 0; $i < $len; $i++){
