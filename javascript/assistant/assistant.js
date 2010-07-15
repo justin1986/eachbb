@@ -41,12 +41,7 @@ $(function(){
 	$(this).attr('style','background:#95D171');
 	},function(){});
 	
-	$("#button_age").click(function(){
-		window.location.href = 'list.php?type=age';
-	});
-	$("#button_cate").click(function(){
-		window.location.href = 'list.php?type=cate';
-	});
+	
 	$(".htct_t").click(function(){
 		$(".htct_b").css('display','none');
 		$(this).next().css('display','inline');

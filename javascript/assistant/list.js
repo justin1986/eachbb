@@ -14,6 +14,13 @@ $(function(){
 		window.location = "/assistant/share.php?news_id="+$('#newsid').val();
 	});
 	
+	$("#button_age").click(function(){
+		window.location.href = 'list.php?type=age';
+	});
+	$("#button_cate").click(function(){
+		window.location.href = 'list.php?type=cate';
+	});
+	
 	$("#btn_button").click(function(){
 		var value = $('#que_text').val();
 		if(value.length <= 0){
