@@ -71,7 +71,7 @@
 							if(!empty($assistants)){
 							?>
 							<div class="result_container" style="<?php if($k == 0) echo "margin-top:10px;"; ?>">
-								<img src="<?php if($child->show_image!=''){echo $child->show_image;}else{?>/images/assistant_list/pho.jpg<?php }?>"/>
+								<a href="list.php?category_id=<?php echo $child->id?>&age=<?php echo $i;?>"><img src="<?php if($child->show_image!=''){echo $child->show_image;}else{?>/images/assistant_list/pho.jpg<?php }?>"/></a>
 								<?php foreach($assistants as $j => $assistant){?>
 								<div class="result_title"<?php if($j==0){?>style="margin-top:10px;"<?php }?>><a href="list.php?category_id=<?php echo $child->id?>&age=<?php echo $i;?>">[<?php echo $child->name;?>]</a><a href="/assistant/assistant.php?id=<?php echo $assistant->id;?>"><?php echo $assistant->title;?></a></div>
 								<?php }?>
