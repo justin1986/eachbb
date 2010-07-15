@@ -196,11 +196,10 @@
 						</div>
 					</div>
 					<div id="dict_menu"> 
-						<div id="d_m_a"  class="dict_tab" style="background:url(/images/index/r_pg_f.png) no-repeat; color:#FF6600;">幼教</div>
-						<div  class="dict_tab">论坛</div>
-						<div  class="dict_tab">博客</div>
-						<div  class="dict_tab">育儿早班车</div>
-						<div  class="dict_tab">测评</div>
+						<div  class="dict_tab long">论坛</div>
+						<div  class="dict_tab long">博客</div>
+						<div  class="dict_tab short">育儿早班车</div>
+						<div  class="dict_tab short">测评</div>
 					</div>
 					
 					<?php for($j=0;$j<5;$j++){?>
