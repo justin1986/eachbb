@@ -31,7 +31,7 @@
 	  <a href="category_list.php?type=<?php echo $type; ?>" id=btn_back></a>
 	</div>
 <div id=itable>
-	<form id="category_form" method="post" action="/admin/category/category.post.php">
+	<form id="category_form" enctype="multipart/form-data" method="post" action="/admin/category/category.post.php">
 		<table cellspacing="1"  align="center">
 			<tr class=tr4>
 				<td class=td1 width=15%>名称</td>
@@ -45,8 +45,12 @@
 				<td class=td1>优先级</td>
 				<td><input type="text" style="width:400px" name="post[priority]" id="priority" class="number" value="<?php echo $cate->priority;?>"></td>
 			</tr>
+			<tr class=tr4>
+				<td class=td1>显示图片</td>
+				<td><input type="file" style="width:400px" name="show_image" id="upfile"><?php if($cate->show_image!=""){ ?><a target="_blank" href="<?php echo $cate->show_image ?>">查看</a><?php } ?></td>
+			</tr>
 			<tr class=btools>
-				<td colspan="10"><button type="submit">提 交</button> 		
+				<td colspan="10"><button id="btnsub" type="submit">提 交</button> 		
 					<input type="hidden" name="post[id]" value="<?php echo $id;?>">
 					<input type="hidden" name="post[category_type]" value="<?php echo $type;?>">
 					<input type="hidden" name="post[parent_id]" value="<?php echo $parent_id;?>">
@@ -58,3 +62,15 @@
 </div>
 </body>
 </html>
+<script>
+	$("#btnsub").click(function(){
+		if($("#upfile").val()!=''){
+			var upfile1 = $("#upfile").val();
+			var upload_file_extension=upfile1.substring(upfile1.length-4,upfile1.length);
+			if(upload_file_extension.toLowerCase()!=".png"&&upload_file_extension.toLowerCase()!=".jpg"&&upload_file_extension.toLowerCase()!=".gif"){
+				alert("上传图片类型错误");
+				return false;
+			}
+		}
+	});
+</script>
