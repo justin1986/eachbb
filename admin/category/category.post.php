@@ -26,6 +26,11 @@
 			}else{
 				$cate->sort_id = 0;
 			}
+			if($_FILES['show_image']['name'] != ''){
+				$upload = new upload_file_class();
+				$upload->save_dir = '/upload/category/';
+				$cate->show_image = '/upload/category/' .$upload->handle('show_image','filter_pic');
+			}
 			//$cate->echo_sql = true;
 			if($cate->save()){
 				redirect('category_list.php?type='.$_POST['post']['category_type'].'');

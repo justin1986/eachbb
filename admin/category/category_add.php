@@ -25,7 +25,7 @@
 </head>
 <body>
 	<table width="795" border="0" id="list">
-	<form id="category_form" method="post" action="/admin/category/category.post.php">
+	<form id="category_form" enctype="multipart/form-data" method="post" action="/admin/category/category.post.php">
 		<tr class=tr1>
 			<td colspan="2">　添加类别</td>
 		</tr>
@@ -42,7 +42,11 @@
 			<td align="left"><input type="text" name="post[priority]" id="priority" class="number" value="<?php echo $cate->priority;?>"></td>
 		</tr>
 		<tr class=tr3>
-			<td colspan="2"><button type="submit">提 交</button></td>
+			<td>显示图片：</td>
+			<td align="left"><input type="hidden" name="MAX_FILE_SIZE" value="2097152"><input type="file" name="post[show_image]" id="upfile"  value="<?php echo $cate->priority;?>"></td>
+		</tr>
+		<tr class=tr3>
+			<td colspan="2"><button id="btnsub" type="submit">提 交</button></td>
 		</tr>
 		<input type="hidden" name="post[id]" value="<?php echo $id;?>">
 		<input type="hidden" name="post[category_type]" value="<?php echo $type;?>">
@@ -51,3 +55,15 @@
 	</table>
 </body>
 </html>
+<script>
+	$("#btnsub").click(function(){
+		if($("#upfile").val()!=''){
+			var upfile1 = $("#upfile").val();
+			var upload_file_extension=upfile1.substring(upfile1.length-4,upfile1.length);
+			if(upload_file_extension.toLowerCase()!=".png"&&upload_file_extension.toLowerCase()!=".jpg"&&upload_file_extension.toLowerCase()!=".gif"){
+				alert("上传图片类型错误");
+				return false;
+			}
+		}
+	});
+</script>
