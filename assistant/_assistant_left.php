@@ -120,3 +120,9 @@
 			</div>
 			<div id="hl_b"> <img src="/images/class/l_pg.jpg"> </div>
 		</div>
+		<script type="text/javascript">
+		$(".htct_t").click(function(){
+			$(".htct_b").css('display','none');
+			$(this).next().css('display','inline');
+		});
+		</script>
