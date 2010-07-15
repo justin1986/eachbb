@@ -41,6 +41,7 @@ $(function(){
 		$.post('/feedback/feedback.post.php',{'type':'comment','comment':encodeURI(comment)},function(data){
 			if(data)
 			{
+				$('#but').attr('disabled',false);
 				alert(data);	
 			}
 			else
