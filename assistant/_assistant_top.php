@@ -54,15 +54,15 @@
 		<div id="top2_t">
 			<div id="tt_l"></div>
 			<div id="tt_c">
-				<div class="ttc_a"><a href="index.php?age=-2">准备怀孕</a></div>
+				<div class="ttc_a"><a href="index.php?age=-2&category_id=<?php echo $category_id;?>">准备怀孕</a></div>
 				<div class="ttc_hr"></div>
-				<div class="ttc_a"><a href="index.php?age=-1">怀孕期</a></div>
+				<div class="ttc_a"><a href="index.php?age=-1&category_id=<?php echo $category_id;?>">怀孕期</a></div>
 				<div class="ttc_hr"></div>
-				<div class="ttc_a"><a href="index.php?age=1">0～1岁</a></div>
+				<div class="ttc_a"><a href="index.php?age=1&category_id=<?php echo $category_id;?>">0～1岁</a></div>
 				<div class="ttc_hr"></div>
-				<div class="ttc_a"><a href="index.php?age=2">1～2岁</a></div>
+				<div class="ttc_a"><a href="index.php?age=2&category_id=<?php echo $category_id;?>">1～2岁</a></div>
 				<div class="ttc_hr"></div>
-				<div class="ttc_a"><a href="index.php?age=3">2～3岁</a></div>
+				<div class="ttc_a"><a href="index.php?age=3&category_id=<?php echo $category_id;?>">2～3岁</a></div>
 				<a href="#">
 				<img id="ttc_f" src="/images/helper/t_1.jpg"/>
 				</a>

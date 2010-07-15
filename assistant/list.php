@@ -49,7 +49,8 @@
 				<div id="container_result">
 				<?php if($level==1){?>
 					<div class="result_list"><?php echo $parent->name;?></div>
-					<?php for($i=-2;$i<=3;$i++){if($i!=0){?>
+					<?php if($age=='0'){?>
+					<?php for($i=-2;$i<=3;$i++){?><?php if($i!=0){?>
 					<div class="result_banner">
 						<div class="result_pg_top">
 							<?php 
@@ -81,7 +82,42 @@
 						</div>
 						<div class="result_pg_bottom"></div>
 					</div>
-					<?php }}}else if($level==2){?>
+					<?php }?>
+					<?php }?>
+					<?php }else{?>
+					<div class="result_banner">
+						<div class="result_pg_top">
+							<?php 
+								switch($age){
+									case -2:echo '准备怀孕';break;
+									case -1:echo '怀孕中';break;
+									case 1:echo '0~1岁';break;
+									case 2:echo '1~2岁';break;
+									case 3:echo '2~3岁';break;
+								}
+							?>
+						</div>
+						<div class="result_pg_content">
+							<?php
+							foreach($childs as $k=>$child){
+							$sql = "select * from eb_assistant where is_adopt=1 and category_id = {$child->id} and age=$age order by priority asc,created_at desc limit 3";
+							$assistants = $db->query($sql);
+							!$assistants && $assistants = array();
+							if(!empty($assistants)){
+							?>
+							<div class="result_container" style="<?php if($k == 0) echo "margin-top:10px;"; ?>">
+								<a href="list.php?category_id=<?php echo $child->id?>&age=<?php echo $age;?>"><img src="<?php if($child->show_image!=''){echo $child->show_image;}else{?>/images/assistant_list/pho.jpg<?php }?>"/></a>
+								<?php foreach($assistants as $j => $assistant){?>
+								<div class="result_title"<?php if($j==0){?>style="margin-top:10px;"<?php }?>><a href="list.php?category_id=<?php echo $child->id?>&age=<?php echo $age;?>">[<?php echo $child->name;?>]</a><a href="/assistant/assistant.php?id=<?php echo $assistant->id;?>"><?php echo $assistant->title;?></a></div>
+								<?php }?>
+							</div>
+							<div class="cate_more" <?php if($k == 0) echo "style='margin-top:54px;'"; ?>><a href="list.php?category_id=<?php echo $child->id?>&age=<?php echo $age;?>">更多</a></div>
+							<?php }}?>
+						</div>
+						<div class="result_pg_bottom"></div>
+					</div>
+					<?php }?>
+					<?php }else if($level==2){?>
 					<div class="result_banner" style="margin:0;">
 						<div class="result_pg_top">
 							<?php 
