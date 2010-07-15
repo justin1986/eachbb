@@ -9,6 +9,7 @@
 	<?php } ?>
 	<div class="kong" style="height:10px;"></div>
 </div>
+<!-- 
 <div id="question">
 	<div id="que_left"></div>
 	<div id="que_right">
@@ -24,7 +25,7 @@
 			<a href="#">尿布选择</a>
 		</div>
 	</div>
-</div>
+</div> -->
 <input type="hidden" value="<?php echo $category_id;?>" id="newsid">
 <div id="question_btn_text">
 	<a href="#" style="margin-left:140px;">上一时间段</a>
