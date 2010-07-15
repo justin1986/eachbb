@@ -1,35 +1,24 @@
-<?php
-include "frame.php";
-set_charset();
-include 'lib/paginate.class.php';
-use_jquery();
-init_page_items('test');
-#$page_page_count =3;
-#paginate();
-#set_charset('utf-8');
-use_jquery();
-#$news =  new table_class('eb_news');
-#$news->find(1);
-#$news->title;
-#$news->content;
-#$test = new Test();
-
-#var_dump();
-#include_once 'frame.php';
-#include_once 'inc/user.class.php';
-#$ret = User::register('sauger','sauger@163.com','auden');
-#User::login('sauger','auden');
-#User::login('sauger','auden');
-/*
-$user = User::current_user();
-if($user){
-	echo $user->name;
-}else{
-	echo "haven't login";
-}
-*/
-?>
-<div id="div1" class="a b c" style="border:1px solid black; border-bottom:1px solid red; font-size:20px; color:green;height:200px; padding-left:20px;">
-	abcd
-</div>
-<span  style="border:1px solid red; height:200px;padding-left:10px;margin-top:10px;">1234</span>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+	<meta http-equiv=Content-Language content=zh-CN>
+	<title>测试</title>
+	<link href="css/test.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div id="div_top">
+		<div class="menu_item"  style="background:#393939; margin-left:50px;"><a href="#">Home</a></div>
+		<div class="menu_item"><a href="#">Home1</a></div>
+		<div class="menu_item"><a href="#">Home2</a></div>
+		<div class="menu_item"><a href="#">Home dsfsdljHome</a></div>
+		<div class="menu_item"><a href="#">Home</a></div>
+		<div class="menu_item"><a href="#">Home</a></div>
+		
+		<div id="div_search"><a href="#"><img src="/btn_search.jpg" border="0" /></a></div>
+		<div id="div_input"><input type="text" /></div>
+	</div>
+	
+	<div id="middle"></div>
+</body>
+</html>

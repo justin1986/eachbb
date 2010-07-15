@@ -146,11 +146,12 @@ body{width:1000px; margin: 0 auto;  background:url(/images/index/img_pg.jpg) rep
 #dict_a{width:250px; height:30px; margin-left:10px; margin-top:5px; float:left; display:inline;}
 #dict_title{width:180px; height:30px; line-height:30px; font-size:16px; font-weight:bold;  float:left; display:inline;}
 #div_dict_more{width:48px; height:10px; border:0px solid red;cursor:pointer;  margin-top:8px; margin-right:5px; background-image:none; font-size:0px; line-height:0px;  cursor:pointer; z-index:100; float:right; display:inline;}
-#dict_menu{width:250px; height:22px; margin-left:7px; margin-top:5px; cursor:pointer; float:left; display:inline;}
+#dict_menu{width:250px; height:44px; margin-left:7px; margin-top:5px; cursor:pointer; float:left; display:inline;}
 #dict_menu a{color: #000000; text-decoration: none; }
 
 #d_m_a{width:50px; height:24px; text-align:center; font-size:13px; font-weight:bold; line-height:24px; background:url(/images/index/r_hui.png) no-repeat; float:left; display:inline;}
-.dict_tab{width:50px; height:24px; text-align:center; font-size:13px; font-weight:bold; line-height:24px; background:url(/images/index/r_hui.png) no-repeat; float:left; display:inline;}
+.dict_tab.long{width:125px; height:24px; text-align:center; font-size:13px; font-weight:bold; line-height:24px; background:url(/images/index/r_hui_long.gif) no-repeat; float:left; display:inline;}
+.dict_tab.short{width:50px; height:24px; text-align:center; font-size:13px; font-weight:bold; line-height:24px; background:url(/images/index/r_hui.png) no-repeat; float:left; display:inline;}
 #dict_b{width:246px; height:26px; margin-top:5px; margin-left:8px; overflow:hidden; float:left; display:inline;}
 .dict_c{width:246px; height:26px; margin-left:8px; margin-top:2px; overflow:hidden; float:left; display:inline;}
 .dict_number{width:22px; height:22px; margin-left:3px; text-align:center; line-height:22px; font-size:12px; color:#ffffff; font-weight:bold; background:url(/images/index/block.jpg) no-repeat; float:left; display:inline;}
