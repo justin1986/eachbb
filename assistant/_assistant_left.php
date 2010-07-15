@@ -18,7 +18,7 @@
 							<div class="ht_c_z">
 								<div class="ht_c_t">
 									<div class="htct_l"></div>
-									<div class="htct_t" param=<?php echo $i; ?>><?php echo $top_cates[$i]->name;?></div>
+									<div class="htct_t" param=<?php echo $i; ?>><a href="list.php?category_id=<?php echo $top_cates[$i]->id;?>"><?php echo $top_cates[$i]->name;?></a></div>
 									<div class="htct_b" <?php if($i==0){?>style="display:inline;"<?php }?> >
 										<?php
 										$var = "category_$i";
@@ -27,7 +27,7 @@
 											if($sub_cates[$j]->parent_id != $top_cates[$i]->id) continue;
 											array_push($$var, $sub_cates[$j]->id);
 										?>
-										<div class="htct_c"><a href="/assistant/list.php?category_id=<?php echo $sub_cates[$i]->id;?>" title="<?php echo $sub_cates[$j]->name;?>"><?php echo $sub_cates[$j]->name;?></a></div>
+										<div class="htct_c"><a href="/assistant/list.php?category_id=<?php echo $sub_cates[$j]->id;?>" title="<?php echo $sub_cates[$j]->name;?>"><?php echo $sub_cates[$j]->name;?></a></div>
 										<?php }?>
 									</div>
 								</div>

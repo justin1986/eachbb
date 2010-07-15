@@ -50,40 +50,39 @@
 				<?php if($level==1){?>
 					<div class="result_list"><?php echo $parent->name;?></div>
 					<?php if($age=='0'){?>
-					<?php for($i=-2;$i<=3;$i++){?><?php if($i!=0){?>
-					<div class="result_banner">
-						<div class="result_pg_top">
-							<?php 
-								switch($i){
-									case -2:echo '准备怀孕';break;
-									case -1:echo '怀孕中';break;
-									case 1:echo '0~1岁';break;
-									case 2:echo '1~2岁';break;
-									case 3:echo '2~3岁';break;
-								}
-							?>
-						</div>
-						<div class="result_pg_content">
-							<?php
-							foreach($childs as $k=>$child){
-							$sql = "select * from eb_assistant where is_adopt=1 and category_id = {$child->id} and age=$i order by priority asc,created_at desc limit 3";
-							$assistants = $db->query($sql);
-							!$assistants && $assistants = array();
-							if(!empty($assistants)){
-							?>
-							<div class="result_container" style="<?php if($k == 0) echo "margin-top:10px;"; ?>">
-								<a href="list.php?category_id=<?php echo $child->id?>&age=<?php echo $i;?>"><img src="<?php if($child->show_image!=''){echo $child->show_image;}else{?>/images/assistant_list/pho.jpg<?php }?>"/></a>
-								<?php foreach($assistants as $j => $assistant){?>
-								<div class="result_title"<?php if($j==0){?>style="margin-top:10px;"<?php }?>><a href="list.php?category_id=<?php echo $child->id?>&age=<?php echo $i;?>">[<?php echo $child->name;?>]</a><a href="/assistant/assistant.php?id=<?php echo $assistant->id;?>"><?php echo $assistant->title;?></a></div>
-								<?php }?>
+						<?php for($i=-2;$i<=3;$i++){if($i!=0){?>
+						<div class="result_banner">
+							<div class="result_pg_top">
+								<?php 
+									switch($i){
+										case -2:echo '准备怀孕';break;
+										case -1:echo '怀孕中';break;
+										case 1:echo '0~1岁';break;
+										case 2:echo '1~2岁';break;
+										case 3:echo '2~3岁';break;
+									}
+								?>
 							</div>
-							<div class="cate_more" <?php if($k == 0) echo "style='margin-top:54px;'"; ?>><a href="list.php?category_id=<?php echo $child->id?>&age=<?php echo $i;?>">更多</a></div>
-							<?php }}?>
+							<div class="result_pg_content">
+								<?php
+								foreach($childs as $k=>$child){
+								$sql = "select * from eb_assistant where is_adopt=1 and category_id = {$child->id} and age=$i order by priority asc,created_at desc limit 3";
+								$assistants = $db->query($sql);
+								!$assistants && $assistants = array();
+								if(!empty($assistants)){
+								?>
+								<div class="result_container" style="<?php if($k == 0) echo "margin-top:10px;"; ?>">
+									<a href="list.php?category_id=<?php echo $child->id?>&age=<?php echo $i;?>"><img src="<?php if($child->show_image!=''){echo $child->show_image;}else{?>/images/assistant_list/pho.jpg<?php }?>"/></a>
+									<?php foreach($assistants as $j => $assistant){?>
+									<div class="result_title"<?php if($j==0){?>style="margin-top:10px;"<?php }?>><a href="list.php?category_id=<?php echo $child->id?>&age=<?php echo $i;?>">[<?php echo $child->name;?>]</a><a href="/assistant/assistant.php?id=<?php echo $assistant->id;?>"><?php echo $assistant->title;?></a></div>
+									<?php }?>
+								</div>
+								<div class="cate_more" <?php if($k == 0) echo "style='margin-top:54px;'"; ?>><a href="list.php?category_id=<?php echo $child->id?>&age=<?php echo $i;?>">更多</a></div>
+								<?php }}?>
+							</div>
+							<div class="result_pg_bottom"></div>
 						</div>
-						<div class="result_pg_bottom"></div>
-					</div>
-					<?php }?>
-					<?php }?>
+						<?php }}?>
 					<?php }else{?>
 					<div class="result_banner">
 						<div class="result_pg_top">
@@ -117,12 +116,12 @@
 						<div class="result_pg_bottom"></div>
 					</div>
 					<?php }?>
-					<?php }else if($level==2){?>
+				<?php }else if($level==2){?>
+					<?php if($age!=0){?>
 					<div class="result_banner" style="margin:0;">
 						<div class="result_pg_top">
 							<?php 
 								echo $parent->name;
-								if($age!=0){
 							?>
 							[<?php 
 								switch($age){
@@ -133,7 +132,6 @@
 									case 3:echo '2~3岁';break;
 								}
 							?>]
-							<?php }?>
 						</div>
 						<div class="result_pg_content">
 							<?php 
@@ -158,7 +156,47 @@
 						</div>
 						<div class="result_pg_bottom"></div>
 					</div>
-					<?php }else if($level==0){?>
+					<?php }else{?>
+						<?php for($i=-2;$i<=3;$i++){if($i!=0){?>
+						<div class="result_banner"  <?php if($i==-2){?>style="margin:0;"<?php }?>>
+							<div class="result_pg_top">
+								<?php
+								echo $parent->name;
+									switch($i){
+										case -2:echo '[准备怀孕]';break;
+										case -1:echo '[怀孕中]';break;
+										case 1:echo '[0~1岁]';break;
+										case 2:echo '[1~2岁]';break;
+										case 3:echo '[2~3岁]';break;
+									}
+								?>
+								<a href="list.php?category_id=<?php echo $parent->id?>&age=<?php echo $i;?>">更多&gt;&gt;</a>
+							</div>
+							<div class="result_pg_content">
+								<?php 
+									$sql = "select * from eb_assistant where is_adopt=1 and category_id = {$parent->id}";
+									if($i!=0){
+										$sql .= " and age=$i";
+									}
+									$sql .= " order by priority asc,created_at desc";
+									$assistants = $db->paginate($sql,10);
+									$len = count($assistants);
+									for($j = 0; $j < $len; $j++){
+										$desc = trim(strip_tags($assistants[$j]->description));
+										if(empty($desc)) $desc = trim(strip_tags($assistants[$j]->content));
+								?>
+									<div class="result_container2" style="<?php if($j == 0) echo "margin-top:10px;"; ?>">
+										<img src="<?php if($assistants[$j]->image!=''){echo $assistants[$j]->image;}else{?>/images/assistant_list/pho.jpg<?php }?>"/>
+										<div class="result_title2"><a href="/assistant/assistant.php?id=<?php echo $assistants[$j]->id;?>"><?php echo $assistants[$j]->title;?></a></div>
+										<div class="result_value"><?php echo mb_substr($desc,0,45,'utf-8');?>……<a href="/assistant/assistant.php?id=<?php echo $assistants[$j]->id;?>">[查看全文]</a></div>
+									</div>
+								<?php } ?>
+							</div>
+							<div class="result_pg_bottom"></div>
+						</div>
+						<?php }}?>
+					<?php }?>
+				<?php }else if($level==0){?>
 						<?php foreach($categorys as $k=>$cate){
 								$parent = $category->find($cate->id);
 								$childs = $category->find_sub_category($cate->id);
