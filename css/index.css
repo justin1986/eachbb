@@ -162,7 +162,7 @@ body{width:1000px; margin: 0 auto;  background:url(/images/index/img_pg.jpg) rep
 #mother{width:965px; height:238px; margin-top:5px; float:left; display:inline;}
 #mother_l{width:684px; height:236px; background:url(/images/index/l_p.gif) no-repeat; float:left; display:inline;}
 #m_l_t{width:677px; height:22px; margin-top:10px; float:left; text-align:right; padding-top:8px; padding-right:5px; display:inline;}
-#m_l_t div{ margin-left:158px;  float:left; display:inline;}
+#m_l_t div{ margin-left:155px;  float:left; display:inline;}
 #m_l_t a{margin-left:5px; font-size:14px; font-weight:bold; color:#000000; text-decoration:none;}
 #m_more{width:48px; height:10px; border:0px solid red; margin-top:10px; margin-right:5px;  background:url(/images/index/more.png) no-repeat center !important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/index/more.png); cursor:pointer; z-index:100; float:right; display:inline;}
 #m_l_a{width:187px; height:158px; margin-left:23px; margin-top:20px; float:left; display:inline;}
