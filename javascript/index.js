@@ -5,7 +5,7 @@ function refresh_test_tab(){
 	if(test_tab_index >= test_tab_count) test_tab_index = 0;
 	$('.test_tab').hide();
 	$('#test_tab_'+test_tab_index).show();
-}
+} 
 
 function search_news(){
 	var text = encodeURI($('#input_search').val());

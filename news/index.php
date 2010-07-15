@@ -14,7 +14,7 @@
 </head>
 <body>
 <div id="ibody">
-	<?php include_once('../inc/_consult_top.php'); ?>
+	<?php include_once(dirname(__FILE__).'/../inc/_consult_top.php'); ?>
 	<div id="fbody">
 		<div id="b_l">
 			<div id="bl_a">
@@ -44,28 +44,7 @@
 			</div>
 			<div id="bl_b">
 				<div id="bl_ti">
-					<div id="blt_img">论坛板块</div>
-					<div id="blt_c"> <a href="#">产后</a>
-						<div class="bltc_z"></div>
-						<a href="#">安胎</a>
-						<div class="bltc_z"></div>
-						<a href="#">产检</a>
-						<div class="bltc_z"></div>
-						<a href="#">胎教</a>
-						<div class="bltc_z"></div>
-						<a href="#">遗传</a>
-						<div class="bltc_z"></div>
-						<a href="#">不孕</a>
-						<div class="bltc_z"></div>
-						<a href="#">避孕</a>
-						<div class="bltc_z"></div>
-						<a href="#">生男生女</a>
-						<div class="bltc_z"></div>
-						<a href="#">孕期营养</a>
-						<div class="bltc_z"></div>
-						<a href="#">孕期禁忌</a>
-						<div class="bltc_z"></div>
-						<a href="#">坐月子</a> </div>
+					<div id="blt_img">育儿早班车</div>
 					<div id="bltc_hr"></div>
 					<div class="trade_z" >
 						<div class="trade_l">
@@ -77,6 +56,7 @@
 								#$en_news=$db->query("SELECT id,category_id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id=153 and is_adopt=1 order by created_at desc limit 9;");
 							?>
 							<div class="tl_r" >
+								<a href="<?php get_news_url($en_news[0]);?>"><img src="<?php echo $en_news[0]->video_photo_src;?>"/></a>
 							</div>
 						</div>
 							<?php for($i=1;$i<9;$i++){?>
@@ -107,18 +87,6 @@
 				</div>
 			</div>
 			<div id="bl_c">
-				<a href="#">
-				<img id="blc_a"/>
-				</a> 
-				<a href="#">
-				<img id="blc_b"/>
-				</a>
-				<a href="#">
-				<img id="blc_c"/>
-				</a> 
-				<a href="#">
-				<img id="blc_d"/>
-				</a>
 				<div class="more"><a href="#">More&gt;</a></div>
 			</div>
 			<div id="bl_d">
@@ -140,7 +108,7 @@
 			<div id="bl_e">
 				<div id="be_l">
 					<div id="bel_t">
-						<div id="bel_l">娱乐八卦</div>
+						<div id="bel_l">育儿早班车</div>
 						<div id="bel_r"><a href="#">查看更多</a></div>
 					</div>
 					<div id="bel_c"<?php $pos="ylbg_headline";show_page_pos($pos,'link_d_i');?>>
@@ -270,12 +238,11 @@
 				</div>
 				<div id="bc_t2">
 					<div id="bct_z">
-						<div class="bct_c" id="bc_0" style="width:74px; height:24px; margin-left:4px; background:url(../images/consult/rc_l.jpg) no-repeat; line-height:24px; color:#FF6600; float:left; display:inline;">幼教排行</div>
-						<div id="bct_hr"></div>
-						<div class="bct_c" id="bc_1">论坛</div>
-						<div class="bct_c" id="bc_2">博客</div>
-						<div class="bct_c" id="bc_3">咨询</div>
-						<div class="bct_c" id="bc_4">测评</div>
+						<div class="dict_tab long">育儿早班车</div>
+						<div class="dict_tab long">邻家育儿</div>
+						<div class="dict_tab short">育儿早班车</div>
+						<div class="dict_tab short">潮爸潮妈</div>
+						<div class="dict_tab short">网趣动态</div>
 					</div>
 				</div>
 				<?php for($j=0;$j<5;$j++){?>
@@ -358,142 +325,17 @@
 				<div id="bit_r"></div>
 			</div>
 			<div id="bi_c">
-				<div id="bi_l">
-					<div class="bil_a">
-						<div class="bil_img"><font>妊娠反应</font></div>
-						<div class="bil_value">
-							<?php 
-								$uty_news=$db->query("SELECT id,name FROM eb_category where parent_id=158;");
-								$uty_news_count=$db->record_count;
-								for($i=0;$i<$uty_news_count;$i++){
-							?>
-							<div class="bil_yu" style="<?php if(strlen($uty_news[$i]->name)===12){ echo "width:60px;";}?>"><a href="#" title="<?php echo $uty_news[$i]->name;?>"><?php echo $uty_news[$i]->name;?></a></div>
-							<?php if($i!==($uty_news_count-1)){?>
-							<div class="bil_hr"></div>
-							<?php }}?>
-						</div>
+				<?php for($i = 0 ; $i < 20 ; $i++){ ?>
+				<div class="bil_y" style="<?php if($i % 2 == 0){ echo "margin-left:0px;";}?>">
+					<div><span>[类型]</span>
+					<a href="#" title="">撒旦发射点发撒旦防撒旦</a>
 					</div>
-					<div class="bil_a">
-						<div class="bil_img"><font>孕期营养</font></div>
-						<div class="bil_value">
-							<?php 
-								$uty_news=$db->query("SELECT id,name FROM eb_category where parent_id=161;");
-								$uty_news_count=$db->record_count;
-								for($i=0;$i<$uty_news_count;$i++){
-							?>
-							<div class="bil_y"  style="<?php if(strlen($uty_news[$i]->name)>7){ echo "width:60px;";}?>"><a href="#" title="<?php echo $uty_news[$i]->name;?>"><?php echo $uty_news[$i]->name;?></a></div>
-							<?php if($i!==($uty_news_count-1)){?>
-							<div class="bil_hr"></div>
-							<?php }}?>
-						</div>
-					</div>
-					<div class="bil_a">
-						<div class="bil_img"><font>心里健康</font></div>
-						<div class="bil_value">
-							<?php 
-								$uty_news=$db->query("SELECT id,name FROM eb_category where parent_id=164;");
-								$uty_news_count=$db->record_count;
-								for($i=0;$i<$uty_news_count;$i++){
-							?>
-							<div class="bil_y" style="<?php if(strlen($uty_news[$i]->name)>7){ echo "width:60px;";}?>"><a href="#" title="<?php echo $uty_news[$i]->name;?>"><?php echo $uty_news[$i]->name;?></a></div>
-							<?php if($i!==($uty_news_count-1)){?>
-							<div class="bil_hr"></div>
-							<?php }}?>
-						</DIV>
-					</div>
+					<font>2010-10-12</font>
 				</div>
-				<div id="bi_cc">
-					<div class="bil_a">
-						<div class="bil_img"><font>孕期生活</font></div>
-						<div class="bil_value"> 
-							<?php 
-								$uty_news=$db->query("SELECT id,name FROM eb_category where parent_id=159;");
-								$uty_news_count=$db->record_count;
-								for($i=0;$i<$uty_news_count;$i++){
-							?>
-							<div class="bil_yu" style="<?php if(strlen($uty_news[$i]->name)>7){ echo "width:60px;";}?>"><a href="#" title="<?php echo $uty_news[$i]->name;?>"><?php echo $uty_news[$i]->name;?></a></div>
-							<?php if($i!==($uty_news_count-1)){?>
-							<div class="bil_hr"></div>
-							<?php }}?>
-						</div>
-					</div>
-					<div class="bil_a">
-						<div class="bil_img"><font>孕期不适</font></div>
-						<div class="bil_value">
-							<?php 
-								$uty_news=$db->query("SELECT id,name FROM eb_category where parent_id=162;");
-								$uty_news_count=$db->record_count;
-								for($i=0;$i<$uty_news_count;$i++){
-							?>
-							<div class="bil_yu" style="<?php if(strlen($uty_news[$i]->name)>7){ echo "width:60px;";}?>"><a href="#" title="<?php echo $uty_news[$i]->name;?>"><?php echo $uty_news[$i]->name;?></a></div>
-							<?php if($i!==($uty_news_count-1)){?>
-							<div class="bil_hr"></div>
-							<?php }}?>
-						</div>
-					</div>
-					<div class="bil_a">
-						<div class="bil_img"><font>产检相关</font></div>
-						<div class="bil_value">
-							<?php 
-								$uty_news=$db->query("SELECT id,name FROM eb_category where parent_id=165;");
-								$uty_news_count=$db->record_count;
-								for($i=0;$i<$uty_news_count;$i++){
-							?>
-							<div class="bil_yu"  style="<?php if(strlen($uty_news[$i]->name)>7){ echo "width:60px;";}?>"><a href="#" title="<?php echo $uty_news[$i]->name;?>"><?php echo $uty_news[$i]->name;?></a></div>
-							<?php if($i!==($uty_news_count-1)){?>
-							<div class="bil_hr"></div>
-							<?php }}?>
-						</div>
-					</div>
-				</div>
-				<div id="bi_r">
-					<div class="bill_a">
-						<div class="bil_img"><font>孕期异常</font></div>
-						<div class="bill_value">
-							<?php 
-								$uty_news=$db->query("SELECT id,name FROM eb_category where parent_id=160;");
-								$uty_news_count=$db->record_count;
-								for($i=0;$i<$uty_news_count;$i++){
-							?>
-							<div class="bil_y" style="<?php if(strlen($uty_news[$i]->name)>10){ echo "width:60px;";}elseif(strlen($uty_news[$i]->name)>8){ echo "width:50px;";}?>"><a href="#" title="<?php echo $uty_news[$i]->name;?>"><?php echo $uty_news[$i]->name;?></a></div>
-							<?php if($i!==($uty_news_count-1)){?>
-							<div class="bil_hr"></div>
-							<?php }}?>
-						</div>
-					</div>
-					<div class="bill_a">
-						<div class="bil_img"><font>孕期疾病</font></div>
-						<div class="bill_value">
-							<?php 
-								$uty_news=$db->query("SELECT id,name FROM eb_category where parent_id=163;");
-								$uty_news_count=$db->record_count;
-								for($i=0;$i<$uty_news_count;$i++){
-							?>
-							<div class="bil_yu" style="<?php if(strlen($uty_news[$i]->name)>14){ echo "width:70px;";}elseif(strlen($uty_news[$i]->name)>8){echo "width:50px;";}?>"><a href="#" title="<?php echo $uty_news[$i]->name;?>"><?php echo $uty_news[$i]->name;?></a></div>
-							<?php if($i!==($uty_news_count-1)){?>
-							<div class="bil_hr"></div>
-							
-							<?php }}?>
-						</div>
-					</div>
-					<div class="bill_a">
-						<div class="bil_img"><font>乳房保健</font></div>
-						<div class="bill_value">
-							<?php 
-								$uty_news=$db->query("SELECT id,name FROM eb_category where parent_id=166;");
-								$uty_news_count=$db->record_count;
-								for($i=0;$i<$uty_news_count;$i++){
-							?>
-							<div class="bil_yu" style="<?php if(strlen($uty_news[$i]->name)>10){ echo "width:60px;";}?>"><a href="#" title="<?php echo $uty_news[$i]->name;?>"><?php echo $uty_news[$i]->name;?></a></div>
-							<?php if($i!==($uty_news_count-1)){?>
-							<div class="bil_hr"></div>
-							<?php }}?>
-						</div>
-					</div>
-				</div>
+				<?php }?>
 			</div>
 		</div>
-		<?php include_once('../inc/bottom.php');?>
+		<?php include_once(dirname(__FILE__).'/../inc/bottom.php');?>
 	</div>
 </div>
 </body>
