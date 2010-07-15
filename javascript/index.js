@@ -78,9 +78,17 @@ $(function(){
 			if(i == selected){
 				continue;
 			}
-			$('#dict_menu .dict_tab').attr('style','background:url(images/index/r_hui.png) no-repeat; color:#000000;');
+			if(i == 0 || i == 1){
+				$('#dict_menu .dict_tab.long').attr('style','width:125px; height:24px; background:url(images/index/r_hui_long.gif) no-repeat; color:#000000;');
+			}else{
+				$('#dict_menu .dict_tab.short').attr('style','width:83px; height:24px; background:url(images/index/r_f.gif) no-repeat; color:#000000;');
+			}
 		}
-		$(this).attr('style','background:url(/images/index/r_pg_f.png) no-repeat; color:#FF6600;');
+		if(selected == 0 || selected == 1){
+			$(this).attr('style','background:url(/images/index/r_ffff.gif) no-repeat; color:#FF6600;');
+		}else{
+			$(this).attr('style','background:url(/images/index/r_ff.gif) no-repeat; color:#FF6600;');
+		}
 		$('.desc').hide();
 		$('#desc_'+selected).show();
 	},function(){});

@@ -7,7 +7,7 @@
 	<?php 
 		include_once(dirname(__FILE__).'/frame.php');
 		use_jquery_ui();
-		css_include_tag('index','jquery_ui','buttom');
+		css_include_tag('index','jquery_ui','bottom');
 		js_include_tag('index');
 		init_page_items('index');
 		$db = get_db();
@@ -196,10 +196,11 @@
 						</div>
 					</div>
 					<div id="dict_menu"> 
-						<div  class="dict_tab long">论坛</div>
-						<div  class="dict_tab long">博客</div>
+						<div  class="dict_tab long">育儿早班车</div>
+						<div  class="dict_tab long">邻家育儿</div>
 						<div  class="dict_tab short">育儿早班车</div>
-						<div  class="dict_tab short">测评</div>
+						<div  class="dict_tab short">潮爸潮妈</div>
+						<div  class="dict_tab short">网趣动态</div>
 					</div>
 					
 					<?php for($j=0;$j<5;$j++){?>

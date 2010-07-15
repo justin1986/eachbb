@@ -151,10 +151,10 @@ body{width:1000px; margin: 0 auto;  background:url(/images/index/img_pg.jpg) rep
 
 #d_m_a{width:50px; height:24px; text-align:center; font-size:13px; font-weight:bold; line-height:24px; background:url(/images/index/r_hui.png) no-repeat; float:left; display:inline;}
 .dict_tab.long{width:125px; height:24px; text-align:center; font-size:13px; font-weight:bold; line-height:24px; background:url(/images/index/r_hui_long.gif) no-repeat; float:left; display:inline;}
-.dict_tab.short{width:50px; height:24px; text-align:center; font-size:13px; font-weight:bold; line-height:24px; background:url(/images/index/r_hui.png) no-repeat; float:left; display:inline;}
+.dict_tab.short{width:83px; height:24px; text-align:center; font-size:13px; font-weight:bold; line-height:24px; background:url(/images/index/r_f.gif) no-repeat; float:left; display:inline;}
 #dict_b{width:246px; height:26px; margin-top:5px; margin-left:8px; overflow:hidden; float:left; display:inline;}
 .dict_c{width:246px; height:26px; margin-left:8px; margin-top:2px; overflow:hidden; float:left; display:inline;}
-.dict_number{width:22px; height:22px; margin-left:3px; text-align:center; line-height:22px; font-size:12px; color:#ffffff; font-weight:bold; background:url(/images/index/block.jpg) no-repeat; float:left; display:inline;}
+.dict_number{width:22px; height:22px; margin-left:3px; margin-top:2px; text-align:center; line-height:22px; font-size:12px; color:#ffffff; font-weight:bold; background:url(/images/index/block.jpg) no-repeat; float:left; display:inline;}
 .dict_value{width:200px; height:22px; margin-left:5px; overflow:hidden; text-align:left; line-height:22px; float:left; display:inline;}
 .dict_value a{font-size:14px; color:#000; text-decoration:none;}
 
