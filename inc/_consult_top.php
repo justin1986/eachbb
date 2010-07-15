@@ -33,15 +33,15 @@
 						</div>
 					</div>
 				<div id="menu_ctb">        
-						<div class="me_aa"><a href="#">怀孕前</a></div>
+						<div class="me_aa"><a href="#">育儿早班车</a></div>
 						<div class="me_hh"></div>
-						<div class="me_bb"><a href="#">怀孕中</a></div>
+						<div class="me_bb"><a href="#">邻家育儿</a></div>
 						<div class="me_hh"></div>
-						<div class="me_bb"><a href="#">0-1岁 </a></div>
+						<div class="me_bb"><a href="#">海外传真 </a></div>
 						<div class="me_hh"></div>
-						<div class="me_bb"><a href="#">1-2岁</a></div>
+						<div class="me_bb"><a href="#">潮爸潮妈</a></div>
 						<div class="me_hh"></div>
-						<div class="me_bb"><a href="#">2-3岁</a></div>
+						<div class="me_bb"><a href="#">网趣动态</a></div>
 						<input type="button" id="me_btn" style="margin-right:10px; float:right;">
 						<input type="text" id="me_in" style="float:right;">
 					</div>
