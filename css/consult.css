@@ -206,7 +206,7 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 
 
 .bil_y div{width:350px; float:left;}
-.bil_y{width:440px; height:18px; padding-left:20px; margin-left:15px; margin-top:10px; overflow:hidden; font-size:12px; color:#333333; font-weight:600; text-align:left; line-height:18px; float:left; display:inline;}
+.bil_y{width:440px; height:18px; padding-left:20px; margin-left:20px; margin-top:10px; overflow:hidden; font-size:12px; color:#333333; font-weight:600; text-align:left; line-height:18px; float:left; display:inline;}
 .bil_y div a{font-size:13px; text-decoration:none; color:#333333;}
 .bil_y div SPAN{font-size:12px; font-weight:bold; color:#555555;}
 .bil_y  font{ margin-left:15px; font-size:12px; font-weight:normal; color:#444444;  }
