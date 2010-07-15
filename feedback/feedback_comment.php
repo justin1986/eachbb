@@ -1,4 +1,4 @@
-﻿<?php 
+<?php 
 	include_once('../frame.php');
 	if(!is_ajax()) die('invlid request!');
 	$db=get_db();
@@ -7,7 +7,6 @@
 ?>
 <div id="critique">
 	<div id="critique_l">意见反馈<a href="#">(共<?php echo $comment_page_record_count; ?>条)</a></div>
-	<div id="critique_r"><a href="#">查看所有反馈</a></div>
 	</div>
 	<div class="cri_content">
 	<?php 
