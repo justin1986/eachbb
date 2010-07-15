@@ -108,7 +108,7 @@
 			<div id="bl_e">
 				<div id="be_l">
 					<div id="bel_t">
-						<div id="bel_l">育儿早班车</div>
+						<div id="bel_l">海外传真</div>
 						<div id="bel_r"><a href="#">查看更多</a></div>
 					</div>
 					<div id="bel_c"<?php $pos="ylbg_headline";show_page_pos($pos,'link_d_i');?>>
@@ -240,7 +240,7 @@
 					<div id="bct_z">
 						<div class="dict_tab long">育儿早班车</div>
 						<div class="dict_tab long">邻家育儿</div>
-						<div class="dict_tab short">育儿早班车</div>
+						<div class="dict_tab short">海外传真</div>
 						<div class="dict_tab short">潮爸潮妈</div>
 						<div class="dict_tab short">网趣动态</div>
 					</div>
@@ -248,7 +248,7 @@
 				<?php for($j=0;$j<5;$j++){?>
 				<div class="bct_number" id="bn_<?php echo $j;?>" style="display:<?php echo $j==0 ? "inline" : "none"?>;">
 				<?php for($i=0;$i<10;$i++){?>
-					<div class="bct_cp"<?php $pos="right_tab_$j_$i";show_page_pos($pos,'link')?>>
+					<div id="bn_<?php echo $j;?>" class="bct_cp"<?php $pos="right_tab_$j_$i";show_page_pos($pos,'link')?>>
 						<div class="bct_cpl"  style="<?php if($i==0){ echo 'background:url(/images/index/red.jpg) no-repeat';}?>"><?php echo $i+1?></div>
 						<div class="bct_cpv"><?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?></div>
 					</div>

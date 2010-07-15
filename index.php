@@ -218,7 +218,7 @@
 					<div id="dict_menu"> 
 						<div  class="dict_tab long">育儿早班车</div>
 						<div  class="dict_tab long">邻家育儿</div>
-						<div  class="dict_tab short">育儿早班车</div>
+						<div  class="dict_tab short">海外传真</div>
 						<div  class="dict_tab short">潮爸潮妈</div>
 						<div  class="dict_tab short">网趣动态</div>
 					</div>

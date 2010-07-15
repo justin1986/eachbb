@@ -7,7 +7,7 @@
 <?php 
 	include_once(dirname(__FILE__).'/frame.php');
 	use_jquery_ui();
-	css_include_tag('bbs','jquery_ui');
+	css_include_tag('bbs','jquery_ui','bottom');
 	init_page_items('bbs');
 ?>
 <link href="./css/bbs.css" rel="stylesheet" type="text/css" />
@@ -46,7 +46,6 @@
 					</div>
 				</div>
 				<div id="menu_ctb">
-					<input type="button" id="t_first" value="我的网趣">
 					<div class="me_aa"><a href="#">网趣宝宝首页</a></div>
 					<div class="me_hh"></div>
 					<div class="me_bb"><a href="#">用户测评报告</a></div>
@@ -58,8 +57,8 @@
 					<div class="me_bb"><a href="#">我家小院子</a></div>
 					<div class="me_hh"></div>
 					<div class="me_bb" ><a href="#">管理设置</a></div>
-					<input type="text" id="me_in">
-					<input type="button" id="me_btn">
+					<input type="button" id="me_btn" style="margin-right:10px; float:right;">
+					<input type="text" id="me_in" style="float:right;">
 				</div>
 			</div>
 			<div id="menu_right"></div>
@@ -86,25 +85,6 @@
 			</div>
 			<div id="bit_ban">
 				<div id="blt_img">论坛板块</div>
-				<div id="blt_c"> <a href="#">课程</a>
-					<div class="bltc_z"></div>
-					<a href="#">健康</a>
-					<div class="bltc_z"></div>
-					<a href="#">学习</a>
-					<div class="bltc_z"></div>
-					<a href="#">娱乐</a>
-					<div class="bltc_z"></div>
-					<a href="#">旅行</a>
-					<div class="bltc_z"></div>
-					<a href="#">妈妈</a>
-					<div class="bltc_z"></div>
-					<a href="#">爸爸</a>
-					<div class="bltc_z"></div>
-					<a href="#">海外</a>
-					<div class="bltc_z"></div>
-					<a href="#">答疑</a>
-					<div class="bltc_z"></div>
-					<a href="#">站务</a> </div>
 				<div id="bltc_hr"></div>
 			</div>
 			<div id="bit_c">
@@ -531,7 +511,7 @@
 			<div id="i"></div>
 			<div class="o">
 				<div class="i_l">用户精彩问答</div>
-				<div id="i_r"><a href="#">更多>></a></div>
+				<div id="i_r"><a href="#">更多&gt;&gt;</a></div>
 			</div>
 			<?php  for($i=1;$i<=2;$i++){ ?>
 			<div class="p" style="<?php if($i==1){ echo 'margin-top:12px;';}?>" <?php $pos="qa".$i;show_page_pos($pos,'qa');?>>
@@ -557,8 +537,7 @@
 			<div></div>
 			</a></div>
 		</div>
-		<div id="bottom">关于我们 - 加入我们 - 友情链接 - 联系我们 - 服务条款 - 隐私保护 - 网站地图</div>
-		<div id="bottom_b">哈哈少儿旗下网站  Copyright © 1997-2010 HAHA.smg.com All Rights Reserved.</div>
+		<?php include_once(dirname(__FILE__).'./inc/bottom.php');?>
 	</div>
 </div>
 </body>

@@ -57,9 +57,9 @@ include_once '../frame.php';
 <body>
 <div id="ibody">
 	<div id="fbody">
-		<?php include_once('../inc/_test_top.php'); ?>
+		<?php include_once(dirname(__FILE__).'/../inc/_test_top.php'); ?>
 		<div id="content">
-			<?php include_once('../inc/left_inc.php'); ?>
+			<?php include_once(dirname(__FILE__).'/../inc/left_inc.php'); ?>
 			<div id="c_r">
 				<div id="crb_t"> 
 					<div class="crb_value">
@@ -148,7 +148,7 @@ include_once '../frame.php';
 				</div>
 			</div>
 		</div>
-		<?php include_once('../inc/bottom.php');?>
+		<?php include_once(dirname(__FILE__).'/../inc/bottom.php');?>
 	</div>
 </div>
 </body>
