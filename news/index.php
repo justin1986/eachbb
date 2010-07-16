@@ -261,7 +261,7 @@
 				</div>
 				<div id="bc_t2">
 					<div id="bct_z">
-						<div class="dict_tab long">育儿早班车</div>
+						<div class="dict_tab long" style="background:url(/images/news/r_ffff.gif) no-repeat; color:#FF6600;">育儿早班车</div>
 						<div class="dict_tab long">邻家育儿</div>
 						<div class="dict_tab short">海外传真</div>
 						<div class="dict_tab short">潮爸潮妈</div>
