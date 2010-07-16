@@ -127,7 +127,7 @@
 			
 				<div id="test_left">
 					<div id="test_left_top">
-						请输入宝宝的出生日期:　<input type="text" id='datepicker' />
+						请输入宝宝的出生日期:　<input type="text" id='date_picker' />
 					</div>
 					<div id="btn_begin_test">
 						<a href="#" id="a_begin_test"><img src="/images/index/test.png" border="0" /></a>
