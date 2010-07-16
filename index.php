@@ -210,7 +210,7 @@
 						</div>
 					</div>
 					<div id="dict_menu"> 
-						<div  class="dict_tab long">育儿早班车</div>
+						<div  class="dict_tab long" style="background:url(/images/index/r_ffff.gif) no-repeat; color:#FF6600;">育儿早班车</div>
 						<div  class="dict_tab long">邻家育儿</div>
 						<div  class="dict_tab short">海外传真</div>
 						<div  class="dict_tab short">潮爸潮妈</div>
