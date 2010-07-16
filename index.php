@@ -8,7 +8,7 @@
 		include_once(dirname(__FILE__).'/frame.php');
 		use_jquery_ui();
 		css_include_tag('index','jquery_ui','bottom');
-		js_include_tag('index','flashobj.js');
+		js_include_tag('index','swfobject');
 		init_page_items('index');
 		$db = get_db();
 	?>
@@ -54,14 +54,8 @@
 						}
 					?>
 					<script type="text/javascript">
-						var flash = new sohuFlash("flash/index.swf", "27", 665, 384, "7");
-						flash.addParam("quality", "high");
-						flash.addParam("wmode", "opaque");
-						flash.addVariable("image","<?php echo implode('|',$src);?>");
-						flash.addVariable("url","<?php echo implode('|',$url);?>");
-						flash.addVariable("info", "<?php echo implode('|',$title);?>");
-						flash.addVariable("stopTime","5000");
-						flash.write("flash_left");
+						var flashvar = {image:"<?php echo implode('|',$src);?>",url:"<?php echo implode('|',$url);?>",info:"<?php echo implode('|',$title);?>"};
+						swfobject.embedSWF("flash/index.swf","flash_left","665","384","8",false,flashvar);
 					</script>
 				</div>
 				<div id="flash_right">
@@ -160,8 +154,6 @@
 					</div>
 					
 				</div>
-				
-				
 				<div id="test_right">
 					<script type="text/javascript">$('#test_right').load('/login/ajax.post.php?op=load_login_status_box');</script>
 				</div>
@@ -180,7 +172,7 @@
 						</a> 
 					</div>
 					<?php 
-					for($i=1;$i<4;$i++){
+					for($i=1;$i<5;$i++){
 						#$teact=$db->query("select id,title,img_url,description from eb_teach where is_adopt=1 and del_flag=0 and age=".$i." order by create_time desc,priority desc limit 13");
 						#$teact_count=$db->record_count;
 					?>
@@ -216,7 +208,7 @@
 						</div>
 					</div>
 					<div id="dict_menu"> 
-						<div  class="dict_tab long">育儿早班车</div>
+						<div  class="dict_tab long" style="background:url(/images/index/r_ffff.gif) no-repeat; color:#FF6600;">育儿早班车</div>
 						<div  class="dict_tab long">邻家育儿</div>
 						<div  class="dict_tab short">海外传真</div>
 						<div  class="dict_tab short">潮爸潮妈</div>
@@ -238,11 +230,11 @@
 				<div id="mother_l">
 					<div id="m_l_t">
 						<div>
-							<a href="#">怀孕前</a>
-							<a href="#">怀孕中</a>
-							<a href="#">0-1岁</a>
-							<a href="#">1-2岁</a>
-							<a href="#">2-3岁</a>
+							<a href="/assistant/index.php?age=-2">怀孕前</a>
+							<a href="/assistant/index.php?age=-1">怀孕中</a>
+							<a href="/assistant/index.php?age=1">0-1岁</a>
+							<a href="/assistant/index.php?age=2">1-2岁</a>
+							<a href="/assistant/index.php?age=3">2-3岁</a>
 						</div>
 						<a href="/assistant/">
 							<img src="/images/index/more.gif" border="0" />
@@ -399,10 +391,10 @@
 							<div id="sblct_a">
 								<div class="sblct_l">
 									<div class="sblct_t_title">育儿早班车</div>
-									<div class="sblct_t"><a href="<?php echo get_news_list_url(119);?>">更多</a></div>
+									<div class="sblct_t"><a href="<?php echo get_news_list_url(1);?>">更多</a></div>
 									<div class="sblct_bb">
 										<?php 
-											$category=array("120"=>"母乳喂养","121"=>"人工喂养","122"=>"混合喂养","123"=>"母乳准备","124"=>"母乳技巧","125"=>"吐奶溢奶");
+											#$category=array("120"=>"母乳喂养","121"=>"人工喂养","122"=>"混合喂养","123"=>"母乳准备","124"=>"母乳技巧","125"=>"吐奶溢奶");
 											#$category_ids=array_keys($category);
 											#$category_ids=implode(',',$category_ids);
 											#$db=get_db();
@@ -440,10 +432,10 @@
 							<div id="sblct_b">
 								<div class="sblct_l">
 									<div class="sblct_t_title">邻家育儿</div>
-									<div class="sblct_t"><a href="<?php echo get_news_list_url(120);?>">更多</a></div>
+									<div class="sblct_t"><a href="<?php echo get_news_list_url(2);?>">更多</a></div>
 									<div class="sblct_bb">
 									<?php
-										$category=array("128"=>"脐带","129"=>"头部","130"=>"五官","131"=>"生殖器","132"=>"换尿布","133"=>"抱宝宝","134"=>"打襁褓","135"=>"剪指甲");
+										#$category=array("128"=>"脐带","129"=>"头部","130"=>"五官","131"=>"生殖器","132"=>"换尿布","133"=>"抱宝宝","134"=>"打襁褓","135"=>"剪指甲");
 										#$newsid=array_keys($new);
 										##$news_id=implode(',',$newsid);
 										#$news=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in ($news_id) order by created_at desc limit 1;");
@@ -482,9 +474,9 @@
 							<div id="sblcb_c">
 								<div class="sblct_l">
 								<div class="sblct_t_title">海外传真</div>
-									<div class="sblct_t"><a href="<?php echo get_news_list_url(121);?>">更多</a></div>
+									<div class="sblct_t"><a href="<?php echo get_news_list_url(3);?>">更多</a></div>
 									<?php 
-										$category=array("136"=>"游戏","137"=>"抚摸","138"=>"训练","139"=>"对话");
+										#$category=array("136"=>"游戏","137"=>"抚摸","138"=>"训练","139"=>"对话");
 										#$news_k=array_keys($news);
 										#$news_id=implode(',',$news_k);
 										#$new=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in ($news_id) order by created_at desc limit 1;");
@@ -519,9 +511,9 @@
 							<div id="sblcb_d">
 								<div class="sblct_l">
 									<div class="sblct_t_title">潮爸潮妈</div>
-									<div class="sblct_t"><a href="<?php echo get_news_list_url(121);?>">更多</a></div>
+									<div class="sblct_t"><a href="<?php echo get_news_list_url(4);?>">更多</a></div>
 									<?php 
-										$category=array("136"=>"游戏","137"=>"抚摸","138"=>"训练","139"=>"对话");
+										#$category=array("136"=>"游戏","137"=>"抚摸","138"=>"训练","139"=>"对话");
 										#$news_k=array_keys($news);
 										#$news_id=implode(',',$news_k);
 										#$new=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in ($news_id) order by created_at desc limit 1;");
@@ -586,11 +578,11 @@
 				<div id="picc_left"></div>
 				<div id="picc_right">
 					<?php
-						$imgdb=$db->query("select id,title,description,src,src2 from eb_images where is_adopt=1 order by created_at desc limit 22");
+						$images = $db->query("select a.title,a.url,a.src from eb_images a left join eb_category b on a.category_id=b.id where a.is_adopt=1 and b.name='首页底部图片' order by a.priority asc, created_at desc limit 22");
 						$imgdb_count=$db->record_count;
 						for($k=0;$k<$imgdb_count;$k++){
 					 ?>
-					<div class="picc_a"><a href="#" title="<?php echo  $imgdb[$k]->src; ?>"><img src="<?php echo  $imgdb[$k]->src; ?>"></a></div>
+					<div class="picc_a"><a href="<?php echo $iamges[$i]->url?>" title="<?php echo  $images[$k]->title; ?>"><img src="<?php echo  $images[$k]->src; ?>"></a></div>
 					<?php } ?>
 				</div>
 			</div>

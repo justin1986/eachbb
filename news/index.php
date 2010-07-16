@@ -18,7 +18,30 @@
 	<div id="fbody">
 		<div id="b_l">
 			<div id="bl_a">
-				<div id="bla_img"></div>
+				<div id="bla_img">
+					<div class="pic_img" id="img_tab_0" style="display:inline;">
+						<img src="/images/consult/s3.jpg"/>
+					</div>
+					<div class="pic_img" id="img_tab_1">
+						<img src="/images/consult/pic_c.jpg"/>
+					</div>
+					<div class="pic_img" id="img_tab_2">
+						<img src="/images/consult/peb.jpg"/>
+					</div>
+					<div class="pic_img" id="img_tab_3">
+						<img src="/images/consult/s3.jpg"/>
+					</div>
+					<div class="pic_img" id="img_tab_4">
+						<img src="/images/consult/pg.jpg"/>
+					</div>
+					<div id="pic_number">
+						<div id="n_4" >5</div>	
+						<div id="n_3" >4</div>
+						<div id="n_2" >3</div>
+						<div id="n_1" >2</div>
+						<div id="n_0" class="selected">1</div>
+					</div>
+				</div>
 				<div id="bla_r">
 					<?php 
 						$db=get_db();
@@ -238,7 +261,7 @@
 				</div>
 				<div id="bc_t2">
 					<div id="bct_z">
-						<div class="dict_tab long">育儿早班车</div>
+						<div class="dict_tab long" style="background:url(/images/news/r_ffff.gif) no-repeat; color:#FF6600;">育儿早班车</div>
 						<div class="dict_tab long">邻家育儿</div>
 						<div class="dict_tab short">海外传真</div>
 						<div class="dict_tab short">潮爸潮妈</div>

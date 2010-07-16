@@ -71,7 +71,7 @@
 				<div id="pg_a"></div>
 			</div>
 			<div id="c_r">
-				<div id="address">当前位置：首页 &gt; 育儿百科 &gt; 帮助中心 &gt; <font>意见反馈</font></div>
+				<div id="address">当前位置：<a href="/">首页</a> &gt; <font>意见反馈</font></div>
 				<div id="c_hr"></div>
 				<div id="h_title">感谢使用我们的教程，希望我们的共同努力能使您的孩子从哇哇落地就得到装专业的教育和早教指导</div>
 				<div id="c_title">您的意见是我们最珍贵的礼物</div>
