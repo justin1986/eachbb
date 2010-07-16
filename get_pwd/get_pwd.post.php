@@ -31,7 +31,7 @@ $name = $_POST['name'];
 $mail =  $_POST['email'];
 $db = get_db();
 
-$user = $db->query("select id from eb_member where name='$name' and email='$mail'");
+$user = $db->query("select id from eachbb_member.member where name='$name' and email='$mail'");
 if($db->record_count==1){
 	$verify = rand_str();
 	$gp = new table_class('eb_get_pwd');

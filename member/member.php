@@ -16,7 +16,7 @@
 	if(empty($id)){
 		die('非法访问');
 	}
-	$member = new table_class('eb_member');
+	$member = new table_class('eachbb_member.member');
 	$member->find($id);
 	$db = get_db();
 ?>
