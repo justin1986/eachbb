@@ -1,3 +1,4 @@
+CREATE DATABASE IF NOT EXISTS eachbb_member;
 CREATE TABLE `eachbb_member`.`visit_history` (
   `id` integer  NOT NULL AUTO_INCREMENT,
   `create_at` DATETIME  NOT NULL,

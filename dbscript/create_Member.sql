@@ -1,4 +1,4 @@
-create DATABASE eachbb_member;
+CREATE DATABASE IF NOT EXISTS eachbb_member;
 CREATE TABLE  `eachbb_member`.`member` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,

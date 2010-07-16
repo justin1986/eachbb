@@ -1,3 +1,4 @@
+CREATE DATABASE IF NOT EXISTS eachbb_member;
 CREATE TABLE `eachbb_member`.`member_status` (
   `id` integer  NOT NULL AUTO_INCREMENT,
   `uid` integer  NOT NULL COMMENT '用户id',
