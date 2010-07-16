@@ -128,11 +128,12 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 
 
 #pg_a{width:200px; height:141px; margin-top:7px; float:left; display:inline;}
-#bg_hr{width:958px; height:4px; margin-left:10px; margin-top:40px; background:url(../images/class/b_hr.jpg) repeat-x; float:left; display:inline;}
+#bg_hr{width:958px; height:4px; margin-left:10px; margin-top:40px; background:url(/images/class/b_hr.jpg) repeat-x; float:left; display:inline;}
 
 #cr{width:750px; margin-top:15px; float:right; display:inline;}
 #cr #title{width:750px; height:33px; float:left; display:inline;}
 #cr .cr_title{width:106px; height:33px; margin-left:5px; cursor:pointer; font-size:16px; line-height:33px; font-weight:bold; text-align:center; background:url('/images/info/c_r_title_bg.jpg') no-repeat; float:left; display:inline;}
+.cr_title a{color:black; text-decoration: none;}
 #cr .cr_title.selected{background:url(/images/info/c_r_title_bg1.jpg) no-repeat;}
 #cr #month_l{width:4px; height:38px; margin-left:3px;  border-top:1px solid #9a9a9a; background:url('/images/info/c_r_title_l.jpg') no-repeat; overflow:hidden; float:left; display:inline;}
 #cr .month_c{width:725px; height:38px; border-top:1px solid #9a9a9a; background:url('/images/info/c_r_title_c_bg.jpg') repeat-x; float:left; display:none;}

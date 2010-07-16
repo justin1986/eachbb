@@ -92,6 +92,7 @@ body{width:995px; margin: 0 auto;  background:url(../images/index/img_pg.jpg) re
 
 #address{width:730px; height:20px; margin-left:20px; margin-top:4px; font-size:12px; font-weight:bold; float:left; display:inline;}
 #address font{color:red;}
+#address a{color:black; text-decoration: none;}
 #c_hr{width:748px; height:4px; margin-left:10px; margin-top:5px; background:url(../images/feedback/hr.jpg) repeat-x; float:left; display:inline;}
 #h_title{width:748px; height:20px; margin-top:15px; line-height:20px; overflow:hidden; text-align:center; font-size:15px; font-weight:bold; float:left; display:inline;}
 #c_title{width:748px; height:20px; margin-top:10px; text-align:center; font-size:18px; font-weight:bold; color:#40A10F; float:left; display:inline;}
