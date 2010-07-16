@@ -116,7 +116,7 @@
 							</div>
 							<div class="bottom"></div>
 						</div>
-						<div id="game_time">每周游戏时间</div>
+						<div id="game_time">玩具图书推荐</div>
 						<div class="game_banner">
 							你很帅哦哦的护发素你很哦的护发素护发素iuhinnsd你很帅哦的护发素你很帅哦哦的护发素你很哦的护发素护发素iuhinnsd你很帅哦的护发素你很帅哦哦的护发素你很哦的护发素护发素iuhinnsd你很帅哦的护发素
 						</div>
