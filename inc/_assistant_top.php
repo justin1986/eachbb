@@ -64,7 +64,7 @@
 				<div class="ttc_a"><a href="?age=2&category_id=<?php echo $category_id;?>">1～2岁</a></div>
 				<div class="ttc_hr"></div>
 				<div class="ttc_a"><a href="?age=3&category_id=<?php echo $category_id;?>">2～3岁</a></div>
-				<a href="#">
+				<a href="knowledge.php">
 				<img id="ttc_g" src="/images/helper/t_2.jpg"/>
 				</a>
 			</div>
