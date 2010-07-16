@@ -1,56 +1,7 @@
-<div id="top_banner">
-		<div id="logo"></div>
-		<div id="top_ad"><a href="#"><img src="/images/bbs/t.jpg" /></a></div>
-	</div>
-	<div id="menu_container">
-		<div id="menu_pg">
-			<div id="menu_left"></div>
-			<div id="menu_center">
-				<div id="menu_ct">
-					<div id="menu_ctt">
-						<div class="t_first"><a href="/" style="color:#000000; font-weight:bold;">网站首页</a></div>
-						<div class="me_a"><a href="/test">特色测评</a></div>
-						<div class="me_h"></div>
-						<div class="me_b"><a href="/course">早教课程</a></div>
-						<div class="me_h"></div>
-						<div class="me_b" style="background:url(/images/assistant_list/top_t.jpg) no-repeat;"><a href="/assistant"><font class="son">妈妈</font><font class="bbs">助手</font></a></div>
-						<div class="me_h"></div>
-						<div class="me_b"><a href="#">我家小院子</a></div>
-						<div class="me_h"></div>
-						<div class="me_b"><a href="#">我的宝宝</a></div>
-						<div class="me_h"></div>
-						<div class="me_b"><a href="#">亲子论坛</a></div>
-						<div class="me_h"></div>
-						<div class="me_b"><a href="/news">育儿咨询</a></div>
-						<div class="me_h"></div>
-						<div class="me_b" style="width:85px;"><a href="#">关于网趣宝宝</a></div>
-						<div class="welcom">欢迎,<font>123</font></div>
-						<div class="exit">退出</div>
-						<div class="info">消息<a href="#" style="color:#FE843A">(1)</a></div>
-					</div>
-				</div>
-				<div id="menu_ctb">
-					<div class="me_aa"><a href="#">积极备孕页</a></div>
-					<div class="me_hh"></div>
-					<div class="me_bb"><a href="#">孕期生活告</a></div>
-					<div class="me_hh"></div>
-					<div class="me_bb"><a href="#">生长发育购</a></div>
-					<div class="me_hh"></div>
-					<div class="me_bb"><a href="#">日常护理示</a></div>
-					<div class="me_hh"></div>
-					<div class="me_bb"><a href="#">疾病与接种子</a></div>
-					<div class="me_hh"></div>
-					<div class="me_bb" ><a href="#">早期教育置</a></div>
-					<div class="me_hh"></div>
-					<div class="me_bb" ><a href="#">宠爱自己</a></div>
-					<input type="text" id="me_in">
-					<input type="button" id="me_btn">
-				</div>
-			</div>
-			<div id="menu_right"></div>
-		</div>
-	</div>
-	
+	<?php 
+	$news_list=array("积极备孕页","孕期生活告","生长发育购","日常护理示","疾病与接种子","早期教育置","宠爱自己");
+	include_once('../inc/_public_top.php');
+	?> 
 	<div id="top2">
 		<div id="top2_t">
 			<div id="tt_l"></div>
