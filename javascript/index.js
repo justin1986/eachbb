@@ -150,18 +150,13 @@ $(function(){
 		refresh_test_tab();
 	});
 	
-	$('#initial').click(function(e){
+	$('#a_begin_test').click(function(e){
 		e.preventDefault();
 		var birth = new Date($('#date_picker').val());
 		if(typeof(birth) != 'Invalid Date' || birth == "NaN"){
-			alert('fail');
+			alert('请输入有效的时间');
+			return;
 		}
-		alert(birth);
-		//alert(birth.toLocaleDateString());
-		var now = new Date();
-		var year = now.getFullYear() - 3;
-		now.setYear(year);
-		
-		//alert(now.toLocaleDateString());
+		$.getScript('/test/ajax_get_test.php',{});	
 	});
 });

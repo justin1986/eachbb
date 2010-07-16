@@ -1,3 +1,4 @@
+create DATABASE eachbb_member;
 CREATE TABLE  `eachbb_member`.`member` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
@@ -29,4 +30,4 @@ CREATE TABLE  `eachbb_member`.`member` (
   `register_phone` varchar(50) DEFAULT NULL COMMENT '注册手机',
   `true_name` varchar(50) DEFAULT NULL COMMENT '真实姓名',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8
+)
