@@ -61,7 +61,7 @@
 							}
 						?>
 					</div>
-					<div class="box">
+					<div class="box" <?php if($age&&$age!=$i){?>style="display:none;"<?php }?>>
 						<?php 
 							$cate = $category->find_by_name('生长发育');
 							$childrens = $category->find_sub_category($cate->id);
