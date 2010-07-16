@@ -47,7 +47,6 @@
 				<div id="flash_left">
 					<?php 
 						$images = $db->query("select a.title,a.url,a.src from eb_images a left join eb_category b on a.category_id=b.id where a.is_adopt=1 and b.name='首页flash图片' order by a.priority asc, created_at desc limit 5");
-						$images || $images = array();
 						foreach ($images as $image){
 							$src[] = $image->src;
 							$title[]=$image->title;
@@ -155,8 +154,6 @@
 					</div>
 					
 				</div>
-				
-				
 				<div id="test_right">
 					<script type="text/javascript">$('#test_right').load('/login/ajax.post.php?op=load_login_status_box');</script>
 				</div>
@@ -211,7 +208,7 @@
 						</div>
 					</div>
 					<div id="dict_menu"> 
-						<div  class="dict_tab long">育儿早班车</div>
+						<div  class="dict_tab long" style="background:url(/images/index/r_ffff.gif) no-repeat; color:#FF6600;">育儿早班车</div>
 						<div  class="dict_tab long">邻家育儿</div>
 						<div  class="dict_tab short">海外传真</div>
 						<div  class="dict_tab short">潮爸潮妈</div>
