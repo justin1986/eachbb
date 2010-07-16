@@ -47,6 +47,7 @@
 				<div id="flash_left">
 					<?php 
 						$images = $db->query("select a.title,a.url,a.src from eb_images a left join eb_category b on a.category_id=b.id where a.is_adopt=1 and b.name='首页flash图片' order by a.priority asc, created_at desc limit 5");
+						$images || $images = array();
 						foreach ($images as $image){
 							$src[] = $image->src;
 							$title[]=$image->title;
