@@ -131,7 +131,7 @@
 							</div>
 							<div id="c_pic"> 
 								<div class="c_p_b selected" param="1" style="margin-left:10px;">图书玩具</div>
-								<div class="c_p_b" param="2">我家院子</div>
+								<div class="c_p_b" param="2">我家小院子</div>
 								<div class="c_p_b" param="3">论坛精华</div>
 								<div class="c_p_b" param="4">其他照片</div>
 							</div>

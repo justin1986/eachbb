@@ -146,7 +146,7 @@ body{width:995px; margin: 0 auto;  background:url(../images/index/img_pg.jpg) re
 
 
 #c_pic{width:720px; height:31px; margin-top:15px; float:left; display:inline;}
-.c_p_b{width:69px; height:31px; margin-left:40px; color:#666666; font-size:12px; cursor:pointer;  text-align:center; line-height:23px; background:url(../images/yetrb/b.jpg) no-repeat;  float:left; display:inline;}
+.c_p_b{width:80px; height:31px; margin-left:40px; color:#666666; font-size:12px; cursor:pointer;  text-align:center; line-height:23px; background:url(../images/yetrb/b.jpg) no-repeat;  float:left; display:inline;}
 .c_p_b.selected{background:url(/images/yetrb/a.jpg) no-repeat;}
 #ctc_bz{width:734px; height:96px;  margin-top:-5Px; float:right; display:inline;}
 #ctb_t{width:724px; height:3px; margin-left:6px; font-size:0px; line-height:0px; background:url(../images/yetrb/3a.jpg) no-repeat; float:left; display:inline;}
@@ -164,10 +164,6 @@ body{width:995px; margin: 0 auto;  background:url(../images/index/img_pg.jpg) re
 #critique{width:635px; height:20px; margin-top:35px; line-height:20px; float:left; display:inline;}
 #critique_l{width:130px; height:20px; margin-left:30px; line-height:20px; font-size:14px; color:#666666; font-weight:bold; float:left; display:inline;}
 #critique_l a{font-size:12px; color:#BA2636; font-weight:lighter; text-decoration:none;}
-#critique_r{width:100px; height:20px; line-height:20px; text-align:right; float:right; display:inline;}
-#critique_r a{font-size:13px; color:#6600FF;}
-
-
 
 .cri_content{width:635px;  margin-top:5px; float:left; display:inline;}
 .fun{width:635px; height:20px; margin-top:20px; text-align:center; font-size:12px; float:left; dispaly:inine;}
