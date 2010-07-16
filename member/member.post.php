@@ -4,7 +4,7 @@ if(!is_ajax()){
 	die('非法访问');
 }
 
-$member = new table_class('eb_member');
+$member = new table_class('eachbb_member.member');
 $member->find($_POST['id']);
 ////////////////////////////////////////////////////
 $gender = intval($_POST['gender']);
