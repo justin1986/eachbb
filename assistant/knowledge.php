@@ -10,6 +10,7 @@
 		use_jquery();
 		$db = get_db();
 		$category = new category_class('assistant');
+		$age = intval($_GET['age']);
 	?>
 </head>
 <body>
@@ -21,8 +22,8 @@
 		<div id="result">
 			<div id="container">
 				<div id="container_result">
-					<div class='menu'>准备怀孕</div>
-					<div class="box">
+					<div class='menu' <?php if($age&&$age!=-2){?>style="display:none;"<?php }?>>准备怀孕</div>
+					<div class="box" <?php if($age&&$age!=-2){?>style="display:none;"<?php }?>>
 						<?php 
 							$cate = $category->find_by_name('积极备孕');
 							$childrens = $category->find_sub_category($cate->id);
@@ -36,8 +37,8 @@
 						<?php }?>
 					</div>
 					
-					<div class='menu'>怀孕期间</div>
-					<div class="box">
+					<div class='menu' <?php if($age&&$age!=-1){?>style="display:none;"<?php }?>>怀孕期间</div>
+					<div class="box" <?php if($age&&$age!=-1){?>style="display:none;"<?php }?>>
 						<?php 
 							$cate = $category->find_by_name('孕期生活');
 							$childrens = $category->find_sub_category($cate->id);
@@ -51,7 +52,7 @@
 						<?php }?>
 					</div>
 					<?php for($i=1;$i<=3;$i++){?>
-					<div class='menu'>
+					<div class='menu' <?php if($age&&$age!=$i){?>style="display:none;"<?php }?>>
 						<?php 
 							switch($i){
 								case 1:echo '0~1岁';break;
@@ -60,7 +61,7 @@
 							}
 						?>
 					</div>
-					<div class="box">
+					<div class="box" <?php if($age&&$age!=$i){?>style="display:none;"<?php }?>>
 						<?php 
 							$cate = $category->find_by_name('生长发育');
 							$childrens = $category->find_sub_category($cate->id);
