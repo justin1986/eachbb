@@ -8,7 +8,7 @@
 		include_once(dirname(__FILE__).'/frame.php');
 		use_jquery_ui();
 		css_include_tag('index','jquery_ui','bottom');
-		js_include_tag('index','flashobj.js');
+		js_include_tag('index','swfobject');
 		init_page_items('index');
 		$db = get_db();
 	?>
@@ -54,14 +54,8 @@
 						}
 					?>
 					<script type="text/javascript">
-						var flash = new sohuFlash("flash/index.swf", "27", 665, 384, "7");
-						flash.addParam("quality", "high");
-						flash.addParam("wmode", "opaque");
-						flash.addVariable("image","<?php echo implode('|',$src);?>");
-						flash.addVariable("url","<?php echo implode('|',$url);?>");
-						flash.addVariable("info", "<?php echo implode('|',$title);?>");
-						flash.addVariable("stopTime","5000");
-						flash.write("flash_left");
+						var flashvar = {image:"<?php echo implode('|',$src);?>",url:"<?php echo implode('|',$url);?>",info:"<?php echo implode('|',$title);?>"};
+						swfobject.embedSWF("flash/index.swf","flash_left","665","384","8",false,flashvar);
 					</script>
 				</div>
 				<div id="flash_right">
