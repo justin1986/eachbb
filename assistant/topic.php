@@ -117,8 +117,15 @@
 							<div class="bottom"></div>
 						</div>
 						<div id="game_time">玩具图书推荐</div>
-						<div class="game_banner">
-							你很帅哦哦的护发素你很哦的护发素护发素iuhinnsd你很帅哦的护发素你很帅哦哦的护发素你很哦的护发素护发素iuhinnsd你很帅哦的护发素你很帅哦哦的护发素你很哦的护发素护发素iuhinnsd你很帅哦的护发素
+						<div id="game_banner">
+							<?php for($j = 0 ; $j < 6 ; $j++){ ?>
+							<div class="game_attention" style="<?php if($j % 2 != 0){echo 'margin-left:10px;';}?>">
+								<a href="#"><img src="/images/assistant_list/pho.jpg" /></a>
+								<?php for($i = 0 ; $i < 3 ; $i ++){ ?>
+								<div><a href="#">撒旦发射点发撒旦防撒旦</a></div>
+								<?php }?>
+							</div>
+							<?php }?>
 						</div>
 						<div class="kong"></div>
 					</div>
