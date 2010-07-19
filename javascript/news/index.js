@@ -24,8 +24,6 @@ $(function(){
 	});
 	var  interval =setInterval(image_interval,iamge_tab_interval);
 	
-	
-	
 	$('.dict_tab').hover(function(){
 		var selected = $('.dict_tab').index($(this));
 		var selected=$('.dict_tab').index($(this));
