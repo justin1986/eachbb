@@ -37,7 +37,15 @@
 	</div>
 	<div id="top_menu">
 			<div id="menu_left"></div>
-			<div id="menu_center"></div>
+			<div id="menu_center">
+				<div id="menu_flash" style="margin-top:-5px;">
+				</div>
+				<script type="text/javascript">
+					var flashvar = {defaultIndex:'1'};
+					var flashparam = {wmode:'Transparent'};
+					swfobject.embedSWF("flash/menu.swf","menu_flash","702","103","8",false,flashvar,flashparam);
+				</script>
+			</div>
 			<div id="menu_right"></div>
 	</div>
 	<div id="fbody">
