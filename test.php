@@ -1,5 +1,7 @@
 	<?php 
-		$sub_menus = array("a" => "/","b"=>"/course","c" => "","d" => "","e"=> "");
-		include "test1.php";
+		include 'frame.php';
+		$a = array('1','2');
+		$b = array('a','b','c');
+		var_dump(array_merge($a,$b,$c));
 	?>
 	

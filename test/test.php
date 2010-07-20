@@ -20,10 +20,16 @@ include_once '../frame.php';
 		}
 		$step = 0;
 		$questions = $db->query("select id,question_type from eb_question where problem_id={$test->id}");
+		$questions_tmp['dadongzuo'] = array();
+		$questions_tmp['jingxidongzuo'] = array();
+		$questions_tmp['yuyan'] = array();
+		$questions_tmp['renshi'] = array();
+		$questions_tmp['shehuihuodong'] = array();;
 		!$questions && $questions = array();
 		foreach($questions as $question){
 			$questions_tmp[$question->question_type][] = array('id'=> $question->id,'question_type'=>$question->question_type,'score'=> 0,'choice'=>0);
 		} 
+		
 		$question_queue = @array_merge($questions_tmp['dadongzuo'],$questions_tmp['jingxidongzuo'],$questions_tmp['yuyan'],$questions_tmp['renshi'],$questions_tmp['shehuihuodong']);
 		$_SESSION['doing_test'] = $test->id;
 		$_SESSION['question_queue'] = $question_queue;
@@ -40,7 +46,6 @@ include_once '../frame.php';
 			}
 		}
 	}
-	#var_dump($question_queue);
 	$question_len = count($question_queue);
 	if($step <0 ) die_not_found();
 	if($step >= $question_len) redirect('save_test_result.php','header');
