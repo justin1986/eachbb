@@ -112,7 +112,7 @@ $day = $_POST['bb_day'];
 if((empty($year)||empty($month)||empty($day))&&$nowstate==1){
 	die('请输入完整的宝宝生日');
 }
-if(strlen($year)!=4||$month>12||$day>31){
+if((strlen($year)!=4&&!empty($year))||$month>12||$day>31){
 	die('非法访问！');
 }
 if(!(empty($year)||empty($month)||empty($day))){
