@@ -53,6 +53,8 @@
 		<div id="f_c_m">
 			<div id="flash">
 				<div id="flash_left">
+					<div id="img_flash_container">
+					</div>
 					<?php 
 						$images = $db->query("select a.title,a.url,a.src from eb_images a left join eb_category b on a.category_id=b.id where a.is_adopt=1 and b.name='首页flash图片' order by a.priority asc, created_at desc limit 5");
 						foreach ($images as $image){
@@ -63,7 +65,7 @@
 					?>
 					<script type="text/javascript">
 						var flashvar = {image:"<?php echo implode('|',$src);?>",url:"<?php echo implode('|',$url);?>",info:"<?php echo implode('|',$title);?>"};
-						swfobject.embedSWF("flash/index.swf","flash_left","665","384","8",false,flashvar);
+						swfobject.embedSWF("flash/index.swf","flash_left","665","384","8",false,flashvar,flashparam);
 					</script>
 				</div>
 				<div id="flash_right">

@@ -632,3 +632,33 @@ function echo_href($title,$href,$max_len=0,$html_params=null){
 	$out .=">$display</a>";
 	echo $out;
 }
+
+function month_between($time1,$time2=null){
+	$time2 || $time2 = time();
+	if(is_string($time1)){
+		$time1 = strtotime($time1);
+	}
+	if($time1 === false) return null;
+	if(is_string($time2)){
+		$time2 = strtotime($time2);
+	}
+	if($time2 === false) return null;
+	if($time1 >= $time2){
+		$plus = 1;
+	}else{
+		$time = $time1;
+		$time1 = $time2;
+		$time2 = $time;
+		$plus = -1;
+	}
+	
+	$year = date('Y',$time1) - date('Y',$time2);
+	$mounth = date('m',$time1) - date('m',$time2);
+	if(date('d',$time1) >= date('d',$time2)){
+		return $plus*($year*12 + $mounth + 1);
+	}else{
+		return $plus*($year*12 + $mounth);
+	}
+	
+	
+}
