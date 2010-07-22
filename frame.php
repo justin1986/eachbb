@@ -7,8 +7,8 @@
 	require('config/config.php');
 	include_once(CURRENT_DIR ."lib/pubfun.php");
 	include_once(CURRENT_DIR ."lib/article_fun.php");
-	include_once(CURRENT_DIR ."lib/database_connection_class.php");
-	include_once(CURRENT_DIR ."lib/database_connection_mssql_class.php");
+	#include_once(CURRENT_DIR ."lib/database_connection_class.php");
+	#include_once(CURRENT_DIR ."lib/database_connection_mssql_class.php");
 	include_once(CURRENT_DIR ."lib/table_class.php");
 	include_once(CURRENT_DIR ."lib/category_class.php");
 	include_once(CURRENT_DIR ."lib/table_images_class.php");
@@ -16,6 +16,17 @@
 	require_once CURRENT_DIR ."lib/image_handler_class.php";
 	if(file_exists(ROOT_DIR ."inc/project_pubfun.php")){
 		require_once CURRENT_DIR ."inc/project_pubfun.php";
+	}
+	
+	function __autoload($class_name){
+		if(file_exists(ROOT_DIR .'lib/' . $class_name .'.class.php')){
+			require_once ROOT_DIR .'lib/' . $class_name .'.class.php';
+			return ;
+		}
+		if(file_exists(ROOT_DIR .'inc/' . $class_name .'.class.php')){
+			require_once ROOT_DIR .'inc/' . $class_name .'.class.php';
+			return ;
+		}
 	}
 	
 	function get_config($var,$path=''){
@@ -28,12 +39,12 @@
 	function &get_db() {
 		global $g_db;
 		if(!is_object($g_db)){
-			if(get_config('db_type') == 'mssql'){
-				$g_db = new database_connection_mssql_class();
-			}else
-			{
-				$g_db = new database_connection_class();
-			}
+			#if(get_config('db_type') == 'mssql'){
+			#	$g_db = new database_connection_mssql_class();
+			#}else
+			#{
+			$g_db = new DataBase();
+			#}
 			
 		}
 		if($g_db->connected) return $g_db;

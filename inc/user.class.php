@@ -19,7 +19,7 @@ class RegisterResult {
 
 class User {
 	public static $s_table_name = '`eachbb_member`.member';
-	public static $s_fields = array('id','name','email','authenticated','authenticate_string','authenticated_at','created_at','last_login','uid','avatar','cache_name');
+	public static $s_fields = array('id','name','email','authenticated','authenticate_string','authenticated_at','created_at','last_login','uid','avatar','cache_name','baby_status','baby_birthday','birthday','zip','phone','adress','baby_name','baby_gender','gender','ip','fix_phone','id_num','education','industry','income','register_phone','true_name');
 	
 	/*
 	 * staitc functions

@@ -117,9 +117,6 @@ function get_page_type(){
 }
 
 function init_page_items($page){
-	if(!class_exists('PagePos')){
-		include_once dirname(__FILE__).'/../lib/page_pos.class.php';
-	}
 	global $pos_items;
 	global $pos_page;
 	$pos_page = $page;

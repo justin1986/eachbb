@@ -15,6 +15,7 @@
 </head>
 <body>
 <div id="ibody">
+<!-- 
 	<div id="top_login">
 		<div id="login">
 			<div id="login_login">
@@ -35,6 +36,7 @@
 			</div>
 		</div>
 	</div>
+	 -->
 	<div id="top_menu">
 			<div id="menu_left"></div>
 			<div id="menu_center">

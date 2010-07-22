@@ -24,12 +24,12 @@ body{width:1000px; margin: 0 auto;  background:url(/images/index/img_pg.jpg) rep
 #top_login a{color:white; text-decoration: none;}
 
 
-#top_menu{width:995px; height:103px; margin-left:5px; margin-top:10px;  float:left; display:inline;}
+#top_menu{width:995px; height:103px; margin-left:5px; margin-top:-6px;  float:left; display:inline;}
 #menu_left{width:236px; height:97px; margin-top:6px; font-size:0px; line-height:0px; background:url(/images/index/top.jpg) no-repeat; float:left; display:inline; overflow:hidden;}
 #menu_center{width:702px; height:103px;  background:url(/images/index/top_pg_a_center.jpg) repeat-x;  float:left; display:inline;}
 #menu_right{width:40px; height:103px; background:url(/images/index/top_pg_a_right.jpg) no-repeat;  float:left; display:inline;}
 
-#flash{width:965px; height:410px; margin-top:11px;  float:left; display:inline; }
+#flash{width:965px; height:410px; float:left; display:inline; }
 #flash_left{width:665px; height:400px; margin-top:5px; float:left; display:inline; position: absolute; margin-left:-15px; z-index: 1000; }
 #flash_right{width:286px; height:413px; margin-right:2px; float:right; display:inline;}
 #r_test{width:286px; height:124px;  float:left; display:inline;}
