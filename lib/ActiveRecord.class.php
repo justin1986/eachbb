@@ -55,7 +55,7 @@ class ActiveRecord {
 				static::$s_fields_info[$name] = new TableField();						
 				static::$s_fields_info[$name]->name = $name;
 				static::$s_fields_info[$name]->type = $db->field_by_index(1);
-				static::$s_fields_info[$name]->short_type = $this->_get_mysql_short_type($this->fields[$name]->type);
+				static::$s_fields_info[$name]->short_type = $this->_get_mysql_short_type($db->field_by_index(1));
 				static::$s_fields_info[$name]->key = $db->field_by_index(4);
 				static::$s_fields_info[$name]->comment = $db->field_by_index(8);
 				static::$s_fields_info[$name]->default = $db->field_by_index(5);
@@ -82,16 +82,24 @@ class ActiveRecord {
 		
 	}
 	
-	protected static function table_name(){
-		return get_called_class();
-	}
-	
 	static public function &find(){
 		$db = get_db();
 		$params = func_get_args();
 		$class_name = self::table_name();
 		$item = new $class_name();	
 		return call_user_func_array(array($item,"_find"), $params);
+	}
+	
+	//翻页操作，可自动从$_GET 或 $_POST中读取当前页数
+	static public function &paginate(){		
+		$params = func_get_args();
+		$params[] = array("paginate" => true);
+		return call_user_func_array("self::find",$params);
+	}
+
+	
+	protected static function table_name(){
+		return get_called_class();
 	}
 	
 	public function &load(){
@@ -109,11 +117,52 @@ class ActiveRecord {
 	}
 	
 	protected function _update($force){
-		
+		$key = $this->primary_key;
+		if(intval($this->$key) <= 0) return false;
+		foreach ($this->fields as $name => $field){
+			if($name == $key){
+				continue;
+			}
+			if(!$force && !$field['changed']) continue;
+			if($name == 'created_at') continue;
+			if($name == 'last_edit_at'){
+				$this->name = now();
+			}
+			$value = is_null($field['value']) ? "NULL" : ($field['value'] == 'NULL' ? $field['value'] : "'" .$field['value'] ."'");
+			if($value != 'NULL' && static::$s_fields_info[$name]->short_type == 'int'){
+				$value= intval($field['value']);
+			}
+			$set[] = "{$name}={$value}";
+		}
+		if(empty($set)) return  true;
+		$sql = "update " .$this->table_name ." set " .join(',', $set) ." where {$key}=" .$this->$key ;
+		$db = get_db();
+		echo $sql;
+		$result = $db->execute($sql);
+		if($result === false) return false;
+		foreach ($this->fields as $field){
+			$field['changed'] = false;
+		}
+		return true;
 	}
 	
 	protected function _insert($force){
-		
+		$key = $this->primary_key;
+		foreach ($this->fields as $name => $field){
+			if($name == $key) continue;
+			if($name == 'created_at' || $name == 'last_edit_at'){
+				$field['value'] = now();
+			}
+			$insert_fields[]=$name;
+			$value = is_null($field['value']) ? "NULL" : "'" .$field['value'] ."'";
+			$insert_values[] = $value;
+		}
+		$sql = "insert into " .$this->table_name ." (" .join(',', $insert_fields) .") values (" .join(',', $insert_values) .")";
+		$db = get_db();
+		$result = $db->execute($sql);
+		if($result === false) return false;
+		$this->fields[$key]['value'] = $db->last_insert_id;
+		return true;
 	}
 	
 	protected function &_find(){
@@ -123,6 +172,7 @@ class ActiveRecord {
 		$order = null;
 		$include = true;
 		$group = null;
+		$paginate = false;		
 		$num = func_num_args();
 		if($num > 0){
 			$param1 = func_get_arg(0);
@@ -152,13 +202,26 @@ class ActiveRecord {
 				if(array_key_exists('include', $param)){
 					$include = $param['include'];
 				}
+				if(array_key_exists('paginate', $param)){
+					$paginate = $param['paginate'];
+				}
+				if(array_key_exists('page_var', $param)){
+					$page_var = $param['page_var'];
+				}
+				if(array_key_exists('per_page', $param)){
+					$per_page = $param['per_page'];
+				}
 			}
 		}
 		
 		$sql = $this->_generate_find_sql($include, $conditions, $group, $order, $limit);
 		$db = get_db();
-		$db->query($sql);
-		if (!$db->query($sql)) return false;
+		if($paginate){
+			$tmp_result = $db->paginate($sql,$per_page,$page_var);			
+		}else{
+			$tmp_result = $db->query($sql);
+		}
+		if (!$tmp_result) return false;
 		if($limit == 1){
 			if ($db->record_count <= 0) return null;
 			
@@ -166,7 +229,6 @@ class ActiveRecord {
 				$this->fields[$k]['value'] = $db->field_by_name($k);
 				$this->fields[$k]['changed'] = false;
 			}
-			#var_dump($this);
 			$result = $this;
 		}else {
 			$result = array();
@@ -250,6 +312,14 @@ class ActiveRecord {
 	
 	protected function reset(){
 		
+	}
+	
+	public function __set($name,$value){
+		if(array_key_exists($name, $this->fields)){
+			if($this->$name === $value) return ;
+			$this->fields[$name]['value'] = $value;
+			$this->fields[$name]['changed'] = true;
+		}
 	}
 	
 	public function __get($name){

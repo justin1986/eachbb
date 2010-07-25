@@ -76,7 +76,9 @@ class DataBase {
 		return $this->_result;
 	}
 	
-	function paginate($sql, $per_page=10,$page_var='page') {
+	function paginate($sql, $per_page=null,$page_var=null) {
+		empty($per_page) && $per_page = 10;
+		empty($page_var) && $page_var = 'page';
 		$page_count_var  = $page_var ."_page_count";
 		$record_count_var = $page_var ."_record_count";
 		global $$page_count_var;

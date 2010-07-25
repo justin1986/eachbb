@@ -7,8 +7,6 @@
 	require('config/config.php');
 	include_once(CURRENT_DIR ."lib/pubfun.php");
 	include_once(CURRENT_DIR ."lib/article_fun.php");
-	#include_once(CURRENT_DIR ."lib/database_connection_class.php");
-	#include_once(CURRENT_DIR ."lib/database_connection_mssql_class.php");
 	include_once(CURRENT_DIR ."lib/table_class.php");
 	include_once(CURRENT_DIR ."lib/category_class.php");
 	include_once(CURRENT_DIR ."lib/table_images_class.php");
