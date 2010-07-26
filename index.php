@@ -197,7 +197,7 @@
 					</div>
 					<div class="stuent_d">
 						<div class="word_z">
-							<?php for($k=1;$k<=15;$k++){?>
+							<?php for($k=1;$k<=18;$k++){?>
 							
 							<div class="s_a"<?php $pos="course_tab_list_{$i}_{$k}";show_page_pos($pos,'link');?>>
 								<div class="s_dian"></div>
@@ -432,7 +432,7 @@
 									<div class="sb_content">
 										<?php
 										#$news=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in ($news_id) order by created_at desc limit 3;");
-										for($j=0;$j<4;$j++){ ?>
+										for($j=0;$j<5;$j++){ ?>
 										<div class="sb_ctt"<?php $pos="bottom_news_list_0_$j";show_page_pos($pos,'link')?>>
 											<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?>
 										</div>
@@ -472,7 +472,7 @@
 									<div class="sb_content">
 										<?php 
 										#$news=$db->query("SELECT id,title,short_title,description,content FROM eb_news e where category_id in ($news_id) order by created_at desc limit 3;");
-										for($j=0;$j<4;$j++){ ?>
+										for($j=0;$j<5;$j++){ ?>
 										<div class="sb_ctt"<?php $pos="bottom_news_list_1_$j";show_page_pos($pos,'link')?>>
 											<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?>
 										</div>
@@ -511,7 +511,7 @@
 									<div class="sb_content">
 										<?php 
 											#$news=$db->query("SELECT id,title,short_title,description,content FROM eb_news e where category_id in ($news_id) order by created_at desc limit 3;");
-											for($j=0;$j<4;$j++){ ?>
+											for($j=0;$j<5;$j++){ ?>
 											<div class="sb_ctt"<?php $pos="bottom_news_list_2_$j";show_page_pos($pos,'link')?>>
 												<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?>
 											</div>
@@ -548,7 +548,7 @@
 									<div class="sb_content">
 										<?php 
 											#$news=$db->query("SELECT id,title,short_title,description,content FROM eb_news e where category_id in ($news_id) order by created_at desc limit 3;");
-											for($j=0;$j<4;$j++){ ?>
+											for($j=0;$j<5;$j++){ ?>
 											<div class="sb_ctt"<?php $pos="bottom_news_list_2_$j";show_page_pos($pos,'link')?>>
 												<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?>
 											</div>

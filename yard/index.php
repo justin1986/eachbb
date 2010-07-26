@@ -150,7 +150,9 @@
 								<div class="time_pc">2010-2-2 20:12</div>
 							</div>
 						</div>
+						<!-- 
 						<div class="pc_hr"></div>
+						 -->
 					</div>
 				</div>
 				<div id="r_pho">
