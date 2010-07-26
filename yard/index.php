@@ -145,7 +145,7 @@
 								<div class="pc_img"><img src="/images/yard/pho.jpg"></div>
 							</div>
 							<div class="pc_word">
-								<div class="title_pc"><a href="">纳纳</a><a href="" style="margin-left:10px;">评价了你的秘密</a></div>
+								<div class="title_pc"><a href="">纳纳</a><a href="" style="margin-left:10px; font-size:13px;">评价了你的秘密</a></div>
 								<div class="content_pc"><a href="">纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳</a><font>来自:小龙女</font></div>
 								<div class="time_pc">2010-2-2 20:12</div>
 							</div>
