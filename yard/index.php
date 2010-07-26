@@ -14,6 +14,10 @@
 <div id="ibody">
 	<?php include_once(dirname(__FILE__).'/../inc/_yard_top.php'); ?>
 	<div id="menu">
+		<div id="yard_day">
+			<div id="yard_day_time">2010年05月28日</div>
+			<div id="yard_day_ct">星期天</div>
+		</div>
 		<div id="menu_a"></div>
 		<div id="menu_b"></div>
 		<div id="menu_c"></div>

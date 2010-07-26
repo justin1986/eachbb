@@ -163,7 +163,6 @@
 					<div id="div_right_arrow">
 						<a href="#" id="a_right_arrow"><img src="/images/index/l_r.png" border="0" /></a>
 					</div>
-					
 				</div>
 				<div id="test_right">
 					<script type="text/javascript">$('#test_right').load('/login/ajax.post.php?op=load_login_status_box');</script>
