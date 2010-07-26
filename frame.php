@@ -1,9 +1,9 @@
 <?php	
-	define(CURRENT_DIR, dirname(__FILE__) ."/");
-	define(ROOT_DIR_NONE, dirname(__FILE__));	
-	define(ROOT_DIR,CURRENT_DIR);
-	define(FRAME_VERSION,'1.0');
-	define(FRAME_ROOT, dirname(__FILE__));
+	define("CURRENT_DIR", dirname(__FILE__) ."/");
+	define("ROOT_DIR_NONE", dirname(__FILE__));	
+	define("ROOT_DIR",CURRENT_DIR);
+	define("FRAME_VERSION",'1.0');
+	define("FRAME_ROOT", dirname(__FILE__));
 	require('config/config.php');
 	include_once(CURRENT_DIR ."lib/pubfun.php");
 	include_once(CURRENT_DIR ."lib/article_fun.php");

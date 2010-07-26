@@ -8,7 +8,7 @@ if (!function_exists('linux_path')){
 	} 
 }
 
-define(LIB_PATH, linux_path(dirname(__FILE__)) .'/');
+define("LIB_PATH", linux_path(dirname(__FILE__)) .'/');
 
 function debug_info($msg,$type='php') {
 	if(get_config('debug_tag') === false){

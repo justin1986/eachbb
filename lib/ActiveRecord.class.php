@@ -16,11 +16,50 @@ class TableField {
 	public $extra;
 }
 
+class ARHasMany{
+	private $class_name;
+	private $bind_field;
+	private $belongs_to;
+	public $objs = array();
+	private $loaded = false;
+	
+	public function __construct($class_name,$bind_field,$belongs_to){
+		$this->class_name = $class_name;
+		$this->bind_field = $bind_field;
+		$this->belongs_to = $belongs_to;
+	}
+	
+	public function initialize_objs(){
+		$this->objs = $this->find();
+		//var_dump($this->objs);
+		$this->loaded = true;
+	}
+	
+	public function __call($name,$args){
+		$key = $this->belongs_to->primary_key;
+		$args[] = array("conditions" => "{$this->bind_field}={$this->belongs_to->$key}");
+		return call_user_func_array(array($this->class_name,$name), $args);
+	}
+	
+	public function __get($name){
+		if ($name == 'loaded'){
+			return $this->loaded;
+		}
+	}
+	
+}
+
 class ActiveRecord {
 	static $s_primary_key = "id";
+	static $s_database = '';
 	static $s_fields_info;
-	static $belongs_to = array();
-	static $has_many = array();
+	static $s_belongs_to = array();
+	/*
+	 * static $s_has_many = array(
+								"friends" => array('class_name' => 'friend' , "bind_field" => "u_id")//friends 访问的名称，class_name关联的class，bind_field关联的字段
+							);
+	 */
+	static $s_has_many = array();
 	/*
 	 * 虚拟字段，用于跨表查询，定义格式如下
 	 * static $s_virtual_fields = array(
@@ -41,6 +80,7 @@ class ActiveRecord {
 	protected $virtual_fields = array();//用于记录虚拟字段的的值,在构造函数时初始化	
 	protected $changed_fields = array();
 	protected $_table_name;
+	protected $_has_many_objs = array();
 	function __construct() {
 		if(empty(static::$s_fields_info)){
 			$db = get_db();
@@ -77,6 +117,14 @@ class ActiveRecord {
 					$this->virtual_fields[$field_name] = null;
 				}
 				
+			}
+		}
+		
+		//initialize the has many objects
+		if(static::$s_has_many){
+			foreach (static::$s_has_many as $key => $val) {
+				//create the AHHasMany object				
+				$this->_has_many_objs[$key] = new ARHasMany($val['class_name'],$val['bind_field'],$this);
 			}
 		}
 		
@@ -328,7 +376,7 @@ class ActiveRecord {
 				if(!$this->_table_name){
 					$this->_table_name = self::table_name();	
 				}
-				return $this->_table_name;
+				return (static::$s_database ? '`' .static::$s_database . '`.' : '') . $this->_table_name;
 			break;
 			case 'primary_key':
 				return static::$s_primary_key;
@@ -340,6 +388,19 @@ class ActiveRecord {
 				if(array_key_exists($name, $this->virtual_fields)){
 					return $this->virtual_fields[$name];
 				};
+				if(array_key_exists($name, $this->_has_many_objs)){
+					return $this->_has_many_objs[$name];
+				}
+				$len = strlen($name);
+				if($name{$len-1} == 's'){
+					$tmp_name = substr($name, 0,$len-1);
+					if(array_key_exists($tmp_name, $this->_has_many_objs)){
+						if(!$this->_has_many_objs[$tmp_name]->loaded){
+							$this->_has_many_objs[$tmp_name]->initialize_objs();
+						}
+						return $this->_has_many_objs[$tmp_name]->objs;
+					}
+				}
 			break;
 		}
 	}
