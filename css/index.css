@@ -215,6 +215,7 @@ div{margin:0; padding:0; float:left; display:inline;}
 #q_m_d{width:90px; height:27px; margin-top:6px;  border:0px solid red; margin-left:7px;  background:url(/images/index/w_d.png) no-repeat; float:left; display:inline;}
 .q_m_pg_d{width:564px; height:206px; margin-top:10px; background:url(/images/index/w_pg_pg.gif) no-repeat; float:left; display:inline;}
 .child_t{width:530px; height:99px; margin-left:15px; margin-top:10px; float:left; display:inline;}
+.ch_t_r{width:370px; height:99px; float: left; display: inline;}
 .child_title{width:360px; height:20px; margin-left:10px; margin-top:2px;  line-height:20px; float:left; display:inline;}
 .child_title a{font-weight:bold; font-size:14px; color:#000; text-decoration: none;}
 .child_content{width:370px; height:65px; margin-top:10px; margin-left:5px; overflow:hidden;  float:left; display:inline;}
