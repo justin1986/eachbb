@@ -61,6 +61,7 @@ body{width:970px; margin: 0 auto;}
 	.content_pc{width:460px; line-height:18px; float: left; display: inline;}
 		.content_pc a{font-weight: bold; color: #609B38; font-size:12px; text-decoration: none;}
 		.content_pc font{ margin-left:13px; color: #A9BDDA; font-weight: bold; font-size:12px;}
+	.time_pc{width:460px; line-height:18px; color: #A9BDDA;  font-size:12px; float: left; display: inline;}
 #r_pho{width:227px; height:400px; float:left; display:inline;}
 #r_img{width:192px; height:272px; margin-left:18px; margin-top:-95px; position:absolute;  background:url(/images/yard/r_pg_img.jpg) no-repeat; float:left; display:inline;}
 #r_pto{width:165px; height:201px; margin-left:13px; margin-top:10px; overflow:hidden; float:left; display:inline;}
