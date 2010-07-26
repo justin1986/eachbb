@@ -31,7 +31,7 @@ body{width:970px; margin: 0 auto;}
 #cc_pic{width:560px; height:313px; margin-left:8px; background:url(/images/yard/c_t.jpg) repeat; float:left;display:inline;}
 #cc_photo{width:539px; height:62px; margin-top:15px; margin-left:10px; background:url(/images/yard/c_pg_p.jpg) no-repeat; float:left; display:inline;}
 #pho_l{width:48px; height:48px;	margin-left:7px; margin-top:4px; background:url(/images/yard/pho.jpg) no-repeat; float:left; display:inline;}
-#pho_r{width:445px; height:42px; margin-left:25px; margin-top:7px; text-align:left; overflow:auto; overflow-y:hidden line-height:20px; color:#999999; font-weight:bold; font-size:12px; float:left;}
+#pho_r{width:445px; height:42px; margin-left:25px; margin-top:7px; text-align:left; overflow:auto; overflow-y:hidden; line-height:20px; color:#999999; font-weight:bold; font-size:12px; float:left;}
 #cc_ps{width:530px; height:26px; float:left; display:inline;}
 #ccps_c a{color:#B4BEAF; text-decoration: none;}
 #ccps_l{width:61px; height:13px; margin-left:10px; font-size:0px; line-height:0px; background:url(/images/yard/c_p.jpg) no-repeat; float:left; display:inline;}
