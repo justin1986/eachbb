@@ -165,7 +165,7 @@ div{margin:0; padding:0; float:left; display:inline;}
 .dict_value a{font-size:14px; color:#000000; text-decoration:none;}
 
 
-#mother{width:962px; height:239px; margin-top:1px; overflow:hidden; float:left; display:inline;}
+#mother{width:962px; height:239px; overflow:hidden; float:left; display:inline;}
 #mother_l{width:684px; height:236px; background:url(/images/index/l_p.gif) no-repeat; float:left; display:inline;}
 #m_l_t{width:677px; height:22px; margin-top:10px; float:left; text-align:right; padding-top:8px; padding-right:5px; display:inline;}
 #m_l_t div{ margin-left:155px;  float:left; display:inline;}
