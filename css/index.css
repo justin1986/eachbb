@@ -1,8 +1,13 @@
 body{width:1000px; margin: 0 auto;  background:url(/images/index/img_pg.jpg) repeat-x;}
 
-#ibody{width:1000px; overflow:hidden; margin:0;}
+p{margin:0; padding:0;}
+ul{margin:0; padding:0;}
+li{margin:0; padding:0;} 
+div{margin:0; padding:0; float:left; display:inline;}
 
-#fbody{ width:1000px;  overflow:hidden;  float:left; display:inline;}
+#ibody{width:1000px; margin:0 auto; overflow:hidden; float:none; display:block;}
+
+#fbody{ width:1000px; overflow:hidden; float:left; display:inline;}
 #f_l_pg{width:17px; height:921px; margin:0px; padding:0px; background:url(/images/index/h_1.jpg) no-repeat 0px 0px; font-size:0px; line-height:0px; float:left; display:inline;}
 #f_r_pg{width:15px; height:952px; margin:0px; padding:0px;  font-size:0px; line-height:0px; background:url(/images/index/f_r.jpg) no-repeat 0px 0px; float:left; display:inline;}
 #f_c_m{width:962px; background:#ffffff; overflow:hidden; float:left; display: inline;}
@@ -29,9 +34,9 @@ body{width:1000px; margin: 0 auto;  background:url(/images/index/img_pg.jpg) rep
 #menu_center{width:702px; height:103px;  background:url(/images/index/top_pg_a_center.jpg) repeat-x;  float:left; display:inline;}
 #menu_right{width:40px; height:103px; background:url(/images/index/top_pg_a_right.jpg) no-repeat;  float:left; display:inline;}
 
-#flash{width:965px; height:410px; oveflow:hidden; float:left; display:inline; }
-#flash_left{width:665px; height:400px; margin-top:5px; float:left; display:inline; position: absolute; margin-left:-15px; z-index: 1000; }
-#flash_right{width:286px; height:413px; margin-right:5px; float:right; display:inline;}
+#flash{width:965px; height:410px; overflow:hidden; margin:0; padding:0; float:left; display:inline; }
+#flash_left{width:665px; height:400px; overflow:hidden; margin-top:5px; float:left; display:inline; position: absolute; margin-left:-15px; z-index: 1000; }
+#flash_right{width:286px; height:413px; overflow:hidden; margin-right:5px; float:right; display:inline;}
 #r_test{width:286px; height:124px;  float:left; display:inline;}
 	#r_test img{width:286px; height:124px; border:none;}
 #test_value{width:180px; height:80px; margin-left:90px; margin-top:38px; float:left; display:inline;}
