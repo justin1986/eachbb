@@ -174,9 +174,9 @@
 					<div id="student_top">
 						<div id="u">
 							<div><img src="/images/index/course_tab_0_sel.jpg" class="course_tab"></div>
-							<div><img src="/images/index/course_tab_1.jpg" class="course_tab"></div>
-							<div><img src="/images/index/course_tab_2.jpg" class="course_tab"></div>
-							<div><img src="/images/index/course_tab_3.jpg" class="course_tab"></div>
+							<div style="margin-left:25px;"><img src="/images/index/course_tab_1.jpg" class="course_tab"></div>
+							<div style="margin-left:35px;"><img src="/images/index/course_tab_2.jpg" class="course_tab"></div>
+							<div style="margin-left:30px;"><img src="/images/index/course_tab_3.jpg" class="course_tab"></div>
 						</div>
 						<a href="/course/">
 							<img id="dict_more"  style="margin-top:20px;" src="/images/index/more.gif" />
@@ -241,11 +241,11 @@
 				<div id="mother_l">
 					<div id="m_l_t">
 						<div>
-							<a href="/assistant/index.php?age=-2">怀孕前</a>
-							<a href="/assistant/index.php?age=-1">怀孕中</a>
-							<a href="/assistant/index.php?age=1">0-1岁</a>
-							<a href="/assistant/index.php?age=2">1-2岁</a>
-							<a href="/assistant/index.php?age=3">2-3岁</a>
+							<a href="/assistant/index.php?age=-2"><img src="/images/index/1.png" /></a>
+							<a href="/assistant/index.php?age=-1"><img src="/images/index/2.png"/></a>
+							<a href="/assistant/index.php?age=1"><img src="/images/index/3.png"/></a>
+							<a href="/assistant/index.php?age=2"><img src="/images/index/4.png"/></a>
+							<a href="/assistant/index.php?age=3"><img src="/images/index/5.png"/></a>
 						</div>
 						<a href="/assistant/">
 							<img src="/images/index/more.gif" border="0" />
