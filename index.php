@@ -102,7 +102,7 @@
 									<?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href);?>
 								</div>
 								<?php if($i != 8){?>
-								<div class = "student_hr"></div>		
+								<div class = "student_hr"></div>
 								<?php }}?>
 							</div>
 							<div class="student_left" id="student_left_2" style="display:none;">
@@ -113,7 +113,7 @@
 									<?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href);?>
 								</div>
 								<?php if($i != 3){?>
-								<div class = "student_hr"></div>	
+								<div class = "student_hr"></div>
 								<?php }}?>
 							</div>
 							<div id="student_right"></div>
@@ -135,7 +135,6 @@
 				<div id="sousuo_d"></div>
 			</div>
 			<div id="test">
-			
 				<div id="test_left">
 					<div id="test_left_top">
 						请输入宝宝的出生日期:　<input type="text" id='date_picker' />
@@ -175,9 +174,9 @@
 					<div id="student_top">
 						<div id="u">
 							<div><img src="/images/index/course_tab_0_sel.jpg" class="course_tab"></div>
-							<div><img src="/images/index/course_tab_1.jpg" class="course_tab"></div>
-							<div><img src="/images/index/course_tab_2.jpg" class="course_tab"></div>
-							<div><img src="/images/index/course_tab_3.jpg" class="course_tab"></div>
+							<div style="margin-left:25px;"><img src="/images/index/course_tab_1.jpg" class="course_tab"></div>
+							<div style="margin-left:35px;"><img src="/images/index/course_tab_2.jpg" class="course_tab"></div>
+							<div style="margin-left:30px;"><img src="/images/index/course_tab_3.jpg" class="course_tab"></div>
 						</div>
 						<a href="/course/">
 							<img id="dict_more"  style="margin-top:20px;" src="/images/index/more.gif" />
@@ -198,7 +197,7 @@
 					</div>
 					<div class="stuent_d">
 						<div class="word_z">
-							<?php for($k=1;$k<=15;$k++){?>
+							<?php for($k=1;$k<=18;$k++){?>
 							
 							<div class="s_a"<?php $pos="course_tab_list_{$i}_{$k}";show_page_pos($pos,'link');?>>
 								<div class="s_dian"></div>
@@ -242,11 +241,11 @@
 				<div id="mother_l">
 					<div id="m_l_t">
 						<div>
-							<a href="/assistant/index.php?age=-2">怀孕前</a>
-							<a href="/assistant/index.php?age=-1">怀孕中</a>
-							<a href="/assistant/index.php?age=1">0-1岁</a>
-							<a href="/assistant/index.php?age=2">1-2岁</a>
-							<a href="/assistant/index.php?age=3">2-3岁</a>
+							<a href="/assistant/index.php?age=-2"><img src="/images/index/1.png" /></a>
+							<a href="/assistant/index.php?age=-1"><img src="/images/index/2.png"/></a>
+							<a href="/assistant/index.php?age=1"><img src="/images/index/3.png"/></a>
+							<a href="/assistant/index.php?age=2"><img src="/images/index/4.png"/></a>
+							<a href="/assistant/index.php?age=3"><img src="/images/index/5.png"/></a>
 						</div>
 						<a href="/assistant/">
 							<img src="/images/index/more.gif" border="0" />
@@ -406,11 +405,11 @@
 									<div class="sblct_t"><a href="<?php echo get_news_list_url(1);?>">更多</a></div>
 									<div class="sblct_bb">
 										<?php 
-											#$category=array("120"=>"母乳喂养","121"=>"人工喂养","122"=>"混合喂养","123"=>"母乳准备","124"=>"母乳技巧","125"=>"吐奶溢奶");
-											#$category_ids=array_keys($category);
-											#$category_ids=implode(',',$category_ids);
-											#$db=get_db();
-											#$news_s=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in ($category_ids) order by created_at desc limit 1;");
+										#$category=array("120"=>"母乳喂养","121"=>"人工喂养","122"=>"混合喂养","123"=>"母乳准备","124"=>"母乳技巧","125"=>"吐奶溢奶");
+										#$category_ids=array_keys($category);
+										#$category_ids=implode(',',$category_ids);
+										#$db=get_db();
+										#$news_s=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in ($category_ids) order by created_at desc limit 1;");
 										?>
 									</div>
 								</div>
@@ -433,7 +432,7 @@
 									<div class="sb_content">
 										<?php
 										#$news=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in ($news_id) order by created_at desc limit 3;");
-										for($j=0;$j<3;$j++){ ?>
+										for($j=0;$j<5;$j++){ ?>
 										<div class="sb_ctt"<?php $pos="bottom_news_list_0_$j";show_page_pos($pos,'link')?>>
 											<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?>
 										</div>
@@ -471,13 +470,13 @@
 										 -->
 									</div>
 									<div class="sb_content">
-											<?php 
-											#$news=$db->query("SELECT id,title,short_title,description,content FROM eb_news e where category_id in ($news_id) order by created_at desc limit 3;");
-											for($j=0;$j<3;$j++){ ?>
-											<div class="sb_ctt"<?php $pos="bottom_news_list_1_$j";show_page_pos($pos,'link')?>>
-												<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?>
-											</div>
-											<?php }?>
+										<?php 
+										#$news=$db->query("SELECT id,title,short_title,description,content FROM eb_news e where category_id in ($news_id) order by created_at desc limit 3;");
+										for($j=0;$j<5;$j++){ ?>
+										<div class="sb_ctt"<?php $pos="bottom_news_list_1_$j";show_page_pos($pos,'link')?>>
+											<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?>
+										</div>
+										<?php }?>
 									</div>
 								</div>
 							</div>
@@ -512,7 +511,7 @@
 									<div class="sb_content">
 										<?php 
 											#$news=$db->query("SELECT id,title,short_title,description,content FROM eb_news e where category_id in ($news_id) order by created_at desc limit 3;");
-											for($j=0;$j<3;$j++){ ?>
+											for($j=0;$j<5;$j++){ ?>
 											<div class="sb_ctt"<?php $pos="bottom_news_list_2_$j";show_page_pos($pos,'link')?>>
 												<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?>
 											</div>
@@ -549,7 +548,7 @@
 									<div class="sb_content">
 										<?php 
 											#$news=$db->query("SELECT id,title,short_title,description,content FROM eb_news e where category_id in ($news_id) order by created_at desc limit 3;");
-											for($j=0;$j<3;$j++){ ?>
+											for($j=0;$j<5;$j++){ ?>
 											<div class="sb_ctt"<?php $pos="bottom_news_list_2_$j";show_page_pos($pos,'link')?>>
 												<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?>
 											</div>
@@ -557,7 +556,6 @@
 									</div>
 								</div>
 							</div>
-
 						</div>
 					</div>
 					<div id="sbl_r"></div>
@@ -568,18 +566,18 @@
 						<div class="son_top">
 							<div class="son_t_l">关于<font style="color:#A4C853; font-weight:bold;" >新生儿</font></div>
 							<div class="son_t_r"><a href="<?php echo get_news_list_url(208); ?>"><font style="color:#F33B0A; font-weight:bold;" >+</font> 更多</a></div>
-							<div class="son_content">
-								<?php 
-									for($k=8;$k<19;$k++){
-								 ?>
-								<div class="son_c_z"<?php $pos="right_bottom_list_$k";show_page_pos($pos,'link');?>>
-									<div class="son_c_z_l"></div>
-									<div class="son_c_z_r">
-										<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?>
-									</div>
+						</div>
+						<div class="son_content">
+							<?php 
+								for($k=8;$k<19;$k++){
+							 ?>
+							<div class="son_c_z"<?php $pos="right_bottom_list_$k";show_page_pos($pos,'link');?>>
+								<div class="son_c_z_l"></div>
+								<div class="son_c_z_r">
+									<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?>
 								</div>
-								<?php } ?>
 							</div>
+							<?php } ?>
 						</div>
 					</div>
 					<div id="sbl_br"></div>
@@ -600,8 +598,8 @@
 			</div>
 		<div id="bottom">关于网趣宝贝 - 加入我们 - 友情链接 - 联系我们 - 服务条款 - 隐私保护 - 网站地图</div>
 		<div id="bottom_b">Copyright &c 1997-2010 HAHA.smg.com All Rights Reserved.</div>
-	</div>
-	<div id="f_r_pg"></div>
+		</div>
+		<div id="f_r_pg"></div>
 	</div>
 </div>
 </body>

@@ -112,7 +112,7 @@
 						</textarea>
 					</div>
 					<div id="cc_ps">
-						<div id="ccps_l"></div>
+						<a href=""><img id="ccps_l" src="/images/yard/c_p.jpg" /></a>
 						<div id="ccps_c">
 							<div id="ccpsc_l">
 								<div id="ccpsc_img"></div>
@@ -135,7 +135,7 @@
 							<div id="m_w"></div>
 							<div class="c_ch_w" style="background:url(/images/yard/m_pg.jpg) no-repeat;">全部</div>
 							<div class="c_ch_w">一句话</div>
-							<div class="c_ch_w">照片</a></div>
+							<div class="c_ch_w">照片</div>
 							<div class="c_ch_w">日志</div>
 							<div class="c_ch_w">分享</div>
 							<div class="c_ch_w">随便看看</div>
@@ -144,9 +144,15 @@
 							<div class="pc_pg_img">
 								<div class="pc_img"><img src="/images/yard/pho.jpg"></div>
 							</div>
-							<div class="pc_word"></div>
+							<div class="pc_word">
+								<div class="title_pc"><a href="">纳纳</a><a href="" style="margin-left:10px;">评价了你的秘密</a></div>
+								<div class="content_pc"><a href="">纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳</a><font>来自:小龙女</font></div>
+								<div class="time_pc">2010-2-2 20:12</div>
+							</div>
 						</div>
+						<!-- 
 						<div class="pc_hr"></div>
+						 -->
 					</div>
 				</div>
 				<div id="r_pho">
