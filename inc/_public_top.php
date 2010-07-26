@@ -126,7 +126,6 @@
 	float:right;
 	display:inline;
 }
-
 </style>
 <div id="top_login">
 		<div id="tl_l"></div>
