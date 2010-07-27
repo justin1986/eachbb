@@ -3,7 +3,6 @@ body{width:1000px; font-size:12px; color:#000000; margin: 0 auto;  background:ur
 #ibody_left{width:200px; background:#ffffff; float:left; display:inline;}
 #ibody_right{width:748px; background:#ffffff; float:right; display:inline;}
 
-#top_login{width:980px; height:20px; margin-top:15px; margin-left:20px;  font-size:13px; color:#ffffff; float:right; display:inline;}
 #login{width:400px; height:20px; z-index:12; float:right; display:inline;}
 #login_login{width:80px; height:20px; float:left; display:inline;}
 #login_img{width:22px; height:20px; background:url(../images/img_w_a.jpg) no-repeat; float:left; display:inline;}
