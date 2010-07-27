@@ -229,7 +229,7 @@
 						<?php for($i = 1; $i < 7; $i++){ ?>
 						<div class="dict_c"<?php $pos="right_tab_{$j}_{$i}";show_page_pos($pos,'link');?>>
 							<div class="dict_number"<?php if($i==1) echo ' style="background:url(/images/index/red.jpg) no-repeat;"';?>><?php echo $i; ?></div>
-							<div class="dict_value"><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href);?></div>
+							<div class="dict_value" style='margin-top:3px;'><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href);?></div>
 						</div>
 						<?php } ?>
 					</div>

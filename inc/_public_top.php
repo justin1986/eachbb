@@ -1,6 +1,8 @@
 <?php 
-	include_once('../frame.php');
+	include_once(dirname(__FILE__).'./../frame.php');
 	set_charset('utf-8');
+	js_include_tag('swfobject');
+	use_jquery_ui();
 ?>
 <style>
 #top_login{
@@ -35,7 +37,6 @@
 #tl_r_c{
 	width:678px;
 	height:83px;
-	background:url('/images/top/t_c.jpg') repeat-x;
 	float:left;
 }
 .me_hh{
@@ -130,9 +131,10 @@
 <div id="top_login">
 		<div id="tl_l"></div>
 		<div id="tl_r">
-			<div id="tl_r_l"></div>
-			<div id="tl_r_c"></div>
-			<div id="tl_r_r"></div>
+			<!-- <div id="tl_r_l"></div><div id="tl_r_r"></div> background:url('/images/top/t_c.jpg') repeat-x;-->
+			<div id="tl_r_c">
+			</div>
+			
 		</div>
 	</div>
 	<div id="top_menu" style="height:33px;">
