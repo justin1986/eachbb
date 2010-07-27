@@ -1,4 +1,4 @@
-﻿body{width:1000px; font-size:12px; color:#000000; margin: 0 auto;  background:url(../images/img_pg.jpg) repeat-x;}
+body{width:1000px; font-size:12px; color:#000000; margin: 0 auto;  background:url(../images/img_pg.jpg) repeat-x;}
 #ibody{width:972px; overflow:hidden; background:#ffffff; margin:0 auto; margin-left:25px; float:left; display:inline;}
 #ibody_left{width:200px; background:#ffffff; float:left; display:inline;}
 #ibody_right{width:748px; background:#ffffff; float:right; display:inline;}
@@ -46,17 +46,17 @@
 #member_left_content .l_content .content{width:145px; height:25px; margin-left:5px; padding-left:15px; font-weight:bold; line-height:25px; background:url('/images/member/l_content_bg.jpg') 0 6px no-repeat; overflow:hidden; float:left; display:inline;}
 #member_left_content .l_content .content a{color:#666666; text-decoration:none;}
 
-.r_title{width:715px; height:22px; margin-top:10px; padding-left:25px; border-bottom:2px solid #f1f1f1; font-size:14px; font-weight:bold; color:#000000; line-height:22px; background:url('/images/member/r_title_bg.jpg') 5px 4px no-repeat; float:left; display:inline;}
+.r_title{width:530px; height:22px; margin-top:10px; padding-left:25px; border-bottom:2px solid #f1f1f1; font-size:14px; font-weight:bold; color:#000000; line-height:22px; background:url('/images/member/r_title_bg.jpg') 5px 4px no-repeat; float:left; display:inline;}
 .r_title span{color:#ff6600;}
-.r_table{width:740px; margin-top:10px; float:left; display:inline;}
+.r_table{width:555px; margin-top:10px; float:left; display:inline;}
 .r_table tr{line-height:34px;}
-.r_table .td1{width:115px; border-top:1px solid #f1f1f1; border-bottom:1px solid #f1f1f1; padding-right:5px; text-align:right; color:#666666; background:#f9f9f9;}
-.r_table .td2{width:615px; border-top:1px solid #f1f1f1; border-bottom:1px solid #f1f1f1; padding-left:5px; text-align:left;}
+.r_table .td1{width:85px; border-top:1px solid #f1f1f1; border-bottom:1px solid #f1f1f1; padding-right:5px; text-align:right; color:#666666; background:#f9f9f9;}
+.r_table .td2{width:455px; border-top:1px solid #f1f1f1; border-bottom:1px solid #f1f1f1; padding-left:5px; text-align:left;}
 .r_table span{color:#ff6600;}
 .r_table .td2 input{width:213px; height:22px; margin-top:3px; padding-left:5px; border:1px solid #cccccc; color:#333333; line-height:22px;}
 .r_table .td2 input.radio{width:20px; height:16px; border:0px; margin-left:5px;}
 .r_table .td2 select{height:20px; margin-right:5px; border:1px solid #cccccc;}
-#r_button{width:740px; margin-top:20px; text-align:center; float:left; display:inline;}
+#r_button{width:540px; margin-top:20px; text-align:center; float:left; display:inline;}
 #r_button button{width:72px; height:30px; border:0px; cursor:pointer; background:url('/images/member/save.jpg') no-repeat;}
 
 #bottom{width:972px;  margin-left:25px; background:#ffffff; padding-top:20px; padding-bottom:10px; text-align:center; font-size:12px; color:#666666; float:left; display:inline;}
