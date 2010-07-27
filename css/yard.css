@@ -7,7 +7,7 @@ body{width:970px; margin: 0 auto;}
 #menu_a,#menu_b,#menu_c,#menu_d,#menu_e,#menu_f{width:80px; height:62px; float:left; display:inline;}
 
 #yard_day_time{width:105px; height:22px; line-height:22px; margin-top:3px; margin-left:18px; color:#ffffff; font-size:12px; font-weight: bold; text-align: center;}
-#yard_day_ct{width:105px; height:22px; line-height:22px; margin-top:3px; margin-left:18px; color:#ffffff; font-size:20px; font-weight: bold; text-align: center;}
+#yard_day_ct{width:105px; height:22px; line-height:30px; margin-top:3px; margin-left:15px; color:#ffffff; font-size:20px; font-weight: bold; text-align: center;}
 
 #menu_a{ margin-left:50px;  background:url(../images/yard/m_a.jpg) no-repeat; border-right:1px solid #E6F0E5;}
 #menu_b{background:url(../images/yard/m_b.jpg) no-repeat; border-right:1px solid #E6F0E5;}
