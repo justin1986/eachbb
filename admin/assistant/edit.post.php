@@ -22,6 +22,12 @@
 		$news->click_count = 0;					
 	}
 	$news->save();
+	if($_POST['copy_to']){
+		$copy_to = explode(',',$_POST['copy_to']);
+		foreach($copy_to as $cid){
+			
+		}
+	}
 	$href = "index.php";
 	#redirect($href.'?category='.$_POST['news']['category_id']);
 	redirect($href);
