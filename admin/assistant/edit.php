@@ -94,6 +94,7 @@
 					<input type="hidden" name="news[category_id]" id="category_id" value="<?php echo $news->category_id;?>">
 					<input type="hidden" name="news[is_adopt]" value="<?php echo $news->is_adopt;?>">
 					<input type="hidden" name="id" value="<?php echo $news->id;?>">
+					<input type="hidden" name="copy_to" value="" id="copy_to" />
 				</td>
 			</tr>	
 		</table>
@@ -137,7 +138,22 @@
 			}
 		}
 		$('#category_id').val(category_id);
-		
+		//handle the copy method
+		var copy_category = new Array();
+		$('.copy_tr').each(function(){
+			var category = 0;
+			category = $(this).find('.category_copy:last').val();
+			if(category <= 0){
+				alert('请选择复制的分类');
+				return false;
+			}
+			copy_category.push(category);
+		});
+		if(copy_category){
+			$('#copy_to').val(copy_category.join(','));
+		}else{
+			$('#copy_to').val('');
+		}
 		var editor = CKEDITOR.instances['news[content]'] ;
 		var content = editor.getData();
 		if(content==""){
