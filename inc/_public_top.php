@@ -11,7 +11,6 @@
 }
 #tl_l{
 	width:227px;
-	height: 103px;
 	background:url('/images/top/logon.jpg') no-repeat;
 	float:left;
 }
@@ -129,7 +128,7 @@
 }
 </style>
 <div id="top_login">
-		<div id="tl_l"></div>
+		<div id="tl_l" style="height: 83px; margin-top:10px;"></div>
 		<div id="tl_r">
 			<!-- <div id="tl_r_l"></div><div id="tl_r_r"></div> background:url('/images/top/t_c.jpg') repeat-x;-->
 			<div id="tl_r_c">
