@@ -2,6 +2,11 @@
 	$news_list=array("积极备孕页","孕期生活告","生长发育购","日常护理示","疾病与接种子","早期教育置","宠爱自己");
 	include_once('../inc/_public_top.php');
 	?> 
+	<script type="text/javascript">
+					var flashvar = {defaultIndex:'4'};
+					var flashparam = {wmode:'Transparent'};
+					swfobject.embedSWF("/flash/menu.swf","tl_r_c","702","103","8",false,flashvar,flashparam);
+	</script>
 	<div id="top2">
 		<div id="top2_t">
 			<div id="tt_l"></div>
