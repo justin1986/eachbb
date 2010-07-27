@@ -548,7 +548,7 @@
 										<?php 
 											#$news=$db->query("SELECT id,title,short_title,description,content FROM eb_news e where category_id in ($news_id) order by created_at desc limit 3;");
 											for($j=0;$j<5;$j++){ ?>
-											<div class="sb_ctt"<?php $pos="bottom_news_list_2_$j";show_page_pos($pos,'link')?>>
+											<div class="sb_ctt"<?php $pos="bottom_news_list_3_$j";show_page_pos($pos,'link')?>>
 												<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?>
 											</div>
 										<?php }?>

@@ -10,7 +10,7 @@
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-CN>
@@ -28,18 +28,18 @@
 	  <a href="list.php" id=btn_back></a>
 	</div>
 <div id=itable>
-	<table cellspacing="1"  align="center">
 	<form id="user_form" method="post" action="post.php">
-		<tr class=tr4>
-			<td class=td1 width=25%>敏感词(多个词之间可以用|分割)</td>
-			<td width=75%><input type="text" name="post[text]" value="<?php echo $table->text;?>" class="required"></td>
-		</tr>
-		<tr class=btools>
-			<td colspan="10"><input type="submit" value="提交"></td>
-		</tr>
-		<input type="hidden" name="id" value="<?php echo $id;?>">
+		<table cellspacing="1"  align="center">
+		
+			<tr class=tr4>
+				<td class=td1 width=25%>敏感词(多个词之间可以用|分割)</td>
+				<td width=75%><input type="text" name="post[text]" value="<?php echo $table->text;?>" class="required"></td>
+			</tr>
+			<tr class=btools>
+				<td colspan="10"><input type="submit" value="提交"><input type="hidden" name="id" value="<?php echo $id;?>" /></td>
+			</tr>
+		</table>
 	</form>
-	</table>
 </div>
 </body>
 </html>

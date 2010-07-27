@@ -14,7 +14,7 @@
 		css_include_tag('admin2','colorbox','jquery_ui');
 		use_jquery_ui();
 		validate_form("news_edit");
-		js_include_tag('category_class.js','jquery.colorbox-min.js','../ckeditor/ckeditor.js','pubfun');
+		js_include_tag('category_class.js','jquery.colorbox-min.js','../ckeditor/ckeditor.js','pubfun','assistant/edit');
 	?>
 </head>
 <?php 
@@ -50,22 +50,11 @@
 				<td><input type="text" name="news[short_title]" id="news_short_title" value="<?php echo strip_tags($news->short_title);?>"></input></td>
 			</tr>
 			
-			<tr class="tr4">
+			<tr class="tr4" id="tr_category">
 				<td class="td1">分类</td>
-				<td><span id="span_category"></span></td>
+				<td><span id="span_category"></span> <a href="#" id="a_copy" style="color:blue">复制</a></td>
 			</tr>
-			
-				
-			<tr class="tr4">
-				<td class="td1">优先级</td>
-				<td><input type="text" name=news[priority] id="priority"  class="number" value="<?php echo $news->priority;?>">(0~100)</td>
-			</tr>
-			
-			<tr class="tr4">
-				<td class="td1">图片</td>
-				<td><input type="file" name=news[image]><?php if($news->image!=''){?><a target="_blank" href='<?php echo $news->image;?>'>点击查看</a><?php }?></td>
-			</tr>
-			
+						
 			<tr class="tr4">
 				<td class="td1">年龄段</td>
 				<td>
@@ -80,7 +69,17 @@
 				</td>
 			</tr>
 			
+				
+			<tr class="tr4">
+				<td class="td1">优先级</td>
+				<td><input type="text" name=news[priority] id="priority"  class="number" value="<?php echo $news->priority;?>">(0~100)</td>
+			</tr>
 			
+			<tr class="tr4">
+				<td class="td1">图片</td>
+				<td><input type="file" name=news[image]><?php if($news->image!=''){?><a target="_blank" href='<?php echo $news->image;?>'>点击查看</a><?php }?></td>
+			</tr>
+
 			<tr class="tr4 normal">
 				<td  class="td1">简短描述</td><td><?php show_fckeditor('news[description]','Admin',false,"100",$news->description);?></td>
 			</tr>
