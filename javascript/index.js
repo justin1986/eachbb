@@ -72,7 +72,7 @@ $(function(){
 		$('#student_left_' + selected).show();
 	},function(){});
 	
-	$('#dict_menu .dict_tab').hover(function(){
+	$('#dict_menu .dict_tab').click(function(){
 		var selected=$('.dict_tab').index($(this));
 		for(var i = 0 ; i < 5; i++){
 			if(i == selected){
@@ -91,7 +91,7 @@ $(function(){
 		}
 		$('.desc').hide();
 		$('#desc_'+selected).show();
-	},function(){});
+	});
 	$('.q_m_p').hover(function(){
 		var selected=$('.q_m_p').index($(this));
 		for(var i = 0; i < 4; i++){
