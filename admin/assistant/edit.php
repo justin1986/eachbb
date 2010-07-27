@@ -154,7 +154,6 @@
 		}else{
 			$('#copy_to').val('');
 		}
-		alert($('#copy_to').val());
 		var editor = CKEDITOR.instances['news[content]'] ;
 		var content = editor.getData();
 		if(content==""){

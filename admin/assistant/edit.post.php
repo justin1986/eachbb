@@ -25,7 +25,11 @@
 	if($_POST['copy_to']){
 		$copy_to = explode(',',$_POST['copy_to']);
 		foreach($copy_to as $cid){
-			
+			$cid = intval($cid);
+			if($cid <=0) continue;
+			$news->id = 0;
+			$news->category_id = $cid;
+			$news->save();
 		}
 	}
 	$href = "index.php";
