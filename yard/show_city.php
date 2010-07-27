@@ -2,7 +2,6 @@
 include("../frame.php");
 
 $province = $_POST['province'];
-
 $db = get_db();
 $city = $db->query("select city from phpcms_city where province='$province' group by city order by cityid");
 ?>
