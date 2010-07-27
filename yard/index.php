@@ -18,12 +18,12 @@
 			<div id="yard_day_time">2010年05月28日</div>
 			<div id="yard_day_ct">星期天</div>
 		</div>
-		<div id="menu_a"></div>
-		<div id="menu_b"></div>
-		<div id="menu_c"></div>
-		<div id="menu_d"></div>
-		<div id="menu_e"></div>
-		<div id="menu_f"></div>
+		<div id="menu_a" class="menu_pic"></div>
+		<div id="menu_b" class="menu_pic"></div>
+		<div id="menu_c" class="menu_pic"></div>
+		<div id="menu_d" class="menu_pic"></div>
+		<div id="menu_e" class="menu_pic"></div>
+		<div id="menu_f" class="menu_pic"></div>
 	</div>
 	<div id="content">
 		<div id="c_l">
@@ -131,18 +131,18 @@
 								<div id="ccpsc_wordb"><a href="">发股票</a></div>
 								</div>
 							<div id="c_moblie">
-								<div id="c_moblie_i"></div>
-								<div id="c_moblie_w"><a href="">手机发布</a></div>
+								<div id="c_moblie_w"><a href="">发布</a></div>
 								</div>
 						</div>
 						<div id="c_ch">
 							<div id="m_w"></div>
-							<div class="c_ch_w" style="background:url(/images/yard/m_pg.jpg) no-repeat;">全部</div>
+							<div class="c_ch_w" style=" border-bottom:0px solid #E3F2DF;background:url(/images/yard/m_pg.jpg) no-repeat;">全部</div>
 							<div class="c_ch_w">一句话</div>
 							<div class="c_ch_w">照片</div>
 							<div class="c_ch_w">日志</div>
 							<div class="c_ch_w">分享</div>
 							<div class="c_ch_w">随便看看</div>
+							<div id="m_w" style="width:30px;"></div>
 						</div>
 						<div class="pc_z">
 							<div class="pc_pg_img">

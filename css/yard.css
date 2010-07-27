@@ -4,12 +4,12 @@ body{width:970px; margin: 0 auto;}
 
 #menu{width:700px; height:62px; margin-top:15px; float:left; display:inline;}
 #yard_day{width:124px; height:62px; background:url(../images/yard/day.jpg) no-repeat; float:left; display:inline;}
-#menu_a,#menu_b,#menu_c,#menu_d,#menu_e,#menu_f{width:80px; height:62px; float:left; display:inline;}
+#menu_a,#menu_b,#menu_c,#menu_d,#menu_e,#menu_f{width:80px; height:62px; cursor:pointer; float:left; display:inline;}
 
 #yard_day_time{width:105px; height:22px; line-height:22px; margin-top:3px; margin-left:18px; color:#ffffff; font-size:12px; font-weight: bold; text-align: center;}
 #yard_day_ct{width:105px; height:22px; line-height:30px; margin-top:3px; margin-left:15px; color:#ffffff; font-size:20px; font-weight: bold; text-align: center;}
 
-#menu_a{ margin-left:50px;  background:url(../images/yard/m_a.jpg) no-repeat; border-right:1px solid #E6F0E5;}
+#menu_a{ margin-left:50px;  background:url(../images/yard/m_0.jpg) no-repeat; border-right:1px solid #E6F0E5;}
 #menu_b{background:url(../images/yard/m_b.jpg) no-repeat; border-right:1px solid #E6F0E5;}
 #menu_c{background:url(../images/yard/m_c.jpg) no-repeat; border-right:1px solid #E6F0E5;}
 #menu_d{background:url(../images/yard/m_d.jpg) no-repeat; border-right:1px solid #E6F0E5;}
@@ -36,7 +36,7 @@ body{width:970px; margin: 0 auto;}
 #cc_pic{width:560px; height:313px; margin-left:8px; background:url(/images/yard/c_t.jpg) repeat; float:left;display:inline;}
 #cc_photo{width:539px; height:62px; margin-top:15px; margin-left:10px; background:url(/images/yard/c_pg_p.jpg) no-repeat; float:left; display:inline;}
 #pho_l{width:48px; height:48px;	margin-left:7px; margin-top:4px; background:url(/images/yard/pho.jpg) no-repeat; float:left; display:inline;}
-#pho_r{width:445px; height:42px; margin-left:25px; margin-top:7px; text-align:left; overflow:auto; overflow-y:hidden; line-height:20px; color:#999999; font-weight:bold; font-size:12px; float:left;}
+#pho_r{width:448px; height:43px; margin-left:25px; margin-top:7px; text-align:left; overflow:auto; overflow-y:hidden; line-height:20px; color:#999999; border:1px solid #EAEAEA; font-weight:bold; font-size:12px; float:left;}
 #cc_ps{width:530px; height:26px; float:left; display:inline;}
 #ccps_c a{color:#B4BEAF; text-decoration: none;}
 #ccps_l{width:61px; height:13px; margin-left:10px; font-size:0px; line-height:0px; border:0px solid red; float:left; display:inline;}
@@ -51,11 +51,10 @@ body{width:970px; margin: 0 auto;}
 #ccpsc_imgb{width:10px; height:11px;  margin-top:3px; background:url(/images/yard/c_pg_d.jpg) no-repeat; float:left; display:inline;}
 #ccpsc_wordb{width:40px; height:14px; margin-left:10px; margin-top:2px; font-size:12px; float:left; display:inline;}
 #c_moblie{width:76px; height:18px; margin-top:5px; float:right; display:inline; }
-#c_moblie_i{width:7px; height:11px;  margin-top:3px; background:url(/images/yard/c_pg_m.jpg) no-repeat; float:left; display:inline;}
-#c_moblie_w{width:50px; height:14px; margin-left:10px; margin-top:2px; font-size:12px; float:left; display:inline;}
-#m_w{width:50px; height:15px; float:left; display:inline;}
-#c_ch{width:491px; height:25px; margin-top:25px; margin-left:70px; overflow:hidden; border-bottom:1px solid #E3F2DF; float:left; display:inline;}
-.c_ch_w{width:71px; height:24px; font-size:14px; cursor:pointer;  font-weight:bold; color:#7FB962; line-height:24px; margin-top:1px; text-align:center; float:left; display:inline;}
+#c_moblie_w{width:50px; height:14px; margin-left:10px; margin-top:2px; font-size:12px; text-align:right; float:right; display:inline;}
+#m_w{width:50px; height:24px; border-bottom:1px solid #E3F2DF; float:left; display:inline;}
+#c_ch{width:491px; height:25px; margin-top:25px; margin-left:70px; overflow:hidden; float:left; display:inline;}
+.c_ch_w{width:68px; height:22px; border-bottom:1px solid #E3F2DF; font-size:14px; cursor:pointer;  font-weight:bold; color:#7FB962; line-height:22px; margin-top:1px; text-align:center; float:left; display:inline;}
 .pc_z{width:555px;  margin-left:7px; margin-top:5px; float:left; display:inline;}
 .pc_hr{width:555px; height:1px; margin-left:7px; margin-top:5px; background:url(/images/yard/m_pg_hr.jpg) repeat-x; float:left; display:inline;}
 .pc_pg_img{width:56px; height:56px; margin-top:7px; margin-left:11px; background:url(/images/yard/pic_pg.jpg) no-repeat; float:left; display:inline;}
