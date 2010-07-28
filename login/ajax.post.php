@@ -15,9 +15,9 @@ switch ($op) {
 	case 'load_login_status_box':
 		$user = User::current_user();
 		if(!$user){
-			include "_unlogin.php";
+			include "/login/_unlogin.php";
 		}else{
-			include '_logined.php';
+			include '/login/_logined.php';
 		}
 		break;
 	default:
