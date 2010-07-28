@@ -17,7 +17,7 @@
 <body>
 <div id="ibody">
 	<div id="fbody">
-		<?php include_once('../inc/top_login.php');?>
+		<?php include_once('./../inc/_register_top.php');?>
 		<div id="center">
 			<div id="cpg_top"></div>
 			<div id="cpg_c">

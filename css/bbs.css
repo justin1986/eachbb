@@ -3,9 +3,6 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 #ibody{width:970px; overflow:hidden; margin:0;}
 
 #fbody{ width:970px; overflow:hidden;  background:#ffffff; float:left; display:inline;}
-
-#top_login{width:970px; height:83px; margin-top:10px; font-size:13px; color:#ffffff; float:right; display:inline;}
-#top_login a{color:#ffffff; text-decoration:none;}
 #tl_l{width:224px; height:83px; background:url(../images/bbs/loginb.jpg) no-repeat; float:left; display:inline;}
 
 #top_menu{width:970px; height:61px; margin-top:5px; overflow:hidden;  float:left; display:inline;}
@@ -39,7 +36,13 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 #b_r{width:291px;  margin-top:15px; overflow:hidden; float:right; display:inline;}
 
 #bl_a{width:646px; height:207px; float:left; display:inline;}
-#bla_img{width:297px; height:207px; background:url(../images/bbs/pg_d.gif) no-repeat; float:left; display:inline;}
+#bla_img{width:297px; height:207px; float:left; display:inline;}
+.fr_img{width:297px; height:207px; display: none;}
+.fr_img img{width:297px; height:207px; z-index:2; border:0px solid red;}
+.fr_number{width:297px; height:20px; margin-top:-20px; float:left;}
+.num{width:15px; height:15px; cursor:pointer;  text-align:center; margin-right:5px; line-height:15px; background:#234c2a; filter:alpha(opacity=50); -moz-opacity:0.5; opacity:0.5; color:#ffffff; font-size:10px; font-weight:bold; float:right; display:inline;}
+
+
 #bla_r{width:314px; height:207px;  float:right; display:inline;}
 #blar_t{width:314px; height:20px; float:left; display:inline;}
 #pg_f{width:56px; height:14px; margin-top:3px; cursor:pointer;  text-align:center; color:#ffffff; font-size:11px; line-height:14px; background:url(../images/bbs/pg_f.gif) no-repeat; float:left; display:inline;}
