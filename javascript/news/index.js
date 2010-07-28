@@ -1,7 +1,7 @@
 $(function(){
 	var image_tab_index = 0;
 	var image_tab_count = 5;
-	var iamge_tab_interval = 1000;
+	var iamge_tab_interval = 5000;
 	function image_interval(){
 		 image_tab_index++;
 		 if(image_tab_index >= image_tab_count) image_tab_index = 0;
