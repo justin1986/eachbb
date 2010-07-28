@@ -8,6 +8,8 @@
 		use_jquery();
 		css_include_tag('yard');
 		js_include_tag('yard/yard');
+		$db=get_db();
+		
 	?>
 </head>
 <body>
