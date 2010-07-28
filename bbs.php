@@ -36,11 +36,11 @@
 						<a href=""><img src="/images/bbs/p_p.gif"/></a>
 					</div>
 					<div class="fr_number">
-							<div class="num" id="num4">5</div>
-							<div class="num" id="num3">4</div>	
-							<div class="num" id="num2">3</div>	
-							<div class="num" id="num1">2</div>	
-							<div class="num" style="background:#FF6600" id="num0">1</div>	
+						<div class="num" id="num4">5</div>
+						<div class="num" id="num3">4</div>	
+						<div class="num" id="num2">3</div>	
+						<div class="num" id="num1">2</div>	
+						<div class="num" style="background:#FF6600" id="num0">1</div>	
 					</div>
 				</div>
 				<div id="bla_r">
