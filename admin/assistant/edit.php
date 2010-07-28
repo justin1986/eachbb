@@ -10,11 +10,10 @@
 	<meta http-equiv=Content-Language content=zh-CN>
 	<title>发布新闻</title>
 	<?php 
-
 		css_include_tag('admin2','colorbox','jquery_ui');
 		use_jquery_ui();
 		validate_form("news_edit");
-		js_include_tag('category_class.js','jquery.colorbox-min.js','../ckeditor/ckeditor.js','pubfun','assistant/edit');
+		js_include_tag('category_class.js','admin/news/news_pub', 'admin/news/news_edit','jquery.colorbox-min.js','../ckeditor/ckeditor.js','pubfun','assistant/edit');
 	?>
 </head>
 <?php 
@@ -69,7 +68,27 @@
 				</td>
 			</tr>
 			
-				
+			<tr class="tr4">
+				<td class="td1">关键词</td>
+				<td>
+					<select multiple="multiple" id="sel_keywords">
+						<?php $keywords = explode('||',$news->keywords);
+							if(!empty($keywords)){
+								foreach($keywords as $key){ 
+									if(empty($key)) continue;
+									?>
+								<option value="<?php echo $key?>"><?php echo $key?></option>			
+							<?php }
+							}
+						?>
+					</select>
+					<img src="/images/admin/btn_delete.png" style="cursor:pointer; float:left;" id="delete_keyword" />
+					<input type="text" id="auto_keywords" />
+					<input type="hidden" name="news[keywords]" id="news_keywords"/>
+					<img id="add_keyword" style="cursor:pointer; float:left;" src="/images/admin/btn_add.png" />
+				</td>
+			</tr>
+			
 			<tr class="tr4">
 				<td class="td1">优先级</td>
 				<td><input type="text" name=news[priority] id="priority"  class="number" value="<?php echo $news->priority;?>">(0~100)</td>
