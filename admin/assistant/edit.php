@@ -69,7 +69,26 @@
 				</td>
 			</tr>
 			
-				
+			<tr class="tr4">
+				<td class="td1">关键词</td>
+				<td>
+					<select multiple="multiple" id="sel_keywords">
+						<?php $keywords = explode('||',$news->keywords);
+							if(!empty($keywords)){
+								foreach($keywords as $key){ 
+									if(empty($key)) continue;
+									?>
+								<option value="<?php echo $key?>"><?php echo $key?></option>			
+							<?php }
+							}
+						?>
+					</select>
+					<img src="/images/admin/btn_delete.png" style="cursor:pointer; float:left;" id="delete_keyword" />
+					<input type="text" id="auto_keywords" />
+					<input type="hidden" name="news[keywords]" id="news_keywords"/>
+					<img id="add_keyword" style="cursor:pointer; float:left;" src="/images/admin/btn_add.png" />
+				</td>
+			</tr>	
 			<tr class="tr4">
 				<td class="td1">优先级</td>
 				<td><input type="text" name=news[priority] id="priority"  class="number" value="<?php echo $news->priority;?>">(0~100)</td>
@@ -160,6 +179,11 @@
 			alert("请输入新闻内容！");
 			return false;
 		}
+		var keywords = new Array();
+		$('#sel_keywords option').each(function(){
+			keywords.push($(this).val());
+		});
+		$('#news_keywords').val(keywords.join('||'));
 		return true;
 	}
 	
