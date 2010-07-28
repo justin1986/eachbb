@@ -9,6 +9,7 @@
 	use_jquery_ui();
 	css_include_tag('bbs','jquery_ui','bottom');
 	init_page_items('bbs');
+	js_include_tag('bbs/bbs');
 ?>
 <link href="./css/bbs.css" rel="stylesheet" type="text/css" />
 </head>
@@ -18,7 +19,30 @@
 	<div id="fbody">
 		<div id="b_l">
 			<div id="bl_a">
-				<div id="bla_img"></div>
+				<div id="bla_img">
+					<div class="fr_img" id="img_tab_0" style="display:inline;>
+						<a href=""><img src="/images/bbs/m1.jpg"/></a>
+					</div>
+					<div class="fr_img" id="img_tab_1">
+						<a href=""><img src="/images/bbs/m5.jpg"/></a>
+					</div>
+					<div class="fr_img" id="img_tab_2">
+						<a href=""><img src="/images/bbs/login.jpg"/></a>
+					</div>
+					<div class="fr_img" id="img_tab_3">
+						<a href=""><img src="/images/bbs/pg_e.gif"/></a>
+					</div>
+					<div class="fr_img" id="img_tab_4">
+						<a href=""><img src="/images/bbs/p_p.gif"/></a>
+					</div>
+					<div class="fr_number">
+							<div class="num" id="num4">5</div>
+							<div class="num" id="num3">4</div>	
+							<div class="num" id="num2">3</div>	
+							<div class="num" id="num1">2</div>	
+							<div class="num" style="background:#FF6600" id="num0">1</div>	
+					</div>
+				</div>
 				<div id="bla_r">
 					<div id="blar_t">
 						<div id="pg_f"><a href="#">今日热点</a></div>
