@@ -168,8 +168,8 @@ function get_microtime(){
    return ((float)$usec + (float)$sec); 
 } 
 
-function now(){
-	return date("Y-m-d H:i:s");
+function now_hour(){
+	return date();
 }
 
 function alert($msg)

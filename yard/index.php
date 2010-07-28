@@ -9,7 +9,8 @@
 		css_include_tag('yard');
 		js_include_tag('yard/yard');
 		$db=get_db();
-		
+		$sql="select m.id,m.visit_count,m.unread_msg_count,m.friend_count,m.level,m.score,m.last_login,m.created_at,m.uid,mm.avatar from eachbb_member.member_status m left join eachbb_member.member mm on m.uid=mm.id where m.uid=6";
+		$news=$db->query($sql);
 	?>
 </head>
 <body>
@@ -17,8 +18,8 @@
 	<?php include_once(dirname(__FILE__).'/../inc/_yard_top.php'); ?>
 	<div id="menu">
 		<div id="yard_day">
-			<div id="yard_day_time">2010年05月28日</div>
-			<div id="yard_day_ct">星期天</div>
+			<div id="yard_day_time"></div>
+			<div id="yard_day_ct"></div>
 		</div>
 		<div id="menu_a" class="menu_pic"></div>
 		<div id="menu_b" class="menu_pic"></div>
@@ -163,9 +164,9 @@
 				</div>
 				<div id="r_pho">
 					<div id="r_img">
-						<div id="r_pto"><img src="/images/yard/r_pg_pg.jpg"></div>
+						<div id="r_pto"><img src="<?php echo $news[0]->avatar;?>"></div>
 						<div id="r_bb">网趣宝宝</div>
-						<div id="r_num">被访问过0次</div>
+						<div id="r_num">被访问过<?php echo $news[0]->avatar;?>次</div>
 					</div>
 					<div id="r_geng"> 
 						<div id="r_ge_a">
