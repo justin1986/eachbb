@@ -14,7 +14,7 @@
 			<input type="submit" name="post" value="ok" />
 		</form>
 		<?php
-			
+			var_dump(User::current_user());
 		?>
 	</body>
 </html>
