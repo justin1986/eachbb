@@ -1,7 +1,7 @@
 $(function(){
 	var image_tab_index = 0;
 	var image_tab_count = 5;
-	var iamge_tab_interval = 5000;
+	var iamge_tab_interval = 1000;
 	function image_interval(){
 		 image_tab_index++;
 		 if(image_tab_index >= image_tab_count) image_tab_index = 0;
@@ -10,12 +10,12 @@ $(function(){
 	function refresh_image_tab(){
 	 	$('.pic_img').hide();
 	 	$('#img_tab_'+image_tab_index).show();
-	 	$('#pic_number div').attr('style','background:#4E3431');
-		$('#n_'+image_tab_index).attr('style','background:#FF6600');
+	 	$('.num').css('background','#4E3431');
+		$('#n_'+image_tab_index).css('background','#FF6600');
 	}
-	$('#pic_number div').click(function(){
-		 $('#pic_number div').attr('style','background:#4E3431');
-		 $(this).attr('style','background:#FF6600');
+	$('.num').click(function(){
+		$('.num').css('background','#4E3431');
+		 $(this).css('background','#FF6600');
 		 clearInterval(interval);
 		 var num = $(this).html();
 		 image_tab_index = num -1;
