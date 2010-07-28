@@ -25,6 +25,10 @@
 			require_once ROOT_DIR .'inc/' . $class_name .'.class.php';
 			return ;
 		}
+		if(file_exists(ROOT_DIR .'inc/active_record/' . $class_name .'.class.php')){
+			require_once ROOT_DIR .'inc/active_record/' . $class_name .'.class.php';
+			return ;
+		}
 	}
 	
 	function get_config($var,$path=''){

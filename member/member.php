@@ -9,6 +9,7 @@
 		css_include_tag('member');
 		use_jquery();
 		js_include_tag('member');
+		
 	?>
 </head>
 <?php
