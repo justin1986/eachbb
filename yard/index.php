@@ -183,7 +183,7 @@
 						</div>
 						<div id="r_ge_b">
 							<div id="r_gi_b"></div>
-							<div id="r_gw_b"><a href="#">修改档案</a></div>
+							<div id="r_gw_b"><a href="/yard/member.php">修改档案</a></div>
 						</div>
 					</div>
 					<div id="r_ge_ge">

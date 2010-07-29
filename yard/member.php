@@ -377,11 +377,6 @@
 								<div class="r_ge_ctc">2级</div>
 							</div>
 							<div class="r_ge_ct">
-								<div class="r_ge_cta"><img src="/images/yard/r_f.jpg"></div>
-								<div class="r_ge_ctb">最后天数：</div>
-								<div class="r_ge_ctc">1天</div>
-							</div>
-							<div class="r_ge_ct">
 								<div class="r_ge_cta"><img src="/images/yard/r_g.jpg"></div>
 								<div class="r_ge_ctb">最后登录：</div>
 								<div class="r_ge_ctc">2010-2-2</div>
