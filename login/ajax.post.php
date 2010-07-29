@@ -8,7 +8,9 @@ if(!in_array($op,$allow_ops)) die('invalid operation');
 switch ($op) {
 	case 'login':
 		$user = User::login($_GET['name'],$_GET['password'],intval($_GET['expire']));
-		echo $user->id;
+		if(!$user){
+			echo '用户名或密码错误';
+		}
 	break;
 	case 'logout':
 		User::logout();

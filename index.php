@@ -168,7 +168,7 @@
 					</div>
 				</div>
 				<div id="test_right">
-					<script type="text/javascript">$('#test_right').load('/login/ajax.post.php?op=load_login_status_box');</script>
+					<script type="text/javascript">$('#test_right').load('/login/ajax.post.php?op=load_login_status_box&rd='+Math.random());</script>
 				</div>
 			</div>
 			<div id="student">
