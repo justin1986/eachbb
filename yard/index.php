@@ -216,11 +216,13 @@
 								<div class="r_ge_ctb">等级：</div>
 								<div class="r_ge_ctc"><?php echo $news[0]->level;?>级</div>
 							</div>
+							<!-- 
 							<div class="r_ge_ct">
 								<div class="r_ge_cta"><img src="/images/yard/r_f.jpg"></div>
 								<div class="r_ge_ctb">最后天数：</div>
 								<div class="r_ge_ctc" style="width:80px;">天</div>
 							</div>
+							 -->
 							<div class="r_ge_ct">
 								<div class="r_ge_cta"><img src="/images/yard/r_g.jpg"></div>
 								<div class="r_ge_ctb">最后登录：</div>
