@@ -168,8 +168,8 @@ function get_microtime(){
    return ((float)$usec + (float)$sec); 
 } 
 
-function now_hour(){
-	return date();
+function now(){
+	return date("Y-m-d H:i:s");
 }
 
 function alert($msg)
@@ -660,5 +660,36 @@ function month_between($time1,$time2=null){
 		return $plus*($year*12 + $mounth);
 	}
 	
+	
+}
+
+function get_week_day(){
+	$w = date('N');
+	switch ($w) {
+		case 1:
+			return "星期一";
+		break;
+		case 2:
+			return "星期二";
+		break;
+		case 3:
+			return "星期三";
+		break;
+		case 4:
+			return "星期四";
+		break;
+		case 5:
+			return "星期五";
+		break;
+		case 6:
+			return "星期六";
+		break;
+		case 7:
+			return "星期天";
+		break;
+		default:
+			;
+		break;
+	}
 	
 }
