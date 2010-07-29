@@ -15,7 +15,7 @@
 		}
 		$sql="select m.id,m.visit_count,m.unread_msg_count,m.friend_count,m.level,m.score,m.last_login,m.created_at,m.uid,mm.avatar,mm.baby_gender,mm.address,mm.baby_name from eachbb_member.member_status m left join eachbb_member.member mm on m.uid=mm.uid where m.uid=".$user->uid;
 		$news=$db->query($sql);
-		$sex='';
+		$sex='无';
 		if($news[0]->baby_gender == 1){
 			$sex='男';
 		}elseif($news[0]->baby_gender == 2){
