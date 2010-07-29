@@ -128,7 +128,7 @@
 						<textarea id="pho_r">
 						</textarea>
 					</div>
-					<div id="cc_ps">
+					<div id="cc_ps" style="height:400px;">
 						<a href=""><img id="ccps_l" src="/images/yard/c_p.jpg" /></a>
 						<div id="ccps_c">
 							<div id="ccpsc_l">
