@@ -136,32 +136,35 @@
 			</div>
 			<div id="test">
 				<div id="test_left">
-					<div id="test_left_top">
-						请输入宝宝的出生日期:　<input type="text" id='date_picker' />
-					</div>
-					<div id="btn_begin_test">
-						<a href="#" id="a_begin_test"><img src="/images/index/test.png" border="0" /></a>
-					</div>
-					
-					<div id="div_left_arrow">
-						<a href="#" id="a_left_arrow"><img src="/images/index/l_l.png" border="0" /></a>
-					</div>
-					<?php for($i=0;$i<4;$i++){?>
-					<div id="test_tab_<?php echo $i;?>" class="test_tab" <?php if($i==0) echo ' style="display:inline;"';?> <?php $pos="test_tab_{$i}"; show_page_pos($pos,'link_d_i')?>>
-						<div class="test_img">
-							<a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1: '/images/index/test_sample.jpg';?>" border="0" /></a>
+					<div id="test_id">
+						<div id="test_left_top">
+							请输入宝宝的出生日期:　<input type="text" id='date_picker' />
 						</div>
-						<div class="test_context">
-							<div class="context_title"><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href);?></div>
-							<div class="context_content"><?php echo_href($pos_items[$pos]->description, $pos_items[$pos]->href);?></div>
-							<div class="test_content_more">
-								<a href="<?php echo $pos_items[$pos]->href;?>"><img src="/images/index/more.gif" border="0" /></a>
+						<div id="btn_begin_test">
+							<a href="#" id="a_begin_test"><img src="/images/index/test.png" border="0" /></a>
+						</div>
+					</div>
+					<div id="test_pg_zong">
+						<div id="div_left_arrow">
+							<a href="#" id="a_left_arrow"><img src="/images/index/l_l.png" border="0" /></a>
+						</div>
+						<?php for($i=0;$i<4;$i++){?>
+						<div id="test_tab_<?php echo $i;?>" class="test_tab" <?php if($i==0) echo ' style="display:inline;"';?> <?php $pos="test_tab_{$i}"; show_page_pos($pos,'link_d_i')?>>
+							<div class="test_img">
+								<a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1: '/images/index/test_sample.jpg';?>" border="0" /></a>
+							</div>
+							<div class="test_context">
+								<div class="context_title"><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href);?></div>
+								<div class="context_content"><?php echo_href($pos_items[$pos]->description, $pos_items[$pos]->href);?></div>
+								<div class="test_content_more">
+									<a href="<?php echo $pos_items[$pos]->href;?>"><img src="/images/index/more.gif" border="0" /></a>
+								</div>
 							</div>
 						</div>
-					</div>
-					<?php }?>
-					<div id="div_right_arrow">
-						<a href="#" id="a_right_arrow"><img src="/images/index/l_r.png" border="0" /></a>
+						<?php }?>
+						<div id="div_right_arrow">
+							<a href="#" id="a_right_arrow"><img src="/images/index/l_r.png" border="0" /></a>
+						</div>
 					</div>
 				</div>
 				<div id="test_right">
