@@ -35,11 +35,11 @@
 						<img src="/images/consult/pg.jpg"/>
 					</div>
 					<div id="pic_number">
-						<div id="n_4" >5</div>	
-						<div id="n_3" >4</div>
-						<div id="n_2" >3</div>
-						<div id="n_1" >2</div>
-						<div id="n_0" class="selected">1</div>
+						<div id="n_4" class="num">5</div>	
+						<div id="n_3" class="num">4</div>
+						<div id="n_2" class="num">3</div>
+						<div id="n_1" class="num">2</div>
+						<div id="n_0" class="num" style="background:#FF6600;">1</div>
 					</div>
 				</div>
 				<div id="bla_r">
