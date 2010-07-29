@@ -20,7 +20,7 @@
 		<div id="b_l">
 			<div id="bl_a">
 				<div id="bla_img">
-					<div class="fr_img" id="img_tab_0" style="display:inline;>
+					<div class="fr_img" id="img_tab_0" style="display:inline;">
 						<a href=""><img src="/images/bbs/m1.jpg"/></a>
 					</div>
 					<div class="fr_img" id="img_tab_1">
@@ -40,7 +40,7 @@
 						<div class="num" id="num3">4</div>	
 						<div class="num" id="num2">3</div>	
 						<div class="num" id="num1">2</div>	
-						<div class="num" style="background:#FF6600" id="num0">1</div>	
+						<div class="num" id="num0" style="background:#FF6600">1</div>	
 					</div>
 				</div>
 				<div id="bla_r">

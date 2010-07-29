@@ -31,7 +31,7 @@ body{width:970px; margin: 0 auto;}
 #c_c{width:819px; overflow:hidden; float:left; display:inline;}
 #cc_t{width:819px; height:24px; background:url(/images/yard/c_pg_t.jpg) no-repeat; float:left; display:inline;}
 #cc_c{width:819px;  background:#E5F3CD; float:left; display:inline;}
-#cc_pg{width:576px;  margin-left:15px; background:#ffffff; float:left; display:inline;}
+#cc_pg{width:576px; margin-left:15px; background:#ffffff; float:left; display:inline;}
 #cc_b{width:819px; height:26px; background:url(/images/yard/c_pg_b.jpg) no-repeat; float:left; display:inline;}
 #cc_pic{width:560px; height:313px; margin-left:8px; background:url(/images/yard/c_t.jpg) repeat; float:left;display:inline;}
 #cc_photo{width:539px; height:62px; margin-top:15px; margin-left:10px; background:url(/images/yard/c_pg_p.jpg) no-repeat; float:left; display:inline;}
@@ -84,7 +84,7 @@ body{width:970px; margin: 0 auto;}
 .r_ge_ct{width:193px; height:30px;  float:left; display:inline;}
 .r_ge_cta{width:11px; height:11px; margin-top:11px; margin-left:7px; float:left; display:inline;}
 .r_ge_ctb{height:30px; line-height:30px; margin-left:5px; font-size:14px; font-weight:bold; color:#666666; float:left; display:inline;}
-.r_ge_ctc{height:30px; line-height:30px; font-size:14px; font-weight:bold; color:#6AA85F; float:left; display:inline;}
+.r_ge_ctc{width:122px; height:30px; overflow:Hidden; line-height:30px; font-size:14px; font-weight:bold; color:#6AA85F; float:left; display:inline;}
 #friend{width:203px; height:23px; margin-left:10px; margin-top:15px; border-bottom:1px solid #BFDEC1; float:left; display:inline;}
 #friend_a{width:44px; height:23px; margin-left:10px; cursor:pointer;  font-size:0px; line-height:0px; background:url(/images/yard/pg_fired.jpg) no-repeat; float:left; display:inline;}
 #friend_b{width:68px; height:23px; margin-left:10px; cursor:pointer;  font-size:0px; line-height:0px; background:url(/images/yard/r_frii.jpg) no-repeat; float:left; display:inline;}
