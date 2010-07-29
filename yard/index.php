@@ -10,9 +10,7 @@
 		js_include_tag('yard/yard');
 		$db=get_db();
 		$user = User::current_user();
-		if(!$user){
-			die("非法访问！请登录");
-		}
+		
 		$sql="select m.id,m.visit_count,m.unread_msg_count,m.friend_count,m.level,m.score,m.last_login,m.created_at,m.uid,mm.avatar,mm.baby_gender,mm.address,mm.baby_name from eachbb_member.member_status m left join eachbb_member.member mm on m.uid=mm.uid where m.uid=".$user->uid;
 		$news=$db->query($sql);
 		$sex='无';
