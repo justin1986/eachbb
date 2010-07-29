@@ -149,12 +149,21 @@ function add_fried($friend_id){
 		return false;
 	}
 	$friend_id = intval($friend_id);
-	$db->query("select name,f_avatar from eachbb_member.member where id={$friend_id}");
+	$db->query("select name,avatar from eachbb_member.member where id={$friend_id}");
 	if($db->record_count <= 0) return false;
 	$friend_name = $db->field_by_name('name');
 	$avatar = $db->field_by_name('avatar');
+	
+	$db->query("select id from `eachbb_member`.friend where u_id = {$self->id} and f_id ={$friend_id}");
+	if($db->record_count > 0){
+		return true;	
+	}
 	$now = now();
-	return $db->execute("insert into `eachbb_member`.friend (u_id,f_id,f_name,f_avatar,created_at) values({$self->id},{$friend_id},'{$friend_name}','{$now}')");
+	$sql = "insert into `eachbb_member`.friend (u_id,f_id,f_name,f_avatar,created_at) values ({$self->id},$friend_id,'$friend_name','$avatar','$now')";
+	echo $sql;
+	return $db->execute($sql);
+	
+	
 	
 }
 ?>

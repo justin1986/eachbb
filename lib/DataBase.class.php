@@ -117,6 +117,7 @@ class DataBase {
 		} 
 		$this->affect_count = mysql_affected_rows($this->_dblink);
 		$this->last_insert_id = mysql_insert_id($this->_dblink);
+		return true;
 	}
 	
 	public function move_first(){
@@ -158,6 +159,7 @@ class DataBase {
 	private function _reset(){
 		$this->_result = array();
 		$this->_index = 0;
+		$this->record_count = 0;
 		$this->affect_count = 0;
 		$this->last_insert_id = 0;
 	}

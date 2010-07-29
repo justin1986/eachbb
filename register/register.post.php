@@ -99,7 +99,7 @@
 	
 	function success_register(){
 		alert('注册成功！');
-		redirect('/register');
+		redirect('/login');
 	}
 	
 	function false_register($result){
