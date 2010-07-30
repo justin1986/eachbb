@@ -1,6 +1,6 @@
 body{width:970px; margin: 0 auto;}
 
-#ibody{width:970px; overflow:hidden; margin:0;}
+#ibody{width:970px; overflow:hidden; margin:0 auto;}
 
 #menu{width:700px; height:62px; margin-top:15px; float:left; display:inline;}
 #yard_day{width:124px; height:62px; background:url(../images/yard/day.jpg) no-repeat; float:left; display:inline;}
