@@ -22,6 +22,13 @@ $(function(){
 			send_login();
 		}
 	});
+	$('#a_ajax_logout,#a_change_user').live('click',function(e){
+		e.preventDefault();
+		$.post('/login/ajax.post.php?op=logout',function(data){
+			$('#test_right').load('/login/ajax.post.php?op=load_login_status_box');
+		});
+	});
+	
 	var image_tab_index = 0;
 	var image_tab_count = 5;
 	var iamge_tab_interval = 5000;
