@@ -29,8 +29,8 @@
 			<div id="yard_day_time">2010年05月28日</div>
 			<div id="yard_day_ct">星期天</div>
 		</div>
-		<div id="menu_a" class="menu_pic"></div>
-		<div id="menu_b" class="menu_pic"></div>
+		<div id="menu_a" class="menu_pic"style="background:url(../images/yard/m_a.jpg) no-repeat;"></div>
+		<div id="menu_b" class="menu_pic" style="background:url(../images/yard/m_1.jpg) no-repeat;"></div>
 		<div id="menu_c" class="menu_pic"></div>
 		<div id="menu_d" class="menu_pic"></div>
 		<div id="menu_e" class="menu_pic"></div>
