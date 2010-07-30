@@ -91,9 +91,18 @@
 	float:right; 
 	display:inline;
 }
-#me_btn{width:47px; height:20px; margin-left:4px; margin-top:5px; background:url(/images/top/btn.jpg) no-repeat; border:0px solid red; float:right; display:inline;}
+#me_btn{
+	width:47px; 
+	height:20px; 
+	margin-left:4px; 
+	margin-top:5px; 
+	background:url(/images/top/btn.jpg) no-repeat; 
+	border:0px solid red; 
+	float:right; 
+	display:inline;
+	}
 .xiaoxi{
-	height:13px;
+	height:14px;
 	margin-top:10px;
 	font-size:12px;
 	line-height:13px;
@@ -115,7 +124,7 @@
 	text-decoration: none;
 }
 .exit{
-	height:13px;
+	height:14px;
 	margin-top:10px;
 	font-size:12px;
 	line-height:13px;
@@ -148,7 +157,7 @@
 						$i++;
 						} 
 						?>
-						<div id="test_result" style="height:30px; float:right;"></div>
+						<div id="test_result" style="height:30px; overflow:hidden; float:right; display: inline;"></div>
 					</div>
 			</div>
 			<div id="menu_right"></div>

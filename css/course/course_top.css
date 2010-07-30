@@ -19,11 +19,6 @@
 .bbs{font-size:13px; color:#64B033; font-weight:600;}
 .welcom{width:80px; height:14px; margin-top:5px; margin-left:10px; font-weight:600; border-right:1px solid #999999; text-align:center; font-size:13px;  float:left; display:inline;}
 .welcom font{color:#FE7D2B; font-size:14px;}
-.exit{width:50px; height:14px; margin-top:5px; border-right:1px solid #999999; text-align:center;  float:left; display:inline;}
-.exit a{ color:#000000; text-decoration:none; font-weight:600; font-size:13px;}
-.info{width:60px; height:14px; margin-top:5px; font-weight:600;  text-align:center; font-size:13px;  float:left; display:inline;}
-.info a{ text-decoration:none;}
-.me_hh{width:3px; height:14px; margin-left:2px; margin-top:5px; margin-right:3px; background:url(/images/bbs/hr_t.jpg) no-repeat;  font-size:0px; border:0px solid red;  line-height:0px; float:left; display:Inline;}
 .me_aa{width:90px; height:23px; margin-top:2px; margin-left:15px; text-align:center;  font-size:12px; border:0px solid red; font-family:宋体; line-height:23px; float:left; display:Inline;}
 .me_bb{width:90px; height:23px; margin-top:2px; text-align:center;  font-size:12px; border:0px solid red; font-family:宋体; line-height:23px; float:left; display:Inline;}
 #me_in{width:150px; height:15px; margin-left:14px; margin-top:3px; font-size:12px; float:left; display:inline;}
