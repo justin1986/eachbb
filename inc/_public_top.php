@@ -17,6 +17,7 @@
 #tl_r{
 	width:702px; 
 	height:103px;
+	background:none;
 	float:right;
 	display:inline;
 }

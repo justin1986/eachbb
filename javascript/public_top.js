@@ -4,11 +4,9 @@ $(function(){
 			$('#test_result').val(data);
 		}
 		$('#test_result').load('/login/ajax.post_top.php?op=load_login_status_box&rd=' + Math.random());
-		
 	});
 	$('.exit').live('click',function(e){
 		e.preventDefault();
-		
 		$.post('/login/ajax.post.php?op=logout',function(data){
 			if(data){
 				$('#test_result').val(data);
@@ -25,6 +23,5 @@ $(function(){
 			return false;
 		}
 		window.location.href = "/news/search.php?key=" + text;
-	})
-
+	});
 });
