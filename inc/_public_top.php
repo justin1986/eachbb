@@ -40,11 +40,9 @@
 	float:left;
 }
 .me_hh{
-	width:3px; 
+	width:2px; 
 	height:14px;
-	margin-left:2px;
 	margin-top:8px; 
-	margin-right:2px; 
 	background:url(/images/bbs/hr_t.jpg) no-repeat; 
 	font-size:0px; 
 	border:0px solid red; 
@@ -152,8 +150,9 @@
 						foreach ($news_list as $list){
 						?>
 						<a href="#" style="<?php if($i == 0){ echo 'margin-left:10px;';}?> font-size:12px; font-weight:bold; color:#000000; text-decoration:none; float:left;"><?php echo $list;?></a>
-						<div class="me_hh"></div>
-						<?php 
+						<?php if(count($news_list)-1 != $i){ ?>
+						<div class="me_hh" style="margin-left:5px; padding-right:5px;"></div>
+						<?php }
 						$i++;
 						} 
 						?>
