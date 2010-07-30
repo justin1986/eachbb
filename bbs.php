@@ -423,25 +423,8 @@
 			</div>
 		</div>
 		<div id="b_r">
-			<div id="br_login">
-				<div id="login_a">
-					<div class="la_l">邮件地址：</div>
-					<input type="text" id="la_user">
-				</div>
-				<div id="login_b">
-					<div class="la_l">密&nbsp;&nbsp;&nbsp;&nbsp;码：</div>
-					<input type="password" id="la_pwd">
-				</div>
-				<div id="login_c">
-					<input type="checkbox" id="lo_che" name="checkbox" value="checkbox" />
-					<div><a href="#">
-						<label for="lo_che">记住我的帐号</label>
-						</a><font><a href="#">忘记密码</a></font></div>
-				</div>
-				<div id="login_d">
-					<input type="button" id="lo_login" value="登录">
-					<input type="button" id="lo_reg" value="注册">
-				</div>
+			<div id="test_right">
+				<script type="text/javascript">$('#test_right').load('/login/ajax.post.php?op=load_login_status_box&rd='+Math.random());</script>
 			</div>
 			<div id="br_e">
 				<?php for($i=1;$i<=6;$i++){ ?>
