@@ -12,6 +12,11 @@ $(function(){
 		$('#menu_d').attr('style','background:url(../images/yard/m_d.jpg) no-repeat;');
 		$('#menu_e').attr('style','background:url(../images/yard/m_e.jpg) no-repeat;');
 		$('#menu_f').attr('style','background:url(../images/yard/m_f.jpg) no-repeat;');
+		if(selected === 0){
+			window.location.href="/yard";
+		}else if(selected === 1){
+			window.location.href="/yard/member.php";
+		}
 		$(this).attr('style','background:url(../images/yard/m_'+selected+'.jpg) no-repeat;');
 	});
 	$('.cll_zz').click(function(){
