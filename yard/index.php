@@ -10,15 +10,9 @@
 		js_include_tag('yard/yard');
 		$db=get_db();
 		$user = User::current_user();
-		
-		$sql="select m.id,m.visit_count,m.unread_msg_count,m.friend_count,m.level,m.score,m.last_login,m.created_at,m.uid,mm.avatar,mm.baby_gender,mm.address,mm.baby_name from eachbb_member.member_status m left join eachbb_member.member mm on m.uid=mm.uid where m.uid=".$user->uid;
-		$news=$db->query($sql);
-		$sex='无';
-		if($news[0]->baby_gender == 1){
-			$sex='男';
-		}elseif($news[0]->baby_gender == 2){
-			$sex='女';
-		}
+		$info = new table_class('`eachbb_member`.member_status');
+		$info->find_by_uid($user->id);
+		$inof->uid = $user->id;
 	?>
 </head>
 <body>
@@ -192,27 +186,27 @@
 							<div class="r_ge_ct">
 								<div class="r_ge_cta"><img src="/images/yard/r_a.jpg"></div>
 								<div class="r_ge_ctb">性别：</div>
-								<div class="r_ge_ctc"><?php echo $sex;?></div>
+								<div class="r_ge_ctc"><?php echo get_gender($user->gender);?></div>
 							</div>
 							<div class="r_ge_ct">
 								<div class="r_ge_cta"><img src="/images/yard/r_b.jpg"></div>
 								<div class="r_ge_ctb">生日：</div>
-								<div class="r_ge_ctc">1988-12-12</div>
+								<div class="r_ge_ctc"><?php echo date('Y-m-d',strtotime($user->birthday)); ?></div>
 							</div>
 							<div class="r_ge_ct">
 								<div class="r_ge_cta"><img src="/images/yard/r_c.jpg"></div>
 								<div class="r_ge_ctb">地址：</div>
-								<div class="r_ge_ctc"><?php echo $news[0]->address;?></div>
+								<div class="r_ge_ctc"><?php echo $user->address;?></div>
 							</div>
 							<div class="r_ge_ct">
 								<div class="r_ge_cta"><img src="/images/yard/r_d.jpg"></div>
 								<div class="r_ge_ctb">金币：</div>
-								<div class="r_ge_ctc"><?php echo $news[0]->level;?></div>
+								<div class="r_ge_ctc"><?php echo $info->score ? $info->score : 0;?></div>
 							</div>
 							<div class="r_ge_ct">
 								<div class="r_ge_cta"><img src="/images/yard/r_e.jpg"></div>
 								<div class="r_ge_ctb">等级：</div>
-								<div class="r_ge_ctc"><?php echo $news[0]->level;?>级</div>
+								<div class="r_ge_ctc"><?php echo $info->level ? $info->level : 0;?>级</div>
 							</div>
 							<!-- 
 							<div class="r_ge_ct">
@@ -224,7 +218,7 @@
 							<div class="r_ge_ct">
 								<div class="r_ge_cta"><img src="/images/yard/r_g.jpg"></div>
 								<div class="r_ge_ctb">最后登录：</div>
-								<div class="r_ge_ctc" style="width:80px;"><?php echo substr($news[0]->last_login,0,10);?></div>
+								<div class="r_ge_ctc" style="width:80px;"><?php echo substr($user->last_login,0,10);?></div>
 							</div>
 						</div>
 						<div id="friend">
