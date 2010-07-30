@@ -2,7 +2,7 @@
 include_once '../frame.php';
 include_once '../inc/user.class.php';
 //if(!is_ajax())die('invalid request!');
-$allow_ops = array('login','logout','load_login_status_box');
+$allow_ops = array('logout','load_login_status_box');
 $op = strtolower($_GET['op']);
 if(!in_array($op,$allow_ops)) die('invalid operation');
 switch ($op) {
