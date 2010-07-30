@@ -26,8 +26,8 @@
 	<?php include_once(dirname(__FILE__).'/../inc/_yard_top.php'); ?>
 	<div id="menu">
 		<div id="yard_day">
-			<div id="yard_day_time">2010年05月28日</div>
-			<div id="yard_day_ct">星期天</div>
+			<div id="yard_day_time"><?php echo date('Y年m月d日'); ?></div>
+			<div id="yard_day_ct"><?php echo get_week_day(); ?></div>
 		</div>
 		<div id="menu_a" class="menu_pic"style="background:url(../images/yard/m_a.jpg) no-repeat;"></div>
 		<div id="menu_b" class="menu_pic" style="background:url(../images/yard/m_1.jpg) no-repeat;"></div>
@@ -333,107 +333,7 @@
 					</form>
 				</div>
 				<div id="r_pho">
-					<div id="r_img">
-						<div id="r_pto"><img src="/images/yard/r_pg_pg.jpg"></div>
-						<div id="r_bb">网趣宝宝</div>
-						<div id="r_num">被访问过0次</div>
-					</div>
-					<div id="r_geng"> 
-						<div id="r_ge_a">
-							<div id="r_gi_a"></div>
-							<div id="r_gw_a"><a href="#">更换头像</a></div>
-						</div>
-						<div id="r_ge_b">
-							<div id="r_gi_b"></div>
-							<div id="r_gw_b"><a href="#">修改档案</a></div>
-						</div>
-					</div>
-					<div id="r_ge_ge">
-						<div id="r_ge_hr"></div>
-						<div id="r_ge_table">
-							<div class="r_ge_ct">
-								<div class="r_ge_cta"><img src="/images/yard/r_a.jpg"></div>
-								<div class="r_ge_ctb">性别：</div>
-								<div class="r_ge_ctc">男</div>
-							</div>
-							<div class="r_ge_ct">
-								<div class="r_ge_cta"><img src="/images/yard/r_b.jpg"></div>
-								<div class="r_ge_ctb">生日：</div>
-								<div class="r_ge_ctc">1988-12-12</div>
-							</div>
-							<div class="r_ge_ct">
-								<div class="r_ge_cta"><img src="/images/yard/r_c.jpg"></div>
-								<div class="r_ge_ctb">地址：</div>
-								<div class="r_ge_ctc">北京市 参赛权</div>
-							</div>
-							<div class="r_ge_ct">
-								<div class="r_ge_cta"><img src="/images/yard/r_d.jpg"></div>
-								<div class="r_ge_ctb">金币：</div>
-								<div class="r_ge_ctc">5</div>
-							</div>
-							<div class="r_ge_ct">
-								<div class="r_ge_cta"><img src="/images/yard/r_e.jpg"></div>
-								<div class="r_ge_ctb">等级：</div>
-								<div class="r_ge_ctc">2级</div>
-							</div>
-							<div class="r_ge_ct">
-								<div class="r_ge_cta"><img src="/images/yard/r_g.jpg"></div>
-								<div class="r_ge_ctb">最后登录：</div>
-								<div class="r_ge_ctc">2010-2-2</div>
-							</div>
-						</div>
-						<div id="friend">
-							<div id="friend_a"></div>
-							<div id="friend_b"></div>
-						</div>
-						<div id="pic_r">
-							<div class="pic_pg">
-								<a href="#">
-								<IMG  class="pic_img" src="/images/yard/pho.jpg"/>
-								</a>
-							</div>
-							<div class="pic_pg">
-								<a href="#">
-								<IMG  class="pic_img" src="/images/yard/pho.jpg"/>
-								</a>
-							</div>
-							<div class="pic_pg">
-								<a href="#">
-								<IMG  class="pic_img" src="/images/yard/pho.jpg"/>
-								</a>
-							</div>
-							<div class="pic_pg">
-								<a href="#">
-								<IMG  class="pic_img" src="/images/yard/pho.jpg"/>
-								</a>
-							</div>
-							<div class="pic_pg">
-								<a href="#">
-								<IMG  class="pic_img" src="/images/yard/pho.jpg"/>
-								</a>
-							</div>
-							<div class="pic_pg">
-								<a href="#">
-								<IMG  class="pic_img" src="/images/yard/pho.jpg"/>
-								</a>
-							</div>
-							<div class="pic_pg">
-								<a href="#">
-								<IMG  class="pic_img" src="/images/yard/pho.jpg"/>
-								</a>
-							</div>
-							<div class="pic_pg">
-								<a href="#">
-								<IMG  class="pic_img" src="/images/yard/pho.jpg"/>
-								</a>
-							</div>
-							<div class="pic_pg">
-								<a href="#">
-								<IMG  class="pic_img" src="/images/yard/pho.jpg"/>
-								</a>
-							</div>
-						</div>
-					</div>
+					<?php include_once(dirname(__FILE__).'/../inc/_yard_right.php'); ?>
 				</div>
 			</div>
 			<div id="cc_b"></div>

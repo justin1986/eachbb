@@ -1,7 +1,7 @@
 <?php 
 	include_once(dirname(__FILE__).'./../frame.php');
 	set_charset('utf-8');
-	js_include_tag('swfobject');
+	js_include_tag('swfobject','public_top');
 	use_jquery_ui();
 ?>
 <style>
@@ -17,6 +17,7 @@
 #tl_r{
 	width:702px; 
 	height:103px;
+	background:none;
 	float:right;
 	display:inline;
 }
@@ -84,7 +85,6 @@
 #me_in{
 	width:150px; 
 	height:20px; 
-	margin-left:14px; 
 	margin-top:3px; 
 	font-size:12px; 
 	overflow:hidden; 
@@ -93,7 +93,6 @@
 }
 #me_btn{width:47px; height:20px; margin-left:4px; margin-top:5px; background:url(/images/top/btn.jpg) no-repeat; border:0px solid red; float:right; display:inline;}
 .xiaoxi{
-	width:70px;
 	height:13px;
 	margin-top:10px;
 	font-size:12px;
@@ -116,7 +115,6 @@
 	text-decoration: none;
 }
 .exit{
-	width:50px;
 	height:13px;
 	margin-top:10px;
 	font-size:12px;
@@ -150,11 +148,7 @@
 						$i++;
 						} 
 						?>
-						<div class="xiaoxi" style="margin-top:9px; margin-right:5px;">消息<a href="#" style="color:#FE6E0E;">（1）</a></div>
-						<div class="exit" style="border-left:2px solid #949494; border-right:2px solid #949494;"><a href="#" style="color:#000000;">退出</a></div>
-						<div class="xiaoxi" style="width:80px;">欢迎，<a href="#" style="color:#FE6E0E;">1244</a></div>
-						<input type="button" id="me_btn" >
-						<input type="text" id="me_in" style="height:18px;"/>
+						<div id="test_result" style="height:30px; float:right;"></div>
 					</div>
 			</div>
 			<div id="menu_right"></div>

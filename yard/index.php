@@ -9,10 +9,13 @@
 		css_include_tag('yard');
 		js_include_tag('yard/yard');
 		$db=get_db();
+<<<<<<< HEAD
 		$user = User::current_user();
 		$info = new table_class('`eachbb_member`.member_status');
 		$info->find_by_uid($user->id);
 		$inof->uid = $user->id;
+=======
+>>>>>>> 3d8e56df58563df28d14f7785774eda2bd58fe2b
 	?>
 </head>
 <body>
@@ -165,6 +168,7 @@
 					</div>
 				</div>
 				<div id="r_pho">
+<<<<<<< HEAD
 					<div id="r_img">
 						<div id="r_pto"><img src="<?php echo $news[0]->avatar;?>"></div>
 						<div id="r_bb"><?php echo $news[0]->baby_name;?></div>
@@ -273,6 +277,9 @@
 							</div>
 						</div>
 					</div>
+=======
+					<?php include_once(dirname(__FILE__).'/../inc/_yard_right.php'); ?>
+>>>>>>> 3d8e56df58563df28d14f7785774eda2bd58fe2b
 				</div>
 			</div>
 			<div id="cc_b"></div>
