@@ -38,7 +38,7 @@
 		<div class="r_ge_ct">
 			<div class="r_ge_cta"><img src="/images/yard/r_b.jpg"></div>
 			<div class="r_ge_ctb">生日：</div>
-			<div class="r_ge_ctc"><?php if($user->baby_birthday != ""){echo substr($user->baby_birthday,0,10); }else{ echo "未知";}?></div>
+			<div class="r_ge_ctc"><?php if( substr($user->baby_birthday,0,10) != "0000-00-00"){echo substr($user->baby_birthday,0,10); }else{ echo "未知";}?></div>
 		</div>
 		<div class="r_ge_ct">
 			<div class="r_ge_cta"><img src="/images/yard/r_c.jpg"></div>
