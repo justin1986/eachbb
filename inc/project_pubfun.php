@@ -139,22 +139,13 @@ function show_page_pos($pos,$name='default'){
 	}	
 }
 
-/*
- * yard functions
- */
-function add_fried($friend_id){
-	$db = get_db();
-	$self = User::current_user();
-	if(!$self){
-		return false;
+function get_gender($gender){
+	if($gender == 1){
+		return "男";
+	}elseif ($gender == 2){
+		return "女";
+	}else {
+		return "未知";
 	}
-	$friend_id = intval($friend_id);
-	$db->query("select name,f_avatar from eachbb_member.member where id={$friend_id}");
-	if($db->record_count <= 0) return false;
-	$friend_name = $db->field_by_name('name');
-	$avatar = $db->field_by_name('avatar');
-	$now = now();
-	return $db->execute("insert into `eachbb_member`.friend (u_id,f_id,f_name,f_avatar,created_at) values({$self->id},{$friend_id},'{$friend_name}','{$now}')");
-	
 }
-?>
+

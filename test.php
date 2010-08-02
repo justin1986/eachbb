@@ -6,6 +6,7 @@
 		<title></title>
 		<?php
 			include 'frame.php';
+			use_jquery();
 		?>
 	</head>
 	<body>
@@ -13,9 +14,30 @@
 			<input type="text" value="<?php echo $_POST['post']; ?>"; />
 			<input type="submit" name="post" value="ok" />
 		</form>
-		<?php
-			var_dump(User::current_user());
-		?>
+		<div id="test" class="test_class" style="color:red; float:left">test</div>
+		<a href="www.sohu.com" id="a">test</a>
+		<select>
+			<option>1</option>
+			<option>2</option>
+		</select>
 	</body>
+	
+	<script type="text/javascript">
+		
+		//alert($('#test').html());
+		//alert($('#test').text());
+		//$('#test').attr('class','changed_class_name');
+		$(function(){
+			$('#test').hover(function(){
+				$(this).html('in');
+			},function(){
+				$(this).html('out');
+			});
+			
+			$('#a').click(function(e){
+				e.preventDefault();
+			});
+		});
+	</script>
 </html>
 
