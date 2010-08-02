@@ -3,18 +3,18 @@
 		use_jquery();
 		$db=get_db();
 		$user = User::current_user();
-		$sql="select m.id,m.visit_count,m.unread_msg_count,m.friend_count,m.level,m.score,m.last_login,m.created_at,m.uid,mm.avatar,mm.baby_gender,mm.address,mm.baby_name from eachbb_member.member_status m left join eachbb_member.member mm on m.uid=mm.uid where m.uid=".$user->uid;
+		$sql="select id,visit_count,unread_msg_count,friend_count,level,score,last_login,created_at from eachbb_member.member_status where uid=".$user->uid;
 		$news=$db->query($sql);
 		$sex='未知';
-		if($news[0]->baby_gender == 1){
+		if($user->baby_gender == 1){
 			$sex='男';
-		}elseif($news[0]->baby_gender == 2){
+		}elseif($user->baby_gender == 2){
 			$sex='女';
 		}
 	?>
 <div id="r_img">
-		<div id="r_pto"><img src="<?php echo $news[0]->avatar;?>"></div>
-		<div id="r_bb"><?php echo $news[0]->baby_name;?></div>
+		<div id="r_pto"><img src="<?php echo $user->avatar;?>"></div>
+		<div id="r_bb"><?php echo $user->baby_name;?></div>
 		<div id="r_num">被访问过<?php echo $news[0]->visit_count;?>次</div>
 	</div>
 	<div id="r_geng"> 
@@ -38,12 +38,12 @@
 			<div class="r_ge_ct">
 				<div class="r_ge_cta"><img src="/images/yard/r_b.jpg"></div>
 				<div class="r_ge_ctb">生日：</div>
-				<div class="r_ge_ctc">1988-12-12</div>
+				<div class="r_ge_ctc"><?php if($user->baby_birthday!=""){echo substr($user->baby_birthday,0,10);}else{echo "未知";}?></div>
 			</div>
 			<div class="r_ge_ct">
 				<div class="r_ge_cta"><img src="/images/yard/r_c.jpg"></div>
 				<div class="r_ge_ctb">地址：</div>
-				<div class="r_ge_ctc" style="width:115px;"><?php if($news[0]->address!=""){ echo $news[0]->address;}else{echo '不详';}?></div>
+				<div class="r_ge_ctc" style="width:115px;"><?php if(htmlspecialchars($user->address)!=""){ echo htmlspecialchars($user->address);}else{echo '不详';}?></div>
 			</div>
 			<div class="r_ge_ct">
 				<div class="r_ge_cta"><img src="/images/yard/r_d.jpg"></div>
@@ -65,7 +65,7 @@
 			<div class="r_ge_ct">
 				<div class="r_ge_cta"><img src="/images/yard/r_g.jpg"></div>
 				<div class="r_ge_ctb">最后登录：</div>
-				<div class="r_ge_ctc" style="width:80px;"><?php if($news[0]->last_login!=""){echo substr($news[0]->last_login,0,10);}else{echo "未知";}?></div>
+				<div class="r_ge_ctc" style="width:80px;"><?php if($user->last_login!=""){echo substr($user->last_login,0,10);}else{echo "未知";}?></div>
 			</div>
 		</div>
 		<div id="friend">
