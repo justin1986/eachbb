@@ -19,7 +19,9 @@
 		}elseif($news[0]->baby_gender == 2){
 			$sex='女';
 		}
-	?>
+		$db = get_db();
+		$daily = $db->query("SELECT a.*,b.name FROM eachbb_member.daily a left join eachbb_member.member b on a.u_id = b.id");
+		?>
 </head>
 <body>
 <div id="ibody">
@@ -123,9 +125,9 @@
 					<div id="cc_pic"></div>
 					<div id="cc_photo">
 						<div id="pho_l"></div>
-						<textarea id="pho_r">
-						</textarea>
+						<textarea name="test2"id="pho_r">llll</textarea>
 					</div>
+					
 					<div id="cc_ps" style="height:400px;">
 						<a href=""><img id="ccps_l" src="/images/yard/c_p.jpg" /></a>
 						<div id="ccps_c">
@@ -142,8 +144,25 @@
 								<div id="ccpsc_wordb"><a href="">发股票</a></div>
 								</div>
 							<div id="c_moblie">
-								<div id="c_moblie_w"><a href="">发布</a></div>
-								</div>
+								<div id="c_moblie_w">发布</div>
+								<div id="test">
+							</div>
+							</div>
+							<script>
+							$(function(){
+								$('#c_moblie_w').click(function(){
+									var pho_r = $('#pho_r').val();
+									$.Post('daily.posst.php',$(#pho_r),function(data){
+										if(post_r !=''){
+											alert('yes');}
+										else{
+											alert('no');
+										}
+								});
+								});
+							});
+							</script>
+							
 						</div>
 						<div id="c_ch">
 							<div id="m_w"></div>
@@ -160,9 +179,9 @@
 								<div class="pc_img"><img src="/images/yard/pho.jpg"></div>
 							</div>
 							<div class="pc_word">
-								<div class="title_pc"><a href="">纳纳</a><a href="" style="margin-left:10px; font-size:13px;">评价了你的秘密</a></div>
-								<div class="content_pc"><a href="">纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳</a><font>来自:小龙女</font></div>
-								<div class="time_pc">2010-2-2 20:12</div>
+								<div class="title_pc"><a href=""><?php echo $daily[0]->title;?></a><a href="" style="margin-left:10px; font-size:13px;">评价了你的秘密</a></div>
+								<div class="content_pc"><a href=""><?php echo $daily[0]->content;?></a><font><?php echo $daily[0]->name;?></font></div>
+								<div class="time_pc"><?php echo $daily[0]->created_time;?></div>
 							</div>
 						</div>
 						<!-- 
