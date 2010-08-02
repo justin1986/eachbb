@@ -26,6 +26,11 @@ $(function(){
 	});
 	$('#c_moblie').click(function(e){
 		e.preventDefault();
+		var pho_r=$('#pho_r').val();
+		if(pho_r.length >=500){
+			alert("你的内容太多了！");
+		}else{
 		$('#xxx').submit();
+		}
 	});
 });
