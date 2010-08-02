@@ -28,7 +28,7 @@
 	</div>
 	<div id="content">
 		<div id="c_l">
-			<?php include('./_yard_left.php');?>
+			<?php include(dirname(__FILE__).'/../yard/_yard_left.php');?>
 		</div>
 		<div id="c_ll">
 			<div id="cl_t"></div>
