@@ -1,0 +1,1 @@
+ALTER TABLE `eachbb_member`.`friend` ADD UNIQUE (`u_id`, `f_id`) 

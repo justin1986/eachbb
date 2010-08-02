@@ -14,7 +14,14 @@
 			<input type="submit" name="post" value="ok" />
 		</form>
 		<?php
-			var_dump(User::current_user());
+			function add($p1,$p2){
+				
+				return $p1 + $p2; 
+			}
+			$result = add(1,2);
+			$result2 = add($result,3);
+			echo $result2;
+			
 		?>
 	</body>
 </html>

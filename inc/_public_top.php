@@ -1,7 +1,7 @@
 <?php 
 	include_once(dirname(__FILE__).'./../frame.php');
 	set_charset('utf-8');
-	js_include_tag('swfobject');
+	js_include_tag('swfobject','public_top');
 	use_jquery_ui();
 ?>
 <style>
@@ -17,6 +17,7 @@
 #tl_r{
 	width:702px; 
 	height:103px;
+	background:none;
 	float:right;
 	display:inline;
 }
@@ -39,11 +40,11 @@
 	float:left;
 }
 .me_hh{
-	width:3px; 
+	width:2px; 
 	height:14px;
-	margin-left:2px;
 	margin-top:8px; 
-	margin-right:2px; 
+	margin-left:5px;
+	padding-right:5px;
 	background:url(/images/bbs/hr_t.jpg) no-repeat; 
 	font-size:0px; 
 	border:0px solid red; 
@@ -84,17 +85,24 @@
 #me_in{
 	width:150px; 
 	height:20px; 
-	margin-left:14px; 
 	margin-top:3px; 
 	font-size:12px; 
 	overflow:hidden; 
 	float:right; 
 	display:inline;
 }
-#me_btn{width:47px; height:20px; margin-left:4px; margin-top:5px; background:url(/images/top/btn.jpg) no-repeat; border:0px solid red; float:right; display:inline;}
+#me_btn{
+	width:47px; 
+	height:20px; 
+	margin-left:4px; 
+	margin-top:5px; 
+	background:url(/images/top/btn.jpg) no-repeat; 
+	border:0px solid red; 
+	float:right; 
+	display:inline;
+	}
 .xiaoxi{
-	width:70px;
-	height:13px;
+	height:14px;
 	margin-top:10px;
 	font-size:12px;
 	line-height:13px;
@@ -116,8 +124,7 @@
 	text-decoration: none;
 }
 .exit{
-	width:50px;
-	height:13px;
+	height:14px;
 	margin-top:10px;
 	font-size:12px;
 	line-height:13px;
@@ -145,16 +152,13 @@
 						foreach ($news_list as $list){
 						?>
 						<a href="#" style="<?php if($i == 0){ echo 'margin-left:10px;';}?> font-size:12px; font-weight:bold; color:#000000; text-decoration:none; float:left;"><?php echo $list;?></a>
+						<?php if(count($news_list)-1 != $i){ ?>
 						<div class="me_hh"></div>
-						<?php 
+						<?php }
 						$i++;
 						} 
 						?>
-						<div class="xiaoxi" style="margin-top:9px; margin-right:5px;">消息<a href="#" style="color:#FE6E0E;">（1）</a></div>
-						<div class="exit" style="border-left:2px solid #949494; border-right:2px solid #949494;"><a href="#" style="color:#000000;">退出</a></div>
-						<div class="xiaoxi" style="width:80px;">欢迎，<a href="#" style="color:#FE6E0E;">1244</a></div>
-						<input type="button" id="me_btn" >
-						<input type="text" id="me_in" style="height:18px;"/>
+						<div id="test_result" style="height:30px; overflow:hidden; float:right; display: inline;"></div>
 					</div>
 			</div>
 			<div id="menu_right"></div>
