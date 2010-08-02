@@ -5,7 +5,7 @@
 	<meta http-equiv=Content-Language content=zh-CN>
 	<?php
 	include_once '../frame.php';
-	include_once '../inc/user.class.php';
+	include_once '../inc/User.class.php';
 	use_jquery_ui();
 	css_include_tag('top_inc/test_top','colorbox','login_register');
 	js_include_tag('jquery.colorbox-min');

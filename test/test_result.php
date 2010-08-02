@@ -1,6 +1,6 @@
 <?php
 include "../frame.php";
-include_once '../inc/user.class.php';
+include_once '../inc/User.class.php';
 
 class Report {
 	var $id;

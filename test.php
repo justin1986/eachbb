@@ -6,6 +6,7 @@
 		<title></title>
 		<?php
 			include 'frame.php';
+			use_jquery();
 		?>
 	</head>
 	<body>
@@ -13,6 +14,7 @@
 			<input type="text" value="<?php echo $_POST['post']; ?>"; />
 			<input type="submit" name="post" value="ok" />
 		</form>
+<<<<<<< HEAD:test.php
 		<?php
 			function add($p1,$p2){
 				
@@ -23,6 +25,32 @@
 			echo $result2;
 			
 		?>
+=======
+		<div id="test" class="test_class" style="color:red; float:left">test</div>
+		<a href="www.sohu.com" id="a">test</a>
+		<select>
+			<option>1</option>
+			<option>2</option>
+		</select>
+>>>>>>> bda7511312deaf215cd50dc6150c9df0fff45d4a:test.php
 	</body>
+	
+	<script type="text/javascript">
+		
+		//alert($('#test').html());
+		//alert($('#test').text());
+		//$('#test').attr('class','changed_class_name');
+		$(function(){
+			$('#test').hover(function(){
+				$(this).html('in');
+			},function(){
+				$(this).html('out');
+			});
+			
+			$('#a').click(function(e){
+				e.preventDefault();
+			});
+		});
+	</script>
 </html>
 

@@ -1,6 +1,6 @@
 <?php
 	include_once '../frame.php';
-	include_once '../inc/user.class.php';
+	include_once '../inc/User.class.php';
 	if($_SESSION['news_share'] != $_POST['session']){
 		die('invalid request!');
 	}

@@ -152,11 +152,10 @@
 								<div class="pc_img"><img src="/images/yard/pho.jpg"></div>
 							</div>
 							<div class="pc_word">
-								<div class="title_pc"><a href=""><?php echo $b[0]->title;?></a><a href="" style="margin-left:10px; font-size:13px;">评价了你的秘密</a></div>
-								<div class="content_pc"><a href=""><?php echo $b[0]->content;?></a><font>来自：<?php echo $b[0]->name;?></font></div>
+								<div class="title_pc"><a href=""><?php echo htmlspecialchars($b[0]->title);?></a><a href="" style="margin-left:10px; font-size:13px;">评价了你的秘密</a></div>
+								<div class="content_pc"><a href=""><?php echo htmlspecialchars($b[0]->content);?></a><font>来自：<?php echo htmlspecialchars($b[0]->name);?></font></div>
 								<div class="time_pc"><?php echo $b[0]->last_edit_time;?></div>
 							</div>
-							
 						</div>
 						<!-- 
 						<div class="pc_hr"></div>
