@@ -17,7 +17,6 @@
 	}
 	
 	function __autoload($class_name){
-		$class_name = strtolower($class_name);
 		if(file_exists(ROOT_DIR .'lib/' . $class_name .'.class.php')){
 			require_once ROOT_DIR .'lib/' . $class_name .'.class.php';
 			return ;

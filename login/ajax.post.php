@@ -1,6 +1,6 @@
 <?php
 include_once '../frame.php';
-include_once '../inc/user.class.php';
+include_once '../inc/User.class.php';
 //if(!is_ajax())die('invalid request!');
 $allow_ops = array('login','logout','load_login_status_box');
 $op = strtolower($_GET['op']);
