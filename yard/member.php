@@ -47,7 +47,7 @@
 		</div>
 		<div id="c_c">
 			<div id="cc_t"></div>
-			<div id="cc_c">
+			<div id="cc_c" >
 				<div id="cc_pg">
 					<div class=r_title>基本<span>信息</span></div>
 					<form>
