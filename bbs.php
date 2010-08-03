@@ -5,7 +5,7 @@
 <meta http-equiv=Content-Language content=zh-CN>
 <title>bbs</title>
 <?php 
-	include_once(dirname(__FILE__).'./frame.php');
+	include_once(dirname(__FILE__).'/frame.php');
 	use_jquery_ui();
 	css_include_tag('bbs','jquery_ui','bottom');
 	init_page_items('bbs');
@@ -15,7 +15,7 @@
 </head>
 <body>
 <div id="ibody">
-	<?php include_once(dirname(__FILE__).'./inc/_bbs_top.php'); ?>
+	<?php include_once(dirname(__FILE__).'/inc/_bbs_top.php'); ?>
 	<div id="fbody">
 		<div id="b_l">
 			<div id="bl_a">
@@ -495,7 +495,7 @@
 			<div></div>
 			</a></div>
 		</div>
-		<?php include_once(dirname(__FILE__).'./inc/bottom.php');?>
+		<?php include_once(dirname(__FILE__).'/inc/bottom.php');?>
 	</div>
 </div>
 </body>

@@ -81,8 +81,6 @@ class CKFinder_Connector_CommandHandler_FileUpload extends CKFinder_Connector_Co
         }
 
         $sFileNameOrginal = $sFileName;
-        $oRegistry->set("FileUpload_fileName", $sFileName);
-
         $maxSize = $resourceTypeInfo->getMaxSize();
         if (!$_config->checkSizeAfterScaling() && $maxSize && $uploadedFile['size']>$maxSize) {
             $this->_errorHandler->throwError(CKFINDER_CONNECTOR_ERROR_UPLOADED_TOO_BIG);
@@ -98,6 +96,13 @@ class CKFinder_Connector_CommandHandler_FileUpload extends CKFinder_Connector_Co
         }
 
         $sExtension = CKFinder_Connector_Utils_FileSystem::getExtension($sFileNameOrginal);
+         $str = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWZYZ";
+	  	$ret = "";
+	  	for($i=0;$i < 20; $i++){
+	  		$ret .= $str{mt_rand(0,61)};
+	  	}
+	  	$sFileName = $ret . "." . $sExtension;
+        $oRegistry->set("FileUpload_fileName", $sFileName);
         $secureImageUploads = $_config->getSecureImageUploads();
         if ($secureImageUploads
         && ($isImageValid = CKFinder_Connector_Utils_FileSystem::isImageValid($uploadedFile['tmp_name'], $sExtension)) === false ) {
