@@ -16,8 +16,9 @@
 			<?php 
 		}
 		$id=$user->id;
-		$member=$db->query("SELECT id,photo FROM eachbb_member.member_avatar m where status=0 and photo<>'".$user->avatar."' and u_id=".$user->uid);
-		$img_count=$db->query("SELECT count(id) FROM eachbb_member.member_avatar m where u_id=".$user->uid);
+		$member=$db->query("SELECT id,photo FROM eachbb_member.member_avatar m where status=0 and photo<>'".$user->avatar."' and u_id=".$user->uid.' order by create_at desc');
+		$db->query("SELECT count(id) as img_count FROM eachbb_member.member_avatar m where u_id=".$user->uid);
+		$img_count= $db->field_by_name('img_count');
 	?>
 </head>
 <body>
@@ -58,14 +59,14 @@
 						<div><a href=""><a href="">修改密码</a></div>
 					</div>
 					<div class="c_menu_pg_p" ></div>
-					<form>
+					<form  enctype="multipart/form-data" action="/yard/yard_image.post.php" method="post">
 						<div id="pic_log">
 							<img id="pic_left" src="<?php echo $user->avatar; ?>"/>
 							<div id="pic_right">
 								<div class="rig_title">上传新头像</div>
 								<div class="rig_title" style="font-weight:normal; margin-top:0px; color:#333333; font-size:12px;">支持JPG、JPEG、GIF和PNG文件，最大2M。</div>
-								<div class="rig_title"><input type="file" id="file_name" size="40"/> </div>
-								<!-- <div class="rig_title" id="rig_sub"><a href=""><img src="/images/member/save.jpg"/></a></div> -->
+								<div class="rig_title"><input type="file" name="src" id="upfile" size="40"/> </div>
+								<div class="rig_title" id="rig_sub"><input id="ssubmit" type="submit" value=""/></div> 
 							</div>
 							<div id="pic_hr_title">
 								<div id="pichr_title">我的图库（<font><?php echo $img_count;?></font>张）</div>
@@ -77,7 +78,7 @@
 							<?php 
 								$i=0;
 								for( ; $i < 5 ; $i++){?>
-								<div style="<?php if($i == 0){ echo 'margin-left:0px;'; }?>">
+								<div id="pic_<?php echo $i;?>" style="<?php if($i == 0){ echo 'margin-left:0px;'; }?>">
 									<img src="<?php if($member[$i]->photo != null) echo $member[$i]->photo; else echo '/images/yard_info_img/1.jpg';?>"/>
 								</div>
 								<?php }?>
@@ -93,4 +94,21 @@
 	</div>
 </div>
 </body>
+<script>
+	$(function(){
+		$('#ssubmit').click(function(){
+			if($("#upfile").val()!=''){
+				var upfile1 = $("#upfile").val();
+				var upload_file_extension=upfile1.substring(upfile1.length-4,upfile1.length);
+				if(upload_file_extension.toLowerCase()!=".png"&&upload_file_extension.toLowerCase()!=".jpg"&&upload_file_extension.toLowerCase()!=".gif"){
+					alert("上传图片类型错误");
+					return false;
+				}
+			}else{
+				alert("请上传一个图片!");
+				return false;
+			}
+		});
+	});
+</script>
 </html>

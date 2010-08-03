@@ -10,47 +10,12 @@
 		?>
 	</head>
 	<body>
-		<form action="test.php" method="post">
-			<input type="text" value="<?php echo $_POST['post']; ?>"; />
-			<input type="submit" name="post" value="ok" />
-		</form>
-<<<<<<< HEAD:test.php
-		<?php
-			function add($p1,$p2){
-				
-				return $p1 + $p2; 
-			}
-			$result = add(1,2);
-			$result2 = add($result,3);
-			echo $result2;
-			
+		<?php 
+			var_dump($_FILES[tmp_name]);
 		?>
-=======
-		<div id="test" class="test_class" style="color:red; float:left">test</div>
-		<a href="www.sohu.com" id="a">test</a>
-		<select>
-			<option>1</option>
-			<option>2</option>
-		</select>
->>>>>>> bda7511312deaf215cd50dc6150c9df0fff45d4a:test.php
+		<form action="test.php" method="post" enctype="multipart/form-data">
+			<input type="file" name="file" />
+			<input type="submit" value="ok" />
+		</form>
 	</body>
-	
-	<script type="text/javascript">
-		
-		//alert($('#test').html());
-		//alert($('#test').text());
-		//$('#test').attr('class','changed_class_name');
-		$(function(){
-			$('#test').hover(function(){
-				$(this).html('in');
-			},function(){
-				$(this).html('out');
-			});
-			
-			$('#a').click(function(e){
-				e.preventDefault();
-			});
-		});
-	</script>
 </html>
-
