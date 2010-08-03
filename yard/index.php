@@ -7,7 +7,7 @@
 		include_once('../frame.php');
 		use_jquery();
 		css_include_tag('yard');
-		js_include_tag('yard/yard');
+		js_include_tag('yard/yard','yard_right');
 		$db=get_db();
 	?>
 </head>

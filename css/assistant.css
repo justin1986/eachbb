@@ -3,10 +3,10 @@ body{width:970PX; margin: 0 auto;}
 
 #f_r{width:745px;  float:right; display:inline;}
 #fr_t{width:745px; height:272px; float:left; display:inline;}
-#fr_tp{width:535px; height:272px; float:left; display:inline;}
-#fr_tp .fr_tpimg{width:535px; height:272px; overflow:hidden; position:relative; display:none;}
+#fr_tp{width:535px; height:272px;  float:left; display:inline;}
+#fr_tp .fr_tpimg{width:535px; height:272px;  position:relative; overflow:hidden; float: left;  display:none;}
 #fr_tp .fr_tpimg img{width:535px; height:272px; border:0px;}
-#fr_tp #fd_num{height:15px; top:515px; right:360px; overflow:hidden; position:absolute;}
+#fr_tp #fd_num{height:15px; top:510px; bottom:0px; left:800px; overflow:hidden; position:absolute; }
 #fr_tp #fd_num .num{width:15px; height:15px; text-align:center; margin-right:15px; line-height:15px; background:#234c2a; filter:alpha(opacity=50); -moz-opacity:0.5; opacity:0.5; color:#ffffff; font-size:10px; font-weight:bold; float:right; display:inline;}
 #fr_tp #fd_num .num.selected{background:#de6f04; filter:alpha(opacity=100); -moz-opacity:1; opacity:1;}
 #fr_trp{width:200px; height:272px; float:right; display:inline;}
