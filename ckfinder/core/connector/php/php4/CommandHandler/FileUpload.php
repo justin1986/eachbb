@@ -81,13 +81,6 @@ class CKFinder_Connector_CommandHandler_FileUpload extends CKFinder_Connector_Co
         }
 
         $sFileNameOrginal = $sFileName;
-	    $str = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWZYZ";
-	  	$ret = "";
-	  	for($i=0;$i < $len; $i++){
-	  		$ret .= $str{mt_rand(0,61)};
-	  	}
-	  	$sFileName = $ret;
-	  	die($sFileName);
         $oRegistry->set("FileUpload_fileName", $sFileName);
 
         $maxSize = $resourceTypeInfo->getMaxSize();
