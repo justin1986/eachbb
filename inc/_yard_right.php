@@ -11,7 +11,9 @@
 	}elseif($user->gender == 2){
 		$sex='女';
 	}
-?>
+	$visit = $db->query("select f_avatar,f_name from eachbb_member.visit_history order by create_at desc;");
+	$friend = $db->query("select f_name,f_avatar from eachbb_member.friend where u_id='$user->id' order by created_at desc;");
+	?>
 <div id="r_img">
 	<div id="r_pto"><img src="<?php echo $user->avatar;?>"></div>
 	<div id="r_bb"><?php echo $user->baby_name;?></div>
@@ -68,55 +70,50 @@
 			<div class="r_ge_ctc" style="width:80px;"><?php if($user->last_login!=""){echo substr($user->last_login,0,10);}else{echo "未知";}?></div>
 		</div>
 	</div>
-	<div id="friend">
-		<div id="friend_a"></div>
-		<div id="friend_b"></div>
-	</div>
-	<div id="pic_r">
-		<div class="pic_pg">
-			<a href="#">
-			<IMG  class="pic_img" src="/images/yard/pho.jpg"/>
-			</a>
+	<div id="friendbox">
+		<div class="friend">
+			<div id="friend_l0">
+				<img src="/images/yard/friend_l0.jpg" />
+			</div>
+			<div id="friend_word0">好友</div>
+			<div id="friend_r0">
+				<img src="/images/yard/friend_r0.jpg" />
+			</div>
 		</div>
-		<div class="pic_pg">
-			<a href="#">
-			<IMG  class="pic_img" src="/images/yard/pho.jpg"/>
-			</a>
-		</div>
-		<div class="pic_pg">
-			<a href="#">
-			<IMG  class="pic_img" src="/images/yard/pho.jpg"/>
-			</a>
-		</div>
-		<div class="pic_pg">
-			<a href="#">
-			<IMG  class="pic_img" src="/images/yard/pho.jpg"/>
-			</a>
-		</div>
-		<div class="pic_pg">
-			<a href="#">
-			<IMG  class="pic_img" src="/images/yard/pho.jpg"/>
-			</a>
-		</div>
-		<div class="pic_pg">
-			<a href="#">
-			<IMG  class="pic_img" src="/images/yard/pho.jpg"/>
-			</a>
-		</div>
-		<div class="pic_pg">
-			<a href="#">
-			<IMG  class="pic_img" src="/images/yard/pho.jpg"/>
-			</a>
-		</div>
-		<div class="pic_pg">
-			<a href="#">
-			<IMG  class="pic_img" src="/images/yard/pho.jpg"/>
-			</a>
-		</div>
-		<div class="pic_pg">
-			<a href="#">
-			<IMG  class="pic_img" src="/images/yard/pho.jpg"/>
-			</a>
+		<div class="friend">
+			<div id="friend_l1">
+				<img src="/images/yard/friend_l1.jpg" />
+			</div>
+			<div id="friend_word1">最近访客</div>
+			<div id="friend_r1">
+				<img src="/images/yard/friend_r1.jpg" />
+			</div>
 		</div>
 	</div>
+<div id="pic_r">
+	<div id="pic_0">
+		<?php for($i=0;$i<9;$i++){?>
+		<div class="pic_box">
+			<div class="pic_pg" id="pic_pg_0">
+				<a href="#">
+				<IMG  class="pic_img" src="<?php if ($friend[$i]->f_avatar != null){echo $visit[$i]->f_avatar;}else{echo '/images/yard/friend_null.jpg';}?>"/>
+				</a>
+			</div>
+			<div class="name_pic"><a title="<?php echo $friend[$i]->f_name;?>" href="#"><?php echo $friend[$i]->f_name;?></a></div>
+		</div>
+		<?php }?>
+	</div>
+	<div id="pic_1">
+		<?php for($i=0;$i<9;$i++){?>
+		<div class="pic_box">
+			<div class="pic_pg">
+				<a href="#">
+				<IMG  class="pic_img" src="<?php if ($visit[$i]->f_avatar != null){echo $visit[$i]->f_avatar;}else{echo '/images/yard/friend_null.jpg';}?>"/>
+				</a>
+			</div>
+			<div class="name_pic"><a title="<?php echo $visit[$i]->f_name;?>" href="#"><?php echo $visit[$i]->f_name;?></a></div>
+		</div>
+		<?php } ?>
+	</div>
+</div>
 </div>
