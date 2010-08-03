@@ -495,7 +495,7 @@
 			<div></div>
 			</a></div>
 		</div>
-		<?php include_once(dirname(__FILE__).'./inc/bottom.php');?>
+		<?php include_once(dirname(__FILE__).'/inc/bottom.php');?>
 	</div>
 </div>
 </body>
