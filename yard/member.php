@@ -49,7 +49,18 @@
 			<div id="cc_t"></div>
 			<div id="cc_c" >
 				<div id="cc_pg">
-					<div class=r_title>基本<span>信息</span></div>
+					<div class=r_title id="r_log"><span><?php echo $member->true_name;?></span>的账户管理</div>
+					<div id="r_log_hr">
+						<div>个人资料</div>
+					</div>
+					<div class="c_menu_pg">
+						<div id="c_menu_selected" style="margin-left:0px;"><a href="/yard/member.php">基本资料</a></div>
+						<div><a href="/yard/info.php">修改头像</a></div>
+						<div><a href="">修改密码</a></div>
+					</div>
+					<div class="c_menu_pg_p" >
+						
+					</div>
 					<form>
 						<table class=r_table>
 							<tr>
@@ -260,9 +271,6 @@
 						</div>
 						<input type="hidden" name="id" value=<?php echo $id;?>>
 					</form>
-				</div>
-				<div id="r_pho">
-					<?php include_once(dirname(__FILE__).'/../inc/_yard_right.php'); ?>
 				</div>
 			</div>
 			<div id="cc_b"></div>
