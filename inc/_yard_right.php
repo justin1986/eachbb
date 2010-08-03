@@ -6,9 +6,9 @@
 	$sql="select id,visit_count,unread_msg_count,friend_count,level,score,last_login,created_at from eachbb_member.member_status where uid=".$user->uid;
 	$news=$db->query($sql);
 	$sex='未知';
-	if($user->baby_gender == 1){
+	if($user->gender == 1){
 		$sex='男';
-	}elseif($user->baby_gender == 2){
+	}elseif($user->gender == 2){
 		$sex='女';
 	}
 	$visit = $db->query("select f_avatar,f_name from eachbb_member.visit_history order by create_at desc;");

@@ -7,7 +7,7 @@
 		include_once('../frame.php');
 		use_jquery();
 		css_include_tag('yard');
-		js_include_tag('yard/yard');
+		js_include_tag('yard/yard','yard_right');
 		$db=get_db();
 		$b = $db->query("select a.*,b.name FROM eachbb_member.daily a left join eachbb_member.member b on a.u_id = b.id order by last_edit_time desc");
 	?>

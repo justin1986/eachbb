@@ -5,7 +5,7 @@
 <meta http-equiv=Content-Language content=zh-CN>
 <title>bbs</title>
 <?php 
-	include_once(dirname(__FILE__).'./frame.php');
+	include_once(dirname(__FILE__).'/frame.php');
 	use_jquery_ui();
 	css_include_tag('bbs','jquery_ui','bottom');
 	init_page_items('bbs');

@@ -1,0 +1,23 @@
+@CHARSET "UTF-8";
+
+#pic_log{width:768px; height:500px; margin-left:10px; float:left; display: inline; }
+#pic_left{width:360px; height:300px; border:1px solid #9B9A9A; float:left; display:inline;}
+#pic_right{width:400px; height:300px; float:right; display: inline;}
+
+#pic_hr_title{width:768px; height:24px; margin-top:20px; float:left; display:inline;}
+#pic_hr_b{width:768px; height:4px;  background:#A3C1CD; float:left; display:inline;}
+#pichr_title{width:200px; height:24px; padding-left: 10px; line-height: 24px; font-size:16px; font-weight: bold; color:#8A7777; float:left; display:inline;}
+#pichr_title font{color:#FFAB4F; font-size:16px; font-weight: bold;}
+.pichr_menu{width:80px; height:24px; font-size:12px; color:#FF651A; cursor:pointer; line-height:24px; text-align:center; float:right; display: inline;}
+#pic_hr_pg{width:768px; height:119px; margin-top:14px;  float:left; display:inline;}
+#pic_hr_pg div{width:125px; height:119px; margin-left:34px;  background:url(/images/yard_info_img/pg.jpg) no-repeat; float:left; display:inline;}
+
+
+.rig_title{width:380px; height:20px; padding-left:20px; margin-top:50px; font-size:14px; font-weight:bold; float:left; display: inline;}
+.rig_title input{width:280px;}
+
+#rig_sub{height:30px; margin-top:20px; text-align:center; }
+#rig_sub img{width:72px; height:30px; border:0px solid red;}
+
+
+#pic_hr_pg div img{width:98px; height:98px; margin-top:9px; margin-left:13px;}
