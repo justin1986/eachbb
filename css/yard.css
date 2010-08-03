@@ -3,9 +3,9 @@ body div{float:left; font-size:12px; display:inline;}
 body a{text-decoration:none; color:#497617;}
 #ibody{width:970px; overflow:hidden; margin:0 auto;}
 
-#menu{width:700px; height:62px; margin-top:15px; float:left; display:inline;}
-#yard_day{width:124px; height:62px; background:url(../images/yard/day.jpg) no-repeat; float:left; display:inline;}
-#menu_a,#menu_b,#menu_c,#menu_d,#menu_e,#menu_f{width:80px; height:62px; cursor:pointer; float:left; display:inline;}
+#menu{width:700px; height:62px; margin-top:15px; float:left;}
+#yard_day{width:124px; height:62px; background:url(../images/yard/day.jpg) no-repeat; float:left;}
+#menu_a,#menu_b,#menu_c,#menu_d,#menu_e,#menu_f{width:80px; height:62px; cursor:pointer; float:left;}
 
 #yard_day_time{width:105px; height:22px; line-height:22px; margin-top:3px; margin-left:18px; color:#ffffff; font-size:12px; font-weight: bold; text-align: center;}
 #yard_day_ct{width:105px; height:22px; line-height:30px; margin-top:3px; margin-left:15px; color:#ffffff; font-size:20px; font-weight: bold; text-align: center;}
@@ -16,74 +16,74 @@ body a{text-decoration:none; color:#497617;}
 #menu_d{background:url(../images/yard/m_d.jpg) no-repeat; border-right:1px solid #E6F0E5;}
 #menu_e{background:url(../images/yard/m_e.jpg) no-repeat; border-right:1px solid #E6F0E5;}
 #menu_f{background:url(../images/yard/m_f.jpg) no-repeat;}
-#content{width:950px; overflow:hidden; float:left; display:inline;}
-#c_l{width:111px; height:657px; margin-top:10px; background:url(../images/yard/l_pg.jpg) no-repeat; float:left; display:inline;}
-#cll_z{width:100px; height:647px; margin-left:5px; margin-top:5px; float:left; display:inline;}
-.cll_zz{width:92px; height:32px; margin-left:5px; margin-top:3px; cursor:pointer; float:left; display:inline;}
-.cll_zz .cllz_img{width:24px; height:24px; margin-left:10px; margin-top:3px; float:left; display:inline;}
-.cll_zz .cllz_word{width:48px; height:32px; margin-left:10px; line-height:32px; overflow:hidden; font-size:12px; color:#54842C; float:left; display:inline;}
+#content{width:950px; overflow:hidden; float:left;}
+#c_l{width:111px; height:657px; margin-top:10px; background:url(../images/yard/l_pg.jpg) no-repeat; float:left;}
+#cll_z{width:100px; height:647px; margin-left:5px; margin-top:5px; float:left;}
+.cll_zz{width:92px; height:32px; margin-left:5px; margin-top:3px; cursor:pointer; float:left;}
+.cll_zz .cllz_img{width:24px; height:24px; margin-left:10px; margin-top:3px; float:left;}
+.cll_zz .cllz_word{width:48px; height:32px; margin-left:10px; line-height:32px; overflow:hidden; font-size:12px; color:#54842C; float:left;}
 #c_ll{width:20px; height:677px; float:left; display:inline;}
-#cl_t{width:20px; height:10px; font-size:0px; line-height:0px; background:url(../images/yard/ll_t.jpg) no-repeat; float:left; display:inline;}
-#cl_c{width:20px; height:657px; background:#D4EAAD; float:left; display:inline;}
-#cl_r{width:20px; height:10px; background:url(../images/yard/ll_b.jpg) no-repeat; float:left; display:inline;}
-#cll_hr{width:100px; height:1px; margin-top:2px; background:url(../images/yard/l_pg_d.jpg) no-repeat; font-size:14px; line-height:0px; float:left; display:inline;}
-#cllz_bs{width:38px; height:12px; margin-top:15px; font-size:0px; line-height:0px; margin-left:25px;  border:0px solid #000000; float:left; display:inline;}
-#c_c{width:819px; overflow:hidden; float:left; display:inline;}
-#cc_t{width:819px; height:24px; background:url(/images/yard/c_pg_t.jpg) no-repeat; float:left; display:inline;}
-#cc_c{width:819px; background:#E5F3CD; float:left; display:inline;}
-#cc_pg{width:576px; margin-left:15px; background:#ffffff; float:left; display:inline;}
-#cc_b{width:819px; height:26px; background:url(/images/yard/c_pg_b.jpg) no-repeat; float:left; display:inline;}
-#cc_pic{width:560px; height:313px; margin-left:8px; background:url(/images/yard/c_t.jpg) repeat; float:left;display:inline;}
-#cc_photo{width:539px; height:62px; margin-top:15px; margin-left:10px; background:url(/images/yard/c_pg_p.jpg) no-repeat; float:left; display:inline;}
-#pho_l{width:48px; height:48px;	margin-left:7px; margin-top:4px; background:url(/images/yard/pho.jpg) no-repeat; float:left; display:inline;}
+#cl_t{width:20px; height:10px; font-size:0px; line-height:0px; background:url(../images/yard/ll_t.jpg) no-repeat; float:left;}
+#cl_c{width:20px; height:657px; background:#D4EAAD; float:left;}
+#cl_r{width:20px; height:10px; background:url(../images/yard/ll_b.jpg) no-repeat; float:left;}
+#cll_hr{width:100px; height:1px; margin-top:2px; background:url(../images/yard/l_pg_d.jpg) no-repeat; font-size:14px; line-height:0px; float:left;}
+#cllz_bs{width:38px; height:12px; margin-top:15px; font-size:0px; line-height:0px; margin-left:25px;  border:0px solid #000000; float:left;}
+#c_c{width:819px; overflow:hidden; float:left;}
+#cc_t{width:819px; height:24px; background:url(/images/yard/c_pg_t.jpg) no-repeat; float:left;}
+#cc_c{width:819px; background:#E5F3CD; float:left;}
+#cc_pg{width:576px; margin-left:15px; background:#ffffff; float:left;}
+#cc_b{width:819px; height:26px; background:url(/images/yard/c_pg_b.jpg) no-repeat;}
+#cc_pic{width:560px; height:313px; margin-left:8px; background:url(/images/yard/c_t.jpg) repeat;}
+#cc_photo{width:539px; height:62px; margin-top:15px; margin-left:10px; background:url(/images/yard/c_pg_p.jpg) no-repeat;}
+#pho_l{width:48px; height:48px;	margin-left:7px; margin-top:4px; background:url(/images/yard/pho.jpg) no-repeat;}
 #pho_r{width:448px; height:43px; margin-left:25px; margin-top:7px; text-align:left; overflow:auto; overflow-y:hidden; line-height:20px; color:#999999; border:1px solid #EAEAEA; font-weight:bold; font-size:12px; float:left;}
-#cc_ps{width:530px; height:26px; float:left; display:inline;}
-#ccps_c a{color:#B4BEAF; text-decoration: none;}
-#ccps_l{width:61px; height:13px; margin-left:10px; font-size:0px; line-height:0px; border:0px solid red; float:left; display:inline;}
-#ccpsc_l{width:70px; height:20px; margin-left:24px; margin-top:5px; border-right:1px dashed #B0C7B0; float:left; display:inline;}
-#ccpsc_l a{color:#B4BEAF; font-size:12px; text-decoration: none;}
-#ccpsc_img{width:8px; height:8px;  margin-top:5px; background:url(/images/yard/c_pg_f.jpg) no-repeat; float:left; display:inline;}
+#cc_ps{width:530px; height:26px;}
+#ccps_c a{color:#B4BEAF;}
+#ccps_l{width:61px; height:13px; margin-left:10px; font-size:0px; line-height:0px; border:0px solid red;}
+#ccpsc_l{width:70px; height:20px; margin-left:24px; margin-top:5px; border-right:1px dashed #B0C7B0;}
+#ccpsc_l a{color:#B4BEAF; font-size:12px;}
+#ccpsc_img{width:8px; height:8px;  margin-top:5px; background:url(/images/yard/c_pg_f.jpg) no-repeat;}
 #ccpsc_word{width:40px; height:14px; margin-left:10px; margin-top:2px; font-size:12px; float:left; display:inline;}
-#ccpsc_la{width:70px; height:20px; margin-left:10px; margin-top:5px;  border-right:1px dashed #B0C7B0; float:left; display:inline;}
-#ccpsc_imga{width:10px; height:8px;  margin-top:5px; background:url(/images/yard/c_pg_c.jpg) no-repeat; float:left; display:inline;}
-#ccpsc_worda{width:40px; height:14px; margin-left:10px; margin-top:2px; font-size:12px; float:left; display:inline;}
-#ccpsc_lb{width:60px; height:20px; margin-top:5px; margin-left:10px;  float:left; display:inline;}
-#ccpsc_imgb{width:10px; height:11px;  margin-top:3px; background:url(/images/yard/c_pg_d.jpg) no-repeat; float:left; display:inline;}
-#ccpsc_wordb{width:40px; height:14px; margin-left:10px; margin-top:2px; font-size:12px; float:left; display:inline;}
-#c_moblie{width:76px; height:18px; margin-top:5px; float:right; display:inline; }
-#c_moblie_w{width:50px; height:14px; margin-left:10px; margin-top:2px; font-size:12px; text-align:right; float:right; display:inline;}
-#m_w{width:50px; height:24px; border-bottom:1px solid #E3F2DF; float:left; display:inline;}
-#c_ch{width:491px; height:25px; margin-top:25px; margin-left:70px; overflow:hidden; float:left; display:inline;}
-.c_ch_w{width:68px; height:22px; border-bottom:1px solid #E3F2DF; font-size:14px; cursor:pointer;  font-weight:bold; color:#7FB962; line-height:22px; margin-top:1px; text-align:center; float:left; display:inline;}
-.pc_z{width:555px;  margin-left:7px; margin-top:5px; float:left; display:inline;}
-.pc_hr{width:555px; height:1px; margin-left:7px; margin-top:5px; background:url(/images/yard/m_pg_hr.jpg) repeat-x; float:left; display:inline;}
-.pc_pg_img{width:56px; height:56px; margin-top:7px; margin-left:11px; background:url(/images/yard/pic_pg.jpg) no-repeat; float:left; display:inline;}
-.pc_img{width:48px; height:48px; margin:4px; overflow:hidden; float:left; display:inline;}
-.pc_word{width:460px; margin-top:5px; margin-left:10px;  float:left; display:inline;}
-	.title_pc{width:460px; line-height:18px; float: left; display: inline;}
-		.title_pc a{ color: #000; font-size:13px; font-weight:bold; text-decoration: none;}
-	.content_pc{width:460px; word-wrap: break-word; line-height:18px; float: left; display: inline;}
+#ccpsc_la{width:70px; height:20px; margin-left:10px; margin-top:5px;  border-right:1px dashed #B0C7B0;}
+#ccpsc_imga{width:10px; height:8px;  margin-top:5px; background:url(/images/yard/c_pg_c.jpg) no-repeat;}
+#ccpsc_worda{width:40px; height:14px; margin-left:10px; margin-top:2px; font-size:12px;}
+#ccpsc_lb{width:60px; height:20px; margin-top:5px; margin-left:10px;}
+#ccpsc_imgb{width:10px; height:11px;  margin-top:3px; background:url(/images/yard/c_pg_d.jpg) no-repeat;}
+#ccpsc_wordb{width:40px; height:14px; margin-left:10px; margin-top:2px; font-size:12px;}
+#c_moblie{width:76px; height:18px; margin-top:5px; float:right;}
+#c_moblie_w{width:50px; height:14px; margin-left:10px; margin-top:2px; font-size:12px; text-align:right;}
+#m_w{width:50px; height:24px; border-bottom:1px solid #E3F2DF;}
+#c_ch{width:491px; height:25px; margin-top:25px; margin-left:70px; overflow:hidden;}
+.c_ch_w{width:68px; height:22px; border-bottom:1px solid #E3F2DF; font-size:14px; cursor:pointer;  font-weight:bold; color:#7FB962; line-height:22px; margin-top:1px; text-align:center;}
+.pc_z{width:555px;  margin-left:7px; margin-top:5px;}
+.pc_hr{width:555px; height:1px; margin-left:7px; margin-top:5px; background:url(/images/yard/m_pg_hr.jpg) repeat-x;}
+.pc_pg_img{width:56px; height:56px; margin-top:7px; margin-left:11px; background:url(/images/yard/pic_pg.jpg) no-repeat;}
+.pc_img{width:48px; height:48px; margin:4px; overflow:hidden;}
+.pc_word{width:460px; margin-top:5px; margin-left:10px;}
+	.title_pc{width:460px; line-height:18px;}
+		.title_pc a{ color: #000; font-size:13px; font-weight:bold;}
+	.content_pc{width:460px; word-wrap: break-word; line-height:18px;}
 		.content_pc a{color: #609B38; font-size:12px; text-decoration: none;}
 		.content_pc font{color: #A9BDDA; font-size:12px;margin-left:13px;}
-	.time_pc{width:460px; line-height:18px; color: #A9BDDA;  font-size:12px; float: left; display: inline;}
-#r_pho{width:227px; height:400px; float:left; display:inline;}
-#r_img{width:192px; height:272px; margin-left:18px; margin-top:-85px; position:absolute;  background:url(/images/yard/r_pg_img.jpg) no-repeat; float:left; display:inline;}
-#r_pto{width:165px; height:201px; margin-left:13px; margin-top:10px; overflow:hidden; float:left; display:inline;}
-#r_bb{width:85px; height:20px; margin-left:13px; margin-top:10px; color:#3F3F3F; font-size:16px; font-weight:bold; float:left; display:inline;}
-#r_num{width:150px; height:20px; margin-top:8px; margin-left:15px; font-size:12px; font-weight:bold; color:#A2B5CA; float:left; display:inline;}
-#r_geng{width:170px; height:20px; margin-left:30px; margin-top:190px;  position:absolute;  z-index:101; float:left; display:inline;}
+	.time_pc{width:460px; line-height:18px; color: #A9BDDA; font-size:12px;}
+#r_pho{width:227px; height:400px; display:inline;}
+#r_img{width:192px; height:272px; margin-left:18px; margin-top:-85px; position:absolute;  background:url(/images/yard/r_pg_img.jpg) no-repeat;}
+#r_pto{width:165px; height:201px; margin-left:13px; margin-top:10px; overflow:hidden;}
+#r_bb{width:85px; height:20px; margin-left:13px; margin-top:10px; color:#3F3F3F; font-size:16px; font-weight:bold;}
+#r_num{width:150px; height:20px; margin-top:8px; margin-left:15px; font-size:12px; font-weight:bold; color:#A2B5CA;}
+#r_geng{width:170px; height:20px; margin-left:30px; margin-top:190px;  position:absolute;  z-index:101;}
 #r_ge_a{width:70px; height:14px;  float:left; display:inline;}
-#r_gi_a{width:10px; height:10px; margin-top:2px; background:url(/images/yard/pic_pg_a.jpg) no-repeat; float:left; display:inline;}
+#r_gi_a{width:10px; height:10px; margin-top:2px; background:url(/images/yard/pic_pg_a.jpg) no-repeat;}
 #r_gw_a,#r_gw_b{margin-left:5px; float:left; display:inline;}
 #r_geng a{color:red; text-decoration:none; font-weight:bold; font-size:12px;}
-#r_gi_b{width:10px; height:10px; margin-top:2px; background:url(/images/yard/pic_pg_b.jpg) no-repeat; float:left; display:inline;}
+#r_gi_b{width:10px; height:10px; margin-top:2px; background:url(/images/yard/pic_pg_b.jpg) no-repeat;}
 #r_ge_b{width:70px; height:14px; margin-left:20px;  float:left; display:inline;}
-#r_ge_hr{width:225px; height:1px; margin-top:1px; background:url(/images/yard/r_pg_hr.jpg) repeat-x;  z-index:102; float:left; display:inline;}
+#r_ge_hr{width:225px; height:1px; margin-top:1px; background:url(/images/yard/r_pg_hr.jpg) repeat-x;  z-index:102;}
 #r_ge_ge{width:225px; margin-top:220px; position:absolute; float:left; display:inline;}
-#r_ge_table{width:195px; margin-left:20px; margin-top:10px;  float:left; display:inline;}
-.r_ge_ct{width:193px; height:30px;  float:left; display:inline;}
-.r_ge_cta{width:11px; height:11px; margin-top:11px; margin-left:7px; float:left; display:inline;}
-.r_ge_ctb{height:30px; line-height:30px; margin-left:5px; font-size:14px; font-weight:bold; color:#666666; float:left; display:inline;}
+#r_ge_table{width:195px; margin-left:20px; margin-top:10px;}
+.r_ge_ct{width:193px; height:30px;}
+.r_ge_cta{width:11px; height:11px; margin-top:11px; margin-left:7px;}
+.r_ge_ctb{height:30px; line-height:30px; margin-left:5px; font-size:14px; font-weight:bold; color:#666666;}
 .r_ge_ctc{width:80px; height:30px; overflow:Hidden; line-height:30px; font-size:14px; font-weight:bold; color:#6AA85F; float:left; display:inline;}
 #friendbox{width:203px; height:23px; margin-left:10px; margin-top:15px; line-height:24px;border-bottom:1px solid #BFDEC1; float:left; display:inline;}
 .friend{height:23px; margin-left:10px; cursor:pointer; display:inline;}
