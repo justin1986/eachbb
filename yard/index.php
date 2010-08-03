@@ -9,7 +9,7 @@
 		css_include_tag('yard');
 		js_include_tag('yard/yard','yard_right');
 		$db=get_db();
-		$b = $db->query("select a.*,b.name FROM eachbb_member.daily a left join eachbb_member.member b on a.u_id = b.id order by last_edit_time desc");
+		$user = User::current_user();
 	?>
 </head>
 <body>
@@ -119,7 +119,7 @@
 						</form>
 					</div>
 					<div id="cc_ps" style="height:400px;">
-						<a href=""><img id="ccps_l" src="/images/yard/c_p.jpg" /></a>
+						<a href=""><img style="float:left;" id="ccps_l" src="/images/yard/c_p.jpg" /></a>
 						<div id="ccps_c">
 							<div id="ccpsc_l">
 								<div id="ccpsc_img"></div>
@@ -151,10 +151,11 @@
 							<div class="pc_pg_img">
 								<div class="pc_img"><img src="/images/yard/pho.jpg"></div>
 							</div>
+							<?php $sql = $db->query("select * FROM eachbb_member.mood order by created_at desc");?>
 							<div class="pc_word">
-								<div class="title_pc"><a href=""><?php echo htmlspecialchars($b[0]->title);?></a><a href="" style="margin-left:10px; font-size:13px;"><?php echo htmlspecialchars($b[0]->name); ?> 说了一句话</a></div>
-								<div class="content_pc"><a href="">“<?php echo htmlspecialchars($b[0]->content);?>”</a></div>
-								<div class="time_pc"><?php echo $b[0]->last_edit_time;?></div>
+								<div class="title_pc"><a href=""><?php echo htmlspecialchars($sql[0]->title);?></a><a href="" style="margin-left:10px; font-size:13px;"><?php echo htmlspecialchars($sql[0]->name); ?> 说了一句话</a></div>
+								<div class="content_pc"><a href="">“<?php if($user->name != ''){echo htmlspecialchars($sql[0]->content);}else{echo "请先登录！";}?>”</a></div>
+								<div class="time_pc"><?php if($user->name != ''){echo $sql[0]->created_at;}else{echo "";}?></div>
 							</div>
 						</div>
 						<!-- 
