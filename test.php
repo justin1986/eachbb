@@ -10,29 +10,25 @@
 		?>
 	</head>
 	<body>
-		<form action="test.php" method="post">
-			<input type="text" value="<?php echo $_POST['post']; ?>"; />
-			<input type="submit" name="post" value="ok" />
+		<form action="test.post.php" method="post">
+			<p>
+			title:<input type="text" name="title" value="<?php echo $_POST['post']; ?>"; />
+			</p>
+			<p>
+			content:<textarea rows="" cols="20" name="content"></textarea>
+			</p>
+			<input type="submit" value="ok" />
 		</form>
-<<<<<<< HEAD:test.php
-		<?php
-			function add($p1,$p2){
+		<div>
+			<?php
+				$db = get_db();
+				$result = $db->query("select * from test");
+				if($result === false) die("query fail");
 				
-				return $p1 + $p2; 
-			}
-			$result = add(1,2);
-			$result2 = add($result,3);
-			echo $result2;
-			
-		?>
-=======
-		<div id="test" class="test_class" style="color:red; float:left">test</div>
-		<a href="www.sohu.com" id="a">test</a>
-		<select>
-			<option>1</option>
-			<option>2</option>
-		</select>
->>>>>>> bda7511312deaf215cd50dc6150c9df0fff45d4a:test.php
+				
+			?>
+			title:<?php echo $result[0]->title ?>
+		</div>
 	</body>
 	
 	<script type="text/javascript">
