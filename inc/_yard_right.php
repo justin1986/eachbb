@@ -91,9 +91,13 @@
 <div id="pic_r">
 	<div id="pic_0">
 		<?php
-		$visit = $db->query("select f_avatar,f_name from eachbb_member.visit_history order by create_at desc;");
-		$friend = $db->query("select f_name,f_avatar from eachbb_member.friend where u_id='{$user->id}' order by created_at desc;");
-		for($i=0;$i<9;$i++){?>
+		$visit = $db->query("select id,f_avatar,f_name from eachbb_member.visit_history order by create_at desc limit 9;");
+		$friend = $db->query("select id,f_name,f_avatar from eachbb_member.friend limit 9 where u_id='{$user->id}' order by created_at desc limit 9;");
+		$m_visit = $visit[0]->id;
+		$m_friend = $friend[0]->id;
+		if($m_visit>9){$m_visit = 9;}
+		if($m_friend>9){$m_friend = 9;}
+		for($i=0;$i<$m_friend;$i++){?>
 		<div class="pic_box">
 			<div class="pic_pg" id="pic_pg_0">
 				<a href="#">
@@ -105,7 +109,7 @@
 		<?php }?>
 	</div>
 	<div id="pic_1">
-		<?php for($i=0;$i<9;$i++){?>
+		<?php for($i=0;$i<$m_visit;$i++){?>
 		<div class="pic_box">
 			<div class="pic_pg">
 				<a href="#">
