@@ -91,7 +91,7 @@
 <div id="pic_r">
 	<div id="pic_0">
 		<?php
-		$visit = $db->query("select id,f_avatar,f_name from eachbb_member.visit_history order by create_at desc limit 9;");
+		$visit = $db->query("select id,f_avatar,f_name from eachbb_member.visit_history where u_id='{$user->id}' order by create_at desc limit 9;");
 		$friend = $db->query("select id,f_name,f_avatar from eachbb_member.friend limit 9 where u_id='{$user->id}' order by created_at desc limit 9;");
 		$m_visit = $visit[0]->id;
 		$m_friend = $friend[0]->id;

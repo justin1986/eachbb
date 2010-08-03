@@ -16,7 +16,7 @@
 			alert("非法信息！");
 		}
 		else{
-			$sql = "insert into eachbb_member.daily (title,content,u_id,created_at,last_edit_time,comment_count,visit_count)values('','$content','$user->id',now(),now(),0,0);" ;
+			$sql = "insert into eachbb_member.mood (content,u_id,u_name,created_at,comment_count)values('$content','{$user->id}','{$user->name}',now(),0);" ;
 			if($db->execute($sql)){
 				alert("发布成功！");
 			}else{
