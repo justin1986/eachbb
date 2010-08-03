@@ -11,8 +11,6 @@
 	}elseif($user->gender == 2){
 		$sex='女';
 	}
-	$visit = $db->query("select f_avatar,f_name from eachbb_member.visit_history order by create_at desc;");
-	$friend = $db->query("select f_name,f_avatar from eachbb_member.friend where u_id='$user->id' order by created_at desc;");
 	?>
 <div id="r_img">
 	<div id="r_pto"><img src="<?php echo $user->avatar;?>"></div>
@@ -92,7 +90,10 @@
 	</div>
 <div id="pic_r">
 	<div id="pic_0">
-		<?php for($i=0;$i<9;$i++){?>
+		<?php
+		$visit = $db->query("select f_avatar,f_name from eachbb_member.visit_history order by create_at desc;");
+		$friend = $db->query("select f_name,f_avatar from eachbb_member.friend where u_id='{$user->id}' order by created_at desc;");
+		for($i=0;$i<9;$i++){?>
 		<div class="pic_box">
 			<div class="pic_pg" id="pic_pg_0">
 				<a href="#">
