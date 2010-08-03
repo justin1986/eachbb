@@ -15,7 +15,7 @@
 </head>
 <body>
 <div id="ibody">
-	<?php include_once(dirname(__FILE__).'./inc/_bbs_top.php'); ?>
+	<?php include_once(dirname(__FILE__).'/inc/_bbs_top.php'); ?>
 	<div id="fbody">
 		<div id="b_l">
 			<div id="bl_a">
