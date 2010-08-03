@@ -68,7 +68,7 @@
 								<!-- <div class="rig_title" id="rig_sub"><a href=""><img src="/images/member/save.jpg"/></a></div> -->
 							</div>
 							<div id="pic_hr_title">
-								<div id="pichr_title">我的图库（<font><?php echo count($img_count[0]->id);?></font>张）</div>
+								<div id="pichr_title">我的图库（<font><?php echo $img_count[0];?></font>张）</div>
 								<div class="pichr_menu">[上传头像]</div>
 								<div class="pichr_menu">[选择头像]</div>
 							</div>
