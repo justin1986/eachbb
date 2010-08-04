@@ -38,78 +38,7 @@
 	</div>
 	<div id="content">
 		<div id="c_l">
-			<div id="cll_z">
-				<div class="cll_zz" style="background:url(/images/yard/ffffff.gif) no-repeat;">
-					<div class="cllz_img" style="background:url(/images/yard/l_a.jpg) no-repeat;"></div>
-					<div class="cllz_word">音乐</div>
-				</div>
-				<div class="cll_zz">
-					<div class="cllz_img" style="background:url(/images/yard/l_b.jpg) no-repeat;"></div>
-					<div class="cllz_word">转帖</div>
-				</div>
-				<div class="cll_zz">
-					<div class="cllz_img" style="background:url(/images/yard/l_c.jpg) no-repeat;"></div>
-					<div class="cllz_word">投票</div>
-				</div>
-				<div class="cll_zz">
-					<div class="cllz_img" style="background:url(/images/yard/l_d.jpg) no-repeat;"></div>
-					<div class="cllz_word">说秘密</div>
-				</div>
-				<div class="cll_zz">
-					<div class="cllz_img" style="background:url(/images/yard/l_e.jpg) no-repeat;"></div>
-					<div class="cllz_word">真心话</div>
-				</div>
-				<div class="cll_zz">
-					<div class="cllz_img" style="background:url(/images/yard/l_f.jpg) no-repeat;"></div>
-					<div class="cllz_word">天天向上</div>
-				</div>
-				<div class="cll_zz">
-					<div class="cllz_img" style="background:url(/images/yard/l_g.jpg) no-repeat;"></div>
-					<div class="cllz_word">游戏大厅</div>
-				</div>
-				<div class="cll_zz">
-					<div class="cllz_img" style="background:url(/images/yard/l_k.jpg) no-repeat;"></div>
-					<div class="cllz_word">宠物村</div>
-				</div>
-				<div class="cll_zz">
-					<div class="cllz_img" style="background:url(/images/yard/l_l.jpg) no-repeat;"></div>
-					<div class="cllz_word">池塘边</div>
-				</div>
-				<div class="cll_zz">
-					<div class="cllz_img" style="background:url(/images/yard/l_m.jpg) no-repeat;"></div>
-					<div class="cllz_word">梦幻城</div>
-				</div>
-				<div class="cll_zz">
-					<div class="cllz_img" style="background:url(/images/yard/l_p.jpg) no-repeat;"></div>
-					<div class="cllz_word">阳光牧场</div>
-				</div>
-				<div class="cll_zz">
-					<div class="cllz_img" style="background:url(/images/yard/l_o.jpg) no-repeat;"></div>
-					<div class="cllz_word">绿光森林</div>
-				</div>
-				<div class="cll_zz">
-					<div class="cllz_img" style="background:url(/images/yard/l_q.jpg) no-repeat;"></div>
-					<div class="cllz_word">抢吧</div>
-				</div>
-				<div class="cll_zz">
-					<div class="cllz_img" style="background:url(/images/yard/l_r.jpg) no-repeat;"></div>
-					<div class="cllz_word">贺卡</div>
-				</div>
-				<div class="cll_zz">
-					<div class="cllz_img" style="background:url(/images/yard/l_s.jpg) no-repeat;"></div>
-					<div class="cllz_word">新手任务</div>
-				</div>
-				<div class="cll_zz">
-					<div class="cllz_img" style="background:url(/images/yard/l_t.jpg) no-repeat;"></div>
-					<div class="cllz_word">白小报</div>
-				</div>
-				<div class="cll_zz">
-					<div class="cllz_img" style="background:url(/images/yard/l_u.jpg) no-repeat;"></div>
-					<div class="cllz_word">添加</div>
-				</div>
-				<div id="cll_hr"></div>
-				<a href="#"><img id="cllz_bs" src="/images/yard/l_l_s.jpg" /></a>
-			</div>
+			<?php include(dirname(__FILE__).'/../yard/_yard_left.php');?>
 		</div>
 		<div id="c_ll">
 			<div id="cl_t"></div>
@@ -118,9 +47,20 @@
 		</div>
 		<div id="c_c">
 			<div id="cc_t"></div>
-			<div id="cc_c">
+			<div id="cc_c" >
 				<div id="cc_pg">
-					<div class=r_title>基本<span>信息</span></div>
+					<div class=r_title id="r_log"><span><?php echo $member->true_name;?></span>的账户管理</div>
+					<div id="r_log_hr">
+						<div>个人资料</div>
+					</div>
+					<div class="c_menu_pg">
+						<div id="c_menu_selected" style="margin-left:0px;"><a href="/yard/member.php">基本资料</a></div>
+						<div><a href="/yard/info.php">修改头像</a></div>
+						<div><a href="">修改密码</a></div>
+					</div>
+					<div class="c_menu_pg_p" >
+						
+					</div>
 					<form>
 						<table class=r_table>
 							<tr>
@@ -332,12 +272,10 @@
 						<input type="hidden" name="id" value=<?php echo $id;?>>
 					</form>
 				</div>
-				<div id="r_pho">
-					<?php include_once(dirname(__FILE__).'/../inc/_yard_right.php'); ?>
-				</div>
 			</div>
 			<div id="cc_b"></div>
 		</div>
+		<?php include_once(dirname(__FILE__).'/../inc/bottom.php');?>
 	</div>
 </div>
 </body>

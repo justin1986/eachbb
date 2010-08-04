@@ -24,4 +24,26 @@ $(function(){
 		$('.cll_zz').attr('style','background:none;');
 		$(this).attr('style','background:#ffffff;');
 	});
+	$('#c_moblie').click(function(e){
+		e.preventDefault();
+		var pho_r=$('#pho_r').val();
+		if(pho_r.length >=500){
+			alert("你的内容太多了！");
+		}else{
+		$('#xxx').submit();
+		}
+	});
+	$('.friend').click(function(){
+		var selected = $('.friend').index(this);
+		if(selected != 0){selected2 = 0;}else{selected2 = 1;}
+		$('#friend_l'+selected).find('img').attr('src','/images/yard/friend_l1.jpg');
+		$('#friend_r'+selected).find('img').attr('src','/images/yard/friend_r1.jpg');
+		$('#friend_l'+selected2).find('img').attr('src','/images/yard/friend_l0.jpg');
+		$('#friend_r'+selected2).find('img').attr('src','/images/yard/friend_r0.jpg');
+		$('#friend_word'+selected2).css({'background':'url("/images/yard/friend_bj.jpg") repeat-x','color':'#4e714f'});
+		$('#friend_word'+selected).css({'background':'#BFDEC1','color':'#6ebd71'});
+		$('#pic_'+selected).show();
+		$('#pic_'+selected2).hide();
+	});
+	
 });

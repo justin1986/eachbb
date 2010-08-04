@@ -7,8 +7,9 @@
 		include_once('../frame.php');
 		use_jquery();
 		css_include_tag('yard');
-		js_include_tag('yard/yard');
+		js_include_tag('yard/yard','yard_right');
 		$db=get_db();
+		$user = User::current_user();
 	?>
 </head>
 <body>
@@ -113,11 +114,12 @@
 					<div id="cc_pic"></div>
 					<div id="cc_photo">
 						<div id="pho_l"></div>
-						<textarea id="pho_r">
-						</textarea>
+						<form id="xxx" action="daily.post.php" method="post">
+							<textarea name="pho_r" id="pho_r">llllllll</textarea>
+						</form>
 					</div>
 					<div id="cc_ps" style="height:400px;">
-						<a href=""><img id="ccps_l" src="/images/yard/c_p.jpg" /></a>
+						<a href=""><img style="float:left;" id="ccps_l" src="/images/yard/c_p.jpg" /></a>
 						<div id="ccps_c">
 							<div id="ccpsc_l">
 								<div id="ccpsc_img"></div>
@@ -149,10 +151,11 @@
 							<div class="pc_pg_img">
 								<div class="pc_img"><img src="/images/yard/pho.jpg"></div>
 							</div>
+							<?php $sql = $db->query("select * FROM eachbb_member.mood order by created_at desc");?>
 							<div class="pc_word">
-								<div class="title_pc"><a href="">纳纳</a><a href="" style="margin-left:10px; font-size:13px;">评价了你的秘密</a></div>
-								<div class="content_pc"><a href="">纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳</a><font>来自:小龙女</font></div>
-								<div class="time_pc">2010-2-2 20:12</div>
+								<div class="title_pc"><a href=""><?php echo htmlspecialchars($sql[0]->title);?></a><a href="" style="margin-left:10px; font-size:13px;"><?php echo htmlspecialchars($sql[0]->name); ?> 说了一句话</a></div>
+								<div class="content_pc"><a href="">“<?php if($user->name != ''){echo htmlspecialchars($sql[0]->content);}else{echo "请先登录！";}?>”</a></div>
+								<div class="time_pc"><?php if($user->name != ''){echo $sql[0]->created_at;}else{echo "";}?></div>
 							</div>
 						</div>
 						<!-- 
@@ -170,3 +173,4 @@
 </div>
 </body>
 </html>
+

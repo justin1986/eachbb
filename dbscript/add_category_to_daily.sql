@@ -1,0 +1,1 @@
+ALTER TABLE `eachbb_member`.`daily` ADD COLUMN `category_id` INTEGER UNSIGNED AFTER `comment_count`;
