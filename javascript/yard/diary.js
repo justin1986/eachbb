@@ -12,13 +12,11 @@ $(function(){
 		}else if(created_id == 0){
 			alert("请选择分类！");
 		}else{
-			$('#sub').attr('disabled',"disabled");
+			$('#sub').attr('disabled',"disabled")
 			$.post('_diary_sub_ajax_post.php',{"title":title,"content":content,"created_id":created_id},function(data){
 				alert(data);
 			});
 		}
-		
-		
 	});
 	$('#category_button').live('click',function(){
 		var value=$('#category_name').val().trim();
