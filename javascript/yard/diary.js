@@ -33,7 +33,6 @@ $(function(){
 	});
 	$('#diary_content img').live('click',function(){
 		var value = $('#diary_content select option:selected').val().trim();
-		
 			$.post('_diary_ajax_select.php',{"type":"insert"},function(data){
 				$('#diary_content').html(data);
 			});

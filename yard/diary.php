@@ -54,7 +54,6 @@
 					<div id="r_log_hr">
 						<div>发表新日志 </div>
 					</div>
-					
 					<div id="c_menu_pg_p">标题：
 						<input name="text" id="diary_title"/>
 					</div>
