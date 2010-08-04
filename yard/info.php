@@ -8,22 +8,15 @@
 		use_jquery();
 		css_include_tag('yard','member','yard_info');
 		js_include_tag('yard/yard','member','yard/yard_info');
-		$db = get_db();
 		$user = User::current_user();
 		if(!$user){
 			alert("请您先登录！");
 			redirect('/login/');
 			exit();
 		}
-		$avatars =$db->query("SELECT id,photo,status FROM eachbb_member.member_avatar m where u_id=".$user->uid.' order by create_at desc limit 6');
+		$db = get_db();
+		$avatars =$db->query("SELECT id,photo,status FROM eachbb_member.member_avatar where u_id=".$user->id.' order by create_at desc limit 6');
 		$avatar_count = $db->record_count;
-		if($avatars){
-			for($i=0; $i < $avatar_count; $i++){
-				if($avatars[$i]->status == 1){
-					$current_avatar_index = $i;
-				}
-			}
-		}
 	?>
 </head>
 <body>
@@ -81,10 +74,22 @@
 							<div id="pic_hr_b"></div>
 							<div id="pic_hr_pg">
 							<?php 
+							if($avatars){
+								for($i=0 ; $i < $avatar_count; $i++){
+									if($avatars[$i]->status == 1){
+										$current_avatar_index = $i;
+									}
+								}
+							}
 								for( $i=0; $i < 5 ; $i++){
+									if($i < $avatar_count){
+										$avatar_id = $avatars[$i]->id;
+									}else{
+										$avatar_id = "default_avatar";
+									}
 								?>
-								<div class="avatar_container" <?php if($i == 0){ ?> style='margin-left:0px;' <?php }?> >
-									<img src="<?php if($avatars[$i]->photo != null) echo $avatars[$i]->photo; else echo '/images/yard_info_img/1.jpg';?>"/>
+								<div class="avatar_container" id="<?php echo $avatar_id;?>" <?php if($i == 0){  if($current_avatar_index == $i){echo 'style="margin-left:0px; background:url(/images/yard_info_img/pg2.jpg) no-repeat;"';}else{?>style='margin-left:0px;' <?php }}?><?php if($current_avatar_index == $i){echo 'style="background:url(/images/yard_info_img/pg2.jpg) no-repeat;"';}?>>
+									<img src="<?php echo  $avatars[$i]->photo ? $avatars[$i]->photo : '/images/yard_info_img/1.jpg';?>"/>
 								</div>
 								<?php }?>
 							</div>

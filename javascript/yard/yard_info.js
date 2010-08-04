@@ -1,24 +1,29 @@
 $(function(){
 	$('#set_avatar').click(function(){
-		var sel=$('.def img');
-		
+		var sel=$('.avatar_container.selected');
 		if(sel.length > 0){
-			$.getScript('/yard/_yard_info_ajax_post.php?photo=' + sel,function(result){
-				$("#pic_left").attr('src',result);
-			});
+			var id = sel.attr('id');
+			var src = sel.find('img').attr('src');
+			if(id == "default_avatar"){
+				alert("操作有误！");
+			}else{
+				$.post('_yard_info_ajax_post.php',{'id':id},function(data){
+					if(data){
+						alert(data);
+					}else{
+						$('#pic_left').attr('src',src);
+					}
+				});
+			}
 		}else{
-			alert('请选择一张图片！');
+			alert('请选择一张头像！');
 		}
 	});
-	$('#pic_hr_pg div').click(function(){
-		var selected=$('#pic_hr_pg div').index($(this));
-		$('#pic_hr_pg div').attr("class","no");
-		$('#pic_hr_pg div').attr("style","background:url(/images/yard_info_img/pg.jpg) no-repeat;");
-		$('#pic_0').attr("style",'margin-left:0px;');
-		if(selected === 0)
-		$('#pic_'+selected).attr("style","margin-left:0px; background:url(/images/yard_info_img/pg2.jpg) no-repeat;");
-		else
-		$('#pic_'+selected).attr("style","background:url(/images/yard_info_img/pg2.jpg) no-repeat;");
-		$(this).attr("class","def");
+	
+	$('.avatar_container').click(function(){
+		$('.avatar_container').css('background','url(/images/yard_info_img/pg.jpg) no-repeat');
+		$('.avatar_container').removeClass('selected');
+		$(this).css('background','url(/images/yard_info_img/pg2.jpg) no-repeat')
+		$(this).addClass('selected');
 	});
 });

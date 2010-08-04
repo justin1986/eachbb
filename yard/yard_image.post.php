@@ -15,7 +15,7 @@
 		<?php
 			$user = User::current_user();
 			if(!$user) die('请先登录!');
-			$id=$user->uid;
+			$id=$user->id;
 			$created_at = date("Y-m-d H:i:s");
 			$path_info = pathinfo($_FILES['src'][name]);
 			$yuan_pic=$_FILES['src'][tmp_name];
