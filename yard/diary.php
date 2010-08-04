@@ -7,7 +7,7 @@
 		include_once('../frame.php');
 		use_jquery();
 		css_include_tag('yard','member','diary');
-		js_include_tag('yard/yard','member','../ckeditor/ckeditor.js');
+		js_include_tag('yard/yard','member','../ckeditor/ckeditor.js','yard/diary');
 		$db = get_db();
 		$user = User::current_user();
 		if(!$user){
@@ -19,6 +19,7 @@
 		$member = new table_class('eachbb_member.member');
 		$member->find($id);
 		$db = get_db();
+		$daily_cate=$db->query("SELECT id,name FROM eachbb_member.daily_category d;");
 	?>
 </head>
 <body>
@@ -48,7 +49,7 @@
 		<div id="c_c">
 			<div id="cc_t"></div>
 			<div id="cc_c" >
-				<div id="cc_pg">
+				<div id="cc_pg" style="height:640px;">
 					<div class=r_title id="r_log"><span><?php echo $member->true_name;?></span>的账户管理</div>
 					<div id="r_log_hr">
 						<div>发表新日志 </div>
@@ -61,14 +62,19 @@
 					<div id="c_menu_pg_con">
 						<?php show_fckeditor('news[content]','Admin',false,"215",$news->content);?>
 					</div>
-					<div class="c_menu_con_title" style="height:26px;  line-height:26px; font-size:12px;">
+					<div class="c_menu_con_title" id="diary_content" style="height:26px; margin-top:20px; line-height:26px; font-size:12px;">
 						日志分类：
 						<select>
 							<option value="0">请选择分类</option>
+							<?php 
+							foreach ($daily_cate as $variable) {
+								echo "<option value={$variable->id}>{$variable->name}</option>";
+							}
+							?>
 						</select>
 						<img src="/images/admin/btn_add.png"/>
 					</div>
-					<div class="c_menu_con_title">
+					<div class="c_menu_con_title" style="margin-top:20px;">
 						<div id="sub">发布</div>
 						<div id="no_sub">取消发布</div>
 					</div>
