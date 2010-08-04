@@ -30,7 +30,6 @@ $(function(){
 		}else{
 			alert("操作有误！");
 		}
-		
 	});
 	$('#diary_content img').live('click',function(){
 		var value=$('#diary_content select option:selected').val().trim();
@@ -39,15 +38,4 @@ $(function(){
 				$('#diary_content').html(data);
 			});
 	});
-//		if(selected === 1){
-//			var sel=$('.def img').attr('src');
-//			if($('.def img').attr('src') != ""){
-//				$.getScript('/yard/_yard_info_ajax_post.php?photo=' + sel,function(result){
-//					$("#pic_left").attr('src',result);
-//				});
-//			}else{
-//				alert('请选择一张图片！');
-//			}
-//		}
-
 });
