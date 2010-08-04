@@ -46,6 +46,7 @@
 			<div id="cl_r"></div>
 		</div>
 		<div id="c_c">
+			<form>
 			<div id="cc_t"></div>
 			<div id="cc_c" >
 				<div id="cc_pg" style="height:640px;">
@@ -65,11 +66,12 @@
 					</div>
 					<div class="c_menu_con_title" style="margin-top:20px;">
 						<input type="button" id="sub" value="发布"/>
-						<input type="botton" id="no_sub" value="取消发布" />
+						<input type="reset" id="no_sub" value="取消发布" />
 					</div>
 				</div>
 			</div>
 			<div id="cc_b"></div>
+			</form>
 		</div>
 		<?php include_once(dirname(__FILE__).'/../inc/bottom.php');?>
 	</div>
