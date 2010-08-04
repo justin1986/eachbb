@@ -12,7 +12,7 @@ $(function(){
 		}else if(created_id == 0){
 			alert("请选择分类！");
 		}else{
-			$('#sub').attr('disabled',"disabled");
+			$('#sub').attr('disabled',true);
 			$.post('_diary_sub_ajax_post.php',{"title":title,"content":content,"created_id":created_id},function(data){
 				$('#sub').attr('disabled',false);
 				alert(data);
