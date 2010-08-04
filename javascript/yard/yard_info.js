@@ -1,15 +1,13 @@
 $(function(){
-	$('.pichr_menu').click(function(){
-		var selected=$('.pichr_menu').index($(this));
-		if(selected === 1){
-			var sel=$('.def img').attr('src');
-			if($('.def img').attr('src') != ""){
-				$.getScript('/yard/_yard_info_ajax_post.php?photo=' + sel,function(result){
-					$("#pic_left").attr('src',result);
-				});
-			}else{
-				alert('请选择一张图片！');
-			}
+	$('#set_avatar').click(function(){
+		var sel=$('.def img');
+		
+		if(sel.length > 0){
+			$.getScript('/yard/_yard_info_ajax_post.php?photo=' + sel,function(result){
+				$("#pic_left").attr('src',result);
+			});
+		}else{
+			alert('请选择一张图片！');
 		}
 	});
 	$('#pic_hr_pg div').click(function(){
