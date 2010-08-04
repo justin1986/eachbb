@@ -1,0 +1,38 @@
+@CHARSET "UTF-8";
+body{width:1000px; margin: auto auto;}
+#ibody{width:1000px;  margin:0 auto;float:left;}
+#user{width:200px;margin-top:5px;float:left;}
+#user_ma{width:200px;height:170px;background:url(/images/avatar/user_ma_b.png)}
+#user_ma_s{padding-left:18px;padding-top:18px;}
+#user_ma_b{border-bottom:0.5px dashed black; width:172px;margin-left:14px;margin-top:3px}
+#user_ma_h{margin-left:14px;margin-top:3px;}
+.user_b{width:175px;background-color:#F5F5F5;margin-left:12px;margin-top:5px;}
+.user_b_t{margin-left:20px;}
+#user_me{width:200px;height:815px;margin-top:13px;background:url(/images/avatar/user_me_b.png)  }
+.user_me_s{width:170px;height:125px;margin-left:12px;padding-top:30px;}
+.user_me_t{padding-left:34px;}
+#user_me_o{margin-top:30px;margin-left:25px}
+#user_ad{margin-top:35px;}
+#right{width:740px;float:left;padding-left:25px;float:left;}
+#right_up{width:740px;height:540px;float:left;margin-top:5px;}
+#head{width:401px;  margin-left:8px; margin-top:5px;float:left; }
+#head_b{width:401px;height:308px;margin:auto auto;background:url(/images/avatar/cc_h.png) ;}
+#head_t{padding-top:120px;padding-left:160px;}
+#head_a{width:401px; height:1px;background-color:#A3C1CD;margin:auto auto;}
+.head_i{margin-left:5px;float:left;margin-top:5px;}
+#right_up_right{float:left;margin-top:20px;}
+.record{margin-top:20px;margin-left:10px;}
+.add{width:280px;height:3px;background-color:#A3C1CD}
+#mother{margin-left:15px;}
+#right_bottom{width:740px;float:left;}
+.txt{width:740px;margin-top:20px;float:left;}
+.line1{background-color:#F5F5F5;height:2px;margin-top:5px;width:740px}
+.line2{background-color:#F5F5F5;height:1px;margin-top:10px;width:740px}
+.att{float:left;margin-top:15px;width:740px;}
+.left{float:left;}
+.text1{width:740px;height:20px;padding-left:10px;padding-top:5px;float:left;}
+.text2{width:400px;height:20px;padding-left:10px;padding-top:5px;float:left;}
+#inyard{float:left;margin-left:250px;margin-top:30px;}
+#bottom_l{background-color:#FB6104;width:1000px;height:2px; float:left;}
+#bottom{padding-left:100px;width:1000px;height:20px;float:left;}
+#bottom_b{padding-left:130px;width:1000px;height:20px;float:left;}
