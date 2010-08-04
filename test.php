@@ -28,6 +28,20 @@
 			</p>
 			<input type="submit" value="ok" />
 		</form>
+<<<<<<< HEAD:test.php
+		<div id="test" class="test_class" style="color:red; float:left">test</div>
+		<a href="www.sohu.com" id="a">test</a>
+		<?php 
+			$db = get_db();
+			$result = $db->query("select * from test");
+			$db->record_count;
+			$db->execute("insert into test(field1,field2,field3) values ().");
+		?>
+		<select>
+			<option>1</option>
+			<option>2</option>
+		</select>
+=======
 		<div>
 			<?php
 				$db = get_db();
@@ -39,5 +53,10 @@
 			title:<?php echo $result[0]->title ?>
 		</div>
 >>>>>>> 97ddd1853ec547296390bcc94d98ecde1659494c:test.php
+>>>>>>> ff3e17486af463440d6babe2a5c84151d550b38c:test.php
 	</body>
 </html>
+<<<<<<< HEAD:test.php
+
+
+

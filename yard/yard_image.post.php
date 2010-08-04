@@ -15,7 +15,7 @@
 		<?php
 			$user = User::current_user();
 			if(!$user) die('请先登录!');
-			$id=$user->uid;
+			$id=$user->id;
 			$created_at = date("Y-m-d H:i:s");
 			$path_info = pathinfo($_FILES['src'][name]);
 			$yuan_pic=$_FILES['src'][tmp_name];
@@ -25,8 +25,12 @@
 			$save_e = "/upload/".$save_name;
 			if(move_uploaded_file($yuan_pic,$save)){
 				$sql="insert into eachbb_member.member_avatar(u_id,photo,create_at,status)values($id,'$save_e','$created_at',0);";
-				$db->execute($sql);
-				redirect('/yard/info.php');
+				if($db->execute($sql)){
+					alert("上传成功！");
+					redirect('/yard/info.php');
+				}else{
+					alert("上传失败！");
+				}
 			}else{
 				debug_info('fail to upload file:' .$yuan_pic,'js');
 			}

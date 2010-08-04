@@ -8,17 +8,15 @@
 		use_jquery();
 		css_include_tag('yard','member','yard_info');
 		js_include_tag('yard/yard','member','yard/yard_info');
-		$db = get_db();
 		$user = User::current_user();
 		if(!$user){
-			alert("请您先登录！");?>
-			<script>window.location.href="/login/";</script>
-			<?php 
+			alert("请您先登录！");
+			redirect('/login/');
+			exit();
 		}
-		$id=$user->id;
-		$member=$db->query("SELECT id,photo FROM eachbb_member.member_avatar m where status=0 and photo<>'".$user->avatar."' and u_id=".$user->uid.' order by create_at desc');
-		$db->query("SELECT count(id) as img_count FROM eachbb_member.member_avatar m where u_id=".$user->uid);
-		$img_count= $db->field_by_name('img_count');
+		$db = get_db();
+		$avatars =$db->query("SELECT id,photo,status FROM eachbb_member.member_avatar where u_id=".$user->id.' order by create_at desc limit 6');
+		$avatar_count = $db->record_count;
 	?>
 </head>
 <body>
@@ -69,17 +67,29 @@
 								<div class="rig_title" id="rig_sub"><input id="ssubmit" type="submit" value=""/></div> 
 							</div>
 							<div id="pic_hr_title">
-								<div id="pichr_title">我的图库（<font><?php echo $img_count;?></font>张）</div>
+								<div id="pichr_title">我的图库（<font><?php echo $avatar_count;?></font>张）</div>
 								<div class="pichr_menu">[上传头像]</div>
-								<div class="pichr_menu">[选择头像]</div>
+								<div class="pichr_menu" id="set_avatar">[选择头像]</div>
 							</div>
 							<div id="pic_hr_b"></div>
 							<div id="pic_hr_pg">
 							<?php 
-								$i=0;
-								for( ; $i < 5 ; $i++){?>
-								<div id="pic_<?php echo $i;?>" style="<?php if($i == 0){ echo 'margin-left:0px;'; }?>">
-									<img src="<?php if($member[$i]->photo != null) echo $member[$i]->photo; else echo '/images/yard_info_img/1.jpg';?>"/>
+							if($avatars){
+								for($i=0 ; $i < $avatar_count; $i++){
+									if($avatars[$i]->status == 1){
+										$current_avatar_index = $i;
+									}
+								}
+							}
+								for( $i=0; $i < 5 ; $i++){
+									if($i < $avatar_count){
+										$avatar_id = $avatars[$i]->id;
+									}else{
+										$avatar_id = "default_avatar";
+									}
+								?>
+								<div class="avatar_container" id="<?php echo $avatar_id;?>" <?php if($i == 0){  if($current_avatar_index == $i){echo 'style="margin-left:0px; background:url(/images/yard_info_img/pg2.jpg) no-repeat;"';}else{?>style='margin-left:0px;' <?php }}?><?php if($current_avatar_index == $i){echo 'style="background:url(/images/yard_info_img/pg2.jpg) no-repeat;"';}?>>
+									<img src="<?php echo  $avatars[$i]->photo ? $avatars[$i]->photo : '/images/yard_info_img/1.jpg';?>"/>
 								</div>
 								<?php }?>
 							</div>

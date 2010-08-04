@@ -131,7 +131,7 @@
 								</div>
 							<div id="ccpsc_lb">
 								<div id="ccpsc_imgb"></div>
-								<div id="ccpsc_wordb"><a href="">发股票</a></div>
+								<div id="ccpsc_wordb"><a href="/yard/diary.php">发股票</a></div>
 								</div>
 							<div id="c_moblie">
 								<div id="c_moblie_w"><a href="">发布</a></div>
