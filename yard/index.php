@@ -151,7 +151,7 @@
 							<div class="pc_pg_img">
 								<div class="pc_img"><img src="/images/yard/pho.jpg"></div>
 							</div>
-							<?php $sql = $db->query("select * FROM eachbb_member.mood order by created_at desc");?>
+							<?php $sql = $db->query("select * FROM eachbb_member.mood order by created_at desc where u_id='{$user->id}'");?>
 							<div class="pc_word">
 								<div class="title_pc"><a href=""><?php echo htmlspecialchars($sql[0]->title);?></a><a href="" style="margin-left:10px; font-size:13px;"><?php echo htmlspecialchars($sql[0]->name); ?> 说了一句话</a></div>
 								<div class="content_pc"><a href="">“<?php if($user->name != ''){echo htmlspecialchars($sql[0]->content);}else{echo "请先登录！";}?>”</a></div>
