@@ -50,7 +50,7 @@
 			<div id="cc_t"></div>
 			<div id="cc_c" >
 				<div id="cc_pg" style="height:640px;">
-					<div class=r_title id="r_log"><span><?php echo $member->true_name;?></span>的账户管理</div>
+					<div class=r_title id="r_log"><span><?php echo $member->true_name;?></span>的日志管理</div>
 					<div id="r_log_hr">
 						<div>发表新日志 </div>
 					</div>
