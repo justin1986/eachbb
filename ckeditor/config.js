@@ -23,6 +23,9 @@ CKEDITOR.editorConfig = function( config )
 	    config.toolbar_Admin = [
 	                                  	['Source','Undo','Bold','Italic','Underline','Strike','Subscript','Superscript','NumberedList','BulletedList','Link','Unlink','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','Image','Flash','SpecialChar','PageBreak','TextColor','BGColor','Maximize','RemoveFormat','Table','Font','FontSize'],
 	                                  ] ;
+		config.toolbar_Front = [
+	                                  	['Undo','Bold','Italic','Underline','Strike','NumberedList','BulletedList','Link','Unlink','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','Image','Flash','SpecialChar','TextColor','BGColor','Maximize','RemoveFormat','Table','Font','FontSize'],
+	                                  ] ;	                                  
 	    config.resize_enabled = false;
 	    config.entities = false;
 	    config.ignoreEmptyParagraph = false;
