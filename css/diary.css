@@ -5,5 +5,5 @@
 .c_menu_con_title{width:768px; height:20px; margin-top:10px; margin-left:10px; font-size:14px; color:#666666; font-weight:bold; float:left; display:inline;}
 
 .c_menu_con_title img{width:16px; height:16px; margin-top:5px;}
-#sub{width:62px; height:23px; line-height:23px; text-align:center; font-size:12px; color:#ffffff; font-weight:normal; background:url(/images/yetrb/btn.jpg) no-repeat;}
-#no_sub{width:98px; height:23px; margin-left:20px; line-height:23px; text-align:center; font-size:12px; color:#000000; font-weight:normal; background:url(/images/yetrb/btn2.jpg) no-repeat;}
+#sub{width:62px; height:23px; line-height:23px; text-align:center; border:0px solid red; font-size:12px; color:#ffffff; font-weight:normal; background:url(/images/yetrb/btn.jpg) no-repeat;}
+#no_sub{width:98px; height:23px; margin-left:20px; line-height:23px; border:0px solid red; text-align:center; font-size:12px; color:#000000; font-weight:normal; background:url(/images/yetrb/btn2.jpg) no-repeat;}
