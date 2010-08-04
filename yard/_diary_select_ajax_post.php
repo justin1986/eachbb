@@ -12,5 +12,4 @@ $daily_cate=$db->query("SELECT id,name FROM eachbb_member.daily_category d;");
 	}
 	?>
 </select>
-<input type="text" id="category_name"/>
-<input type="button" id="category_button" value="提交"/>
+<img src="/images/admin/btn_add.png"/>
