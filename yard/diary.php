@@ -19,7 +19,6 @@
 		$member = new table_class('eachbb_member.member');
 		$member->find($id);
 		$db = get_db();
-		$daily_cate=$db->query("SELECT id,name FROM eachbb_member.daily_category d;");
 	?>
 </head>
 <body>
@@ -47,40 +46,31 @@
 			<div id="cl_r"></div>
 		</div>
 		<div id="c_c">
+			<form>
 			<div id="cc_t"></div>
 			<div id="cc_c" >
 				<div id="cc_pg" style="height:640px;">
-					<div class=r_title id="r_log"><span><?php echo $member->true_name;?></span>的账户管理</div>
+					<div class=r_title id="r_log"><span><?php echo $member->true_name;?></span>的日志管理</div>
 					<div id="r_log_hr">
 						<div>发表新日志 </div>
 					</div>
-					
 					<div id="c_menu_pg_p">标题：
-						<input name="text"/>
+						<input name="text" id="diary_title"/>
 					</div>
 					<div class="c_menu_con_title">内容：</div>
 					<div id="c_menu_pg_con">
-						<?php show_fckeditor('news[content]','Admin',false,"215",$news->content);?>
+						<?php show_fckeditor('news[content]','Admin',false,"215","");?>
 					</div>
 					<div class="c_menu_con_title" id="diary_content" style="height:30px; margin-top:20px; line-height:26px; font-size:12px;">
-						日志分类：
-						<select>
-							<option value="0">请选择分类</option>
-							<?php 
-							foreach ($daily_cate as $variable) {
-								echo "<option value={$variable->id}>{$variable->name}</option>";
-							}
-							?>
-						</select>
-						<img src="/images/admin/btn_add.png"/>
 					</div>
 					<div class="c_menu_con_title" style="margin-top:20px;">
-						<div id="sub">发布</div>
-						<div id="no_sub">取消发布</div>
+						<input type="button" id="sub" value="发布"/>
+						<input type="reset" id="no_sub" value="取消发布" />
 					</div>
 				</div>
 			</div>
 			<div id="cc_b"></div>
+			</form>
 		</div>
 		<?php include_once(dirname(__FILE__).'/../inc/bottom.php');?>
 	</div>
