@@ -1,5 +1,5 @@
-body{width:970px; margin: 0 auto;}
-body div{float:left; font-size:12px; display:inline;}
+body{width:970px; font-size:12px;margin: 0 auto;}
+body div{float:left; display:inline;}
 body a{text-decoration:none; color:#497617;}
 #ibody{width:970px; overflow:hidden; margin:0 auto;}
 
