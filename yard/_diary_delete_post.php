@@ -7,7 +7,8 @@
 		<script>window.location.href="/login/";</script>
 		<?php 
 	}
-	$edit_id=intval(trim($_GET["edit"]));
+	$edit_id=trim($_GET["edit"]);
+	if(!is_numeric($edit_id)) die('invlid request!');
 	$db=get_db();
 	if(!$db->execute("delete from eachbb_member.daily where id=".$edit_id))
 		die("删除失败！");
