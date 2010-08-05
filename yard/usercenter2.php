@@ -9,13 +9,21 @@
 		css_include_tag('yard','usercenter2');
 		js_include_tag('yard/yard','usercenter2');
 		$db = get_db();
-		/*$user = User::current_user();
+		$user = User::current_user();
 		if(!$user){
 			alert("请您先登录！");
 			redirect("/login/");
 			exit;
 		}
-	*/?>
+		$id =$_GET['id'];
+		$info = $db->query("select * from eachbb_member.member where id=$id");
+		if($info[0]->gender != 1){
+			$its="她";
+		}else{
+			$its="他";
+		}
+		
+	?>
 </head>
 <body>
 <div id="ibody">
@@ -50,7 +58,7 @@
 				<div id="info_p1">
 					<div id = "p1_phobox">
 						<div id="photo">
-							<img src="/images/yard/test1_pho.gif" />
+							<img src="<?php echo $info[0]->avatar;?>" />
 						</div>
 					</div>
 					<div id = "p1_buttonbox">
@@ -75,19 +83,19 @@
 							<div class ="oth_go">
 							<img src="/images/yard/oth_go.gif" />
 							</div>
-							<div class ="oth_words"><a href="#">她的日志<font>(0)</font></a></div>
+							<div class ="oth_words"><a href="#"><?php echo $its?>的日志<font>(0)</font></a></div>
 						</div>
 						<div class = "other">
 							<div class ="oth_go">
 							<img src="/images/yard/oth_go.gif" />
 							</div>
-							<div class ="oth_words"><a href="#">她的相册<font>(0)</font></a></div>
+							<div class ="oth_words"><a href="#"><?php echo $its?>的相册<font>(0)</font></a></div>
 						</div>
 						<div class = "other">
 							<div class ="oth_go">
 							<img src="/images/yard/oth_go.gif" />
 							</div>
-							<div class ="oth_words"><a href="#">她的帖子<font>(0)</font></a></div>
+							<div class ="oth_words"><a href="#"><?php echo $its?>的帖子<font>(0)</font></a></div>
 						</div>
 					</div>
 				</div>
@@ -95,7 +103,7 @@
 					<div id="p2_namebox">
 						<div class="info_word">
 							<div class="word_l">昵&nbsp; 称：</div>
-							<div id="word_r1">babyfirst</div>
+							<div id="word_r1"><?php echo $info[0]->name;?></div>
 						</div>
 						<div class="info_word">
 							<div class="word_l">一句话：</div>
@@ -107,17 +115,17 @@
 						<div id ="info_other">
 							<div class="oth_botton">
 								<div class="oth_nl"></div>
-								<div class="oth_name">她的日志</div>
+								<div class="oth_name"><?php echo $its?>的日志</div>
 								<div class="oth_nr"></div>
 							</div>
 							<div class="oth_botton">
 								<div class="oth_nl"></div>
-								<div class="oth_name">她的相册</div>
+								<div class="oth_name"><?php echo $its?>的相册</div>
 								<div class="oth_nr"></div>
 							</div>
 							<div class="oth_botton">
 								<div class="oth_nl"></div>
-								<div class="oth_name">她的分享</div>
+								<div class="oth_name"><?php echo $its?>的分享</div>
 								<div class="oth_nr"></div>
 							</div>
 						</div>
@@ -126,23 +134,23 @@
 							<div class ="info_left">
 								<div class="left_words">
 									<div class="box">性别：</div>
-									<div class="info">女</div>
+									<div class="info"><?php if($info[0]->gender != 1){echo "女";}else{echo "男";}?></div>
 								</div>
 								<div class="left_words">
 									<div class="box">学历：</div>
-									<div class="info">放大</div>
+									<div class="info"><?php echo $info[0]->education;?></div>
 								</div>
 								<div class="left_words">
-									<div class="box">职业：</div>
-									<div class="info">倒萨</div>
+									<div class="box">行业：</div>
+									<div class="info"><?php echo $info[0]->industry;?></div>
 								</div>
 								<div class="left_words">
 									<div class="box">收入：</div>
-									<div class="info">地方</div>
+									<div class="info"><?php echo $info[0]->income;?></div>
 								</div>
 								<div class="left_words">
 									<div class="box">城市：</div>
-									<div class="info">士大夫</div>
+									<div class="info"><?php echo $info[0]->address;?></div>
 								</div>
 							</div>
 						</div>
@@ -150,23 +158,32 @@
 				<div id="line2"></div>
 				<div id="p2_bb">
 					<div class="basic_info">
-							<div class="word">她的宝宝</div>
+							<div class="word"><?php echo $its?>的宝宝</div>
 							<div class ="info_left">
 								<div class="left_words">
 									<span class="box">小名：</span>
-									<span class="info">小明</span>
+									<span class="info"><?php echo $info[0]->baby_name;?></span>
 								</div>
 								<div class="left_words">
 									<span class="box">性别：</span>
-									<span class="info">你</span>
+									<span class="info"><?php if($info[0]->baby_gender != 1){echo "女";}else{echo "男";}?></span>
 								</div>
 								<div class="left_words">
 									<span class="box">年龄：</span>
-									<span class="info">12の</span>
+									<span class="info">
+									<?php $date_1 =now();
+										$date_2 =$info[0]->baby_birthday;
+										$d1=strtotime($date_1);
+										$d2=strtotime($date_2);
+										$days=round(($d1-$d2)/3600/24);
+										if($days<=365){echo $days."天";}
+										elseif($days>365){echo floor($days/365)."周岁";}
+									?>
+									</span>
 								</div>
 								<div class="left_words">
 									<div class="box">生日：</div>
-									<div class="info">范德萨</div>
+									<div class="info"><?php echo $info[0]->baby_birthday;?></div>
 								</div>
 							</div>
 						</div>
@@ -184,10 +201,10 @@
 							</div>
 						</div>
 						<span class="news_txt">
-							<span class="u_id"><a href="#">heheleniun1981</a></span>
+							<span class="u_id"><a href="#"><?php echo $info[0]->name;?></a></span>
 							<span class="news_type">
 								<span class="type_p1">回复了</span>
-								<span class="f_id"><a href="#">hallie8888</a></span>
+								<span class="f_id"><a href="#">xiangxiang</a></span>
 								<span class="type_p2">的帖子：</span>
 							</span>
 							<span>Hallie秋之爱：皮衣/柳丁/国企学/军服/流速/保温/褶皱/大红叉2002</span>
@@ -196,6 +213,7 @@
 						<div class="line3"></div>
 					</div>
 					<?php }?>
+					<div id="test1"></div>
 				</div>
 				<div id="info_p4">
 					<div class="title_info">
@@ -235,7 +253,7 @@
 						</div>
 						<div id="u_reply">
 							<div id="reply_title">
-								<span class="u_id"><a href="#">heheleniun1981</a></span>
+								<span class="u_id"><a href="#"><?php echo $user->name;?></a></span>
 								<span>的回复：</span>
 								<span id="reply_time">2010-11-11 11:11:11</span>
 							</div>
