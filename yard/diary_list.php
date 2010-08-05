@@ -57,7 +57,7 @@
 					<?php 	
 						$diary_list=$db->query("SELECT d.id,d.created_at,d.last_edit_time,d.title,d.content,d.category_id,s.name FROM eachbb_member.daily d left join eachbb_member.daily_category as s on d.category_id=s.id where d.u_id={$user->id} order by last_edit_time desc limit 4;");
 						if(!$diary_list){
-								echo '<div style="width:768px; height:500px; margin-left:10px; text-align:center; line-height:200px; float:left; display:inline;"><a href="/yard/diary.php" style="font-size:26px; font-weight:bold; color:#8A9F9A;">您日志列表为空,马上发表日志！</a></div>';
+								echo '<div style="width:768px; height:500px; margin-left:10px; text-align:center; line-height:200px; float:left; display:inline;"><a href="/yard/diary.php" style="font-size:26px; font-weight:bold; color:#8A9F9A;">您日志列表为空,马上发表日志吧！</a></div>';
 						}else{
 						foreach ($diary_list as $diary){
 					?>
