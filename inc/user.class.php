@@ -203,6 +203,16 @@ class User {
 		$db->execute($sql);
 		$result->id = $db->last_insert_id;
 		$result->result = true;
+		$status = new table_class('eachbb_member.member_status');
+		$status->echo_sql = true;
+		$status->uid = $result->id;
+		$status->created_at = now();
+		$status->score = 0;
+		$status->level = 1;
+		$status->friend_count = 0;
+		$status->unread_msg_count = 0;
+		$status->visit_count = 0;
+		$status->save();
 		return $result;
 		
 	}
@@ -262,7 +272,9 @@ class User {
 	}
 	
 	public function adjust_score($score,$reason){
-		
+		$score = intval($score);
+		$db = get_db();
+		$db->execute("insert into eachbb_member.adjust_score_history (u_id,score,reason,created_at) values({$this->id},$score,'$reason',now())");
 	}
 	
 }

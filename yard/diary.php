@@ -18,7 +18,7 @@
 		$db = get_db();
 		$edit_id=intval(trim($_GET['edit']));
 		if($edit_id){
-			$diary=$db->query("SELECT d.id,d.title,d.content,s.name,d.category_id FROM eachbb_member.daily d left join eachbb_member.daily_category as s on d.category_id=s.id where d.id=$edit_id"); 
+			$diary=$db->query("SELECT d.id,d.title,d.content,s.name,d.category_id FROM eachbb_member.daily d left join eachbb_member.daily_category as s on d.category_id=s.id where d.id=$edit_id limit 4"); 
 		}
 	?>
 </head>

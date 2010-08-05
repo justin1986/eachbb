@@ -55,9 +55,7 @@
 						<div>日志列表 </div>
 					</div>
 					<?php 	
-						$diary_list=$db->query("SELECT d.id,d.created_at,d.last_edit_time,d.title,d.content,d.category_id,s.name FROM eachbb_member.daily d left join eachbb_member.daily_category as s on d.category_id=s.id where d.u_id={$user->id} order by last_edit_time desc limit 3;");
-						#$diary_count = $db->record_count;
-						$i=0;
+						$diary_list=$db->query("SELECT d.id,d.created_at,d.last_edit_time,d.title,d.content,d.category_id,s.name FROM eachbb_member.daily d left join eachbb_member.daily_category as s on d.category_id=s.id where d.u_id={$user->id} order by last_edit_time desc limit 4;");
 						foreach ($diary_list as $diary){
 					?>
 					<div class="diary_banner">
@@ -71,7 +69,7 @@
 							</div>
 							<div class="diary_created_at">
 								<?php echo $diary->last_edit_time;?>
-								&nbsp;（分类：<font><?php echo $diary->name;?></font>）
+								&nbsp;（分类：<font><?php if($diary->name) echo $diary->name; else echo "暂无分类！";?></font>）
 							</div>
 						</div>
 						<div class="diary_content">
