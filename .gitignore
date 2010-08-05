@@ -23,3 +23,4 @@ data/dbcache/*.tb
 htmldir
 test1.php
 review
+./cache
