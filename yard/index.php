@@ -118,7 +118,7 @@
 							<textarea name="pho_r" id="pho_r">llllllll</textarea>
 						</form>
 					</div>
-					<div id="cc_ps" style="height:400px;">
+					<div id="cc_ps" style="height:600px;">
 						<a href=""><img style="float:left;" id="ccps_l" src="/images/yard/c_p.jpg" /></a>
 						<div id="ccps_c">
 							<div id="ccpsc_l">
@@ -131,7 +131,7 @@
 								</div>
 							<div id="ccpsc_lb">
 								<div id="ccpsc_imgb"></div>
-								<div id="ccpsc_wordb"><a href="/yard/diary.php">发股票</a></div>
+								<div id="ccpsc_wordb"><a href="/yard/diary.php">发日记</a></div>
 								</div>
 							<div id="c_moblie">
 								<div id="c_moblie_w"><a href="">发布</a></div>
@@ -142,12 +142,12 @@
 							<div class="c_ch_w" style=" border-bottom:0px solid #E3F2DF;background:url(/images/yard/m_pg.jpg) no-repeat;">全部</div>
 							<div class="c_ch_w">一句话</div>
 							<div class="c_ch_w">照片</div>
-							<div class="c_ch_w">日志</div>
+							<div class="c_ch_w">日记</div>
 							<div class="c_ch_w">分享</div>
 							<div class="c_ch_w">随便看看</div>
 							<div id="m_w" style="width:30px;"></div>
 						</div>
-						<div class="pc_z">
+						<div class="pc_z" id="diary_list">
 							<div class="pc_pg_img">
 								<div class="pc_img"><img src="/images/yard/pho.jpg"></div>
 							</div>

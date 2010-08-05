@@ -11,14 +11,15 @@
 		$db = get_db();
 		$user = User::current_user();
 		if(!$user){
-			alert("请您先登录！");?>
+			alert("请您先登录！"); ?>
 			<script>window.location.href="/login/";</script>
 			<?php 
 		}
-		$id=$user->id;
-		$member = new table_class('eachbb_member.member');
-		$member->find($id);
 		$db = get_db();
+		$edit_id=intval(trim($_GET['edit']));
+		if($edit_id){
+			$diary=$db->query("SELECT d.id,d.title,d.content,s.name,d.category_id FROM eachbb_member.daily d left join eachbb_member.daily_category as s on d.category_id=s.id where d.id=$edit_id"); 
+		}
 	?>
 </head>
 <body>
@@ -30,8 +31,8 @@
 			<div id="yard_day_ct"><?php echo get_week_day(); ?></div>
 		</div>
 		<div id="menu_a" class="menu_pic"style="background:url(../images/yard/m_a.jpg) no-repeat;"></div>
-		<div id="menu_b" class="menu_pic" style="background:url(../images/yard/m_1.jpg) no-repeat;"></div>
-		<div id="menu_c" class="menu_pic"></div>
+		<div id="menu_b" class="menu_pic" style="background:url(../images/yard/m_b.jpg) no-repeat;"></div>
+		<div id="menu_c" class="menu_pic" style="background:url(../images/yard/m_2.jpg) no-repeat;"></div>
 		<div id="menu_d" class="menu_pic"></div>
 		<div id="menu_e" class="menu_pic"></div>
 		<div id="menu_f" class="menu_pic"></div>
@@ -50,16 +51,18 @@
 			<div id="cc_t"></div>
 			<div id="cc_c" >
 				<div id="cc_pg" style="height:640px;">
-					<div class=r_title id="r_log"><span><?php echo $member->true_name;?></span>的日志管理</div>
+					<div class=r_title id="r_log"><span><?php echo $user->true_name;?></span>的日志管理</div>
 					<div id="r_log_hr">
-						<div>发表新日志 </div>
+						<div><?php if($edit_id){echo "编辑";}else{echo "发表新";}?>日志 </div>
 					</div>
 					<div id="c_menu_pg_p">标题：
-						<input name="text" id="diary_title"/>
+						<input name="text" id="diary_title" value="<?php echo htmlspecialchars_decode($diary[0]->title); ?>"/>
 					</div>
 					<div class="c_menu_con_title">内容：</div>
 					<div id="c_menu_pg_con">
-						<?php show_fckeditor('news[content]','Admin',false,"215","");?>
+						<?php show_fckeditor('news[content]','Admin',false,"215", htmlspecialchars_decode($diary[0]->content));?>
+						<input type="hidden" id="category_id" value="<?php echo $diary[0]->category_id;?>"/>
+						<input id="edit_id" type="hidden" value="<?php echo $edit_id;?>"/>
 					</div>
 					<div class="c_menu_con_title" id="diary_content" style="height:30px; margin-top:20px; line-height:26px; font-size:12px;">
 					</div>

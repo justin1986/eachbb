@@ -67,7 +67,7 @@ body a{text-decoration:none; color:#497617;}
 		.content_pc a{color: #609B38; font-size:12px; text-decoration: none;}
 		.content_pc font{color: #A9BDDA; font-size:12px;margin-left:13px;}
 	.time_pc{width:460px; line-height:18px; color: #A9BDDA;  font-size:12px; float: left; display: inline;}
-#r_pho{width:227px; height:400px; float:left; display:inline;}
+#r_pho{width:227px; height:600px; float:left; display:inline;}
 #r_img{width:192px; height:272px; margin-left:18px; margin-top:-85px; position:absolute;  background:url(/images/yard/r_pg_img.jpg) no-repeat; float:left; display:inline;}
 #r_pto{width:165px; height:201px; margin-left:13px; margin-top:10px; overflow:hidden; float:left; display:inline;}
 #r_pto img{width:165px; height:201px; border:0px solid red;}
@@ -102,6 +102,4 @@ body a{text-decoration:none; color:#497617;}
 	.pic_pg{width:56px; height:56px; background:url(/images/yard/pic_pg.jpg) no-repeat; float:left; display:inline;}
 	.name_pic{width:56px;height:14px;line-height:12px;text-align:center; overflow:hidden; float:left;}
 .pic_img{width:48px; height:48px; border:0; margin:4px; overflow:hidden; float:left; display:inline;}
-
-
 
