@@ -1,5 +1,5 @@
 <?php 
-include_once('../frame.php');
+	include_once('../frame.php');
 ?>
 日志分类：
 <select>
