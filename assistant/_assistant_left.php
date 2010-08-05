@@ -13,13 +13,14 @@
 								$sub_cates = $db->query($sql);
 								$top_len = count($top_cates);
 								$sub_len = count($sub_cates);
+								$cate_id = intval($_GET['category_id']);
 								for($i=0;$i<$top_len;$i++){
 							?>
 							<div class="ht_c_z">
 								<div class="ht_c_t">
 									<div class="htct_l"></div>
 									<div class="htct_t" param=<?php echo $i; ?>><a href="list.php?category_id=<?php echo $top_cates[$i]->id;?>"><?php echo $top_cates[$i]->name;?></a></div>
-									<div class="htct_b" <?php if($i==0){?>style="display:inline;"<?php }?> >
+									<div class="htct_b" <?php if($top_cates[$i]->id == $cate_id || ($i==0 && $cate_id ==0)){?>style="display:inline;"<?php }?> >
 										<?php
 										$var = "category_$i";
 										$$var = array();
@@ -122,7 +123,7 @@
 		</div>
 		<script type="text/javascript">
 		$(".htct_t").click(function(){
-			$(".htct_b").css('display','none');
-			$(this).next().css('display','inline');
+			$(".htct_b").hide();
+			$(this).next().show();
 		});
 		</script>

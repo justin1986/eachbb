@@ -59,7 +59,7 @@
 					</div>
 					<div class="c_menu_con_title">内容：</div>
 					<div id="c_menu_pg_con">
-						<?php show_fckeditor('news[content]','Admin',false,"215","");?>
+						<?php show_fckeditor('news[content]','Front',true,"215","");?>
 					</div>
 					<div class="c_menu_con_title" id="diary_content" style="height:30px; margin-top:20px; line-height:26px; font-size:12px;">
 					</div>
