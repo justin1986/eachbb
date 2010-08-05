@@ -12,4 +12,4 @@
 			.diary{height: 13px; float: right; display: inline;}
 		.diary_created_at{width:545px; height: 18px; padding-left:10px; margin-top: 4px; line-height:18px; color:#888888;  font-size: 12px; text-align:left; float:left; display: inline;}
 			.diary_created_at font{color:#005EAC;  font-size: 12px; }
-	.diary_content{width:768px; height:100px; padding-left:10px; margin-top: 10px; line-height:20px; color:#888888;  font-size: 12px; overflow:hidden; text-align:left; float:left; display: inline;}
+	.diary_content{width:758px; height:100px; padding-left:10px; margin-top: 10px; line-height:20px; color:#555555;  font-size: 12px; overflow:hidden; text-align:left; float:left; display: inline;}
