@@ -27,9 +27,9 @@
 	</div>
 	<div id="user_me">
 	<div id="user_me_top"></div>
-	<div id="user_me_center"><div id="user_me_center2"><div id="user_me_center3"><div id="user_me_center4"><div id="user_me_center5"><div id="user_me_center6">
+	<div id="user_me_center">
 		<div id="user_me_middle">
-			<div class="user_me_s" style="padding-top:10px;">
+			<div class="user_me_s" >
 			<div class="user_me_t" ><img src="/images/avatar/bpoint.png"></img><font size="2"><b>用户信息</b></font></div>
 			<div class="user_me_b">
 			<div class="user_me_t"><img src="/images/avatar/cpoint.png"></img><a href="welcome.php"><font size="2" color="black">欢迎页</font></a></div>
@@ -67,7 +67,7 @@
 			</div>
 			<div id="user_me_o"><img src="/images/avatar/bpoint.png"></img><a href="edit.php"><font size="2" color="black">[退出 ]</font></a></div>
 		</div>
-	</div></div></div></div></div></div>
+	</div>
 	<div id="user_me_bottom"></div>
 	</div>
 	<div id="user_ad"><a href="4thblog.php"><img src="/images/avatar/user_ad.png" border="0"></img></a></div>
