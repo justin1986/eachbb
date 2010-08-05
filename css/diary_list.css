@@ -1,0 +1,15 @@
+@CHARSET "UTF-8";
+
+.diary_banner{width:768px; margin-left: 10px; margin-top: 10px; float: left; display: inline;}
+	.diary_title_banner{width:768px; height: 48px; border-bottom: 1px solid #CEE1EE; border-top: 1px solid #CEE1EE; background: #F7F7F7; float: left; display: inline;}
+		.diary_title_pg{width:768px; height: 18px; margin-top: 6px; float: left; display: inline;}
+			.diary_title{width:410px; height: 18px; padding-left:10px; line-height: 18px; overflow:hidden; float: left; display: inline;}
+				.diary_title a{font-size: 14px; font-weight: bold; color: #000000; text-decoration: none;}
+			.diary_edit{width:36px; height: 13px;  border-right:1px solid #AAAAAA; text-align:center; float:right; display: inline;}
+				.diary_edit a{text-decoration: none; font-size:12px; color:#005EAC;}
+			.diary_delete{width:36px; height: 13px; text-align:center; float:right; display: inline;}
+				.diary_delete a{text-decoration: none; font-size:12px; color:#005EAC;}
+			.diary{height: 13px; float: right; display: inline;}
+		.diary_created_at{width:545px; height: 18px; padding-left:10px; margin-top: 4px; line-height:18px; color:#888888;  font-size: 12px; text-align:left; float:left; display: inline;}
+			.diary_created_at font{color:#005EAC;  font-size: 12px; }
+	.diary_content{width:768px; height:100px; padding-left:10px; margin-top: 10px; line-height:20px; color:#888888;  font-size: 12px; overflow:hidden; text-align:left; float:left; display: inline;}

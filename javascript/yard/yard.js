@@ -3,6 +3,12 @@ $(function(){
 		var selected=$('.c_ch_w').index($(this));
 		$('.c_ch_w').attr('style','background:none;');
 		$(this).attr('style','border:0px solid red; background:url(/images/yard/m_pg.jpg) no-repeat;');
+//		if(selected == 3)
+//		{
+//			$.post('_diary_ajax.php',function(data){
+//				$('#diary_list').html(data);
+//			});
+//		}
 	});
 	$('.menu_pic').click(function(){
 		var selected=$('.menu_pic').index($(this));
@@ -16,6 +22,8 @@ $(function(){
 			window.location.href="/yard";
 		}else if(selected === 1){
 			window.location.href="/yard/member.php";
+		}else if(selected === 2){
+			window.location.href="/yard/diary_list.php";
 		}
 		$(this).attr('style','background:url(../images/yard/m_'+selected+'.jpg) no-repeat;');
 	});
