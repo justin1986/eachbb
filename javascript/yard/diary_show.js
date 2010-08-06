@@ -26,13 +26,17 @@ $(function(){
 	$('#subb').live("click",function(){
 		var resource_id=$('#resource_id').val();
 		var show_result=$('#show_result').val();
-		$.post("_diary_show_addcomment_ajax_post.php",{"resource_id":resource_id,"show_result":show_result},function(data){
-			alert(data);
-			$('#subb').attr('disabled',true);
-			$.post("_diary_show_post.php",{"edit_id":result,"ry_id":ry_id},function(data){
-				$("#show_title").html(data);
-				$('#subb').attr('disabled',false);
+		if(show_result.length <=0){
+			alert("请输入评论内容！");
+		}else{
+			$.post("_diary_show_addcomment_ajax_post.php",{"resource_id":resource_id,"show_result":show_result},function(data){
+				alert(data);
+				$('#subb').attr('disabled',true);
+				$.post("_diary_show_post.php",{"edit_id":result,"ry_id":ry_id},function(data){
+					$("#show_title").html(data);
+					$('#subb').attr('disabled',false);
+				});
 			});
-		});
+		}
 	});
 });

@@ -59,7 +59,7 @@ body{width:1000px; font-size:12px; color:#000000; margin: 0 auto;  background:ur
 #member_left_content .l_content .content a{color:#666666; text-decoration:none;}
 
 .r_title{width:770px; height:22px; margin-left:10px; margin-top:10px; padding-left:20px; border-bottom:2px solid #f1f1f1; font-size:14px; font-weight:bold; color:#000000; line-height:22px; background:url('/images/member/r_title_bg.jpg') 5px 4px no-repeat; float:left; display:inline;}
-.r_title span{color:#ff6600;}
+.r_title a{color:#ff6600;}
 .r_table{width:770px; margin-top:10px; margin-left:10px; float:left; display:inline;}
 .r_table tr{line-height:34px;}
 .r_table .td1{width:145px; border-top:1px solid #f1f1f1; border-bottom:1px solid #f1f1f1; padding-right:5px; text-align:right; color:#666666; background:#f9f9f9;}

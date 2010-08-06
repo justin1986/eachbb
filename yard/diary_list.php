@@ -60,7 +60,7 @@
 			<div id="cc_t"></div>
 			<div id="cc_c" >
 				<div id="cc_pg">
-					<div class=r_title id="r_log"><span><?php if(!$member->true_name) echo "暂无姓名"; else echo $member->true_name;?></span>的日志列表</div>
+					<div class=r_title id="r_log"><a href="/yard/home.php?id=<?php echo $member->id; ?>"><?php if(!$member->true_name) echo "暂无姓名"; else echo $member->true_name;?></a>的日志列表</div>
 					<div id="r_log_hr">
 						<div>日志列表 </div>
 					</div>
