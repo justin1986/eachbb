@@ -237,7 +237,9 @@
 						<?php }?>
 					</div>
 					<div id="text_write">
-						<textarea name="b_bord" id="b_bord"></textarea>
+					<form id="b_bord" action="usercenter.post.php" method="post">
+						<textarea name="b_words" id="b_words"></textarea>
+					</form>
 					</div>
 					<div id="text_push">
 						<div id="whisper">
@@ -245,6 +247,18 @@
 						</div>
 						<div id="push">发表留言</div>
 					</div>
+					<script>
+					$(function(){
+						$('#text_push').click(function(){
+							var b_words=$('#b_words').val();
+							if(b_words.length == '0'){
+								alert("留言不能为空！");
+							}else{
+								$('#b_bord').submit();
+							}
+							});
+						});
+					</script>
 					<div class="text_display">
 						<div class="f_content">
 							<div class="f_pho">
