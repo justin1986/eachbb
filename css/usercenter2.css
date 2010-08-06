@@ -37,7 +37,9 @@ body a{text-decoration:none;}
 				.info_left{width:420px; height:80px; margin-left:25px;}
 					.left_words{width:210px; height:12px; margin-top:14px;}
 						.box{height:12px;}
-						.info{width:120px; height:12px; color:#8a99ae;}
+						.info{width:170px; height:12px; color:#8a99ae;}
+						#ad_words{width:420px;height:12px;margin-top:14px;}
+						#address{width:380px;color:#8a99ae;}
 			#line2{width:523px; height:13px; margin-left:4px; border-bottom:1px dashed #DFDFDF;}
 			#p2_bb{width:450px; height:150px; margin-left:10px;}
 	#info_p3{width:708px; margin-left:43px;}

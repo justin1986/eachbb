@@ -9,12 +9,6 @@
 		css_include_tag('yard','usercenter2');
 		js_include_tag('yard/yard','usercenter2');
 		$db = get_db();
-		$user = User::current_user();
-		if(!$user){
-			alert("请您先登录！");
-			redirect("/login/");
-			exit;
-		}
 		$id =$_GET['id'];
 		$info = $db->query("select * from eachbb_member.member where id=$id");
 		$daily_count=$db->query("select id from eachbb_member.daily where u_id=$id;");
@@ -150,9 +144,9 @@
 									<div class="box">收入：</div>
 									<div class="info"><?php echo $info[0]->income;?></div>
 								</div>
-								<div class="left_words">
-									<div class="box">城市：</div>
-									<div class="info"><?php echo $info[0]->address;?></div>
+								<div id="ad_words">
+									<div class="box">地址：</div>
+									<div id="address"><?php echo $info[0]->address;?></div>
 								</div>
 							</div>
 						</div>
