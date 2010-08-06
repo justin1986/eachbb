@@ -57,7 +57,7 @@ body a{text-decoration:none;}
 		#c_expression{width:300px;height:30px; margin-top:20px; float:right;}
 			.expression{width:27px; height:30px; cursor:pointer; margin-right:10px; background:#ffff00;overflow:hidden; float:right;}
 			#text_write{width:685px; height:207px; margin-left:15px; margin-top:7px;}
-				#b_bord{width:681px; height:203px; border:2px solid #999999; overflow-y:scroll;}
+				#b_words{width:681px; height:203px; border:2px solid #999999; overflow-y:scroll;}
 			#text_push{width:150px; height:21px; margin-top:15px; margin-right: 15px;float:right;}
 				#whisper{width:60px; height:14px; margin-top:3px; color:#999999;}
 				#push{width:88px; height:19px; cursor:pointer; line-height:21px; text-align:center; border:1px solid #41619c; background:url("/images/yard/info_pushbj.jpg") repeat-x;}
