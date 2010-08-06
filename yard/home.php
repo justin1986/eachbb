@@ -7,14 +7,14 @@
 		include_once('../frame.php');
 		use_jquery();
 		css_include_tag('yard','home');
-		js_include_tag('yard/home');
+		js_include_tag('yard/home','yard/yard');
 		$user = User::current_user();
 		$db = get_db();
 		$id =$_GET['id'];
 		$id =intval($id);
 		if($info = $db->query("select * from eachbb_member.member where id=$id")){
 		}else{
-			alert('非法操作!');
+			alert('非法操作！');
 			redirect("/");
 		}
 		$daily_count=$db->query("select id from eachbb_member.daily where u_id=$id;");
