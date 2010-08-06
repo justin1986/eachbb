@@ -17,6 +17,8 @@
 		}
 		$id =$_GET['id'];
 		$info = $db->query("select * from eachbb_member.member where id=$id");
+		$daily_count=$db->query("select id from eachbb_member.daily where u_id=$id;");
+		$album_count=$db->query("select id from eachbb_member.album where u_id=$id;");
 		if($info[0]->gender != 1){
 			$its="她";
 		}else{
@@ -83,13 +85,13 @@
 							<div class ="oth_go">
 							<img src="/images/yard/oth_go.gif" />
 							</div>
-							<div class ="oth_words"><a href="#"><?php echo $its?>的日志<font>(0)</font></a></div>
+							<div class ="oth_words"><a href="#"><?php echo $its?>的日志<font>(<?php echo count($daily_count);?>)</font></a></div>
 						</div>
 						<div class = "other">
 							<div class ="oth_go">
 							<img src="/images/yard/oth_go.gif" />
 							</div>
-							<div class ="oth_words"><a href="#"><?php echo $its?>的相册<font>(0)</font></a></div>
+							<div class ="oth_words"><a href="#"><?php echo $its?>的相册<font>(<?php echo count($album_count);?>)</font></a></div>
 						</div>
 						<div class = "other">
 							<div class ="oth_go">
@@ -158,7 +160,17 @@
 				<div id="line2"></div>
 				<div id="p2_bb">
 					<div class="basic_info">
-							<div class="word"><?php echo $its?>的宝宝</div>
+							<div class="word">
+							<?php 
+							if($info[0]->baby_status == 0){
+								echo "对不起，您尚未对任何小天使进行预约，请继续努力！";
+							}elseif($info[0]->baby_status == 1){
+								echo "Hey！小天使即将到来，你准备好了吗？";
+							}else{
+								echo $its."的宝宝";
+							}
+							?></div>
+							<?php if($info[0]->baby_status == 2){ ?>
 							<div class ="info_left">
 								<div class="left_words">
 									<span class="box">小名：</span>
@@ -186,6 +198,7 @@
 									<div class="info"><?php echo $info[0]->baby_birthday;?></div>
 								</div>
 							</div>
+							<?php }?>
 						</div>
 				</div>
 				</div>
