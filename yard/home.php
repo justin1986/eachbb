@@ -6,12 +6,17 @@
 	<?php 
 		include_once('../frame.php');
 		use_jquery();
-		css_include_tag('yard','usercenter2');
-		js_include_tag('yard/usercenter2');
+		css_include_tag('yard','home');
+		js_include_tag('yard/home');
 		$user = User::current_user();
 		$db = get_db();
 		$id =$_GET['id'];
-		$info = $db->query("select * from eachbb_member.member where id=$id");
+		$id =intval($id);
+		if($info = $db->query("select * from eachbb_member.member where id=$id")){
+		}else{
+			alert('非法操作!');
+			redirect("/");
+		}
 		$daily_count=$db->query("select id from eachbb_member.daily where u_id=$id;");
 		$album_count=$db->query("select id from eachbb_member.album where u_id=$id;");
 		if($info[0]->gender != 1){
@@ -193,7 +198,7 @@
 									<div class="box">生日：</div>
 									<div class="info">
 									<?php $info[0]->baby_birthday;
-									echo substr($info[0]->baby_birthday,0,10);
+									echo mb_substr($info[0]->baby_birthday,0,10);
 									?></div>
 								</div>
 							</div>
@@ -221,7 +226,7 @@
 							</span>
 							<span>Hallie秋之爱：皮衣/柳丁/国企学/军服/流速/保温/褶皱/大红叉2002</span>
 						</span>
-						<span class="news_time">2002-10-10 10:30:00</span>
+						<span class="news_time"><?php echo mb_substr('2002-10-10 10:30:00',0,16);?></span>
 						<div class="line3"></div>
 					</div>
 					<?php }?>
@@ -238,7 +243,7 @@
 						</div>
 						<?php }?>
 					</div>
-					<form id="b_bord" action="usercenter.post.php" method="post">
+					<form id="b_bord" action="home.post.php" method="post">
 					<div id="text_write">
 						<textarea name="b_words" id="b_words"></textarea>
 						<input type="text" name="id" style="display:none;" value="<?php echo $id?>">
@@ -278,7 +283,7 @@
 									<div class="f_button">
 										<img src="/images/yard/f_button.gif " />
 									</div>
-									<div class="created_at"><?php echo $comment[0]->created_at?></div>
+									<div class="created_at"><?php echo mb_substr($comment[0]->created_at,0,16)?></div>
 								</div>
 								<div class="f_words"><?php echo htmlspecialchars($comment[0]->comment);?></div>
 							</div>

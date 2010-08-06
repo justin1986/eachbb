@@ -9,17 +9,17 @@
 		$content = $_POST['b_words'];
 		$length= trim($content);
 		$user = User::current_user();
-
+alert($content);
 		if($user){
 			$visitor = $user->name;
 		}else{
 			$visitor = 'guest';
 		}
 		
-		if(strlen($length)<=0){
+		if(mb_strlen($length)<=0){
 			alert("请输入有效信息！");
-			redirect("/yard/usercenter2.php.$f_id");}
-		elseif(strlen($content)>500){
+			redirect("/yard/home.php.$f_id");}
+		elseif(mb_strlen($content,'utf-8')>500){
 			alert("你的留言太长了！");
 		}
 		else{
@@ -30,5 +30,5 @@
 				alert("发布失败！");
 			}
 		}
-		redirect("/yard/usercenter2.php?id=".$f_id);
+		redirect("/home.php?id=".$f_id);
 		?>
