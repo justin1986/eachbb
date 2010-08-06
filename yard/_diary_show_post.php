@@ -1,7 +1,7 @@
 <?php 
 	include_once('../frame.php');
 	$edit_id=trim($_POST["edit_id"]);
-	$e_id=trim($_GET["id"]);
+	$ry_id=trim($_POST["ry_id"]);
 	$user = User::current_user();
 	set_charset("utf-8");
 	if(!$user){
@@ -25,7 +25,7 @@
 			<div class="show_result_top">
 				<?php echo $info[0]->true_name;?>
 				<span><?php echo $comment->created_at;?></span>
-				<?php if($user->id === $comment->user_id){?>
+				<?php if(!$ry_id){?>
 					<a href="#">
 					<input type="hidden" class="comment_id" id="comment_<?php echo $i;?>" value="<?php echo $comment->id;?>" /><img src="/images/yetrb/x.jpg"/></a>
 				<?php }?>
@@ -40,13 +40,13 @@
 	<?php }?>
 	<input type="hidden" id="resource_id" value="<?php echo $edit_id;?>"/>
 	<div class="show_banner">
-		<div class="show_img_banner">
-			<img src="<?php echo $user->avatar;?>"/>
-		</div>
-		<div class="show_result_banner">
+<!--		<div class="show_img_banner">-->
+<!--			<img src="<?php echo $user->avatar;?>"/>-->
+<!--		</div>-->
+		<div class="show_result_banner" style="margin-left:30px; float:left;">
 			<textarea id="show_result"></textarea>
 		</div>
-		<input type="button" id="subb" value="发布评论"/>
+		<input type="button" id="subb" style="margin-left:30px;" value="发布评论"/>
 		<input type="reset" id="no_subb" value="取消发布" />
 	</div>
 	

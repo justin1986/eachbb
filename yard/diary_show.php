@@ -84,6 +84,7 @@
 					<div id="c_menu_pg_con">
 						<?php echo  htmlspecialchars_decode($diary[0]->content);?>
 						<input type="hidden" id="category_id" value="<?php echo $diary[0]->category_id;?>"/>
+						<input type="hidden" id="ry_id" value="<?php echo $id;?>"/>
 						<input id="edit_id" type="hidden" value="<?php echo $edit_id;?>"/>
 					</div>
 					<div id="show_title"></div>

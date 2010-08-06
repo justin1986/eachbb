@@ -1,6 +1,7 @@
 $(function(){
 	var result=$('#edit_id').val();
-	$.post("_diary_show_post.php",{"edit_id":result},function(data){
+	var ry_id=$("#ry_id").attr("value");
+	$.post("_diary_show_post.php",{"edit_id":result,"ry_id":ry_id},function(data){
 		$("#show_title").html(data);
 	});
 	$('.show_result_banner a img').live("hover",function(){
@@ -28,7 +29,7 @@ $(function(){
 		$.post("_diary_show_addcomment_ajax_post.php",{"resource_id":resource_id,"show_result":show_result},function(data){
 			alert(data);
 			$('#subb').attr('disabled',true);
-			$.post("_diary_show_post.php",{"edit_id":result},function(data){
+			$.post("_diary_show_post.php",{"edit_id":result,"ry_id":ry_id},function(data){
 				$("#show_title").html(data);
 				$('#subb').attr('disabled',false);
 			});
