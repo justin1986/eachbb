@@ -7,7 +7,7 @@
 		include_once('../frame.php');
 		use_jquery();
 		css_include_tag('yard','usercenter2');
-		js_include_tag('yard/yard','usercenter2');
+		js_include_tag('yard/usercenter2');
 		$db = get_db();
 		$id =$_GET['id'];
 		$info = $db->query("select * from eachbb_member.member where id=$id");
@@ -239,45 +239,35 @@
 					<div id="text_write">
 					<form id="b_bord" action="usercenter.post.php" method="post">
 						<textarea name="b_words" id="b_words"></textarea>
+						<input type="text" name="id" style="display:none;" value="<?php echo $id?>">
 					</form>
 					</div>
 					<div id="text_push">
 						<div id="whisper">
-							<input type="checkbox" id="checkbox">悄悄话
+							<input type="checkbox" name="checkbox" id="checkbox">悄悄话
 						</div>
 						<div id="push">发表留言</div>
 					</div>
-					<script>
-					$(function(){
-						$('#text_push').click(function(){
-							var b_words=$('#b_words').val();
-							if(b_words.length == '0'){
-								alert("留言不能为空！");
-							}else{
-								$('#b_bord').submit();
-							}
-							});
-						});
-					</script>
 					<div class="text_display">
 						<div class="f_content">
 							<div class="f_pho">
 								<img src="/images/yard/info_p4fpho.gif " />
 							</div>
+				<?php $comment =$db->query("select nick_name,created_at,comment from eachbb_member.comment where user_id=$id and resource_id='1099' order by created_at desc");?>
 							<div class="content_box">
 								<div class="f_info">
-									<div class="f_name"><a href="#">赵一文</a></div>
+									<div class="f_name"><a href="#"><?php echo $comment[0]->nick_name?></a></div>
 									<div class="f_button">
 										<img src="/images/yard/f_button.gif " />
 									</div>
-									<div class="created_at">2020-10-10 12:11:11</div>
+									<div class="created_at"><?php echo $comment[0]->created_at?></div>
 								</div>
-								<div class="f_words">jkjkljkljjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj</div>
+								<div class="f_words"><?php echo htmlspecialchars($comment[0]->comment);?></div>
 							</div>
 						</div>
 						<div id="u_reply">
 							<div id="reply_title">
-								<span class="u_id"><a href="#"><?php echo $user->name;?></a></span>
+								<span class="u_id"><a href="#"><?php echo $info[0]->name;?></a></span>
 								<span>的回复：</span>
 								<span id="reply_time">2010-11-11 11:11:11</span>
 							</div>
@@ -285,7 +275,7 @@
 						</div>
 						<div id="more_reply">
 							<div id="next_reply"><a href="#">查看全部>></a></div>
-							<div id="total_reply">共16条留言</div>
+							<div id="total_reply">共<?php echo count($comment)?>条留言</div>
 						</div>
 					</div>
 				</div>
