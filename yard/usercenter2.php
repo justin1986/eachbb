@@ -8,6 +8,7 @@
 		use_jquery();
 		css_include_tag('yard','usercenter2');
 		js_include_tag('yard/usercenter2');
+		$user = User::current_user();
 		$db = get_db();
 		$id =$_GET['id'];
 		$info = $db->query("select * from eachbb_member.member where id=$id");
@@ -18,6 +19,7 @@
 		}else{
 			$its="他";
 		}
+		
 		
 	?>
 </head>
@@ -236,24 +238,40 @@
 						</div>
 						<?php }?>
 					</div>
-					<div id="text_write">
 					<form id="b_bord" action="usercenter.post.php" method="post">
+					<div id="text_write">
 						<textarea name="b_words" id="b_words"></textarea>
 						<input type="text" name="id" style="display:none;" value="<?php echo $id?>">
-					</form>
 					</div>
 					<div id="text_push">
 						<div id="whisper">
-							<input type="checkbox" name="checkbox" id="checkbox">悄悄话
+							<input type="checkbox" name="checkbox" id="checkbox" value=1>悄悄话
 						</div>
 						<div id="push">发表留言</div>
 					</div>
+					</form>
+					<?php 
+					$comment =$db->query("select nick_name,created_at,comment,comment_count from eachbb_member.comment where user_id=$id and resource_id='1099' and whispered = 0 order by created_at desc");
+					$visitor_name = $comment[0]->nick_name;
+					if($visitor_name != 'guest'){
+					$visit_avatar = $db->query("select b.avatar from eachbb_member.comment a left join eachbb_member.member b on a.nick_name = b.name where $visitor_name");
+					}
+					?>
 					<div class="text_display">
 						<div class="f_content">
 							<div class="f_pho">
-								<img src="/images/yard/info_p4fpho.gif " />
+								<img src="
+								<?php
+								if($visitor_name != 'guest'){
+									if($visit_avatar[0]->avatar != null){
+										echo $visit_avatar[0]->avatar;
+									}else{
+										echo "/images/yard/avatar.jpg";
+								}}else{
+									echo "/images/yard/guest.jpg";
+								}
+								?>"/>
 							</div>
-				<?php $comment =$db->query("select nick_name,created_at,comment,comment_count from eachbb_member.comment where user_id=$id and resource_id='1099' order by created_at desc");?>
 							<div class="content_box">
 								<div class="f_info">
 									<div class="f_name"><a href="#"><?php echo $comment[0]->nick_name?></a></div>
@@ -279,9 +297,10 @@
 							<font style = "font-weight:bold; font-size:16px; color:#000000;">暂无回复！</font>
 						</div>
 				<?php }?>
+				<?php $comment_count = "select nick_name from eachbb_member.comment where user_id=$id and resource_id='1099' order by created_at desc"?>
 						<div id="more_reply">
 							<div id="next_reply"><a href="#">查看全部>></a></div>
-							<div id="total_reply">共<?php echo count($comment)?>条留言</div>
+							<div id="total_reply">共<?php echo count($comment_count)?>条留言</div>
 						</div>
 					</div>
 				</div>

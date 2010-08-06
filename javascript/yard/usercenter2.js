@@ -5,7 +5,6 @@ $(function(){
 							alert("留言不能为空！");
 				}else{
 							$('#b_bord').submit();
-							$('#checkbox').submit();
 				}
 				});
 			});
