@@ -61,7 +61,7 @@
 					</div>
 					<div class="c_menu_con_title">内容：</div>
 					<div id="c_menu_pg_con">
-						<?php show_fckeditor('news[content]','Admin',false,"215", htmlspecialchars_decode($diary[0]->content));?>
+						<?php show_fckeditor('news[content]','Front',true,"215", htmlspecialchars_decode($diary[0]->content));?>
 						<input type="hidden" id="category_id" value="<?php echo $diary[0]->category_id;?>"/>
 						<input id="edit_id" type="hidden" value="<?php echo $edit_id;?>"/>
 					</div>
