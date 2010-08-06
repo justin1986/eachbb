@@ -37,7 +37,9 @@ body a{text-decoration:none;}
 				.info_left{width:420px; height:80px; margin-left:25px;}
 					.left_words{width:210px; height:12px; margin-top:14px;}
 						.box{height:12px;}
-						.info{width:100px; height:12px; color:#8a99ae;}
+						.info{width:170px; height:12px; color:#8a99ae;}
+						#ad_words{width:420px;height:12px;margin-top:14px;}
+						#address{width:380px;color:#8a99ae;}
 			#line2{width:523px; height:13px; margin-left:4px; border-bottom:1px dashed #DFDFDF;}
 			#p2_bb{width:450px; height:150px; margin-left:10px;}
 	#info_p3{width:708px; margin-left:43px;}
@@ -55,7 +57,7 @@ body a{text-decoration:none;}
 		#c_expression{width:300px;height:30px; margin-top:20px; float:right;}
 			.expression{width:27px; height:30px; cursor:pointer; margin-right:10px; background:#ffff00;overflow:hidden; float:right;}
 			#text_write{width:685px; height:207px; margin-left:15px; margin-top:7px;}
-				#b_bord{width:681px; height:203px; border:2px solid #e4e4e4; overflow-y:scroll;}
+				#b_words{width:681px; height:203px; border:2px solid #999999; overflow-y:scroll;}
 			#text_push{width:150px; height:21px; margin-top:15px; margin-right: 15px;float:right;}
 				#whisper{width:60px; height:14px; margin-top:3px; color:#999999;}
 				#push{width:88px; height:19px; cursor:pointer; line-height:21px; text-align:center; border:1px solid #41619c; background:url("/images/yard/info_pushbj.jpg") repeat-x;}

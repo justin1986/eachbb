@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+#diary_title_banner{margin-left:10px; margin-top:20px;}
+#subb{width:75px; height:23px; line-height:23px; text-align:center; border:0px solid red; font-size:12px; color:#ffffff; font-weight:normal; background:url(/images/yetrb/btn1.jpg) no-repeat;}
+#no_subb{width:75px; height:23px; margin-left:10px; line-height:23px; border:0px solid red; text-align:center; font-size:12px; color:#000000; font-weight:normal; background:url(/images/yetrb/btn2.jpg) no-repeat;}
+#show_title{width:758px;  margin-left:10px;  margin-top:10px; padding-top:10px; border-top:1px solid #DDDDDD; float:left; display:inline;}
+
+.show_banner{width:758px; background:#F0F5F8; float:left; display: inline;}
+	.show_img_banner{width:50px; height:50px; margin-left:10px; margin-top:10px; padding-bottom:10px; float:left; display: inline;}
+		.show_img_banner img{width:50px; height:50px; border:0px solid red;}
+	.show_result_banner{width:690px; float:right; display: inline;}
+		.show_result_top{width:680px; height:20px; margin-top:10px; font-size:14px; color:#005EAC; line-height:18px; float:left; display: inline;}
+			.show_result_top span{font-size:12px; margin-left:5px; color:#808080;  line-height:20px;}
+			.show_result_top img{width:13px; height: 14px;  border: 0px solid; float:right; display: inline;}
+		.show_result{width:690px; margin-top:6px; font-size:12px; color:#000000; line-height:16px; overflow:hidden; word-wrap: break-word; word-break: normal; float:left;}

@@ -1,8 +1,8 @@
 @CHARSET "UTF-8";
 #c_menu_pg_p{width:768px; height:50px; margin-top:10px; margin-left:10px; font-size:14px; color:#666666; font-weight:bold; float:left; display:inline;}
 #c_menu_pg_p input{width:568px; height:26px; border:1px solid #E4E4E4;}
-#c_menu_pg_con{width:768px;  margin-top:10px; margin-left:10px; font-size:14px; color:#666666; font-weight:bold; float:left; display:inline;}
-.c_menu_con_title{width:768px; height:20px; margin-top:10px; margin-left:10px; font-size:14px; color:#666666; font-weight:bold; float:left; display:inline;}
+#c_menu_pg_con{width:758px; padding-left:10px; margin-left:10px; font-size:14px; color:#666666; font-weight:bold; overflow:hidden; word-wrap: break-word; word-break: normal; float:left; display:inline;}
+.c_menu_con_title{width:768px; height:23px; margin-top:10px; margin-left:10px; font-size:14px; color:#666666; font-weight:bold; float:left; display:inline;}
 
 .c_menu_con_title img{width:16px; height:16px; margin-top:5px;}
 #sub{width:62px; height:23px; line-height:23px; text-align:center; border:0px solid red; font-size:12px; color:#ffffff; font-weight:normal; background:url(/images/yetrb/btn.jpg) no-repeat;}

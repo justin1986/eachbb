@@ -64,7 +64,7 @@
 					<div class="diary_banner">
 						<div class="diary_title_banner">
 							<div class="diary_title_pg">
-								<div class="diary_title"><a href="/yard/diary.php?edit=<?php echo $diary->id;?>"><?php echo htmlspecialchars_decode($diary->title);?></a></div>
+								<div class="diary_title"><a href="/yard/diary_show.php?edit=<?php echo $diary->id;?>"><?php echo htmlspecialchars_decode($diary->title);?></a></div>
 								<div class="diary">
 								<div class="diary_delete"><a href="/yard/_diary_delete_post.php?edit=<?php echo $diary->id;?>">删除</a></div>
 								<div class="diary_edit"><a href="/yard/diary.php?edit=<?php echo $diary->id;?>">编辑</a></div>
