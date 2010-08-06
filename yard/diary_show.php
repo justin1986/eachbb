@@ -7,7 +7,7 @@
 		include_once('../frame.php');
 		use_jquery();
 		css_include_tag('yard','member','diary','diary_list','diary_show');
-		js_include_tag('yard/yard','member','../ckeditor/ckeditor.js');
+		js_include_tag('yard/yard','member','../ckeditor/ckeditor.js','yard/diary_show');
 		$db = get_db();
 		$user = User::current_user();
 		if(!$user){
@@ -77,19 +77,22 @@
 					</div>
 					<div id="show_title">
 						<?php 
-							$list=$db->query("SELECT id,user_id,created_at,content,daily_id FROM eachbb_member.comment c where daily_id=$edit_id");
+							$list=$db->query("SELECT id,user_id,created_at,comment,resource_id FROM eachbb_member.comment c where resource_type='diary' and resource_id=$edit_id");
 							foreach ($list as $comment){
-								$info=$db->query("SELECT id,true_name,avatar FROM eachbb_member.member m where id={$comment->u_id};");
+								$info=$db->query("SELECT id,true_name,avatar FROM eachbb_member.member m where id={$comment->user_id};");
 						?>
 						<div class="show_banner">
 							<div class="show_img_banner">
 								<img src="<?php echo $info[0]->avatar;?>"/>
 							</div>
 							<div class="show_result_banner">
+								<input type="hidden" id="comment_id" value="<?php echo $comment->id;?>" />
 								<div class="show_result_top">
-									
+									<?php echo $info[0]->true_name;?>
+									<span><?php echo $comment->created_at;?></span>
+									<img src="/images/yetrb/x.jpg"/>
 								</div>
-								<div class="show_result"><?php echo $comment->content;?></div>
+								<div class="show_result"><?php echo $comment->comment;?></div>
 							</div>
 						</div>
 						<?php }?>
