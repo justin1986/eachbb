@@ -9,7 +9,15 @@
 		use_jquery();
 		css_include_tag('avatar');
 		js_include_tag('yard/yard','member','yard/yard_info');
-		$db=get_db();
+		$user = User::current_user();
+		if(!$user){
+			alert("请您先登录！");
+			redirect('/login/');
+			exit();
+		}
+		$db = get_db();
+		$avatars =$db->query("SELECT id,photo,status FROM eachbb_member.member_avatar where u_id=".$user->id.' order by create_at desc limit 6');
+		$avatar_count = $db->record_count;
 	?>
 </head>
 <body>
