@@ -51,7 +51,7 @@
 			<form>
 			<div id="cc_t"></div>
 			<div id="cc_c" >
-				<div id="cc_pg" style="height:640px;">
+				<div id="cc_pg">
 					<div class=r_title id="r_log"><span><?php echo $user->true_name;?></span>的日志管理</div>
 					<div id="r_log_hr">
 						<div><?php if($edit_id){echo "评论";}else{echo "发表新";}?>日志 </div>
@@ -75,32 +75,7 @@
 						<input type="hidden" id="category_id" value="<?php echo $diary[0]->category_id;?>"/>
 						<input id="edit_id" type="hidden" value="<?php echo $edit_id;?>"/>
 					</div>
-					<div id="show_title">
-						<?php 
-							$list=$db->query("SELECT id,user_id,created_at,comment,resource_id FROM eachbb_member.comment c where resource_type='diary' and resource_id=$edit_id");
-							foreach ($list as $comment){
-								$info=$db->query("SELECT id,true_name,avatar FROM eachbb_member.member m where id={$comment->user_id};");
-						?>
-						<div class="show_banner">
-							<div class="show_img_banner">
-								<img src="<?php echo $info[0]->avatar;?>"/>
-							</div>
-							<div class="show_result_banner">
-								<input type="hidden" id="comment_id" value="<?php echo $comment->id;?>" />
-								<div class="show_result_top">
-									<?php echo $info[0]->true_name;?>
-									<span><?php echo $comment->created_at;?></span>
-									<img src="/images/yetrb/x.jpg"/>
-								</div>
-								<div class="show_result"><?php echo $comment->comment;?></div>
-							</div>
-						</div>
-						<?php }?>
-					</div>
-					<div class="c_menu_con_title" style="margin-top:20px;">
-						<input type="button" id="subb" value="发布评论"/>
-						<input type="reset" id="no_subb" value="取消发布" />
-					</div>
+					<div id="show_title"></div>
 				</div>
 			</div>
 			<div id="cc_b"></div>
