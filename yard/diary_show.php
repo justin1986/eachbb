@@ -61,7 +61,7 @@
 			<div id="cc_t"></div>
 			<div id="cc_c" >
 				<div id="cc_pg">
-					<div class=r_title id="r_log"><span><?php echo $user->true_name;?></span>的日志评论</div>
+					<div class=r_title id="r_log"><a href="/yard/home.php?id=<?php echo $user->id;?>"><?php echo $user->true_name;?></a>的日志评论</div>
 					<div id="r_log_hr">
 						<div><?php if($edit_id){echo "评论";}else{echo "发表新";}?>日志 </div>
 					</div>
