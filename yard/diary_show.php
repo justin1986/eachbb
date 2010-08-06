@@ -8,19 +8,28 @@
 		use_jquery();
 		css_include_tag('yard','member','diary','diary_list','diary_show');
 		js_include_tag('yard/yard','member','../ckeditor/ckeditor.js','yard/diary_show');
-		$db = get_db();
-		$user = User::current_user();
-		if(!$user){
-			alert("请您先登录！"); ?>
-			<script>window.location.href="/login/";</script>
-			<?php 
-		}
+		$id=trim($_GET["id"]);
 		$db = get_db();
 		$edit_id=trim($_GET['edit']);
 		if($edit_id){
 			if(!is_numeric($edit_id)) die('invlid request!');
-			$diary=$db->query("SELECT d.id,d.title,d.content,d.last_edit_time,s.name,d.category_id FROM eachbb_member.daily d left join eachbb_member.daily_category as s on d.category_id=s.id where d.id=$edit_id limit 4"); 
 		}
+		if($id){
+			if(!is_numeric($id))
+				die('invlid request!');
+			else{
+				$user = new table_class('eachbb_member.member');
+				$user->find($id);
+			}
+		}else{
+			$user = User::current_user();
+			if(!$user){
+				alert("请您先登录！"); ?>
+				<script>window.location.href="/login/";</script>
+				<?php 
+			}
+		}
+		$diary=$db->query("SELECT d.id,d.title,d.content,d.last_edit_time,s.name,d.category_id FROM eachbb_member.daily d left join eachbb_member.daily_category as s on d.category_id=s.id where d.id=$edit_id");
 	?>
 </head>
 <body>
@@ -52,16 +61,18 @@
 			<div id="cc_t"></div>
 			<div id="cc_c" >
 				<div id="cc_pg">
-					<div class=r_title id="r_log"><span><?php echo $user->true_name;?></span>的日志管理</div>
+					<div class=r_title id="r_log"><span><?php echo $user->true_name;?></span>的日志评论</div>
 					<div id="r_log_hr">
 						<div><?php if($edit_id){echo "评论";}else{echo "发表新";}?>日志 </div>
 					</div>
 					<div class="diary_title_banner" id="diary_title_banner">
 						<div class="diary_title_pg">
-							<div class="diary_title"><a href="/yard/diary_show.php?edit=<?php echo $diary[0]->id;?>"><?php echo htmlspecialchars_decode($diary[0]->title);?></a></div>
+							<div class="diary_title"><?php echo htmlspecialchars_decode($diary[0]->title);?></div>
 							<div class="diary">
+							<?php if(!$id){?>
 							<div class="diary_delete"><a href="/yard/_diary_delete_post.php?edit=<?php echo $diary[0]->id;?>">删除</a></div>
 							<div class="diary_edit"><a href="/yard/diary.php?edit=<?php echo $diary[0]->id;?>">编辑</a></div>
+							<?php }?>
 							</div>
 						</div>
 						<div class="diary_created_at">

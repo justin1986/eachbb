@@ -1,6 +1,7 @@
 <?php 
 	include_once('../frame.php');
 	$edit_id=trim($_POST["edit_id"]);
+	$e_id=trim($_GET["id"]);
 	$user = User::current_user();
 	set_charset("utf-8");
 	if(!$user){
