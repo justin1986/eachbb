@@ -77,7 +77,7 @@
 					</div>
 					<div id="show_title">
 						<?php 
-							$list=$db->query("SELECT id,u_id,created_at,content,daily_id FROM eachbb_member.comment c where daily_id=$edit_id");
+							$list=$db->query("SELECT id,user_id,created_at,content,daily_id FROM eachbb_member.comment c where daily_id=$edit_id");
 							foreach ($list as $comment){
 								$info=$db->query("SELECT id,true_name,avatar FROM eachbb_member.member m where id={$comment->u_id};");
 						?>
