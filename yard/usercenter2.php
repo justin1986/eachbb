@@ -253,7 +253,7 @@
 							<div class="f_pho">
 								<img src="/images/yard/info_p4fpho.gif " />
 							</div>
-				<?php $comment =$db->query("select nick_name,created_at,comment from eachbb_member.comment where user_id=$id and resource_id='1099' order by created_at desc");?>
+				<?php $comment =$db->query("select nick_name,created_at,comment,comment_count from eachbb_member.comment where user_id=$id and resource_id='1099' order by created_at desc");?>
 							<div class="content_box">
 								<div class="f_info">
 									<div class="f_name"><a href="#"><?php echo $comment[0]->nick_name?></a></div>
@@ -265,6 +265,7 @@
 								<div class="f_words"><?php echo htmlspecialchars($comment[0]->comment);?></div>
 							</div>
 						</div>
+				<?php if($comment[0]->comment_count != ''){?>
 						<div id="u_reply">
 							<div id="reply_title">
 								<span class="u_id"><a href="#"><?php echo $info[0]->name;?></a></span>
@@ -273,6 +274,11 @@
 							</div>
 							<div id="reply_words">jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj</div>
 						</div>
+				<?php }else{?>
+						<div id="u_reply">
+							<font style = "font-weight:bold; font-size:16px; color:#000000;">暂无回复！</font>
+						</div>
+				<?php }?>
 						<div id="more_reply">
 							<div id="next_reply"><a href="#">查看全部>></a></div>
 							<div id="total_reply">共<?php echo count($comment)?>条留言</div>
