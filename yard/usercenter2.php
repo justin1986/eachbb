@@ -189,7 +189,10 @@
 								</div>
 								<div class="left_words">
 									<div class="box">生日：</div>
-									<div class="info"><?php echo $info[0]->baby_birthday;?></div>
+									<div class="info">
+									<?php $info[0]->baby_birthday;
+									echo substr($info[0]->baby_birthday,0,10);
+									?></div>
 								</div>
 							</div>
 							<?php }?>
