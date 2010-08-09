@@ -16,7 +16,7 @@ $(function(){
 			alert("请选择分类！");
 		}else{
 			$('#sub').attr('disabled',true);
-			var edit_id=$('#edit_id').val().trim();
+			var edit_id = $('#edit_id').val().trim();
 			$.post('_diary_sub_ajax_post.php',{"title":title,"edit_id":edit_id,"content":content,"created_id":created_id},function(data){
 				$('#sub').attr('disabled',false);
 				alert(data);
