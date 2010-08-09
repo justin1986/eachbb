@@ -8,7 +8,6 @@ $(function(){
 		$("#res").html(news);
 	});
 	$('.a_comment_up').live('click',function(e){
-		
 		e.preventDefault();
 		var comment_id = $(this).attr('href');
 		comment_id = comment_id.substring(comment_id.lastIndexOf('/')+1,comment_id.length);
@@ -54,7 +53,7 @@ $(function(){
 });
 
 function xh()
-{	
+{
 	count++;
 	if(count>total){
 		count=1;

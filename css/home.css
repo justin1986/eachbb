@@ -9,7 +9,7 @@ body a{text-decoration:none;}
 #cc_info{width:819px; margin-top:10px;}
 	#info_p1{width:180px; height:375px; margin-left:43px;}
 		#p1_phobox{width:156px; height:156px; border:1px solid black;}
-			#photo{width:150px; height:150px; margin:3px; overflow:hidden;}
+		#p1_phobox img{width:150px; height:150px; margin:3px; overflow:hidden;}
 		#p1_buttonbox{width:164px; height:62px; margin-left:3px;}
 			.p1_but{width:74px; height:21px; margin-top:10px; cursor:pointer;}
 			.but_nl{width:2px; height:21px; background:url("/images/yard/but_nl.jpg") no-repeat;}
@@ -63,7 +63,7 @@ body a{text-decoration:none;}
 				#push{width:88px; height:19px; cursor:pointer; line-height:21px; text-align:center; border:1px solid #41619c; background:url("/images/yard/info_pushbj.jpg") repeat-x;}
 			.text_display{width:740px; margin-top:25px; margin-left:16px;}
 				.f_content{width:540px;}
-					.f_pho{width:50px; height:50px; background:pink; border:1px solid #999999; overflow:hidden;}
+					.f_pho img{width:50px; height:50px; border:1px solid #999999; overflow:hidden;}
 					.content_box{width:470px; margin-left:13px; color:#a9a9a9;}
 						.f_info{width:470px; height:13px;}
 							.f_name{color:#41619C;}

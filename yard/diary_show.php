@@ -20,6 +20,12 @@
 			else{
 				$user = new table_class('eachbb_member.member');
 				$user->find($id);
+				if($user){
+					alert("非法操作！");
+					alert("请您先登录！");?>
+				<script>window.location.href="/login/";</script>
+				<?php 
+				}
 			}
 		}else{
 			$user = User::current_user();
@@ -30,6 +36,12 @@
 			}
 		}
 		$diary=$db->query("SELECT d.id,d.title,d.content,d.last_edit_time,s.name,d.category_id FROM eachbb_member.daily d left join eachbb_member.daily_category as s on d.category_id=s.id where d.id=$edit_id");
+		if(!$diary){
+				alert("非法操作！");
+				alert("请您先登录！");?>
+			<script>window.location.href="/login/";</script>
+			<?php 
+		}
 	?>
 </head>
 <body>

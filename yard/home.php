@@ -17,15 +17,13 @@
 			alert('非法操作！');
 			redirect("/");
 		}
-		$daily_count=$db->query("select id from eachbb_member.daily where u_id=$id;");
-		$album_count=$db->query("select id from eachbb_member.album where u_id=$id;");
+		$daily_count=$db->query("select id from eachbb_member.daily where u_id=$id");
+		$album_count=$db->query("select id from eachbb_member.album where u_id=$id");
 		if($info[0]->gender != 1){
 			$its="她";
 		}else{
 			$its="他";
 		}
-		
-		
 	?>
 </head>
 <body>
@@ -72,15 +70,18 @@
 						</div>
 						<div class="p1_but" style="float:right;">
 							<div class="but_nl"></div>
-							<div class="but_name">加为好友</div>
+							<div class="but_name" id="add_f">加为好友</div>
 							<div class="but_nr"></div>
 						</div>
-						<div class="p1_but">
+						<div class="p1_but" id="leaveamessage">
 							<div class="but_nl"></div>
-							<div class="but_name">写留言</div>
+							<div class="but_name" >写留言</div>
 							<div class="but_nr"></div>
 						</div>
 					</div>
+					<form id="add_friend" action="addfriend.post.php" method="post">
+						<input name="add_friend" style="display:none;" value="<?php echo $id;?>">
+					</form>
 					<div id= "p1_other">
 						<div class = "other">
 							<div class ="oth_go">
@@ -234,7 +235,7 @@
 				</div>
 				<div id="info_p4">
 					<div class="title_info">
-						<div class="word2" >留言板</div>
+						<div class="word2">留言板</div>
 					</div>
 					<div id="c_expression">
 						<?php for($i=0;$i<5;$i++){?>
@@ -319,5 +320,6 @@
 				<div id="copyright">版权</div>
 			</div>
 		</div>
+	</div>
 	</div>
 </body>

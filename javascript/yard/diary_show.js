@@ -1,10 +1,10 @@
 $(function(){
-	var result=$('#edit_id').val();
-	if(result.length<=0){
+	var result = $('#edit_id').val();
+	if(result.length <= 0){
 		alert("操作有误！");
-		window.location.href="/yard";
+		window.location.href = "/yard";
 	}else{
-		var ry_id=$("#ry_id").attr("value");
+		var ry_id = $("#ry_id").attr("value");
 		$.post("_diary_show_post.php",{"edit_id":result,"ry_id":ry_id},function(data){
 			$("#show_title").html(data);
 		});
@@ -18,19 +18,19 @@ $(function(){
 	});
 	$('.show_result_banner a img').live("click",function(e){
 		e.preventDefault();
-		var select=$('.show_result_banner a img').index($(this));
-		var result=$("#comment_"+select).attr("value");
+		var select = $('.show_result_banner a img').index($(this));
+		var result = $("#comment_"+select).attr("value");
 		$.post("_diary_show_delete_ajax.post.php",{"resoured":result},function(data){
 			alert(data);
-			var result=$('#edit_id').val();
+			var result = $('#edit_id').val();
 			$.post("_diary_show_post.php",{"edit_id":result},function(data){
 				$("#show_title").html(data);
 			});
 		});
 	});
 	$('#subb').live("click",function(){
-		var resource_id=$('#resource_id').val();
-		var show_result=$('#show_result').val();
+		var resource_id = $('#resource_id').val();
+		var show_result = $('#show_result').val();
 		if(show_result.length <=0){
 			alert("请输入评论内容！");
 		}else if(show_result.length >= 500){

@@ -1,0 +1,1 @@
+ALTER TABLE `eachbb_member`.`photo` ADD COLUMN `created_at` DATETIME NOT NULL AFTER `title`;
