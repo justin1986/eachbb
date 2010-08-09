@@ -47,7 +47,7 @@
 			<div id="cc_t"></div>
 			<div id="cc_c" >
 				<div id="cc_pg">
-					<div class=r_title id="r_log"><span><?php echo $member->true_name;?></span>的账户管理</div>
+					<div class=r_title id="r_log"><?php if($member->true_name) echo $member->true_name.'的账户管理'; else echo '暂无信息';?></a></div>
 					<div id="r_log_hr">
 						<div>个人资料</div>
 					</div>
