@@ -3,7 +3,7 @@ $(function(){
 	//show_baby_day();
 	baby_status();
 	$("#submit").click(function(){
-		$.post('member.post.php',$("form").serializeArray(),function(data){
+		$.post('/yard/member.post.php',$("form").serializeArray(),function(data){
 			if(data!=''){
 				alert(data);
 			}else{
@@ -36,7 +36,7 @@ $(function(){
 });
 
 function show_day(day){
-	$.post('show_day.php',{'month':$("[name=month]").val(),'year':$("[name=year]").val()},function(data){
+	$.post('/yard/show_day.php',{'month':$("[name=month]").val(),'year':$("[name=year]").val()},function(data){
 		$("[name=day]").html(data);
 		if(day!=''){
 			$("[name=day]").val(day);
@@ -45,7 +45,7 @@ function show_day(day){
 }
 
 function show_baby_day(day){
-	$.post('show_day.php',{'month':$("[name=bb_month]").val(),'year':$("[name=bb_year]").val()},function(data){
+	$.post('/yard/show_day.php',{'month':$("[name=bb_month]").val(),'year':$("[name=bb_year]").val()},function(data){
 		$("[name=bb_day]").html(data);
 		if(day!=''){
 			$("[name=bb_day]").val(day);
@@ -54,7 +54,7 @@ function show_baby_day(day){
 }
 
 function show_city(city){
-	$.post('show_city.php',{'province':$('[name=province]').val()},function(data){
+	$.post('/yard/show_city.php',{'province':$('[name=province]').val()},function(data){
 		$("[name=city]").html(data);
 		if(city!=''){
 			$("[name=city]").val(city);
