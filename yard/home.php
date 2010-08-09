@@ -262,6 +262,7 @@
 					$visit_avatar = $db->query("select b.avatar from eachbb_member.comment a left join eachbb_member.member b on a.nick_name = b.name where $visitor_name");
 					}
 					?>
+					<?php if(count($comment)!= 0){?>
 					<div class="text_display">
 						<div class="f_content">
 							<div class="f_pho">
@@ -288,6 +289,11 @@
 								<div class="f_words"><?php echo htmlspecialchars($comment[0]->comment);?></div>
 							</div>
 						</div>
+				<?php }else{?>
+					<div class="text_display">
+							<font style = "font-weight:bold; font-size:16px; color:#000000;">没有可显示的留言！</font>
+					</div>
+				<?php }?>
 				<?php if($comment[0]->comment_count != ''){?>
 						<div id="u_reply">
 							<div id="reply_title">
@@ -309,7 +315,6 @@
 						</div>
 					</div>
 				</div>
-			</div>
 			<div id="cc_bottom">
 				<div id="copyright">版权</div>
 			</div>
