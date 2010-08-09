@@ -17,7 +17,7 @@ body  a{text-decoration:none;}
 
 #user_me_middle{width:200px;float:left;}
 
-#user_me_bottom{width:200px;height:6px;background:url(/images/avatar/user_me_b_r4.png) no-repeat ;font-size:0; line-height:0px;}
+#user_me_bottom{width:200px;height:6px;background:url(/images/avatar/user_me_b_r4.png) no-repeat ;font-size:0; line-height:0px;float:left;}
 .user_me_s{width:170px;margin-left:12px;padding-top:10px;}
 .user_me_t{padding-top:10px;padding-left:20px;}
 .user_me_b{width:150px;background-color:#F8F8F8;padding-left:12px;margin-top:5px;}
@@ -26,17 +26,21 @@ body  a{text-decoration:none;}
 #right{width:760px;float:left;padding-left:25px;float:left;}
 #right_up{width:760px;height:540px;float:left;margin-top:5px;}
 #head{width:401px;  margin-left:8px; margin-top:10px;float:left; }
-#head_b{width:401px;height:308px;margin:auto auto;background:url(/images/avatar/cc_h.png) ;}
+#head_b{width:401px;height:308px;margin:auto auto;}
+#pic_left{width:360px; height:300px; border:1px solid #9B9A9A; float:left; display:inline;margin-left:20px;margin-top:4px;}
 #head_t{padding-top:120px;padding-left:160px;}
 #head_a{width:401px; height:2px;margin:auto auto;}
-.head_i{margin-left:8px;float:left;margin-top:5px;}
+.pichr_menu{  color:red; cursor:pointer;  text-align:center; display: inline;}
+#pic_hr_pg{height:119px; margin-top:14px;  float:left; display:inline;}
+.avatar_container{width:125px; height:119px; margin-left:8px; cursor:pointer; background:url(/images/yard_info_img/pg.jpg) no-repeat; float:left; display:inline;}
+#pic_hr_pg div img{width:98px; height:98px; margin-top:9px; margin-left:13px;}
 #right_up_right{float:left;margin-top:10px;height:490px;}
 .record{margin-top:10px;margin-left:10px;}
 .text{}
 .text font{margin-left:13px;color:#8C8C8C;}
 .add{width:280px;height:12px;margin-top:5px;}
 #mother{margin-left:15px;margin-top:20px;}
-#right_bottom{width:740px;float:left;}
+#right_bottom{width:740px;float:left;padding-left:25px;}
 .txt{width:760px;margin-top:20px;float:left;}
 .line1{height:12px;width:760px;float:left;}
 .line2{height:12px;width:760px;float:left;}

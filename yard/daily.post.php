@@ -4,7 +4,6 @@
 		$user = User::current_user();
 		$content = $_POST['pho_r'];
 		$length= trim($content);
-		
 		if(!$user){
 			alert("请您先登录！");
 			redirect("/login/");
@@ -12,7 +11,7 @@
 		}elseif(strlen($length)<=0){
 			alert("内容不能为空！");
 			redirect("/yard/");}
-		elseif(strlen($length)>500){
+		elseif(strlen($content)>500){
 			alert("非法信息！");
 		}
 		else{

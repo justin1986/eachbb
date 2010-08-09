@@ -2,14 +2,22 @@
 <html>
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
-	<title>小院子--测试版</title>
+	<title>小院子</title>
 	<link href="/css/top_inc/avatar.css"  rel="stylesheet" type="text/css"/>
 	<?php 
 		include_once('../frame.php');
 		use_jquery();
 		css_include_tag('avatar');
-		js_include_tag('yard/yard');
-		$db=get_db();
+		js_include_tag('yard/yard','member','yard/yard_info');
+		$user = User::current_user();
+		if(!$user){
+			alert("请您先登录！");
+			redirect('/login/');
+			exit();
+		}
+		$db = get_db();
+		$avatars =$db->query("SELECT id,photo,status FROM eachbb_member.member_avatar where u_id=".$user->id.' order by create_at desc limit 6');
+		$avatar_count = $db->record_count;
 	?>
 </head>
 <body>
@@ -30,13 +38,13 @@
 	<div id="user_me_center">
 		<div id="user_me_middle">
 			<div class="user_me_s" >
-			<div class="user_me_t" ><img src="/images/avatar/bpoint.png"></img><font size="2"><b>用户信息</b></font></div>
-			<div class="user_me_b">
-			<div class="user_me_t"><img src="/images/avatar/cpoint.png"></img><a href="welcome.php"><font size="2" color="black">欢迎页</font></a></div>
-			<div class="user_me_t"><img src="/images/avatar/cpoint.png"></img><a href="welcome.php"><font size="2" color="black">基本信息</font></a></div>
-			<div class="user_me_t"><img src="/images/avatar/cpoint.png"></img><a href="message.php"><font size="2" color="black">会员信息</font></a></div>
-			<div class="user_me_t" style="padding-bottom:10px;"><img src="/images/avatar/cpoint.png"></img><a href="message.php"><font size="2" color="black">密码设置修改</font></a></div>
-			</div>
+				<div class="user_me_t" ><img src="/images/avatar/bpoint.png"></img><font size="2"><b>用户信息</b></font></div>
+					<div class="user_me_b">
+						<div class="user_me_t"><img src="/images/avatar/cpoint.png"></img><a href="welcome.php"><font size="2" color="black">欢迎页</font></a></div>
+						<div class="user_me_t"><img src="/images/avatar/cpoint.png"></img><a href="welcome.php"><font size="2" color="black">基本信息</font></a></div>
+						<div class="user_me_t"><img src="/images/avatar/cpoint.png"></img><a href="message.php"><font size="2" color="black">会员信息</font></a></div>
+						<div class="user_me_t" style="padding-bottom:10px;"><img src="/images/avatar/cpoint.png"></img><a href="message.php"><font size="2" color="black">密码设置修改</font></a></div>
+				</div>
 			</div>
 			<div class="user_me_s">
 			<div class="user_me_t"><img src="/images/avatar/bpoint.png"></img><font size="2"><b>订单信息</b></font></div>
@@ -74,27 +82,47 @@
     </div>
     
      <div id="right">
-     <div id="right_up">
-     <div ><img src="/images/avatar/point.png"></img><font size="2" style="margin-left:5px;"><b>基本</b></font><font size="2" color="red"><b>信息</b></font></div>
-     <div class="line1" ><hr color="#A3C1CD" width=100%; size="2" /></div>
-     <div id="head">
-			<div id="head_b">
-			<div id="head_t">
-			<font size="5" style="padding-left:3px;">更新头像</font>
-			<div style="margin-top:5px;"><a href="up_photo.php"><img src="/images/avatar/cc_h_u.png" border="0"></a></div>
-			</div>
-			</div>
+     	<div id="right_up">
+     		<div ><img src="/images/avatar/point.png"></img><font size="2" style="margin-left:5px;"><b>基本</b></font><font size="2" color="red"><b>信息</b></font></div>
+     		<div class="line1" ><hr color="#A3C1CD" width=100%; size="2" /></div>
+     		<div id="head">
+					<div id="head_b">
+						<img id="pic_left" src="<?php echo $user->avatar; ?>"/>
+					</div>
 			
-		    <div style="margin-top:5px;"><a href="up_photo.php"><font size="2" color="black">[更新头像    </font></a><a href="up_photo.php"><font size="2" color="black" >照片]</font></a></div>
-			<div style="margin-left:20px;margin-top:5px;color:#8A7777;"><font size="3" ><B>我的头像库</B></font><font size="2" >(</font><a href="up_photo.php"><font size="2" color="red">0</font></a><font size="2" >张)</font>
-			<font size="2" ></font><a href="up_photo.php"><font size="2" color="red" style="margin-left:30px;">[选择头像]</font></a><font size="2" ></font><a href="up_photo.php"><font size="2" color="red" >[上传头像]</font></a>
-			</div>
-			<div id="head_a"><hr color="#A3C1CD" width=100%; size="2" /></div>
-			        <a href="photo.php"><img src="/images/avatar/photo.png" style="margin-left:3px;margin-top:5px;float:left;"border="0"></img></a>
-			        <a href="photo.php"><img src="/images/avatar/photo.png" class="head_i" border="0"></img></a>
-					<a href="photo.php"><img src="/images/avatar/photo.png" class="head_i" border="0"></img></a>
+		      <div style="margin-top:5px;"><a href="up_photo.php"><font size="2" color="black">[更新头像    </font></a><a href="up_photo.php"><font size="2" color="black" >照片]</font></a></div>
 					
-	</div>
+					<div style="float:left;margin-top:5px;"><font size="3" ><B>我的头像库</B></font><font size="2" >(</font><a href="up_photo.php"><font size="2" color="red">0</font></a><font size="2" >张)</font></div>
+					<div class="pichr_menu" id="set_avatar" style="margin-left:120px;float:left;margin-top:5px;"><font size="2">[选择头像]</font></div>
+			    <div style="margin-top:5px;margin-left:5px;"><a href="up_photo.php"><font size="2" color="red" >[上传头像]</font></a></div>
+			    <div style="margin-top:5px;height:2px;"><hr color="#8A7777" width=401px;; size="2" /></div>
+				
+				
+			
+				  <div id="pic_hr_pg">
+				  	<?php 
+								if($avatars){
+									for($i=0 ; $i < $avatar_count; $i++){
+										if($avatars[$i]->status == 1){
+											$current_avatar_index = $i;
+										}
+									}
+								}
+									for( $i=0; $i < 3 ; $i++){
+										if($i < $avatar_count){
+											$avatar_id = $avatars[$i]->id;
+										}else{
+											$avatar_id = "default_avatar";
+										}
+									?>
+									<div class="avatar_container" id="<?php echo $avatar_id;?>" <?php if($i == 0){  if($current_avatar_index == $i){echo 'style="margin-left:5px; background:url(/images/yard_info_img/pg2.jpg) no-repeat;"';}else{?>style='margin-left:0px;' <?php }}?><?php if($current_avatar_index == $i){echo 'style="background:url(/images/yard_info_img/pg2.jpg) no-repeat;"';}?>>
+										<img src="<?php echo  $avatars[$i]->photo ? $avatars[$i]->photo : '/images/yard_info_img/1.jpg';?>"/>
+									</div>
+									<?php }?>
+				  </div>
+			  </div>     
+					
+	
 	
 	<div id="right_up_right">
 	<div class="record">
@@ -121,6 +149,7 @@
 	</div>
 	<div id="mother"><a href="4th_mother.php"><img src="/images/avatar/mother.png" border="0"></img></a></div>
 	</div>
+    </div>
     </div>
     <div id="right_bottom">
     

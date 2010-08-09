@@ -6,20 +6,41 @@
 	<?php 
 		include_once('../frame.php');
 		use_jquery();
-		css_include_tag('yard','member','diary');
-		js_include_tag('yard/yard','member','../ckeditor/ckeditor.js','yard/diary');
-		$db = get_db();
-		$user = User::current_user();
-		if(!$user){
-			alert("请您先登录！"); ?>
-			<script>window.location.href="/login/";</script>
-			<?php 
-		}
+		css_include_tag('yard','member','diary','diary_list','diary_show');
+		js_include_tag('yard/yard','member','../ckeditor/ckeditor.js','yard/diary_show');
+		$id=trim($_GET["id"]);
 		$db = get_db();
 		$edit_id=trim($_GET['edit']);
 		if($edit_id){
 			if(!is_numeric($edit_id)) die('invlid request!');
-			$diary=$db->query("SELECT d.id,d.title,d.content,s.name,d.category_id FROM eachbb_member.daily d left join eachbb_member.daily_category as s on d.category_id=s.id where d.id=$edit_id limit 4"); 
+		}
+		if($id){
+			if(!is_numeric($id))
+				die('invlid request!');
+			else{
+				$user = new table_class('eachbb_member.member');
+				$user->find($id);
+				if($user){
+					alert("非法操作！");
+					alert("请您先登录！");?>
+				<script>window.location.href="/login/";</script>
+				<?php 
+				}
+			}
+		}else{
+			$user = User::current_user();
+			if(!$user){
+				alert("请您先登录！"); ?>
+				<script>window.location.href="/login/";</script>
+				<?php 
+			}
+		}
+		$diary=$db->query("SELECT d.id,d.title,d.content,d.last_edit_time,s.name,d.category_id FROM eachbb_member.daily d left join eachbb_member.daily_category as s on d.category_id=s.id where d.id=$edit_id");
+		if(!$diary){
+				alert("非法操作！");
+				alert("请您先登录！");?>
+			<script>window.location.href="/login/";</script>
+			<?php 
 		}
 	?>
 </head>
@@ -51,26 +72,34 @@
 			<form>
 			<div id="cc_t"></div>
 			<div id="cc_c" >
-				<div id="cc_pg" style="height:640px;">
-					<div class=r_title id="r_log"><span><?php echo $user->true_name;?></span>的日志管理</div>
+				<div id="cc_pg">
+					<div class=r_title id="r_log"><a href="/yard/home.php?id=<?php echo $user->id;?>"><?php echo $user->true_name;?></a>的日志评论</div>
 					<div id="r_log_hr">
-						<div><?php if($edit_id){echo "编辑";}else{echo "发表新";}?>日志 </div>
+						<div><?php if($edit_id){echo "评论";}else{echo "发表新";}?>日志 </div>
 					</div>
-					<div id="c_menu_pg_p">标题：
-						<?php echo htmlspecialchars_decode($diary[0]->title); ?>
+					<div class="diary_title_banner" id="diary_title_banner">
+						<div class="diary_title_pg">
+							<div class="diary_title"><?php echo htmlspecialchars_decode($diary[0]->title);?></div>
+							<div class="diary">
+							<?php if(!$id){?>
+							<div class="diary_delete"><a href="/yard/_diary_delete_post.php?edit=<?php echo $diary[0]->id;?>">删除</a></div>
+							<div class="diary_edit"><a href="/yard/diary.php?edit=<?php echo $diary[0]->id;?>">编辑</a></div>
+							<?php }?>
+							</div>
+						</div>
+						<div class="diary_created_at">
+							<?php echo $diary[0]->last_edit_time;?>
+							&nbsp;（分类：<font><?php if($diary[0]->name) echo $diary[0]->name; else echo "暂无分类！";?></font>）
+						</div>
 					</div>
-					<div class="c_menu_con_title">内容：</div>
+					<div class="c_menu_con_title" style="margin-top:20px;">内容：</div>
 					<div id="c_menu_pg_con">
 						<?php echo  htmlspecialchars_decode($diary[0]->content);?>
 						<input type="hidden" id="category_id" value="<?php echo $diary[0]->category_id;?>"/>
+						<input type="hidden" id="ry_id" value="<?php echo $id;?>"/>
 						<input id="edit_id" type="hidden" value="<?php echo $edit_id;?>"/>
 					</div>
-					<div class="c_menu_con_title" id="diary_content" style="height:30px; margin-top:20px; line-height:26px; font-size:12px;">
-					</div>
-					<div class="c_menu_con_title" style="margin-top:20px;">
-						<input type="button" id="sub" value="发布"/>
-						<input type="reset" id="no_sub" value="取消发布" />
-					</div>
+					<div id="show_title"></div>
 				</div>
 			</div>
 			<div id="cc_b"></div>

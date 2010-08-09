@@ -10,6 +10,7 @@
 	$edit_id=trim($_GET["edit"]);
 	if(!is_numeric($edit_id)) die('invlid request!');
 	$db=get_db();
+	$db->execute("delete from eachbb_member.comment where resource_id=".$edit_id);
 	if(!$db->execute("delete from eachbb_member.daily where id=".$edit_id))
 		die("删除失败！");
 	else{

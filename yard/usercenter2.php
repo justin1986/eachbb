@@ -7,14 +7,9 @@
 		include_once('../frame.php');
 		use_jquery();
 		css_include_tag('yard','usercenter2');
-		js_include_tag('yard/yard','usercenter2');
-		$db = get_db();
+		js_include_tag('yard/usercenter2');
 		$user = User::current_user();
-		if(!$user){
-			alert("请您先登录！");
-			redirect("/login/");
-			exit;
-		}
+		$db = get_db();
 		$id =$_GET['id'];
 		$info = $db->query("select * from eachbb_member.member where id=$id");
 		$daily_count=$db->query("select id from eachbb_member.daily where u_id=$id;");
@@ -24,6 +19,7 @@
 		}else{
 			$its="他";
 		}
+		
 		
 	?>
 </head>
@@ -150,9 +146,9 @@
 									<div class="box">收入：</div>
 									<div class="info"><?php echo $info[0]->income;?></div>
 								</div>
-								<div class="left_words">
-									<div class="box">城市：</div>
-									<div class="info"><?php echo $info[0]->address;?></div>
+								<div id="ad_words">
+									<div class="box">地址：</div>
+									<div id="address"><?php echo $info[0]->address;?></div>
 								</div>
 							</div>
 						</div>
@@ -195,7 +191,10 @@
 								</div>
 								<div class="left_words">
 									<div class="box">生日：</div>
-									<div class="info"><?php echo $info[0]->baby_birthday;?></div>
+									<div class="info">
+									<?php $info[0]->baby_birthday;
+									echo substr($info[0]->baby_birthday,0,10);
+									?></div>
 								</div>
 							</div>
 							<?php }?>
@@ -239,42 +238,69 @@
 						</div>
 						<?php }?>
 					</div>
+					<form id="b_bord" action="usercenter.post.php" method="post">
 					<div id="text_write">
-						<textarea name="b_bord" id="b_bord"></textarea>
+						<textarea name="b_words" id="b_words"></textarea>
+						<input type="text" name="id" style="display:none;" value="<?php echo $id?>">
 					</div>
 					<div id="text_push">
 						<div id="whisper">
-							<input type="checkbox" id="checkbox">悄悄话
+							<input type="checkbox" name="checkbox" id="checkbox" value=1>悄悄话
 						</div>
 						<div id="push">发表留言</div>
 					</div>
+					</form>
+					<?php 
+					$comment =$db->query("select nick_name,created_at,comment,comment_count from eachbb_member.comment where user_id=$id and resource_id='1099' and whispered = 0 order by created_at desc");
+					$visitor_name = $comment[0]->nick_name;
+					if($visitor_name != 'guest'){
+					$visit_avatar = $db->query("select b.avatar from eachbb_member.comment a left join eachbb_member.member b on a.nick_name = b.name where $visitor_name");
+					}
+					?>
 					<div class="text_display">
 						<div class="f_content">
 							<div class="f_pho">
-								<img src="/images/yard/info_p4fpho.gif " />
+								<img src="
+								<?php
+								if($visitor_name != 'guest'){
+									if($visit_avatar[0]->avatar != null){
+										echo $visit_avatar[0]->avatar;
+									}else{
+										echo "/images/yard/avatar.jpg";
+								}}else{
+									echo "/images/yard/guest.jpg";
+								}
+								?>"/>
 							</div>
 							<div class="content_box">
 								<div class="f_info">
-									<div class="f_name"><a href="#">赵一文</a></div>
+									<div class="f_name"><a href="#"><?php echo $comment[0]->nick_name?></a></div>
 									<div class="f_button">
 										<img src="/images/yard/f_button.gif " />
 									</div>
-									<div class="created_at">2020-10-10 12:11:11</div>
+									<div class="created_at"><?php echo $comment[0]->created_at?></div>
 								</div>
-								<div class="f_words">jkjkljkljjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj</div>
+								<div class="f_words"><?php echo htmlspecialchars($comment[0]->comment);?></div>
 							</div>
 						</div>
+				<?php if($comment[0]->comment_count != ''){?>
 						<div id="u_reply">
 							<div id="reply_title">
-								<span class="u_id"><a href="#"><?php echo $user->name;?></a></span>
+								<span class="u_id"><a href="#"><?php echo $info[0]->name;?></a></span>
 								<span>的回复：</span>
 								<span id="reply_time">2010-11-11 11:11:11</span>
 							</div>
 							<div id="reply_words">jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj</div>
 						</div>
+				<?php }else{?>
+						<div id="u_reply">
+							<font style = "font-weight:bold; font-size:16px; color:#000000;">暂无回复！</font>
+						</div>
+				<?php }?>
+				<?php $comment_count = "select nick_name from eachbb_member.comment where user_id=$id and resource_id='1099' order by created_at desc"?>
 						<div id="more_reply">
 							<div id="next_reply"><a href="#">查看全部>></a></div>
-							<div id="total_reply">共16条留言</div>
+							<div id="total_reply">共<?php echo count($comment_count)?>条留言</div>
 						</div>
 					</div>
 				</div>

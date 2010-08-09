@@ -8,17 +8,34 @@
 		use_jquery();
 		css_include_tag('yard','member','diary','diary_list');
 		js_include_tag('yard/yard','member','../ckeditor/ckeditor.js','yard/diary');
+		$id=trim($_GET["id"]);
 		$db = get_db();
-		$user = User::current_user();
-		if(!$user){
+		if($id){
+			if(!is_numeric($id))
+				die('invlid request!');
+			else{
+				$member = new table_class('eachbb_member.member');
+				$member->find($id);
+				if($member){
+					alert("非法操作！");
+					alert("请您先登录！");?>
+				<script>window.location.href="/login/";</script>
+			<?php 
+					
+				}
+				$user_id=$id;
+			}
+		}else{
+			$user = User::current_user();
+			if(!$user){
 			alert("请您先登录！");?>
 			<script>window.location.href="/login/";</script>
 			<?php 
+			}
+			$member = new table_class('eachbb_member.member');
+			$member->find($user->id);
+			$user_id=$user->id;
 		}
-		$id=$user->id;
-		$member = new table_class('eachbb_member.member');
-		$member->find($id);
-		$db = get_db();
 	?>
 </head>
 <body>
@@ -50,24 +67,30 @@
 			<div id="cc_t"></div>
 			<div id="cc_c" >
 				<div id="cc_pg">
-					<div class=r_title id="r_log"><span><?php echo $member->true_name;?></span>的日志管理</div>
+					<div class=r_title id="r_log"><a href="/yard/home.php?id=<?php echo $member->id; ?>"><?php if(!$member->true_name) echo "暂无姓名"; else echo $member->true_name;?></a>的日志列表</div>
 					<div id="r_log_hr">
 						<div>日志列表 </div>
 					</div>
 					<?php 	
-						$diary_list=$db->query("SELECT d.id,d.created_at,d.last_edit_time,d.title,d.content,d.category_id,s.name FROM eachbb_member.daily d left join eachbb_member.daily_category as s on d.category_id=s.id where d.u_id={$user->id} order by last_edit_time desc limit 4;");
+						$diary_list=$db->query("SELECT d.id,d.created_at,d.last_edit_time,d.title,d.content,d.category_id,s.name FROM eachbb_member.daily d left join eachbb_member.daily_category as s on d.category_id=s.id where d.u_id=$user_id order by last_edit_time desc limit 4;");
 						if(!$diary_list){
+							if(!$id){
 								echo '<div style="width:768px; height:500px; margin-left:10px; text-align:center; line-height:200px; float:left; display:inline;"><a href="/yard/diary.php" style="font-size:26px; font-weight:bold; color:#8A9F9A;">您日志列表为空,马上发表日志吧！</a></div>';
+							}else{
+								echo '<div style="width:768px; height:500px; margin-left:10px; text-align:center; line-height:200px; float:left; display:inline;"><a href="/yard/diary_list.php" style="font-size:26px; font-weight:bold; color:#8A9F9A;">您好友的日志列表为空！返回！</a></div>';
+							}
 						}else{
 						foreach ($diary_list as $diary){
 					?>
 					<div class="diary_banner">
 						<div class="diary_title_banner">
 							<div class="diary_title_pg">
-								<div class="diary_title"><a href="/yard/diary_show.php?edit=<?php echo $diary->id;?>"><?php echo htmlspecialchars_decode($diary->title);?></a></div>
+								<div class="diary_title"><a href="/yard/diary_show.php?edit=<?php echo $diary->id; if($id)echo "&id=$id";?>"><?php echo htmlspecialchars_decode($diary->title);?></a></div>
 								<div class="diary">
+								<?php if(!$id){?>
 								<div class="diary_delete"><a href="/yard/_diary_delete_post.php?edit=<?php echo $diary->id;?>">删除</a></div>
 								<div class="diary_edit"><a href="/yard/diary.php?edit=<?php echo $diary->id;?>">编辑</a></div>
+								<?php }?>
 								</div>
 							</div>
 							<div class="diary_created_at">

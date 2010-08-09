@@ -52,7 +52,7 @@
 			<div id="cc_t"></div>
 			<div id="cc_c" >
 				<div id="cc_pg" style="height:640px;">
-					<div class=r_title id="r_log"><span><?php echo $user->true_name;?></span>的日志管理</div>
+					<div class=r_title id="r_log"><a href="/yard/home.php?id=<?php echo $user->id;?>"><?php echo $user->true_name;?></a>的日志管理</div>
 					<div id="r_log_hr">
 						<div><?php if($edit_id){echo "编辑";}else{echo "发表新";}?>日志 </div>
 					</div>
@@ -61,7 +61,7 @@
 					</div>
 					<div class="c_menu_con_title">内容：</div>
 					<div id="c_menu_pg_con">
-						<?php show_fckeditor('news[content]','Admin',false,"215", htmlspecialchars_decode($diary[0]->content));?>
+						<?php show_fckeditor('news[content]','Front',true,"215", htmlspecialchars_decode($diary[0]->content));?>
 						<input type="hidden" id="category_id" value="<?php echo $diary[0]->category_id;?>"/>
 						<input id="edit_id" type="hidden" value="<?php echo $edit_id;?>"/>
 					</div>

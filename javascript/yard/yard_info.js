@@ -7,7 +7,7 @@ $(function(){
 			if(id == "default_avatar"){
 				alert("操作有误！");
 			}else{
-				$.post('_yard_info_ajax_post.php',{'id':id},function(data){
+				$.post('/yard/_yard_info_ajax_post.php',{'id':id},function(data){
 					if(data){
 						alert(data);
 					}else{
