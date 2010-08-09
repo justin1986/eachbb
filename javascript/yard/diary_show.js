@@ -33,6 +33,8 @@ $(function(){
 		var show_result=$('#show_result').val();
 		if(show_result.length <=0){
 			alert("请输入评论内容！");
+		}else if(show_result.length >= 500){
+			alert("输入的评论内容不能超过500字！");
 		}else{
 			$.post("_diary_show_addcomment_ajax_post.php",{"resource_id":resource_id,"show_result":show_result},function(data){
 				alert(data);
