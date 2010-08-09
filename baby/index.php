@@ -1,13 +1,14 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html>
 <head>
-	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
-	<title>小院子</title>
-	<link href="/css/top_inc/avatar.css"  rel="stylesheet" type="text/css"/>
+	<meta http-equiv="Content-Language" content="zh-cn">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>我的宝宝</title>
+	<link href="/css/baby.css"  rel="stylesheet" type="text/css"/>
 	<?php 
 		include_once('../frame.php');
 		use_jquery();
-		css_include_tag('avatar');
+		css_include_tag('baby');
 		js_include_tag('yard/yard','member','yard/yard_info');
 		$user = User::current_user();
 		if(!$user){
@@ -16,22 +17,23 @@
 			exit();
 		}
 		$db = get_db();
-		$avatars =$db->query("SELECT id,photo,status FROM eachbb_member.member_avatar where u_id=".$user->id.' order by create_at desc limit 6');
+		$avatars =$db->query("SELECT id,photo,status FROM eachbb_member.member_avatar where u_id=".$user->id.' order by create_at desc limit 3');
 		$avatar_count = $db->record_count;
+		$name =$user->name;
 	?>
 </head>
 <body>
 <div id="ibody">
-	<?php include_once(dirname(__FILE__).'/../inc/_yard_top.php'); ?>
+	<?php include_once(dirname(__FILE__).'/../inc/_baby_top.php'); ?>
 	<div id="user">
 	<div id="user_ma">
 	<div id="user_ma_s"><font size="2" color="red" ><b>个人信息管理</b></font></div>
 	<div id="user_ma_b"></div>
 	
-	<div id="user_ma_h"><div style="float:left"><img src="/images/avatar/user_ma_h.png" ></img></div><div style="float:left;margin-left:3px;"><font size="2"><b>564828</b></font></div></div>
+	<div id="user_ma_h"><div style="float:left;height:50px;width:50px;"><img  src="<?php echo $user->avatar; ?>" style="height:50px;width:50px;"/></div><div style="float:left;margin-left:3px;"><font size="2"><b><?php if($name){echo $name;}else{alert("操作有误！");} ?></b></font></div></div>
 	<div class="user_b">
-	<div class="user_b_t"><img src="/images/avatar/apoint.png"></img><font size="2" style="margin-left:5px;">您有</font><a href="talk.php"><font size="2" color="red" >0</font></a><font size="2" >条新评论</font></div>
-	<div class="user_b_t" style="padding-bottom:5px;"><img src="/images/avatar/apoint.png"></img><a href="myblog.php"><font size="2" color="black" style="margin-left:5px;">我的博客</font></a></div></div>
+	<div class="user_b_t"><img src="/images/avatar/apoint.png"></img><font size="2" style="margin-left:5px;">您有</font><a href="talk.php"><font size="2" color="red" >0</font></a><font size="2" >条新消息</font></div>
+	<div class="user_b_t" style="padding-bottom:5px;"><img src="/images/avatar/apoint.png"></img><a href="/yard/"><font size="2" color="black" style="margin-left:5px;">我的小院子</font></a></div></div>
 	</div>
 	<div id="user_me">
 	<div id="user_me_top"></div>
@@ -42,7 +44,7 @@
 					<div class="user_me_b">
 						<div class="user_me_t"><img src="/images/avatar/cpoint.png"></img><a href="welcome.php"><font size="2" color="black">欢迎页</font></a></div>
 						<div class="user_me_t"><img src="/images/avatar/cpoint.png"></img><a href="welcome.php"><font size="2" color="black">基本信息</font></a></div>
-						<div class="user_me_t"><img src="/images/avatar/cpoint.png"></img><a href="message.php"><font size="2" color="black">会员信息</font></a></div>
+						<div class="user_me_t"><img src="/images/avatar/cpoint.png"></img><a href="info.php"><font size="2" color="black">会员信息</font></a></div>
 						<div class="user_me_t" style="padding-bottom:10px;"><img src="/images/avatar/cpoint.png"></img><a href="message.php"><font size="2" color="black">密码设置修改</font></a></div>
 				</div>
 			</div>
@@ -90,12 +92,12 @@
 						<img id="pic_left" src="<?php echo $user->avatar; ?>"/>
 					</div>
 			
-		      <div style="margin-top:5px;"><a href="up_photo.php"><font size="2" color="black">[更新头像    </font></a><a href="up_photo.php"><font size="2" color="black" >照片]</font></a></div>
+		      
 					
-					<div style="float:left;margin-top:5px;"><font size="3" ><B>我的头像库</B></font><font size="2" >(</font><a href="up_photo.php"><font size="2" color="red">0</font></a><font size="2" >张)</font></div>
+					<div style="float:left;margin-top:5px;"><font size="3" ><B>我的头像库</B></font><font size="2" >(</font><font size="2" color="red" ><?php echo $avatar_count;?></font><font size="2" >张)</font></div>
 					<div class="pichr_menu" id="set_avatar" style="margin-left:120px;float:left;margin-top:5px;"><font size="2">[选择头像]</font></div>
-			    <div style="margin-top:5px;margin-left:5px;"><a href="up_photo.php"><font size="2" color="red" >[上传头像]</font></a></div>
-			    <div style="margin-top:5px;height:2px;"><hr color="#8A7777" width=401px;; size="2" /></div>
+			    <div style="margin-top:5px;margin-left:5px;height:20px;width:70px;float:left;"><a href="/yard/info.php"><font size="2" color="red" >[上传头像]</font></a></div>
+			    <div style="margin-top:5px;height:7px;float:left;"><hr color="#8A7777" width=401px;; size="2" /></div>
 				
 				
 			
@@ -188,12 +190,7 @@
     
 		
 </div>
-        <div id="bottom_l"><hr color="#FB6104" width="100%" size="2" /></div>
-        
-
-        
-        <div id="bottom">关于网趣宝贝 - 加入我们 - 友情链接 - 联系我们 - 服务条款 - 隐私保护 - 网站地图</div>
-		<div id="bottom_b">Copyright &c 1997-2010 HAHA.smg.com All Rights Reserved.</div>
+        <?php include_once(dirname(__FILE__).'/../inc/bottom.php');?>
 </div>
       
 
