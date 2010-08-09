@@ -47,23 +47,23 @@
 				<div id="cc_pg">
 					<div class=r_title id="r_log"><a><?php if($member->true_name) echo $member->true_name.'的账户管理'; else echo '暂无信息';?></a></div>
 					<div id="r_log_hr">
-						<div>上传头像</div>
+						<div>上传头片</div>
 					</div>
 					<form  enctype="multipart/form-data" action="/yard/upload_photo_image.post.php" method="post">
 						<div id="pic_log">
-							<table width="754" height="109" border="0" cellpadding="0" cellspacing="0">
+							<table width="754" border="0" cellpadding="0" cellspacing="0">
 								<tr>
 									<td width="13%" height="49" align="right" valign="middle">&nbsp;</td>
 									<td width="50%" align="right" valign="middle">&nbsp;</td>
 									<td width="37%" align="left" valign="middle">&nbsp;</td>
 								</tr>
 								<tr>
-									<td height="36" align="right" valign="middle">头像名称：</td>
+									<td height="46" align="right" valign="middle">图片名称：</td>
 									<td align="middle" valign="middle"><input type="text" id="name_photo" name="name_photo" size="40"/></td>
 									<td align="left" valign="middle"></td>
 								</tr>
 								<tr>
-									<td height="36" align="right" valign="middle">上传到相册：</td>
+									<td height="46" align="right" valign="middle">上传到相册：</td>
 									<td align="middle" id="select_photo" valign="middle">
 									<?php 
 										$alpum =$db->query("SELECT id,name FROM eachbb_member.album a where u_id={$user->id} order by last_update_time,visit_count,comment_count desc;");
@@ -79,9 +79,13 @@
 									<td align="left" valign="middle"><a href="#" id="photo_book">添加相册</a></td>
 								</tr>
 								<tr>
-									<td height="36" align="right" valign="middle">上传头像：</td>
+									<td height="46" align="right" valign="middle">上传头片：</td>
 									<td align="middle" valign="middle"><input type="file" name="src" id="upfile" size="40"/></td>
 									<td align="left" valign="middle">支持JPG、JPEG、GIF和PNG文件，最大2M。</td>
+								</tr>
+								<tr>
+									<td height="66" align="right" valign="middle">图片描述：</td>
+									<td align="middle" valign="middle"  colspan="2"><textarea id="text_photo" name="text_photo"></textarea></td>
 								</tr>
 								<tr height="69px">
 									<td  valign="middle" colspan="3" id="rig_sub"><input id="ssubmit" type="submit" value=""/></td>
@@ -126,6 +130,9 @@
 				}
 			}else if($("#upload_select_id").val()==''){
 				alert("请选择相册");
+				return false;
+			}else if($("#text_photo").val() == ''){
+				alert("请输入评论内容！");
 				return false;
 			}else{
 				alert("请上传一个图片!");
