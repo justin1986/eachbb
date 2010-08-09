@@ -13,5 +13,13 @@ $(function(){
 			$('#leaveamessage').click(function(){
 				$('#b_words').focus();
 			});
+			$('#its_diary').click(function(){
+				var id = $('#friend_id').val();
+				window.location.href='/yard/diary_list.php?id='+id;
+			});
+			$('#its_album').click(function(){
+				var id = $('#friend_id').val();
+				window.location.href='/yard/album_list.php?id='+id;
+			});
 });
 		

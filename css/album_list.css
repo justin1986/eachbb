@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+body{width:1000px; margin: 0 auto; font-family:宋体,Arial; background:url(../images/img_pg.jpg) repeat-x;}
+body div{float:left; display:inline;}
+#ibody{width:970px; overflow:hidden; background:#ffffff; margin:0 auto;}
+
+#myalbum{width:819px; background:url("/images/yard/c_c_bj.jpg") repeat-y;}
+#myalbum a{text-decoration:none;}
+
+	#al_p1{width:730px; height:28px; margin-left:43px; border-bottom:2px solid #a9a9a9;}
+		#whosealbum{width:300px; height:28px; line-height:28px; font-size:16px;}
+		#p1_buttonbox{float:right; line-height:16px;}
+		.p1_but{width:74px; height:21px; margin-left:15px; cursor:pointer;}
+			.but_nl{width:2px; height:21px; background:url("/images/yard/but_nl.jpg") no-repeat;}
+			.but_nr{width:2px; height:21px; background:url("/images/yard/but_nr.jpg") no-repeat;}
+			.but_name{width:70px; height:19px; line-height:19px; text-align:center; color:#41619c;border-top:1px solid #ced5df; border-bottom:1px solid #ced5df; background:url("/images/yard/but_bj.gif") repeat-x;}
+	#al_p2{width:730px; margin-left:43px; position:relative;}
+		#al_test{width:1px; height:540px;}
+		.album{width:140px; height:221px; margin:5px 20px; background:url("/images/yard/albumbox.jpg") no-repeat;}
+			.al_box{width:120px; height:200px; color:#6d6d6d;margin-top:15px; margin-left:10px;}
+				.al_name{width:120px;height:14px; line-height:14px; font-size:14px; font-weight:bold; margin-bottom:5px;}
+				.al_name a{color:#416298;}
+				.al_face{margin:0 10px;}
+				.al_face img{width:100px; height:100px;}
+				.al_words{width:120px; height:56px; font-size:14px; line-height:14px; Word-wrap:break-word; overflow:hidden;}
+				.al_num{width:120px; height:12px; margin-top:5px;}
+	#cc_bottom{width:819px; height:83px; background:url("/images/yard/cc_bottombj.jpg") repeat-x;}
+	#copyright{font-size:16px; margin:36px 0 0 106px;}
