@@ -1,9 +1,14 @@
 $(function(){
 	var result=$('#edit_id').val();
-	var ry_id=$("#ry_id").attr("value");
-	$.post("_diary_show_post.php",{"edit_id":result,"ry_id":ry_id},function(data){
-		$("#show_title").html(data);
-	});
+	if(result.length<=0){
+		alert("操作有误！");
+		window.location.href="/yard";
+	}else{
+		var ry_id=$("#ry_id").attr("value");
+		$.post("_diary_show_post.php",{"edit_id":result,"ry_id":ry_id},function(data){
+			$("#show_title").html(data);
+		});
+	}
 	$('.show_result_banner a img').live("hover",function(){
 		
 		if($(this).attr('src') == '/images/yetrb/xx.jpg')

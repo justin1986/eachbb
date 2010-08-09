@@ -19,11 +19,11 @@
 		?>
 		<div class="show_banner" id="<?php echo $comment->id;?>">
 		<div class="show_img_banner">
-			<img src="<?php echo $info[0]->avatar;?>"/>
+			<a href="/yard/home.php?id=<?php echo $info[0]->id;?>"><img src="<?php echo $info[0]->avatar;?>"/></a>
 		</div>
 		<div class="show_result_banner">
 			<div class="show_result_top">
-				<?php echo $info[0]->true_name;?>
+				<a href="/yard/home.php?id=<?php echo $info[0]->id;?>"><?php echo $info[0]->true_name;?></a>
 				<span><?php echo $comment->created_at;?></span>
 				<?php if(!$ry_id){?>
 					<a href="#">
