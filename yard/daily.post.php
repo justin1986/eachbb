@@ -4,7 +4,6 @@
 		$user = User::current_user();
 		$content = $_POST['pho_r'];
 		$length= trim($content);
-		
 		if(!$user){
 			alert("请您先登录！");
 			redirect("/login/");
