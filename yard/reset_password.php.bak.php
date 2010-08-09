@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<title>小院子</title>
-	<?php 
+<?php 
 		include_once('../frame.php');
 		use_jquery();
 		css_include_tag('yard','member');
@@ -54,9 +54,9 @@
 						<div>个人资料</div>
 					</div>
 					<div class="c_menu_pg">
-						<div id="c_menu_selected" style="margin-left:0px;"><a href="/yard/member.php">基本资料</a></div>
+						<div style="margin-left:0px;"><a href="/yard/member.php">基本资料</a></div>
 						<div><a href="/yard/info.php">修改头像</a></div>
-						<div><a href="/yard/reset_password.php">修改密码</a></div>
+						<div id="c_menu_selected"><a href="">修改密码</a></div>
 					</div>
 					<div class="c_menu_pg_p" >
 						
