@@ -10,6 +10,8 @@ $(function(){
 		var created_id = $('#category_idd option:selected').val();
 		if(title == ""){
 			alert("请输入日志标题！");
+		}else if(title.length >= 256){
+			alert("输入的标题不能大于250字！");
 		}else if(created_id == 0){
 			alert("请选择分类！");
 		}else{
