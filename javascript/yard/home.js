@@ -7,4 +7,11 @@ $(function(){
 							$('#b_bord').submit();
 				}
 				});
+			$('#add_f').click(function(){
+				$('#add_friend').submit();
+				});
+			$('#leaveamessage').click(function(){
+				$('#b_words').focus();
 			});
+});
+		

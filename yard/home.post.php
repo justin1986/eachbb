@@ -15,11 +15,12 @@
 			$visitor = 'guest';
 		}
 		
-		if(mb_strlen($length)<=0){
+		if(mb_strlen($length,'utf-8')<=0){
 			alert("请输入有效信息！");
-			redirect("/yard/");}
+			redirect("/yard/home.php?id=".$f_id);}
 		elseif(mb_strlen($content,'utf-8')>500){
 			alert("你的留言太长了！");
+			redirect("/yard/home.php?id=".$f_id);
 		}
 		else{
 			$sql = "insert into eachbb_member.comment (comment,user_id,resource_type,resource_id,nick_name,created_at,whispered) values ('$content','$f_id','visitorsbook',1099,'$visitor',now(),'$checkbox');" ;
