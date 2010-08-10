@@ -132,19 +132,16 @@
 			$('#ii_body').css("display","inline");
 		});
 		$('#btn_b_save').click(function(){
-			var photo_b=$('#upload_title').val();
-			var upload_description=$('#upload_description').val();
-			var photo_b=$('#upload_text').val();
+			var photo_b = $('#upload_title').val();
 			if(photo_b.length == 0){
 				alert('请输入相册的名称！');
 				return false;
-			}else if(photo_b.length >= 50){
+			}
+			if(photo_b.length >= 50){
 				alert('相册的名称必须小于50字！');
 				return false;
-			}else if(upload_description.length = 0){
-				alert('请输入相册的描述！');
-				return false;
-			}else if($("#ulee").val() == ''){
+			}
+			if($("#ulee").val() == ''){
 				alert("请上传相册的封面！");
 				return false;
 			}else if($("#ulee").val() != ''){

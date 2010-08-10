@@ -41,10 +41,10 @@
 			$save_e = "/upload/".$save_name;
 			if(move_uploaded_file($yuan_pic,$save)){
 				if($db->execute($sql)){
-					alert("上传成功！");
+					alert("添加成功！");
 					redirect('/yard/upload_photo.php');
 				}else{
-					alert("上传失败！");
+					alert("添加失败！");
 				}
 			}else{
 				debug_info('fail to upload file:' .$yuan_pic,'js');
