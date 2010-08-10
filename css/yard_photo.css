@@ -5,16 +5,19 @@
 #pic_left{width:360px; height:300px; border:1px solid #9B9A9A; float:left; display:inline;}
 #select_photo select{width:250px; margin: 0px; padding:0px;}
 #pic_log TABLE{ z-index: 0;}
-#upload_banner{width:368px; height:100px; margin-top:250px; margin-left:300px; color:#000000; background:#ffffff; float:left; display: inline;}
-#upload_top{width:358px; height:25%; padding-left:10px; color:#ffffff; font-size:16px; font-weight:bold; line-height:25px; background: #3777BC; float:left; display: inline;}
-#upload_bannerr{width: 100%; height: 22px; margin-top:20px; line-height:22px; float:left; display: inline;}
-#ii_body{width:100%; height:100%; background:#000; z-index:9999; position: absolute; top:0; left:0; opacity:0.80; filter:alpha(opacity = 80); color:#000000; background:#000; float:left; display: none;}
-	#upload_size{width: 20%; height: 100%; font-size:14px;   text-align:right; }
+#upload_banner{width:468px; height:230px; margin-top:200px; margin-left:250px; color:#000000; background:#ffffff; float:left; display: inline;}
+#upload_top{width:458px; height:25px; padding-left:10px; color:#ffffff; font-size:16px; font-weight:bold; line-height:25px; background: #3777BC; float:left; display: inline;}
+.upload_bannerr{width: 100%; height: 22px; margin-top:20px; line-height:22px; float:left; display: inline;}
+#ii_body{width:100%; height:100%; background:#000; z-index:9999; position: absolute; top:0; left:0; opacity:0.90; filter:alpha(opacity = 90); color:#000000; background:#000; float:left; display:none;}
+	.upload_size{width: 20%; height: 100%; font-size:14px;   text-align:right; }
 	#upload_text{width:250px; }
-#upload_btn_banner{width:348px; height:23px; padding-right:20px; margin-top: 5px; line-height:23px; background:#F0F5F8; border-top:1px solid #CCCCCC; text-align: right;}
-#btn_b_save{width:62px; height:23px; line-height:23px; color:#ffffff; background: url(/images/yetrb/btn.jpg) no-repeat;}
-#btn_b_res{width:62px; height:23px; line-height:23px; color:#ffffff; background: url(/images/yetrb/btn2.jpg) no-repeat;}
+#upload_btn_banner{width:448px; height:23px; padding-right:20px; margin-top: 5px; line-height:23px; background:#F0F5F8; border-top:1px solid #CCCCCC; text-align: right;}
+#btn_b_save{width:62px; height:23px; margin-top:5px; color:#ffffff; background: url(/images/yetrb/btn.jpg) no-repeat;}
+#btn_b_res{width:62px; height:23px;  margin-top:5px; color:#000; background: url(/images/yetrb/btn2.jpg) no-repeat;}
 #rig_sub{height:30px; margin-top:20px; text-align:center; }
 #rig_sub input{width:72px; height:30px; background:url(/images/member/save.jpg) no-repeat; border:0px solid red;}
 #photo_book{font-size:12px; color:#0000FF; text-decoration: none;}
 #text_photo{width:510px; font-size: 12px; line-height: 16px;}
+
+
+#upload_description{width:349px; height:36px; line-height: 18px; font-size: 12px;}

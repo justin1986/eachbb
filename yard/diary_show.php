@@ -20,7 +20,7 @@
 			else{
 				$user = new table_class('eachbb_member.member');
 				$user->find($id);
-				if($user){
+				if(!$user){
 					alert("非法操作！");
 					alert("请您先登录！");?>
 				<script>window.location.href="/login/";</script>
