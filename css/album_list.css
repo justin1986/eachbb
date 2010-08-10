@@ -5,7 +5,7 @@ body div{float:left; display:inline;}
 
 #myalbum{width:819px; background:url("/images/yard/c_c_bj.jpg") repeat-y;}
 #myalbum a{text-decoration:none;}
-
+#creat_album{width:370px; height:102px; position:fixed; background:#000000;left:480px; top:240px; z-index:1;}
 	#al_p1{width:730px; height:28px; margin-left:43px; border-bottom:2px solid #a9a9a9;}
 		#whosealbum{width:300px; height:28px; line-height:28px; font-size:16px;}
 		#p1_buttonbox{float:right; line-height:16px;}

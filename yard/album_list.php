@@ -20,6 +20,16 @@
 	?>
 </head>
 <body>
+<div id="creat_album">
+	<div id="c_top">创建新相册</div>
+	<div id="c_middle">
+		<input name="albumname" type="text">
+	</div>
+	<div id="c_bottom">
+		<input type="button" id="btn_save" value="保存"/>
+		<input type="button" id="btn_res" value="取消"/>
+	</div>
+</div>
 <div id="ibody">
 	<?php include_once(dirname(__FILE__).'/../inc/_yard_top.php'); ?>
 	<div id="menu">
@@ -71,8 +81,19 @@
 		?>
 			<div id="al_p2">
 				<div id="al_test"></div>
+			<?php if($num == 0){ ?>
+				<div class="album">
+				<div class="al_box">
+					<div class="al_name"><a href="/">网趣宝贝</a></div>
+						<div class="al_face">
+							<img src="/images/yard/noface.jpg" border=0 />
+						</div>
+				<div class="al_words">真遗憾！这里没有任何照片可供查阅。</div>
+				<div class="al_num">0张</div>
+				</div>
+			<?php }?>
 			<?php for($i=0;$i<$num;$i++){?>
-				<div class="album" id="0">
+				<div class="album">
 					<div class="al_box">
 						<div class="al_name"><a href="#"><?php echo $master[$i]->name;?></a></div>
 						<div class="al_face">
@@ -101,6 +122,7 @@
 				<div id="copyright">版权</div>
 			</div>
 		</div>
+	</div>
 	</div>
 	</body>
 	</html>
