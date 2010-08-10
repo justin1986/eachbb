@@ -33,7 +33,8 @@
 				if(!$text_photo)die("非法操作！");
 				if(!$upload_select_id) die('相册不能为空！');
 				if(!$name_photo) die('图像名称不能为空！');
-				$sql="insert into eachbb_member.photo (description,u_id,u_name,photo,album_id,created_at)values('$text_photo',$id,'$name_photo','$save_e',$upload_select_id,now());";
+				$img = getimagesize($yuan_pic);
+				$sql="insert into eachbb_member.photo (description,u_id,u_name,photo,album_id,created_at,width,height)values('$text_photo',$id,'$name_photo','$save_e',$upload_select_id,now(),$img[0],$img[1]);";
 			}
 			$extension = strtolower($path_info['extension']);
 			$save_name = rand_str() .'.'.$extension;
@@ -41,10 +42,10 @@
 			$save_e = "/upload/".$save_name;
 			if(move_uploaded_file($yuan_pic,$save)){
 				if($db->execute($sql)){
-					alert("上传成功！");
+					alert("添加成功！");
 					redirect('/yard/upload_photo.php');
 				}else{
-					alert("上传失败！");
+					alert("添加失败！");
 				}
 			}else{
 				debug_info('fail to upload file:' .$yuan_pic,'js');
