@@ -127,7 +127,7 @@
 								</div>
 							<div id="ccpsc_la">
 								<div id="ccpsc_imga"></div>
-								<div id="ccpsc_worda"><a href="">传照片</a></div>
+								<div id="ccpsc_worda"><a href="/yard/upload_photo.php">传照片</a></div>
 								</div>
 							<div id="ccpsc_lb">
 								<div id="ccpsc_imgb"></div>

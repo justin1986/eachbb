@@ -16,9 +16,8 @@
 			else{
 				$member = new table_class('eachbb_member.member');
 				$member->find($id);
-				if($member){
-					alert("非法操作！");
-					alert("请您先登录！");?>
+				if(!$member){
+					alert("非法操作！");?>
 				<script>window.location.href="/login/";</script>
 			<?php 
 					
