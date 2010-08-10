@@ -16,18 +16,30 @@
 			$user = User::current_user();
 			if(!$user) die('请先登录!');
 			$id=$user->id;
-			$upload_select_id = $_POST["upload_select_id"];
-			$name_photo = $_POST["name_photo"];
-			if(!$upload_select_id) die('相册不能为空！');
-			if(!$name_photo) die('图像名称不能为空！');
-			$path_info = pathinfo($_FILES['src'][name]);
-			$yuan_pic=$_FILES['src'][tmp_name];
+			$upload_title = htmlspecialchars($_POST["upload_title"]);
+			if($upload_title){
+				$path_info = pathinfo($_FILES['src2'][name]);
+				$yuan_pic=$_FILES['src2'][tmp_name];
+				$value=htmlspecialchars($_POST["upload_description"]);
+				if(!$value)die("非法操作！");
+				if(!$upload_title)die("非法操作！");
+				$sql="insert into eachbb_member.album (u_id,created_at,last_update_time,name,front_cover,description)values($id,now(),now(),'$upload_title','$save_e','$value');";
+			}else{
+				$path_info = pathinfo($_FILES['src'][name]);
+				$yuan_pic=$_FILES['src'][tmp_name];
+				$upload_select_id = $_POST["upload_select_id"];
+				$name_photo = htmlspecialchars($_POST["name_photo"]);
+				$text_photo = htmlspecialchars($_POST["text_photo"]);
+				if(!$text_photo)die("非法操作！");
+				if(!$upload_select_id) die('相册不能为空！');
+				if(!$name_photo) die('图像名称不能为空！');
+				$sql="insert into eachbb_member.photo (description,u_id,u_name,photo,album_id,created_at)values('$text_photo',$id,'$name_photo','$save_e',$upload_select_id,now());";
+			}
 			$extension = strtolower($path_info['extension']);
 			$save_name = rand_str() .'.'.$extension;
 			$save = ROOT_DIR_NONE ."/upload/".$save_name;
 			$save_e = "/upload/".$save_name;
 			if(move_uploaded_file($yuan_pic,$save)){
-				$sql="insert into eachbb_member.photo (u_id,u_name,photo,album_id,created_at)values($id,'$name_photo','$save_e',$upload_select_id,now());";
 				if($db->execute($sql)){
 					alert("上传成功！");
 					redirect('/yard/upload_photo.php');
