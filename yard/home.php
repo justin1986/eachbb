@@ -222,7 +222,7 @@
 							<span class="u_id"><a href="#"><?php echo $info[0]->name;?></a></span>
 							<span class="news_type">
 								<span class="type_p1">回复了</span>
-								<span class="f_id"><a href="#">xiangxiang</a></span>
+								<span class="f_id" id="name_text"><a href="#">xiangxiang</a></span>
 								<span class="type_p2">的帖子：</span>
 							</span>
 							<span>Hallie秋之爱：皮衣/柳丁/国企学/军服/流速/保温/褶皱/大红叉2002</span>

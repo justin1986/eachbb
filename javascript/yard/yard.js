@@ -24,6 +24,8 @@ $(function(){
 			window.location.href="/yard/member.php";
 		}else if(selected === 2){
 			window.location.href="/yard/diary_list.php";
+		}else if(selected === 3){
+			window.location.href="/yard/album_list.php";
 		}
 		$(this).attr('style','background:url(../images/yard/m_'+selected+'.jpg) no-repeat;');
 	});

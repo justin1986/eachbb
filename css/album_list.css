@@ -16,11 +16,12 @@ body div{float:left; display:inline;}
 		#al_test{width:1px; height:540px;}
 		.album{width:140px; height:221px; margin:5px 20px; background:url("/images/yard/albumbox.jpg") no-repeat;}
 			.al_box{width:120px; height:200px; color:#6d6d6d;margin-top:15px; margin-left:10px;}
-				.al_name{width:120px;height:14px; line-height:14px; font-size:14px; font-weight:bold; margin-bottom:5px;}
+				.al_name{width:120px;height:14px; line-height:14px; font-size:14px; font-weight:bold; margin-bottom:5px; overflow:hidden;}
 				.al_name a{color:#416298;}
 				.al_face{margin:0 10px;}
 				.al_face img{width:100px; height:100px;}
-				.al_words{width:120px; height:56px; font-size:14px; line-height:14px; Word-wrap:break-word; overflow:hidden;}
+				.al_time{width:120px; height:14px; line-height:14px; margin-top:5px;}
+				.al_words{width:112px; height:42px; font-size:14px; margin-top:5px; margin-left:5px;line-height:14px; Word-wrap:break-word; overflow:hidden;}
 				.al_num{width:120px; height:12px; margin-top:5px;}
 	#cc_bottom{width:819px; height:83px; background:url("/images/yard/cc_bottombj.jpg") repeat-x;}
 	#copyright{font-size:16px; margin:36px 0 0 106px;}

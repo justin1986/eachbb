@@ -13,9 +13,11 @@
 		$id =$_GET['id'];
 		$id =intval($id);
 		if($info = $db->query("select * from eachbb_member.member where id=$id")){
-		}else{
-			alert('非法操作！');
-			redirect("/");
+		}elseif($user){
+				$id=$user->id;
+			}else{
+			alert('请您先登录！');
+			redirect("/login/");
 		}
 	?>
 </head>
@@ -54,9 +56,9 @@
 			<div id="yard_day_ct"><?php echo get_week_day(); ?></div>
 		</div>
 		<div id="menu_a" class="menu_pic"style="background:url(../images/yard/m_a.jpg) no-repeat;"></div>
-		<div id="menu_b" class="menu_pic" style="background:url(../images/yard/m_1.jpg) no-repeat;"></div>
+		<div id="menu_b" class="menu_pic"></div>
 		<div id="menu_c" class="menu_pic"></div>
-		<div id="menu_d" class="menu_pic"></div>
+		<div id="menu_d" class="menu_pic" style="background:url(../images/yard/m_3.jpg) no-repeat;"></div>
 		<div id="menu_e" class="menu_pic"></div>
 		<div id="menu_f" class="menu_pic"></div>
 	</div>
@@ -99,7 +101,7 @@
 					});
 				});
 			</script>
-	  <?php $master=$db->query("select id,name,front_cover,description from `eachbb_member`.album where u_id = '$id'");
+	  <?php $master=$db->query("select id,name,front_cover,description,created_at from `eachbb_member`.album where u_id = '$id'");
 			$num = $db->record_count;
 		?>
 			<div id="al_p2">
@@ -112,7 +114,7 @@
 							<img src="/images/yard/noface.jpg" border=0 />
 						</div>
 				<div class="al_words">真遗憾！这里没有任何照片可供查阅。</div>
-				<div class="al_num">0张</div>
+				<div class="al_num"><font style="color:#ff0000;">0</font>张</div>
 				</div>
 			<?php }?>
 			<?php for($i=0;$i<$num;$i++){?>
@@ -130,13 +132,14 @@
 							?>
 							" border=0/></a>
 						</div>
+						<div class="al_time">创建日期：<?php echo mb_substr($master[$i]->created_at,0,10)?></div>
 						<div class="al_words"><?php echo $master[$i]->description;?></div>
 				<?php 	
 						$master_id= $master[$i]->id;
 						$db->query("select id from `eachbb_member`.photo where album_id = '$master_id'");
 						$n = $db->record_count;
 				?>
-						<div class="al_num"><?php echo $n;?>张</div>
+						<div class="al_num"><font style="color:#ff0000;"><?php echo $n;?></font>张</div>
 					</div>
 				</div>
 			<?php }?>
