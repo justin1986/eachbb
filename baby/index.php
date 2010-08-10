@@ -44,8 +44,8 @@
 					<div class="user_me_b">
 						
 						<div class="user_me_t"><img src="/images/avatar/cpoint.png"></img><a href="info.php"><font size="2" color="black">基本信息</font></a></div>
-						<div class="user_me_t"><img src="/images/avatar/cpoint.png"></img><a href="/yard/info.php"><font size="2" color="black">头像上传</font></a></div>
-						<div class="user_me_t" style="padding-bottom:10px;"><img src="/images/avatar/cpoint.png"></img><a href="/yard/reset_password.php"><font size="2" color="black">密码设置修改</font></a></div>
+						<div class="user_me_t"><img src="/images/avatar/cpoint.png"></img><a href="/baby/index.php"><font size="2" color="black">头像选择</font></a></div>
+						<div class="user_me_t" style="padding-bottom:10px;"><img src="/images/avatar/cpoint.png"></img><a href="/baby/reset_password.php"><font size="2" color="black">密码修改</font></a></div>
 				</div>
 			</div>
 			<div class="user_me_s">
