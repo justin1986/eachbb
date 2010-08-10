@@ -80,26 +80,26 @@
 						</div>
 					</div>
 					<form id="add_friend" action="addfriend.post.php" method="post">
-						<input name="add_friend" style="display:none;" value="<?php echo $id;?>">
+						<input id="friend_id" name="add_friend" style="display:none;" value="<?php echo $id;?>">
 					</form>
 					<div id= "p1_other">
 						<div class = "other">
 							<div class ="oth_go">
 							<img src="/images/yard/oth_go.gif" />
 							</div>
-							<div class ="oth_words"><a href="#"><?php echo $its?>的日志<font>(<?php echo count($daily_count);?>)</font></a></div>
+							<div class ="oth_words"><a href="/yard/diary_list.php?id=<?php echo $id;?>"><?php echo $its?>的日志<font>(<?php echo count($daily_count);?>)</font></a></div>
 						</div>
 						<div class = "other">
 							<div class ="oth_go">
 							<img src="/images/yard/oth_go.gif" />
 							</div>
-							<div class ="oth_words"><a href="#"><?php echo $its?>的相册<font>(<?php echo count($album_count);?>)</font></a></div>
+							<div class ="oth_words"><a href="/yard/album_list.php?id=<?php echo $id;?>"><?php echo $its?>的相册<font>(<?php echo count($album_count);?>)</font></a></div>
 						</div>
 						<div class = "other">
 							<div class ="oth_go">
 							<img src="/images/yard/oth_go.gif" />
 							</div>
-							<div class ="oth_words"><a href="#"><?php echo $its?>的帖子<font>(0)</font></a></div>
+							<div class ="oth_words"><?php echo $its?>的帖子<font>(0)</font></div>
 						</div>
 					</div>
 				</div>
@@ -117,12 +117,12 @@
 					<div id ="line1"></div>
 					<div id ="p2_info">
 						<div id ="info_other">
-							<div class="oth_botton">
+							<div class="oth_botton" id="its_diary">
 								<div class="oth_nl"></div>
 								<div class="oth_name"><?php echo $its?>的日志</div>
 								<div class="oth_nr"></div>
 							</div>
-							<div class="oth_botton">
+							<div class="oth_botton" id="its_album">
 								<div class="oth_nl"></div>
 								<div class="oth_name"><?php echo $its?>的相册</div>
 								<div class="oth_nr"></div>
@@ -222,7 +222,7 @@
 							<span class="u_id"><a href="#"><?php echo $info[0]->name;?></a></span>
 							<span class="news_type">
 								<span class="type_p1">回复了</span>
-								<span class="f_id"><a href="#">xiangxiang</a></span>
+								<span class="f_id" id="name_text"><a href="#">xiangxiang</a></span>
 								<span class="type_p2">的帖子：</span>
 							</span>
 							<span>Hallie秋之爱：皮衣/柳丁/国企学/军服/流速/保温/褶皱/大红叉2002</span>

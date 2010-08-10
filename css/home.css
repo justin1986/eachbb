@@ -3,7 +3,7 @@ body{width:1000px; margin: 0 auto; font-family:宋体,Arial; background:url(../i
 body a{text-decoration:none;}
 #ibody{width:970px; overflow:hidden; background:#ffffff; margin:0 auto;}
 
-#c_c{width:819px; background:url("/images/yard/c_c_bj.jpg") repeat-y; position:relative;}
+#c_c{width:819px; background:url("/images/yard/c_c_bj.jpg") repeat-y;}
 #c_c a{color:#416298;}
 
 #cc_info{width:819px; margin-top:10px;}

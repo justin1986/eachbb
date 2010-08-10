@@ -91,9 +91,7 @@
 									<td  valign="middle" colspan="3" id="rig_sub"><input id="ssubmit" type="submit" value=""/></td>
 								</tr>
 							</table>
-							
 						</div>
-				
 				</div>
 			</div>
 			<div id="cc_b"></div>
@@ -119,9 +117,9 @@
 					<input type="submit" id="btn_b_save" value="保存" />
 					<input type="button" id="btn_b_res" value="取消"/>
 				</div>
-				
 		</div>
-	</div></form>
+	</div>
+	</form>
 </div>
 </body>
 <script>

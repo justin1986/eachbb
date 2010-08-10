@@ -25,7 +25,11 @@ $(function(){
 		}else if(selected === 2){
 			window.location.href="/yard/diary_list.php";
 		}else if(selected === 3){
+<<<<<<< HEAD:javascript/yard/yard.js
 			window.location.href="/yard/upload_photo.php";
+=======
+			window.location.href="/yard/album_list.php";
+>>>>>>> 37bf3893cbcf81055b69100c3e9f94539c7b6ed6:javascript/yard/yard.js
 		}
 		$(this).attr('style','background:url(../images/yard/m_'+selected+'.jpg) no-repeat;');
 	});
