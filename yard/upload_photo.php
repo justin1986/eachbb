@@ -26,10 +26,10 @@
 			<div id="yard_day_time"><?php echo date('Y年m月d日'); ?></div>
 			<div id="yard_day_ct"><?php echo get_week_day(); ?></div>
 		</div>
-		<div id="menu_a" class="menu_pic"style="background:url(../images/yard/m_a.jpg) no-repeat;"></div>
-		<div id="menu_b" class="menu_pic" style="background:url(../images/yard/m_1.jpg) no-repeat;"></div>
-		<div id="menu_c" class="menu_pic"></div>
-		<div id="menu_d" class="menu_pic"></div>
+		<div id="menu_a" class="menu_pic" style="background:url(../images/yard/m_a.jpg) no-repeat;"></div>
+		<div id="menu_b" class="menu_pic"></div>
+		<div id="menu_c" class="menu_pic" ></div>
+		<div id="menu_d" class="menu_pic" style="background:url(../images/yard/m_3.jpg) no-repeat;"></div>
 		<div id="menu_e" class="menu_pic"></div>
 		<div id="menu_f" class="menu_pic"></div>
 	</div>
