@@ -149,8 +149,11 @@
 							<div class="c_ch_w">随便看看</div>
 							<div id="m_w" style="width:30px;"></div>
 						</div>
-					<div id="test" style="display:none;">
-					   <?php	for($i=0;$i<$num;$i++){?>
+					<div id="test">
+					   <?php	
+					   $sql = $db->query("select * FROM eachbb_member.lastest_news where u_id='{$user->id}'order by created_at desc");
+					   $num = $db->record_count;
+					   for($i=0;$i<$num;$i++){?>
 						<div class="pc_z">
 							<div class="pc_pg_img">
 								<div class="pc_img"><img src="
@@ -171,6 +174,7 @@
 							</div>
 						</div>
 						<?php }?>
+						</div>
 						<!-- 
 						<div class="pc_hr"></div>
 						 -->

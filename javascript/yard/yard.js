@@ -5,7 +5,8 @@ $(function(){
 		$(this).attr('style','border:0px solid red; background:url(/images/yard/m_pg.jpg) no-repeat;');
 		if(selected === 0)
 		{
-			$.post('lastest_news.post.php',{'select':'no'},function(data){
+			$.post('lastest_news.post.php',{'select':''},function(data){
+				$('#test').html(data);
 			});
 		}
 		else if(selected === 1)
@@ -17,11 +18,13 @@ $(function(){
 		else if(selected === 2)
 		{
 			$.post('lastest_news.post.php',{'select':'and resource_id=2'},function(data){
+				$('#test').html(data);
 			});
 		}
 		else if(selected === 3)
 		{
 			$.post('lastest_news.post.php',{'select':'and resource_id=3'},function(data){
+				$('#test').html(data);
 			});
 		}
 	});
