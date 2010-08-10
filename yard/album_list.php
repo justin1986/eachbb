@@ -20,63 +20,33 @@
 	?>
 </head>
 <body>
-<div id="ii_body">
+<div id="ibody">
+	<div id="ii_body">
+	<form  enctype="multipart/form-data" action="/yard/upload_photo_image.post.php" method="post">
 		<div id="upload_banner">
 			<div id="upload_box">
-				<div id="upload_top">创建新相册</div>
+				<div id="upload_top"><font style="margin-left:10px">创建新相册</font></div>
 				<div class="upload_bannerr">
 					<div class="upload_size">相册名称:</div>
 					<input type="text" name="upload_title" id="upload_title"/>
 				</div>
-				
-				<div id="upload_btn_banner"  style="margin-top:30px;">
+				<div class="upload_bannerr">
+					<div class="upload_size">相册描述:</div>
+					<textarea id="upload_description" name="upload_description"></textarea>
+				</div>
+				<div class="upload_bannerr">
+					<div class="upload_size">相册封面:</div>
+					<input type="file" name="src2" id="ulee" size="40"/>
+				</div>
+				<div id="upload_line"></div>
+				<div id="upload_btn_banner">
 					<input type="submit" id="btn_b_save" value="保存" />
 					<input type="button" id="btn_b_res" value="取消"/>
 				</div>
 			</div>
 		</div>
+		</form>	
 	</div>
-	<script>
-	$(function(){
-		$('#btn_b_res').click(function(){
-			$('#ii_body').css("display","none");
-		});
-		$('#btn_b_save').click(function(){
-			var photo_b=$('#upload_title').val();
-			var upload_description=$('#upload_description').val();
-			var photo_b=$('#upload_text').val();
-			if(photo_b.length == 0){
-				alert('请输入相册的名称！');
-				return false;
-			}else if(photo_b.length >= 50){
-				alert('相册的名称必须小于50字！');
-				return false;
-			}else if(upload_description.length = 0){
-				alert('请输入相册的描述！');
-				return false;
-			}else if($("#ulee").val() == ''){
-				alert("请上传相册的封面！");
-				return false;
-			}else if($("#ulee").val() != ''){
-				var upfile1 = $("#ulee").val();
-				var upload_file_extension=upfile1.substring(upfile1.length-4,upfile1.length);
-				if(upload_file_extension.toLowerCase()!=".png"&&upload_file_extension.toLowerCase()!=".jpg"&&upload_file_extension.toLowerCase()!=".gif"){
-					alert("上传图片类型错误");
-					return false;
-				}
-			}else{
-				$('#btn_b_save').attr("disabled",true);
-				$.post('_upload_photo_ajax_post.php',{"photo":photo_b},function(data){
-					alert("添加成功！");
-					$('#btn_b_save').attr("disabled",false);
-					$('#ii_body').css("display","none");
-					window.location.href="/yard/upload_photo.php";
-				});
-			}
-		});
-	});
-	</script>
-<div id="ibody">
 	<?php include_once(dirname(__FILE__).'/../inc/_yard_top.php'); ?>
 	<div id="menu">
 		<div id="yard_day">

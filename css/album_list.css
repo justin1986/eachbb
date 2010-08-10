@@ -25,11 +25,14 @@ body div{float:left; display:inline;}
 	#cc_bottom{width:819px; height:83px; background:url("/images/yard/cc_bottombj.jpg") repeat-x;}
 	#copyright{font-size:16px; margin:36px 0 0 106px;}
 	
-#ii_body{width:100%; height:100%; background:#000; z-index:1; position:fixed; top:0; left:0; opacity:0.90; filter:alpha(opacity = 90); color:#000000; background:#000; float:left; display:inline;}
-	#upload_box{width:500px; height:400px; font-size:14px; background:pink;}
-	.upload_size{width:500px; height: 14px;}
-	#upload_text{width:250px; height:14px;}
-#upload_btn_banner{width:448px; height:23px; margin-top: 5px; line-height:24px; background:#F0F5F8; border-top:1px solid #CCCCCC; text-align: right;}
+#ii_body{width:100%; height:100%; background:#000; z-index:1; position:fixed; top:0; left:0; opacity:0.90; filter:alpha(opacity = 90); color:#000000; background:#000; display:none;}
+	#upload_box{width:500px; height:235px; font-size:14px; margin:180px 0 0 400px; background:#ffffff;}
+		#upload_top{width:500px; height:24px; line-height:24px; font-size:16px; color:#ffffff; font-weight:bold; background:#4984c1;}
+		.upload_bannerr{margin-top:20px; margin-left:25px;}
+	.upload_size{width:100px; height:20px; line-height:20px;}
+	#upload_description{width:350px; height:40px;}
+	#upload_line{width:500px;height:24px; border-bottom:1px solid #999999;}
+#upload_btn_banner{width:140px; height:30px; line-height:30px; margin-right:10px; float:right;}
 #btn_b_save{width:62px; height:23px; margin-top:5px; color:#ffffff; background: url(/images/yetrb/btn.jpg) no-repeat;}
 #btn_b_res{width:62px; height:23px;  margin-top:5px; color:#000; background: url(/images/yetrb/btn2.jpg) no-repeat;}
 	
