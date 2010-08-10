@@ -1,5 +1,5 @@
 @CHARSET "UTF-8";
-body{width:1000px; margin: 0 auto; font-family:宋体,Arial; background:url(../images/img_pg.jpg) repeat-x;}
+body{width:1000px; margin: 0 auto; font-size:12px;font-family:宋体,Arial; background:url(../images/img_pg.jpg) repeat-x;}
 body div{float:left; display:inline;}
 #ibody{width:970px; overflow:hidden; background:#ffffff; margin:0 auto;}
 
