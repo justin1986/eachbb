@@ -28,14 +28,7 @@
 					<div class="upload_size">相册名称:</div>
 					<input type="text" name="upload_title" id="upload_title"/>
 				</div>
-				<div class="upload_bannerr" style="height: 36px;">
-					<div class="upload_size">相册描述:</div>
-					<textarea id="upload_description" name="upload_description"></textarea>
-				</div>
-				<div class="upload_bannerr">
-					<div class="upload_size">相册封面:</div>
-					<input type="file" name="src2" id="ulee" size="40"/>
-				</div>
+				
 				<div id="upload_btn_banner"  style="margin-top:30px;">
 					<input type="submit" id="btn_b_save" value="保存" />
 					<input type="button" id="btn_b_res" value="取消"/>
