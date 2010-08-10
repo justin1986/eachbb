@@ -5,7 +5,6 @@ body div{float:left; display:inline;}
 
 #myalbum{width:819px; background:url("/images/yard/c_c_bj.jpg") repeat-y;}
 #myalbum a{text-decoration:none;}
-#creat_album{width:370px; height:102px; position:fixed; background:#000000;left:480px; top:240px; z-index:1;}
 	#al_p1{width:730px; height:28px; margin-left:43px; border-bottom:2px solid #a9a9a9;}
 		#whosealbum{width:300px; height:28px; line-height:28px; font-size:16px;}
 		#p1_buttonbox{float:right; line-height:16px;}
@@ -25,3 +24,12 @@ body div{float:left; display:inline;}
 				.al_num{width:120px; height:12px; margin-top:5px;}
 	#cc_bottom{width:819px; height:83px; background:url("/images/yard/cc_bottombj.jpg") repeat-x;}
 	#copyright{font-size:16px; margin:36px 0 0 106px;}
+	
+#ii_body{width:100%; height:100%; background:#000; z-index:1; position:fixed; top:0; left:0; opacity:0.90; filter:alpha(opacity = 90); color:#000000; background:#000; float:left; display:inline;}
+	#upload_box{width:300px; height:400px; font-size:14px;}
+	.upload_size{width:300px; height: 100px; text-align:right; }
+	#upload_text{width:250px; height:14px;}
+#upload_btn_banner{width:448px; height:23px; margin-top: 5px; line-height:24px; background:#F0F5F8; border-top:1px solid #CCCCCC; text-align: right;}
+#btn_b_save{width:62px; height:23px; margin-top:5px; color:#ffffff; background: url(/images/yetrb/btn.jpg) no-repeat;}
+#btn_b_res{width:62px; height:23px;  margin-top:5px; color:#000; background: url(/images/yetrb/btn2.jpg) no-repeat;}
+	

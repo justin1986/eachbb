@@ -119,9 +119,8 @@
 					<input type="submit" id="btn_b_save" value="保存" />
 					<input type="button" id="btn_b_res" value="取消"/>
 				</div>
-				
 		</div>
-	</div></form>
+	</div>
 </div>
 </body>
 <script>
