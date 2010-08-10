@@ -144,7 +144,6 @@
 				</div>
 			<?php }?>
 			</div>
-			</div>
 			<div id="cc_bottom">
 				<div id="copyright">版权</div>
 			</div>
