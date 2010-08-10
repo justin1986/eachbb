@@ -94,13 +94,6 @@
 						</div>
 					</div>
 			</div>
-			<script>
-			$(function(){
-				$('#add_album').click(function(){
-					$('#ii_body').css("display","inline");
-					});
-				});
-			</script>
 	  <?php $master=$db->query("select id,name,front_cover,description,created_at from `eachbb_member`.album where u_id = '$id'");
 			$num = $db->record_count;
 		?>
@@ -148,6 +141,7 @@
 				<div id="copyright">版权</div>
 			</div>
 		</div>
+	</div>
 	</div>
 	</body>
 	</html>
