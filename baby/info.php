@@ -45,10 +45,9 @@
 			<div class="user_me_s" >
 				<div class="user_me_t" ><img src="/images/avatar/bpoint.png"></img><font size="2"><b>用户信息</b></font></div>
 					<div class="user_me_b">
-						<div class="user_me_t"><img src="/images/avatar/cpoint.png"></img><a href="welcome.php"><font size="2" color="black">欢迎页</font></a></div>
-						<div class="user_me_t"><img src="/images/avatar/cpoint.png"></img><a href="welcome.php"><font size="2" color="black">基本信息</font></a></div>
-						<div class="user_me_t"><img src="/images/avatar/cpoint.png"></img><a href="info.php"><font size="2" color="black">会员信息</font></a></div>
-						<div class="user_me_t" style="padding-bottom:10px;"><img src="/images/avatar/cpoint.png"></img><a href="message.php"><font size="2" color="black">密码设置修改</font></a></div>
+						<div class="user_me_t"><img src="/images/avatar/cpoint.png"></img><a href="info.php"><font size="2" color="black">基本信息</font></a></div>
+						<div class="user_me_t"><img src="/images/avatar/cpoint.png"></img><a href="/yard/info.php"><font size="2" color="black">头像上传</font></a></div>
+						<div class="user_me_t" style="padding-bottom:10px;"><img src="/images/avatar/cpoint.png"></img><a href="/yard/reset_password.php"><font size="2" color="black">密码设置修改</font></a></div>
 				</div>
 			</div>
 			<div class="user_me_s">
@@ -94,16 +93,12 @@
 					<div id="r_log_hr">
 						<div>个人资料</div>
 					</div>
-					<div class="c_menu_pg">
-						<div id="c_menu_selected" style="margin-left:0px;"><a href="/yard/member.php">基本资料</a></div>
-						<div><a href="/yard/info.php">修改头像</a></div>
-						<div><a href="">修改密码</a></div>
-					</div>
+					
 					<div class="c_menu_pg_p" >
 						
 					</div>
 					<form>
-						<table class=r_table>
+						<table class=r_table style="margin-top:0px">
 							<tr>
 								<td class=td1>昵称：</td>
 								<td class=td2><span><?php echo $member->name;?></span></td>

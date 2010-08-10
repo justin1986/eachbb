@@ -9,9 +9,6 @@
 .r_title a{color:#ff6600;}
 #r_log_hr{width:728px; height:30px; margin-left:10px; margin-top:25px; position:relative; background: url(/images/yard/log_hr.jpg) repeat-x; border:1px solid #E4E4E4; float: left; display: inline;}
 #r_log_hr div{width:195px; height:31px; text-align: center; cursor:pointer;   position:absolute;  line-height:31px;  font-size: 12px; font-weight: bold; color: #AC4C00; background: url(/images/yard/log_hr5.jpg) repeat-x; border:0px solid red; border-right:1px solid #E4E4E4;}
-.c_menu_pg{width:730px; height:27px; margin-left:10px; margin-top:25px;  float: left; display: inline;}
-.c_menu_pg div{width:82px; height:27px; margin-left:10px; cursor:pointer;   background:url(/images/yard/log_hr3.jpg) repeat-x; text-align: center; line-height: 27px; float: left; display: inline;}
-.c_menu_pg div a{font-size: 12px; color:#000000; text-decoration: none;}
 .c_menu_pg_p{width:730px; height:30px; margin-left:10px; background:url(/images/yard/log_hr2.jpg) repeat-x;  float: left; display: inline;}
 
 .r_title{width:710px; height:22px; margin-left:10px; margin-top:10px; padding-left:20px; border-bottom:2px solid #f1f1f1; font-size:14px; font-weight:bold; color:#000000; line-height:22px; background:url('/images/member/r_title_bg.jpg') 5px 4px no-repeat; float:left; display:inline;}
