@@ -21,6 +21,10 @@
 				$path_info = pathinfo($_FILES['src2'][name]);
 				$yuan_pic=$_FILES['src2'][tmp_name];
 				$value=htmlspecialchars($_POST["upload_description"]);
+				$extension = strtolower($path_info['extension']);
+				$save_name = rand_str() .'.'.$extension;
+				$save = ROOT_DIR_NONE ."/upload/".$save_name;
+				$save_e = "/upload/".$save_name;
 				if(!$value)die("非法操作！");
 				if(!$upload_title)die("非法操作！");
 				$sql="insert into eachbb_member.album (u_id,created_at,last_update_time,name,front_cover,description)values($id,now(),now(),'$upload_title','$save_e','$value');";
@@ -34,16 +38,17 @@
 				if(!$upload_select_id) die('相册不能为空！');
 				if(!$name_photo) die('图像名称不能为空！');
 				$img = getimagesize($yuan_pic);
-				$sql="insert into eachbb_member.photo (description,u_id,u_name,photo,album_id,created_at,width,height)values('$text_photo',$id,'$name_photo','$save_e',$upload_select_id,now(),$img[0],$img[1]);";
-			}
-			$extension = strtolower($path_info['extension']);
+				$extension = strtolower($path_info['extension']);
 			$save_name = rand_str() .'.'.$extension;
 			$save = ROOT_DIR_NONE ."/upload/".$save_name;
 			$save_e = "/upload/".$save_name;
+				$sql="insert into eachbb_member.photo (description,u_id,u_name,photo,album_id,created_at,width,height)values('$text_photo',$id,'$name_photo','$save_e',$upload_select_id,now(),$img[0],$img[1]);";
+			}
+			
 			if(move_uploaded_file($yuan_pic,$save)){
 				if($db->execute($sql)){
 					alert("添加成功！");
-					redirect('/yard/upload_photo.php');
+					redirect('/yard/album_list.php');
 				}else{
 					alert("添加失败！");
 				}

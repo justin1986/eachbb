@@ -132,15 +132,16 @@
 		});
 		$('#btn_b_save').click(function(){
 			var photo_b = $('#upload_title').val();
-			if(photo_b.length == 0){
+			if(!photo_b.trim()){
 				alert('请输入相册的名称！');
 				return false;
-			}
-			if(photo_b.length >= 50){
+			}else if(!$('#upload_description').val().trim()){
+				alert('请输入相册的描述！');
+				return false;
+			}else if($('#upload_description').val().trim() >= 50){
 				alert('相册的名称必须小于50字！');
 				return false;
-			}
-			if($("#ulee").val() == ''){
+			}else if(!$("#ulee").val()){
 				alert("请上传相册的封面！");
 				return false;
 			}else if($("#ulee").val() != ''){
@@ -161,28 +162,28 @@
 			}
 		});
 		$('#ssubmit').click(function(){
-			if($('#name_photo').val() == ''){
+			if(!$('#name_photo').val().trim()){
 				alert("请输入图片名称！");
 				return false;
 			}else if($('#name_photo').val().length >=50){
 				alert("输入的图片名称必须小于50字!");
 				return false;
-			}else if($("#upfile").val()!=''){
+			}else if($("#upfile").val() ==''){
+				alert("请上传一个图片!");
+				return false;
+			}else if($("#upload_select_id").val() == ''){
+				alert("请选择相册");
+				return false;
+			}else if($("#text_photo").val().trim() == ''){
+				alert("请输入描述内容！");
+				return false;
+			}else if($("#upfile").val()){
 				var upfile1 = $("#upfile").val();
 				var upload_file_extension=upfile1.substring(upfile1.length-4,upfile1.length);
 				if(upload_file_extension.toLowerCase()!=".png"&&upload_file_extension.toLowerCase()!=".jpg"&&upload_file_extension.toLowerCase()!=".gif"){
 					alert("上传图片类型错误");
 					return false;
 				}
-			}else if($("#upload_select_id").val()==''){
-				alert("请选择相册");
-				return false;
-			}else if($("#text_photo").val() == ''){
-				alert("请输入评论内容！");
-				return false;
-			}else{
-				alert("请上传一个图片!");
-				return false;
 			}
 		});
 	});

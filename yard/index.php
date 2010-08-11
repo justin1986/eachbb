@@ -118,8 +118,10 @@
 							<textarea name="pho_r" id="pho_r">llllllll</textarea>
 						</form>
 					</div>
-					<div id="cc_ps" style="height:600px;">
-						<a href=""><img style="float:left;" id="ccps_l" src="/images/yard/c_p.jpg" /></a>
+					<div id="cc_ps" >
+					<div id="box_test"></div>
+					<div id="box_right">
+						<div id="ccps_l" style="float:left;"><a href=""><img src="/images/yard/c_p.jpg" border=0/></a></div>
 						<div id="ccps_c">
 							<div id="ccpsc_l">
 								<div id="ccpsc_img"></div>
@@ -147,20 +149,36 @@
 							<div class="c_ch_w">随便看看</div>
 							<div id="m_w" style="width:30px;"></div>
 						</div>
-						<div class="pc_z" id="diary_list">
+					<div id="test">
+					   <?php	
+					   $sql = $db->query("select * FROM eachbb_member.lastest_news where u_id='{$user->id}'order by created_at desc limit 9");
+					   $num = $db->record_count;
+					   for($i=0;$i<$num;$i++){?>
+						<div class="pc_z">
 							<div class="pc_pg_img">
-								<div class="pc_img"><img src="/images/yard/pho.jpg"></div>
+								<div class="pc_img"><img src="
+								<?php 
+							if($sql->u_avatar == null){
+								echo "/images/yard/noface.jpg";
+							}else{
+								echo $sql[$i]->u_avatar;
+							}
+						?>
+								"></div>
 							</div>
-							<?php $sql = $db->query("select * FROM eachbb_member.mood order by created_at desc where u_id='{$user->id}'");?>
 							<div class="pc_word">
-								<div class="title_pc"><a href=""><?php echo htmlspecialchars($sql[0]->title);?></a><a href="" style="margin-left:10px; font-size:13px;"><?php echo htmlspecialchars($sql[0]->name); ?> 说了一句话</a></div>
-								<div class="content_pc"><a href="">“<?php if($user->name != ''){echo htmlspecialchars($sql[0]->content);}else{echo "请先登录！";}?>”</a></div>
-								<div class="time_pc"><?php if($user->name != ''){echo $sql[0]->created_at;}else{echo "";}?></div>
+								<div class="title_pc"><a href="home.php?id=<?php echo $user->id;?>"><?php echo $sql[$i]->u_name;?></a><?php echo $sql[$i]->form ;?></div>
+								<div class="content_pc" style="<?php if($sql[$i]->content == ''){echo "display:none;";}?>"><?php echo $sql[$i]->content;?><a href="#">查看全部>></a></div>
+								<div class="photo_box" style="<?php if($sql[$i]->photo == ''){echo "display:none;";}?>"><a href="#"><img src="<?php echo $sql[$i]->photo;?>" border=0/></a></div>
+								<div class="time_pc"><?php echo mb_substr($sql[$i]->created_at,0,16);?></div>
 							</div>
+						</div>
+						<?php }?>
 						</div>
 						<!-- 
 						<div class="pc_hr"></div>
 						 -->
+					</div>
 					</div>
 				</div>
 				<div id="r_pho">
@@ -169,6 +187,7 @@
 			</div>
 			<div id="cc_b"></div>
 		</div>
+		<?php include_once(dirname(__FILE__).'./../inc/bottom.php');?>
 	</div>
 </div>
 </body>

@@ -211,7 +211,10 @@
 					<div class="title_info">
 						<div class="word2" >最新动态</div>
 					</div>
-					<?php for($i=0;$i<5;$i++){?>
+					<?php	
+					   $sql = $db->query("select * FROM eachbb_member.lastest_news where u_id='{$user->id}'order by created_at desc limit 9");
+					   $num = $db->record_count;
+					   for($i=0;$i<$num;$i++){?>
 					<div class="news_box">
 						<div class="test">&nbsp;
 							<div class ="news_logo">
@@ -221,11 +224,9 @@
 						<span class="news_txt">
 							<span class="u_id"><a href="#"><?php echo $info[0]->name;?></a></span>
 							<span class="news_type">
-								<span class="type_p1">回复了</span>
-								<span class="f_id" id="name_text"><a href="#">xiangxiang</a></span>
-								<span class="type_p2">的帖子：</span>
+								<?php echo $sql[$i]->form ;?>
 							</span>
-							<span>Hallie秋之爱：皮衣/柳丁/国企学/军服/流速/保温/褶皱/大红叉2002</span>
+							<span><?php echo $sql[$i]->content;?></span>
 						</span>
 						<span class="news_time"><?php echo mb_substr('2002-10-10 10:30:00',0,16);?></span>
 						<div class="line3"></div>
@@ -299,7 +300,6 @@
 						<div id="u_reply">
 							<div id="reply_title">
 								<span class="u_id"><a href="#"><?php echo $info[0]->name;?></a></span>
-								<span>的回复：</span>
 								<span id="reply_time">2010-11-11 11:11:11</span>
 							</div>
 							<div id="reply_words">jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj</div>
@@ -317,7 +317,7 @@
 					</div>
 				</div>
 			<div id="cc_bottom">
-				<div id="copyright">版权</div>
+				<div id="copyright"></div>
 			</div>
 		</div>
 	</div>

@@ -94,14 +94,7 @@
 						</div>
 					</div>
 			</div>
-			<script>
-			$(function(){
-				$('#add_album').click(function(){
-					$('#ii_body').css("display","inline");
-					});
-				});
-			</script>
-	  <?php $master=$db->query("select id,name,front_cover,description,created_at from `eachbb_member`.album where u_id = '$id'");
+	  <?php $master=$db->query("select id,name,front_cover,description,created_at from `eachbb_member`.album where u_id = '$id' order by created_at desc");
 			$num = $db->record_count;
 		?>
 			<div id="al_p2">
@@ -116,13 +109,14 @@
 				<div class="al_words">真遗憾！这里没有任何照片可供查阅。</div>
 				<div class="al_num"><font style="color:#ff0000;">0</font>张</div>
 				</div>
+				</div>
 			<?php }?>
 			<?php for($i=0;$i<$num;$i++){?>
 				<div class="album">
 					<div class="al_box">
-						<div class="al_name"><a href="#"><?php echo $master[$i]->name;?></a></div>
+						<div class="al_name"><a href="/yard/photo_show.php?id=<?php echo $master[$i]->id;?>"><?php echo $master[$i]->name;?></a></div>
 						<div class="al_face">
-							<a href="#"><img src="
+							<a href="/yard/photo_show.php?id=<?php echo $master[$i]->id;?>"><img src="
 							<?php 
 								if($master[$i]->front_cover != null){
 									echo $master[$i]->front_cover;
@@ -145,9 +139,11 @@
 			<?php }?>
 			</div>
 			<div id="cc_bottom">
-				<div id="copyright">版权</div>
+				<div id="copyright"></div>
 			</div>
 		</div>
+	</div>
+	<?php include_once(dirname(__FILE__).'./../inc/bottom.php');?>
 	</div>
 	</body>
 	</html>

@@ -3,12 +3,30 @@ $(function(){
 		var selected=$('.c_ch_w').index($(this));
 		$('.c_ch_w').attr('style','background:none;');
 		$(this).attr('style','border:0px solid red; background:url(/images/yard/m_pg.jpg) no-repeat;');
-//		if(selected == 3)
-//		{
-//			$.post('_diary_ajax.php',function(data){
-//				$('#diary_list').html(data);
-//			});
-//		}
+		if(selected === 0)
+		{
+			$.post('lastest_news.post.php',{'select':''},function(data){
+				$('#test').html(data);
+			});
+		}
+		else if(selected === 1)
+		{
+			$.post('lastest_news.post.php',{'select':'and resource_id=1'},function(data){
+				$('#test').html(data);
+			});
+		}
+		else if(selected === 2)
+		{
+			$.post('lastest_news.post.php',{'select':'and resource_id=2'},function(data){
+				$('#test').html(data);
+			});
+		}
+		else if(selected === 3)
+		{
+			$.post('lastest_news.post.php',{'select':'and resource_id=3'},function(data){
+				$('#test').html(data);
+			});
+		}
 	});
 	$('.menu_pic').click(function(){
 		var selected=$('.menu_pic').index($(this));
@@ -37,7 +55,7 @@ $(function(){
 	$('#c_moblie').click(function(e){
 		e.preventDefault();
 		var pho_r=$('#pho_r').val();
-		if(pho_r.length >=500){
+		if(pho_r.length >=10){
 			alert("你的内容太多了！");
 		}else{
 		$('#xxx').submit();
@@ -55,5 +73,4 @@ $(function(){
 		$('#pic_'+selected).show();
 		$('#pic_'+selected2).hide();
 	});
-	
 });
