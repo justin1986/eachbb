@@ -37,7 +37,7 @@ body a{text-decoration:none; color:#497617;}
 #cc_photo{width:539px; height:62px; margin-top:15px; margin-left:10px; background:url(/images/yard/c_pg_p.jpg) no-repeat; float:left; display:inline;}
 #pho_l{width:48px; height:48px;	margin-left:7px; margin-top:4px; background:url(/images/yard/pho.jpg) no-repeat; float:left; display:inline;}
 #pho_r{width:448px; height:43px; margin-left:25px; margin-top:7px; text-align:left; overflow:auto; overflow-y:hidden; line-height:20px; color:#999999; border:1px solid #EAEAEA; font-weight:bold; font-size:12px; float:left;}
-#cc_ps{width:530px; height:26px;  display:inline;}
+#cc_ps{width:555px; display:inline; float:left;}
 #ccps_c{width:455px;}
 #ccps_c a{color:#B4BEAF; text-decoration: none; float:right;}
 #ccps_l{width:61px; height:13px; margin-left:10px; font-size:0px; line-height:0px; border:0px solid red; float:left; display:inline;}
@@ -55,8 +55,8 @@ body a{text-decoration:none; color:#497617;}
 #c_moblie_w{width:50px; height:14px; margin-left:10px; margin-top:2px; font-size:12px; text-align:right; float:right; display:inline;}
 #m_w{width:50px; height:24px; border-bottom:1px solid #E3F2DF; float:left; display:inline;}
 #c_ch{width:491px; height:25px; margin-top:25px; margin-left:70px; overflow:hidden; float:left; display:inline;}
-.c_ch_w{width:68px; height:22px; border-bottom:1px solid #E3F2DF; font-size:14px; cursor:pointer;  font-weight:bold; color:#7FB962; line-height:22px; margin-top:1px; text-align:center; float:left; display:inline;}
-.pc_z{width:555px;  margin-left:7px; margin-top:5px; float:left; display:inline;}
+.c_ch_w{width:68px; height:22px; border-bottom:1px solid #E3F2DF; font-size:14px; cursor:pointer;  font-weight:bold; color:#7FB962; line-height:22px; text-align:center; float:left; display:inline;}
+.pc_z{width:554px;  margin-left:7px; margin-top:5px; float:left; display:inline;}
 .pc_hr{width:555px; height:1px; margin-left:7px; margin-top:5px; background:url(/images/yard/m_pg_hr.jpg) repeat-x; float:left; display:inline;}
 .pc_pg_img{width:56px; height:56px; margin-top:7px; margin-left:11px; background:url(/images/yard/pic_pg.jpg) no-repeat; float:left; display:inline;}
 .pc_img{width:48px; height:48px; margin:4px; overflow:hidden; float:left; display:inline;}
@@ -99,7 +99,7 @@ body a{text-decoration:none; color:#497617;}
 	#friend_r1{width:3px; height:23px; margin-top:1px;}
 	#friend_word1{padding:0px 7px; height:23px; color:#6ebd71; border-top:1px solid #BFDEC1; background:#BFDEC1;}
 #pic_r{width:210px; margin-top:5px; margin-left:7px; float:left; display:inline; position:relative;}
-#pic_1{position:absolute; left:0px;display:none;}
+#pic_1{position:absolute; left:0px;display:inline;}
 #pic_0{display:none;}
 .pic_box{height:70px;width:56px; margin:7px 7px 0px 7px; float:left;}
 	.pic_pg{width:56px; height:56px; background:url(/images/yard/pic_pg.jpg) no-repeat; float:left; display:inline;}

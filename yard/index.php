@@ -118,8 +118,10 @@
 							<textarea name="pho_r" id="pho_r">llllllll</textarea>
 						</form>
 					</div>
-					<div id="cc_ps" style="height:600px;">
-						<a href=""><img style="float:left;" id="ccps_l" src="/images/yard/c_p.jpg" /></a>
+					<div id="cc_ps" >
+					<div style="height:280px; width:1px; background:#FFFFFF;float:left;"></div>
+					<div id="box" style="width:550px; float:left;">
+						<div id="ccps_l" style="float:left;"><a href=""><img src="/images/yard/c_p.jpg" border=0/></a></div>
 						<div id="ccps_c">
 							<div id="ccpsc_l">
 								<div id="ccpsc_img"></div>
@@ -147,6 +149,7 @@
 							<div class="c_ch_w">随便看看</div>
 							<div id="m_w" style="width:30px;"></div>
 						</div>
+					<div id="test">
 					   <?php	
 					   $sql = $db->query("select * FROM eachbb_member.lastest_news where u_id='{$user->id}'order by created_at desc");
 					   $num = $db->record_count;
@@ -167,7 +170,7 @@
 								<div class="title_pc"><a href="#"><?php echo $sql[$i]->u_name;?></a><?php echo $sql[$i]->form;?></div>
 								<div class="content_pc" style="<?php if($sql[$i]->content == ''){echo "display:none;";}?>"><?php echo $sql[$i]->content;?><a href="#">查看全部>></a></div>
 								<div class="photo_box" style="<?php if($sql[$i]->photo == ''){echo "display:none;";}?>"><a href="#"><img src="<?php ?>" border=0/></a><a href="#" ><img src="<?php ?>" border=0/></a><a href="#"><img src="<?php ?>" border=0/></a></div>
-								<div class="time_pc"><?php echo $sql[$i]->created_at;?></div>
+								<div class="time_pc"><?php echo mb_substr($sql[$i]->created_at,0,10);?></div>
 							</div>
 						</div>
 						<?php }?>
@@ -176,6 +179,8 @@
 						<div class="pc_hr"></div>
 						 -->
 					</div>
+					</div>
+				</div>
 				<div id="r_pho">
 					<?php include_once(dirname(__FILE__).'/../inc/_yard_right.php'); ?>
 				</div>

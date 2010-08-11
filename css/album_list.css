@@ -19,7 +19,7 @@ body div{float:left; display:inline;}
 				.al_name{width:120px;height:14px; line-height:14px; font-size:14px; font-weight:bold; margin-bottom:5px; overflow:hidden;}
 				.al_name a{color:#416298;}
 				.al_face{margin:0 10px;}
-				.al_face img{width:100px; height:100px;}
+				.al_face img{width:100px; height:95px;}
 				.al_time{width:125px; height:14px; line-height:14px; margin-top:5px;}
 				.al_words{width:112px; height:42px; font-size:14px; margin-top:5px; margin-left:5px;line-height:14px; Word-wrap:break-word; overflow:hidden;}
 				.al_num{width:120px; height:12px; margin-top:5px;}
