@@ -31,7 +31,7 @@
 		<tr>
 			<td width="93" align="center">第<?php echo $number+1;?>/<?php echo $nb;?>张</td>
 			<td width="92" align="center" style="border-left:1px dashed #000000;"><a href="/yard/album_list.php">返回该专辑</a></td>
-			<td width="472" align="right"><?php if($album[0]->u_id === $idd){ echo "<a href='/yard/upload_photo.php'>上传图片！</a>";}?></td>
+			<td width="472" align="right"></td>
 			<td width="51" align="right"><a id="prev" href="#">上一张</a></td>
 			<td width="62" align="center"><a id="next"  href="#">下一张</a></td>
 		</tr>

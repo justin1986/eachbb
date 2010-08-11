@@ -53,7 +53,7 @@
 				<div id="cc_pg">
 					<div class=r_title id="r_log"><a><?php if($member->true_name) echo $member->true_name.'的相册'; else echo '暂无信息';?></a></div>
 					<div id="r_log_hr">
-						<div>相册</div>
+						<div><?php if($photo[0]->u_id === $idd){ echo "<a href='/yard/upload_photo.php'>上传图片！</a>";}else{echo "相 册 ！";}?></div>
 					</div>
 					<div id="pic_log" style="text-align: center;"></div>
 				</div>
