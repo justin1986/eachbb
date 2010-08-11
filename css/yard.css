@@ -66,7 +66,7 @@ body a{text-decoration:none; color:#497617;}
 		.title_pc a{color: #41619c; font-size:14px;}
 	.content_pc{width:460px; word-wrap: break-word; float:left; display: inline;}
 		.content_pc a{color: #609B38; font-size:12px;}
-	.photo_box{float:left;background:red;}
+	.photo_box{float:left;}
 	.photo_box img{width:150px; height:150px; margin-right:5px;}
 		.content_pc font{color: #A9BDDA; font-size:12px;margin-left:13px;}
 	.time_pc{width:460px; line-height:18px; color: #A9BDDA;  font-size:12px; float: left; display: inline;}

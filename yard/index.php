@@ -169,8 +169,8 @@
 							<div class="pc_word">
 								<div class="title_pc"><a href="#"><?php echo $sql[$i]->u_name;?></a><?php echo $sql[$i]->form;?></div>
 								<div class="content_pc" style="<?php if($sql[$i]->content == ''){echo "display:none;";}?>"><?php echo $sql[$i]->content;?><a href="#">查看全部>></a></div>
-								<div class="photo_box" style="<?php if($sql[$i]->photo == ''){echo "display:none;";}?>"><a href="#"><img src="<?php ?>" border=0/></a><a href="#" ><img src="<?php ?>" border=0/></a><a href="#"><img src="<?php ?>" border=0/></a></div>
-								<div class="time_pc"><?php echo mb_substr($sql[$i]->created_at,0,10);?></div>
+								<div class="photo_box" style="<?php if($sql[$i]->photo == ''){echo "display:none;";}?>"><a href="#"><img src="<?php echo $sql[$i]->photo;?>" border=0/></a></div>
+								<div class="time_pc"><?php echo mb_substr($sql[$i]->created_at,0,16);?></div>
 							</div>
 						</div>
 						<?php }?>
