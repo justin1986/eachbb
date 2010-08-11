@@ -100,15 +100,8 @@
 			<div id="al_p2">
 				<div id="al_test"></div>
 			<?php if($num == 0){ ?>
-				<div class="album">
-				<div class="al_box">
-					<div class="al_name"><a href="/">网趣宝贝</a></div>
-						<div class="al_face">
-							<img src="/images/yard/noface.jpg" border=0 />
-						</div>
-				<div class="al_words">真遗憾！这里没有任何照片可供查阅。</div>
-				<div class="al_num"><font style="color:#ff0000;">0</font>张</div>
-				</div>
+				<div id="no_album">
+				真遗憾，这里没有相册可供欣赏！
 				</div>
 			<?php }?>
 			<?php for($i=0;$i<$num;$i++){?>
@@ -133,8 +126,11 @@
 						$db->query("select id from `eachbb_member`.photo where album_id = '$master_id'");
 						$n = $db->record_count;
 				?>
-						<div class="al_num"><font style="color:#ff0000;"><?php echo $n;?></font>张</div>
+						<div class="al_num"><font style="color:#ff0000;"><?php echo $n;?></font>张
+							<div class="del" style="<?php if($user->id != $id){echo 'display:none;';}?>"><img src="/images/yard/delete.jpg" /></div>
+						</div>
 					</div>
+					<input id="<?php echo $i?>"style="display:none;" value="<?php echo $master[$i]->id?>">
 				</div>
 			<?php }?>
 			</div>
@@ -144,6 +140,5 @@
 		</div>
 	</div>
 	<?php include_once(dirname(__FILE__).'./../inc/bottom.php');?>
-	</div>
 	</body>
 	</html>

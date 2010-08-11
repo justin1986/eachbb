@@ -1,0 +1,1 @@
+ALTER TABLE `eachbb_member`.`lastest_news` MODIFY COLUMN `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT;

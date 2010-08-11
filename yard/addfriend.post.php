@@ -2,8 +2,9 @@
 include_once('../frame.php');
 		$db = get_db();
 		$user = User::current_user();
-		if($user != ''){
-			$friend_id=$_POST['add_friend'];
+		$friend_id=$_POST['friend_id'];
+		$friend_name=$_POST['friend_name'];
+					if($user != ''){
 			if($user->id != $friend_id){
 			$db->query("select id from `eachbb_member`.friend where u_id = {$user->id} and f_id ={$friend_id}");
 				if($db->record_count > 0){
@@ -11,6 +12,8 @@ include_once('../frame.php');
 					redirect("/yard/home.php?id=$friend_id");
 				}elseif($user->add_friend($friend_id)){
 					alert("添加成功！");
+					$sql="insert into `eachbb_member`.lastest_news (resource_id,resource_type,u_id,created_at,u_name,u_avatar,form)values(98,'addfriend','{$user->id}',now(),'{$user->name}','{$user->avatar}','与<a href=/yard/home.php?id={$friend_id}>{$friend_name}</a>成为好友')";
+					$db->execute($sql);
 					redirect("/yard/home.php?id=$friend_id");
 				}else{
 					alert("添加失败！");
@@ -24,3 +27,4 @@ include_once('../frame.php');
 			alert("请先登录！");
 			redirect("/login/");
 		}
+	?>

@@ -42,4 +42,15 @@ $(function(){
 				$('#ii_body').css("display","inline");
 				});
 			});
+		$(function(){
+			$('.del').click(function(){
+				confirm("是否要删除该相册？");
+				var selected = $('.del').index($(this));
+				var id = $('#'+selected).val();
+				$.post('album_list.del.php',{'id':id},function(data){
+					alert(data);
+					window.location.href="/yard/album_list.php";
+				});
+			});
+		});
 });

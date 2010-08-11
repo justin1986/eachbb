@@ -80,7 +80,8 @@
 						</div>
 					</div>
 					<form id="add_friend" action="addfriend.post.php" method="post">
-						<input id="friend_id" name="add_friend" style="display:none;" value="<?php echo $id;?>">
+						<input id="friend_id" name="friend_id" style="display:none;" value="<?php echo $id;?>">
+						<input id="friend_name" name="friend_name" style="display:none;" value="<?php echo $info[0]->name;?>">
 					</form>
 					<div id= "p1_other">
 						<div class = "other">
@@ -222,13 +223,13 @@
 							</div>
 						</div>
 						<span class="news_txt">
-							<span class="u_id"><a href="#"><?php echo $info[0]->name;?></a></span>
+							<span class="u_id"><a href="#"><?php echo $sql[$i]->u_name;?></a></span>
 							<span class="news_type">
 								<?php echo $sql[$i]->form ;?>
 							</span>
 							<span><a href=""><?php echo $sql[$i]->content;?></a></span>
 						</span>
-						<span class="news_time"><?php echo mb_substr('2002-10-10 10:30:00',0,16);?></span>
+						<span class="news_time"><?php echo mb_substr($sql[$i]->created_at,0,16);?></span>
 						<div class="line3"></div>
 					</div>
 					<?php }?>
@@ -317,9 +318,9 @@
 					</div>
 				</div>
 			<div id="cc_bottom">
-				<div id="copyright"></div>
 			</div>
 		</div>
 	</div>
 	</div>
+	<?php include_once(dirname(__FILE__).'./../inc/bottom.php');?>
 </body>
