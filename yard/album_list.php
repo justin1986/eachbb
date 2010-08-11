@@ -94,7 +94,7 @@
 						</div>
 					</div>
 			</div>
-	  <?php $master=$db->query("select id,name,front_cover,description,created_at from `eachbb_member`.album where u_id = '$id'");
+	  <?php $master=$db->query("select id,name,front_cover,description,created_at from `eachbb_member`.album where u_id = '$id' order by created_at desc");
 			$num = $db->record_count;
 		?>
 			<div id="al_p2">
