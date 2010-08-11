@@ -16,9 +16,9 @@
 	if(!$photo){
 		$album=$db->query("select id,u_id,name,created_at from eachbb_member.album where id=$id;");
 		if($album[0]->u_id === $idd)
-			echo "<a href='/yard/album_list.php' style='font-size:16px; font-weight:bold;'>您的相册暂时无图片！点击返回相册列表！</a>";
+			echo "<div style = 'height:400px; width:770px; line-height:400px; text-align:center;'><a href='/yard/album_list.php' style='font-size:22px; font-weight:bold;'>您的相册暂时无图片！点击返回相册列表！</a></div>";
 		else 
-			echo "<a href='/yard/album_list.php' style='font-size:16px; font-weight:bold;'>您好友的相册暂时无图片！点击返回相册列表！</a>";
+			echo "<div style = 'height:400px; width:770px; line-height:400px; text-align:center;'><a href='/yard/album_list.php' style='font-size:22px; font-weight:bold;'>您好友的相册暂时无图片！点击返回相册列表！</a></div>";
 	}else{
 	$nb=$db->record_count;
 	$album=$db->query("select id,u_id,name,created_at from eachbb_member.album where id=$id;");
