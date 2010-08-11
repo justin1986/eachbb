@@ -48,7 +48,7 @@ $(function(){
 		var resultt = $("#comment_"+select).attr("value");
 		$.post("_diary_show_delete_ajax.post.php",{"resoured":resultt},function(data){
 			alert(data);
-			$.post("_photo_show_ajax_post.php",{"id":resource_id,'number':number},function(data){
+			$.post("_photo_show_ajax_post.php",{"id":result,'number':number},function(data){
 				$("#pic_log").html(data);
 			});
 		});
@@ -65,7 +65,7 @@ $(function(){
 			$('#subb').attr('disabled',true);
 			$.post("_photo_show_add_comment_post.php",{"resource_id":resource_id,"show_result":show_result},function(data){
 				alert(data);
-				$.post("_photo_show_ajax_post.php",{"id":resource_id,'number':number},function(data){
+				$.post("_photo_show_ajax_post.php",{"id":result,'number':number},function(data){
 					$("#pic_log").html(data);
 				});
 				$('#subb').attr('disabled',false);

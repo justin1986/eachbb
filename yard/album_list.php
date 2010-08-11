@@ -115,7 +115,7 @@
 					<div class="al_box">
 						<div class="al_name"><a href="#"><?php echo $master[$i]->name;?></a></div>
 						<div class="al_face">
-							<a href="#"><img src="
+							<a href="/yard/photo_show.php?id=<?php echo $master[$i]->id;?>"><img src="
 							<?php 
 								if($master[$i]->front_cover != null){
 									echo $master[$i]->front_cover;
