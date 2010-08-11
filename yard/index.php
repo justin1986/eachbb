@@ -119,8 +119,8 @@
 						</form>
 					</div>
 					<div id="cc_ps" >
-					<div style="height:280px; width:1px; background:#FFFFFF;float:left;"></div>
-					<div id="box" style="width:550px; float:left;">
+					<div id="box_test"></div>
+					<div id="box_right">
 						<div id="ccps_l" style="float:left;"><a href=""><img src="/images/yard/c_p.jpg" border=0/></a></div>
 						<div id="ccps_c">
 							<div id="ccpsc_l">
@@ -151,7 +151,7 @@
 						</div>
 					<div id="test">
 					   <?php	
-					   $sql = $db->query("select * FROM eachbb_member.lastest_news where u_id='{$user->id}'order by created_at desc");
+					   $sql = $db->query("select * FROM eachbb_member.lastest_news where u_id='{$user->id}'order by created_at desc limit 9");
 					   $num = $db->record_count;
 					   for($i=0;$i<$num;$i++){?>
 						<div class="pc_z">
