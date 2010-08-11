@@ -12,13 +12,13 @@
 		$db = get_db();
 		$id =$_GET['id'];
 		$id =intval($id);
-		if($info = $db->query("select * from eachbb_member.member where id=$id")){
-		}elseif($user){
-				$id=$user->id;
-			}else{
-			alert('请您先登录！');
-			redirect("/login/");
-		}
+//		if($info = $db->query("select * from eachbb_member.member where id=$id")){
+//		}elseif($user){
+//				$id=$user->id;
+//			}else{
+//			alert('请您先登录！');
+//			redirect("/login/");
+//		}
 	?>
 </head>
 <body>
@@ -109,6 +109,7 @@
 				<div class="al_words">真遗憾！这里没有任何照片可供查阅。</div>
 				<div class="al_num"><font style="color:#ff0000;">0</font>张</div>
 				</div>
+				</div>
 			<?php }?>
 			<?php for($i=0;$i<$num;$i++){?>
 				<div class="album">
@@ -138,7 +139,7 @@
 			<?php }?>
 			</div>
 			<div id="cc_bottom">
-				<div id="copyright">版权</div>
+				<div id="copyright"></div>
 			</div>
 		</div>
 	</div>
