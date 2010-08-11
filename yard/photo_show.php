@@ -55,7 +55,7 @@
 					<div id="r_log_hr">
 						<div>相册</div>
 					</div>
-					<div id="pic_log"></div>
+					<div id="pic_log" style="text-align: center;"></div>
 				</div>
 			</div>
 			<div id="cc_b">

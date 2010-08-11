@@ -14,8 +14,9 @@
 	if(!is_numeric($number)) die('invlid request!');
 	$photo=$db->query("SELECT id,u_id,u_name,photo,width,height,created_at,description FROM eachbb_member.photo p where album_id=$id;");
 	if(!$photo){
-		die("您的相册暂时无图片！");
-	}
+		echo "<a href='/yard/album_list.php' style='font-size:16px; font-weight:bold;'>您的相册暂时无图片！点击返回相册列表！</a>"; 
+		
+	}else{
 	$nb=$db->record_count;
 	$album=$db->query("select id,name,created_at from eachbb_member.album where id=$id;");
 	$result=$photo[$number]->id;
@@ -85,4 +86,4 @@
 		<input type="button" id="subb" style="margin-left:30px;" value="发布评论"/>
 		<input type="reset" id="no_subb" value="取消发布" />
 	</div>
-
+<?php }?>
