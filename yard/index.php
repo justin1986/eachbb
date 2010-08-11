@@ -118,8 +118,10 @@
 							<textarea name="pho_r" id="pho_r">llllllll</textarea>
 						</form>
 					</div>
-					<div id="cc_ps" style="height:600px;">
-						<a href=""><img style="float:left;" id="ccps_l" src="/images/yard/c_p.jpg" /></a>
+					<div id="cc_ps" >
+					<div style="height:280px; width:1px; background:#FFFFFF;float:left;"></div>
+					<div id="box" style="width:550px; float:left;">
+						<div id="ccps_l" style="float:left;"><a href=""><img src="/images/yard/c_p.jpg" border=0/></a></div>
 						<div id="ccps_c">
 							<div id="ccpsc_l">
 								<div id="ccpsc_img"></div>
@@ -176,6 +178,7 @@
 						<!-- 
 						<div class="pc_hr"></div>
 						 -->
+					</div>
 					</div>
 				</div>
 				<div id="r_pho">
