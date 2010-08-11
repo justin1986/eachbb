@@ -48,7 +48,7 @@
 			if(move_uploaded_file($yuan_pic,$save)){
 				if($db->execute($sql)){
 					alert("添加成功！");
-					redirect('/yard/upload_photo.php');
+					redirect('/yard/album_list.php');
 				}else{
 					alert("添加失败！");
 				}
