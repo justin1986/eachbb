@@ -187,6 +187,7 @@
 			</div>
 			<div id="cc_b"></div>
 		</div>
+		<?php include_once(dirname(__FILE__).'./../inc/bottom.php');?>
 	</div>
 </div>
 </body>

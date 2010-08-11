@@ -143,6 +143,7 @@
 			</div>
 		</div>
 	</div>
+	<?php include_once(dirname(__FILE__).'./../inc/bottom.php');?>
 	</div>
 	</body>
 	</html>
