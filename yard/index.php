@@ -10,8 +10,6 @@
 		js_include_tag('yard/yard','yard_right');
 		$db=get_db();
 		$user = User::current_user();
-		$select =$_POST['select'];
-		
 	?>
 </head>
 <body>
@@ -149,7 +147,6 @@
 							<div class="c_ch_w">随便看看</div>
 							<div id="m_w" style="width:30px;"></div>
 						</div>
-					<div id="test">
 					   <?php	
 					   $sql = $db->query("select * FROM eachbb_member.lastest_news where u_id='{$user->id}'order by created_at desc");
 					   $num = $db->record_count;
@@ -179,7 +176,6 @@
 						<div class="pc_hr"></div>
 						 -->
 					</div>
-				</div>
 				<div id="r_pho">
 					<?php include_once(dirname(__FILE__).'/../inc/_yard_right.php'); ?>
 				</div>
