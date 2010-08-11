@@ -45,7 +45,7 @@
 <input type="hidden" value="<?php echo $number?>" id="number"/>
 <input type="hidden" value="<?php echo $nb?>" id="nb"/>
 <div id="img_bottom"><span>图片名称：<?php echo $photo[$number]->u_name;?>&nbsp;相册名称:</span><a href="#">
-	<?php echo $album[0]->name;?></a>(<?php echo $nb;?>)
+	<?php echo $album[0]->name;?></a>&nbsp;共(<?php echo $nb;?>)张
 <font><?php echo $photo[$number]->created_at;?></font>
 </div>
 <?php 
