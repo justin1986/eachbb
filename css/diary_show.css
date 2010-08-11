@@ -1,7 +1,7 @@
 @CHARSET "UTF-8";
 #diary_title_banner{margin-left:10px; margin-top:20px;}
-#subb{width:75px; height:23px; line-height:23px; text-align:center; border:0px solid red; font-size:12px; color:#ffffff; font-weight:normal; background:url(/images/yetrb/btn1.jpg) no-repeat;}
-#no_subb{width:75px; height:23px; margin-left:10px; line-height:23px; border:0px solid red; text-align:center; font-size:12px; color:#000000; font-weight:normal; background:url(/images/yetrb/btn2.jpg) no-repeat;}
+#subb{width:75px; height:23px; line-height:23px; text-align:center; border:0px solid red; font-size:12px; color:#ffffff; font-weight:normal; background:url(/images/yetrb/btn1.jpg) no-repeat; float:left; display: inline;}
+#no_subb{width:75px; height:23px; margin-left:10px; line-height:23px; border:0px solid red; text-align:center; font-size:12px; color:#000000; font-weight:normal; background:url(/images/yetrb/btn2.jpg) no-repeat; float:left; display: inline;}
 #show_title{width:768px; margin-left:10px;   margin-top:10px; padding-top:10px; border-top:1px solid #DDDDDD; float:left; display:inline;}
 
 .show_banner{width:768px; background:#F0F5F8; margin-top:10px; padding-bottom:20px; float:left; display: inline;}

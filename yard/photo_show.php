@@ -17,7 +17,7 @@
 		$id=trim($_GET['id']);
 		if(!is_numeric($id)) die('invlid request!');
 		$db = get_db();
-		$photo=$db->query("SELECT id,u_id,u_name,photo,width,height,created_at,description FROM eachbb_member.photo p where album_id=$id;");
+		$photo=$db->query("SELECT id,u_id,u_name,photo,width,height,created_at,description FROM eachbb_member.photo p where album_id=$id order by created_at desc;");
 		$number=$db->record_count;
 	?>
 </head>

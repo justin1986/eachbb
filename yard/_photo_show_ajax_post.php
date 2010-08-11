@@ -12,13 +12,16 @@
 	$number=$_POST['number'];
 	if(!is_numeric($id)) die('invlid request!');
 	if(!is_numeric($number)) die('invlid request!');
-	$photo=$db->query("SELECT id,u_id,u_name,photo,width,height,created_at,description FROM eachbb_member.photo p where album_id=$id;");
+	$photo=$db->query("SELECT id,u_id,u_name,photo,width,height,created_at,description FROM eachbb_member.photo p where album_id=$id  order by created_at desc;");
 	if(!$photo){
-		echo "<a href='/yard/album_list.php' style='font-size:16px; font-weight:bold;'>您的相册暂时无图片！点击返回相册列表！</a>"; 
-		
+		$album=$db->query("select id,u_id,name,created_at from eachbb_member.album where id=$id;");
+		if($album[0]->u_id === $idd)
+			echo "<a href='/yard/album_list.php' style='font-size:16px; font-weight:bold;'>您的相册暂时无图片！点击返回相册列表！</a>";
+		else 
+			echo "<a href='/yard/album_list.php' style='font-size:16px; font-weight:bold;'>您好友的相册暂时无图片！点击返回相册列表！</a>";
 	}else{
 	$nb=$db->record_count;
-	$album=$db->query("select id,name,created_at from eachbb_member.album where id=$id;");
+	$album=$db->query("select id,u_id,name,created_at from eachbb_member.album where id=$id;");
 	$result=$photo[$number]->id;
 	$photo_id=$photo[0]->u_id;
 ?>
@@ -28,18 +31,20 @@
 		<tr>
 			<td width="93" align="center">第<?php echo $number+1;?>/<?php echo $nb;?>张</td>
 			<td width="92" align="center" style="border-left:1px dashed #000000;"><a href="/yard/album_list.php">返回该专辑</a></td>
-			<td width="442" align="center">&nbsp;</td>
-			<td width="81" align="right"><a id="prev" href="#">上一张</a></td>
+			<td width="472" align="right"><?php if($album[0]->u_id === $idd){ echo "<a href='/yard/upload_photo.php'>上传图片！</a>";}?></td>
+			<td width="51" align="right"><a id="prev" href="#">上一张</a></td>
 			<td width="62" align="center"><a id="next"  href="#">下一张</a></td>
 		</tr>
 	</table>
 </div>
 <div id="img_show">
+	<?php if($photo[$number]->photo){?>
 	<img src="<?php echo $photo[$number]->photo;?>"/>
+	<?php }else{ echo "<a href='/yard/album_list.php' style='font-size:16px; font-weight:bold;'>图为空片！点击返回相册列表！</a>";}?>
 </div>
 <input type="hidden" value="<?php echo $number?>" id="number"/>
 <input type="hidden" value="<?php echo $nb?>" id="nb"/>
-<div id="img_bottom"><span><?php echo $photo[$number]->u_name;?></span>&nbsp;相册:<a href="#">
+<div id="img_bottom"><span>图片名称：<?php echo $photo[$number]->u_name;?>&nbsp;相册名称:</span><a href="#">
 	<?php echo $album[0]->name;?></a>(<?php echo $nb;?>)
 <font><?php echo $photo[$number]->created_at;?></font>
 </div>
@@ -55,7 +60,8 @@
 		?>
 		<div class="show_banner" id="<?php echo $comment->id;?>">
 		<div class="show_img_banner">
-			<a href="/yard/home.php?id=<?php echo $info[0]->id;?>"><img src="<?php echo $info[0]->avatar;?>"/></a>
+			<a href="/yard/home.php?id=<?php echo $info[0]->id;?>">
+			<img src="<?php echo $info[0]->avatar;?>"/></a>
 		</div>
 		<div class="show_result_banner">
 			<div class="show_result_top">
@@ -64,8 +70,8 @@
 				<?php if(!$ry_id){?>
 					<a href="#">
 					<input type="hidden" class="comment_id" id="comment_<?php echo $i;?>" value="<?php echo $comment->id;?>" />
-					<?php echo $photo_id."sdf".$idd;?>
-					<?php if($idd == $photo_id){?>
+					<?php echo $comment->user_id."sdf".$idd;?>
+					<?php if($idd == $comment->user_id){?>
 					<img src="/images/yetrb/x.jpg"/>
 					<?php }?>
 					</a>
