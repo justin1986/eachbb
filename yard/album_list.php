@@ -12,13 +12,13 @@
 		$db = get_db();
 		$id =$_GET['id'];
 		$id =intval($id);
-//		if($info = $db->query("select * from eachbb_member.member where id=$id")){
-//		}elseif($user){
-//				$id=$user->id;
-//			}else{
-//			alert('请您先登录！');
-//			redirect("/login/");
-//		}
+		if($info = $db->query("select * from eachbb_member.member where id=$id")){
+		}elseif($user){
+				$id=$user->id;
+			}else{
+			alert('请您先登录！');
+			redirect("/login/");
+		}
 	?>
 </head>
 <body>
