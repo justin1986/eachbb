@@ -1,6 +1,7 @@
 $(function(){
 	$('.c_ch_w').click(function(){
 		var selected=$('.c_ch_w').index($(this));
+		alert(selected);
 		$('.c_ch_w').attr('style','background:none;');
 		$(this).attr('style','border:0px solid red; background:url(/images/yard/m_pg.jpg) no-repeat;');
 		if(selected === 0)
