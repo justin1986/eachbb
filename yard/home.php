@@ -226,7 +226,7 @@
 							<span class="news_type">
 								<?php echo $sql[$i]->form ;?>
 							</span>
-							<span><?php echo $sql[$i]->content;?></span>
+							<span><a href=""><?php echo $sql[$i]->content;?></a></span>
 						</span>
 						<span class="news_time"><?php echo mb_substr('2002-10-10 10:30:00',0,16);?></span>
 						<div class="line3"></div>
