@@ -1,0 +1,6 @@
+ALTER TABLE `eachbb_member`.`member_status` MODIFY COLUMN `created_at` DATETIME COMMENT '创建时间',
+ MODIFY COLUMN `last_login` DATETIME COMMENT '最后登录时间',
+ MODIFY COLUMN `score` INTEGER DEFAULT 0 COMMENT '金币，分数',
+ MODIFY COLUMN `level` INTEGER DEFAULT 0 COMMENT '等级',
+ MODIFY COLUMN `friend_count` INTEGER DEFAULT 0 COMMENT '朋友个数',
+ MODIFY COLUMN `unread_msg_count` INTEGER DEFAULT 0 COMMENT '未读消息数';

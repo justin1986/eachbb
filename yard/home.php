@@ -1,5 +1,13 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html>
+<script  language="Javascript">
+$(function(){
+	if (event.keyCode==116){
+		event.keyCode=0;
+		event.returnValue=false;
+		}
+});
+</script>
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<title>小院子</title>
@@ -17,6 +25,7 @@
 			alert('非法操作！');
 			redirect("/");
 		}
+		$db->execute("insert into eachbb_member.member_status (uid,created_at,last_login,score,level,friend_count,unread_msg_count,visit_count) values ($id,now(),now(),0,0,0,0,1) ON DUPLICATE KEY update visit_count = visit_count +1;");
 		$daily_count=$db->query("select id from eachbb_member.daily where u_id=$id");
 		$album_count=$db->query("select id from eachbb_member.album where u_id=$id");
 		if($info[0]->gender != 1){

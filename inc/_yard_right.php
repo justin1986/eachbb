@@ -20,7 +20,7 @@
 <div id="r_geng"> 
 	<div id="r_ge_a">
 		<div id="r_gi_a"></div>
-		<div id="r_gw_a"><a href="#">更换头像</a></div>
+		<div id="r_gw_a"><a href="/yard/info.php">更换头像</a></div>
 	</div>
 	<div id="r_ge_b">
 		<div id="r_gi_b"></div>
@@ -91,18 +91,18 @@
 <div id="pic_r">
 	<div id="pic_0">
 		<?php
-		$visit = $db->query("select id,f_avatar,f_name from eachbb_member.visit_history where u_id='{$user->id}' order by create_at desc limit 9;");
+		$visit = $db->query("select id,f_avatar,f_id,f_name from eachbb_member.visit_history where u_id='{$user->id}' order by create_at desc limit 9;");
 		$m_visit = $db->record_count;
-		$friend = $db->query("select id,f_name,f_avatar from eachbb_member.friend where u_id='{$user->id}' order by created_at desc limit 9;");
+		$friend = $db->query("select id,f_name,f_id,f_avatar from eachbb_member.friend where u_id='{$user->id}' order by created_at desc limit 9;");
 		$m_friend = $db->record_count;
 		for($i=0;$i<$m_friend;$i++){?>
 		<div class="pic_box">
 			<div class="pic_pg" id="pic_pg_0">
-				<a href="#">
+				<a href="/yard/home.php?id=<?php echo $friend[$i]->f_id;?>">
 				<IMG  class="pic_img" src="<?php if ($friend[$i]->f_avatar != null){echo $visit[$i]->f_avatar;}else{echo '/images/yard/friend_null.jpg';}?>"/>
 				</a>
 			</div>
-			<div class="name_pic"><a title="<?php echo $friend[$i]->f_name;?>" href="#"><?php echo $friend[$i]->f_name;?></a></div>
+			<div class="name_pic"><a title="<?php echo $friend[$i]->f_name;?>" href="<?php echo $friend[$i]->f_id;?>"><?php echo $friend[$i]->f_name;?></a></div>
 		</div>
 		<?php }?>
 	</div>
@@ -110,11 +110,11 @@
 		<?php for($i=0;$i<$m_visit;$i++){?>
 		<div class="pic_box">
 			<div class="pic_pg">
-				<a href="#">
+				<a href="/yard/home.php?id=<?php echo $visit[$i]->f_id;?>">
 				<IMG  class="pic_img" src="<?php if ($visit[$i]->f_avatar != null){echo $visit[$i]->f_avatar;}else{echo '/images/yard/friend_null.jpg';}?>"/>
 				</a>
 			</div>
-			<div class="name_pic"><a title="<?php echo $visit[$i]->f_name;?>" href="#"><?php echo $visit[$i]->f_name;?></a></div>
+			<div class="name_pic"><a title="<?php echo $visit[$i]->f_name;?>" href="/yard/home.php?id=<?php echo $visit[$i]->f_id;?>"><?php echo $visit[$i]->f_name;?></a></div>
 		</div>
 		<?php } ?>
 	</div>

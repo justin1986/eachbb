@@ -113,25 +113,15 @@
 				<div id="cc_pg">
 					<div id="cc_pic"></div>
 					<div id="cc_photo">
-						<div id="pho_l">
-							<img src="
-						 <?php 
-							if($user->avatar == null){
-								echo "/images/yard/noface.jpg";
-							}else{
-								echo $user[0]->avatar;
-							}
-						 ?>
-							" border=0/>
-						</div>
+						<div id="pho_l"></div>
 						<form id="xxx" action="daily.post.php" method="post">
-							<textarea name="pho_r" id="pho_r">llllllll</textarea>
+							<textarea name="pho_r" id="pho_r"></textarea>
 						</form>
 					</div>
 					<div id="cc_ps" >
 					<div id="box_test"></div>
 					<div id="box_right">
-						<div id="ccps_l" style="float:left;"><a href="http://localhost:82/yard/info.php"><img src="/images/yard/c_p.jpg" border=0/></a></div>
+						<div id="ccps_l" style="float:left;"><a href=""><img src="/images/yard/c_p.jpg" border=0/></a></div>
 						<div id="ccps_c">
 							<div id="ccpsc_l">
 								<div id="ccpsc_img"></div>
@@ -178,7 +168,7 @@
 							</div>
 							<div class="pc_word">
 								<div class="title_pc"><a href="home.php?id=<?php echo $user->id;?>"><?php echo $sql[$i]->u_name;?></a><?php echo $sql[$i]->form ;?></div>
-								<div class="content_pc" style="<?php if($sql[$i]->content == ''){echo "display:none;";}?>"><?php echo $sql[$i]->content;?></div>
+								<div class="content_pc" style="<?php if($sql[$i]->content == ''){echo "display:none;";}?>"><?php echo $sql[$i]->content;?><a href="#">查看全部>></a></div>
 								<div class="photo_box" style="<?php if($sql[$i]->photo == ''){echo "display:none;";}?>"><a href="#"><img src="<?php echo $sql[$i]->photo;?>" border=0/></a></div>
 								<div class="time_pc"><?php echo mb_substr($sql[$i]->created_at,0,16);?></div>
 							</div>
