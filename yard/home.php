@@ -17,6 +17,7 @@
 			alert('非法操作！');
 			redirect("/");
 		}
+		$db->execute("insert into eachbb_member.member_status (uid,created_at,last_login,score,level,friend_count,unread_msg_count,visit_count) values ($id,now(),now(),0,0,0,0,1) ON DUPLICATE KEY update visit_count = visit_count +1;");
 		$daily_count=$db->query("select id from eachbb_member.daily where u_id=$id");
 		$album_count=$db->query("select id from eachbb_member.album where u_id=$id");
 		if($info[0]->gender != 1){
