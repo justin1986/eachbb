@@ -24,14 +24,14 @@
 	$album=$db->query("select id,u_id,name,created_at from eachbb_member.album where id=$id;");
 	$result=$photo[$number]->id;
 	$photo_id=$photo[0]->u_id;
-?>
+	?>
 <div id="title_container">
 	<input type="hidden" id="resos_id" value="<?php echo $photo[$number]->id;?>"/>
 	<table width="770" height="12" border="0" cellpadding="0" cellspacing="0">
 		<tr>
 			<td width="93" align="center">第<?php echo $number+1;?>/<?php echo $nb;?>张</td>
 			<td width="92" align="center" style="border-left:1px dashed #000000;"><a href="/yard/album_list.php">返回相册列表</a></td>
-			<td width="472" align="right"></td>
+			<td width="472" align="right"><?php if($photo[$number]->u_id === $user->id){?><a href="#" id="e_delete">删除该图片</a><?php }?></td>
 			<td width="51" align="right"><a id="prev" href="#">上一张</a></td>
 			<td width="62" align="center"><a id="next"  href="#">下一张</a></td>
 		</tr>
@@ -51,7 +51,7 @@
 <?php 
 	$ry_id=trim($_POST["ry_id"]);
 	$db=get_db();
-	$sql="SELECT id,user_id,created_at,comment,resource_id FROM eachbb_member.comment c where resource_type='photo' and resource_id=$result";
+	$sql="SELECT id,user_id,created_at,comment,resource_id FROM eachbb_member.comment c where resource_type='photo' and resource_id=$result order by created_at desc limit 8";
 	$list=$db->query($sql);
 	if($list){
 		$i=0;

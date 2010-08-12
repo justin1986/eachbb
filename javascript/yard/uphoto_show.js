@@ -9,6 +9,19 @@ $(function(){
 			$("#pic_log").html(data);
 		});
 	}
+	$('#e_delete').live('click',function(e){
+		e.preventDefault();
+		var resos_id=$('#resos_id').val();
+		if(confirm("请确定要删除吗？")){
+			$.post('_photo_show_delete_ajax_post.php',{'resos_id':resos_id},function(data){
+				alert(data);
+				$.post("_photo_show_ajax_post.php",{"id":result,'number':number},function(data){
+					$("#pic_log").html(data);
+				});
+			});
+		}
+	});
+	
 	$('#prev').live("click",function(e){
 		e.preventDefault();
 		var number = $('#number').val();
@@ -46,12 +59,14 @@ $(function(){
 		var select = $('.show_result_banner a img').index($(this));
 		var number = $('#number').val();
 		var resultt = $("#comment_"+select).attr("value");
-		$.post("_diary_show_delete_ajax.post.php",{"resoured":resultt},function(data){
-			alert(data);
-			$.post("_photo_show_ajax_post.php",{"id":result,'number':number},function(data){
-				$("#pic_log").html(data);
+		if(confirm("您确认要删除吗？")){
+			$.post("_diary_show_delete_ajax.post.php",{"resoured":resultt},function(data){
+				alert(data);
+				$.post("_photo_show_ajax_post.php",{"id":result,'number':number},function(data){
+					$("#pic_log").html(data);
+				});
 			});
-		});
+		}
 	});
 	$('#subb').live("click",function(){
 		var resource_id = $('#resos_id').val();

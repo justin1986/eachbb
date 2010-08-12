@@ -44,13 +44,25 @@
 			$save_e = "/upload/".$save_name;
 				$sql="insert into eachbb_member.photo (description,u_id,u_name,photo,album_id,created_at,width,height)values('$text_photo',$id,'$name_photo','$save_e',$upload_select_id,now(),$img[0],$img[1]);";
 			}
-			
 			if(move_uploaded_file($yuan_pic,$save)){
 				if($db->execute($sql)){
+					$alpum=$_POST['alpum'];
+					
 					alert("添加成功！");
-					redirect('/yard/album_list.php');
+				
+					if($alpum){
+						if(is_numeric($alpum))
+						{
+							redirect("/yard/photo_show.php?id={$alpum}");
+						}else{
+							echo "非法操作！";
+						}
+					}else{
+						redirect('/yard/album_list.php');
+					}
+					
 				}else{
-					alert("添加失败！");
+					echo "添加失败！";
 				}
 			}else{
 				debug_info('fail to upload file:' .$yuan_pic,'js');

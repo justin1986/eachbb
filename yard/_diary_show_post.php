@@ -11,7 +11,7 @@
 	}
 	if(!is_numeric($edit_id)) die('invlid request!');
 	$db=get_db();
-	$list=$db->query("SELECT id,user_id,created_at,comment,resource_id FROM eachbb_member.comment c where resource_type='daily' and resource_id=$edit_id");
+	$list=$db->query("SELECT id,user_id,created_at,comment,resource_id FROM eachbb_member.comment c where resource_type='daily' and resource_id=$edit_id order by created_at desc limit 8");
 	if($list){
 		$i=0;
 		foreach ($list as $comment){

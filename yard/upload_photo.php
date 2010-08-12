@@ -80,6 +80,7 @@
 											<option value="<?php echo $al->id;?>" <?php if($alb == $al->id){ echo 'selected="selected"';}else{}?>><?php echo $al->name;?></option>
 											<?php  }?>
 										</select>
+										<input type="hidden" id="alpum" name="alpum" value="<?php echo $alb;?>"/>
 									</td>
 									<td align="left" valign="middle"><a href="#" id="photo_book">添加相册</a></td>
 								</tr>
