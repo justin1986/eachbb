@@ -7,12 +7,12 @@ if(!$user){
 $db = get_db();
 $id = $_POST['id'];
 $array = $db->query("select id from eachbb_member.photo where album_id=$id");
-$count=$db->record_count;
+$count = $db->record_count;
 for ($i = 0 ; $i < $count ; $i++){
-	$result.=$array[$i]->id.",";
+	$result .= $array[$i]->id.",";
 }
 echo $result;
-$result=substr($result,0,-1);
+$result = substr($result,0,-1);
 $db->execute("delete from eachbb_member.comment where resource_id in ($result) and resource_type='photo'");
 $db->execute("delete from eachbb_member.photo where album_id=$id");
 if($db->execute("delete from eachbb_member.album where id=$id")){
