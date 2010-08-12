@@ -21,4 +21,3 @@ if($db->execute("delete from eachbb_member.album where id=$id")){
 	echo '删除失败！';
 }
 ?>
-
