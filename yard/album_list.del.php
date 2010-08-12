@@ -9,8 +9,9 @@ $id = $_POST['id'];
 $array = $db->query("select id from eachbb_member.photo where album_id=$id");
 $count=$db->record_count;
 for ($i = 0 ; $i < $count ; $i++){
-	$result =$result.$array[$i]->id.",";
+	$result.=$array[$i]->id.",";
 }
+echo $result;
 $result=substr($result,0,-1);
 $db->execute("delete from eachbb_member.comment where resource_id in ($result) and resource_type='photo'");
 $db->execute("delete from eachbb_member.photo where album_id=$id");
