@@ -20,13 +20,15 @@ $(function(){
 		e.preventDefault();
 		var select = $('.show_result_banner a img').index($(this));
 		var result = $("#comment_"+select).attr("value");
-		$.post("_diary_show_delete_ajax.post.php",{"resoured":result},function(data){
-			alert(data);
-			var result = $('#edit_id').val();
-			$.post("_diary_show_post.php",{"edit_id":result},function(data){
-				$("#show_title").html(data);
+		if(confirm("您确认要删除吗？")){
+			$.post("_diary_show_delete_ajax.post.php",{"resoured":result},function(data){
+				alert(data);
+				var result = $('#edit_id').val();
+				$.post("_diary_show_post.php",{"edit_id":result},function(data){
+					$("#show_title").html(data);
+				});
 			});
-		});
+		}
 	});
 	$('#subb').live("click",function(){
 		var resource_id = $('#resource_id').val();

@@ -5,7 +5,7 @@
 	if(!$user){
 		alert("请您先登录！");?>
 		<script>window.location.href="/login/";</script>
-		<?php 
+		<?php
 	}
 	$edit_id=trim($_GET["edit"]);
 	if(!is_numeric($edit_id)) die('invlid request!');

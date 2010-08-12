@@ -68,10 +68,10 @@
 				<div id="cc_pg">
 					<div class=r_title id="r_log"><a href="/yard/home.php?id=<?php echo $member->id; ?>"><?php if(!$member->true_name) echo "暂无姓名"; else echo $member->true_name;?></a>的日志列表</div>
 					<div id="r_log_hr">
-						<div>日志列表 </div>
+						<div>日志列表</div>
 					</div>
 					<?php 	
-						$diary_list=$db->query("SELECT d.id,d.created_at,d.last_edit_time,d.title,d.content,d.category_id,s.name FROM eachbb_member.daily d left join eachbb_member.daily_category as s on d.category_id=s.id where d.u_id=$user_id order by last_edit_time desc limit 4;");
+						$diary_list=$db->query("SELECT d.id,d.created_at,d.last_edit_time,d.title,d.content,d.category_id,s.name FROM eachbb_member.daily d left join eachbb_member.daily_category as s on d.category_id=s.id where d.u_id=$user_id order by created_at desc,last_edit_time desc limit 4;");
 						if(!$diary_list){
 							if(!$id){
 								echo '<div style="width:768px; height:500px; margin-left:10px; text-align:center; line-height:200px; float:left; display:inline;"><a href="/yard/diary.php" style="font-size:26px; font-weight:bold; color:#8A9F9A;">您日志列表为空,马上发表日志吧！</a></div>';

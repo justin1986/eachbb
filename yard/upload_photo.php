@@ -7,7 +7,7 @@
 		include_once('../frame.php');
 		use_jquery();
 		css_include_tag('yard','member','yard_photo');
-		js_include_tag('yard/yard','member','yard/upload_photo');
+		js_include_tag('yard/yard','member');
 		$user = User::current_user();
 		if(!$user){
 			alert("请您先登录！");
@@ -65,16 +65,22 @@
 								<tr>
 									<td height="46" align="right" valign="middle">上传到相册：</td>
 									<td align="middle" id="select_photo" valign="middle">
-									<?php 
-										$alpum =$db->query("SELECT id,name FROM eachbb_member.album a where u_id={$user->id} order by last_update_time,visit_count,comment_count desc;");
-									?>
-										<select id="upload_select_id" name="upload_select_id">
+									<select id="upload_select_id" name="upload_select_id">
 											<?php
-											foreach ($alpum as $al){ 
+											$album_id=$_GET["album_id"];
+											if($album_id){
+												if(is_numeric($album_id))
+												{
+													$alb=$album_id;
+												}
+											}
+											$alpum =$db->query("SELECT id,name FROM eachbb_member.album a where u_id={$user->id} order by last_update_time,visit_count,comment_count desc;");
+											foreach ($alpum as $al){
 											?>
-											<option value="<?php echo $al->id;?>"><?php echo $al->name;?></option>
-											<?php }?>
+											<option value="<?php echo $al->id;?>" <?php if($alb == $al->id){ echo 'selected="selected"';}else{}?>><?php echo $al->name;?></option>
+											<?php  }?>
 										</select>
+										<input type="hidden" id="alpum" name="alpum" value="<?php echo $alb;?>"/>
 									</td>
 									<td align="left" valign="middle"><a href="#" id="photo_book">添加相册</a></td>
 								</tr>

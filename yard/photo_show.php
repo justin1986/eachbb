@@ -43,6 +43,7 @@
 		<div id="c_l">
 			<?php include(dirname(__FILE__).'/../yard/_yard_left.php');?>
 		</div>
+		<input type="hidden" id="album_id" value="<?php echo $album[0]->id;?>"/>
 		<div id="c_ll">
 			<div id="cl_t"></div>
 			<div id="cl_c"></div>
@@ -54,7 +55,7 @@
 				<div id="cc_pg">
 					<div class=r_title id="r_log"><a><?php if($member->true_name) echo $member->true_name.'的相册'; else echo '暂无信息';?></a></div>
 					<div id="r_log_hr">
-						<div><?php if($album[0]->u_id === $user->id){ echo "<a href='/yard/upload_photo.php'>上传图片！</a>";}else{echo "相 册 ！";}?></div>
+						<div><?php if($album[0]->u_id === $user->id){ echo "<a href='/yard/upload_photo.php?album_id={$album[0]->id}'>上传图片！</a>";}else{echo "相 册 ！";}?></div>
 					</div>
 					<div id="pic_log" style="text-align: center;"></div>
 				</div>
