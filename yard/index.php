@@ -115,7 +115,7 @@
 					<div id="cc_photo">
 						<div id="pho_l"></div>
 						<form id="xxx" action="daily.post.php" method="post">
-							<textarea name="pho_r" id="pho_r">llllllll</textarea>
+							<textarea name="pho_r" id="pho_r"></textarea>
 						</form>
 					</div>
 					<div id="cc_ps" >
