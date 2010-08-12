@@ -1,3 +1,4 @@
+<<<<<<< HEAD:test.php
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
@@ -172,3 +173,5 @@ $(function(){
 <!--　廣告素材資料 結束-->
 </body>
 </html>
+=======
+>>>>>>> eb50bc9a974ba0c6ddacbc38800f927c45bf6b24:test.php

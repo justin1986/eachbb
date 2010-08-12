@@ -8,7 +8,7 @@
 .r_title{width:700px; height:22px; margin-left:10px; margin-top:10px; padding-left:20px; border-bottom:2px solid #f1f1f1; font-size:14px; font-weight:bold; color:#000000; line-height:22px; background:url('/images/member/r_title_bg.jpg') 5px 4px no-repeat; float:left; display:inline;}
 .r_title a{color:#ff6600;}
 #r_log_hr{width:728px; height:30px; margin-left:10px; margin-top:25px; position:relative; background: url(/images/yard/log_hr.jpg) repeat-x; border:1px solid #E4E4E4; float: left; display: inline;}
-#r_log_hr div{width:195px; height:31px; text-align: center; cursor:pointer;   position:absolute;  line-height:31px;  font-size: 12px; font-weight: bold; color: #AC4C00; background: url(/images/yard/log_hr5.jpg) repeat-x; border:0px solid red; border-right:1px solid #E4E4E4;}
+#r_log_hr div{width:100px; height:30px; text-align: center; cursor:pointer;   line-height:30px;  font-size: 12px; font-weight: bold; color: #AC4C00; background: url(/images/yard/log_hr5.jpg) repeat-x; border:0px solid red;float:left;}
 .c_menu_pg_p{width:730px; height:30px; margin-left:10px; background:url(/images/yard/log_hr2.jpg) repeat-x;  float: left; display: inline;}
 
 .r_title{width:710px; height:22px; margin-left:10px; margin-top:10px; padding-left:20px; border-bottom:2px solid #f1f1f1; font-size:14px; font-weight:bold; color:#000000; line-height:22px; background:url('/images/member/r_title_bg.jpg') 5px 4px no-repeat; float:left; display:inline;}
@@ -23,4 +23,4 @@
 .r_table .td2 select{height:20px; margin-right:5px; border:1px solid #cccccc;}
 #r_button{width:740px; margin-top:20px; text-align:center; float:left; display:inline;}
 #r_button button{width:72px; height:30px; border:0px; cursor:pointer; background:url('/images/member/save.jpg') no-repeat;}
-
+.big_input{width:400px;height:120px;}
