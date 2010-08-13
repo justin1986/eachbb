@@ -10,11 +10,12 @@
 		js_include_tag('yard/home','yard/yard');
 		$user = User::current_user();
 		$db = get_db();
-		$id =intval($_GET['id']);
+		$id =$_GET['id'];
+		if(!is_numeric($id)) die('invlid request!');
 		$info = $db->query("select * from eachbb_member.member where id=$id");
 		if(!$info){
-			alert('非法操作！');
-			redirect("/");
+			alert('您的好友不存在！');
+			redirect("/yard");
 		}
 		echo $info[0]->id ."aaa".$user->id;
 		$db->execute("insert into eachbb_member.member_status (uid,created_at,last_login,score,level,friend_count,unread_msg_count,visit_count) values ({$info[0]->uid},now(),now(),0,0,0,0,1) ON DUPLICATE KEY update visit_count = visit_count +1;");
