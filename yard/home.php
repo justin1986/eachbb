@@ -22,7 +22,6 @@ $(function(){
 		$type =$_GET['type'];
 		$id =intval($id);
 		$info = $db->query("select * from eachbb_member.member where id=$id");
-		echo $info[0]->uid."asdf".$user->id;
 		if(!$info){
 			alert('非法操作！');
 			redirect("/");
