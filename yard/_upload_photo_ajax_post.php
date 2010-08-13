@@ -2,6 +2,7 @@
 	include_once('../frame.php');
 	$photo = $_POST["photo"];
 	$db=get_db();
+	set_charset("UTF-8");
 	$user = User::current_user();
 	if(!$user)die("请先登录！");
 	if(!$photo)die("非法操作！");

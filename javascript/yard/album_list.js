@@ -43,7 +43,14 @@ $(function(){
 				});
 			});
 		$(function(){
-			$('.del').click(function(){
+			$('.al_num img').hover(function(){
+				if($('.al_num img').attr('src') == '/images/yard/delete.jpg')
+					$('.al_num img').attr('src','/images/yard/delete1.jpg');
+				else
+					$('.al_num img').attr('src','/images/yard/delete.jpg');
+				
+			});
+			$('.al_num img').click(function(){
 				if(confirm("是否要删除该相册？")){
 					var selected = $('.del').index($(this));
 					var id = $('#'+selected).val();

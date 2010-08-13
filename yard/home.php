@@ -20,12 +20,21 @@ $(function(){
 		$db = get_db();
 		$id =$_GET['id'];
 		$id =intval($id);
-		if($info = $db->query("select * from eachbb_member.member where id=$id")){
-		}else{
+		$info = $db->query("select id,avatar,uid,true_name from eachbb_member.member where id=$id");
+		if(!$info){
 			alert('非法操作！');
 			redirect("/");
 		}
-		$db->execute("insert into eachbb_member.member_status (uid,created_at,last_login,score,level,friend_count,unread_msg_count,visit_count) values ($id,now(),now(),0,0,0,0,1) ON DUPLICATE KEY update visit_count = visit_count +1;");
+		$db->execute("insert into eachbb_member.member_status (uid,created_at,last_login,score,level,friend_count,unread_msg_count,visit_count) values ({$info[0]->uid},now(),now(),0,0,0,0,1) ON DUPLICATE KEY update visit_count = visit_count +1;");
+		if(!$user->id == $info[0]->uid){
+			if(!$db->query("SELECT id FROM eachbb_member.friend where u_id=$id;"))
+			{
+				if(!$db->execute("insert into eachbb_member.visit_history(create_at,u_id,f_id,f_name,f_avatar)values('now()',$user->id,$id,{$info[0]->true_name},{$info[0]->avatar});")){
+					echo "错误！";
+				}
+			}
+		}
+		
 		$daily_count=$db->query("select id from eachbb_member.daily where u_id=$id");
 		$album_count=$db->query("select id from eachbb_member.album where u_id=$id");
 		if($info[0]->gender != 1){

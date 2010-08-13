@@ -123,11 +123,11 @@
 						<div class="al_words"><?php echo $master[$i]->description;?></div>
 				<?php 	
 						$master_id= $master[$i]->id;
-						$db->query("select id from `eachbb_member`.photo where album_id = '$master_id'");
+						$db->query("select id,u_id from `eachbb_member`.photo where album_id = '$master_id'");
 						$n = $db->record_count;
 				?>
 						<div class="al_num"><font style="color:#ff0000;"><?php echo $n;?></font>张
-							<div class="del" style="<?php if($user->id != $id){echo 'display:none;';}?>"><img src="/images/yard/delete.jpg" /></div>
+							<img src="/images/yard/delete.jpg" <?php if($user->user_id != $id){echo 'style="cursor:pointer; float:right; display:inline;"';}?>/>
 						</div>
 					</div>
 					<input id="<?php echo $i?>"style="display:none;" value="<?php echo $master[$i]->id?>">

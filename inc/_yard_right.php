@@ -3,7 +3,7 @@
 	use_jquery();
 	$db=get_db();
 	$user = User::current_user();
-	$sql="select id,visit_count,unread_msg_count,friend_count,level,score,last_login,created_at from eachbb_member.member_status where uid=".$user->uid;
+	$sql="select id,visit_count,unread_msg_count,friend_count,level,score,last_login,created_at from eachbb_member.member_status where id=".$user->id;
 	$news=$db->query($sql);
 	$sex='未知';
 	if($user->gender == 1){

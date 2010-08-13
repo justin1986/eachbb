@@ -1,6 +1,7 @@
 <?php
 	include_once('../frame.php');
 	$db=get_db();
+	set_charset("utf-8");
 	$user = User::current_user();
 	if(!$user)die("请先登录！");
 	$title = htmlspecialchars($_POST['title']);
