@@ -110,11 +110,11 @@
 		<?php for($i=0;$i<$m_visit;$i++){?>
 		<div class="pic_box">
 			<div class="pic_pg">
-				<a href="/yard/home.php?id=<?php echo $visit[$i]->f_id;?>">
+				<a href="/yard/home.php?id=<?php echo $visit[$i]->f_id;?>&type=no_f">
 				<IMG  class="pic_img" src="<?php if ($visit[$i]->f_avatar != null){echo $visit[$i]->f_avatar;}else{echo '/images/yard/friend_null.jpg';}?>"/>
 				</a>
 			</div>
-			<div class="name_pic"><a title="<?php echo $visit[$i]->f_name;?>" href="/yard/home.php?id=<?php echo $visit[$i]->f_id;?>"><?php echo $visit[$i]->f_name;?></a></div>
+			<div class="name_pic"><a title="<?php echo $visit[$i]->f_name;?>" href="/yard/home.php?id=<?php echo $visit[$i]->f_id;?>&type=no_f"><?php echo $visit[$i]->f_name;?></a></div>
 		</div>
 		<?php } ?>
 	</div>

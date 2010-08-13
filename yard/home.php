@@ -19,6 +19,7 @@ $(function(){
 		$user = User::current_user();
 		$db = get_db();
 		$id =$_GET['id'];
+		$type =$_GET['type'];
 		$id =intval($id);
 		$info = $db->query("select * from eachbb_member.member where id=$id");
 		if(!$info){
@@ -26,20 +27,14 @@ $(function(){
 			redirect("/");
 		}
 		$db->execute("insert into eachbb_member.member_status (uid,created_at,last_login,score,level,friend_count,unread_msg_count,visit_count) values ({$info[0]->uid},now(),now(),0,0,0,0,1) ON DUPLICATE KEY update visit_count = visit_count +1;");
-		echo $info[0]->uid."asfdsa".$user->uid;
-		if(!$user->uid == $info[0]->uid){
-			$iv_create=$db->query("select id from eachbb_member.visit_history where u_id={$info[0]->uid}");
-			$f_id=$db->query("SELECT id,u_id,created_at,f_name,f_avatar FROM eachbb_member.friend where u_id={$info[0]->uid};");
-			if(!$f_id)
-			{
-				$sql="insert into eachbb_member.visit_history(create_at,u_id,f_id,f_name,f_avatar)values(now(),{$info[0]->uid},0,'{$info[0]->true_name}','{$info[0]->avatar}')  ON DUPLICATE KEY update create_at=now();";
-			}else{
-				$sql="insert into eachbb_member.visit_history(create_at,u_id,f_id,f_name,f_avatar)values(now(),{$info[0]->uid},{$f_id[0]->id},'{$info[0]->true_name}','{$info[0]->avatar}')  ON DUPLICATE KEY update create_at=now();";
-			}
-			echo $sql;
-			if($db->execute($sql)){
-				echo "添加失败！";
-			}
+		$friend=$db->query("SELECT name,avatar FROM eachbb_member.member m where id=$id;");
+		if($type === 'no_f'){
+			$sql="insert into eachbb_member.visit_history(create_at,u_id,f_id,f_name,f_avatar)values(now(),{$user->uid},0,'{$friend[0]->name}','{$friend[0]->avatar}')  ON DUPLICATE KEY update create_at=now();";
+		}else{
+			$sql="insert into eachbb_member.visit_history(create_at,u_id,f_id,f_name,f_avatar)values(now(),{$user->uid},$id,'{$friend[0]->name}','{$friend[0]->avatar}')  ON DUPLICATE KEY update create_at=now();";
+		}
+		if(!$db->execute($sql)){
+			echo "添加失败！";
 		}
 		$daily_count=$db->query("select id from eachbb_member.daily where u_id=$id");
 		$album_count=$db->query("select id from eachbb_member.album where u_id=$id");
