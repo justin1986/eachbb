@@ -27,14 +27,19 @@ $(function(){
 		}
 		$db->execute("insert into eachbb_member.member_status (uid,created_at,last_login,score,level,friend_count,unread_msg_count,visit_count) values ({$info[0]->uid},now(),now(),0,0,0,0,1) ON DUPLICATE KEY update visit_count = visit_count +1;");
 		if(!$user->id == $info[0]->uid){
-			if(!$db->query("SELECT id FROM eachbb_member.friend where u_id=$id;"))
+			$iv_create=$db->query("select id from eachbb_member.visit_history where u_id={$info[0]->uid}");
+			$f_id=$db->query("SELECT id,u_id,created_at,f_name,f_avatar FROM eachbb_member.friend where u_id={$info[0]->uid};");
+			if(!$f_id)
 			{
-				if(!$db->execute("insert into eachbb_member.visit_history(create_at,u_id,f_id,f_name,f_avatar)values('now()',$user->id,$id,{$info[0]->true_name},{$info[0]->avatar});")){
-					echo "错误！";
-				}
+				$sql="insert into eachbb_member.visit_history(create_at,u_id,f_id,f_name,f_avatar)values('now()',{$info[0]->uid},0,{$info[0]->true_name},{$info[0]->avatar})  ON DUPLICATE KEY update create_at='now()';";
+			}else{
+				$sql="insert into eachbb_member.visit_history(create_at,u_id,f_id,f_name,f_avatar)values('now()',{$info[0]->uid},{$f_id[0]->id},{$info[0]->true_name},{$info[0]->avatar})  ON DUPLICATE KEY update create_at='now()';";
+			}
+			echo $sql;
+			if($db->execute($sql)){
+				echo "添加失败！";
 			}
 		}
-		
 		$daily_count=$db->query("select id from eachbb_member.daily where u_id=$id");
 		$album_count=$db->query("select id from eachbb_member.album where u_id=$id");
 		if($info[0]->gender != 1){
