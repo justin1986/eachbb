@@ -19,7 +19,7 @@
 		$db = get_db();
 		$photo=$db->query("SELECT id,u_id,u_name,photo,width,height,created_at,description FROM eachbb_member.photo p where album_id=$id order by created_at desc;");
 		$album=$db->query("SELECT id,u_id FROM eachbb_member.album a where id=$id;");
-		
+		$member=$db->query("select name from `eachbb_member`.member where id = {$album[0]->u_id};");
 	?>
 </head>
 <body>
@@ -53,7 +53,7 @@
 			<div id="cc_t"></div>
 			<div id="cc_c" >
 				<div id="cc_pg">
-					<div class=r_title id="r_log"><a><?php if($member->true_name) echo $member->true_name.'的相册'; else echo '暂无信息';?></a></div>
+					<div class=r_title id="r_log"><a><?php echo $member[0]->name;?>的相册</a></div>
 					<div id="r_log_hr">
 						<div><?php if($album[0]->u_id === $user->id){ echo "<a href='/yard/upload_photo.php?album_id={$album[0]->id}'>上传图片！</a>";}else{echo "相 册 ！";}?></div>
 					</div>

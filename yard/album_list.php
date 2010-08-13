@@ -79,7 +79,7 @@
 			<?php $member=$db->query("select name from `eachbb_member`.member where id = '$id'");?>
 			<div id="al_p1">
 			<div id="whosealbum">
-			<a href="/yard/home.php?id=<?php echo $id;?>" style="font-weight:bold; color:#416298;"><?php echo $member[0]->name;?></a>的相册
+			<a href="#" style="font-weight:bold; color:#416298;"><?php echo $member[0]->name;?></a>的相册
 			</div>
 			<div id = "p1_buttonbox" style="<?php if($user->id != $id){echo 'display:none;';}?>">
 						<div class="p1_but">

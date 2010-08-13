@@ -52,7 +52,7 @@
 			<div id="cc_t"></div>
 			<div id="cc_c" >
 				<div id="cc_pg" style="height:640px;">
-					<div class=r_title id="r_log"><a href="/yard/home.php?id=<?php echo $user->id;?>"><?php if($user->true_name !=''){echo $user->true_name;}else{echo $user->name;}?></a>的日志管理</div>
+					<div class=r_title id="r_log"><a href="#"><?php echo $user->name;?></a>的日志管理</div>
 					<div id="r_log_hr">
 						<div><?php if($edit_id){echo "编辑";}else{echo "发表新";}?>日志 </div>
 					</div>
