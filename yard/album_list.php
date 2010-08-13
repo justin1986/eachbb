@@ -130,7 +130,7 @@
 							<img src="/images/yard/delete.jpg" <?php if($user->user_id != $id){echo 'style="cursor:pointer; float:right; display:inline;"';}?>/>
 						</div>
 					</div>
-					<input id="<?php echo $i?>"style="display:none;" value="<?php echo $master[$i]->id?>">
+					<input id="number_<?php echo $i?>" style="display:none;" value="<?php echo $master[$i]->id?>">
 				</div>
 			<?php }?>
 			</div>

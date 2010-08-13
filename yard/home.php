@@ -10,23 +10,18 @@
 		js_include_tag('yard/home','yard/yard');
 		$user = User::current_user();
 		$db = get_db();
-		$id =$_GET['id'];
-		$type =$_GET['type'];
-		$id =intval($id);
+		$id =intval($_GET['id']);
 		$info = $db->query("select * from eachbb_member.member where id=$id");
 		if(!$info){
 			alert('非法操作！');
 			redirect("/");
 		}
+		echo $info[0]->id ."aaa".$user->id;
 		$db->execute("insert into eachbb_member.member_status (uid,created_at,last_login,score,level,friend_count,unread_msg_count,visit_count) values ({$info[0]->uid},now(),now(),0,0,0,0,1) ON DUPLICATE KEY update visit_count = visit_count +1;");
-		$friend=$db->query("SELECT uid,name,avatar FROM eachbb_member.member m where id=$id;");
-		if($type === 'no_f'){
-			$sql="insert into eachbb_member.visit_history(create_at,u_id,f_id,f_name,f_avatar)values(now(),{$user->id},0,'{$friend[0]->name}','{$friend[0]->avatar}')  ON DUPLICATE KEY update create_at=now();";
-		}else{
-			$sql="insert into eachbb_member.visit_history(create_at,u_id,f_id,f_name,f_avatar)values(now(),{$user->id},$id,'{$friend[0]->name}','{$friend[0]->avatar}')  ON DUPLICATE KEY update create_at=now();";
-		}
-		if(!$db->execute($sql)){
-			echo "添加失败！";
+		if(!($info[0]->id === $user->id)){
+			if(!$db->execute("insert into eachbb_member.visit_history(create_at,u_id,f_id,f_name,f_avatar)values(now(),{$user->id},$id,'{$info[0]->name}','{$info[0]->avatar}')  ON DUPLICATE KEY update create_at=now();")){
+				echo "添加失败！";
+			}
 		}
 		$daily_count=$db->query("select id from eachbb_member.daily where u_id=$id");
 		$album_count=$db->query("select id from eachbb_member.album where u_id=$id");

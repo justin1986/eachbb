@@ -52,8 +52,8 @@ $(function(){
 			});
 			$('.al_num img').click(function(){
 				if(confirm("是否要删除该相册？")){
-					var selected = $('.del').index($(this));
-					var id = $('#'+selected).val();
+					var selected = $('.al_num img').index($(this));
+					var id = $('#number_'+selected).val();
 					$.post('album_list.del.php',{'id':id},function(data){
 						alert(data);
 						window.location.href="/yard/album_list.php";

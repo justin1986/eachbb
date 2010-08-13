@@ -3,7 +3,7 @@
 	use_jquery();
 	$db=get_db();
 	$user = User::current_user();
-	$sql="select id,visit_count,unread_msg_count,friend_count,level,score,last_login,created_at from eachbb_member.member_status where id=".$user->id;
+	$sql="select m.*,s.* from eachbb_member.member m inner join eachbb_member.member_status s on m.id=s.uid where m.id=".$user->id;
 	$news=$db->query($sql);
 	$sex='未知';
 	if($user->gender == 1){
@@ -15,7 +15,7 @@
 <div id="r_img">
 	<div id="r_pto"><img src="<?php echo $user->avatar;?>"></div>
 	<div id="r_bb"><?php echo $user->baby_name;?></div>
-	<div id="r_num">被访问过<?php echo $news[0]->visit_count;?>次</div>
+	<div id="r_num">被访问过<?php if($news[0]->visit_count){echo $news[0]->visit_count;}else{echo 0;};?>次</div>
 </div>
 <div id="r_geng"> 
 	<div id="r_ge_a">
@@ -110,11 +110,11 @@
 		<?php for($i=0;$i<$m_visit;$i++){?>
 		<div class="pic_box">
 			<div class="pic_pg">
-				<a href="/yard/home.php?id=<?php echo $visit[$i]->f_id;?>&type=no_f">
+				<a href="/yard/home.php?id=<?php echo $visit[$i]->f_id;?>">
 				<IMG  class="pic_img" src="<?php if ($visit[$i]->f_avatar != null){echo $visit[$i]->f_avatar;}else{echo '/images/yard/friend_null.jpg';}?>"/>
 				</a>
 			</div>
-			<div class="name_pic"><a title="<?php echo $visit[$i]->f_name;?>" href="/yard/home.php?id=<?php echo $visit[$i]->f_id;?>&type=no_f"><?php echo $visit[$i]->f_name;?></a></div>
+			<div class="name_pic"><a title="<?php echo $visit[$i]->f_name;?>" href="/yard/home.php?id=<?php echo $visit[$i]->f_id;?>"><?php echo $visit[$i]->f_name;?></a></div>
 		</div>
 		<?php } ?>
 	</div>
