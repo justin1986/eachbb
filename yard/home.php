@@ -26,7 +26,7 @@
 				}
 			}
 			else{
-				$db->execute("update eachbb_member.visit_history set create_at =now() where id={$vis_id[0]->id}");
+				$db->execute("update eachbb_member.visit_history set create_at =now(),f_avatar='{$info[0]->avatar}' where id={$vis_id[0]->id}");
 			}
 		}
 		$daily_count=$db->query("select id from eachbb_member.daily where u_id=$id");
@@ -315,7 +315,7 @@
 								<span class="u_id"><a href="#"><?php echo $info[0]->name;?></a></span>
 								<span id="reply_time">2010-11-11 11:11:11</span>
 							</div>
-							<div id="reply_words">jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj</div>
+							<div id="reply_words"></div>
 						</div>
 				<?php }else{?>
 						<div id="u_reply">
@@ -324,7 +324,7 @@
 				<?php }?>
 				<?php $comment_count = "select nick_name from eachbb_member.comment where user_id=$id and resource_id='1099' order by created_at desc"?>
 						<div id="more_reply">
-							<div id="next_reply"><a href="#">查看全部>></a></div>
+							<div id="next_reply"><a href="#">查看全部&gt;&gt;</a></div>
 							<div id="total_reply">共<?php echo count($comment_count)?>条留言</div>
 						</div>
 					</div>
