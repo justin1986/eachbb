@@ -11,6 +11,7 @@
 		$user = User::current_user();
 		$db = get_db();
 		$id =$_GET['id'];
+		if(!$user)die('请先登录！');
 		if(!is_numeric($id)) die('invlid request!');
 		$info = $db->query("select * from eachbb_member.member where id=$id");
 		if(!$info){
