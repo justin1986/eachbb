@@ -16,13 +16,13 @@ body div{float:left; display:inline;}
 		#al_test{width:1px; height:615px;}
 		.album{width:140px; height:221px; margin:5px 20px; background:url("/images/yard/albumbox.jpg") no-repeat;}
 			#no_album{width:728px; height:300px; background:#cccccc; font-size:36px; line-height:260px; font-weight:bolder; text-align: center;}
-			.al_box{width:120px; height:200px; color:#6d6d6d;margin-top:15px; margin-left:10px;}
+			.al_box{width:120px; color:#6d6d6d;margin-top:15px; margin-left:10px;}
 				.al_name{width:120px;height:14px; line-height:14px; font-size:14px; font-weight:bold; margin-bottom:5px; overflow:hidden;}
 				.al_name a{color:#416298;}
 				.al_face{margin:0 10px;}
 				.al_face img{width:100px; height:95px;}
 				.al_time{width:125px; height:14px; line-height:14px; margin-top:5px;}
-				.al_words{width:112px; height:42px; font-size:14px; margin-top:5px; margin-left:5px;line-height:14px; Word-wrap:break-word; overflow:hidden;}
+				.al_words{width:112px; height:30px; font-size:12px; margin-top:5px; margin-left:5px; line-height:14px; Word-wrap:break-word; overflow:hidden;}
 				.al_num{width:120px; height:14px; margin-top:5px;}
 				.del{widht:14px; height:14px; float:right; cursor:pointer;}
 	#cc_bottom{width:819px; height:24px; background:url("/images/yard/log_b.jpg") no-repeat;}

@@ -10,6 +10,7 @@ $(function(){
 				$.post('/yard/_yard_info_ajax_post.php',{'id':id},function(data){
 					if(data){
 						alert(data);
+						window.location.href="/yard/info.php";
 					}else{
 						$('#pic_left').attr('src',src);
 					}
