@@ -20,7 +20,7 @@ $(function(){
 		$db = get_db();
 		$id =$_GET['id'];
 		$id =intval($id);
-		$info = $db->query("select id,avatar,uid,true_name from eachbb_member.member where id=$id");
+		$info = $db->query("select * from eachbb_member.member where id=$id");
 		if(!$info){
 			alert('非法操作！');
 			redirect("/");
