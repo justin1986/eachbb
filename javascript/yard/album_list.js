@@ -44,10 +44,10 @@ $(function(){
 			});
 		$(function(){
 			$('.al_num img').hover(function(){
-				if($('.al_num img').attr('src') == '/images/yard/delete.jpg')
-					$('.al_num img').attr('src','/images/yard/delete1.jpg');
+				if($(this).attr('src') == '/images/yard/delete.jpg')
+					$(this).attr('src','/images/yard/delete1.jpg');
 				else
-					$('.al_num img').attr('src','/images/yard/delete.jpg');
+					$(this).attr('src','/images/yard/delete.jpg');
 				
 			});
 			$('.al_num img').click(function(){
