@@ -31,11 +31,10 @@ $(function(){
 			$f_id=$db->query("SELECT id,u_id,created_at,f_name,f_avatar FROM eachbb_member.friend where u_id={$info[0]->uid};");
 			if(!$f_id)
 			{
-				$sql="insert into eachbb_member.visit_history(create_at,u_id,f_id,f_name,f_avatar)values('now()',{$info[0]->uid},0,{$info[0]->true_name},{$info[0]->avatar})  ON DUPLICATE KEY update create_at='now()';";
+				$sql="insert into eachbb_member.visit_history(create_at,u_id,f_id,f_name,f_avatar)values(now(),{$info[0]->uid},0,'{$info[0]->true_name}','{$info[0]->avatar}')  ON DUPLICATE KEY update create_at=now();";
 			}else{
-				$sql="insert into eachbb_member.visit_history(create_at,u_id,f_id,f_name,f_avatar)values('now()',{$info[0]->uid},{$f_id[0]->id},{$info[0]->true_name},{$info[0]->avatar})  ON DUPLICATE KEY update create_at='now()';";
+				$sql="insert into eachbb_member.visit_history(create_at,u_id,f_id,f_name,f_avatar)values(now(),{$info[0]->uid},{$f_id[0]->id},'{$info[0]->true_name}','{$info[0]->avatar}')  ON DUPLICATE KEY update create_at=now();";
 			}
-			echo $sql;
 			if($db->execute($sql)){
 				echo "添加失败！";
 			}
