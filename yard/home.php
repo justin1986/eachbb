@@ -19,10 +19,14 @@
 		}
 		$db->execute("insert into eachbb_member.member_status (uid,created_at,last_login,score,level,friend_count,unread_msg_count,visit_count) values ({$info[0]->uid},now(),now(),0,0,0,0,1) ON DUPLICATE KEY update visit_count = visit_count +1;");
 		if(!($info[0]->id === $user->id)){
-			if($db->execute("select id from eachbb_member.visit_history where u_id= {$user->id} and f_id= {$info[0]->id}")){
+			$vis_id=$db->query("select id from eachbb_member.visit_history where u_id= {$user->id} and f_id= {$info[0]->id}");
+			if(!$vis_id){
 				if(!$db->execute("insert into eachbb_member.visit_history(create_at,u_id,f_id,f_name,f_avatar)values(now(),{$user->id},$id,'{$info[0]->name}','{$info[0]->avatar}');")){
 					echo "添加失败！";
 				}
+			}
+			else{
+				$db->execute("update eachbb_member.visit_history set create_at =now() where id={$vis_id[0]->id}");
 			}
 		}
 		$daily_count=$db->query("select id from eachbb_member.daily where u_id=$id");
