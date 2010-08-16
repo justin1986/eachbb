@@ -1,17 +1,11 @@
-body{width:970PX; margin: 0 auto; }
-ul {list-style-image: none; list-style-type: none;}
-li {list-style-image: none;  list-style-type: none; margin-top:20px;}
-#ibody{width:970px; overflow:hidden; margin:0;}
-#fbody{ width:970px; overflow:hidden;  background:#ffffff; float:left; display:inline;}
 
-#content{width:970px;  margin-top:12px; float:left; display:inline;}
-#c_l{width:205px;  overflow:hidden; float:left; display:inline;}
 #c_r{width:755px; float:right; display:inline; }
-
 #cr_a{width:750px;  float:right; display:inline;}
 #cra_l{ border:1px solid #5595D1;  float:left; display:inline;}
 #cra_ll{width:533px; height:735px; border:1px solid #3F71A2; float:left; display:inline;}
 #cra_r{width:200px; height:200px; float:right; display:inline;}
+
+#haha{width:760px; margin-top:5px; float:left; display: inline;}
 
 #crr_a{float:left; display:inline;}
 #crb_t{width:754px; height:27px; margin-top:15px; float:left; display:inline; }
@@ -51,16 +45,6 @@ li {list-style-image: none;  list-style-type: none; margin-top:20px;}
 #crbc_lb a{font-size:16px; color:#000; font-weight:bold; text-decoration:none;}
 #crbc_lb a font{font-size:16px; color:#ff0000; font-weight:bold;}
 
-#crc{width:741px; margin-left:5px; background:#fff; float:left; display:inline;}
-.btn_submit{width:80px; height:22px; margin-bottom:5px; border:0px solid red; background:url(/images/test_begin/btn.jpg) no-repeat;}
-#crc_bb{width:720px; height:22px; margin-right:20px; text-align:center; float:right; display:inline;}
-#crc_tit{width:600px;  line-height:30px; font-size:16px; margin-left:80px; color:#000000; font-weight:bold; float:left; display:inline;}
-#crc_cc{width:680px;  line-height:20px; font-size:14px; margin-left:32px; color:#999999; font-weight:bold; float:left; display:inline;}
-#question_description{width:600px; float:left;border:2px solid #E6EEF8; padding:10px;margin-top:10px; margin-left:50px; margin-bottom:30px; text-indent:20px; background-color: #EDF4FC;}
-#cr_d{width:745px; height:25px; margin-top:25px; overflow:hidden; line-height:25px; background:#ECF2FC; border-left:3px solid #4280DD; float:right; display:inline;}
-#crd_d{height:25px; margin-left:7px; font-weight:bold; font-size:14px; color:#333333; float:left; display:inline;}
-#geng{width:50px; height:25px; line-height:25px; float:right; display:inline;}
-#geng a{font-size:12px; color:#999999; font-weight:bold; text-decoration:none;}
 
 #cr_c{width:750px;  margin-top:10px; padding-top:30px; padding-bottom:30px; background:#F8F8F8; border:1px solid #DBDBDB; float:right; display:inline;}
 #crc{width:741px; margin-left:5px; background:#fff; float:left; display:inline;}

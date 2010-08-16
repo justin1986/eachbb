@@ -1,6 +1,16 @@
 $(function(){
-	$.post('_baby_view_ajax_post.php',function(data){
-		$('#right').html(data);
+	$('.user_me_t').click(function(e){
+		e.preventDefault();
+		var selected = $('.user_me_t').index($(this));
+		if(selected ===  10){
+			$.post('_baby_view_ajax_post.php',function(data){
+				$('#haha').html(data);
+			});
+		}else if(selected ===  11){
+			$.post('_baby_ajax.post.php',function(data){
+				$('#haha').html(data);
+			});
+		}
 	});
 	$('.crb_cc').click(function(e){
 		e.preventDefault();

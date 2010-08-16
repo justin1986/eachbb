@@ -1,8 +1,7 @@
 <?php 
 	include_once('../frame.php');
 	$db = get_db();
-	$pro =$db->query("SELECT id,name,create_time FROM eachbb.eb_problem order by create_time desc");
-	$problem_count = $db->record_count;
+	$pro =$db->query("SELECT id,name,create_time FROM eachbb.eb_problem order by create_time desc;");
 ?>
 <div id="cr_b">
 	<div id="crb_l"></div>
