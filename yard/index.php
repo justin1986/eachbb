@@ -10,7 +10,12 @@
 		js_include_tag('yard/yard','yard_right');
 		$db=get_db();
 		$user = User::current_user();
-	?>
+		if(!$user){
+			alert("请您先登录！");
+			redirect('/login/');
+			exit();
+		}
+		?>
 </head>
 <body>
 <div id="ibody">
