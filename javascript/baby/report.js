@@ -1,0 +1,24 @@
+$(function(){
+	$.post('_baby_view_ajax_post.php',function(data){
+		$('#right').html(data);
+	});
+	$('.crb_cc').click(function(e){
+		e.preventDefault();
+		var selected=$('.crb_cc').index($(this));
+		for(var i = 0; i <  5; i++){
+			if(i==selected){
+				continue;
+			}
+			$('.crb_cc').attr('style','width:79px;');
+		}
+		$('#tab_shehuihuodong').attr('style','width:149px;');
+		if(selected==4){
+			$('#tab_shehuihuodong').attr('style','width:149px; color:#43A0D6; border-bottom:1px solid #ffffff;');
+		}else{
+			$(this).attr('style','width:79px; color:#43A0D6; border-bottom:1px solid #ffffff;');
+		}
+		$('.crb_c').hide();
+		$('#crbc_'+selected).show();
+	},function(){});
+	
+});

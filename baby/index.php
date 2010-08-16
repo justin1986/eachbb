@@ -1,4 +1,4 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html>
 <head>
 	<meta http-equiv="Content-Language" content="zh-cn">
@@ -95,8 +95,8 @@
 		      
 					
 					<div style="float:left;margin-top:5px;"><font size="3" ><B>我的头像库</B></font><font size="2" >(</font><font size="2" color="red" ><?php echo $avatar_count;?></font><font size="2" >张)</font></div>
-					<div class="pichr_menu" id="set_avatar" style="margin-left:120px;float:left;margin-top:5px;"><font size="2">[选择头像]</font></div>
-			    <div style="margin-top:5px;margin-left:5px;height:20px;width:70px;float:left;"><a href="/yard/info.php"><font size="2" color="red" >[上传头像]</font></a></div>
+					<div class="pichr_menu" id="set_avatar" style="margin-left:100px;float:left;margin-top:5px;"><font size="2">[选择头像]</font></div>
+			    <div style="margin-top:5px;margin-left:5px;height:20px; float:left;"><a href="/yard/info.php"><font size="2" color="red" >[上传头像]</font></a></div>
 			    <div style="margin-top:5px;height:7px;float:left;"><hr color="#8A7777" width=401px;; size="2" /></div>
 				
 				
