@@ -9,6 +9,51 @@ $(function(){
 			$("#pic_log").html(data);
 		});
 	}
+	$('#btn_b_save').live('click',function(e){
+		e.preventDefault();
+		var title=$('#upload_title').val().trim();
+		var id=$('#id').val();
+		var content=$('#upload_description').val().trim();
+		if(!title){
+			alert("请输入图片名称！");
+		}else if(!content){
+			alert("请输入图片表述！");
+		}else{
+			$.post("_photo_update_ajax_post.php",{"id":id,'title':title,'content':content},function(data){
+				alert(data);
+				$.post("_photo_show_ajax_post.php",{"id":result,'number':number},function(data){
+					$("#pic_log").html(data);
+				});
+			});
+		}
+	});
+	$('#btn_b_res').live('click',function(e){
+		e.preventDefault();
+		$.post("_photo_show_ajax_post.php",{"id":result,'number':number},function(data){
+			$("#pic_log").html(data);
+		});
+	});
+	$('#update_img').live('click',function(e){
+		e.preventDefault();
+		var result=$('#resos_id').val();
+		$.post("_photo_update.ajax.post.php",{"id":result},function(data){
+			$("#pic_log").html(data);
+		});
+	});
+	$('#btn_update').live('click',function(e){
+		e.preventDefault();
+		var result=$('#select_id select').attr("value");
+		var resos_id=$('#resos_id').val();
+		$.post("_diary_photo_update_ajax_post.php",{"result":result,'resos_id':resos_id},function(data){
+			alert(data);
+			window.location.href='/yard/photo_show.php?id='+result;
+		});
+	});
+	$('#yidong').live('click',function(e){
+		e.preventDefault();
+		$('#select_id').css('display','inline');
+		$('#yidong').css('display','none');
+	});
 	$('#e_delete').live('click',function(e){
 		e.preventDefault();
 		var resos_id=$('#resos_id').val();

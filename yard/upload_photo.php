@@ -18,10 +18,10 @@
 	?>
 </head>
 <body>
-<div id="ibody" style=" position:relative; z-index: 0;">
+<form  enctype="multipart/form-data" action="/yard/upload_photo_image.post.php" method="post">
+	<div id="ibody" style=" position:relative; z-index: 0;">
 	<?php include_once(dirname(__FILE__).'/../inc/_yard_top.php'); ?>
 	<div id="menu">
-	<form  enctype="multipart/form-data" action="/yard/upload_photo_image.post.php" method="post">
 		<div id="yard_day">
 			<div id="yard_day_time"><?php echo date('Y年m月d日'); ?></div>
 			<div id="yard_day_ct"><?php echo get_week_day(); ?></div>
@@ -125,8 +125,7 @@
 				</div>
 		</div>
 	</div>
-	</form>
-</div>
+</div></form>
 </body>
 <script>
 	$(function(){

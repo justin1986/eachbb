@@ -121,12 +121,12 @@
 						</div>
 						<div class="al_time">创建日期：<?php echo mb_substr($master[$i]->created_at,0,10)?></div>
 						<div class="al_words"><?php echo $master[$i]->description;?></div>
-				<?php 	
+					<?php 	
 						$master_id= $master[$i]->id;
 						$db->query("select id,u_id from `eachbb_member`.photo where album_id = '$master_id'");
 						$n = $db->record_count;
-				?>
-						<div class="al_num"><font style="color:#ff0000;"><?php echo $n;?></font>张
+					?>
+						<div class="al_num"><font style="color:#ff0000;"><?php echo $n;?></font>张<a href="/yard/album_list_update.php?album_id=<?php echo $master_id;?>" style="margin-left:20px; color:blue;">编辑相册</a>
 							<img src="/images/yard/delete.jpg" <?php if($user->user_id != $id){echo 'style="cursor:pointer; float:right; display:inline;"';}?>/>
 						</div>
 					</div>
