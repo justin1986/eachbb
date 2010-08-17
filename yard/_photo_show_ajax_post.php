@@ -10,6 +10,10 @@
 	$db = get_db();
 	$id=$_POST['id'];
 	$albumd_id=$_POST['album_id'];
+	if(!$albumd_id)
+	{
+		$albumd_id = $user->id;
+	}
 	$number=$_POST['number'];
 	if(!is_numeric($id)) die('invlid request!');
 	if(!is_numeric($number)) die('invlid request!');
