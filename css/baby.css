@@ -23,7 +23,7 @@ body  a{text-decoration:none;}
 .user_me_b{width:150px;background-color:#F8F8F8;padding-left:12px;margin-top:5px;}
 #user_me_o{margin-top:30px;margin-left:30px;height:39px;}
 #user_ad{margin-top:30px;float:left;}
-#right{width:760px;float:left;padding-left:25px;float:left;}
+#right{width:760px; float:left; }
 #right_up{width:760px;height:540px;float:left;margin-top:5px;}
 #head{width:401px;  margin-left:8px; margin-top:10px;float:left; }
 #head_b{width:401px;height:308px;margin:auto auto;}

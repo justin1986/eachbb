@@ -10,6 +10,14 @@ $(function(){
 			$.post('_baby_ajax.post.php',function(data){
 				$('#haha').html(data);
 			});
+		}else if(selected === 12){
+			$.post('_baby_record_ajax.post.php',function(data){
+				$('#haha').html(data);
+			});
+		}else if(selected === 13){
+			$.post('_baby_red_ajax_post.php',function(data){
+				$('#haha').html(data);
+			});
 		}
 	});
 	$('.crb_cc').click(function(e){

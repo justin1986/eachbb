@@ -75,7 +75,7 @@
 			<div class="user_me_t" style="padding-bottom:10px;"><img src="/images/avatar/cpoint.png"></img><a href=""><font size="2" color="black">课程历史查询</font></a></div>
 			</div>
 			</div>
-			<div id="user_me_o"><img src="/images/avatar/bpoint.png"></img><a href="edit.php"><font size="2" color="black">[退出 ]</font></a></div>
+			<div id="user_me_o"><img src="/images/avatar/bpoint.png"></img><a href="edit.php"><font size="2" color="black">[退出]</font></a></div>
 		</div>
 	</div>
 	<div id="user_me_bottom"></div>

@@ -7,7 +7,7 @@
 		redirect('/login/');
 		exit();
 	}
-	$array = $db->query("SELECT problem_id FROM eachbb.eb_test_record e where user_id=4;");
+	$array = $db->query("SELECT problem_id FROM eachbb.eb_test_record e where user_id={$user->id};");
 	$count = $db->record_count;
 	for ($i = 0 ; $i < $count ; $i++){
 		$result .= $array[$i]->problem_id.",";
@@ -31,7 +31,7 @@
 	if($problem){
 		?>
 	<div class="problem_bannerr">
-		<a href="/test/test.php?id=<?php echo $problem[0]->id; ?>" title="<?php echo $problem[0]->name; ?>"><?php echo $problem[0]->name; ?></a>
+		<a href="/baby/_baby_post.php?id=<?php echo $problem[0]->id; ?>" title="<?php echo $problem[0]->name; ?>"><?php echo $problem[0]->name; ?></a>
 		<div><?php echo $problem[0]->create_time; ?></div>
 	</div>
 	<?php }}?>
