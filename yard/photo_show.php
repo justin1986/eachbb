@@ -15,6 +15,7 @@
 			exit();
 		}
 		$id=trim($_GET['id']);
+		$album_id=intval($_GET['album_id']);
 		if(!is_numeric($id)) die('invlid request!');
 		$db = get_db();
 		$photo=$db->query("SELECT id,u_id,u_name,photo,width,height,created_at,description FROM eachbb_member.photo p where album_id=$id order by created_at desc;");
@@ -23,11 +24,12 @@
 	?>
 </head>
 <body>
-<div id="ibody" style=" position:relative; z-index: 0;">
+<input type="hidden" id="album_id" name="album_id" value="<?php echo $album_id;?>" />
+<form  enctype="multipart/form-data" action="/yard/upload_photo_image.post.php" method="post">
+	<div id="ibody" style=" position:relative; z-index: 0;">
 	<?php include_once(dirname(__FILE__).'/../inc/_yard_top.php'); ?>
 	<input  type="hidden" id="result_id" value="<?php echo $id; ?>"/>
 	<div id="menu">
-	<form  enctype="multipart/form-data" action="/yard/upload_photo_image.post.php" method="post">
 		<div id="yard_day">
 			<div id="yard_day_time"><?php echo date('Y年m月d日'); ?></div>
 			<div id="yard_day_ct"><?php echo get_week_day(); ?></div>
@@ -65,7 +67,6 @@
 		</div>
 		<?php include_once(dirname(__FILE__).'/../inc/bottom.php');?>
 	</div>
-	</form>
-</div>
+</div></form>
 </body>
 </html>

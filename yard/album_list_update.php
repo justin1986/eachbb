@@ -10,11 +10,7 @@
 		js_include_tag('yard/album_list','yard/yard');
 		$user = User::current_user();
 		$db = get_db();
-		$id =$_GET['id'];
-		if(!$id)
-		{
-			$id=$user->id;
-		}
+		$id =$_GET['album_id'];
 		$id =intval($id);
 		if(!$user){
 			alert('请您先登录！');
@@ -77,10 +73,9 @@
 			<div id="log_t">
 				<img src="/images/yard/log_t.jpg" />
 			</div>
-			<?php $member=$db->query("select name from `eachbb_member`.member where id = '$id'");?>
 			<div id="al_p1">
 			<div id="whosealbum">
-			<a href="#" style="font-weight:bold; color:#416298;"><?php echo $member[0]->name;?></a>的相册
+			<a href="#" style="font-weight:bold; color:#416298;"><?php echo $user->name;?></a>的相册
 			</div>
 			<div id = "p1_buttonbox" style="<?php if($user->id != $id){echo 'display:none;';}?>">
 						<div class="p1_but">
@@ -95,45 +90,38 @@
 						</div>
 					</div>
 			</div>
-	  <?php $master=$db->query("select id,name,front_cover,description,created_at from `eachbb_member`.album where u_id = '$id' order by created_at desc");
-			$num = $db->record_count;
-		?>
 			<div id="al_p2">
 				<div id="al_test"></div>
-			<?php if($num == 0){ ?>
-				<div id="no_album">
-				真遗憾，这里没有相册可供欣赏！
-				</div>
-			<?php }?>
-			<?php for($i=0;$i<$num;$i++){?>
-				<div class="album">
-					<div class="al_box">
-						<div class="al_name"><a href="/yard/photo_show.php?id=<?php echo $master[$i]->id;?>&album_id=<?php echo $id;?>"><?php echo $master[$i]->name;?></a></div>
-						<div class="al_face">
-							<a href="/yard/photo_show.php?id=<?php echo $master[$i]->id;?>&album_id=<?php echo $id;?>"><img src="
-							<?php 
-								if($master[$i]->front_cover != null){
-									echo $master[$i]->front_cover;
-								}else{
-									echo '/images/yard/noface.jpg';
-								}
-							?>
-							" border=0/></a>
+				<?php 
+					$info = $db->query("select id,name,front_cover,description from eachbb_member.album where id=$id");
+				?>
+					<form  enctype="multipart/form-data" action="/yard/_upload_photo_image.post.php" method="post">
+					<div id="upload_box" style="margin-left:50px; margin-top:50px; ">
+						<div id="upload_top"><font style="margin-left:10px">编辑相册</font></div>
+						<div class="upload_bannerr">
+							<div class="upload_size">相册名称:</div>
+							<input type="text" name="upload_title" value="<?php echo $info[0]->name; ?>" id="upload_title"/>
 						</div>
-						<div class="al_time">创建日期：<?php echo mb_substr($master[$i]->created_at,0,10)?></div>
-						<div class="al_words"><?php echo $master[$i]->description;?></div>
-					<?php 	
-						$master_id= $master[$i]->id;
-						$db->query("select id,u_id from `eachbb_member`.photo where album_id = '$master_id'");
-						$n = $db->record_count;
-					?>
-						<div class="al_num"><font style="color:#ff0000;"><?php echo $n;?></font>张<a href="/yard/album_list_update.php?album_id=<?php echo $master_id;?>" <?php if($user->id != $id){echo 'style="display:none;"';}else{ echo 'style="cursor:pointer; margin-left:20px; color:blue; display:inline;"';}?>>编辑相册</a>
-							<img src="/images/yard/delete.jpg" <?php if($user->id != $id){ echo 'style="display:none;"';}else{ echo 'style="cursor:pointer; float:right; display:inline;"';}?>/>
+						<div class="upload_bannerr">
+							<div class="upload_size">相册描述:</div>
+							<textarea id="upload_description" name="upload_description"><?php echo $info[0]->description; ?></textarea>
+						</div>
+						<div class="upload_bannerr">
+							<div class="upload_size">相册封面:</div>
+							<input type="hidden" name="album_id" id="album_id" value="<?php echo $info[0]->id?>"/>
+							<input type="hidden" name="album_value" id="album_value" value="<?php echo $info[0]->front_cover?>"/>
+							<input type="file" name="src2" id="ulee"  size="40"/>
+						</div>
+						<div class="upload_bannerr">
+							<img src="<?php echo $info[0]->front_cover;?>" style="margin-left:170px; width:100px; height:100px;" />
+						</div>
+						<div id="upload_line"></div>
+						<div id="upload_btn_banner">
+							<input type="submit" id="btn_b_save" value="保存" />
+							<input type="reset" id="btn_b_res" value="取消"/>
 						</div>
 					</div>
-					<input id="number_<?php echo $i?>" style="display:none;" value="<?php echo $master[$i]->id?>">
-				</div>
-			<?php }?>
+					</form>
 			</div>
 			<div id="cc_bottom">
 				<div id="copyright"></div>

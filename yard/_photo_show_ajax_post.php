@@ -9,6 +9,7 @@
 	$idd=$user->id;
 	$db = get_db();
 	$id=$_POST['id'];
+	$albumd_id=$_POST['album_id'];
 	$number=$_POST['number'];
 	if(!is_numeric($id)) die('invlid request!');
 	if(!is_numeric($number)) die('invlid request!');
@@ -30,9 +31,9 @@
 	<table width="770" height="12" border="0" cellpadding="0" cellspacing="0">
 		<tr>
 			<td width="93" align="center">第<?php echo $number+1;?>/<?php echo $nb;?>张</td>
-			<td width="92" align="center" style="border-left:1px dashed #000000;"><a href="/yard/album_list.php">返回相册列表</a></td>
-			<td width="100" align="center" ><?php if($photo[$number]->u_id === $user->id){?><a href="#" id="e_delete">删除该图片</a><?php }?></td>
-			<td width="100" align="center" ><a href="" id="update_img">编辑图片</a></td>
+			<td width="92" align="center" style="border-left:1px dashed #000000;"><a href="/yard/album_list.php<?php if($albumd_id !== $user->id){ echo "?id=".$albumd_id;}?>">返回相册列表</a></td>
+			<td width="100" align="center" ><?php if($albumd_id === $user->id){?><a href="#" id="e_delete">删除该图片</a><?php }?></td>
+			<td width="100" align="center" ><a href="" id="update_img" <?php if($albumd_id === $user->id){ echo 'style="display:inline;"';}else{ echo 'style="display:none;"';}?>>编辑图片</a></td>
 			<td width="272" align="center"><div id="select_id" style="display:none;">
 				移动到相册：<select>
 					<?php
@@ -44,7 +45,7 @@
 						<option value="<?php echo $al->id;?>" <?php if($alb == $al->id){ echo 'selected="selected"';}else{}?>><?php echo $al->name;?></option>
 					<?php  }?>
 				</select>
-			<a href="" id="btn_update">确定</a></div><a href="" id="yidong">移动图片</a></td>
+			<a href="" id="btn_update">确定</a></div><a href="" id="yidong" <?php if($albumd_id === $user->id){ echo 'style="display:inline;"';}else{ echo 'style="display:none;"';}?>>移动图片</a></td>
 			<td width="51" align="right"><a id="prev" href="#">上一张</a></td>
 			<td width="62" align="center"><a id="next"  href="#">下一张</a></td>
 		</tr>

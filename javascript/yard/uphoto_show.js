@@ -1,11 +1,12 @@
 $(function(){
 	var result = $('#result_id').val();
+	var album_id = $('#album_id').val();
 	if(result.length <= 0){
 		alert("操作有误！");
 		window.location.href = "/yard";
 	}else{
 		var number=0;
-		$.post("_photo_show_ajax_post.php",{"id":result,'number':number},function(data){
+		$.post("_photo_show_ajax_post.php",{"id":result,'number':number,'album_id':album_id},function(data){
 			$("#pic_log").html(data);
 		});
 	}
@@ -16,8 +17,12 @@ $(function(){
 		var content=$('#upload_description').val().trim();
 		if(!title){
 			alert("请输入图片名称！");
+		}else if(title.length >= 30){
+			alert("图片名称必须小于30字！");
 		}else if(!content){
 			alert("请输入图片表述！");
+		}else if(content.length >=500){
+			alert("输入的图片描述必须小于500字！");
 		}else{
 			$.post("_photo_update_ajax_post.php",{"id":id,'title':title,'content':content},function(data){
 				alert(data);
