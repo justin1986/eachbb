@@ -65,8 +65,9 @@
 			<form>
 			<div id="cc_t"></div>
 			<div id="cc_c" >
+				<?php if($member){?>
 				<div id="cc_pg">
-					<div class=r_title id="r_log"><a href="#"><?php echo $member->name;?></a>的日志列表</div>
+					<div class=r_title id="r_log"><a href="/yard/home.php?id=<?php echo $user_id;?>"><?php echo $member->name;?></a>的日志列表</div>
 					<div id="r_log_hr">
 						<div>日志列表</div>
 					</div>
@@ -103,6 +104,7 @@
 					</div>
 					<?php $i++; }}?>
 				</div>
+				<?php }else{echo '<div style="width:790px; height:500px; font-size:34px; font-weight:bold; line-height:500px; text-align:center;"><a href="/">非法操作！</a></div>';}?>
 			</div>
 			<div id="cc_b"></div>
 			</form>
