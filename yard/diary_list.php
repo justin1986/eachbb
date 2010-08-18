@@ -65,7 +65,9 @@
 			<form>
 			<div id="cc_t"></div>
 			<div id="cc_c" >
-				<?php if($member){?>
+				<?php
+				var_dump($member);
+				 if($member){?>
 				<div id="cc_pg">
 					<div class=r_title id="r_log"><a href="/yard/home.php?id=<?php echo $user_id;?>"><?php echo $member->name;?></a>的日志列表</div>
 					<div id="r_log_hr">

@@ -13,7 +13,7 @@
 		css_include_tag('admin2','colorbox','jquery_ui');
 		use_jquery_ui();
 		validate_form("news_edit");
-		js_include_tag('category_class.js','admin/news/news_pub', 'admin/news/news_edit','jquery.colorbox-min.js','../ckeditor/ckeditor.js','pubfun','assistant/edit');
+		js_include_tag('category_class.js','admin/news/news_pub','jquery.colorbox-min.js','../ckeditor/ckeditor.js','pubfun','assistant/edit');
 	?>
 </head>
 <?php 
@@ -120,6 +120,7 @@
 	</div>
 	<script>
 	$(function(){
+		
 			category.display_select('category_select',$('#span_category'),<?php echo $category_id;?>,'', function(id){			
 			});
 
