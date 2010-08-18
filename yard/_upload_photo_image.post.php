@@ -37,7 +37,6 @@
 				$save = ROOT_DIR_NONE ."/upload/".$save_name;
 				$save_e = "/upload/".$save_name;
 				$sql="update eachbb_member.album  set last_update_time=now(),name='$upload_name',front_cover='$save_e',description='$upload_description' where id=$album_id;";
-				echo $sql;
 				if(move_uploaded_file($yuan_pic,$save)){
 					if($db->execute($sql)){
 							$alpum=$_POST['alpum'];

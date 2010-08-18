@@ -126,7 +126,7 @@
 					<div id="cc_ps" >
 					<div id="box_test"></div>
 					<div id="box_right">
-						<div id="ccps_l" style="float:left;"><a href=""><img src="/images/yard/c_p.jpg" border=0/></a></div>
+						<div id="ccps_l" style="float:left;"><a href="/yard/info.php"><img src="/images/yard/c_p.jpg" border=0/></a></div>
 						<div id="ccps_c">
 							<div id="ccpsc_l">
 								<div id="ccpsc_img"></div>
