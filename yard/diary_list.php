@@ -20,7 +20,6 @@
 					alert("非法操作！");?>
 				<script>window.location.href="/login/";</script>
 			<?php 
-					
 				}
 				$user_id=$id;
 			}
