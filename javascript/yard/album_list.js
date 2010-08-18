@@ -37,6 +37,9 @@ $(function(){
 				});
 			}
 		});
+		$('#btn_b_res').live("click",function(){
+			window.back();
+		});
 		$(function(){
 			$('#add_album').click(function(){
 				$('#ii_body').css("display","inline");

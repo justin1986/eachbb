@@ -118,7 +118,7 @@
 						<div id="upload_line"></div>
 						<div id="upload_btn_banner">
 							<input type="submit" id="btn_b_save" value="保存" />
-							<input type="reset" id="btn_b_res" value="取消"/>
+							<input type="reset"  id="btn_b_res" value="取消"/>
 						</div>
 					</div>
 					</form>
