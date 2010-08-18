@@ -18,8 +18,8 @@ class RegisterResult {
 }
 
 class User {
-	public static $s_table_name = 'eb_member';
-	public static $s_fields = array('id','name','email','authenticated','authenticate_string','authenticated_at','created_at','last_login','uid','avatar','cache_name');
+	public static $s_table_name = '`eachbb_member`.member';
+	public static $s_fields = array('id','name','email','authenticated','authenticate_string','authenticated_at','created_at','last_login','uid','avatar','cache_name','baby_status','baby_birthday','birthday','zip','phone','address','baby_name','baby_gender','gender','ip','fix_phone','id_num','education','industry','income','register_phone','true_name');
 	
 	/*
 	 * staitc functions
@@ -73,6 +73,9 @@ class User {
 	}
 	//静态函数，用户登录，如果成功，则返回登录用户的对象实例，失败返回false
 	public static function login($name,$password,$expire=0){
+		if($expire > 0){
+			$expire = time() + $expire * 3600 * 24;
+		}
 		$name = strtolower($name);
 		if(strlen($name) > 50 || strlen($password) > 20) return false;
 		//尝试使用ucenter接口登录
@@ -80,13 +83,14 @@ class User {
 		//ucenter 接口登录成功!
 		if($uid > 0){
 			echo uc_user_synlogin($uid);
-			if(is_null(self::login_by_uid($uid,$expire,$upassword))){
+			if(is_null(self::login_by_uid($uid,$password,$expire))){
 				//本地用户库中不存在，插入用户数据
 				self::register($name,$uemail,$password,$uid);
-				return self::login_by_uid($uid,$expire);
+				return self::login_by_uid($uid,$password,$expire);
 			};
 		}	
 		//ucenter 接口登录失败，尝试从本地用户库登录	
+		$old_pwd = $password;
 		$password = md5($password);
 		$db = get_db();
 		$db->query("select id,uid from " .self::$s_table_name ." where (name='$name' or email='$name') and password='$password'");
@@ -94,16 +98,13 @@ class User {
 		$user_id = $db->field_by_name('id');
 		$uid = $db->field_by_name('uid');
 		$cache_name = rand_str(20);
-		if($expire > 0){
-			$expire = time() + $expire * 3600 * 24;
-		}
-		if(self::_login($user_id,$uid,$name,$cache_name,$expire)=== false) return false;
+		if(self::_login($user_id,$uid,$name,$cache_name,$expire,$old_pwd)=== false) return false;
 		echo uc_user_synlogin($uid);
 		return self::find($user_id);
 	}
 	
 	//ucenter 同步登录接口函数
-	static function login_by_uid($uid,$expire=0){
+	static function login_by_uid($uid,$password,$expire=0){
 		$db = get_db();
 		$db->query("select name,id,uid from " .self::$s_table_name ." where uid=$uid");
 		if($db->record_count <= 0) return null;
@@ -111,17 +112,19 @@ class User {
 		$uid = $db->field_by_name('uid');
 		$name = $db->field_by_name('name');
 		$cache_name = rand_str(20);
-		if(self::_login($user_id,$uid,$name,$cache_name,$expire)=== false) return false;
+		if(self::_login($user_id,$uid,$name,$cache_name,$expire,$password)=== false) return false;
 		return self::find($user_id);
 	}
 	
-	private static function _login($user_id,$uid,$name,$cache_name,$expire){
+	private static function _login($user_id,$uid,$name,$cache_name,$expire,$password=null){
 		$result = true;
 		$result &= @setcookie("member_name",$name,$expire,'/');
 		$result &= @setcookie("cache_name",$cache_name,0,'/');
 		$result &= @setcookie("member_id",$user_id,0,'/');
 		$result &= @setcookie("member_uid",$uid,0,'/');
-		$result &= @setcookie("member_password",$password,$expire,'/');
+		if($password){
+			$result &= @setcookie("member_password",$password,$expire,'/');
+		} 
 		if($result === false) return false;
 		$db = get_db();
 		$db->execute("update " .self::$s_table_name ." set cache_name='{$cache_name}',last_login=now() where id={$user_id}");
@@ -200,6 +203,16 @@ class User {
 		$db->execute($sql);
 		$result->id = $db->last_insert_id;
 		$result->result = true;
+		$status = new table_class('eachbb_member.member_status');
+		$status->echo_sql = true;
+		$status->uid = $result->id;
+		$status->created_at = now();
+		$status->score = 0;
+		$status->level = 1;
+		$status->friend_count = 0;
+		$status->unread_msg_count = 0;
+		$status->visit_count = 0;
+		$status->save();
 		return $result;
 		
 	}
@@ -208,7 +221,10 @@ class User {
 	//返回当前登录的用户，未登录，则返回null
 	public static function current_user(){
 		if(!$_COOKIE['cache_name']) return null;
-		return self::find_by_cachename($_COOKIE['cache_name']);
+		global $_g_current_user;
+		if(is_object($_g_current_user)) return $_g_current_user;
+		$_g_current_user = self::find_by_cachename($_COOKIE['cache_name']);
+		return $_g_current_user;
 	}
 	
 	/*
@@ -232,5 +248,33 @@ class User {
 		}
 	}
 	
+	public function add_friend($friend_id){
+		$db = get_db();
+		$friend_id = intval($friend_id);
+		$db->query("select name,avatar from eachbb_member.member where id={$friend_id}");
+		if($db->record_count <= 0) return false;
+		$friend_name = $db->field_by_name('name');
+		$avatar = $db->field_by_name('avatar');
+		
+		$db->query("select id from `eachbb_member`.friend where u_id = {$this->id} and f_id ={$friend_id}");
+		if($db->record_count > 0){
+			return true;	
+		}
+		$now = now();
+		$sql = "insert into `eachbb_member`.friend (u_id,f_id,f_name,f_avatar,created_at) values ({$this->id},$friend_id,'$friend_name','$avatar','$now')";
+		return $db->execute($sql);
+	}
+	
+	public function remove_friend($firend_id){
+		$friend_id = intval($friend_id);
+		$db = get_db();
+		return $db->execute("delete from `eachbb_member`.friend where u_id={$this->id} and f_id = {$firend_id}");
+	}
+	
+	public function adjust_score($score,$reason){
+		$score = intval($score);
+		$db = get_db();
+		$db->execute("insert into eachbb_member.adjust_score_history (u_id,score,reason,created_at) values({$this->id},$score,'$reason',now())");
+	}
 	
 }

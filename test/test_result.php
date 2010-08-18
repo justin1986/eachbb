@@ -1,6 +1,6 @@
 <?php
 include "../frame.php";
-include_once '../inc/user.class.php';
+include_once '../inc/User.class.php';
 
 class Report {
 	var $id;
@@ -36,13 +36,13 @@ foreach ($results as $result){
 <meta http-equiv=Content-Language content=zh-CN>
 	<title>测评报告</title>
 	<?php 
-		css_include_tag('test_result','top_inc/test_blue.top','top_inc/test_left');
+		css_include_tag('top_inc/test_top','test_result','top_inc/test_left');
 	?>
 </head>
 <body>
 <div id="ibody">
 	<div id="fbody">
-		<?php include_once('../inc/top_blue.inc.php'); ?>
+		<?php include_once('../inc/_test_top.php'); ?>
 		<!-- 外部容器 -->
 		<div id="container">
 			<?php include_once('../inc/left_inc.php'); ?>
@@ -101,7 +101,7 @@ foreach ($results as $result){
 							</div>
 						</div>
 						<?php }?>
-						<div id="btn_recommand"><a href="">回顾题目</a></div>
+						<div id="btn_recommand"><a href="/test/review.php?id=<?php echo $test_id;?>">回顾题目</a></div>
 					</div>
 				  	<div id="c_hr"></div>
 					<div id="recommand_container">
@@ -161,9 +161,7 @@ foreach ($results as $result){
 				<!-- 右侧放置内容结束 -->
 			<div id="bottom_banner"><img src="/images/test/pp.jpg"/></div>
 		</div>
-		<div id="bg_hr"></div>
-		<div id="bottom">关于我们 - 加入我们 - 友情链接 - 联系我们 - 服务条款 - 隐私保护 - 网站地图</div>
-		<div id="bottom_b">哈哈少儿旗下网站  Copyright © 1997-2010 HAHA.smg.com All Rights Reserved.</div>
+		<?php include_once('../inc/bottom.php');?>
 	</div>
 </div>
 </body>

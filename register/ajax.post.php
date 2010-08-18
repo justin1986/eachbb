@@ -74,12 +74,12 @@ if($type == 'login'){
 		die('验证码输入错误');
 	}
 	$db = get_db();
-	$sql = "select name from eb_member where name='{$name}'";
+	$sql = "select name from eachbb_member.member where name='{$name}'";
 	$record = $db->query($sql);
 	if($record){
 		die('用户名已经被注册');
 	}
-	$sql = "select name from eb_member where email='{$email}'";
+	$sql = "select name from eachbb_member.member where email='{$email}'";
 	$record = $db->query($sql);
 	if($record){
 		die('邮箱已经被注册');
@@ -89,4 +89,5 @@ if($type == 'login'){
 	if(!$result->result){
 		die($result->error_msg);
 	}
+	User::login($name, $password);
 }

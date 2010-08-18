@@ -1,0 +1,24 @@
+@CHARSET "UTF-8";
+#container_recommand{width:203px; float:right;}
+		#individual{width:200px; float:right;}
+			#indiv_top{width:200px; height:34px; background:url(/images/assistant_list/r_1.jpg) no-repeat; float:right;}
+			#indiv_container{width:198px; height:152px; border:1px solid #F0C09D; border-top:0px solid #F0C09D; float:right;}
+				#indiv{width:190px; height:116px; margin-left:8px; margin-top:8px; float:left; display:inline;}
+					#img_pg{width:106px; height:106px; background:url(/images/assistant_list/img_pg.jpg) no-repeat; float:left;}
+					#img_pg img{width:89px; height:89px;  margin-left:7px; margin-top:7px; border:0px soid #000000;}
+					#indiv_menu{width:78px; height:106px; float:right;}
+						#indiv_name{width:78px; height:20px; font-size:15px; font-weight:bold; color:#00398B; float:right;}
+							#indiv_name img{width:13px; height:14px; margin-left:4px;}
+						.indiv_value{width:78px; height: 14px; margin-top:3px; font-weight:bold; line-height: 14px; overflow:hidden; font-size: 12px; color:#1A61A3;}
+						.indiv_value font{ font-size: 12px; font-weight:bold; color:#000000;}
+			.indiv_bottom{width:95px; height: 16px; padding-left:3px; font-size:12px; color:#666666; float: left; display: inline;}
+				.indiv_bottom a{ font-size:12px; color:#FF9600; text-decoration: none;}
+		.recommand{width:200px; height:200px; margin-top:17px; border:0px solid #000000; float:right; display: inline;}
+		#attention{width:200px; float:right;}
+			#att_top{width:190px; height:31px; padding-left:10px; font-size:14px; font-weight:bold; line-height:30px; background:url(/images/assistant_list/r_top.jpg) no-repeat;}
+				#att_top a{margin-left:83px; font-weight:normal; font-size:12px; color:#000000; text-decoration: none;  }
+			#att_content{width:198px; border-left:1px solid #D6D6D6;  border-right:1px solid #D6D6D6;  float:left;}
+				.att_container{width:198px; height:20px; line-height:20px; float:left;}
+				.att_container div{width:4px; height:4px; margin-left:18px; margin-top:8px; font-size:0px; background:#444444; float:left; display:inline;}
+				.att_container a{margin-left:5px; font-size:12px; color:#000000; text-decoration: none;}
+			#att_bottom{width:200px; height:4px; background:url(/images/assistant_list/r_btm.jpg) no-repeat;  float:left;}

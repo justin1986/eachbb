@@ -8,7 +8,7 @@ if (!function_exists('linux_path')){
 	} 
 }
 
-define(LIB_PATH, linux_path(dirname(__FILE__)) .'/');
+define("LIB_PATH", linux_path(dirname(__FILE__)) .'/');
 
 function debug_info($msg,$type='php') {
 	if(get_config('debug_tag') === false){
@@ -630,4 +630,66 @@ function echo_href($title,$href,$max_len=0,$html_params=null){
 		$display = $title;
 	}
 	$out .=">$display</a>";
+	echo $out;
+}
+
+function month_between($time1,$time2=null){
+	$time2 || $time2 = time();
+	if(is_string($time1)){
+		$time1 = strtotime($time1);
+	}
+	if($time1 === false) return null;
+	if(is_string($time2)){
+		$time2 = strtotime($time2);
+	}
+	if($time2 === false) return null;
+	if($time1 >= $time2){
+		$plus = 1;
+	}else{
+		$time = $time1;
+		$time1 = $time2;
+		$time2 = $time;
+		$plus = -1;
+	}
+	
+	$year = date('Y',$time1) - date('Y',$time2);
+	$mounth = date('m',$time1) - date('m',$time2);
+	if(date('d',$time1) >= date('d',$time2)){
+		return $plus*($year*12 + $mounth + 1);
+	}else{
+		return $plus*($year*12 + $mounth);
+	}
+	
+	
+}
+
+function get_week_day(){
+	$w = date('N');
+	switch ($w) {
+		case 1:
+			return "星期一";
+		break;
+		case 2:
+			return "星期二";
+		break;
+		case 3:
+			return "星期三";
+		break;
+		case 4:
+			return "星期四";
+		break;
+		case 5:
+			return "星期五";
+		break;
+		case 6:
+			return "星期六";
+		break;
+		case 7:
+			return "星期天";
+		break;
+		default:
+			;
+		break;
+	}
+	
 }

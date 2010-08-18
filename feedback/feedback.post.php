@@ -1,9 +1,9 @@
-﻿<?php
+<?php
 	include_once('../frame.php');
 	$valid_types = array('up','down','collect','comment');
 	$type = strtolower($_POST["type"]);
 	if(!in_array($type, $valid_types)) die('invalid request!');
-	if($type == 'up' || $type == 'down'){	
+	if($type == 'up' || $type == 'down'){
 		$id = intval($_POST["id"]);
 		if(!is_ajax()) die('invlid request!');
 		$db=get_db();
@@ -17,7 +17,7 @@
 		$comment =$db->query("select comment_id,up,down from eb_comment_dig where comment_id={$id}");
 		echo $type == "up" ? $comment[0]->up : $comment[0]->down;
 	}elseif ($type=='comment'){
-		include_once '../inc/user.class.php';
+		include_once '../inc/User.class.php';
 		$user = User::current_user();
 		if(!$user){
 			echo '请先登录';

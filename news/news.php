@@ -1,6 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <?php
-	include_once('../frame.php');
+	include_once(dirname(__FILE__).'/../frame.php');
 	$id =intval(trim($_REQUEST['id']));
 	if(empty($id)){
 		#redirect('error.html');
@@ -13,6 +13,12 @@
 <head>
 <meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <meta http-equiv=Content-Language content=zh-CN>
+<meta name="Keywords" content="<?php
+$lines=explode("||",$column[0]->keywords);
+foreach ($lines as $li){ 
+	echo $li;
+} ?>"/>
+<meta name="Description" content="<?php echo  preg_replace('/\r|\n/', '',str_replace(" ","",strip_tags($column[0]->description)));?>"/>
 <title><?php echo $column[0]->title;?></title>
 <?php
 	use_jquery();
@@ -22,7 +28,7 @@
 </head>
 <body>
 <div id="ibody">
-	<?php include_once('../inc/top_consult.php'); ?>
+	<?php include_once('/../inc/_consult_top.php'); ?>
 		<div id="fbody">
 		<div id="log_top">
 			<div id="log_t">
@@ -174,8 +180,7 @@
 			</div>
 		</div>
 		</div>
-		<div id="bottom">关于我们 - 加入我们 - 友情链接 - 联系我们 - 服务条款 - 隐私保护 - 网站地图</div>
-		<div id="bottom_b">哈哈少儿旗下网站  Copyright © 1997-2010 HAHA.smg.com All Rights Reserved.</div>
+		<?php include_once('../inc/bottom.php');?>
 </div>
 </body>
 </html>

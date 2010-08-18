@@ -1,0 +1,1 @@
+ALTER TABLE `eachbb`.`eb_news_share` CHANGE COLUMN `type` `share_type` VARCHAR(45) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'news';

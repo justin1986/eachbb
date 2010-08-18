@@ -2,14 +2,14 @@
 <html>
 <head>
 <?php
-	include_once('../frame.php');
+	include_once(dirname(__FILE__).'/../frame.php');
  ?>
 <meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <meta http-equiv=Content-Language content=zh-CN>
-<title>课程</title>
+<title>特色测评</title>
 <?php
 	use_jquery();
-	css_include_tag('test','top_inc/test_blue.top','top_inc/test_left');
+	css_include_tag('top_inc/test_top','test','top_inc/test_left');
 	js_include_tag('test/test');
 	init_page_items('test_index');
 ?>
@@ -17,20 +17,19 @@
 <body>
 <div id="ibody">
 	<div id="fbody">
-		<?php include_once('../inc/top_blue.inc.php'); ?>
+		<?php include_once(dirname(__FILE__).'/../inc/_test_top.php'); ?>
 		<div id="content">
-			<?php include_once('../inc/left_inc.php'); ?>
+			<?php include_once(dirname(__FILE__).'/../inc/left_inc.php'); ?>
 			<div id="c_r">
 				<div id="cr_flash">
 					<div id="cr_banner">
-					<a href="#"><img src="/images/test/m_pg_p.png"/></a>
 						<div id="crf_l">flash</div>
 					<div id="crf_r">
 						<div id="crf_t">特色评价<font>特色介绍</font></div>
 						<?php for($i =0 ; $i < 4; $i++){
 							$pos = "top_intr_$i";
 						?>
-						<div class="crf_c" id="cr_<?php echo $i;?>"<?php show_page_pos($pos,'link_d_i')?> style="<?php if($i==0){ echo "display:inline;"; }?>">
+						<div class="crf_c" id="cr_<?php echo $i;?>"<?php show_page_pos($pos,'link_d_i')?> style="<?php if($i==0){ echo "display:inline;"; }else{echo "display:none;"; }?>">
 							<div class="crf_ti"><img src="<?php echo $pos_items[$pos]->image1?>"></div>
 							<div class="crg_tt"><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href)?></div>
 							<?php echo_href($pos_items[$pos]->description, $pos_items[$pos]->href)?>
@@ -79,11 +78,11 @@
 					<div class="crb_c"<?php show_page_pos($pos,'link_d_i')?> id="crbc_<?php echo $i; ?>" style="<?php if($i == 0){ echo 'display:inline;';}else{ echo 'display:none;';} ?>">
 							<div class="crbc_a">
 								<a href="#">
-									<img src="/images/test/tr_a.jpg">
+									<img src="<?php echo $pos_items[$pos]->image1?>">
 								</a>
 							</div>
 							<div class="crbci_t">
-								<a href="#"><?php echo $i; ?>前前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前前前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前前前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密秘密秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密秘密秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密前秘密秘密</a>
+								<?php echo_href($pos_items[$pos]->description, $pos_items[$pos]->href)?>
 							</div>
 					</div>
 					<?php } ?>
@@ -97,49 +96,27 @@
 			<div id="cre">
 					<img src="/images/test/tc_b.jpg">
 			</div>
-			<div id="crf">
-				<div class="cf_z">
-					<div class="cfz_t">
-						<font>父母养育测试</font>
+			<div id="cr_ci">
+					<div id="cri_t"></div>
+					<div id="cri_c">
+						<div id="cric_pg">
+							<div id="pric_l"></div>
+							<div id="cric_title"><font>精编课程展示</font> 资源分享 分我所有</div>
+							<div id="cric_c">
+								<?php for($i=0;$i<6;$i++){?>
+								<div class="cricc_a">
+									<div <?php $pos="test_bottom_img_$i";show_page_pos($pos,'link_i');?>><a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : '/images/class/c_pg_a.jpg';?>"></a></div>
+								</div>
+								<?php }?>
+							</div>
+							<div id="pric_rl"></div>
+						</div>
 					</div>
-					<div class="cfz_cz">
-						<ul>
-							<?php
-							 for($i=0;$i<7;$i++){
-							 	$pos = "left_list_$i"; 
-							 ?>
-							<li>
-								<div class="frzcd"></div>
-								<div class="frzc_c"><a href="#"><font>[知识榜单]</font> 好啊好哦啊粉色的发生</a></div>
-							</li>
-							<?php
-							}?>
-						</ul>
-					</div>		
+					<div id="cri_b"></div>
 				</div>
-				<div class="cf_z" id="cf_z">
-					<div class="cfz_t">
-						<font>父母养育测试</font>
-					</div>
-					<div class="cfz_cz">
-						<ul>
-							<?php
-							 for($i=0;$i<7;$i++){ ?>
-							<li>
-								<div class="frzcd"></div>
-								<div class="frzc_c"><a href="#"><font>[知识榜单]</font> 好啊好哦啊粉色的发生</a></div>
-							</li>
-							<?php
-							}?>
-						</ul>
-					</div>		
-				</div>
-			</div>
 			</div>
 		</div>
-		<div id="bg_hr"></div>
-		<div id="bottom">关于我们 - 加入我们 - 友情链接 - 联系我们 - 服务条款 - 隐私保护 - 网站地图</div>
-		<div id="bottom_b">哈哈少儿旗下网站  Copyright © 1997-2010 HAHA.smg.com All Rights Reserved.</div>
+		<?php include_once(dirname(__FILE__).'/../inc/bottom.php');?>
 	</div>
 </div>
 </body>

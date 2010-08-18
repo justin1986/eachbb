@@ -1,7 +1,7 @@
-﻿<?php 
+<?php 
 session_start();
 include_once '../frame.php';
-include_once '../inc/user.class.php';
+include_once '../inc/User.class.php';
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html>
@@ -10,7 +10,7 @@ include_once '../inc/user.class.php';
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-CN>
 <?php 
-	css_include_tag('test_begin','top_inc/test_blue.top','top_inc/test_left');
+	css_include_tag('top_inc/test_top','test_begin','top_inc/test_left');
 	use_jquery();
 	js_include_tag('front/test');
 	$method = strtolower($_SERVER['REQUEST_METHOD']);
@@ -57,7 +57,7 @@ include_once '../inc/user.class.php';
 <body>
 <div id="ibody">
 	<div id="fbody">
-		<?php include_once('../inc/top_blue.inc.php'); ?>
+		<?php include_once('../inc/_test_top.php'); ?>
 		<div id="content">
 			<?php include_once('../inc/left_inc.php'); ?>
 			<div id="c_r">
@@ -156,9 +156,7 @@ include_once '../inc/user.class.php';
 				</div>
 			</div>
 		</div>
-		<div id="bg_hr"></div>
-		<div id="bottom">关于我们 - 加入我们 - 友情链接 - 联系我们 - 服务条款 - 隐私保护 - 网站地图</div>
-		<div id="bottom_b">哈哈少儿旗下网站  Copyright © 1997-2010 HAHA.smg.com All Rights Reserved.</div>
+		<?php include_once('../inc/bottom.php');?>
 	</div>
 </div>
 </body>

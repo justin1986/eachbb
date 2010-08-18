@@ -17,7 +17,7 @@
 		$comment =$db->query("select comment_id,up,down from eb_comment_dig where comment_id={$id}");
 		echo $type == "up" ? $comment[0]->up : $comment[0]->down;
 	}else if($type == 'collect'){
-		include_once '../inc/user.class.php';
+		include_once '../inc/User.class.php';
 		$user = User::current_user();
 		if(!$user) die('请先登录!');
 		$news_id = intval($_POST['news_id']);
@@ -39,7 +39,7 @@
 		$collect->save();
 		echo "恭喜您，文章收藏成功！";
 	}elseif ($type=='comment'){
-		include_once '../inc/user.class.php';
+		include_once '../../inc/User.class.php';
 		$user = User::current_user();
 		if(!$user){
 			echo '请先登录';

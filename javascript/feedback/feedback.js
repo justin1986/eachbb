@@ -1,14 +1,12 @@
-﻿$(function(){
+$(function(){
 	$.post('/feedback/feedback_comment.php',function(feedback){
 		$("#res").html(feedback);
 	});
-	$('#c_p_a').css('margin-left','10px');
-	$('#c_p_a').addClass('selected');
 	$('.a_comment_up').live('click',function(e){
 		e.preventDefault();
 		var comment_id = $(this).attr('href');
 		comment_id=comment_id.substring(comment_id.lastIndexOf('/')+1,comment_id.length);
-		var $this = $(this);		
+		var $this = $(this);
 		$.post('/feedback/feedback.post.php',{"id":comment_id,"type":"up"},function(comment){
 			$this.attr('class','a_clicked');
 			$this.find('.span_up_num').html(comment);
@@ -25,6 +23,10 @@
 			$this.find('.span_down_num').html(comment);
 		});
 	});
+	$('.a_clicked').live('click',function(e){
+		e.preventDefault();
+		alert('请不要重复提交！');
+	});
 	$("#but").click(function(){
 		var comment = $(this).parent().find('textarea').val();
 		if(comment.length >2000){
@@ -35,13 +37,16 @@
 			alert('请输入评论内容!');
 			return;
 		}
+		$('#but').attr('disabled',true);
 		$.post('/feedback/feedback.post.php',{'type':'comment','comment':encodeURI(comment)},function(data){
 			if(data)
 			{
+				$('#but').attr('disabled',false);
 				alert(data);	
 			}
 			else
 			{
+				$('#but').attr('disabled',false);
 				$('#res').load('/feedback/feedback_comment.php');	
 			}
 		});

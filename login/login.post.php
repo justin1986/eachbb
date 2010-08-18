@@ -4,7 +4,7 @@
 	$last_url = !empty($_REQUEST['lasturl']) ? $_POST['lasturl'] : '/admin/admin.php';
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 	<head>
 		<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 		<meta http-equiv=Content-Language content=zh-CN>
@@ -31,7 +31,11 @@
 				$db->query("select id from eb_role where name = '{$_SESSION['role_name']}'");
 				$db->move_first();
 				$role_id = $db->field_by_name('id');
-				$rights = $db->query("select b.* from eb_role_rights a left join eb_rights b on a.rights_id = b.id where role_id = {$role_id}");
+				$sql= "select b.* from eb_role_rights a left join eb_rights b on a.rights_id = b.id";
+				if($_SESSION['role_name']!='admin' && $_SESSION['role_name'] != 'sys_admin'){
+					$sql .= " where role_id = {$role_id}";
+				}
+				$rights = $db->query($sql);
 				$len = count($rights);
 				for($i=0;$i<$len;$i++){
 					if($rights[$i]->type == 2){

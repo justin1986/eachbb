@@ -1,0 +1,42 @@
+@CHARSET "UTF-8";
+body{width:970PX; margin: 0 auto;}
+#ibody{width:970px; overflow:hidden; margin:0;}
+
+#result{width:745px;  float:right; display:inline;}
+
+#container{width:745px; margin-top:10px;  float:right; display:inline;}
+	#container_result{width:521px; float:left;}
+		#result_list{width:521px; overflow:hidden; border:1px solid #FFE5C5; float:left;}
+			#weekly{width:521px; height:101px; border-bottom:1px solid #FFE5C5; float:left;}
+				#weekly img{width:519px; height:101px; border:0px solid red;}
+			#result_news{width:501px; padding-left:20px; margin-top:40px; line-height:20px; overflow: hidden; font-size:12px; color:#666666; float:left; display:inline;}
+				#result_news div {width:501px;  font-size:12px; font-weight:bold; color:#666666; float:left;}
+		#questionary{width:487px; height:292px; margin-left:15px; margin-top:20px; background: url(/images/topic/daohan.jpg) no-repeat; float:left;}
+			#questionary_container{width:400px; height:130px; margin-left:50px; margin-top:110px;}
+				.questionary_pg{width:190px; height:70px; float:Left;}
+					.questionary_title{width:190px; height:20px; font-size:12px; font-weight:bold; float:left;}
+					.questionary_banner{width:190px; height:20px; line-height:20px; overflow:hidden; float: left;}
+						.questionary_banner div{width:4px; height:4px; margin-top:8px; background: #5B5B5B; font-size: 0px; float:left; }
+						.questionary_banner a{margin-left:5px; font-size: 12px; text-decoration:none; color:#5B5B5B;}
+		#help_title{width:451px; height:21px; margin-left:40px; margin-top:20px; background:url(/images/topic/title.jpg) no-repeat; float:left;}
+		.help_banner{width:457px; margin-left:40px; overflow:hidden;  float:left; display:inline;}
+			.help_dian{width:4px; height:4px; margin-top:8px; font-size:0px; background:#5B5B5B; float:left;}
+			.help{width:437px; margin-left:10px; font-size:12px; color:#5B5B5B; line-height:20px; float:left; display:inline;}
+		.attention_pg{width:478px; margin-left:20px; margin-top:20px; float:left; display: inline;}
+			.attention_pg .top{width:293px; height:27px; padding-left:185px; line-height:20px; font-weight:bold; font-size:12px; color:#6DA93F; background:url(/images/topic/t.jpg) no-repeat; float:left; display:inline;}
+			.attention_pg_content{width:467px; border-left:5px solid #D0EABF; overflow:hidden; border-right:6px solid #D0EABF;  float:left; display:inline;}
+				.attention_pg_content div{width:440px; margin-left:20px; line-height:20px; font-size:12px; color:#5B5B5B; text-indent:25px; float:left; display: inline;}
+					.attention_pg_content div img{width:10px; height:17px;}
+				.content_banner_bottom{width:420px; height:20px;  line-height:20px; font-size:12px; color:#5B5B5B; text-align: right; float: left; display:inline;}
+				.content_banner_bottom a{ font-size:12px; color:#5B5B5B;  font-weight: bold; text-decoration: none;}
+			.attention_pg .bottom{width:478px; height:13px; margin-top:0px; font-size:0px; background: url(/images/topic/b.jpg) no-repeat; float:left;}
+		#clew{width:481px; height:21px; margin-left:40px; margin-top:20px; background:url(/images/topic/title2.jpg) no-repeat; float:left;}
+			#top_2{width:478px; height:35px; background:url(/images/topic/t1.jpg) no-repeat;  float:left; display:inline;}
+		#game_time{width:481px; height:21px; margin-left:20px; margin-top:20px; font-size:12px; color:#FF8010; font-weight:bold; float:left;}
+		#game_banner{width:478px; margin-left:20px; font-size:12px; color:#5B5B5B; line-height:20px; float:left;}
+			.game_attention{width:230px; margin-top:10px; float:left;}
+			.game_attention img{width:73px; height:56px; border:0px solid red; float:left; display:inline;}
+			.game_attention div{width:157px; height:18px; overflow:hidden; text-indent:10px; line-height:20px; float:left;}
+			.game_attention div a{color:#000000; text-decoration: none; font-size: 12px;}
+.v_kong{width:188px; height:15px; line-height:0px; float:left;}
+.kong{width:503px; height:15px; line-height:0px; float:left;}

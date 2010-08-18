@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	include_once( dirname(__FILE__) .'/../frame.php');
+	include_once(dirname(__FILE__) .'/../frame.php');
 	if(!isset($_SESSION['login'])){
 		$_SESSION['login'] = rand_str();
 	}
@@ -20,7 +20,7 @@
 <body>
 <div id="ibody">
 	<div id="fbody">
-		<?php include_once('../inc/top_login.php');?>
+		<?php include_once(dirname(__FILE__) .'./../inc/_login_top.php');?>
 		<div id="center">
 			<div id="cpg_top"></div>
 			<div id="cpg_c">

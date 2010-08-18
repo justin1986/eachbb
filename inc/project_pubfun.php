@@ -21,9 +21,7 @@ function get_news_url($news,$type=null,$index=0){
 		$ret = "/review/".date('Ym',strtotime($news->created_at))."/".str_pad($news->id,7,'0',STR_PAD_LEFT);
 		if($index>1) $ret .= "_{$index}";
 		$ret .= ".shtml";
-		
 		return $ret;
-			
 	}else{
 		if(is_numeric($news)){
 			$ret = '/news/news.php?id='.$news;
@@ -119,9 +117,6 @@ function get_page_type(){
 }
 
 function init_page_items($page){
-	if(!class_exists('PagePos')){
-		include_once dirname(__FILE__).'/../lib/page_pos.class.php';
-	}
 	global $pos_items;
 	global $pos_page;
 	$pos_page = $page;
@@ -144,4 +139,13 @@ function show_page_pos($pos,$name='default'){
 	}	
 }
 
-?>
+function get_gender($gender){
+	if($gender == 1){
+		return "男";
+	}elseif ($gender == 2){
+		return "女";
+	}else {
+		return "未知";
+	}
+}
+

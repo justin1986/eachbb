@@ -1,0 +1,42 @@
+@CHARSET "UTF-8";
+
+#f_l{width:200px; margin-left:5px; float:left; display:inline;}
+.h_pg_t{width:200px; height:8px; background:url(/images/helper/l_t.jpg) no-repeat; font-size:0px; line-height:0px; float:left; display:inline;}
+.h_pg_c{width:198px;  background:#F0F0F0; border-left:1px solid #DBDBDB; border-right:1px solid #DBDBDB; float:left; display:inline;}
+.h_pg_b{width:200px; height:8px; font-size:0px; line-height:0px; background:url(/images/helper/l_b.jpg) no-repeat; float:left; display:inline;}
+.h_pg_cc{width:192px; margin-left:3px; background:#ffffff; float:left; display:inline;}
+.ht_l_t{width:150px; height:20px; margin-top:5px; margin-left:16px; line-height:20px; color:#FF5227; font-size:12px; font-weight:bold; float:left; display:inline;}
+.ht_l_h{width:180px; height:1px; margin-left:6px; margin-top:2px; font-size:0px; line-height:0px; background:url(/images/helper/h_d.jpg) repeat-x; float:left; display:inline;}
+.htl_pg_c{width:180px; margin-bottom:6px; margin-top:10px; margin-left:6px; background:#F5F5F5; float:left; display:inline;}
+.htc_img{width:176px; height:61px; margin-top:10px; float:left; display:inline;}
+.ht_c_z{width:180px; margin-top:10px; float:left; display:inline;}
+.ht_c_t{width:178px; float:left; display:inline;}
+.htct_l{width:7px; height:7px; margin-left:10px; margin-top:3px; line-height:0px; font-size:0px; background:url(/images/helper/l_j.jpg) no-repeat; float:left; display:inline;}
+.htct_t{width:150px; height:15px; margin-left:5px; line-height:15px; font-size:12px; font-weight:bold; color:#7C7C7C; cursor:pointer; float:left; display:inline;}
+.htct_t a{font-size:12px; color:#666666; font-weight:normal; text-decoration: none;}
+.htct_b{width:160px; margin-left:13px; font-size:12px; float:left; display:none;}
+.htct_b a{color:#999999; text-decoration: none;}
+.htct_c{width:150px; height:14px; margin-top:10px; color:#999999; overflow:hidden; text-align:left; float:left; display:inline;}
+.htct_hr{width:160px; height:1px; margin-bottom:1px;  margin-left:10px; margin-top:5px; background:url(/images/helper/l_d.jpg) repeat-x; font-size:0px; line-height:0px; float:left; display:inline;}
+.htctc_hr{width:160px; height:10px;  margin-left:10px; margin-top:5px; font-size:0px; line-height:0xp; float:left; display:inline;}
+
+#hl_class{width:200px; margin-top:25px; float:left; display:inline;}
+.hlc_t{width:200px; height:4px; font-size:0px; line-height:0px; background:url(/images/helper/lb_t.jpg) no-repeat; float:left; display:inline;}
+.hlc_b{width:198px; border-left:1px solid #E7E7E7; border-right:1px solid #E7E7E7; float:left; display:inline;}
+.hlc_bb{width:198px; height:4px; font-size:0px; line-height:0px; background:url(/images/helper/lb_b.jpg) no-repeat; float:left; display:inline;}
+.hlcb_pg{width:198px; height:23px; background:url(/images/helper/lb_h.jpg) repeat-x; float:left; display:inline;}
+.hlct_t{width:100px; height:15px; margin-left:14px; margin-top:2px; font-weight:bold; color:#4E4E4E; font-size:12px; float:left; display:inline;}
+.hlcb_pg img{width:5px; height:3px; margin-top:8px; border:0px solid red; float:left; display:inline; }
+.hlcb_z{width:198px; height:60px; margin-top:10px; float:left; display:inline;}
+.hlcb_l{width:25px; height:60px; float:left; display:inline;}
+.r{width:12px; height:12px; margin-left:10px; font-size:12px; line-height:12px; background:#F58626; color:#ffffff; border:1px solid #F36E0C; text-align:center; font-weight:bld; float:left; display:inline;}
+.hlcb_r{width:160px; height:60px; margin-left:3px; float:left; display:inline;}
+.hlcb_t{width:160px; height:16px; margin-top:1px; font-size:12px; font-weight:bold; color:#666666; overflow:hidden; line-height:16px; float:left; display:inline;}
+.hlcb_t font{color:#F34B2E; font-size:12px;}
+
+#hl_b{width:200px; height:140px; font-size:0px; line-height:0px; margin-top:20px; float:left; display:inline;}
+#hl_b img{width:200px; height:140px; border:0px solid red; float:left; display:inline;}
+
+#fl_b{width:200px; margin-top:20px; float:left; display:inline;}
+
+#fl_c{width:200px; margin-top:20px; float:left; display:inline;}

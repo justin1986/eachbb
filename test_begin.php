@@ -1,4 +1,4 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html>
 <head>
 <title>课程</title>
@@ -14,7 +14,7 @@
 		<div id="content">
 			<?php include_once('./inc/left_inc.php'); ?>
 			<div id="c_r">
-				<div id="crb_t"> 
+				<div id="crb_t">
 						<div class="crb_value">
 							<div class="crb_tt"></div>
 							<div class="crb_cc" ><a href="#">大动作</a></div>
@@ -59,7 +59,7 @@
 				</div>
 				<div id="cr_d">
 					<div id="crd_d">精彩早教课程推荐</div>
-					<div id="geng"><a href="#">更多>></a></div>
+					<div id="geng"><a href="#">更多&gt;&gt;</a></div>
 				</div>
 				<div id="cr_e">
 					<?php for($x=0;$x<3;$x++){?>

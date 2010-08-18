@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	include_once('../frame.php');
+	include_once(dirname(__FILE__) .'./../frame.php');
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html>
@@ -17,7 +17,7 @@
 <body>
 <div id="ibody">
 	<div id="fbody">
-		<?php include_once('../inc/top_login.php');?>
+		<?php include_once(dirname(__FILE__) .'./../inc/_register_top.php');?>
 		<div id="center">
 			<div id="cpg_top"></div>
 			<div id="cpg_c">
@@ -78,7 +78,7 @@
 						<div class="ca_a"></div>
 						<div class="ca_b">联系电话</div>
 						<div class="ca_c">
-							<input type="text" id="phone" name=phone>
+							<input type="text" maxlength="11" id="phone" name=phone>
 						</div>
 						<div class="ca_d" id="phone_info"></div>
 					</div>

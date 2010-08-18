@@ -1,14 +1,12 @@
 <?php	
-	define(CURRENT_DIR, dirname(__FILE__) ."/");
-	define(ROOT_DIR_NONE, dirname(__FILE__));	
-	define(ROOT_DIR,CURRENT_DIR);
-	define(FRAME_VERSION,'1.0');
-	define(FRAME_ROOT, dirname(__FILE__));
+	define("CURRENT_DIR", dirname(__FILE__) ."/");
+	define("ROOT_DIR_NONE", dirname(__FILE__));	
+	define("ROOT_DIR",CURRENT_DIR);
+	define("FRAME_VERSION",'1.0');
+	define("FRAME_ROOT", dirname(__FILE__));
 	require('config/config.php');
 	include_once(CURRENT_DIR ."lib/pubfun.php");
 	include_once(CURRENT_DIR ."lib/article_fun.php");
-	include_once(CURRENT_DIR ."lib/database_connection_class.php");
-	include_once(CURRENT_DIR ."lib/database_connection_mssql_class.php");
 	include_once(CURRENT_DIR ."lib/table_class.php");
 	include_once(CURRENT_DIR ."lib/category_class.php");
 	include_once(CURRENT_DIR ."lib/table_images_class.php");
@@ -16,6 +14,21 @@
 	require_once CURRENT_DIR ."lib/image_handler_class.php";
 	if(file_exists(ROOT_DIR ."inc/project_pubfun.php")){
 		require_once CURRENT_DIR ."inc/project_pubfun.php";
+	}
+	
+	function __autoload($class_name){
+		if(file_exists(ROOT_DIR .'lib/' . $class_name .'.class.php')){
+			require_once ROOT_DIR .'lib/' . $class_name .'.class.php';
+			return ;
+		}
+		if(file_exists(ROOT_DIR .'inc/' . $class_name .'.class.php')){
+			require_once ROOT_DIR .'inc/' . $class_name .'.class.php';
+			return ;
+		}
+		if(file_exists(ROOT_DIR .'inc/active_record/' . $class_name .'.class.php')){
+			require_once ROOT_DIR .'inc/active_record/' . $class_name .'.class.php';
+			return ;
+		}
 	}
 	
 	function get_config($var,$path=''){
@@ -28,12 +41,12 @@
 	function &get_db() {
 		global $g_db;
 		if(!is_object($g_db)){
-			if(get_config('db_type') == 'mssql'){
-				$g_db = new database_connection_mssql_class();
-			}else
-			{
-				$g_db = new database_connection_class();
-			}
+			#if(get_config('db_type') == 'mssql'){
+			#	$g_db = new database_connection_mssql_class();
+			#}else
+			#{
+			$g_db = new DataBase();
+			#}
 			
 		}
 		if($g_db->connected) return $g_db;
@@ -49,7 +62,6 @@
 			if($last_time == ''){				
 				write_to_file(dirname(__FILE__) .'/config/last_disconnect.txt',now(),'w');
 				@mail($note_emails,'数据库连接失败','主备数据库均无法连接，请立即检查'.$this->servername);
-				
 			}
 			/*
 			$servername = get_config('db_server_name_bak');
@@ -62,7 +74,7 @@
 			}
 			*/
 		};	
-		return $g_db;	
+		return $g_db;
 	}
 	
 	function close_db() {
@@ -76,9 +88,8 @@
 	
 	function use_jquery_ui(){
 		js_include_once_tag('jquery');
-		js_include_once_tag('jquery-ui');	
+		js_include_once_tag('jquery-ui');
 		css_include_tag('jquery_ui');
-	
 	}
 	
 	function validate_form($form_name) {
@@ -104,16 +115,16 @@
 	}
 	function _get_js_file($js){
 		if (strtolower($js) == "default") {
-			return ROOT_PATH ."javascript/jquery.js";		
-		}else {		
+			return ROOT_PATH ."javascript/jquery.js";	
+		}else {
 			$ljs = strtolower($js);
 			if (strpos($ljs, "http://") !== false || strpos($ljs,"www.") !== false) {	
-				return $js;		
+				return $js;
 			}else {
 				if (substr($ljs,-3) == ".js"){$js = substr_replace($js,"",-3);}			
 				return  ROOT_PATH ."javascript/" .$js .".js";			
-			}		
-		}	
+			}
+		}
 	}
 #only include once
 	function js_include_once_tag($js){
