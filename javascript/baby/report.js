@@ -1,8 +1,18 @@
 $(function(){
-	$('.user_me_t').click(function(e){
+	$('.user_me_t').live('click',function(e){
 		e.preventDefault();
 		var selected = $('.user_me_t').index($(this));
-		if(selected ===  10){
+		if(selected === 1){
+			$.post('info.php',function(data){
+				$('#haha').html(data);
+			});
+		}else if(selected === 2){
+			location.href="index.php";
+		}else if(selected ===  3){
+			$.post('reset_password.php',function(data){
+				$('#haha').html(data);
+			});
+		}else if(selected ===  10){
 			$.post('_baby_view_ajax_post.php',function(data){
 				$('#haha').html(data);
 			});
@@ -15,7 +25,15 @@ $(function(){
 				$('#haha').html(data);
 			});
 		}else if(selected === 13){
-			$.post('_baby_red_ajax_post.php',function(data){
+			$.post('_baby_ajax.post.php',function(data){
+				$('#haha').html(data);
+			});
+		}else if(selected === 15){
+			$.post('_baby_teach_ajax.post.php',{'type':"ojisd"},function(data){
+				$('#haha').html(data);
+			});
+		}else if(selected === 18){
+			$.post('_baby_teach_ajax.post.php',function(data){
 				$('#haha').html(data);
 			});
 		}
