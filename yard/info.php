@@ -63,7 +63,7 @@
 							<div id="pic_right">
 								<div class="rig_title">上传新头像</div>
 								<div class="rig_title" style="font-weight:normal; margin-top:0px; color:#333333; font-size:12px;">支持JPG、JPEG、GIF和PNG文件，最大2M。</div>
-								<div class="rig_title"><input type="file" name="src" id="upfile" size="40"/> </div>
+								<div class="rig_title" style="margin:0px; padding:0px;"><input type="file" name="src" id="upfile" size="35"/> </div>
 								<div class="rig_title" id="rig_sub"><input id="ssubmit" type="submit" value=""/></div> 
 							</div>
 							<div id="pic_hr_title">
