@@ -20,7 +20,7 @@
 			$path_info = pathinfo($_FILES['src'][name]);
 			$yuan_pic=$_FILES['src'][tmp_name];
 			$extension = strtolower($path_info['extension']);
-			$save_name = rand_str() .'.'.$extension;
+			$save_name = rand_str() .'.'.$extensio;
 			$save = ROOT_DIR_NONE ."/upload/".$save_name;
 			$save_e = "/upload/".$save_name;
 			if(move_uploaded_file($yuan_pic,$save)){
