@@ -64,6 +64,9 @@ $(function(){
 		$.post('/assistant/ajax.post.php',{'type':'comment','comment':encodeURI(comment),'news_id':$('#newsid').val()},function(d){
 			if(d){
 				alert(d);
+				$.post('/assistant/get_comments.ajax.php?id=' + $('#newsid').val(),function(news){
+					$("#res").html(news);
+				});
 			}else{
 				$('#res').load('/assistant/get_comments.ajax.php?id=' + $('#newsid').val());
 			}

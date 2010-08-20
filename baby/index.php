@@ -89,27 +89,47 @@
 	    </div>
 	    <div id="right_bottom">
 	    <?php 
-	    $teach=$db->query("SELECT id,title,answer,create_time,description FROM eb_question e where problem_id=(SELECT problem_id FROM eb_test_record e  order by score desc limit 1) limit 10;");
+	    	$teach=$db->query("SELECT  id,name,photo_url,description FROM eachbb.eb_problem e where id=(SELECT problem_id FROM eachbb.eb_test_record e where user_id={$user->id}) order by create_time desc limit 10;");
 	    ?>
 	    <div class="txt">
 	    <div><img src="/images/avatar/point.png"></img><font size="2" style="margin-left:5px;"><b>测评</b></font><font size="2" color="red"><b>报告</b></font></div>
 	    <div class="line1"><hr color="#F5F5F5" width=100%; size="2" /></div> <div class="line2"><hr color="#F5F5F5" width=760px; size="1" /></div>
-	    <div class="att"><div style="float:left"><a href="milk.php"><img src="/images/avatar/milk.png" border="0"></img></a></div>
-	    <div class="left"style="margin-left:10px;"><div class="left" style="margin-top:10px;"><a href="baby.php"><font size="2" color="black"><b>如何为新生儿选合适奶粉</b></font></a></div>
-	    <div class="left" style="margin-top:8px;"><a href="baby.php"><font size="2px" color="black" >怎样为婴儿宝宝选择一款奶粉呢？光看包装是看不到区别的，细心的爸妈要动用各种方法从细节入手，为宝宝选择合适的奶粉。</font></a></div></div></div>
-	    <div class="text1" style="margin-top:5px;"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2" >选购得当，宝宝也能吃零食</font></a><img src="/images/avatar/smallpoint.png" style="margin-left:50px;"></img><a href="baby.php"><font size="2" >选购得当，宝宝也能吃零食</font></a><img src="/images/avatar/smallpoint.png" style="margin-left:50px;"><a href="baby.php"><font size="2" >选购得当，宝宝也能吃零食</font></a></div>    
-	    <div class="text1"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2" >选购得当，宝宝也能吃零食</font></a><img src="/images/avatar/smallpoint.png" style="margin-left:50px;"></img><a href="baby.php"><font size="2" >选购得当，宝宝也能吃零食</font></a><img src="/images/avatar/smallpoint.png" style="margin-left:50px;"><a href="baby.php"><font size="2" >选购得当，宝宝也能吃零食</font></a></div>
-	    <div class="text1"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2" >选购得当，宝宝也能吃零食</font></a><img src="/images/avatar/smallpoint.png" style="margin-left:50px;"></img><a href="baby.php"><font size="2" >选购得当，宝宝也能吃零食</font></a><img src="/images/avatar/smallpoint.png" style="margin-left:50px;"><a href="baby.php"><font size="2" >选购得当，宝宝也能吃零食</font></a></div> </div>
-	    
+	    <div class="att"><div style="float:left"><a href="index_teach.php?problem_id=<?php echo $teach[0]->id; ?>"><img src="<?php echo $teach[0]->photo_url; ?>" style="width:152px; height:101px;" border="0"></img></a></div>
+		    <div class="left"style="margin-left:10px;"><div class="left" style="margin-top:10px;"><a href="/baby/_baby_post.php?id=<?php echo $teach[0]->id; ?>"><font size="2" color="black"><b><?php echo strip_tags($teach[0]->name); ?></b></font></a></div>
+		    <div class="left" style="margin-top:8px;"><a href="index_teach.php?problem_id=<?php echo $teach[0]->id; ?>"><font size="2px" color="black" ><?php echo strip_tags($teach[0]->description); ?></font></a></div>
+		    </div>
+	    </div>
+	    <?php
+	    $i = 1;
+	     foreach ($teach as $teach){
+	     if($i !== 1){
+	     	?>
+	    <div class="text1" style="width:250px; height:20px; line-height:20px; overflow:hidden; float:left; display:inline;">
+	    	<img src="/images/avatar/smallpoint.png"></img>
+	    		<a href="index_teach.php?problem_id=<?php echo $teach->id; ?>">
+	    			<font size="2" ><?php echo $teach->name;?></font>
+	    		</a>
+	    </div>    
+	    <?php }}
+	    	$teach=$db->query("SELECT id,title,img_url FROM eachbb.eb_teach e where is_adopt=1 and del_flag=0 order by priority,click_count,create_time desc limit 10;");
+	    ?>
 	    <div class="txt">
-	    <div><img src="/images/avatar/point.png"></img><font size="2" style="margin-left:5px;"><b>订购</b></font><font size="2" color="red"><b>课程</b></font></div>
-	   <div class="line1"><hr color="#F5F5F5" width=100%; size="2" /></div> <div class="line2"><hr color="#F5F5F5" width=760px; size="1" /></div>
-	    <div class="att"><div style="float:left"><a href="milk.php"><img src="/images/avatar/think.png" border="0"></img></a></div>
-	    <div class="text2" style="padding-top:0px;"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2" >选购得当，宝宝也能吃零食</font></a><img src="/images/avatar/smallpoint.png" style="margin-left:50px;"></img><a href="baby.php"><font size="2" >选购得当，宝宝也能吃零食</font></a></div>    
-	    <div class="text2"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2" >选购得当，宝宝也能吃零食</font></a><img src="/images/avatar/smallpoint.png" style="margin-left:50px;"></img><a href="baby.php"><font size="2" >选购得当，宝宝也能吃零食</font></a></div>
-	    <div class="text2"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2" >选购得当，宝宝也能吃零食</font></a><img src="/images/avatar/smallpoint.png" style="margin-left:50px;"></img><a href="baby.php"><font size="2" >选购得当，宝宝也能吃零食</font></a></div>
-	    <div class="text2"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2" >选购得当，宝宝也能吃零食</font></a><img src="/images/avatar/smallpoint.png" style="margin-left:50px;"></img><a href="baby.php"><font size="2" >选购得当，宝宝也能吃零食</font></a></div>
-	    <div class="text2"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2" >选购得当，宝宝也能吃零食</font></a><img src="/images/avatar/smallpoint.png" style="margin-left:50px;"></img><a href="baby.php"><font size="2" >选购得当，宝宝也能吃零食</font></a></div></div> </div>
+		    <div><img src="/images/avatar/point.png"></img><font size="2" style="margin-left:5px;"><b>订购</b></font><font size="2" color="red"><b>课程</b></font></div>
+		  	 <div class="line1"><hr color="#F5F5F5" width=100%; size="2" /></div> <div class="line2"><hr color="#F5F5F5" width=760px; size="1" /></div>
+		    <div class="att"><div style="float:left"><a href="/course"><img src="<?php echo $teach[0]->img_url; ?>" style="width:292px; height:101px;" border="0"></img></a></div>
+		    	<?php 
+		    	for($i = 0 ; $i < 10; $i++){
+		    	?>
+			   	 <div class="text2" style="width:214px; height:20px; line-height:20px; padding-top:0px;">
+			   	 	<img src="/images/avatar/smallpoint.png" style="margin-top:5px;"></img>
+			   	 		<a href="baby.php">
+			   	 			<font size="2" ><?php echo $teach[$i]->title;?></font>
+			   	 		</a>
+				</div>
+				<?php }?>
+				    
+		   </div>
+	   </div>
 	   
 	    <div class="txt">
 	    <div><img src="/images/avatar/point.png"></img><font size="2" style="margin-left:5px;"><B>我家</B></font><font size="2" color="red"><b>小院子</b></font></div>

@@ -39,7 +39,7 @@
 		$collect->save();
 		echo "恭喜您，文章收藏成功！";
 	}elseif ($type=='comment'){
-		include_once '../inc/user.class.php';
+		include_once '../inc/User.class.php';
 		$user = User::current_user();
 		if(!$user){
 			echo '请先登录';
@@ -55,5 +55,6 @@
 		$comment->created_at = now();
 		$comment->comment = htmlspecialchars(urldecode($_POST['comment']));
 		$comment->save();
+		echo "发表评论成功！";
 	}
 ?>
