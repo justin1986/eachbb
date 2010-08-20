@@ -5,9 +5,6 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 #fbody{ width:970px; overflow:hidden;  background:#ffffff; float:left; display:inline;}
 #tl_l{width:224px; height:83px; background:url(/images/bbs/loginb.jpg) no-repeat; float:left; display:inline;}
 
-
-
-
 #top_menu{width:970px; height:61px; margin-top:5px; overflow:hidden;  float:left; display:inline;}
 #menu_left{width:5px; height:61px; background:url(/images/bbs/t_a.jpg) no-repeat; float:left; display:inline;}
 #menu_center{width:960px; height:60px; border-bottom:1px solid #D4D4D4; float:left; display:inline;}

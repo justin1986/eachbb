@@ -77,34 +77,31 @@
 			<div id="log_t">
 				<img src="/images/yard/log_t.jpg" />
 			</div>
-			<?php $member=$db->query("select name from `eachbb_member`.member where id = '$id'");?>
+			<?php $member=$db->query("select name from `eachbb_member`.member where id = '$id'");
+				if($member){
+			?>
 			<div id="al_p1">
 			<div id="whosealbum">
 			<a href="#" style="font-weight:bold; color:#416298;"><?php echo $member[0]->name;?></a>的相册
 			</div>
 			<div id = "p1_buttonbox" style="<?php if($user->id != $id){echo 'display:none;';}?>">
-						<div class="p1_but">
-							<div class="but_nl"></div>
-							<div class="but_name" id="post_photo">上传照片</div>
-							<div class="but_nr"></div>
-						</div>
-						<div class="p1_but" id="add_album">
-							<div class="but_nl"></div>
-							<div class="but_name">新建相册</div>
-							<div class="but_nr"></div>
-						</div>
-					</div>
+				<div class="p1_but">
+					<div class="but_nl"></div>
+					<div class="but_name" id="post_photo">上传照片</div>
+					<div class="but_nr"></div>
+				</div>
+				<div class="p1_but" id="add_album">
+					<div class="but_nl"></div>
+					<div class="but_name">新建相册</div>
+					<div class="but_nr"></div>
+				</div>
 			</div>
-	  <?php $master=$db->query("select id,name,front_cover,description,created_at from `eachbb_member`.album where u_id = '$id' order by created_at desc");
+			</div>
+	 	 <?php $master=$db->query("select id,name,front_cover,description,created_at from `eachbb_member`.album where u_id = '$id' order by created_at desc");
 			$num = $db->record_count;
-		?>
+			?>
 			<div id="al_p2">
 				<div id="al_test"></div>
-			<?php if($num == 0){ ?>
-				<div id="no_album">
-				真遗憾，这里没有相册可供欣赏！
-				</div>
-			<?php }?>
 			<?php for($i=0;$i<$num;$i++){?>
 				<div class="album">
 					<div class="al_box">
@@ -135,6 +132,7 @@
 				</div>
 			<?php }?>
 			</div>
+			<?php }else{ echo '<div style="width:790px; height:500px; margin-left:15px; background:#ffffff; font-size:34px; font-weight:bold; line-height:500px; text-align:center;"><a href="/">非法操作！</a></div>';}?>
 			<div id="cc_bottom">
 				<div id="copyright"></div>
 			</div>

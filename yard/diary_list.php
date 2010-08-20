@@ -20,7 +20,6 @@
 					alert("非法操作！");?>
 				<script>window.location.href="/login/";</script>
 			<?php 
-					
 				}
 				$user_id=$id;
 			}
@@ -65,7 +64,8 @@
 			<form>
 			<div id="cc_t"></div>
 			<div id="cc_c" >
-				<?php if($member){?>
+				<?php
+				 if($member->id){?>
 				<div id="cc_pg">
 					<div class=r_title id="r_log"><a href="/yard/home.php?id=<?php echo $user_id;?>"><?php echo $member->name;?></a>的日志列表</div>
 					<div id="r_log_hr">
@@ -104,7 +104,7 @@
 					</div>
 					<?php $i++; }}?>
 				</div>
-				<?php }else{echo '<div style="width:790px; height:500px; font-size:34px; font-weight:bold; line-height:500px; text-align:center;"><a href="/">非法操作！</a></div>';}?>
+				<?php }else{echo '<div style="width:790px; height:500px; margin-left:15px; background:#ffffff; font-size:34px; font-weight:bold; line-height:500px; text-align:center;"><a href="/">非法操作！</a></div>';}?>
 			</div>
 			<div id="cc_b"></div>
 			</form>

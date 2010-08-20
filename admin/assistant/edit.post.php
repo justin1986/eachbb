@@ -19,7 +19,7 @@
 	if(!$news->id){
 		//insert news
 		$news->created_at = date("Y-m-d H:i:s");
-		$news->click_count = 0;					
+		$news->click_count = 0;
 	}
 	$news->save();
 	if($_POST['copy_to']){

@@ -35,7 +35,7 @@ function add_keyword(keyword){
 	var can_add = true;
 	$('#sel_keywords').find('option').each(function(){
 		if($(this).val() == keyword){
-			alert('请不要重复添加');
+			alert('请不要重复添加!');
 			can_add = false;
 			return;
 		}
