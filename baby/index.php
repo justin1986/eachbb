@@ -120,7 +120,7 @@
 	    <div class="text2"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2" >选购得当，宝宝也能吃零食选购得当，宝宝也能吃零食选购</font></a></div>
 	    <div class="text2"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2" >选购得当，宝宝也能吃零食选购得当，宝宝也能吃零食选购</font></a></div>
 	    <div class="text2"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2" >选购得当，宝宝也能吃零食选购得当，宝宝也能吃零食选购</font></a></div>
-	    <div id="inyard"><a href="milk.php"><img src="/images/avatar/inyard.png" border="0" ></img></a></div></div> </div>
+	    <div id="inyard"><a href="/yard"><img src="/images/avatar/inyard.png" border="0" ></img></a></div></div> </div>
 	    </div>
 	</div>
         <?php include_once(dirname(__FILE__).'/../inc/bottom.php');?>
