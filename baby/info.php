@@ -16,7 +16,7 @@
 		$avatar_count = $db->record_count;
 		$name =$user->name;
 	?>
-    <div id="c_c" style="float:left">
+    <div id="c_c" style="float:right">
 			<div id="cc_t" style="float:left"></div>
 			<div id="cc_c" style="float:left">
 				<div id="cc_pg">

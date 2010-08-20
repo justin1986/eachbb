@@ -10,14 +10,13 @@
 		css_include_tag('teach');
 		js_include_tag('yard/yard_info','baby/report');
 		$user = User::current_user();
-		$teach_id =3; # $_GET["problem_id"];
+		$teach_id =$_GET["problem_id"];
 		if(!is_numeric($teach_id))die("非法操作");
 		if(!$user){
 			alert("请您先登录！");
 			redirect('/login/');
 			exit();
 		}
-		$db = get_db();
 	?>
 </head>
 <body>
@@ -34,18 +33,22 @@
 		</div>
 		<div id="cr_c">
 			<?php
-			$teach =$db->query("SELECT id,title,img_url,description,content,age,create_time FROM eachbb.eb_teach e where id=$teach_id and is_adopt=1 and del_flag=0;");
+			$db = get_db();
+			$teach =$db->query("select id,title,description,age,month,create_time from eachbb.eb_teach where is_adopt=1 and del_flag=0 and id=$teach_id order by priority,click_count,create_time desc;");
 			$avatar_count=$db->record_count;
-			var_dump($teach);
+			if($teach){
 			for($i = 0 ; $i < $avatar_count ; $i++){
 				?>
 			<div class="problem_bannerr">
 				<div class="teach_title_banner">
-					<div style="float:left; display:inline;">课程标题：<?php echo $avatars[0]->title; ?></div>
-					<div>发布时间：<?php echo $avatars[$i]->create_time; ?></div>
+					<div style="float:left; display:inline;">课程标题：<?php echo $teach[0]->title; ?></div>
+					<div>发布时间：<?php echo $teach[$i]->create_time; ?></div>
 				</div>
+				<div class="problem_bannerr" style="text-indent:20px; margin:0px; padding:0px;"><?php echo strip_tags($teach[$i]->description)?></div>
 			</div>
-			<?php }?>
+			<?php }}else{
+				echo "<div style='width:720px; height:500px; line-height:500px; font-size:30px; font-weight:bold; text-align:center;'><a href='/'>非法操作！</a></div>";
+			}?>
 		</div>
 </div>
         <?php include_once(dirname(__FILE__).'/../inc/bottom.php');?>
