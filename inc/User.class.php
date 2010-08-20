@@ -80,6 +80,7 @@ class User {
 		if(strlen($name) > 50 || strlen($password) > 20) return false;
 		//尝试使用ucenter接口登录
 		list($uid, $uname, $upassword, $uemail) = uc_user_login($name, $password);
+		echo "uid=".$uid;
 		//ucenter 接口登录成功!
 		if($uid > 0){
 			echo uc_user_synlogin($uid);
@@ -93,6 +94,7 @@ class User {
 		$old_pwd = $password;
 		$password = md5($password);
 		$db = get_db();
+		$db->echo_sql = true;
 		$db->query("select id,uid from " .self::$s_table_name ." where (name='$name' or email='$name') and password='$password'");
 		if($db->record_count <= 0) return false;
 		$user_id = $db->field_by_name('id');
