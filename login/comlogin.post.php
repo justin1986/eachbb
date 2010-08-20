@@ -54,7 +54,7 @@
 	if(User::login($name,$password)){
 		$last_url = $suess_url;
 	}else{
-		$err = "用户名或密码错误";
+		$err = "用户名或密码不正确";
 		$last_url = $fail_url;
 	}
 ?>
