@@ -5,9 +5,6 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 #fbody{ width:970px; overflow:hidden;  background:#ffffff; float:left; display:inline;}
 #tl_l{width:224px; height:83px; background:url(/images/bbs/loginb.jpg) no-repeat; float:left; display:inline;}
 
-
-
-
 #top_menu{width:970px; height:61px; margin-top:5px; overflow:hidden;  float:left; display:inline;}
 #menu_left{width:5px; height:61px; background:url(/images/bbs/t_a.jpg) no-repeat; float:left; display:inline;}
 #menu_center{width:960px; height:60px; border-bottom:1px solid #D4D4D4; float:left; display:inline;}
@@ -25,7 +22,6 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 .bbs{font-size:13px; color:#64B033; font-weight:600;}
 .welcom{width:80px; height:14px; margin-top:5px; margin-left:10px; font-weight:600; border-right:1px solid #999999; text-align:center; font-size:13px;  float:left; display:inline;}
 .welcom font{color:#FE7D2B; font-size:14px;}
-.exit{width:50px; height:14px; margin-top:5px; font-weight:600; border-right:1px solid #999999; text-align:center; font-size:13px;  float:left; display:inline;}
 .info{width:60px; height:14px; margin-top:5px; font-weight:600;  text-align:center; font-size:13px;  float:left; display:inline;}
 .info a{ text-decoration:none;}
 #t_first{width:98px; height:23px; margin-top:2px; margin-left:15px; text-align:center; font-size:12px; border:0px solid red; font-family:宋体; line-height:23px; background:url(/images/bbs/btn_b.jpg) no-repeat; float:left; display:Inline;}

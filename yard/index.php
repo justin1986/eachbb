@@ -7,19 +7,15 @@
 		include_once('../frame.php');
 		use_jquery();
 		css_include_tag('yard');
-		js_include_tag('yard/yard');
+		js_include_tag('yard/yard','yard_right');
 		$db=get_db();
 		$user = User::current_user();
-		
-		$sql="select m.id,m.visit_count,m.unread_msg_count,m.friend_count,m.level,m.score,m.last_login,m.created_at,m.uid,mm.avatar,mm.baby_gender,mm.address,mm.baby_name from eachbb_member.member_status m left join eachbb_member.member mm on m.uid=mm.uid where m.uid=".$user->uid;
-		$news=$db->query($sql);
-		$sex='无';
-		if($news[0]->baby_gender == 1){
-			$sex='男';
-		}elseif($news[0]->baby_gender == 2){
-			$sex='女';
+		if(!$user){
+			alert("请您先登录！");
+			redirect('/login/');
+			exit();
 		}
-	?>
+		?>
 </head>
 <body>
 <div id="ibody">
@@ -123,11 +119,14 @@
 					<div id="cc_pic"></div>
 					<div id="cc_photo">
 						<div id="pho_l"></div>
-						<textarea id="pho_r">
-						</textarea>
+						<form id="xxx" action="daily.post.php" method="post">
+							<textarea name="pho_r" id="pho_r"></textarea>
+						</form>
 					</div>
-					<div id="cc_ps" style="height:400px;">
-						<a href=""><img id="ccps_l" src="/images/yard/c_p.jpg" /></a>
+					<div id="cc_ps" >
+					<div id="box_test"></div>
+					<div id="box_right">
+						<div id="ccps_l" style="float:left;"><a href="/yard/info.php"><img src="/images/yard/c_p.jpg" border=0/></a></div>
 						<div id="ccps_c">
 							<div id="ccpsc_l">
 								<div id="ccpsc_img"></div>
@@ -135,11 +134,11 @@
 								</div>
 							<div id="ccpsc_la">
 								<div id="ccpsc_imga"></div>
-								<div id="ccpsc_worda"><a href="">传照片</a></div>
+								<div id="ccpsc_worda"><a href="/yard/upload_photo.php">传照片</a></div>
 								</div>
 							<div id="ccpsc_lb">
 								<div id="ccpsc_imgb"></div>
-								<div id="ccpsc_wordb"><a href="">发股票</a></div>
+								<div id="ccpsc_wordb"><a href="/yard/diary.php">发日记</a></div>
 								</div>
 							<div id="c_moblie">
 								<div id="c_moblie_w"><a href="">发布</a></div>
@@ -150,140 +149,52 @@
 							<div class="c_ch_w" style=" border-bottom:0px solid #E3F2DF;background:url(/images/yard/m_pg.jpg) no-repeat;">全部</div>
 							<div class="c_ch_w">一句话</div>
 							<div class="c_ch_w">照片</div>
-							<div class="c_ch_w">日志</div>
+							<div class="c_ch_w">日记</div>
 							<div class="c_ch_w">分享</div>
 							<div class="c_ch_w">随便看看</div>
 							<div id="m_w" style="width:30px;"></div>
 						</div>
+					<div id="test">
+					   <?php	
+					   $sql = $db->query("select * FROM eachbb_member.lastest_news where u_id='{$user->id}'order by created_at desc limit 9");
+					   $num = $db->record_count;
+					   for($i=0;$i<$num;$i++){?>
 						<div class="pc_z">
 							<div class="pc_pg_img">
-								<div class="pc_img"><img src="/images/yard/pho.jpg"></div>
+								<div class="pc_img"><img src="
+								<?php 
+							if($sql->u_avatar == null){
+								echo "/images/yard/noface.jpg";
+							}else{
+								echo $sql[$i]->u_avatar;
+							}
+						?>
+								"></div>
 							</div>
 							<div class="pc_word">
-								<div class="title_pc"><a href="">纳纳</a><a href="" style="margin-left:10px; font-size:13px;">评价了你的秘密</a></div>
-								<div class="content_pc"><a href="">纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳纳</a><font>来自:小龙女</font></div>
-								<div class="time_pc">2010-2-2 20:12</div>
+								<div class="title_pc"><a href="home.php?id=<?php echo $user->id;?>"><?php echo $sql[$i]->u_name;?></a><?php echo $sql[$i]->form ;?></div>
+								<div class="content_pc" style="<?php if($sql[$i]->content == ''){echo "display:none;";}?>"><?php echo $sql[$i]->content;?><a href="#">查看全部&gt;&gt;</a></div>
+								<div class="photo_box" style="<?php if($sql[$i]->photo == ''){echo "display:none;";}?>"><a href="#"><img src="<?php echo $sql[$i]->photo;?>" border=0/></a></div>
+								<div class="time_pc"><?php echo mb_substr($sql[$i]->created_at,0,16);?></div>
 							</div>
+						</div>
+						<?php }?>
 						</div>
 						<!-- 
 						<div class="pc_hr"></div>
 						 -->
 					</div>
+					</div>
 				</div>
 				<div id="r_pho">
-					<div id="r_img">
-						<div id="r_pto"><img src="<?php echo $news[0]->avatar;?>"></div>
-						<div id="r_bb"><?php echo $news[0]->baby_name;?></div>
-						<div id="r_num">被访问过<?php echo $news[0]->visit_count;?>次</div>
-					</div>
-					<div id="r_geng"> 
-						<div id="r_ge_a">
-							<div id="r_gi_a"></div>
-							<div id="r_gw_a"><a href="#">更换头像</a></div>
-						</div>
-						<div id="r_ge_b">
-							<div id="r_gi_b"></div>
-							<div id="r_gw_b"><a href="/yard/member.php">修改档案</a></div>
-						</div>
-					</div>
-					<div id="r_ge_ge">
-						<div id="r_ge_hr"></div>
-						<div id="r_ge_table">
-							<div class="r_ge_ct">
-								<div class="r_ge_cta"><img src="/images/yard/r_a.jpg"></div>
-								<div class="r_ge_ctb">性别：</div>
-								<div class="r_ge_ctc"><?php echo $sex;?></div>
-							</div>
-							<div class="r_ge_ct">
-								<div class="r_ge_cta"><img src="/images/yard/r_b.jpg"></div>
-								<div class="r_ge_ctb">生日：</div>
-								<div class="r_ge_ctc">1988-12-12</div>
-							</div>
-							<div class="r_ge_ct">
-								<div class="r_ge_cta"><img src="/images/yard/r_c.jpg"></div>
-								<div class="r_ge_ctb">地址：</div>
-								<div class="r_ge_ctc"><?php echo $news[0]->address;?></div>
-							</div>
-							<div class="r_ge_ct">
-								<div class="r_ge_cta"><img src="/images/yard/r_d.jpg"></div>
-								<div class="r_ge_ctb">金币：</div>
-								<div class="r_ge_ctc"><?php echo $news[0]->level;?></div>
-							</div>
-							<div class="r_ge_ct">
-								<div class="r_ge_cta"><img src="/images/yard/r_e.jpg"></div>
-								<div class="r_ge_ctb">等级：</div>
-								<div class="r_ge_ctc"><?php echo $news[0]->level;?>级</div>
-							</div>
-							<!-- 
-							<div class="r_ge_ct">
-								<div class="r_ge_cta"><img src="/images/yard/r_f.jpg"></div>
-								<div class="r_ge_ctb">最后天数：</div>
-								<div class="r_ge_ctc" style="width:80px;">天</div>
-							</div>
-							 -->
-							<div class="r_ge_ct">
-								<div class="r_ge_cta"><img src="/images/yard/r_g.jpg"></div>
-								<div class="r_ge_ctb">最后登录：</div>
-								<div class="r_ge_ctc" style="width:80px;"><?php echo substr($news[0]->last_login,0,10);?></div>
-							</div>
-						</div>
-						<div id="friend">
-							<div id="friend_a"></div>
-							<div id="friend_b"></div>
-						</div>
-						<div id="pic_r">
-							<div class="pic_pg">
-								<a href="#">
-								<IMG  class="pic_img" src="/images/yard/pho.jpg"/>
-								</a>
-							</div>
-							<div class="pic_pg">
-								<a href="#">
-								<IMG  class="pic_img" src="/images/yard/pho.jpg"/>
-								</a>
-							</div>
-							<div class="pic_pg">
-								<a href="#">
-								<IMG  class="pic_img" src="/images/yard/pho.jpg"/>
-								</a>
-							</div>
-							<div class="pic_pg">
-								<a href="#">
-								<IMG  class="pic_img" src="/images/yard/pho.jpg"/>
-								</a>
-							</div>
-							<div class="pic_pg">
-								<a href="#">
-								<IMG  class="pic_img" src="/images/yard/pho.jpg"/>
-								</a>
-							</div>
-							<div class="pic_pg">
-								<a href="#">
-								<IMG  class="pic_img" src="/images/yard/pho.jpg"/>
-								</a>
-							</div>
-							<div class="pic_pg">
-								<a href="#">
-								<IMG  class="pic_img" src="/images/yard/pho.jpg"/>
-								</a>
-							</div>
-							<div class="pic_pg">
-								<a href="#">
-								<IMG  class="pic_img" src="/images/yard/pho.jpg"/>
-								</a>
-							</div>
-							<div class="pic_pg">
-								<a href="#">
-								<IMG  class="pic_img" src="/images/yard/pho.jpg"/>
-								</a>
-							</div>
-						</div>
-					</div>
+					<?php include_once(dirname(__FILE__).'/../inc/_yard_right.php'); ?>
 				</div>
 			</div>
 			<div id="cc_b"></div>
 		</div>
+		<?php include_once(dirname(__FILE__).'./../inc/bottom.php');?>
 	</div>
 </div>
 </body>
 </html>
+

@@ -1,0 +1,1 @@
+ALTER TABLE `eachbb_member`.`member_status` ADD UNIQUE INDEX `Index_2`(`uid`);

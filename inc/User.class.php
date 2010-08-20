@@ -19,7 +19,7 @@ class RegisterResult {
 
 class User {
 	public static $s_table_name = '`eachbb_member`.member';
-	public static $s_fields = array('id','name','email','authenticated','authenticate_string','authenticated_at','created_at','last_login','uid','avatar','cache_name','baby_status','baby_birthday','birthday','zip','phone','adress','baby_name','baby_gender','gender','ip','fix_phone','id_num','education','industry','income','register_phone','true_name');
+	public static $s_fields = array('id','name','email','authenticated','authenticate_string','authenticated_at','created_at','last_login','uid','avatar','cache_name','baby_status','baby_birthday','birthday','zip','phone','address','baby_name','baby_gender','gender','ip','fix_phone','id_num','education','industry','income','register_phone','true_name');
 	
 	/*
 	 * staitc functions
@@ -203,6 +203,16 @@ class User {
 		$db->execute($sql);
 		$result->id = $db->last_insert_id;
 		$result->result = true;
+		$status = new table_class('eachbb_member.member_status');
+		$status->echo_sql = true;
+		$status->uid = $result->id;
+		$status->created_at = now();
+		$status->score = 0;
+		$status->level = 1;
+		$status->friend_count = 0;
+		$status->unread_msg_count = 0;
+		$status->visit_count = 0;
+		$status->save();
 		return $result;
 		
 	}
@@ -211,7 +221,10 @@ class User {
 	//返回当前登录的用户，未登录，则返回null
 	public static function current_user(){
 		if(!$_COOKIE['cache_name']) return null;
-		return self::find_by_cachename($_COOKIE['cache_name']);
+		global $_g_current_user;
+		if(is_object($_g_current_user)) return $_g_current_user;
+		$_g_current_user = self::find_by_cachename($_COOKIE['cache_name']);
+		return $_g_current_user;
 	}
 	
 	/*
@@ -235,5 +248,33 @@ class User {
 		}
 	}
 	
+	public function add_friend($friend_id){
+		$db = get_db();
+		$friend_id = intval($friend_id);
+		$db->query("select name,avatar from eachbb_member.member where id={$friend_id}");
+		if($db->record_count <= 0) return false;
+		$friend_name = $db->field_by_name('name');
+		$avatar = $db->field_by_name('avatar');
+		
+		$db->query("select id from `eachbb_member`.friend where u_id = {$this->id} and f_id ={$friend_id}");
+		if($db->record_count > 0){
+			return true;	
+		}
+		$now = now();
+		$sql = "insert into `eachbb_member`.friend (u_id,f_id,f_name,f_avatar,created_at) values ({$this->id},$friend_id,'$friend_name','$avatar','$now')";
+		return $db->execute($sql);
+	}
+	
+	public function remove_friend($firend_id){
+		$friend_id = intval($friend_id);
+		$db = get_db();
+		return $db->execute("delete from `eachbb_member`.friend where u_id={$this->id} and f_id = {$firend_id}");
+	}
+	
+	public function adjust_score($score,$reason){
+		$score = intval($score);
+		$db = get_db();
+		$db->execute("insert into eachbb_member.adjust_score_history (u_id,score,reason,created_at) values({$this->id},$score,'$reason',now())");
+	}
 	
 }

@@ -23,8 +23,8 @@
 	
 	function get_age($str){
 		switch($str){
-			case -1:echo '准备怀孕';break;
-			case -2:echo '怀孕中';break;
+			case -2:echo '准备怀孕';break;
+			case -1:echo '怀孕中';break;
 			case 1:echo '0~1岁';break;
 			case 2:echo '1~2岁';break;
 			case 3:echo '2~3岁';break;

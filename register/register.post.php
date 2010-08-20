@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	include_once('../frame.php');
-	include_once('../inc/user.class.php');
+	include_once('../inc/User.class.php');
 	
 	if(!is_post()){
 		redirect('/register/');
@@ -99,7 +99,7 @@
 	
 	function success_register(){
 		alert('注册成功！');
-		redirect('/register');
+		redirect('/login');
 	}
 	
 	function false_register($result){

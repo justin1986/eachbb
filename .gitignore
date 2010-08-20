@@ -23,3 +23,5 @@ data/dbcache/*.tb
 htmldir
 test1.php
 review
+./cache
+config/pingguo_config.php

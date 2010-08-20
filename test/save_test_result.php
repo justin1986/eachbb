@@ -1,6 +1,6 @@
 <?php
 include_once '../frame.php';
-include_once '../inc/user.class.php';
+include_once '../inc/User.class.php';
 $user = User::current_user();
 if(!$user){
 	redirect('save_result_nologin.php');
