@@ -64,13 +64,16 @@
 		<div class="record">
 		<div ><font size="2" color="red"><b>用户最新动态</b></font></div>
 		<div class="add"><hr color="#A3C1CD" width=100%; size="4" /></div>
-		<div class="text" style="margin-top:5px;"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2" >宝宝因为好奇四处探索，常常引发一系……</font></a></div>
-		<div class="text"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2">宝宝因为好奇四处探索，常常引发一系……</font></a></div>
-		<div class="text"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2">宝宝因为好奇四处探索，常常引发一系……</font></a></div>
-		<div class="text"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2">宝宝因为好奇四处探索，常常引发一系……</font></a></div>
-		<div class="text"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2">宝宝因为好奇四处探索，常常引发一系……</font></a></div>
-		<div class="text"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2">宝宝因为好奇四处探索，常常引发一系……</font></a></div>
-		<div class="text"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2">宝宝因为好奇四处探索，常常引发一系……</font></a></div>
+		<?php 
+		$last_news=$db->query("SELECT id,content FROM eachbb_member.lastest_news l where resource_type='oneword' and u_id={$user->id} order by created_at desc LIMIT 7");
+		for($i = 0 ; $i <= 7 ; $i++){
+		?>
+		<div class="text" style="width:340px; padding-left:10px; height:18px; line-height:18px; overflow:hidden; background:url(/images/avatar/smallpoint.png) no-repeat 0px 7px;">
+			<a href="/baby/index_daily_show.php?daily_id=<?php echo $last_news[$i]->id; ?>" style="font-size:12px; color:#8C8C8C;">
+				<?php echo $last_news[$i]->content; ?>
+			</a>
+		</div>
+		<?php }?>
 		</div>
 		<div class="record">
 		<div ><font size="2" color="red"><b>重要信息提醒</b></font></div>
@@ -88,25 +91,35 @@
 	    </div>
 	    </div>
 	    <div id="right_bottom">
-	    <?php 
-	    	$teach=$db->query("SELECT  id,name,photo_url,description FROM eachbb.eb_problem e where id=(SELECT problem_id FROM eachbb.eb_test_record e where user_id={$user->id}) order by create_time desc limit 10;");
-	    ?>
 	    <div class="txt">
-	    <div><img src="/images/avatar/point.png"></img><font size="2" style="margin-left:5px;"><b>测评</b></font><font size="2" color="red"><b>报告</b></font></div>
-	    <div class="line1"><hr color="#F5F5F5" width=100%; size="2" /></div> <div class="line2"><hr color="#F5F5F5" width=760px; size="1" /></div>
-	    <div class="att"><div style="float:left"><a href="index_teach.php?problem_id=<?php echo $teach[0]->id; ?>"><img src="<?php echo $teach[0]->photo_url; ?>" style="width:152px; height:101px;" border="0"></img></a></div>
-		    <div class="left"style="margin-left:10px;"><div class="left" style="margin-top:10px;"><a href="/baby/_baby_post.php?id=<?php echo $teach[0]->id; ?>"><font size="2" color="black"><b><?php echo strip_tags($teach[0]->name); ?></b></font></a></div>
-		    <div class="left" style="margin-top:8px;"><a href="index_teach.php?problem_id=<?php echo $teach[0]->id; ?>"><font size="2px" color="black" ><?php echo strip_tags($teach[0]->description); ?></font></a></div>
+		    <div>
+			    	<img src="/images/avatar/point.png"></img>
+			    	<font size="2" style="margin-left:5px;"><b>测评</b></font>
+			    	<font size="2" color="red"><b>报告</b></font>
 		    </div>
+		     <?php 
+	    	$teach=$db->query("SELECT * FROM eachbb.eb_problem e  where id in (SELECT problem_id FROM eachbb.eb_test_record e where user_id={$user->id}) order by create_time desc LIMIT 10;");
+	    	if($teach){
+	    	?>
+		    <div class="line1"><hr color="#F5F5F5" width=100%; size="2" /></div>
+		    <div class="line2"><hr color="#F5F5F5" width=760px; size="1" /></div>
+		    <div class="att"><div style="float:left; displary:inline;"><a href="index_record_show.php?problem_id=<?php echo $teach[0]->id; ?>"><img src="<?php echo $teach[0]->photo_url; ?>" style="width:152px; height:101px;" border="0"></img></a></div>
+			    <div class="left"style="margin-left:10px;"><div class="left" style="margin-top:10px;"><a href="index_record_show.php?problem_id=<?php echo $teach[0]->id; ?>"><font size="2" color="black"><b><?php echo strip_tags($teach[0]->name); ?></b></font></a></div>
+			    <div class="left" style="margin-top:8px;"><a href="index_record_show.php?problem_id=<?php echo $teach[0]->id; ?>"><font size="2px" color="black" ><?php echo strip_tags($teach[0]->description); ?></font></a></div>
+			    </div>
+	    	</div>
+	    	<?php  }else{
+		    	echo "<div style='width:100%; height:30px; line-height:30px; text-align:center;'><a href=' ' style='font-size:20px;'>您的测评报告为空！</a></div>";
+			    }
+		    ?>
 	    </div>
 	    <?php
-	    $i = 1;
-	     foreach ($teach as $teach){
+	     for ($i = 1 ;  $i< 11 ; $i++){
 	     if($i !== 1){
 	     	?>
-	    <div class="text1" style="width:250px; height:20px; line-height:20px; overflow:hidden; float:left; display:inline;">
+	    <div class="text1" style="width:240px; <?php if($i <= 4 ) echo "margin-top:10px;";?> height:20px; line-height:20px; overflow:hidden; float:left; display:inline;">
 	    	<img src="/images/avatar/smallpoint.png"></img>
-	    		<a href="index_teach.php?problem_id=<?php echo $teach->id; ?>">
+	    		<a href="index_record_show.php?problem_id=<?php echo $teach->id; ?>">
 	    			<font size="2" ><?php echo $teach->name;?></font>
 	    		</a>
 	    </div>    
@@ -122,7 +135,7 @@
 		    	?>
 			   	 <div class="text2" style="width:214px; height:20px; line-height:20px; padding-top:0px;">
 			   	 	<img src="/images/avatar/smallpoint.png" style="margin-top:5px;"></img>
-			   	 		<a href="baby.php">
+			   	 		<a href="index_teach_show.php?problem_id=<?php echo $teach[$i]->id;?>">
 			   	 			<font size="2" ><?php echo $teach[$i]->title;?></font>
 			   	 		</a>
 				</div>
@@ -135,13 +148,18 @@
 	    <div><img src="/images/avatar/point.png"></img><font size="2" style="margin-left:5px;"><B>我家</B></font><font size="2" color="red"><b>小院子</b></font></div>
 	    <div class="line1"><hr color="#F5F5F5" width=100%; size="2" /></div> <div class="line2"><hr color="#F5F5F5" width=760px; size="1" /></div>
 	    <div class="att"><div style="float:left"><a href="milk.php"><img src="/images/avatar/yard.png" border="0"></img></a></div>
-	    <div class="text2" style="padding-top:0px;"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2" >选购得当，宝宝也能吃零食选购得当，宝宝也能吃零食选购</font></a></div>    
-	    <div class="text2"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2" >选购得当，宝宝也能吃零食选购得当，宝宝也能吃零食选购</font></a></div>
-	    <div class="text2"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2" >选购得当，宝宝也能吃零食选购得当，宝宝也能吃零食选购</font></a></div>
-	    <div class="text2"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2" >选购得当，宝宝也能吃零食选购得当，宝宝也能吃零食选购</font></a></div>
-	    <div class="text2"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2" >选购得当，宝宝也能吃零食选购得当，宝宝也能吃零食选购</font></a></div>
-	    <div id="inyard"><a href="milk.php"><img src="/images/avatar/inyard.png" border="0" ></img></a></div></div> </div>
+	    <?php 	
+				$diary_list=$db->query("SELECT id,title from eachbb_member.daily where u_id={$user->id} order by last_edit_time desc  limit 4;");
+				if(!$diary_list){
+						echo '<div style="width:440px; height:80px; line-height:80px;  margin-left:10px; text-align:center;  float:left; display:inline;"><a href="/yard/diary.php" style="font-size:20px; font-weight:bold; color:#8A9F9A;">您日志列表为空,马上发表日志吧！</a></div>';
+				}else{
+				foreach ($diary_list as $diary){
+			?>
+	    <div class="text2" style="padding-top:0px;"><img src="/images/avatar/smallpoint.png"></img><a href="/yard/diary_show.php?edit=<?php echo $diary->id;?>"><font size="2" ><?php echo htmlspecialchars_decode($diary->title);?></font></a></div>    
+		<?php $i++; }}?>
+	    <div id="inyard"><a href="/yard"><img src="/images/avatar/inyard.png" border="0" ></img></a></div></div> </div>
 	    </div>
+
 	</div>
         <?php include_once(dirname(__FILE__).'/../inc/bottom.php');?>
 </div>

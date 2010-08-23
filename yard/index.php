@@ -163,18 +163,18 @@
 							<div class="pc_pg_img">
 								<div class="pc_img"><img src="
 								<?php 
-							if($sql->u_avatar == null){
-								echo "/images/yard/noface.jpg";
-							}else{
+							if($sql[$i]->u_avatar){
 								echo $sql[$i]->u_avatar;
+							}else{
+								echo "/images/yard/noface.jpg";
 							}
 						?>
-								"></div>
+								"/></div>
 							</div>
 							<div class="pc_word">
-								<div class="title_pc"><a href="home.php?id=<?php echo $user->id;?>"><?php echo $sql[$i]->u_name;?></a><?php echo $sql[$i]->form ;?></div>
-								<div class="content_pc" style="<?php if($sql[$i]->content == ''){echo "display:none;";}?>"><?php echo $sql[$i]->content;?><a href="#">查看全部&gt;&gt;</a></div>
-								<div class="photo_box" style="<?php if($sql[$i]->photo == ''){echo "display:none;";}?>"><a href="#"><img src="<?php echo $sql[$i]->photo;?>" border=0/></a></div>
+								<div class="title_pc"><a href="/yard/home.php?id=<?php echo $user->id;?>"><?php echo $sql[$i]->u_name;?></a><?php echo $sql[$i]->form ;?></div>
+								<div class="content_pc" style="<?php if(!($sql[$i]->content)){echo "display:none;";}?>"><?php echo $sql[$i]->content;?><a href="/baby/index_daily_show.php?daily_id=<?php echo $sql[$i]->id;?>">查看全部&gt;&gt;</a></div>
+								<div class="photo_box" style="<?php if(!($sql[$i]->photo)){echo "display:none;";}?>"><a href="#"><img src="<?php echo $sql[$i]->photo;?>" border=0/></a></div>
 								<div class="time_pc"><?php echo mb_substr($sql[$i]->created_at,0,16);?></div>
 							</div>
 						</div>

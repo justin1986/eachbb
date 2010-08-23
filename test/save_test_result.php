@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once '../frame.php';
 include_once '../inc/User.class.php';
 $user = User::current_user();

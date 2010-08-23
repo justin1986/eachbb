@@ -15,6 +15,7 @@ include_once '../frame.php';
 		$test_id = intval($_GET['id']);
 		$test = new table_class('eb_problem');
 		$test->find($test_id);
+		$_SESSION['doing_test'] = $test->id;
 		if(!$test->id){
 			die_not_found();
 		}
@@ -29,9 +30,7 @@ include_once '../frame.php';
 		foreach($questions as $question){
 			$questions_tmp[$question->question_type][] = array('id'=> $question->id,'question_type'=>$question->question_type,'score'=> 0,'choice'=>0);
 		} 
-		
 		$question_queue = @array_merge($questions_tmp['dadongzuo'],$questions_tmp['jingxidongzuo'],$questions_tmp['yuyan'],$questions_tmp['renshi'],$questions_tmp['shehuihuodong']);
-		$_SESSION['doing_test'] = $test->id;
 		$_SESSION['question_queue'] = $question_queue;
 	}else{
 		$question_queue = $_SESSION['question_queue'];
@@ -108,7 +107,7 @@ include_once '../frame.php';
 				</div>
 				<div id="cr_c">
 					<div id="crc">
-						<form id="question_form" action="test.php" method="post">
+						<form id="question_form" action="test.php?id=<?php echo $test_id;?>" method="post">
 							<div id="crc_tit"><?php echo $question->title;?></div>
 							<div id="crc_cc">
 								<ul>
