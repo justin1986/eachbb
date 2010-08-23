@@ -283,7 +283,7 @@
 					<div id="m_r_t"></div>
 					<div id="m_r_c">
 						<div class="son_top">
-							<div class="son_t_l">关于<font style="color:#A4C853; font-weight:bold;" >新生儿</font></div>
+							<div class="son_t_l">精彩<font style="color:#A4C853; font-weight:bold;" >问答</font></div>
 							<div class="son_t_r"><a href="<?php echo get_news_list_url(208); ?>"><font style="color:#F33B0A; font-weight:bold;" >+</font> 更多</a></div>
 						</div>
 						<div class="son_content">
@@ -566,7 +566,7 @@
 					<div id="sbl_tr"></div>
 					<div id="sbl_cr">
 						<div class="son_top">
-							<div class="son_t_l">关于<font style="color:#A4C853; font-weight:bold;" >新生儿</font></div>
+							<div class="son_t_l">助手<font style="color:#A4C853; font-weight:bold;" >排行</font></div>
 							<div class="son_t_r"><a href="<?php echo get_news_list_url(208); ?>"><font style="color:#F33B0A; font-weight:bold;" >+</font> 更多</a></div>
 						</div>
 						<div class="son_content">

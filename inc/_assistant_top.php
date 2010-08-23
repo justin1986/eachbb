@@ -30,7 +30,7 @@
 			<div id="t2b_l">你的宝宝多大了?</div>
 			<div id="t2b_r">
 				<div id="t2b_hr">
-					<?php for($i=0;$i<40;$i++){?>
+					<?php for($i=0;$i<84;$i++){?>
 					<div class="age_block" id="<?php echo $i;?>"></div>
 					<?php }?>
 				</div>
@@ -49,7 +49,7 @@
 				<div id="t2bv_b"><a href="#">新生儿</a></div>
 				<div id="t2bv_c"><a href="#">1岁</a></div>
 				<div id="t2bv_d"><a href="#">2岁</a></div>
-				<div id="t2bv_e"><a href="#">5岁</a></div>
+				<div id="t2bv_e"><a href="#">3岁</a></div>
 				<div id="t2bv_f"><a href="#">6岁</a></div>
 			</div>
 		</div>
