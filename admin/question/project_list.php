@@ -50,7 +50,7 @@
 		</tr>
 		<? for($i=0;$i<$count_record;$i++){?>
 		<tr class="tr3" id="<?php echo $record[$i]->id;?>">
-			<td><a href="question_list.php?id=<?php echo $record[$i]->id;?>"><?php echo $record[$i]->name;?></a></td>
+			<td><a href="/test/test.php?id=<?php echo $record[$i]->id;?>" target="_blank"><?php echo $record[$i]->name;?></a></td>
 			<td><? echo substr($record[$i]->create_time, 0, 10);?></td>
 			<td>
 				<a href="question_edit.php?pid=<?php echo $record[$i]->id;?>" title="添加题目"><img src="/images/admin/btn_add.png" border="0"></a>
