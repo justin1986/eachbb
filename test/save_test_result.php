@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once '../frame.php';
 include_once '../inc/User.class.php';
 $user = User::current_user();
@@ -19,5 +20,6 @@ foreach ($_SESSION['question_queue'] as $item){
 	$test_record->score = $item['score'];
 	$test_record->question_type = $item['question_type'];
 	$test_record->save();
+	var_dump($test_record);
 }
 redirect('/test/test_result.php?test_id=' .$test_id);
