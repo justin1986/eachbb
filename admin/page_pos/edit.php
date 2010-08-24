@@ -21,6 +21,7 @@
 		$fields['link_i2']=array("","","链接","","图片1","图片2","","");
 		$fields['qa']=array("问题","回答","链接","","","","","");
 		$fields['pg']=array("标题","描述","链接","","图片","","","");
+		$fields['link_t_time']=array("类型","标题","链接","","","","时间","");
 		$names = array_key_exists($_GET['name'],$fields) ?  $fields[$_GET['name']] : $fields['default'];
 	?>
 </head>

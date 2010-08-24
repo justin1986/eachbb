@@ -78,8 +78,8 @@
 							<?php 
 								#$en_news=$db->query("SELECT id,category_id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id=153 and is_adopt=1 order by created_at desc limit 9;");
 							?>
-							<div class="tl_r" >
-								<a href="<?php get_news_url($en_news[0]);?>"><img src="<?php echo $en_news[0]->video_photo_src;?>"/></a>
+							<div class="tl_r" <?php $pos="assistan_hb_link_a"; show_page_pos($pos,'link_i');?>>
+								<a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1;?>"/></a>
 							</div>
 						</div>
 							<?php for($i=1;$i<9;$i++){?>
@@ -98,7 +98,11 @@
 							<?php 
 								#$en_news=$db->query("SELECT id,category_id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id=209 and is_adopt=1 order by created_at desc limit 9;");
 							?>
-							<div class="tl_r"><a href="<?php get_news_url($en_news[0]);?>"><img src="<?php echo $en_news[0]->video_photo_src;?>"/></a></div>
+							<div class="tl_r"<?php $pos="assistan_hb_link_b"; show_page_pos($pos,'link_i');?>>
+								<a href="<?php echo $pos_items[$pos]->href;?>">
+									<img src="<?php echo $pos_items[$pos]->image1;?>"/>
+								</a>
+							</div>
 						</div>
 						<?php for($i=1;$i<9;$i++){?>
 							<div class="tc_z"<?php $pos="news_list2_$i";show_page_pos($pos,'link');?> style="<?php if($i%2==1){ echo "margin-left:17px;";}?>">
@@ -303,41 +307,8 @@
 				</div>
 				<div class="bd_b"></div>
 			</div>
-			<div class="bd">
-				<div class="bd_t"></div>
-				<div class="bd_c">
-					<div class="bdt_t">
-						<div class="bdt_tl">用户调查</div>
-						<div class="bdt_more"><a href="#"><font>+</font>更多</a></div>
-					</div>
-					<div class="bdt_hr">
-						<div class="bdt_hr2"></div>
-					</div>
-					<div id="user_z">
-						<form action="">
-							<div id="user_a">
-								<a href="#">
-								<img id="pho"/>
-								</a>
-								<div id="pho_title">用户调查用户调查?</div>
-							</div>
-							<div id="bd_n"></div>
-							<?php for($x=0;$x<3;$x++){?>
-							<div class="user_a">
-								<input type="radio" class="user_rdo">
-								<div class="user_rvalue">斯蒂芬妮斯的浪费那得分</div>
-							</div>
-							<?php  }?>
-							<div id="user_hr"></div>
-							<div id="user_pg">
-								<input type="button" id="u_pa" value="投  票">
-								<input type="button" id="u_pb" value="查看结果">
-							</div>
-							<div id="n"></div>
-						</form>
-					</div>
-				</div>
-				<div class="bd_b"></div>
+			<div class="bd"<?php $pos="right_course_sdf";show_page_pos($pos,'link_i')?> style="height:190px;">
+				<img src="<?php echo $pos_items[$pos]->image1;?>" style="width:287px; height:190px; border:0px solid red;"/>
 			</div>
 		</div>
 		<div id="bt_i">
@@ -349,11 +320,11 @@
 			</div>
 			<div id="bi_c">
 				<?php for($i = 0 ; $i < 20 ; $i++){ ?>
-				<div class="bil_y" style="<?php if($i % 2 == 0){ echo "margin-left:0px;";}?>">
-					<div><span>[类型]</span>
-					<a href="#" title="">撒旦发射点发撒旦防撒旦</a>
+				<div class="bil_y"<?php $pos="assistan_type_$i";show_page_pos($pos,'link_t_time')?> style="<?php if($i % 2 == 0){ echo "margin-left:0px;";}?>">
+					<div><span>[<?php echo $pos_items[$pos]->title;?>]</span>
+					<a href="<?php echo $pos_items[$pos]->href;?>" title="<?php echo $pos_items[$pos]->description;?>"><?php echo $pos_items[$pos]->description;?></a>
 					</div>
-					<font>2010-10-12</font>
+					<font><?php echo $pos_items[$pos]->reserve1;?></font>
 				</div>
 				<?php }?>
 			</div>
