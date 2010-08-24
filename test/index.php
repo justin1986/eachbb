@@ -29,7 +29,7 @@
 						<?php for($i =0 ; $i < 4; $i++){
 							$pos = "top_intr_$i";
 						?>
-						<div class="crf_c" id="cr_<?php echo $i;?>"<?php show_page_pos($pos,'link_d_i')?> style="<?php if($i==0){ echo "display:inline;"; }else{echo "display:none;"; }?>">
+						<div class="crf_c" id="cr_<?php echo $i;?>"<?php show_page_pos($pos,'link_d_i')?> style="margin-left:10px; float:left; padding:0px;">
 							<div class="crf_ti"><img src="<?php echo $pos_items[$pos]->image1?>"></div>
 							<div class="crg_tt"><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href)?></div>
 							<?php echo_href($pos_items[$pos]->description, $pos_items[$pos]->href)?>
