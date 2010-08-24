@@ -9,8 +9,8 @@ $(function(){
 			$('.cr_a a').attr('style','color:#1A908A;');
 		}
 		$(this).attr('style','color:#ffffff;');
-		$('.class_val').hide();
-		$('#class_val_'+selected).show();
+		$('.crr_z').hide();
+		$('#crr_z_'+selected).show();
 	},function(){});
 	$('.num').hover(function(e){
 		e.preventDefault();
