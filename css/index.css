@@ -225,8 +225,8 @@ div{margin:0; padding:0; float:left; display:inline;}
 .ch_t_r{width:370px; height:99px; float: left; display: inline;}
 .child_title{width:360px; height:20px; margin-left:10px; margin-top:2px;  line-height:20px; float:left; display:inline;}
 .child_title a{font-weight:bold; font-size:14px; color:#000; text-decoration: none;}
-.child_content{width:370px; height:65px; margin-top:10px; margin-left:5px; overflow:hidden;  float:left; display:inline;}
-.child_content a{font-size:13px; line-height:18px; color:#000; text-decoration: none;}
+.child_content{width:370px; height:64px; margin-top:10px; margin-left:5px; line-height:16px; overflow:hidden;  float:left; display:inline;}
+.child_content a{font-size:13px; color:#000; text-decoration: none;}
 .child_c{width:530px; height:80px; margin-left:15px; margin-top:10px; float:left; display:inline;}
 .child_img{width:98px; height:65px; margin-left:5px; margin-top:5px; border:1px solid #999999; float:left; display:inline;}
 .child_img img{width:98px; height:65px; border:0px solid red;}
