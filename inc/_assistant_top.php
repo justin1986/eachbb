@@ -1,5 +1,5 @@
 	<?php 
-	$news_list=array("积极备孕页","孕期生活告","生长发育购","日常护理示","疾病与接种子","早期教育置","宠爱自己");
+	$news_list=array("积极备孕","孕期生活","生长发育","日常护理","疾病与接种","早期教育","宠爱自己");
 	include_once(dirname(__FILE__) .'/../inc/_public_top.php');
 	?> 
 	<script type="text/javascript">
