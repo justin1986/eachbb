@@ -71,8 +71,14 @@
 					</script>
 				</div>
 				<div id="flash_right">
-					<div id="r_test">
-						<a href="#"><img src="/images/index/img_r_a.jpg" /></a>
+					<div id="r_test"<?php $pos="index_teach_pg";show_page_pos($pos,'pg');?> style="background:url(<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1:'/images/index/img_r_a.jpg';?>) no-repeat;">
+						<div id="rtest_banner">
+							<?php for($i = 0 ; $i <4; $i++){?>
+							<div class="rest_title"<?php $pos="rtest_banner_$i";show_page_pos($pos,'link');?>>
+								<a href="<?php echo $pos_items[$pos]->href; ?>"><?php echo $pos_items[$pos]->title; ?></a>
+							</div>
+							<?php }?>
+						</div>
 					</div>
 					<div id="r_student">
 						<div id="st_top">
@@ -119,7 +125,9 @@
 							<div id="student_right"></div>
 						</div>
 					</div>
-					<div id="r_spring"></div>
+					<div id="r_spring"<?php $pos="r_spring";show_page_pos($pos,'link_d_i');?>>
+						<a href="<?php echo $pos_items[$pos]->href?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1:'/images/index/r_d.gif'?>" /></a>
+					</div>
 				</div>
 			</div>
 			<div id="sousuo">
@@ -156,10 +164,10 @@
 							<div class="test_context">
 								<div class="context_title"><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href);?></div>
 								<div class="context_content"><?php echo_href($pos_items[$pos]->description, $pos_items[$pos]->href);?></div>
-								<div class="test_content_more">
+							</div>
+							<div class="test_content_more">
 									<a href="<?php echo $pos_items[$pos]->href;?>"><img src="/images/index/more.gif" border="0" /></a>
 								</div>
-							</div>
 						</div>
 						<?php }?>
 						<div id="div_right_arrow">
@@ -320,82 +328,34 @@
 							<div id="q_m_d"/></div>
 						</div>
 					</div>
-					<div class="q_menu_r" id="q_0" style="display: inline;">
+					<?php for($i = 0 ; $i < 5 ; $i++){?>
+					<div class="q_menu_r" id="q_<?php echo  $i;?>" <?php if($i == 0) echo 'style="display: inline;"';?>>
 						<div class="q_m_pg_d">
 							<div class="child_t">
-								<div class="ch_t_pic"></div>
+								<div class="ch_t_pic"<?php $pos="yard_$i";show_page_pos($pos,'link_d_i')?>>
+									<a href="<?php echo $pos_items[$pos]->href;?>"><img  src="<?php echo $pos_items[$pos]->image1;?>"/></a>
+								</div>
 								<div class="ch_t_r">
-									<div class="child_title"><a href="#">虽多次发111111111111的风采</a></div>
-									<div class="child_content"><a href="#">虽虽虽多次发生的风采虽多次发生的风采多次发生的风采多次发生的风采虽虽多次发生的风采虽多次发生的风采多虽多次发生的风采次发生的风采</a></div>
+									<div class="child_title"><?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?></div>
+									<div class="child_content"><?php echo_href($pos_items[$pos]->description,$pos_items[$pos]->href);?></div>
 								</div>
 							</div>
 							<div class="child_c">
-								<div class="child_img"></div>
-								<div class="child_img"></div>
-								<div class="child_img"></div>
-								<div class="child_img"></div>
-								<div class="child_img"></div>
+								<?php for($j = 0 ; $j < 5 ; $j++){ ?>
+									<div class="child_img"<?php $pos="yard_son_$i$j";show_page_pos($pos,'link_d_i')?>><a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1;?>"/></a></div>
+								<?php }?>
 							</div>
 						</div>
 					</div>
-					<div class="q_menu_r" id="q_1">
-						<div class="q_m_pg_d">
-							<div class="child_t">
-								<div class="ch_t_pic"></div>
-								<div class="ch_t_r">
-									<div class="child_title"><a href="#">虽多222222222222222发生的风采</a></div>
-									<div class="child_content"><a href="#">虽虽虽多次发生的风采虽多次发生的风采多次发生的风采多次发生的风采虽虽多次发生的风采虽多次发生的风采多虽多次发生的风采次发生的风采</a></div>
-								</div>
-							</div>
-							<div class="child_c">
-								<div class="child_img"></div>
-								<div class="child_img"></div>
-								<div class="child_img"></div>
-								<div class="child_img"></div>
-								<div class="child_img"></div>
-							</div>
-						</div>
-					</div>
-					<div class="q_menu_r" id="q_2">
-						<div class="q_m_pg_d">
-							<div class="child_t">
-								<div class="ch_t_pic"></div>
-								<div class="ch_t_r">
-									<div class="child_title"><a href="#">33333333333</a></div>
-									<div class="child_content"><a href="#">虽虽虽多次发生的风采虽多次发生的风采多次发生的风采多次发生的风采虽虽多次发生的风采虽多次发生的风采多虽多次发生的风采次发生的风采</a></div>
-								</div>
-							</div>
-							<div class="child_c">
-								<div class="child_img"></div>
-								<div class="child_img"></div>
-								<div class="child_img"></div>
-								<div class="child_img"></div>
-								<div class="child_img"></div>
-							</div>
-						</div>
-					</div>
-					<div class="q_menu_r" id="q_3">
-						<div class="q_m_pg_d">
-							<div class="child_t">
-								<div class="ch_t_pic"></div>
-								<div class="ch_t_r">
-									<div class="child_title"><a href="#">虽444444444444444</a></div>
-									<div class="child_content"><a href="#">虽虽虽多次发生的风采虽多次发生的风采多次发生的风采多次发生的风采虽虽多次发生的风采虽多次发生的风采多虽多次发生的风采次发生的风采</a></div>
-								</div>
-							</div>
-							<div class="child_c">
-								<div class="child_img"></div>
-								<div class="child_img"></div>
-								<div class="child_img"></div>
-								<div class="child_img"></div>
-								<div class="child_img"></div>
-							</div>
-						</div>
-					</div>
+					<?php }?>
 				</div>
-				<div id="qin_right"></div>
+				<div id="qin_right"<?php $pos="yard_right";show_page_pos($pos,'link_d_i')?>>
+					<a href="<?php echo $pos_items[$pos]->href; ?>"><img src="<?php echo $pos_items[$pos]->image1;?>" /></a>
+				</div>
 			</div>
-			<div class="quwen"></div>
+			<div class="quwen"<?php $pos="yard_img";show_page_pos($pos,'pg')?>>
+				<img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : '/images/index/hr.png';?>"/>
+			</div>
 			<div id="student_b">
 				<div id="sb_l">
 					<div id="sbl_l"></div>
@@ -590,11 +550,9 @@
 				<div id="picc_left"></div>
 				<div id="picc_right">
 					<?php
-						$images = $db->query("select a.title,a.url,a.src from eb_images a left join eb_category b on a.category_id=b.id where a.is_adopt=1 and b.name='首页底部图片' order by a.priority asc, created_at desc limit 22");
-						$imgdb_count=$db->record_count;
-						for($k=0;$k<$imgdb_count;$k++){
+						for($k = 0 ; $k < 22;$k++){
 					 ?>
-					<div class="picc_a"><a href="<?php echo $iamges[$i]->url?>" title="<?php echo  $images[$k]->title; ?>"><img src="<?php echo  $images[$k]->src; ?>"></a></div>
+					<div class="picc_a"<?php $pos="bottom_$k";show_page_pos($pos,'link_d_i');?>><a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo  $pos_items[$pos]->image1; ?>"/></a></div>
 					<?php } ?>
 				</div>
 			</div>
