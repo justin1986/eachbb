@@ -545,7 +545,9 @@
 					<div id="sbl_br"></div>
 				</div>
 			</div>
-			<div class="quwen"></div>
+			<div class="quwen"<?php $pos="yardd_img";show_page_pos($pos,'pg')?>>
+				<img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : '/images/index/hr.png';?>"/>
+			</div>
 			<div id="pic">
 				<div id="picc_left"></div>
 				<div id="picc_right">
