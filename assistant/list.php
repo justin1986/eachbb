@@ -9,256 +9,62 @@
 		css_include_tag('top_inc/assistant_top','assistant_list','assistant/assistant_content','assistant/assistant_question','right_inc/assistant_right','left_inc/assistant_left'); 
 		use_jquery();
 		js_include_tag('assistant/list');
-		$type = $_GET['type'];
-		$category_id = intval($_GET['category_id']);
-		$age = intval($_GET['age']);
+		
 		$db = get_db();
-		if($type=='age'){
-			$level = -1;
-			$categorys = $db->query("select * from eb_category where category_type='assistant' and level=1");
-			$category = new category_class('assistant');
-		}else if($type=='cate'){
-			$level = 0;
-			$categorys = $db->query("select * from eb_category where category_type='assistant' and level=1");
-			$category = new category_class('assistant');
-		}else{
-			$category_id = intval($_GET['category_id']);
-			if(!$category_id) die('invalid param');
-			$category = new category_class('assistant');
-			$parent = $category->find($category_id);
-			$level = $parent->level;
+		$age = intval($_GET['age']);
+		$category_id = intval($_GET['category_id']);
+		if(!$category_id){
+			die('invalid param');
+			exit;
 		}
-		if($level==1){
-			$childs = $category->find_sub_category($category_id);
+		$category = new category_class('assistant');
+		$current_cate = $category->find($category_id);
+		$level = $current_cate->level;
+		if($level == 1){
+			$sub_cates  = $category->find_sub_category($category_id);
+		}
+		
+		function convert_age($age){
+			switch ($age) {
+				case -2: return '准备怀孕';break;
+				case -1:return '怀孕中';break;
+				case 1:return '0~1岁';break;
+				case 2:return '1~2岁';break;
+				case 3:return '2~3岁';break;
+				default:return '';
+			}
 		}
 	?>
 </head>
 <body>
-<input type="hidden" id="user_id" value="<?php echo $user->id;?>">
-<div id="ibody">
-		<?php include_once("../inc/_assistant_top.php"); ?>
-	<div id="fbody">
-		<?php include_once('./_assistant_left.php'); ?>
-		<div id="result">
-		<!-- 
-			<div id="result_top_btn">
-				<input type="button" id="button_age" value="按年龄查看"/>
-				<input type="button" id="button_cate" value="按主题查看"/>
-			</div> -->
-			<div id="container">
-				<div id="container_result">
-				<?php if($level==1){//一级分类?>
-					<div class="result_list"><?php echo $parent->name;?></div>
-					<?php if($age=='0'){//未选择年龄段?>
-						<?php for($i=-2;$i<=3;$i++){if($i!=0){?>
-						<div class="result_banner">
-							<div class="result_pg_top">
-								<?php 
-									switch($i){
-										case -2:echo '准备怀孕';break;
-										case -1:echo '怀孕中';break;
-										case 1:echo '0~1岁';break;
-										case 2:echo '1~2岁';break;
-										case 3:echo '2~3岁';break;
-									}
-								?>
-							</div>
-							<div class="result_pg_content">
-								<?php
-								foreach($childs as $k=>$child){
-								$sql = "select * from eb_assistant where is_adopt=1 and category_id = {$child->id} and age=$i order by priority asc,created_at desc limit 3";
-								$assistants = $db->query($sql);
-								!$assistants && $assistants = array();
-								if(!empty($assistants)){
-								?>
-								<div class="result_container" style="<?php if($k == 0) echo "margin-top:10px;"; ?>">
-									<a href="list.php?category_id=<?php echo $child->id?>&age=<?php echo $i;?>"><img src="<?php if($child->show_image!=''){echo $child->show_image;}else{?>/images/assistant_list/pho.jpg<?php }?>"/></a>
-									<?php foreach($assistants as $j => $assistant){?>
-									<div class="result_title"<?php if($j==0){?>style="margin-top:10px;"<?php }?>><a href="list.php?category_id=<?php echo $child->id?>&age=<?php echo $i;?>">[<?php echo $child->name;?>]</a><a href="/assistant/assistant.php?id=<?php echo $assistant->id;?>"><?php echo $assistant->title;?></a></div>
-									<?php }?>
-								</div>
-								<div class="cate_more" <?php if($k == 0) echo "style='margin-top:54px;'"; ?>><a href="list.php?category_id=<?php echo $child->id?>&age=<?php echo $i;?>">更多</a></div>
-								<?php }}?>
-							</div>
-							<div class="result_pg_bottom"></div>
-						</div>
-						<?php }}?>
-					<?php }else{//选择了年龄段?>
-					<div class="result_banner">
-						<div class="result_pg_top">
-							<?php 
-								switch($age){
-									case -2:echo '准备怀孕';break;
-									case -1:echo '怀孕中';break;
-									case 1:echo '0~1岁';break;
-									case 2:echo '1~2岁';break;
-									case 3:echo '2~3岁';break;
-								}
-							?>
-						</div>
-						<div class="result_pg_content">
-							<?php
-							foreach($childs as $k=>$child){
-							$sql = "select * from eb_assistant where is_adopt=1 and category_id = {$child->id} and age=$age order by priority asc,created_at desc limit 3";
-							$assistants = $db->query($sql);
-							!$assistants && $assistants = array();
-							if(!empty($assistants)){
-							?>
-							<div class="result_container" style="<?php if($k == 0) echo "margin-top:10px;"; ?>">
-								<a href="list.php?category_id=<?php echo $child->id?>&age=<?php echo $age;?>"><img src="<?php if($child->show_image!=''){echo $child->show_image;}else{?>/images/assistant_list/pho.jpg<?php }?>"/></a>
-								<?php foreach($assistants as $j => $assistant){?>
-								<div class="result_title"<?php if($j==0){?>style="margin-top:10px;"<?php }?>><a href="list.php?category_id=<?php echo $child->id?>&age=<?php echo $age;?>">[<?php echo $child->name;?>]</a><a href="/assistant/assistant.php?id=<?php echo $assistant->id;?>"><?php echo $assistant->title;?></a></div>
-								<?php }?>
-							</div>
-							<div class="cate_more" <?php if($k == 0) echo "style='margin-top:54px;'"; ?>><a href="list.php?category_id=<?php echo $child->id?>&age=<?php echo $age;?>">更多</a></div>
-							<?php }}?>
-						</div>
-						<div class="result_pg_bottom"></div>
-					</div>
-					<?php }?>
-				<?php }else if($level==2){//二级分类?>
-					<?php if($age!=0){//选择了年龄段?>
-					<div class="result_banner" style="margin:0;">
-						<div class="result_pg_top">
-							<?php 
-								echo $parent->name;
-							?>
-							[<?php 
-								switch($age){
-									case -2:echo '准备怀孕';break;
-									case -1:echo '怀孕中';break;
-									case 1:echo '0~1岁';break;
-									case 2:echo '1~2岁';break;
-									case 3:echo '2~3岁';break;
-								}
-							?>]
-						</div>
-						<div class="result_pg_content">
-							<?php 
-							$sql = "select * from eb_assistant where is_adopt=1 and category_id = {$parent->id}";
-							if($age!=0){
-								$sql .= " and age=$age";
-							}
-							$sql .= " order by priority asc,created_at desc";
-							$assistants = $db->paginate($sql,10);
-							$len = count($assistants);
-							for($i = 0; $i < $len; $i++){
-								$desc = trim(strip_tags($assistants[$i]->description));
-								if(empty($desc)) $desc = trim(strip_tags($assistants[$i]->content));
-							?>
-							<div class="result_container2" style="<?php if($i == 0) echo "margin-top:10px;"; ?>">
-								<img src="<?php if($assistants[$i]->image!=''){echo $assistants[$i]->image;}else{?>/images/assistant_list/pho.jpg<?php }?>"/>
-								<div class="result_title2"><a href="/assistant/assistant.php?id=<?php echo $assistants[$i]->id;?>"><?php echo $assistants[$i]->title;?></a></div>
-								<div class="result_value"><?php echo mb_substr($desc,0,45,'utf-8');?>……<a href="/assistant/assistant.php?id=<?php echo $assistants[$i]->id;?>">[查看全文]</a></div>
-							</div>
-							<?php } ?>
-							<div id="paginage"><?php paginate();?></div>
-						</div>
-						<div class="result_pg_bottom"></div>
-					</div>
-					<?php }else{//未选择年龄段?>
-						<?php for($i=-2;$i<=3;$i++){if($i!=0){?>
-						<div class="result_banner"  <?php if($i==-2){?>style="margin:0;"<?php }?>>
-							<div class="result_pg_top">
-								<?php
-								echo $parent->name;
-									switch($i){
-										case -2:echo '[准备怀孕]';break;
-										case -1:echo '[怀孕中]';break;
-										case 1:echo '[0~1岁]';break;
-										case 2:echo '[1~2岁]';break;
-										case 3:echo '[2~3岁]';break;
-									}
-								?>
-								<a href="list.php?category_id=<?php echo $parent->id?>&age=<?php echo $i;?>">更多&gt;&gt;</a>
-							</div>
-							<div class="result_pg_content">
-								<?php 
-									$sql = "select * from eb_assistant where is_adopt=1 and category_id = {$parent->id}";
-									if($i!=0){
-										$sql .= " and age=$i";
-									}
-									$sql .= " order by priority asc,created_at desc";
-									$assistants = $db->paginate($sql,10);
-									$len = count($assistants);
-									for($j = 0; $j < $len; $j++){
-										$desc = trim(strip_tags($assistants[$j]->description));
-										if(empty($desc)) $desc = trim(strip_tags($assistants[$j]->content));
-								?>
-									<div class="result_container2" style="<?php if($j == 0) echo "margin-top:10px;"; ?>">
-										<img src="<?php if($assistants[$j]->image!=''){echo $assistants[$j]->image;}else{?>/images/assistant_list/pho.jpg<?php }?>"/>
-										<div class="result_title2"><a href="/assistant/assistant.php?id=<?php echo $assistants[$j]->id;?>"><?php echo $assistants[$j]->title;?></a></div>
-										<div class="result_value"><?php echo mb_substr($desc,0,45,'utf-8');?>……<a href="/assistant/assistant.php?id=<?php echo $assistants[$j]->id;?>">[查看全文]</a></div>
-									</div>
-								<?php } ?>
-							</div>
-							<div class="result_pg_bottom"></div>
-						</div>
-						<?php }}?>
-					<?php }?>
-				<?php }else if($level==0){//显示所有分类，已不用?>
-						<?php foreach($categorys as $k=>$cate){
-								$parent = $category->find($cate->id);
-								$childs = $category->find_sub_category($cate->id);
-						?>
-							<div class="result_list" <?php if($k!=0)echo "style='margin-top:15px;'"?>><?php echo $parent->name;?></div>
-							<?php foreach($childs as $child){?>
-							<div class="result_banner">
-								<div class="result_pg_top"><?php echo $child->name;?><a href="list.php?category_id=<?php echo $child->id;?>">更多&gt;&gt;</a></div>
-								<div class="result_pg_content">
-									<?php 
-									$sql = "select * from eb_assistant where is_adopt=1 and category_id = {$child->id} limit 4";
-									$assistants = $db->query($sql);
-									$len = count($assistants);
-									for($i = 0; $i < $len; $i++){ ?>
-									<div class="result_container" style="<?php if($i == 0) echo "margin-top:10px;"; ?>">
-										<img src="<?php if($assistants[$i]->image!=''){echo $assistants[$i]->image;}else{?>/images/assistant_list/pho.jpg<?php }?>"/>
-										<div class="result_title"><a href="/assistant/assistant.php?id=<?php echo $assistants[$i]->id;?>"><?php echo $assistants[$i]->title;?></a></div>
-										<div class="result_value"><?php echo mb_substr(trim(strip_tags($assistants[$i]->description)),0,45,'utf-8');?>……<a href="/assistant/assistant.php?id=<?php echo $assistants[$i]->id;?>">[查看全文]</a></div>
-									</div>
-									<?php } ?>
-								</div>
-								<div class="result_pg_bottom"></div>
-							</div>
-							<?php }?>
-						<?php }?>
-					<?php }else if($level==-1){//按年龄段显示所有分类，已不用
-						for($i=-2;$i<=3;$i++){if($i!=0){
-					?>
-						<div class="result_list" <?php if($i!=-2)echo "style='margin-top:15px'";?>>
-							<?php 
-								switch($i){
-									case -2:echo '准备怀孕';break;
-									case -1:echo '怀孕中';break;
-									case 1:echo '0~1岁';break;
-									case 2:echo '1~2岁';break;
-									case 3:echo '2~3岁';break;
-								}
-							?>
-						</div>
-						<?php foreach($categorys as $cate){
-								$parent = $category->find($cate->id);
-								$childs = $category->find_sub_category($cate->id);
-						?>
-						<div class="result_banner">
-							<div class="result_pg_top"><?php echo $parent->name;?></div>
-							<div class="result_pg_content">
-								<?php foreach($childs as $child){?>
-								<div class="category_name"><a href='list.php?age=<?php echo $i;?>&category_id=<?php echo $child->id;?>'><?php echo  $child->name;?></a></div>
-								<?php }?>
-							</div>
-							<div class="result_pg_bottom"></div>
-						</div>
-						<?php }?>
-					<?php }}}?>
-					<?php include_once('./_assistant_content.php'); ?>
-				</div>
-				<?php include_once('./_assistant_right.php'); ?>
+	<input type="hidden" id="user_id" value="<?php echo $user->id;?>">
+	<div id="ibody">
+		<div id="container">
+			<div id="container_result">
+				<?php
+					if($level == 1){
+						include "_level1.php";
+					}elseif ($level==2 && !$age){
+						include "_level2.php";
+					}elseif($level==2 && $age){
+						include "_final_list.php";
+					}
+				?>
+				<?php include_once('./_assistant_content.php'); ?>
+			
 			</div>
-			<?php include_once('./_assistant_question.php'); ?>
+			<?php include_once('./_assistant_right.php'); ?>
 		</div>
-		<?php include_once('../inc/bottom.php'); ?>
+		
 	</div>
-</div>
 </body>
+<script type="text/javascript">
+	function filter_age(age){
+		var url = window.location.href;
+		var exp = /age=\d+/;
+		url = url.replace(exp, '');
+		url = url + '&age=' + age;
+		window.location.href=url;
+	}
+</script>
 </html>

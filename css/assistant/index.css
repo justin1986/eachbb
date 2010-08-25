@@ -1,0 +1,4 @@
+@CHARSET "UTF-8";
+body{width:970PX; margin: 0 auto;}
+#ibody{width:970px; overflow:hidden; margin:0;}
+#iframe_container{width:745px; float:left; margin-left:15px;}

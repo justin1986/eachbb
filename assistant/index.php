@@ -6,7 +6,7 @@
 	<title>网趣宝贝-妈妈助手</title>
 	<?php
 		include_once dirname(__FILE__).'/../frame.php';
-		css_include_tag('top_inc/assistant_top','assistant','left_inc/assistant_left'); 
+		css_include_tag('top_inc/assistant_top','assistant/index.css','left_inc/assistant_left'); 
 		use_jquery();
 		$db = get_db();
 		js_include_tag('assistant/assistant');
@@ -18,7 +18,7 @@
 	<?php include_once(dirname(__FILE__)."/../inc/_assistant_top.php"); ?>
 	<?php include_once dirname(__FILE__)."/_assistant_left.php"; ?>
 	<div id="iframe_container">
-		<iframe id="iframe" src="_index.php"></iframe>
+		<iframe id="iframe" name="iframe" src="/assistant/_index.php?page_type=<?php echo $page_type;?>" width="745" height="1000" frameborder="0" scrolling="auto" ></iframe>
 	</div>	
 	<?php include_once(dirname(__FILE__).'/../inc/bottom.php'); ?>
 </div>

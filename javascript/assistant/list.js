@@ -1,4 +1,5 @@
 $(function(){
+	parent.$('#iframe').attr('height',document.body.clientHeight);
 	$('#btn_print').click(function(e){
 		e.preventDefault();
 		window.print();
