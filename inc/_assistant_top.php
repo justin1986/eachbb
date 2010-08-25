@@ -1,6 +1,6 @@
 	<?php 
-	$news_list=array("积极备孕页","孕期生活告","生长发育购","日常护理示","疾病与接种子","早期教育置","宠爱自己");
-	include_once('../inc/_public_top.php');
+	$news_list=array("积极备孕","孕期生活","生长发育","日常护理","疾病与接种","早期教育","宠爱自己");
+	include_once(dirname(__FILE__) .'/../inc/_public_top.php');
 	?> 
 	<script type="text/javascript">
 					var flashvar = {defaultIndex:'4'};
@@ -11,15 +11,15 @@
 		<div id="top2_t">
 			<div id="tt_l"></div>
 			<div id="tt_c">
-				<div class="ttc_a"><a href="?age=-2&category_id=<?php echo $category_id;?>">准备怀孕</a></div>
+				<div class="ttc_a"><a href="?age=-2&category_id=<?php echo $category_id;?>" id="-2">准备怀孕</a></div>
 				<div class="ttc_hr"></div>
-				<div class="ttc_a"><a href="?age=-1&category_id=<?php echo $category_id;?>">怀孕期</a></div>
+				<div class="ttc_a"><a href="?age=-1&category_id=<?php echo $category_id;?>" id="-1">怀孕期</a></div>
 				<div class="ttc_hr"></div>
-				<div class="ttc_a"><a href="?age=1&category_id=<?php echo $category_id;?>">0～1岁</a></div>
+				<div class="ttc_a"><a href="?age=1&category_id=<?php echo $category_id;?>" id="1">0～1岁</a></div>
 				<div class="ttc_hr"></div>
-				<div class="ttc_a"><a href="?age=2&category_id=<?php echo $category_id;?>">1～2岁</a></div>
+				<div class="ttc_a"><a href="?age=2&category_id=<?php echo $category_id;?>" id="2">1～2岁</a></div>
 				<div class="ttc_hr"></div>
-				<div class="ttc_a"><a href="?age=3&category_id=<?php echo $category_id;?>">2～3岁</a></div>
+				<div class="ttc_a"><a href="?age=3&category_id=<?php echo $category_id;?>" id="3">2～3岁</a></div>
 				<a href="knowledge.php">
 				<img id="ttc_g" src="/images/helper/t_2.jpg"/>
 				</a>
@@ -30,7 +30,7 @@
 			<div id="t2b_l">你的宝宝多大了?</div>
 			<div id="t2b_r">
 				<div id="t2b_hr">
-					<?php for($i=0;$i<40;$i++){?>
+					<?php for($i=0;$i<84;$i++){?>
 					<div class="age_block" id="<?php echo $i;?>"></div>
 					<?php }?>
 				</div>
@@ -49,7 +49,7 @@
 				<div id="t2bv_b"><a href="#">新生儿</a></div>
 				<div id="t2bv_c"><a href="#">1岁</a></div>
 				<div id="t2bv_d"><a href="#">2岁</a></div>
-				<div id="t2bv_e"><a href="#">5岁</a></div>
+				<div id="t2bv_e"><a href="#">3岁</a></div>
 				<div id="t2bv_f"><a href="#">6岁</a></div>
 			</div>
 		</div>

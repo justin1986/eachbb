@@ -1,18 +1,21 @@
 @CHARSET "UTF-8";
-body{width:970PX; margin: 0 auto;}
-#ibody{width:970px; overflow:hidden; margin:0;}
+body{width:745px; margin: 0 auto;}
+#ibody{width:745px; overflow:hidden; margin:0;}
 
-#result{width:745px;  float:right; display:inline;}
+#result{width:745px;  float:left; display:inline;}
 
 #result_top_btn{width:745px; height:35px; float:right;}
 #result_top_btn input{width:100px; height:35px; padding-bottom:7px; border:0px solid #FF0000; color:#ffffff; font-size:14px; font-weight:bold; background:url(/images/assistant_list/btn_1.jpg); float:right;}
 
+.gengduo{width:90px; height:35px; padding-right:5px; line-height:35px; overflow:hidden; text-align:right; float:right; display:inline;}
+.gengduo_d{width:150px; height:35px; padding-right:5px; line-height:35px; overflow:hidden;  float:left; display:inline;}
+	
 #container{width:745px; margin-top:10px;  float:right; display:inline;}
 	#container_result{width:521px; float:left;}
 		.result_list{width:503px; height:27px; padding-left:18px; background:#FFE5C5; line-height:27px; font-size:14px; color:#FF3907; font-weight:bold; float:left;}
 		.result_banner{width:520px; margin-top:10px; float:left; display:inline;}
-			.result_pg_top{width:485px; height:35px; padding-left:35px; font-size:14px; line-height:35px; font-weight:bold; color:#FF6600; background:url(/images/assistant_list/con_top.jpg) no-repeat; float:left;}
-			.result_pg_top a{width:50px; height:26px; font-size:12px; color:#777777; text-decoration:none; font-weight:normal; float:right;}
+			.result_pg_top{width:485px; height:35px; padding-left:35px; font-size:14px; line-height:35px; font-weight:bold; color:#FF6600; background:url(/images/assistant_list/con_top.jpg) no-repeat; float:left; display: inline;}
+			.result_pg_top a{font-size:12px; color:#777777; text-decoration:none; font-weight:normal;}
 			.result_pg_content{width:518px; border-left:1px solid #FFDBB0; border-right: 1px solid #FFDBB0; float:left;}
 				#paginage{width:100%; text-align:center; margin-top:10px; font-size:12px; color:#999999; line-height:30px; float:left;}
 				#paginage a{text-decoration:none; color:#666666;}

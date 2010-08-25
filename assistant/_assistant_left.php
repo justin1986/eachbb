@@ -28,7 +28,7 @@
 											if($sub_cates[$j]->parent_id != $top_cates[$i]->id) continue;
 											array_push($$var, $sub_cates[$j]->id);
 										?>
-										<div class="htct_c"><a href="/assistant/list.php?category_id=<?php echo $sub_cates[$j]->id;?>" title="<?php echo $sub_cates[$j]->name;?>"><?php echo $sub_cates[$j]->name;?></a></div>
+										<div class="htct_c"><a href="/assistant/list.php?category_id=<?php echo $sub_cates[$j]->id;?>" title="<?php echo $sub_cates[$j]->name;?>" target="iframe"><?php echo $sub_cates[$j]->name;?></a></div>
 										<?php }?>
 									</div>
 								</div>
@@ -121,9 +121,3 @@
 			</div>
 			<div id="hl_b"> <img src="/images/class/l_pg.jpg"> </div>
 		</div>
-		<script type="text/javascript">
-		$(".htct_t").click(function(){
-			$(".htct_b").hide();
-			$(this).next().show();
-		});
-		</script>

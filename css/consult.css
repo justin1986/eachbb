@@ -23,12 +23,12 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 
 #bl_a{width:646px; height:207px; float:left; display:inline;}
 
-
-#bla_img{width:297px; height:207px; float:left; display: inline;}
-#pic_number{width:297px; height:18px; margin-top:-20px; float:left; display:inline;}
-#pic_number div{width:16px; height:16px; margin-left:1px; cursor:pointer; font-size:0px; line-height:0px; color:#FFFFFF; font-size:12px; line-height:16px; font-weight:bold; text-align:center; background:#4E3431; float:right; display: inline;}
-.pic_img{width:297px; height:207px; float:left; display: none; }
-.pic_img img{width:297px; height:207px;} 
+#bla_img{width:297px; height:207px; position:relative; float:left; display: inline;}
+#pic_number{width:297px; height:18px;  position:absolute; bottom:0px; left:0px; overflow:hidden; float:left;}
+.num{width:16px; height:16px; margin-left:1px; cursor:pointer; color:#FFFFFF; font-size:12px; line-height:16px; font-weight:bold; text-align:center; background:#4E3431; float:right;}
+.num.selected{background:#FF6600;}
+.pic_img{width:297px; height:207px; }
+.pic_img img{width:297px; height:207px; border:0px solid red;} 
 
 #bla_r{width:314px; height:207px;  float:right; display:inline;}
 #blar_t{width:314px; height:20px; float:left; display:inline;}
@@ -96,7 +96,7 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 #bert_hr div{width:63px; height:1px; margin-left:20px; background:#E9A7FC; font-size:0px; line-height:0px; float:left; display:inline;}
 #be_cc{width:340px; height:170px;  float:left; display:inline;}
 .becc_z{width:100px; height:150px; margin-left:10px; margin-top:5px; border:1px solid #E4E4E4; float:left; display:inline;}
-.becc_b{width:100px; height:20px; background:#333333; line-height:20px;  text-align:center; float:left; display:inline;}
+.becc_b{width:100px; height:20px; background:#333333; line-height:20px;  text-align:center; overflow:hidden; float:left; display:inline;}
 .becc_b A{color:#ffffff; font-size:14px; text-decoration: none;}
 .becc_z img{width:100px; height:130px; border:0px solid red; float:left; display:inline;}
 #bel_t{width:260px; height:25px; margin-top:5px; float:left; display:inline;}
@@ -126,7 +126,7 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 #bf_c{width:360px; height:150px; margin-left:15px; float:left; display:inline;}
 #bfc_t{width:330px; height:35px; margin-top:8px; float:left; display:inline;}
 #bfc_t a{font-size:30px; font-weight:600; color:#FF8911; text-decoration:none;}
-#bfc_c{width:360px; height:85px; margin-top:10px; overflow:hidden; line-height:18px; float:left; display:inline;}
+#bfc_c{width:360px; height:90px; overflow:hidden; line-height:18px; float:left; display:inline;}
 #bfc_c a{color:#666666; font-size:12px; font-weight:600; text-decoration:none;}
 
 #br_a{width:289px; float:left; display:inline;}
@@ -159,7 +159,7 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 .bct_cp{width:286px; height:28px; border-right:1px solid #E0DBF5; border-left:1px solid #E0DBF5; background:url(/images/consult/rb_bc.jpg) repeat-y; float:left; display:inline;}
 #bct_cb{width:288px; height:11px; background:url(/images/consult/rb_bb.jpg) no-repeat; float:Left; display:inline;}
 .bct_cpl{width:22px; bct_cpheight:22px; margin-left:20px; margin-top:5px; font-size:12px; color:#ffffff; font-weight:600; text-align:center; line-height:22px; background:url(/images/index/block.jpg) no-repeat; float:left; display:inline;}
-.bct_cpv{width:180px; margin-top:10px; margin-left:6px; height:14px; float:left; display:inline;}
+.bct_cpv{width:180px; margin-top:10px; margin-left:6px; height:14px;  line-height:14px; overflow:hidden; float:left; display:inline;}
 .bct_cpv a{ font-size:12px; line-height:14px; color:#000; text-decoration:none;}
 
 .bct_number{display:none;}

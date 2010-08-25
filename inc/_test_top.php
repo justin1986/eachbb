@@ -1,6 +1,6 @@
 <?php 
 	$news_list=array();
-	include_once('../inc/_public_top.php');
+	include_once(dirname(__FILE__) .'/../inc/_public_top.php');
 ?> 
 <script type="text/javascript">
 	var flashvar = {defaultIndex:'2'};

@@ -102,10 +102,10 @@
 	display:inline;
 	}
 .xiaoxi{
-	height:14px;
+	height:16px;
 	margin-top:10px;
 	font-size:12px;
-	line-height:13px;
+	line-height:16px;
 	font-weight:bold;
 	text-align:center;
 	float:right;
@@ -124,10 +124,10 @@
 	text-decoration: none;
 }
 .exit{
-	height:14px;
+	height:16px;
 	margin-top:10px;
 	font-size:12px;
-	line-height:13px;
+	line-height:16px;
 	font-weight:bold;
 	text-align:center;
 	float:right;

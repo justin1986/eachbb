@@ -72,11 +72,11 @@
 					<div id="img_flash"<?php $pos="top_image"; show_page_pos($pos,'link_i')?>><a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/class/c_pg_a.jpg';?>" border="0"/></a></div>				
 				</div>
 				<div id="crcb_t">
-					<div class="cr_a" ><a href="#"  style="color:#ffffff;">我的宝宝</a></div>
-					<div class="cr_a" ><a href="#" >我的宝宝</a></div>
-					<div class="cr_a" ><a href="#" >我的宝宝</a></div>
-					<div class="cr_a" ><a href="#" >我的宝宝</a></div>
-					<div class="cr_a" ><a href="#" >我的宝宝</a></div>
+					<div class="cr_a" ><a href="#"  style="color:#ffffff;">大运动</a></div>
+					<div class="cr_a" ><a href="#" >精细动作</a></div>
+					<div class="cr_a" ><a href="#" >认识</a></div>
+					<div class="cr_a" ><a href="#" >语言</a></div>
+					<div class="cr_a" ><a href="#" >情感培养</a></div>
 				</div>
 				<div class="cr_cb">
 					<div class="crc_pg">
@@ -91,13 +91,14 @@
 								<div class="num" style="background:#CE0609;">1</div>
 							</div>
 						</div>
-						<div class="crr_z">
+						<?php for($j = 0 ; $j <5; $j++){?>
+						<div class="crr_z" id="crr_z_<?php echo $j;?>" <?php if($j === 0) echo "style='display:inline;'"?>>
 							<a href="#"><img class="class_img" src="/images/class/class.png"/></a>
 							<div class="crb_title">
 								推荐<font>课程</font>
 							</div>
 							<div class="class_val">
-								<div class="crr_t"<?php $pos="middle_headline";show_page_pos($pos,'link_d_i');?>>
+								<div class="crr_t"<?php $pos="middle_headline_$j";show_page_pos($pos,'link_d_i');?>>
 									<div class="crrt_l"><a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : '/images/class/cr_l.jpg';?>" border="0"></a></div>
 									<div class="crrt_c"><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href);?></div>
 									<div class="crrt_b"><?php echo $pos_items[$pos]->description;?></div>
@@ -105,11 +106,12 @@
 								<div class="crr_c"></div>
 								<div class="crrab_z">
 									<?php for($i=0;$i<6;$i++){?>
-									<div class="crr_b"<?php $pos="middle_list_$i";show_page_pos($pos,'link');?>><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href)?></div>
+									<div class="crr_b"<?php $pos="_mse_list_$j$i";show_page_pos($pos,'link');?>><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href)?></div>
 									<?php }?>
 								</div>
 							</div>
 					</div>
+					<?php }?>
 					</div>
 				</div>
 				<div id="cr_ci">
@@ -121,7 +123,10 @@
 							<div id="cric_c">
 								<?php for($i=0;$i<6;$i++){?>
 								<div class="cricc_a">
-									<div <?php $pos="bottom_img_$i";show_page_pos($pos,'link_i');?>><a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : '/images/class/c_pg_a.jpg';?>"></a></div>
+									<div <?php $pos="bottom_imsg_$i";show_page_pos($pos,'link_i');?>>
+										<a href="<?php echo $pos_items[$pos]->href;?>">
+											<img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : '/images/class/c_pg_a.jpg';?>"/>
+										</a></div>
 								</div>
 								<?php }?>
 							</div>
@@ -130,7 +135,9 @@
 					</div>
 					<div id="cri_b"></div>
 				</div>
-				<div id="bg_pg"> flash </div>
+				<div id="bg_pg"<?php $pos="bottom_img_$i";show_page_pos($pos,'link_i');?>> 
+					<a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1;?>"/></a>
+				</div>
 			</div>
 		</div>
 		<?php include_once(dirname(__FILE__).'/../inc/bottom.php');?>

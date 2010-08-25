@@ -29,7 +29,7 @@
 						<?php for($i =0 ; $i < 4; $i++){
 							$pos = "top_intr_$i";
 						?>
-						<div class="crf_c" id="cr_<?php echo $i;?>"<?php show_page_pos($pos,'link_d_i')?> style="<?php if($i==0){ echo "display:inline;"; }else{echo "display:none;"; }?>">
+						<div class="crf_c" id="cr_<?php echo $i;?>"<?php show_page_pos($pos,'link_d_i')?> style="margin-left:10px; float:left; padding:0px;">
 							<div class="crf_ti"><img src="<?php echo $pos_items[$pos]->image1?>"></div>
 							<div class="crg_tt"><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href)?></div>
 							<?php echo_href($pos_items[$pos]->description, $pos_items[$pos]->href)?>
@@ -89,12 +89,12 @@
 					</div>
 			<div id="crc"></div>
 			<div id="crd">
-				<div class="crd_z" id="crd_z"><img src="/images/test/43.jpg"><div class="crd_f"><a href="#">宝宝测评案例</a></div></div>
-				<div class="crd_z"><img src="/images/test/43.jpg"><div class="crd_f"><a href="#">宝宝测评案例</a></div></div>
-				<div class="crd_z"><img src="/images/test/43.jpg"><div class="crd_f"><a href="#">宝宝测评案例</a></div></div>
+				<div class="crd_z" id="crd_z" <?php $pos="test_midden_a";show_page_pos($pos,'link_t_i');?>><img src="<?php echo  $pos_items[$pos]->image1;?>"><div class="crd_f"><a href="<?php echo  $pos_items[$pos]->href;?>"><?php echo  $pos_items[$pos]->title;?></a></div></div>
+				<div class="crd_z" <?php $pos="test_midden_b";show_page_pos($pos,'link_t_i');?>><img src="<?php echo  $pos_items[$pos]->image1;?>"><div class="crd_f"><a href="<?php echo  $pos_items[$pos]->href;?>"><?php echo  $pos_items[$pos]->title;?></a></div></div>
+				<div class="crd_z" <?php $pos="test_midden_c";show_page_pos($pos,'link_t_i');?>><img src="<?php echo  $pos_items[$pos]->image1;?>"><div class="crd_f"><a href="<?php echo  $pos_items[$pos]->href;?>"><?php echo  $pos_items[$pos]->title;?></a></div></div>
 			</div>
-			<div id="cre">
-					<img src="/images/test/tc_b.jpg">
+			<div id="cre"<?php $pos="test_midden_a";show_page_pos($pos,'link_i');?>>
+					<a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1:"/images/test/tc_b.jpg";?>"></a>
 			</div>
 			<div id="cr_ci">
 					<div id="cri_t"></div>
@@ -105,7 +105,11 @@
 							<div id="cric_c">
 								<?php for($i=0;$i<6;$i++){?>
 								<div class="cricc_a">
-									<div <?php $pos="test_bottom_img_$i";show_page_pos($pos,'link_i');?>><a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : '/images/class/c_pg_a.jpg';?>"></a></div>
+									<div <?php $pos="test_bottom_img_$i";show_page_pos($pos,'link_i');?>>
+										<a href="<?php echo $pos_items[$pos]->href;?>">
+											<img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : '/images/class/c_pg_a.jpg';?>">
+										</a>
+									</div>
 								</div>
 								<?php }?>
 							</div>
