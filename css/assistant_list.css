@@ -24,9 +24,9 @@ body{width:745px; margin: 0 auto;}
 				.result_container2{width:490px; height:64px; margin-left:15px; float:left; display: inline;}
 				.result_container2 img{width: 71px; height:54px; margin-top:10px; border:0px solid #000000; float:left; display:inline;}
 				.result_title{width:350px; height:18px; margin-left:15px; line-height:18px; float:left; display:inline;}
-				.result_title a{font-size:13px; color:#FF9143; text-decoration: none; font-weight:bold;}
+				.result_title a{font-size:13px; color:#04188E; text-decoration: none; }
 				.result_title2{width:400px; height:18px; margin-top:10px; margin-left:15px; line-height:18px; float:left; display:inline;}
-				.result_title2 a{font-size:13px; color:#FF9143; text-decoration: none; font-weight:bold;}
+				.result_title2 a{font-size:13px; color:#04188E; text-decoration: none;}
 				.cate_more{hegiht:20px; line-height:20px; font-size:12px; float:left; margin-top:44px;}
 				.cate_more a{color:#333333; text-decoration:none;}
 				.result_value{width:400px; height:32px; margin-left:15px; font-size:12px; color:#666666; line-height:16px; overflow:hidden; float:left; display: inline;}

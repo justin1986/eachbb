@@ -11,10 +11,6 @@
 		$db = get_db();
 		js_include_tag('assistant/assistant');
 		init_page_items('assistant_index');
-		$user = User::current_user();
-		echo $user->birthday."asdf";
-		echo now();
-		echo $user->birthday-now();
 	?>
 </head>
 <body>
