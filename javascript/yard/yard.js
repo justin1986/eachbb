@@ -26,6 +26,16 @@ $(function(){
 			$.post('lastest_news.post.php',{'select':'and resource_id=3'},function(data){
 				$('#test').html(data);
 			});
+		}else if(selected === 4)
+		{
+			$.post('lastest_news.post.php',{'select':'and resource_id=4'},function(data){
+				$('#test').html(data);
+			});
+		}else if(selected === 5)
+		{
+			$.post('lastest_news.post.php',{'select':'and resource_id=5'},function(data){
+				$('#test').html(data);
+			});
 		}
 	});
 	$('.menu_pic').click(function(){
