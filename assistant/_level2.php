@@ -24,10 +24,12 @@ $filter_age = array(-2,-1,1,2,3);
 ?>
 <div class="result_banner">
 	<div class="result_pg_top">
-		<?php 
-			echo convert_age($f_age);
-		?>
-		<a href="list.php?category_id=<?php echo $current_cate->id?>&age=<?php echo $f_age;?>">更多&gt;&gt;</a>
+		<div class="gengduo_d">
+		<?php echo convert_age($f_age); ?>
+		</div>
+		<div class="gengduo">
+			<a href="list.php?category_id=<?php echo $current_cate->id?>&age=<?php echo $f_age;?>">更多&gt;&gt;</a>
+		</div>
 	</div>
 	<div class="result_pg_content">
 		<?php
