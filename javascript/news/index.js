@@ -8,10 +8,10 @@ $(function(){
 		 refresh_image_tab();
 	}
 	function refresh_image_tab(){
+		$('.num').css('background','#4E3431');
+		$('#n_'+image_tab_index).css('background','#FF6600');
 	 	$('.pic_img').hide();
 	 	$('#img_tab_'+image_tab_index).show();
-	 	$('.num').css('background','#4E3431');
-		$('#n_'+image_tab_index).css('background','#FF6600');
 	}
 	$('.num').click(function(){
 		$('.num').css('background','#4E3431');
@@ -26,7 +26,6 @@ $(function(){
 	
 	$('.dict_tab').hover(function(){
 		var selected = $('.dict_tab').index($(this));
-		var selected=$('.dict_tab').index($(this));
 		for(var i = 0 ; i < 5; i++){
 			if(i == selected){
 				continue;

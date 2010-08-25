@@ -20,16 +20,16 @@
 			<div id="bl_a">
 				<div id="bla_img">
 					<?php for($i = 0 ; $i < 5 ; $i++){?>
-					<div class="pic_img"<?php $pos="assistan_pg_l_$i";show_page_pos($pos,'link_i');?> id="img_tab_<?php echo $i;?>"  <?php if($i === 0){ ?>style="display:inline;"<?php }?>>
+					<div class="pic_img"<?php $pos="assistan_pg_l_$i";show_page_pos($pos,'link_i');?> id="img_tab_<?php echo $i;?>"  <?php if($i === 0){ ?>style="display:inline;"<?php }else{?>style="display:none;"<?php }?>
 						<a href="<?php echo $pos_items[$pos]->href;?>"><img style="border:0px solid red;" src="<?php echo $pos_items[$pos]->image1;?>"/></a>
 					</div>
 					<?php }?>
 					<div id="pic_number">
 						<div id="n_4" class="num">5</div>	
-						<div id="n_3" class="num">4</div>
+						<div id="n_3" class="num" >4</div>
 						<div id="n_2" class="num">3</div>
 						<div id="n_1" class="num">2</div>
-						<div id="n_0" class="num" style="background:#FF6600;">1</div>
+						<div id="n_0" class="num selected">1</div>
 					</div>
 				</div>
 				<div id="bla_r">

@@ -23,12 +23,12 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 
 #bl_a{width:646px; height:207px; float:left; display:inline;}
 
-
 #bla_img{width:297px; height:207px; float:left; display: inline;}
-#pic_number{width:297px; height:18px; margin-top:-20px; float:left; display:inline;}
-#pic_number div{width:16px; height:16px; margin-left:1px; cursor:pointer; font-size:0px; line-height:0px; color:#FFFFFF; font-size:12px; line-height:16px; font-weight:bold; text-align:center; background:#4E3431; float:right; display: inline;}
-.pic_img{width:297px; height:207px; float:left; display: none; }
-.pic_img img{width:297px; height:207px;} 
+#pic_number{width:297px; height:18px; margin-top:-20px; overflow:hidden; float:left; display:inline;}
+.num{width:16px; height:16px; margin-left:1px; cursor:pointer; color:#FFFFFF; font-size:12px; line-height:16px; font-weight:bold; text-align:center; background:#4E3431; float:right; display: inline;}
+.num.selected{background:#FF6600;}
+.pic_img{width:297px; height:207px;  float:left; display: none; }
+.pic_img img{width:297px; height:207px; border:0px solid red;} 
 
 #bla_r{width:314px; height:207px;  float:right; display:inline;}
 #blar_t{width:314px; height:20px; float:left; display:inline;}
@@ -96,7 +96,7 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 #bert_hr div{width:63px; height:1px; margin-left:20px; background:#E9A7FC; font-size:0px; line-height:0px; float:left; display:inline;}
 #be_cc{width:340px; height:170px;  float:left; display:inline;}
 .becc_z{width:100px; height:150px; margin-left:10px; margin-top:5px; border:1px solid #E4E4E4; float:left; display:inline;}
-.becc_b{width:100px; height:20px; background:#333333; line-height:20px;  text-align:center; float:left; display:inline;}
+.becc_b{width:100px; height:20px; background:#333333; line-height:20px;  text-align:center; overflow:hidden; float:left; display:inline;}
 .becc_b A{color:#ffffff; font-size:14px; text-decoration: none;}
 .becc_z img{width:100px; height:130px; border:0px solid red; float:left; display:inline;}
 #bel_t{width:260px; height:25px; margin-top:5px; float:left; display:inline;}
