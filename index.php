@@ -71,14 +71,8 @@
 					</script>
 				</div>
 				<div id="flash_right">
-					<div id="r_test"<?php $pos="index_teach_pg";show_page_pos($pos,'pg');?> style="background:url(<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1:'/images/index/img_r_a.jpg';?>) no-repeat;">
-						<div id="rtest_banner">
-							<?php for($i = 0 ; $i <4; $i++){?>
-							<div class="rest_title"<?php $pos="rtest_banner_$i";show_page_pos($pos,'link');?>>
-								<a href="<?php echo $pos_items[$pos]->href; ?>"><?php echo $pos_items[$pos]->title; ?></a>
-							</div>
-							<?php }?>
-						</div>
+					<div id="r_test"<?php $pos="index_teach_pg";show_page_pos($pos,'link_i');?>>
+						<img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1:'/images/index/img_r_a.jpg';?>"/>
 					</div>
 					<div id="r_student">
 						<div id="st_top">
@@ -125,7 +119,7 @@
 							<div id="student_right"></div>
 						</div>
 					</div>
-					<div id="r_spring"<?php $pos="r_spring";show_page_pos($pos,'link_d_i');?>>
+					<div id="r_spring"<?php $pos="r_spring";show_page_pos($pos,'link_i');?>>
 						<a href="<?php echo $pos_items[$pos]->href?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1:'/images/index/r_d.gif'?>" /></a>
 					</div>
 				</div>
@@ -349,11 +343,11 @@
 					</div>
 					<?php }?>
 				</div>
-				<div id="qin_right"<?php $pos="yard_right";show_page_pos($pos,'link_d_i')?>>
+				<div id="qin_right"<?php $pos="yard_right";show_page_pos($pos,'link_i')?>>
 					<a href="<?php echo $pos_items[$pos]->href; ?>"><img src="<?php echo $pos_items[$pos]->image1;?>" /></a>
 				</div>
 			</div>
-			<div class="quwen"<?php $pos="yard_img";show_page_pos($pos,'pg')?>>
+			<div class="quwen"<?php $pos="yard_img";show_page_pos($pos,'link_i')?>>
 				<img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : '/images/index/hr.png';?>"/>
 			</div>
 			<div id="student_b">
@@ -365,14 +359,8 @@
 								<div class="sblct_l">
 									<div class="sblct_t_title">育儿早班车</div>
 									<div class="sblct_t"><a href="<?php echo get_news_list_url(1);?>">更多</a></div>
-									<div class="sblct_bb">
-										<?php 
-										#$category=array("120"=>"母乳喂养","121"=>"人工喂养","122"=>"混合喂养","123"=>"母乳准备","124"=>"母乳技巧","125"=>"吐奶溢奶");
-										#$category_ids=array_keys($category);
-										#$category_ids=implode(',',$category_ids);
-										#$db=get_db();
-										#$news_s=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in ($category_ids) order by created_at desc limit 1;");
-										?>
+									<div class="sblct_bb" <?php $pos="bot_a_a";show_page_pos($pos,'link_i')?>>
+										<img src="<?php echo $pos_items[$pos]->image1; ?>"/>
 									</div>
 								</div>
 								<div class="sblct_r">
@@ -406,14 +394,8 @@
 								<div class="sblct_l">
 									<div class="sblct_t_title">邻家育儿</div>
 									<div class="sblct_t"><a href="<?php echo get_news_list_url(2);?>">更多</a></div>
-									<div class="sblct_bb">
-									<?php
-										#$category=array("128"=>"脐带","129"=>"头部","130"=>"五官","131"=>"生殖器","132"=>"换尿布","133"=>"抱宝宝","134"=>"打襁褓","135"=>"剪指甲");
-										#$newsid=array_keys($new);
-										##$news_id=implode(',',$newsid);
-										#$news=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in ($news_id) order by created_at desc limit 1;");
-										#$n=$db->query("SELECT id,name,parent_id from eb_category where id in ($news_id)");
-									?>
+									<div class="sblct_bb" <?php $pos="bot_a_b";show_page_pos($pos,'link_i')?>>
+										<img src="<?php echo $pos_items[$pos]->image1; ?>"/>
 									</div>
 								</div>
 								<div class="sblct_r">
@@ -433,7 +415,6 @@
 									</div>
 									<div class="sb_content">
 										<?php 
-										#$news=$db->query("SELECT id,title,short_title,description,content FROM eb_news e where category_id in ($news_id) order by created_at desc limit 3;");
 										for($j=0;$j<5;$j++){ ?>
 										<div class="sb_ctt"<?php $pos="bottom_news_list_1_$j";show_page_pos($pos,'link')?>>
 											<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?>
@@ -448,14 +429,8 @@
 								<div class="sblct_l">
 								<div class="sblct_t_title">海外传真</div>
 									<div class="sblct_t"><a href="<?php echo get_news_list_url(3);?>">更多</a></div>
-									<?php 
-										#$category=array("136"=>"游戏","137"=>"抚摸","138"=>"训练","139"=>"对话");
-										#$news_k=array_keys($news);
-										#$news_id=implode(',',$news_k);
-										#$new=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in ($news_id) order by created_at desc limit 1;");
-										#$n=$db->query("SELECT id,name,parent_id from eb_category where id in ($news_id)");
-									?>
-									<div class="sblct_bb">
+									<div class="sblct_bb" <?php $pos="bot_a_c";show_page_pos($pos,'link_i')?>>
+										<img src="<?php echo $pos_items[$pos]->image1; ?>"/>
 									</div>
 								</div>
 								<div class="sblct_r">
@@ -492,7 +467,8 @@
 										#$new=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in ($news_id) order by created_at desc limit 1;");
 										#$n=$db->query("SELECT id,name,parent_id from eb_category where id in ($news_id)");
 									?>
-									<div class="sblct_bb">
+									<div class="sblct_bb" <?php $pos="bot_a_d";show_page_pos($pos,'link_i')?>>
+										<img src="<?php echo $pos_items[$pos]->image1; ?>"/>
 									</div>
 								</div>
 								<div class="sblct_r">
@@ -545,14 +521,16 @@
 					<div id="sbl_br"></div>
 				</div>
 			</div>
-			<div class="quwen"></div>
+			<div class="quwen"<?php $pos="yardd_img";show_page_pos($pos,'link_i')?>>
+				<img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : '/images/index/hr.png';?>"/>
+			</div>
 			<div id="pic">
 				<div id="picc_left"></div>
 				<div id="picc_right">
 					<?php
 						for($k = 0 ; $k < 22;$k++){
 					 ?>
-					<div class="picc_a"<?php $pos="bottom_$k";show_page_pos($pos,'link_d_i');?>><a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo  $pos_items[$pos]->image1; ?>"/></a></div>
+					<div class="picc_a"<?php $pos="bottom_$k";show_page_pos($pos,'link_i');?>><a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo  $pos_items[$pos]->image1; ?>"/></a></div>
 					<?php } ?>
 				</div>
 			</div>

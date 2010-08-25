@@ -32,7 +32,8 @@ body{width:970PX; margin: 0 auto; }
 #lf_c font{color:#FF9900;}
 #lf_r{width:50px; height:12px; font-size:12px; margin-top:4px; font-weight:bold; color:#CCCCCC; float:right; display:inline;}
 
-#bg_pg{width:747px; height:167px; margin-top:40px; line-height:167px; background:#000; text-align:center; font-size:72px; color:#ffffff;  margin-bottom:15px; float:right; display:inline;}
+#bg_pg{width:747px; height:167px; margin-top:40px;  margin-bottom:15px; float:right; display:inline;}
+#bg_pg img{width:747px; height:167px; border:0px solid red;}
 #pg_a{width:200px; height:141px; margin-left:10px; margin-top:20px; background:url(/images/class/l_pg.jpg) no-repeat; float:left; display:inline;}
 
 #pric_l{width:1px; height:175px; background:#ffffff; float:left; display:inline;}
@@ -67,7 +68,7 @@ body{width:970PX; margin: 0 auto; }
 .class_img{margin-top:-3px; margin-right:-3px; border:0px solid red; position:absolute; top:0px; right:0px;}
 .crb_img{width:313px; height:178px; margin-top:10px; margin-left:11px; position:relative; border:1px solid #E9E7EA; float:left; display:inline;}
 .crb_img img{width:311px; height:178px;}
-.crr_z{width:400px; height:185px; margin-left:10px; overflow:hidden; float:left; display:inline;}
+.crr_z{width:400px; height:185px; margin-left:10px; overflow:hidden; float:left; display:none;}
 .crb_title{width:320px; height:20px; margin-top:10px; padding-left:20px; line-height:20px;  background:url(/images/class/pic.jpg) no-repeat; font-size:16px; font-weight:bold; float:left; display:inline;}
 .crb_title font{color:#EC4610; font-size:16px; font-weight:bold;}
 .crr_t{width:387px; height:80px; margin-top:10px; float:left; position:relative; display:inline;}
@@ -93,7 +94,7 @@ body{width:970PX; margin: 0 auto; }
 #cric_c{width:730px; height:128px; margin-top:13px; float:left; display:inline;}
 .cricc_a{width:103px; height:128px; margin-left:18px; border:0px solid red; background:url(/images/class/c_pg.jpg) no-repeat; overflow:hidden; float:left; display:inline;}
 .cricc_a div{width:88px; height:128px; overflow:hidden; border:0px solid red; float:left; display:inline;}
-.cricc_a div img{border:0px solid red;}
+.cricc_a div img{width:88px; height:128px; border:0px solid red;}
 #login a{text-decoration:none; color:#ffffff;}
 
 #bottom{width:970px; text-align:center; margin-top:20px; font-size:12px; color:#666666; float:left; display:inline;}

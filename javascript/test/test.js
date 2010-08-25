@@ -1,4 +1,5 @@
 $(function(){
+	$('#cr_0').show();
 	$('.cr_num').hover(function(e){
 		e.preventDefault();
 		var selected = $('.cr_num').index($(this));
