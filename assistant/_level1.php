@@ -48,7 +48,7 @@ $filter_age = $age ? array($age) : array(-2,-1,1,2,3);
 		foreach($display_category as $display){
 		?>
 		<div class="result_container" style="<?php if($k == 0) echo "margin-top:10px;"; ?>">
-			<a href="list.php?category_id=<?php echo $display->category_id; ?>&age=<?php echo $f_age;?>"><img src="<?php echo $display->category_image;?>"/><img style="width:10px; height:10px;" src="/images/admin/btn_up.png"/></a>
+			<a href="list.php?category_id=<?php echo $display->category_id; ?>&age=<?php echo $f_age;?>"><img src="<?php echo $display->category_image;?>"/></a>
 			<?php foreach($display->assistants as $j => $assistant){?>
 			<div class="result_title"<?php if($j==0){?>style="margin-top:10px;"<?php }?>><a href="/assistant/assistant.php?id=<?php echo $assistant[id];?>"><?php echo $assistant[title];?></a></div>
 			<?php }?>
