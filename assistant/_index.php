@@ -83,4 +83,13 @@
 		</div>
 	</div>
 </body>
+<script type="text/javascript">
+	function filter_age(age){
+		var url = window.location.href;
+		var exp = /age=\d+/;
+		url = url.replace(exp, '');
+		url = url + '&age=' + age;
+		window.location.href=url;
+	}
+</script>
 </html>			
