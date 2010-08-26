@@ -7,7 +7,7 @@
 		include_once('../frame.php');
 		use_jquery();
 		css_include_tag('yard');
-		js_include_tag('yard/yard','yard_right');
+		js_include_tag('yard/yard');
 		$db=get_db();
 		$user = User::current_user();
 		if(!$user){
