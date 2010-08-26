@@ -4,6 +4,12 @@
 	$db = get_db();
 	$_SESSION['news_share'] = rand_str();
 	$news_id = intval($_GET['news_id']);
+	$user = User::current_user();
+		if(!$user){
+			alert("请您先登录！");
+			redirect('/login/');
+			exit();
+		}
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -21,7 +27,6 @@
 <div id="ibody">
 		<?php include_once('../inc/_consult_top.php'); ?>
 		<div id="bread"><img src="/images/article/log.jpg" /> 分享</div>
-		
 		<div id="mail_box">
 			<div class="share_line">分享给好友，您可以输入好友昵称和邮件地址，将网趣宝贝精华文章和您的好友分享</div>
 			<form action="/news/share.post.php" method="post" id="share_form">
