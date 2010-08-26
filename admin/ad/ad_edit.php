@@ -3,14 +3,14 @@
 	include_once('../../frame.php');
 	$role = judge_role();
 	$id = $_REQUEST['id'];
+	$ad = new table_class($g_ad_database_name.'.ad');
 	if($id!=''){
-		$ad = new table_class('eachbb_ad.eb_ad');
 		$ad->find($id);
 	}
-	$db = get_db();
+	$db = get_ad_db();
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-CN>
@@ -33,29 +33,49 @@
 		<tr class=tr4>
 			<td class=td1 width="15%">广告名</td><td width="85%"><input type="text" name="ad[name]" class="required" value="<?php echo $ad->name;?>" ></td>
 		</tr>
-
 		<tr class=tr4>
-			<td class=td1>广告代码</td><td align="left"><input type="text" name="ad[code]" class="required" value="<?php echo $ad->code;?>" ></td>
+			<td class=td1>宽度</td>
+			<td align="left">
+				<input type="text" name="ad[width]" class="required" value="<?php echo intval($ad->width);?>" >
+			</td>
 		</tr>	
+		<tr class=tr4>
+			<td class=td1>高度</td>
+			<td align="left">
+				<input type="text" name="ad[height]" class="required" value="<?php echo intval($ad->height);?>" >
+			</td>
+		</tr>	
+		
 		<tr class=tr4 id=target_url>
 			<td class=td1>跳转链接</td><td align="left"><input type="text" size="50" name="ad[target_url]" value="<?php echo $ad->target_url;?>"></td>
 		</tr>
 		<tr class=tr4 id=target_url>
 			<td class=td1>广告类型</td>
 			<td align="left">
-				<select name="ad[ad_type]" id="select_upload"><option value=''></option><option value='video'>视频</option><option value='flash'>flash</option><option value='image'>图片</option></select>
+				<select name="ad[ad_type]" id="select_type">
+					<option value='image'>图片</option>
+					<option value='video'>视频</option>
+					<option value='flash'>flash</option>
+				</select>
+				<script>
+					$(function(){
+						$("#select_type").val("<?php echo $ad->ad_type;?>")
+					});	
+				</script>
 			</td>
 		</tr>
-		<?php if($id){?>
-		<script>
-			$(function(){
-				$("#select_upload").val("<?php echo $ad->ad_type;?>")
-				$("#ad_<?php echo $ad->ad_type;?>").show();
-				$("#start_hour").val("<?php echo $ad->start_hour;?>");
-				$("#end_hour").val("<?php echo $ad->end_hour;?>");
-			});	
-		</script>
-		<?php }?>
+		<tr class=tr4 id="">
+			<td class=td1>广告资源</td>
+			<td align="left">
+				<input type="file" type="text" size="50" name="ad[resource]">
+				<?php 
+					if($ad->resource){
+						echo "<a href='show_resource.php?ad_id={$ad->id}' target='_blank'>查看</a>";
+					}
+				?>
+			</td>
+		</tr>
+		
 		<tr class="tr4 ad_upload" id="ad_image" style="display:none;">
 			<td class=td1>上传图片</td>
 			<td align="left">
@@ -74,24 +94,6 @@
 				<input type="file" name="flash" style="width:250px;"><?php if($ad->flash!=''){?><a class="color" title="flash展示" href="/admin/show/show_flash.php?id=<?php echo $id;?>&table=eachbb_ad.eb_ad">点击查看</a><?php }?>
 			</td>
 		</tr>
-		<tr class=tr4>
-			<td class=td1>定期播放</td><td><input type="text" size="20" class="date_jquery" value="<?php echo $ad->start_date;?>" name=ad[start_date]><div>－</div><input type="text" class="date_jquery" size="20" value="<?php echo $ad->end_date;?>" name=ad[end_date]></td>
-
-		</tr>
-		<tr class=tr4>
-			<td class=td1>定时播放</td><td><select name=ad[start_hour] id="start_hour" value="<?php echo $ad->start_hour;?>"><option value='0'></option><?php for($i=0;$i<25;$i++){?><option value='<?php echo $i;?>'><?php echo $i;?>时</option><?php }?></select><div>－</div><select name=ad[end_hour] id="end_hour"><option value='24'></option><?php for($i=0;$i<25;$i++){?><option value='<?php echo $i;?>'><?php echo $i;?>时</option><?php }?></select></td>
-		</tr>
-		<tr class=tr4>
-			<td class=td1>千次展示</td><td><input type="text" size="50" name=ad[show_price] value="<?php echo $ad->show_price;?>">(元)</td>
-		</tr>	
-		
-		<tr class=tr4>
-			<td class=td1>千次点击</td><td><input type="text" size="50" name=ad[click_price] value="<?php echo $ad->click_price;?>">(元)</td>
-		</tr>	
-				
-		<tr class=tr4>
-			<td class=td1>千次弹框</td><td><input type="text" size="50" name=ad[pop_price] value="<?php echo $ad->pop_price;?>">(元)</td>
-		</tr>			
 		<tr class="tr4">
 			<td class=td1>简短描述</td>
 			<td>
@@ -100,10 +102,6 @@
 		</tr>				
 		<tr class="btools">
 			<td colspan="10" align="center"><input id="submit" type="submit" value="发布广告"></td>
-			<input type="hidden" name="id"  value="<?php echo $id;?>">
-			<input type="hidden" name="ad[channel_id]"  value="<?php echo $_GET['cid'];?>">
-			<input type="hidden" name="ad[banner_id]"  value="<?php echo $_GET['bid'];?>">
-			<input type="hidden" name="url"  value="<?php echo $_GET['url'];?>">
 		</tr>			
 	</table>
 	</div>

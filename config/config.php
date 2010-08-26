@@ -17,6 +17,12 @@ global $db_password;//数据库密码
 global $db_code;//数据库编码，一般为utf8
 global $table_prex;//表前缀名
 
+global $g_ad_server_name;
+global $g_ad_user_name;
+global $g_ad_password;
+global $g_ad_database_name;
+global $g_ad_code;
+
 /*
  * 表名定义
  */
@@ -51,6 +57,7 @@ global $static_url;
 $db_type = 'mysql';
 $db_database_name = 'eachbb';
 $db_code = 'utf8';
+$g_ad_code = 'utf8';
 $table_prex = 'eb_';
 
 $tb_menu = $table_prex . 'admin_menu';
@@ -73,6 +80,9 @@ $debug_tag = true;
 $db_server_name = '192.168.1.2';
 $db_user_name = 'eachbb'; 
 $db_password = 'xunao';
+$g_ad_server_name = '192.168.1.2';
+$g_ad_user_name = 'eachbb'; 
+$g_ad_password = 'xunao';
 $g_ucenter_ip = 'http://www.eachbaby.com';
 $site_domain = 'http://www.eachbaby.com';
 

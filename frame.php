@@ -77,6 +77,20 @@
 		return $g_db;
 	}
 	
+	function get_ad_db(){
+		global $g_ad_server_name;
+		global $g_ad_user_name;
+		global $g_ad_password;
+		global $g_ad_database_name;
+		global $g_ad_db;
+		if(is_resource($g_ad_db)){
+			return $g_ad_db;
+		}
+		$g_ad_db = new DataBase();
+		$g_ad_db->connect($g_ad_server_name,$g_ad_database_name,$g_ad_user_name,$g_ad_password,$g_ad_code);
+		return $g_ad_db; 
+	}
+	
 	function close_db() {
 		$db = &get_db();
 		$db->close();
