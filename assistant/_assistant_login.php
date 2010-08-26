@@ -34,7 +34,7 @@ if($user){
 				<img src="<?php echo $user->avatar ? $user->avatar : '/images/assistant_list/pho.jpg';?>"/>
 			</div>
 			<div id="indiv_menu">
-				<div id="indiv_name" style="margin-top:10px;"><a target="_blank" href="/yard/home.php?id=<?php echo $user->id;?>"><?php echo $user->name;?></a></div>
+				<div id="indiv_name" style="margin-top:10px;"><a target="_blank" href="/yard/home.php?id=<?php echo $user->id;?>" style="font-size:13px;"><?php echo $user->name;?></a></div>
 				<div class="indiv_value" style="margin-top:10px;"><font>来自：</font><?php echo $user->address;?></div>
 				<div class="indiv_value"><font>性别：</font><?php echo gender($user->gender);?></div>
 				<div class="indiv_value"><font>年龄：</font><?php echo son($user->birthday)?son($user->birthday) : 0;?>岁</div>
