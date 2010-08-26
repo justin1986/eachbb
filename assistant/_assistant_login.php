@@ -14,7 +14,8 @@
 			}
 		}
 		function son($time){
-			return now()-substr($time,0,4);
+			$time =now()-substr($time,0,4);
+			return $time > 100 ? 100 : $time;
 		}
 		function birhday($time){
 			$time=(substr(now(),0,4)-substr($time,0,4))*12+son($time);
@@ -27,20 +28,22 @@
 if($user){
 ?>
 <div id="indiv_top"></div>
-	<div id="indiv_container">
+	<div id="indiv_container" style="<?php if($user->baby_status ==1 ){echo 'height:150px';}else{echo 'height:130px';}?>;">
 		<div id="indiv">
 			<div id="img_pg">
 				<img src="<?php echo $user->avatar ? $user->avatar : '/images/assistant_list/pho.jpg';?>"/>
 			</div>
 			<div id="indiv_menu">
-				<div id="indiv_name"><a target="_blank" href="/yard/home.php?id=<?php echo $user->id;?>"><?php echo $user->true_name;?></a></div>
-				<div class="indiv_value" style="margin-top:25px;"><font>来自：</font><?php echo $user->address;?></div>
+				<div id="indiv_name" style="margin-top:10px;"><a target="_blank" href="/yard/home.php?id=<?php echo $user->id;?>"><?php echo $user->name;?></a></div>
+				<div class="indiv_value" style="margin-top:10px;"><font>来自：</font><?php echo $user->address;?></div>
 				<div class="indiv_value"><font>性别：</font><?php echo gender($user->gender);?></div>
 				<div class="indiv_value"><font>年龄：</font><?php echo son($user->birthday)?son($user->birthday) : 0;?>岁</div>
 				</div>
 		</div>
-		<div class="indiv_value" style="width:160px; margin-top:0px; margin-left:10px; color:#37B0AD; float:left; display:inline;"><font>宝宝：</font><?php echo $user->baby_name;?></div>
-		<div class="indiv_value" style="width:160px; margin-left:10px; color:#37B0AD; float:left; display:inline;"><font>年龄：</font><?php echo birhday($user->baby_birthday) ? birhday($user->baby_birthday) : 0;?>个月</div>
+		<?php if($user->baby_status ==1 ){?>
+		<div class="indiv_value" style="width:90px; margin-top:0px; margin-left:10px; color:#37B0AD; float:left; display:inline;"><font>宝宝：</font><?php echo $user->baby_name;?></div>
+		<div class="indiv_value" style="width:90px; margin-top:0px; color:#37B0AD; float:left; display:inline;"><font>年龄：</font><?php echo birhday($user->baby_birthday) ? birhday($user->baby_birthday) : 0;?>个月</div>
+		<?php }?>
 	</div>
 <?php }else{ ?>
 <style>
