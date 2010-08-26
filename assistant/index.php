@@ -11,12 +11,6 @@
 		$db = get_db();
 		js_include_tag('assistant/assistant');
 		init_page_items('assistant_index');
-		$user = User::current_user();
-		if(!$user){
-			alert("请您先登录！");
-			redirect('/login/');
-			exit();
-		}
 	?>
 </head>
 <body>
