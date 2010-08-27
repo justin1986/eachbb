@@ -21,7 +21,7 @@
 		<div id="content">
 			<?php include_once(dirname(__FILE__).'/../inc/left_inc.php'); ?>
 			<div id="c_r">
-				<div id="cr_flash">
+				<div id="cr_flash" style="position: relative; z-index:1">
 					<div id="cr_banner">
 						<div id="crf_l">flash</div>
 					<div id="crf_r">
@@ -29,10 +29,19 @@
 						<?php for($i =0 ; $i < 4; $i++){
 							$pos = "top_intr_$i";
 						?>
+						<div id="flash_discription_<?php echo $i?>" class="flash_discription">
+							<?php if($pos_items[$pos]->description){?>
+							<div class="f_d_title">标题：<?php echo $pos_items[$pos]->title;?></div>
+							<div class="f_d_content"><div class="f_d_c">内容:</div><textarea readonly="readonly"><?php echo $pos_items[$pos]->description;?></textarea> </div>
+							<?php }else{?>
+							<div class="fd_content">内容为空！</div>
+							<?php }?>
+							<div class="f_d_btn">返回</div>
+						</div>
 						<div class="crf_c" id="cr_<?php echo $i;?>"<?php show_page_pos($pos,'link_d_i')?> style="margin-left:10px; float:left; padding:0px;">
 							<div class="crf_ti"><img src="<?php echo $pos_items[$pos]->image1?>"></div>
 							<div class="crg_tt"><?php echo $pos_items[$pos]->title;?></div>
-							<?php echo $pos_items[$pos]->description;?>
+							<?php echo mb_substr($pos_items[$pos]->description,0,165,'utf-8').'<a href="#">...【查看详细】</a>'?>
 						</div>
 						<?php }?>
 						<div id="crf_d">

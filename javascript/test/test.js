@@ -1,5 +1,14 @@
 $(function(){
 	$('#cr_0').show();
+	$('.crf_c a').click(function(e){
+		e.preventDefault();
+		var selected = $('.crf_c a').index($(this));
+		$('#flash_discription_'+selected).show();
+	});
+	$('.f_d_btn').click(function(e){
+		e.preventDefault();
+		$('.flash_discription').hide();
+	});
 	$('.cr_num').hover(function(e){
 		e.preventDefault();
 		var selected = $('.cr_num').index($(this));
