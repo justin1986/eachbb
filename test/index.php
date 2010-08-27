@@ -48,7 +48,7 @@
 					<div id="crb_t"> 
 						<div class="crb_value">
 							<div class="crb_tt"></div>
-							<div class="crb_cc" style="border-bottom:1px solid #ffffff; color:#43A0D6;">大动作</div>
+							<div class="crb_cc" style="border-bottom:1px solid #ffffff; color:#43A0D6;">大运动</div>
 						</div>
 						<div class="crb_hh"></div>
 						<div class="crb_value">
@@ -63,12 +63,12 @@
 						<div class="crb_hh" ></div>
 						<div class="crb_value">
 							<div class="crb_tt"></div>
-							<div class="crb_cc">认识</div>
+							<div class="crb_cc">认知</div>
 						</div>
 						<div class="crb_hh"></div>
 						<div class="crb_vv">
 							<div class="crb_ttt"></div>
-							<div class="crb_cc" style="width:149px;" id="crb_5">社会活动和行为规范</div>
+							<div class="crb_cc" style="width:149px;" id="crb_5">社会行为和生活习惯</div>
 						</div>
 						<div id="cr_hr"></div>
 					</div>
