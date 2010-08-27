@@ -1,10 +1,10 @@
 $(function(){
-	var image_tab_index = 0;
-	var image_tab_count = 5;
+	var image_tab_index = 1;
+	var image_tab_count = 6;
 	var iamge_tab_interval = 5000;
 	function image_interval(){
 		 image_tab_index++;
-		 if(image_tab_index >= image_tab_count) image_tab_index = 0;
+		 if(image_tab_index >= image_tab_count) image_tab_index = 1;
 		 refresh_image_tab();
 	}
 	function refresh_image_tab(){
