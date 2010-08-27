@@ -82,7 +82,9 @@
 								</a>
 							</div>
 							<div class="crbci_t">
-								<?php echo_href($pos_items[$pos]->description, $pos_items[$pos]->href)?>
+								<a href="<?php echo $pos_items[$pos]->href;?>" title="<?php echo strip_tags($pos_items[$pos]->description);?>">
+								<?php echo $pos_items[$pos]->description;?>
+								</a>
 							</div>
 					</div>
 					<?php } ?>
@@ -93,7 +95,7 @@
 				<div class="crd_z" <?php $pos="test_midden_b";show_page_pos($pos,'link_t_i');?>><img src="<?php echo  $pos_items[$pos]->image1;?>"><div class="crd_f"><a href="<?php echo  $pos_items[$pos]->href;?>"><?php echo  $pos_items[$pos]->title;?></a></div></div>
 				<div class="crd_z" <?php $pos="test_midden_c";show_page_pos($pos,'link_t_i');?>><img src="<?php echo  $pos_items[$pos]->image1;?>"><div class="crd_f"><a href="<?php echo  $pos_items[$pos]->href;?>"><?php echo  $pos_items[$pos]->title;?></a></div></div>
 			</div>
-			<div id="cre"<?php $pos="test_midden_a";show_page_pos($pos,'link_i');?>>
+			<div id="cre"<?php $pos="test_midden_d";show_page_pos($pos,'link_i');?>>
 					<a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1:"/images/test/tc_b.jpg";?>"></a>
 			</div>
 			<div id="cr_ci">

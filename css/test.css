@@ -115,7 +115,6 @@ body{width:970PX; margin: 0 auto; }
 .hlcb_t{width:160px; height:16px; margin-top:1px; font-size:12px; font-weight:bold; color:#666666; overflow:hidden; line-height:16px; float:left; display:inline;}
 .hlcb_t font{color:#F34B2E; font-size:12px;}
 
-
 #pric_l{width:1px; height:175px; background:#ffffff; float:left; display:inline;}
 #pric_rl{width:1px; height:154px; background:#ffffff; float:right; display:inline;}
 
@@ -132,4 +131,4 @@ body{width:970PX; margin: 0 auto; }
 #cric_c{width:730px; height:128px; margin-top:13px; float:left; display:inline;}
 .cricc_a{width:103px; height:128px; margin-left:18px; border:0px solid red; background:url(/images/class/c_pg.jpg) no-repeat; overflow:hidden; float:left; display:inline;}
 .cricc_a div{width:88px; height:128px; overflow:hidden; border:0px solid red; float:left; display:inline;}
-.cricc_a div img{border:0px solid red;}
+.cricc_a div img{width:88px; height:128px; border:0px solid red;}
