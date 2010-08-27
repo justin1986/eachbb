@@ -1,14 +1,11 @@
+<?php 
+	include_once(dirname(__FILE__).'/../frame.php');
+	use_jquery();
+	js_include_tag('left_inc');
+	?>
 <div id="c_l">
-	<div id="l_pho">
-		<div id="lp_t">个人信息管理</div>
-		<div id="lp_p">
-			<div id="lp_l"><img src="/images/class/l_peo.jpg"></div>
-			<div id="lp_word">司法撒旦发射发声法</div>
-		</div>
-		<div id="l_b_wa">您有<font>0</font>条评论</div>
-		<div id="l_b_wb">我的博客</div>
-	</div>
-	<div id="l_test"></div>
+	<div id="l_pho"></div>
+	<a href="/test"><div id="l_test"></div></a>
 	<div id="l_look"></div>
 	<div class="hlc_t"></div>
 	<div class="hlc_b">
@@ -45,3 +42,7 @@
 	</div>
 	<div id="pg_a"></div>
 </div>
+<style>
+#l_test{border:0px solid red;}
+#l_look{border:0px solid red;}
+</style>
