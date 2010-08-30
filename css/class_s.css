@@ -58,6 +58,7 @@ body{width:970PX; margin: 0 auto; }
 .hlcb_r{width:160px; height:60px; margin-left:3px; float:left; display:inline;}
 .hlcb_t{width:160px; height:16px; margin-top:1px; font-size:12px; font-weight:bold; color:#666666; overflow:hidden; line-height:16px; float:left; display:inline;}
 .hlcb_t font{color:#F34B2E; font-size:12px;}
+.hlcb_t a{color:#666666; font-size:12px; text-decoration: none;}
 
 #crcb_t{width:748px; height:30px; margin-top:25px; border:0px solid red; overflow:hidden; float:right; display:inline;}
 .cr_a{width:125px; height:30px; line-height:30px; border:0px solid red; background:url(/images/class/btn.jpg) no-repeat; text-align:center; float:left; display:inline;}
