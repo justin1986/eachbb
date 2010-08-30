@@ -50,17 +50,11 @@
 							<div class="crb_title">
 								推荐<font>课程</font>
 							</div>
-							<div class="class_val">
-								<div class="crr_t"<?php $pos="middle_headline_$j";show_page_pos($pos,'link_d_i');?>>
+							<div class="class_val" <?php if($j == 0) echo 'style="display:inline;"';?>>
+								<div class="crr_t" <?php $pos="middle_headline_$j";show_page_pos($pos,'link_d_i');?>>
 									<div class="crrt_l"><a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : '/images/class/cr_l.jpg';?>" border="0"></a></div>
 									<div class="crrt_c"><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href);?></div>
-									<div class="crrt_b"><?php echo $pos_items[$pos]->description;?></div>
-								</div>
-								<div class="crr_c"></div>
-								<div class="crrab_z">
-									<?php for($i=0;$i<6;$i++){?>
-									<div class="crr_b"<?php $pos="_mse_list_$j$i";show_page_pos($pos,'link');?>><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href)?></div>
-									<?php }?>
+									<?php echo $pos_items[$pos]->description;?>
 								</div>
 							</div>
 					</div>
