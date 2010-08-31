@@ -48,7 +48,7 @@
 				<div id="cc_pg">
 					<div class=r_title id="r_log"><a><?php if($member->true_name) echo $member->true_name.'的账户管理'; else echo '暂无信息';?></a></div>
 					<div id="r_log_hr">
-						<div>上传头片</div>
+						<div>上传图片</div>
 					</div>
 						<div id="pic_log">
 							<table width="754" border="0" cellpadding="0" cellspacing="0">
@@ -85,7 +85,7 @@
 									<td align="left" valign="middle"><a href="#" id="photo_book">添加相册</a></td>
 								</tr>
 								<tr>
-									<td height="46" align="right" valign="middle">上传头片：</td>
+									<td height="46" align="right" valign="middle">上传图片：</td>
 									<td align="middle" valign="middle"><input type="file" name="src" id="upfile" size="40"/></td>
 									<td align="left" valign="middle">支持JPG、JPEG、GIF和PNG文件，最大2M。</td>
 								</tr>
@@ -117,7 +117,7 @@
 				</div>
 				<div class="upload_bannerr">
 					<div class="upload_size">相册封面:</div>
-					<input type="file" name="src2" id="ulee" size="40"/>
+					<input type="file" name="src2" id="ulee" size="30"/>
 				</div>
 				<div id="upload_btn_banner"  style="margin-top:30px;">
 					<input type="submit" id="btn_b_save" value="保存" />
