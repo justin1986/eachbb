@@ -35,7 +35,6 @@
 	<?php if($user){?>
 	<div id="l_f">
 		<div id="lf_l">我的<font>好友</font></div>
-		<div id="lf_c">（<font><?php echo $user->name;?></font>）</div>
 	</div>
 	<div id="pic_r">
 		<?php
@@ -47,7 +46,11 @@
 			</div>
 			<div class="ppg_w"><?php echo $friend->f_name; ?></div>
 		</div>
-		<?php }?>
+		<?php }
+		if(!$list){
+			echo '<div style="width:210px; height:20px; padding-bottom:20px; margin-top:20px; line-height:20px; text-align:center; font-size:14px; font-weight:bold;">您的好友为空！</div>';
+		}
+		?>
 	</div>
 	<?php }?>
 	<div id="pg_a"></div>
