@@ -1,13 +1,14 @@
 <?php 
 	include_once(dirname(__FILE__).'/../frame.php');
 	use_jquery();
-	js_include_tag('left_inc');
+	js_include_tag('test_left_inc');
 	$user = User::current_user();
 	?>
 <div id="c_l">
 	<div id="l_pho"></div>
-	<a href="/test"><div id="l_test"></div></a>
-	<div id="l_look"></div>
+	<div id="l_look">
+		<a href="/feedback.php">网趣宝贝<font>意见反馈&nbsp;&nbsp;</font></a>
+	</div>
 	<div class="hlc_t"></div>
 	<div class="hlc_b">
 		<div class="hlcb_pg">

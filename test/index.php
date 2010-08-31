@@ -9,7 +9,7 @@
 <title>特色测评</title>
 <?php
 	use_jquery();
-	css_include_tag('top_inc/test_top','test','top_inc/test_left');
+	css_include_tag('top_inc/test_top','test','top_inc/test_left','test_left_inc');
 	js_include_tag('test/test');
 	init_page_items('test_index');
 ?>
@@ -19,7 +19,7 @@
 	<div id="fbody">
 		<?php include_once(dirname(__FILE__).'/../inc/_test_top.php'); ?>
 		<div id="content">
-			<?php include_once(dirname(__FILE__).'/../inc/left_inc.php'); ?>
+			<?php include_once(dirname(__FILE__).'/../test/left_inc.php'); ?>
 			<div id="c_r">
 				<div id="cr_flash" style="position: relative; z-index:1">
 					<div id="cr_banner">

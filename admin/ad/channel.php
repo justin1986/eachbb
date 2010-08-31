@@ -49,12 +49,18 @@
 			if($banner[$j]->channel_id==$channel[$i]->id){
 		?>
 		<tr class="tr3" style="display:none;"  name="<?php echo $channel[$i]->name;?>">
-			<td class="sub_menu"><li style="color:#0000ff;"><?php echo $banner[$j]->name;?></li></td>
+			<td class="sub_menu">
+				<li style="color:#0000ff;"><?php echo $banner[$j]->name;?></li>
+			</td>
 			<td><?php echo $channel[$i]->parttern?></td>
 			<td><?php echo $banner[$j]->ad_size;?></td>
 			<td>
-				<a href="ad_edit.php?cid=<?php echo $channel[$i]->id;?>&bid=<?php echo $banner[$j]->id;?>" title="添加广告"><img src="/images/admin/btn_add.png" border="0"></a>
-				<a href="ad_list.php?cid=<?php echo $channel[$i]->id;?>&bid=<?php echo $banner[$j]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" title="广告列表"><img src="/images/admin/btn_edit.png" border="0"></a>
+				<a href="ad_edit.php?cid=<?php echo $channel[$i]->id;?>&bid=<?php echo $banner[$j]->id;?>" title="添加广告">
+					<img src="/images/admin/btn_add.png" border="0">
+				</a>
+				<a href="ad_list.php?cid=<?php echo $channel[$i]->id;?>&bid=<?php echo $banner[$j]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" title="广告列表">
+					<img src="/images/admin/btn_edit.png" border="0">
+				</a>
 			</td>
 		</tr>
 		<?php }}}?>
