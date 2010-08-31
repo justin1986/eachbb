@@ -48,7 +48,7 @@ $filter_age = $age ? array($age) : array(-2,-1,1,2,3);
 		<?php
 		foreach($display_category as $display){
 		?>
-		<div class="result_container" style="padding-bottom:10px; border-bottom:1px solid #F0C09D; <?php if($k == 0) echo "margin-top:5px;"; ?>">
+		<div class="result_container" style="padding-bottom:10px; border-bottom:1px solid #F0C09D;">
 			<div class="resultt_banner">
 				<a href="list.php?category_id=<?php echo $display->category_id; ?>&age=<?php echo $f_age;?>"><img src="<?php echo $display->category_image;?>"/></a>
 				<?php
@@ -60,9 +60,6 @@ $filter_age = $age ? array($age) : array(-2,-1,1,2,3);
 			</div>
 			<div class="cate_more"  style="float:right;"<?php if($k == 0) echo "style='margin-top:54px;'"; ?>><a href="list.php?category_id=<?php echo $display->category_id?>&age=<?php echo $f_age;?>">更多</a></div>
 		</div>
-		
-		
-		
 		<?php }?>
 	</div>
 	<div class="result_pg_bottom"></div>
