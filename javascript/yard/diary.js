@@ -3,6 +3,10 @@ $(function(){
 	$.post('_diary_select_ajax_post.php',{"category_id":category_id},function(data){
 		$('#diary_content').html(data);
 	});
+	$('#r_log_hr_button').click(function(e){
+		e.preventDefault();
+		window.location.href="/yard/diary.php";
+	});
 	$('#sub').click(function(){
 		var title=$('#diary_title').val().trim();
 		var editor = CKEDITOR.instances['news[content]'] ;

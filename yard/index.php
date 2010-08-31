@@ -123,7 +123,6 @@
 						</div>
 						<form id="xxx" action="daily.post.php" method="post">
 							<textarea name="pho_r" id="pho_r">你正在作什么?</textarea>
-							
 						</form>
 					</div>
 					<div id="cc_ps" >
@@ -158,9 +157,6 @@
 							<div id="m_w" style="width:30px;"></div>
 						</div>
 					<div id="test"></div>
-						<!-- 
-						<div class="pc_hr"></div>
-						 -->
 					</div>
 					</div>
 				</div>
