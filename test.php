@@ -4,12 +4,14 @@
 	use_jquery(); 
 ?>
 <body>
-	<a href="#" id="test">test</a>
-
+	<a href="http://localhost:82" id="test">test</a>
+	<div id="div" style="color:green; font-size:14px;">this is a <span style="color:red;">div</span></div>
+	<input type="text" value="abc" id="input" />
 </body>
 
 <script>
-	var a = "http://www.localhost/a.php?age=12&a=3";
-	var exp = /age=\d+/;
-	alert(a.replace(exp, ''));
+	//document.getElemetById('test');
+	$(function(){
+		$.getScript('test.post.php');
+	});
 </script>

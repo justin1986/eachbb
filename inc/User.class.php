@@ -203,6 +203,9 @@ class User {
 		$db->execute($sql);
 		$result->id = $db->last_insert_id;
 		$result->result = true;
+		//active the bbs
+		$sql = "insert into bbs_members (uid,username,password,gender,regip) values ('" .$result->uid ."','" .$name ."','" .$password ."','0','" .getenv('REMOTE_ADDR') ."')";
+		$db->execute($sql);
 		return $result;
 		
 	}
