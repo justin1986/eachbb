@@ -37,7 +37,7 @@
 						<div class="crb_hh"></div>
 						<div class="crb_vv">
 							<div class="crb_ttt"></div>
-							<div class="crb_ccc"  id="crbt" ><a href="#">社会活动和行为规范</a></div>
+							<div class="crb_ccc"  id="crbt" ><a href="#">情感及适应性</a></div>
 						</div>
 						<div id="cr_hr"></div>
 					</div>

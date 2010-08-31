@@ -84,7 +84,7 @@ include_once '../inc/User.class.php';
 					<div class="crb_hh"></div>
 					<div class="crb_vv">
 						<div class="crb_ttt"></div>
-						<div class="crb_ccc"  id="tab_shehuihuodong" ><a href="#">社会活动和行为规范</a></div>
+						<div class="crb_ccc"  id="tab_shehuihuodong" ><a href="#">情感及适应性</a></div>
 					</div>
 					<div id="cr_hr"></div>
 					<script type="text/javascript">

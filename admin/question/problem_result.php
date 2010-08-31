@@ -44,7 +44,7 @@
 	<span><a href="problem_result.php?type=jingxidongzuo&id=<?php echo $project->id?>" id="jingxidongzuo" class="a_tab">精细动作</a></span>
 	<span><a href="problem_result.php?type=yuyan&id=<?php echo $project->id?>" id="yuyan" class="a_tab">语言</a></span>
 	<span><a href="problem_result.php?type=renshi&id=<?php echo $project->id?>" id="renshi" class="a_tab">认识</a></span>
-	<span><a href="problem_result.php?type=shehuihuodong&id=<?php echo $project->id?>" id="shehuihuodong" class="a_tab">社会活动和行为规范</a></span>
+	<span><a href="problem_result.php?type=shehuihuodong&id=<?php echo $project->id?>" id="shehuihuodong" class="a_tab">情感及适应性</a></span>
 </div>
 <form id="project_edit" action="project.post.php" enctype="multipart/form-data" method="post">
 <div id=itable>

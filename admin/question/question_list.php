@@ -56,7 +56,7 @@
 	<span><a href="question_list.php?question_type=jingxidongzuo&id=<?php echo $project_id?>" id="jingxidongzuo" class="a_tab">精细动作</a></span>
 	<span><a href="question_list.php?question_type=yuyan&id=<?php echo $project_id?>" id="yuyan" class="a_tab">语言</a></span>
 	<span><a href="question_list.php?question_type=renshi&id=<?php echo $project_id?>" id="renshi" class="a_tab">认识</a></span>
-	<span><a href="question_list.php?question_type=shehuihuodong&id=<?php echo $project_id?>" id="shehuihuodong" class="a_tab">社会活动和行为规范</a></span>
+	<span><a href="question_list.php?question_type=shehuihuodong&id=<?php echo $project_id?>" id="shehuihuodong" class="a_tab">情感及适应性</a></span>
 </div>
 <div id=itable>
 	<table cellspacing="1" align="center">

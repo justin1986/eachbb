@@ -50,7 +50,7 @@
 							<option value='jingxidongzuo'>精细动作</option>
 							<option value='yuyan'>语言</option>
 							<option value='renshi'>认识</option>
-							<option value='shehuihuodong'>社会活动和行为规范</option>
+							<option value='shehuihuodong'>情感及适应性</option>
 						</select>
 						<script type="text/javascript">
 							$('#select_question_type').val('<?php echo $item->question_type;?>');
