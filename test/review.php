@@ -10,7 +10,7 @@ include_once '../inc/User.class.php';
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-CN>
 <?php 
-	css_include_tag('top_inc/test_top','test_begin','top_inc/test_left');
+	css_include_tag('top_inc/test_top','test_begin','top_inc/test_left','test_left_inc');
 	use_jquery();
 	js_include_tag('front/test');
 	$method = strtolower($_SERVER['REQUEST_METHOD']);
@@ -59,7 +59,7 @@ include_once '../inc/User.class.php';
 	<div id="fbody">
 		<?php include_once('../inc/_test_top.php'); ?>
 		<div id="content">
-			<?php include_once('../inc/left_inc.php'); ?>
+			<?php include_once(dirname(__FILE__).'/../test/left_inc.php'); ?>
 			<div id="c_r">
 				<div id="crb_t"> 
 					<div class="crb_value">
