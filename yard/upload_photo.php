@@ -117,7 +117,7 @@
 				</div>
 				<div class="upload_bannerr">
 					<div class="upload_size">相册封面:</div>
-					<input type="file" name="src2" id="ulee" size="40"/>
+					<input type="file" name="src2" id="ulee" size="30"/>
 				</div>
 				<div id="upload_btn_banner"  style="margin-top:30px;">
 					<input type="submit" id="btn_b_save" value="保存" />
