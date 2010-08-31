@@ -1,16 +1,12 @@
 <?php
-
-        
-	
     session_start();
 	include_once('../frame.php');
-	include_once('../inc/user.class.php');
-    
-    	$user = User::current_user();
-		if(!$user){
-			alert("请您先登录！");
-			redirect('/login/');
-		die();
+	set_charset();
+    $user = User::current_user();
+	if(!$user){
+		alert("请您先登录！");
+		redirect('/login/');
+	die();
 	}
             
 	
@@ -71,34 +67,13 @@
 		redirect('/yard/reset_password');
 		die();
 	}
-    
-     
-    
-
-    
-    $result = $user->reset_password($new_password,$old_password);
-    
-    
- ?>
- 
- <?
+  $result = $user->reset_password($new_password,$old_password);
   $db = get_db();
-    $database_password = $db->query("SELECT password FROM `eachbb_member`.member WHERE id={$id}");
+  $database_password = $db->query("SELECT password FROM `eachbb_member`.member WHERE id={$id}");
   if($database_password[0]->password == $md5_new_password){
         	 alert("成功");
-		redirect('/yard/member');
+			redirect('/yard/member.php');
         }else{
             alert("失败");
 		redirect('/yard/reset_password');
         }
-        ?>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  

@@ -15,28 +15,6 @@
 </head>
 <body>
 <div id="ibody">
-<!-- 
-	<div id="top_login">
-		<div id="login">
-			<div id="login_login">
-				<div id="login_img"></div>
-				<div id="login_word"><a href="/login/">登录</a></div>
-			</div>
-			<div id="register">
-				<div id="register_img"></div>
-				<div id="register_word"><a href="/register/">注册</a></div>
-			</div>
-			<div id="comeback">
-				<div id="comeback_img"></div>
-				<div id="comeback_word"><a href="/">返回首页</a></div>
-			</div>
-			<div id="member">
-				<div id="member_img"></div>
-				<div id="member_word"><a href="#">用户中心</a></div>
-			</div>
-		</div>
-	</div>
-	 -->
 	<div id="top_menu">
 			<div id="menu_left"></div>
 			<div id="menu_center">
@@ -119,9 +97,7 @@
 							<div id="student_right"></div>
 						</div>
 					</div>
-					<div id="r_spring"<?php $pos="r_spring";show_page_pos($pos,'link_i');?>>
-						<a href="<?php echo $pos_items[$pos]->href?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1:'/images/index/r_d.gif'?>" /></a>
-					</div>
+					<div class="ad_banner" id="index_right_banner_1"></div>
 				</div>
 			</div>
 			<div id="sousuo">
@@ -349,7 +325,7 @@
 					<a href="<?php echo $pos_items[$pos]->href; ?>"><img src="<?php echo $pos_items[$pos]->image1;?>" /></a>
 				</div>
 			</div>
-			<div class="quwen"<?php $pos="yard_img";show_page_pos($pos,'link_i')?>>
+			<div class="quwen ad_banner" id="index_middle_banner" <?php $pos="yard_img";show_page_pos($pos,'link_i')?>>
 				<img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : '/images/index/hr.png';?>"/>
 			</div>
 			<div id="student_b">

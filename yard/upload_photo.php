@@ -48,7 +48,7 @@
 				<div id="cc_pg">
 					<div class=r_title id="r_log"><a><?php if($member->true_name) echo $member->true_name.'的账户管理'; else echo '暂无信息';?></a></div>
 					<div id="r_log_hr">
-						<div>上传头片</div>
+						<div>上传图片</div>
 					</div>
 						<div id="pic_log">
 							<table width="754" border="0" cellpadding="0" cellspacing="0">
@@ -59,13 +59,13 @@
 								</tr>
 								<tr>
 									<td height="46" align="right" valign="middle">图片名称：</td>
-									<td align="middle" valign="middle"><input type="text" id="name_photo" name="name_photo" size="40"/></td>
+									<td align="middle" valign="middle"><input type="text" id="name_photo" style="width:300px; margin-left:0px; float:left;" name="name_photo"/></td>
 									<td align="left" valign="middle"></td>
 								</tr>
 								<tr>
 									<td height="46" align="right" valign="middle">上传到相册：</td>
-									<td align="middle" id="select_photo" valign="middle">
-									<select id="upload_select_id" name="upload_select_id">
+									<td align="middle" id="select_photo" valign="middle" >
+									<select id="upload_select_id"  style="width:300px; margin-left:0px; float:left;" name="upload_select_id">
 											<?php
 											$album_id=$_GET["album_id"];
 											if($album_id){
@@ -85,13 +85,13 @@
 									<td align="left" valign="middle"><a href="#" id="photo_book">添加相册</a></td>
 								</tr>
 								<tr>
-									<td height="46" align="right" valign="middle">上传头片：</td>
-									<td align="middle" valign="middle"><input type="file" name="src" id="upfile" size="40"/></td>
+									<td height="46" align="right" valign="middle">上传图片：</td>
+									<td align="middle" valign="middle" ><input type="file"  style=" float:left;" name="src" id="upfile" size="40"/></td>
 									<td align="left" valign="middle">支持JPG、JPEG、GIF和PNG文件，最大2M。</td>
 								</tr>
 								<tr>
 									<td height="66" align="right" valign="middle">图片描述：</td>
-									<td align="middle" valign="middle"  colspan="2"><textarea id="text_photo" name="text_photo"></textarea></td>
+									<td align="middle" valign="middle"  colspan="2" ><textarea id="text_photo"  style="height:70px;float:left;" name="text_photo"></textarea></td>
 								</tr>
 								<tr height="69px">
 									<td  valign="middle" colspan="3" id="rig_sub"><input id="ssubmit" type="submit" value=""/></td>
@@ -117,7 +117,7 @@
 				</div>
 				<div class="upload_bannerr">
 					<div class="upload_size">相册封面:</div>
-					<input type="file" name="src2" id="ulee" size="40"/>
+					<input type="file" name="src2" id="ulee" size="30"/>
 				</div>
 				<div id="upload_btn_banner"  style="margin-top:30px;">
 					<input type="submit" id="btn_b_save" value="保存" />
@@ -140,10 +140,10 @@
 			if(!photo_b.trim()){
 				alert('请输入相册的名称！');
 				return false;
-			}else if(!$('#upload_description').val().trim()){
+			}else if(!$('#upload_description').val()){
 				alert('请输入相册的描述！');
 				return false;
-			}else if($('#upload_description').val().trim() >= 50){
+			}else if($('#upload_description').val() >= 50){
 				alert('相册的名称必须小于50字！');
 				return false;
 			}else if(!$("#ulee").val()){
@@ -167,7 +167,7 @@
 			}
 		});
 		$('#ssubmit').click(function(){
-			if(!$('#name_photo').val().trim()){
+			if(!$('#name_photo').val()){
 				alert("请输入图片名称！");
 				return false;
 			}else if($('#name_photo').val().length >=50){
@@ -179,7 +179,7 @@
 			}else if($("#upload_select_id").val() == ''){
 				alert("请选择相册");
 				return false;
-			}else if($("#text_photo").val().trim() == ''){
+			}else if($("#text_photo").val() == ''){
 				alert("请输入描述内容！");
 				return false;
 			}else if($("#upfile").val()){

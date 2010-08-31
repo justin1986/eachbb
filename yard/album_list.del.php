@@ -24,9 +24,6 @@ $db->execute("delete from eachbb_member.photo where album_id=$id");
 $result=$db->query("SELECT front_cover FROM eachbb_member.album a where id=$id;");
 if(is_file("..".$result[0]->front_cover)){
 		@unlink("..".$result[0]->front_cover);
-	}else{
-		echo "文件不存在！";
-		die();
 	}
 if($db->execute("delete from eachbb_member.album where id=$id")){
 	echo '删除成功！';

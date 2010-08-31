@@ -149,3 +149,20 @@ function get_gender($gender){
 	}
 }
 
+function insert_ad_record($ad,$type='show'){
+	if(is_int($ad)){
+		$table = new table_class('eachbb_ad.eb_ad');
+		$table->find($ad);
+		$ad = $table;
+	}
+	$list = new table_class("eachbb_ad.eb_ad_{$type}_list");
+	$list->ad_id = $ad->id;
+	$list->ad_name = $ad->name;
+	$list->channel_id = $ad->channel_id;
+	$list->banner_id = $ad->banner_id;
+	$list->create_at = now();
+	$list->show_page = $_POST['url'] ? $_POST['url'] : $_SERVER['HTTP_REFERER'];
+	$list->remote_ip = $_SERVER['REMOTE_ADDR'];
+	$list->save();
+}
+

@@ -20,6 +20,8 @@
 	include_once '../../frame.php';
 	#js_include_tag('admin/question/question_edit');
 	$problem_id = intval($_GET['problem_id']);
+	$problem = new table_class('eb_problem');
+	$problem->find($problem_id);
 	$question_id = intval($_GET['question_id']);
 	$item = new table_class('eb_question');
 	if($question_id){
@@ -42,19 +44,22 @@
 					<td class="title">问题内容</td>
 					<td class="content"><input type="text" name="item[title]" value="<?php echo $item->title;?>"/></td>
 				</tr>
-				<tr>
+				
+				<tr<?php if($problem->problem_type == 2){echo ' id="" style="display:none;"';}?>>
 					<td class="title">所属版块</td>
 					<td class="content">
+						
 						<select id="select_question_type" name="item[question_type]">
 							<option value='dadongzuo'>大动作</option>
 							<option value='jingxidongzuo'>精细动作</option>
 							<option value='yuyan'>语言</option>
 							<option value='renshi'>认识</option>
-							<option value='shehuihuodong'>社会活动和行为规范</option>
+							<option value='shehuihuodong'>情感及适应性</option>
 						</select>
 						<script type="text/javascript">
 							$('#select_question_type').val('<?php echo $item->question_type;?>');
 						</script>
+						
 					</td>
 				</tr>
 				<tr>

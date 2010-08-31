@@ -1,8 +1,12 @@
 $(function(){
+	$.post('lastest_news.post.php',{'select':''},function(data){
+		$('#test').html(data);
+	});
 	$('.c_ch_w').click(function(){
 		var selected=$('.c_ch_w').index($(this));
 		$('.c_ch_w').attr('style','background:none;');
 		$(this).attr('style','border:0px solid red; background:url(/images/yard/m_pg.jpg) no-repeat;');
+	
 		if(selected === 0)
 		{
 			$.post('lastest_news.post.php',{'select':''},function(data){
@@ -83,5 +87,10 @@ $(function(){
 		$('#friend_word'+selected).css({'background':'#BFDEC1','color':'#6ebd71'});
 		$('#pic_'+selected).show();
 		$('#pic_'+selected2).hide();
+	});
+	
+	$('#pho_r').focus(function(){
+		$(this).val('');
+		$(this).unbind('focus');
 	});
 });

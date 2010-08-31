@@ -25,13 +25,13 @@
 					<div id="img_flash"<?php $pos="top_image"; show_page_pos($pos,'link_i')?>><a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/class/c_pg_a.jpg';?>" border="0"/></a></div>				
 				</div>
 				<div id="crcb_t">
-					<div class="cr_a" ><a href="#"  style="color:#ffffff;">大运动</a></div>
-					<div class="cr_a" ><a href="#" >精细动作</a></div>
-					<div class="cr_a" ><a href="#" >认识</a></div>
-					<div class="cr_a" ><a href="#" >语言</a></div>
-					<div class="cr_a" ><a href="#" >情感培养</a></div>
+					<div class="cr_a"  style="color:#ffffff;">大运动</div>
+					<div class="cr_a" >精细动作</div>
+					<div class="cr_a" >认识</div>
+					<div class="cr_a" >语言</div>
+					<div class="cr_a" >情感培养</div>
 				</div>
-				<div class="cr_cb">
+				<div class="cr_cb"  style="position: relative; z-index:1">
 					<div class="crc_pg">
 						<div class="crb_img">
 							<?php for($i = 0; $i < 4; $i++){ ?>
@@ -50,20 +50,27 @@
 							<div class="crb_title">
 								推荐<font>课程</font>
 							</div>
-							<div class="class_val">
-								<div class="crr_t"<?php $pos="middle_headline_$j";show_page_pos($pos,'link_d_i');?>>
+							<div class="class_val" <?php if($j == 0) echo 'style="display:inline;"';?>>
+								<div class="crr_t" <?php $pos="middle_headline_$j";show_page_pos($pos,'link_d_i');?>>
 									<div class="crrt_l"><a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : '/images/class/cr_l.jpg';?>" border="0"></a></div>
 									<div class="crrt_c"><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href);?></div>
-									<div class="crrt_b"><?php echo $pos_items[$pos]->description;?></div>
-								</div>
-								<div class="crr_c"></div>
-								<div class="crrab_z">
-									<?php for($i=0;$i<6;$i++){?>
-									<div class="crr_b"<?php $pos="_mse_list_$j$i";show_page_pos($pos,'link');?>><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href)?></div>
-									<?php }?>
+									<?php echo strip_tags(mb_substr($pos_items[$pos]->description,0,220,'utf-8')).'<a href="#" class="beijiu">...【查看详细】</a>'?>
 								</div>
 							</div>
-					</div>
+						</div>
+						<div id="flash_discription_<?php echo $j?>" class="flash_discription">
+							<?php if($pos_items[$pos]->description){?>
+							<div class="f_d_title">标题：<?php echo $pos_items[$pos]->title;?></div>
+							<div class="f_d_content">
+								<div class="f_d_c">内容:</div><textarea readonly="readonly" style="float:left;">
+								<?php echo strip_tags($pos_items[$pos]->description);?></textarea>
+							</div>
+							<?php }else{?>
+							<div class="fd_content">内容为空！</div>
+							<?php }?>
+							<div class="f_d_btn">返回</div>
+						</div>
+				
 					<?php }?>
 					</div>
 				</div>

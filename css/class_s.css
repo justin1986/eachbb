@@ -4,6 +4,17 @@ body{width:970PX; margin: 0 auto; }
 
 #fbody{ width:970px; overflow:hidden;  background:#ffffff; float:left; display:inline;}
 
+.flash_discription{width:727px; height:251px;  background:#99CCCC; overflow:hidden; font-size:13px; padding-left:10px;  padding-top:10px; left:2px; top:2px; position: absolute; float: left;display: none;}
+	.f_d_title{width:730px; height:20px;line-height:20px; overflow:hidden; float:left; display: inline;}
+	.f_d_btn{width:710px; height:20px; padding-right:20px; line-height:20px; text-align:right;  float:left; display: inline;}
+	.f_d_content{width:720px; height:130px; padding-top:10px; line-height:0px; float:left; display: inline;}
+	.f_d_c{width:35px; height:50px; padding-top:10px; line-height:10px; overflow:hidden; float:left; display: inline;}
+	.f_d_content TEXTAREA{width:640px; height:118px; color:#333399; border:1px solid #7B9CBD; line-height: 18px; font-size:12px;}
+	.f_d_btn{cursor:pointer;}
+	.fd_content{width:710px; height:160px; line-height:200px; font-size:20px; font-weight:bold; text-align: center; float: left; display: inline;}
+	.class_val a{color:#666666; text-decoration: none;}
+
+
 #content{width:970px;  margin-top:12px; float:left; display:inline;}
 #c_l{width:205px;  overflow:hidden; float:left; display:inline;}
 #c_r{width:755px; float:right; display:inline;}
@@ -13,9 +24,11 @@ body{width:970PX; margin: 0 auto; }
 #lp_l{width:50px; height:50px; float:left; display:inline;}
 #lp_l img{width:50px; height:50px;}
 #lp_word{width:120px; height:50px; margin-left:5px; line-height:25px; overflow:hidden; font-size:13px; font-weight:bold; float:left; display:inline;}
-#l_b_wa,#l_b_wb{width:150px; height:20px; line-height:20px; margin-left:35px;font-size:12px; color:#666666; font-weight:bold; float:left; display:inline;}
+#l_b_wa,#l_b_wb{width:150px; height:20px; line-height:20px; margin-left:35px; font-size:12px; color:#666666; font-weight:bold; float:left; display:inline;}
 #l_b_wa{margin-top:11px;}
 #l_b_wa font{color:red;}
+#l_b_wb a{font-size:12px; color:#666666; font-weight:bold;  text-decoration:none;}
+
 #l_test,#l_look{width:200px; height:42px; font-size:0px; line-height:0px; margin-left:5px; float:left; display:inline;}
 #l_test{margin-top:14px; background:url(/images/class/l_pg_a.jpg) no-repeat;}
 #l_look{margin-top:13px; background:url(/images/class/l_pg_b.jpg) no-repeat;}
@@ -58,25 +71,25 @@ body{width:970PX; margin: 0 auto; }
 .hlcb_r{width:160px; height:60px; margin-left:3px; float:left; display:inline;}
 .hlcb_t{width:160px; height:16px; margin-top:1px; font-size:12px; font-weight:bold; color:#666666; overflow:hidden; line-height:16px; float:left; display:inline;}
 .hlcb_t font{color:#F34B2E; font-size:12px;}
+.hlcb_t a{color:#666666; font-size:12px; text-decoration: none;}
 
 #crcb_t{width:748px; height:30px; margin-top:25px; border:0px solid red; overflow:hidden; float:right; display:inline;}
-.cr_a{width:125px; height:30px; line-height:30px; border:0px solid red; background:url(/images/class/btn.jpg) no-repeat; text-align:center; float:left; display:inline;}
-.cr_a a{font-size:16px; font-weight:800; color:#1A908A; text-decoration: none;}
+.cr_a{width:125px; height:30px; line-height:30px; cursor:pointer; border:0px solid red; font-weight:bold; color:#1A908A; background:url(/images/class/btn.jpg) no-repeat; text-align:center; float:left; display:inline;}
 
 .cr_cb{width:738px; height:202px; position:relative; overflow:hidden; border:5px solid #4FD4B6; float:right; display:inline;}
 .crc_pg{width:736px; height:200px;  border:1px solid #00A9AC; overflow:hidden; float:left; display: inline;}
 .class_img{margin-top:-3px; margin-right:-3px; border:0px solid red; position:absolute; top:0px; right:0px;}
 .crb_img{width:313px; height:178px; margin-top:10px; margin-left:11px; position:relative; border:1px solid #E9E7EA; overflow:hidden; float:left; display:inline;}
 .crb_img img{width:311px; height:178px;}
-.crr_z{width:400px; height:185px; margin-left:10px;  overflow:hidden; float:left; display:none;}
+.crr_z{width:390px; height:185px; margin-left:10px;  overflow:hidden; float:left; display:none;}
 .crb_title{width:320px; height:20px; margin-top:10px; padding-left:20px; line-height:20px;  background:url(/images/class/pic.jpg) no-repeat; font-size:16px; font-weight:bold; float:left; display:inline;}
 .crb_title font{color:#EC4610; font-size:16px; font-weight:bold;}
-.crr_t{width:387px; height:80px; margin-top:10px; float:left; overflow:hidden; position:relative; display:inline;}
-.crrt_l{width:77px; height:60px; margin-top:3px; overflow:hidden; border:5px solid #E7E7DF; float:left; display:inline;}
+.crr_t{width:387px; height:145px; margin-top:10px; float:left; line-height:17px; overflow:hidden; position:relative; display:inline;}
+.crrt_l{width:77px; height:60px; margin-top:3px; margin-right:5px; overflow:hidden; border:5px solid #E7E7DF; float:left; display:inline;}
 .crrt_l img{width:73px; height:56px; margin-top:2px; margin-left:2px; }
-.crrt_c{width:275px; height:18px; margin-left:10px; margin-top:6px; font-size:14px; font-weight:bold; overflow:hidden; float:left; display:inline;}
+.class_val{line-height:15px; color:#8C8C8C;  font-size:13px;}
+.crrt_c{width:275px; height:18px; margin-left:10px; margin-top:6px; line-height:18px; font-size:14px; font-weight:bold; overflow:hidden; float:left; display:inline;}
 .crrt_c a{text-decoration:none; color:#000000; font-size:14px;}
-.crrt_b{width:275px; height:45px; margin-left:10px; margin-top:5px; line-height:15px; color:#8C8C8C; overflow:hidden; font-size:13px;  float:left; display:inline;}
 .crr_c{width:377px; height:1px; margin-top:2px; font-size:0px; line-height:0px; background:url(/images/class/cr_pg.jpg) repeat-x; float:left; display:inline;}
 .crr_b{width:188px; height:20px; margin-left:10px;  line-height:20px; overflow:hidden; float:left; position:relative; display:inline;}
 .crrab_z{width:400px; height:60px;  overflow:hidden;margin-toP:5px; float:left; display:inline;}

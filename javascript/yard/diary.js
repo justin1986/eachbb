@@ -3,8 +3,12 @@ $(function(){
 	$.post('_diary_select_ajax_post.php',{"category_id":category_id},function(data){
 		$('#diary_content').html(data);
 	});
+	$('#r_log_hr_button').click(function(e){
+		e.preventDefault();
+		window.location.href="/yard/diary.php";
+	});
 	$('#sub').click(function(){
-		var title=$('#diary_title').val().trim();
+		var title=$('#diary_title').val();
 		var editor = CKEDITOR.instances['news[content]'] ;
 		var content = editor.getData();
 		var created_id = $('#category_idd option:selected').val();
@@ -16,7 +20,7 @@ $(function(){
 			alert("请选择分类！");
 		}else{
 			$('#sub').attr('disabled',true);
-			var edit_id = $('#edit_id').val().trim();
+			var edit_id = $('#edit_id').val();
 			$.post('_diary_sub_ajax_post.php',{"title":title,"edit_id":edit_id,"content":content,"created_id":created_id},function(data){
 				$('#sub').attr('disabled',false);
 				alert(data);

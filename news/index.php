@@ -20,7 +20,7 @@
 			<div id="bl_a">
 				<div id="bla_img">
 					<?php for($i = 1 ; $i <= 5 ; $i++){?>
-					<div class="pic_img"<?php $pos="assistan_pg_l_$i";show_page_pos($pos,'link_i');?> id="img_tab_<?php echo $i;?>"  <?php if($i == 1){ ?>style="display:inline;"<?php }else{?>style="display:none;"<?php }?>
+					<div class="pic_img"<?php $pos="assistan_pg_l_$i";show_page_pos($pos,'link_i');?> id="img_tab_<?php echo $i;?>"  <?php if($i == 1){ ?> style="display:inline;"<?php }else{?>style="display:none;"<?php }?>>
 						<a href="<?php echo $pos_items[$pos]->href;?>"><img style="border:0px solid red;" src="<?php echo $pos_items[$pos]->image1;?>"/></a>
 					</div>
 					<?php }?>

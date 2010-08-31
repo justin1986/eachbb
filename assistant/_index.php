@@ -42,7 +42,7 @@
 				foreach($assistants as $assistant){?>
 				<div class="list_item">
 					<div class="dot"></div>
-					<div class="item">[<?php echo $assistant->name;?>] <a href="assistant.php?id=<?php echo $assistant->id;?>" title="<?php echo $assistant->title?>" ><?php echo $assistant->title?></a></div>
+					<div class="item">[<?php echo $assistant->name;?>] <a href="assistant.php?id=<?php echo $assistant->id;?>" title="<?php echo $assistant->title?>" target="_blank" ><?php echo $assistant->title?></a></div>
 				</div>
 				<?php  }?>
 			</div>
@@ -73,7 +73,7 @@
 					for($j=($i-6)*7;$j<($i-6)*7+7;$j++){ ?>
 				<div class="fcr_c">
 					<div class="fcrc_d"></div>
-					<div class="fcrc_c">[<?php echo $assistants[$j]->name;?>] <a href="assistant.php?id=<?php echo $assistants[$j]->id;?>" title="<?php echo $assistants[$j]->title?>" ><?php echo $assistants[$j]->title?></a></div>
+					<div class="fcrc_c">[<?php echo $assistants[$j]->name;?>] <a href="assistant.php?id=<?php echo $assistants[$j]->id;?>" title="<?php echo $assistants[$j]->title?>" target="_blank" ><?php echo $assistants[$j]->title?></a></div>
 				</div>
 			<?php  }?>
 				</div>
@@ -83,4 +83,13 @@
 		</div>
 	</div>
 </body>
+<script type="text/javascript">
+	function filter_age(age){
+		var url = window.location.href;
+		var exp = /age=\d+/;
+		url = url.replace(exp, '');
+		url = url + '&age=' + age;
+		window.location.href=url;
+	}
+</script>
 </html>			

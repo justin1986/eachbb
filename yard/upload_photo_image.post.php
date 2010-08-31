@@ -47,9 +47,7 @@
 			if(move_uploaded_file($yuan_pic,$save)){
 				if($db->execute($sql)){
 					$alpum=$_POST['alpum'];
-					
-					alert("添加成功！");
-				
+					echo "<script>alert('添加成功！');</script>";
 					if($alpum){
 						if(is_numeric($alpum))
 						{
