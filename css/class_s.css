@@ -4,6 +4,17 @@ body{width:970PX; margin: 0 auto; }
 
 #fbody{ width:970px; overflow:hidden;  background:#ffffff; float:left; display:inline;}
 
+.flash_discription{width:727px; height:251px;  background:#99CCCC; overflow:hidden; font-size:13px; padding-left:10px;  padding-top:10px; left:2px; top:2px; position: absolute; float: left;display: none;}
+	.f_d_title{width:730px; height:20px;line-height:20px; overflow:hidden; float:left; display: inline;}
+	.f_d_btn{width:710px; height:20px; padding-right:20px; line-height:20px; text-align:right;  float:left; display: inline;}
+	.f_d_content{width:720px; height:130px; padding-top:10px; line-height:0px; float:left; display: inline;}
+	.f_d_c{width:35px; height:50px; padding-top:10px; line-height:10px; overflow:hidden; float:left; display: inline;}
+	.f_d_content TEXTAREA{width:640px; height:118px; color:#333399; border:1px solid #7B9CBD; line-height: 18px; font-size:12px;}
+	.f_d_btn{cursor:pointer;}
+	.fd_content{width:710px; height:160px; line-height:200px; font-size:20px; font-weight:bold; text-align: center; float: left; display: inline;}
+	.class_val a{color:#666666; text-decoration: none;}
+
+
 #content{width:970px;  margin-top:12px; float:left; display:inline;}
 #c_l{width:205px;  overflow:hidden; float:left; display:inline;}
 #c_r{width:755px; float:right; display:inline;}
@@ -63,8 +74,7 @@ body{width:970PX; margin: 0 auto; }
 .hlcb_t a{color:#666666; font-size:12px; text-decoration: none;}
 
 #crcb_t{width:748px; height:30px; margin-top:25px; border:0px solid red; overflow:hidden; float:right; display:inline;}
-.cr_a{width:125px; height:30px; line-height:30px; border:0px solid red; background:url(/images/class/btn.jpg) no-repeat; text-align:center; float:left; display:inline;}
-.cr_a a{font-size:16px; font-weight:800; color:#1A908A; text-decoration: none;}
+.cr_a{width:125px; height:30px; line-height:30px; cursor:pointer; border:0px solid red; font-weight:bold; color:#1A908A; background:url(/images/class/btn.jpg) no-repeat; text-align:center; float:left; display:inline;}
 
 .cr_cb{width:738px; height:202px; position:relative; overflow:hidden; border:5px solid #4FD4B6; float:right; display:inline;}
 .crc_pg{width:736px; height:200px;  border:1px solid #00A9AC; overflow:hidden; float:left; display: inline;}
