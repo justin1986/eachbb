@@ -22,7 +22,7 @@ if($user){
 <form action="comlogin.post.php" method="post">
 <div id="lp_ppp">
 		<div class="lp_p_input"><div id="user">用户名:</div><div class="lpp_i"><input name='name' id="name" type="text" /></div></div>
-		<div class="lp_p_input" ><div id="user_pwd">密&nbsp;&nbsp;&nbsp;码:</div><div class="lpp_i"><input name='password' id="password" type="password" /></div></div>
+		<div class="lp_p_input" ><div id="user_pwd">密&nbsp;&nbsp;码:</div><div class="lpp_i"><input name='password' id="password" type="password" /></div></div>
 	<div id="userr">
 	<div id="u_l">期&nbsp;&nbsp;限：</div>
 	<div id="u_r">
@@ -45,14 +45,14 @@ if($user){
 <?php }?>
 <style>
 #userr{}
-#u_l{width:45px; height:25px; overflow:hidden; font-size:13px;  line-height:25px; float:left; display:inline;}
+#u_l{width:55px; height:25px; overflow:hidden; font-size:13px;  line-height:25px; float:left; display:inline;}
 #u_r{width:130px; height:25px; float:left; dispaly:inline;}
 #u_r select{width:80px; height:25px; }
 
-.lp_p_input{width:180px; height:30px;  margin-top:2px; overflow:hidden; font-size:13px; float:left; display: inline;}
+.lp_p_input{width:190px; height:30px;  margin-top:2px; overflow:hidden; font-size:13px; float:left; display: inline;}
 .lpp_i{width:130px; height:25px; float:left; dispaly:inline;}
 #lp_ppp input{width:120px; height:20px; }
-#lp_ppp{width:180px; height:120px; margin-top:2px; margin-left:8px; background:#ffffff; float:left; display:inline;}
-#user{width:45px; height:25px; line-height:25px;  overflow:hidden; float:left; display:inline;}
-#user_pwd{width:45px; height:25px; overflow:hidden;  line-height:25px; float:left; display:inline;}
+#lp_ppp{width:190px; height:120px; margin-top:2px; margin-left:8px; background:#ffffff; float:left; display:inline;}
+#user{width:55px; height:25px; line-height:25px;  overflow:hidden; float:left; display:inline;}
+#user_pwd{width:55px; height:25px; overflow:hidden;  line-height:25px; float:left; display:inline;}
 </style>
