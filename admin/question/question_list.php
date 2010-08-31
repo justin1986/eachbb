@@ -4,6 +4,8 @@
 	judge_role();
 	$key = $_REQUEST['key'];
 	$project_id=$_REQUEST['id'];
+	$project = new table_class('eb_problem');
+	$project->find($project_id);
 	$valid_types = array('dadongzuo','jingxidongzuo','yuyan','renshi','shehuihuodong');
 	$question_type = in_array($_GET['question_type'],$valid_types) ? $_GET['question_type'] : $valid_types[0];
 	
@@ -14,18 +16,15 @@
 	$db = get_db();
 	$record = $db->paginate($sql,30);
 	$count = $db->record_count;
-	
-	$project = new table_class('eb_problem');
-	$project->find($project_id);
 	$project_name = $project->name;
 	
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-CN>
-	<title>SMG</title>
+	<title>网趣宝贝-后台管理</title>
 	<?php
 		css_include_tag('admin');
 		use_jquery();
@@ -40,7 +39,7 @@
 <div id=icaption>
     <div id=title>测评题目管理：<?php echo $project_name?></div>
 	<a href="question_edit.php?pid=<?php echo $project_id;?>" id=btn_add></a>
-	<a href="project_list.php" id=btn_back></a>
+	<a href="project_list.php?type=<?php echo $project->problem_type;?>" id=btn_back></a>
 </div>
 <div id=isearch>
 		<input id="key" type="text" value="<?php echo $key?>">
@@ -51,6 +50,7 @@
 		</select>
 		<input type="button" value="搜索" id="search_button">
 </div>
+<?php if($project->problem_type ==1 ){?>
 <div id="tabs">
 	<span><a href="question_list.php?question_type=dadongzuo&id=<?php echo $project_id?>" id="dadongzuo" class="a_tab">大动作</a></span>
 	<span><a href="question_list.php?question_type=jingxidongzuo&id=<?php echo $project_id?>" id="jingxidongzuo" class="a_tab">精细动作</a></span>
@@ -58,6 +58,7 @@
 	<span><a href="question_list.php?question_type=renshi&id=<?php echo $project_id?>" id="renshi" class="a_tab">认识</a></span>
 	<span><a href="question_list.php?question_type=shehuihuodong&id=<?php echo $project_id?>" id="shehuihuodong" class="a_tab">情感及适应性</a></span>
 </div>
+<?php }?>
 <div id=itable>
 	<table cellspacing="1" align="center">
 		<tr class=itable_title>
