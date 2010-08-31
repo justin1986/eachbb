@@ -4,7 +4,7 @@ $(function(){
 		$('#diary_content').html(data);
 	});
 	$('#sub').click(function(){
-		var title=$('#diary_title').val().trim();
+		var title=$('#diary_title').val();
 		var editor = CKEDITOR.instances['news[content]'] ;
 		var content = editor.getData();
 		var created_id = $('#category_idd option:selected').val();
@@ -16,7 +16,7 @@ $(function(){
 			alert("请选择分类！");
 		}else{
 			$('#sub').attr('disabled',true);
-			var edit_id = $('#edit_id').val().trim();
+			var edit_id = $('#edit_id').val();
 			$.post('_diary_sub_ajax_post.php',{"title":title,"edit_id":edit_id,"content":content,"created_id":created_id},function(data){
 				$('#sub').attr('disabled',false);
 				alert(data);
