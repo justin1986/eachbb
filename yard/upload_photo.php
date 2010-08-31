@@ -85,7 +85,7 @@
 									<td align="left" valign="middle"><a href="#" id="photo_book">添加相册</a></td>
 								</tr>
 								<tr>
-									<td height="46" align="right" valign="middle">上传头片：</td>
+									<td height="46" align="right" valign="middle">上传图片：</td>
 									<td align="middle" valign="middle"><input type="file" name="src" id="upfile" size="40"/></td>
 									<td align="left" valign="middle">支持JPG、JPEG、GIF和PNG文件，最大2M。</td>
 								</tr>
