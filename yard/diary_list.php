@@ -67,9 +67,9 @@
 				<?php
 				 if($member->id){?>
 				<div id="cc_pg">
-					<div class=r_title id="r_log"><a href="/yard/home.php?id=<?php echo $user_id;?>"><?php echo $member->name;?></a>的日志列表</div>
+					<div class=r_title id="r_log"><a href="/yard/home.php?id=<?php echo $user_id;?>"><?php echo $member->name;?></a>的日志列表<a href="/yard/diary.php">写日志</a></div>
 					<div id="r_log_hr">
-						<div>日志列表</div>
+						<div><a href="/yard/diary.php">写日志</a></div>
 					</div>
 					<?php 	
 						$diary_list=$db->query("SELECT d.id,d.created_at,d.last_edit_time,d.title,d.content,d.category_id,s.name FROM eachbb_member.daily d left join eachbb_member.daily_category as s on d.category_id=s.id where d.u_id=$user_id order by created_at desc,last_edit_time desc limit 4;");
