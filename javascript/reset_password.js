@@ -59,6 +59,7 @@ $(function(e){
 				alert('确认密码不能为空');
 				return false;
 			}
+            
              if($("#new_password").val() != $("#re_new_password").val()){
             alert('确认密码输入不一致');
                return false;
