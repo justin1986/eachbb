@@ -119,9 +119,7 @@
 							<div id="student_right"></div>
 						</div>
 					</div>
-					<div id="r_spring"<?php $pos="r_spring";show_page_pos($pos,'link_i');?>>
-						<a href="<?php echo $pos_items[$pos]->href?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1:'/images/index/r_d.gif'?>" /></a>
-					</div>
+					<div class="ad_banner" id="index_right_banner_1"></div>
 				</div>
 			</div>
 			<div id="sousuo">
