@@ -36,7 +36,7 @@ foreach ($results as $result){
 <meta http-equiv=Content-Language content=zh-CN>
 	<title>测评报告</title>
 	<?php 
-		css_include_tag('top_inc/test_top','test_result','top_inc/test_left');
+		css_include_tag('top_inc/test_top','test_result','top_inc/test_left','test_left_inc');
 	?>
 </head>
 <body>
@@ -45,7 +45,7 @@ foreach ($results as $result){
 		<?php include_once('../inc/_test_top.php'); ?>
 		<!-- 外部容器 -->
 		<div id="container">
-			<?php include_once('../inc/left_inc.php'); ?>
+			<?php include_once(dirname(__FILE__).'/../test/left_inc.php');  ?>
 			<div id="result_container">
 				<div id="result_top"></div>
 				<div id="result_middle">

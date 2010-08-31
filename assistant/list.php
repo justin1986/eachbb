@@ -37,7 +37,6 @@
 	?>
 </head>
 <body>
-	<input type="hidden" id="user_id" value="<?php echo $user->id;?>">
 	<div id="ibody">
 		<div id="container">
 			<div id="container_result">

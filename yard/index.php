@@ -118,9 +118,12 @@
 				<div id="cc_pg">
 					<div id="cc_pic"></div>
 					<div id="cc_photo">
-						<div id="pho_l"></div>
+						<div id="pho_l">
+							<img src="<?php echo $user->avatar;?>" width="48" height="48" />
+						</div>
 						<form id="xxx" action="daily.post.php" method="post">
-							<textarea name="pho_r" id="pho_r"></textarea>
+							<textarea name="pho_r" id="pho_r">你正在作什么?</textarea>
+							<div id="test"></div>
 						</form>
 					</div>
 					<div id="cc_ps" >

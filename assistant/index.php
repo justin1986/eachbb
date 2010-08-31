@@ -18,8 +18,8 @@
 	<?php include_once(dirname(__FILE__)."/../inc/_assistant_top.php"); ?>
 	<?php include_once dirname(__FILE__)."/_assistant_left.php"; ?>
 	<div id="iframe_container">
-		<iframe style='overflow:scroll;overflow-y:hidden;overflow-x:hidden;' id="iframe" name="iframe" src="/assistant/_index.php?page_type=<?php echo $page_type;?>" width="745" height="1000" frameborder="0" scrolling="auto" ></iframe>
-	</div>
+		<iframe id="iframe" name="iframe" src="/assistant/_index.php?page_type=<?php echo $page_type;?>" width="745" height="1000" frameborder="0" scrolling="no" ></iframe>
+	</div>	
 	<?php include_once(dirname(__FILE__).'/../inc/bottom.php'); ?>
 </div>
 </body>

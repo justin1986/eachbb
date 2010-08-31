@@ -84,4 +84,9 @@ $(function(){
 		$('#pic_'+selected).show();
 		$('#pic_'+selected2).hide();
 	});
+	
+	$('#pho_r').focus(function(){
+		$(this).val('');
+		$(this).unbind('focus');
+	});
 });
