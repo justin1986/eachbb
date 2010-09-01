@@ -35,6 +35,7 @@
 		$sql = "select * from eb_category where category_type='assistant' and level=1";
 		$top_cates = $db->query($sql);
 		for($i=0;$i<6;$i++){
+			if(($i == 1 || $i == 0) &&$_GET['age'] > 0) continue;
 		?>
 		<div class="list_box" id="list_box_<?php echo $i + 1;?>">
 			<div class="list_title">
@@ -104,6 +105,9 @@
 		var url = window.location.href;
 		var exp = /age=\d+/;
 		url = url.replace(exp, '');
+		if(url.indexOf('?')<=0){
+			url = url + '?';
+		}
 		url = url + '&age=' + age;
 		window.location.href=url;
 	}
