@@ -91,7 +91,7 @@
 								</a>
 							</div>
 							<div class="crbci_t">
-								<a href="<?php echo $pos_items[$pos]->href;?>" title="<?php echo strip_tags($pos_items[$pos]->description);?>">
+								<a href="<?php echo $pos_items[$pos]->href;?>">
 								<?php echo $pos_items[$pos]->description;?>
 								</a>
 							</div>
