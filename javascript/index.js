@@ -1,5 +1,5 @@
 var test_tab_index = 0;
-var test_tab_count = 4;
+var test_tab_count = 5;
 function refresh_test_tab(){
 	if(test_tab_index < 0) test_tab_index = test_tab_count -1;
 	if(test_tab_index >= test_tab_count) test_tab_index = 0;

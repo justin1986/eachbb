@@ -35,9 +35,14 @@ include_once '../inc/User.class.php';
 		foreach($questions as $question){
 			$questions_tmp[$question->question_type][] = array('id'=> $question->id,'question_type'=>$question->question_type,'score'=> 0,'choice'=>0);
 		} 
-		$question_queue = array_merge($questions_tmp['dadongzuo'],$questions_tmp['jingxidongzuo'],$questions_tmp['yuyan'],$questions_tmp['renshi'],$questions_tmp['shehuihuodong']);
+		if($test->problem_type==1){
+			$question_queue = array_merge($questions_tmp['dadongzuo'],$questions_tmp['jingxidongzuo'],$questions_tmp['yuyan'],$questions_tmp['renshi'],$questions_tmp['shehuihuodong']);
+		}else {
+			$question_queue = $questions_tmp['dadongzuo'];
+		}
 		$_SESSION['doing_test'] = $test->id;
 		$_SESSION['question_queue'] = $question_queue;
+		$_SESSION['problem_type'] = $test->problem_type;
 		
 	}else{
 		$question_queue = $_SESSION['question_queue'];
@@ -61,6 +66,7 @@ include_once '../inc/User.class.php';
 		<div id="content">
 			<?php include_once(dirname(__FILE__).'/../test/left_inc.php'); ?>
 			<div id="c_r">
+				<?php if($_SESSION['problem_type'] == 1){?>
 				<div id="crb_t"> 
 					<div class="crb_value">
 						<div class="crb_tt"></div>
@@ -91,6 +97,7 @@ include_once '../inc/User.class.php';
 						$('#tab_<?php echo $question->question_type?>').addClass('selected');
 					</script>
 				</div>
+				<?php }?>
 				<!-- test begin -->
 				<div id="cr_b">
 					<div id="crb_l"></div>
