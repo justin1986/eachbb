@@ -32,7 +32,7 @@
 						<div id="flash_discription_<?php echo $i?>" class="flash_discription">
 							<?php if($pos_items[$pos]->description){?>
 							<div class="f_d_title">标题：<?php echo $pos_items[$pos]->title;?></div>
-							<div class="f_d_content"><div class="f_d_c">内容:</div><textarea readonly="readonly"><?php echo strip_tags($pos_items[$pos]->description);?></textarea> </div>
+							<div class="f_d_content"><div class="f_d_c">内容:</div><textarea readonly="readonly"><?php echo $pos_items[$pos]->description;?></textarea> </div>
 							<?php }else{?>
 							<div class="fd_content">内容为空！</div>
 							<?php }?>
@@ -41,7 +41,7 @@
 						<div class="crf_c" id="cr_<?php echo $i;?>"<?php show_page_pos($pos,'link_d_i')?> style="margin-left:10px; float:left; padding:0px;">
 							<div class="crf_ti"><img src="<?php echo $pos_items[$pos]->image1?>"></div>
 							<div class="crg_tt"><?php echo $pos_items[$pos]->title;?></div>
-							<?php echo strip_tags(mb_substr($pos_items[$pos]->description,0,160,'utf-8')).'<a href="#">...【查看全文】</a>'?>
+							<?php echo mb_substr($pos_items[$pos]->description,0,160,'utf-8').'<a href="#">...【查看全文】</a>'?>
 						</div>
 						<?php }?>
 						<div id="crf_d">

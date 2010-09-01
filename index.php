@@ -170,9 +170,8 @@
 							<div style="margin-left:35px;"><img src="/images/index/course_tab_2.jpg" class="course_tab"></div>
 							<div style="margin-left:30px;"><img src="/images/index/course_tab_3.jpg" class="course_tab"></div>
 						</div>
-						<a href="/course/">
-							<img id="dict_more"  style="margin-top:20px;" src="/images/index/more.gif" />
-						</a> 
+						<div id="dict_more"><a href="/course/">more&gt;</a></div>
+						
 					</div>
 					<?php 
 					for($i=1;$i<5;$i++){
@@ -182,7 +181,7 @@
 					<div class="course_list" id="course_list_<?php echo $i-1;?>" style="<?php if(1==$i){ echo 'display:inline;';}else{ echo 'display:none;';} ?>">
 					<div class="student_c"<?php $pos="course_tab_head_$i";show_page_pos($pos,'link_d_i');?>>
 						<div class="s_pic_l">
-							<a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1;?>" border="0"></a>
+							<a href="#"><img src="<?php echo $pos_items[$pos]->image1;?>" border="0"></a>
 						</div>
 						<div class="s_pic_r" style="width:510px;">
 							<div class="s_word_top"><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href);?></div>
@@ -207,9 +206,7 @@
 					<div id="dict_a">
 						<div id="dict_title">咨询排行</div>
 						<div id="div_dict_more">
-							<a href="#" style="line-height: 30px;">
-								<img src="/images/index/more.gif" border="0" />
-							</a> 
+							<a href="#">more&gt;</a>
 						</div>
 					</div>
 					<div id="dict_menu"> 
@@ -241,8 +238,8 @@
 							<a href="/assistant/index.php?age=2"><img src="/images/index/4.png"/></a>
 							<a href="/assistant/index.php?age=3"><img src="/images/index/5.png"/></a>
 						</div>
-						<a href="/assistant/">
-							<img src="/images/index/more.gif" border="0" />
+						<a href="/assistant/" style="font-size:14px; color:#444444; text-decoration: none;">
+							more&gt;
 						</a> 
 					</div>
 					<div id="m_l_c">
