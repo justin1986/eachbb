@@ -22,6 +22,10 @@
 		$level = $current_cate->level;
 		if($level == 1){
 			$sub_cates  = $category->find_sub_category($category_id);
+			$breads[0] = $current_cate;
+		}else{
+			$breads[0] = $category->find($current_cate->parent_id);
+			$breads[1] = $current_cate;
 		}
 		
 		function convert_age($age){
@@ -40,6 +44,15 @@
 	<div id="ibody">
 		<div id="container">
 			<div id="container_result">
+				<div id="breadbrum">
+					<a href="/assistant/_index.php">助手首页</a>
+					<?php foreach ($breads as $item){
+						echo " >> <a href='list.php?category_id={$item->id}'>{$item->name}</a>";
+					}?>
+					<?php if(in_array($_GET['age'], array(-2,-1,1,2,3))){
+						echo " >> ",convert_age($_GET['age']);
+					}?>
+				</div>
 				<?php
 					if($level == 1){
 						include "_level1.php";

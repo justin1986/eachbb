@@ -3,7 +3,7 @@
 				<div class="h_pg_t"></div>
 				<div class="h_pg_c">
 					<div class="h_pg_cc">
-						<div class="ht_l_t">课程助手连接</div>
+						<div class="ht_l_t">妈妈助手</div>
 						<div class="ht_l_h"></div>
 						<div class="htl_pg_c">
 							<?php 

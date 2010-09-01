@@ -6,8 +6,24 @@
 	<title>网趣宝贝-妈妈助手</title>
 	<?php
 		include_once dirname(__FILE__).'/../frame.php';
-		css_include_tag('assistant/_index.css','assistant'); 
+		/*
+		 * handle the -2 and -1
+		 */
 		use_jquery();
+		if($_GET['age'] == -2){
+		?>
+		<script type="text/javascript">
+			parent.$('.htct_t:first a').click();
+		</script>	
+		<?php }
+		if($_GET['age'] == -1){
+		?>
+		<script type="text/javascript">
+			parent.$('.htct_t:eq(1) a').click();
+		</script>	
+		<?php }
+		css_include_tag('assistant/_index.css','assistant'); 
+		
 		$db = get_db();
 		js_include_tag('assistant/assistant');
 		init_page_items('assistant_index');

@@ -35,3 +35,5 @@ body{width:740px; margin: 0 auto;}
 		
 .v_kong{width:188px; height:15px; line-height:0px; float:left;}
 .kong{width:503px; height:15px; line-height:0px; float:left;}
+#breadbrum{margin-bottom:5px;}
+	#breadbrum a{text-decoration: none; color:blue;}
