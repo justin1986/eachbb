@@ -5,7 +5,7 @@
 		</div>
 		<div class="content" style="width:690px; padding-left:10px; "><?php echo $reports['dadongzuo']->description;?></div>
 	</div>
-	<div id="btn_recommand"><a href="/test/review.php?id=<?php echo $test_id;?>">回顾题目</a></div>
+	<div id="btn_recommand" style="margin-top:10px;"><a href="/test/review.php?id=<?php echo $test_id;?>">回顾题目</a></div>
 </div>
 <div id="recommand_container" style="width:700px; margin-left:25px; padding:0px;">
 	<div class="rec_list">
@@ -14,7 +14,7 @@
 		<?php
 			if(!$reports['dadongzuo']->recommands) $reports['dadongzuo']->recommands = array(); 
 			foreach ($reports['dadongzuo']->recommands as $val){?>
-			<div class="rec_son" style="width:300px; height:20px;  margin-left:5px; line-height:20px;  overflow:hidden; font-weight:lighter; font-size:12px; ">
+			<div class="rec_son" style="text-indent:20px; margin-left:5px; line-height:20px;  overflow:hidden; font-weight:lighter; font-size:12px; ">
 				<?php echo $val->description; ?>
 			</div>	
 			<?php 
