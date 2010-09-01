@@ -48,21 +48,18 @@ $filter_age = $age ? array($age) : array(-2,-1,1,2,3);
 		<?php
 		foreach($display_category as $display){
 		?>
-		<div class="result_container" style="padding-bottom:10px; border-bottom:1px solid #F0C09D; <?php if($k == 0) echo "margin-top:10px;"; ?>">
+		<div class="result_container" style="padding-bottom:5px; border-bottom:1px solid #F0C09D;">
 			<div class="resultt_banner">
 				<a href="list.php?category_id=<?php echo $display->category_id; ?>&age=<?php echo $f_age;?>"><img src="<?php echo $display->category_image;?>"/></a>
 				<?php
 				$i=0;
 				 foreach($display->assistants as $j => $assistant){
 				 	?>
-				<div class="result_title"<?php if($j==0 || $j == 1){?>style="margin-top:10px;"<?php }?>><a href="/assistant/assistant.php?id=<?php echo $assistant[id];?>" title="<?php echo $assistant[title];?>" target="_blank"><?php echo mb_substr($assistant[title],0,12,'utf-8');?><?php  if(mb_strlen($assistant[title],'utf-8') > 12){ echo "...";}?></a></div>
+				<div class="result_title"><a href="/assistant/assistant.php?id=<?php echo $assistant[id];?>" title="<?php echo $assistant[title];?>" target="_blank"><?php echo mb_substr($assistant[title],0,12,'utf-8');?><?php  if(mb_strlen($assistant[title],'utf-8') > 12){ echo "...";}?></a></div>
 				<?php $i++; }?>
 			</div>
 			<div class="cate_more"  style="float:right;"<?php if($k == 0) echo "style='margin-top:54px;'"; ?>><a href="list.php?category_id=<?php echo $display->category_id?>&age=<?php echo $f_age;?>">更多</a></div>
 		</div>
-		
-		
-		
 		<?php }?>
 	</div>
 	<div class="result_pg_bottom"></div>
