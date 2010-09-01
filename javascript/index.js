@@ -32,6 +32,14 @@ function send_login(){
 };
 
 $(function(){
+	$('.beijiu').click(function(e){
+		e.preventDefault();
+		var selected = $('.beijiu').index($(this));
+		$('#flash_discription_'+selected).show();
+	});
+	$('.f_d_btn').click(function(){
+		$('.flash_discription').hide();
+	});
 	$('#login_l').live('click',function(e){
 		e.preventDefault();
 		send_login();
