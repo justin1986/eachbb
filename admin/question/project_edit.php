@@ -34,7 +34,7 @@
 <body>
 <div id=icaption>
 	<div id=title>编辑评测</div>
-	  <a href="project_list.php" id=btn_back></a>
+	  <a href="project_list.php?type=<?php echo $project->problem_type?>" id=btn_back></a>
 </div>
 <form id="project_edit" action="project.post.php" enctype="multipart/form-data" method="post">
 <div id=itable>

@@ -61,7 +61,7 @@
 	$(function(){
 		$('#btn').click(function(){
 			$.post('/register/ajax.post.php',{'type':'login','name':$('#login_name').val(), 'password':$('#login_password').val()},function(data){
-				if(data){
+				if(data){					
 					alert(data);
 				}else{
 					window.location.href="/test/save_test_result.php";

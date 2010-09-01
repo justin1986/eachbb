@@ -32,7 +32,6 @@ foreach ($results as $result){
 			$item->recommands = $db->query("select * from eb_recommand where result_id={$item->id}");
 		}else{
 			$item->recommands = $db->query("select description from eb_question where id in (select question_id from eb_test_record where problem_id={$test_id} and user_id={$user->id} and score<1)");
-			var_dump($item->recommands);
 		}
 		$reports[$result_type] = $item; 
 	}
@@ -45,6 +44,7 @@ foreach ($results as $result){
 <meta http-equiv=Content-Language content=zh-CN>
 	<title>测评报告</title>
 	<?php 
+		use_jquery();
 		css_include_tag('top_inc/test_top','test_result','top_inc/test_left','test_left_inc');
 	?>
 </head>
