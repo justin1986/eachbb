@@ -48,7 +48,7 @@ $filter_age = $age ? array($age) : array(-2,-1,1,2,3);
 		<?php
 		foreach($display_category as $display){
 		?>
-		<div class="result_container" style="padding-bottom:10px; border-bottom:1px solid #F0C09D;">
+		<div class="result_container" style="padding-bottom:5px; border-bottom:1px solid #F0C09D;">
 			<div class="resultt_banner">
 				<a href="list.php?category_id=<?php echo $display->category_id; ?>&age=<?php echo $f_age;?>"><img src="<?php echo $display->category_image;?>"/></a>
 				<?php
