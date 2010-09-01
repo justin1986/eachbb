@@ -38,7 +38,7 @@ if($user){
 		<input type="hidden" name="session" value="<?php echo $_SESSION['login'];?>">
   		 <?php }?>
 	</div>
-	 <div id="urr_btn" style="width:170px; height:30px; text-align: center; float: left; display: inline;"><input id="login_bn"  style="height:25px; line-height: 25px;"  type="button" value="登录"/></div>
+	 <div id="urr_btn" style="width:170px; height:30px;  margin-top:5px; text-align: center; float: left; display: inline;"><input id="login_bn"  style="height:25px; line-height: 25px;"  type="button" value="登录"/></div>
 </div>
 </div>
 </form>

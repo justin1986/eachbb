@@ -41,7 +41,7 @@
 						<div class="crf_c" id="cr_<?php echo $i;?>"<?php show_page_pos($pos,'link_d_i')?> style="margin-left:10px; float:left; padding:0px;">
 							<div class="crf_ti"><img src="<?php echo $pos_items[$pos]->image1?>"></div>
 							<div class="crg_tt"><?php echo $pos_items[$pos]->title;?></div>
-							<?php echo strip_tags(mb_substr($pos_items[$pos]->description,0,160,'utf-8')).'<a href="#">...【查看详细】</a>'?>
+							<?php echo strip_tags(mb_substr($pos_items[$pos]->description,0,160,'utf-8')).'<a href="#">...【查看全文】</a>'?>
 						</div>
 						<?php }?>
 						<div id="crf_d">
