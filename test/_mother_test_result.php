@@ -1,9 +1,9 @@
-<div id="result" style="width:700px;">
+<div id="result" style="width:700px;" >
 	<div class="result_box" style="width:700px;">
 		<div class="content" style="width:700px; padding-bottom:5px;">
 			<font>点评：</font>
 		</div>
-		<div class="content" style="width:700px; padding-left:10px; "><?php echo $reports['dadongzuo']->description;?></div>
+		<div class="content" style="width:690px; padding-left:10px; "><?php echo $reports['dadongzuo']->description;?></div>
 	</div>
 	<div id="btn_recommand"><a href="/test/review.php?id=<?php echo $test_id;?>">回顾题目</a></div>
 </div>
