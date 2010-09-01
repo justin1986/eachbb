@@ -38,7 +38,10 @@ if($user){
 		<input type="hidden" name="session" value="<?php echo $_SESSION['login'];?>">
   		 <?php }?>
 	</div>
-	 <div id="urr_btn" style="width:170px; height:30px;  margin-top:5px; text-align: center; float: left; display: inline;"><input id="login_bn"  style="height:25px; line-height: 25px;"  type="button" value="登录"/></div>
+	 <div id="urr_btn" style="width:170px; height:30px;  margin-top:5px; text-align: center; float: left; display: inline;">
+		 <img id="login_bn" src="/images/index/btn_login.gif"/>
+		 <a href="/register/"><img id="login_r" border="0" src="/images/index/btn_zhuce.gif"/></a>
+	 </div>
 </div>
 </div>
 </form>
@@ -48,7 +51,7 @@ if($user){
 #u_l{width:55px; height:25px; overflow:hidden; font-size:13px;  line-height:25px; float:left; display:inline;}
 #u_r{width:130px; height:25px; float:left; dispaly:inline;}
 #u_r select{width:80px; height:25px; }
-
+#urr_btn img{width:60px; height:22px;}
 .lp_p_input{width:190px; height:30px;  margin-top:2px; overflow:hidden; font-size:13px; float:left; display: inline;}
 .lpp_i{width:130px; height:25px; float:left; dispaly:inline;}
 #lp_ppp input{width:120px; height:20px; }

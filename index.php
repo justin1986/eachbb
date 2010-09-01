@@ -113,7 +113,7 @@
 				<div id="sousuo_d"></div>
 			</div>
 			<div id="test">
-				<div id="test_left">
+				<div id="test_left"  style="position: relative; z-index:1">
 					<div id="test_id">
 						<div id="test_left_top">
 							请输入宝宝的出生日期:　<input type="text" id='date_picker' />
@@ -134,10 +134,22 @@
 							<div class="test_context">
 								<div class="context_title"><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href);?></div>
 								<div class="context_content"><?php echo_href($pos_items[$pos]->description, $pos_items[$pos]->href);?></div>
-							</div>
-							<div class="test_content_more">
-									<a href="<?php echo $pos_items[$pos]->href;?>"><img src="/images/index/more.gif" border="0" /></a>
+								<div class="test_content_more">
+									<a href="<?php echo $pos_items[$pos]->href;?>"  class="beijiu">查看全文</a>
 								</div>
+							</div>
+						</div>
+						<div id="flash_discription_<?php echo $i;?>" class="flash_discription">
+							<?php if($pos_items[$pos]->description){?>
+							<div class="f_d_title">标题：<?php echo $pos_items[$pos]->title;?></div>
+							<div class="f_d_content">
+								<div class="f_d_c">内容:</div><textarea readonly="readonly" style="float:left;">
+								<?php echo strip_tags($pos_items[$pos]->description);?></textarea>
+							</div>
+							<?php }else{?>
+							<div class="fd_content" style="height:120px; line-height:120px;">内容为空！</div>
+							<?php }?>
+							<div class="f_d_btn">返回</div>
 						</div>
 						<?php }?>
 						<div id="div_right_arrow">
