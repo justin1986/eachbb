@@ -5,7 +5,7 @@
 		</div>
 		<div class="content" style="width:690px; padding-left:10px; "><?php echo $reports['dadongzuo']->description;?></div>
 	</div>
-	<div id="btn_recommand"><a href="/test/review.php?id=<?php echo $test_id;?>">回顾题目</a></div>
+	<div id="btn_recommand" style="margin-top:10px;"><a href="/test/review.php?id=<?php echo $test_id;?>">回顾题目</a></div>
 </div>
 <div id="recommand_container" style="width:700px; margin-left:25px; padding:0px;">
 	<div class="rec_list">
