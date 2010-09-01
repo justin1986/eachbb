@@ -48,7 +48,7 @@
 		</div>
 		<?php }
 		if(!$list){
-			echo '<div style="width:210px; height:20px; padding-bottom:20px; margin-top:20px; line-height:20px; text-align:center; font-size:14px; font-weight:bold;">您的好友为空！</div>';
+			echo '<div style="width:210px; height:20px; padding-bottom:20px; margin-top:20px; line-height:20px; text-align:center; font-size:14px; font-weight:bold;">您暂时还没有好友！</div>';
 		}
 		?>
 	</div>

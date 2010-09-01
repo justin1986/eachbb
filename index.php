@@ -126,7 +126,7 @@
 						<div id="div_left_arrow">
 							<a href="#" id="a_left_arrow"><img src="/images/index/l_l.png" border="0" /></a>
 						</div>
-						<?php for($i=0;$i<4;$i++){?>
+						<?php for($i=0;$i<5;$i++){?>
 						<div id="test_tab_<?php echo $i;?>" class="test_tab" <?php if($i==0) echo ' style="display:inline;"';?> <?php $pos="test_tab_{$i}"; show_page_pos($pos,'link_d_i')?>>
 							<div class="test_img">
 								<a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1: '/images/index/test_sample.jpg';?>" border="0" /></a>

@@ -19,6 +19,7 @@ include_once '../frame.php';
 		if(!$test->id){
 			die_not_found();
 		}
+		$_SESSION['problem_type'] = $test->problem_type;
 		$step = 0;
 		$questions = $db->query("select id,question_type from eb_question where problem_id={$test->id}");
 		$questions_tmp['dadongzuo'] = array();
@@ -65,6 +66,7 @@ include_once '../frame.php';
 		<div id="content">
 			<?php include_once(dirname(__FILE__).'/../inc/left_inc.php'); ?>
 			<div id="c_r">
+				<?php if($_SESSION['problem_type'] == 1){?>
 				<div id="crb_t"> 
 					<div class="crb_value">
 						<div class="crb_tt"></div>
@@ -95,6 +97,7 @@ include_once '../frame.php';
 						$('#tab_<?php echo $question->question_type?>').addClass('selected');
 					</script>
 				</div>
+				<?php }?>
 				<!-- test begin -->
 				<div id="cr_b">
 					<div id="crb_l"></div>
