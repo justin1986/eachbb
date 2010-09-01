@@ -14,7 +14,7 @@
 		<?php
 			if(!$reports['dadongzuo']->recommands) $reports['dadongzuo']->recommands = array(); 
 			foreach ($reports['dadongzuo']->recommands as $val){?>
-			<div class="rec_son" style="width:300px; height:20px;  margin-left:5px; line-height:20px;  overflow:hidden; font-weight:lighter; font-size:12px; ">
+			<div class="rec_son" style=" margin-left:5px; line-height:20px;  overflow:hidden; font-weight:lighter; font-size:12px; ">
 				<?php echo $val->description; ?>
 			</div>	
 			<?php 
