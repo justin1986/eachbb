@@ -27,10 +27,25 @@
 		$db = get_db();
 		js_include_tag('assistant/assistant');
 		init_page_items('assistant_index');
+		function convert_age($age){
+			switch ($age) {
+				case -2: return '准备怀孕';break;
+				case -1:return '怀孕中';break;
+				case 1:return '0~1岁';break;
+				case 2:return '1~2岁';break;
+				case 3:return '2~3岁';break;
+				default:return '';
+			}
+		}
 	?>
 </head>
 <body>			
 	<div id="body_container">
+		<?php if(intval($_GET['age']) > 0){?>
+		<div id="breadbrum">
+			<a href="/assistant/_index.php">助手首页</a> &gt;&gt;<?php echo convert_age($_GET['age']);?>
+		</div>
+		<?php }?>
 		<?php 
 		$sql = "select * from eb_category where category_type='assistant' and level=1";
 		$top_cates = $db->query($sql);
