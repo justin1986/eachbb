@@ -43,7 +43,7 @@
 	<div id="body_container">
 		<?php if(intval($_GET['age']) > 0){?>
 		<div id="breadbrum">
-			<a href="/assistant/_index.php">助手首页</a> &gt;&gt;<?php echo convert_age($_GET['age']);?>
+			<a href="/assistant/_index.php">助手首页</a> &gt;&gt; <?php echo convert_age($_GET['age']);?>
 		</div>
 		<?php }?>
 		<?php 
