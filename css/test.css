@@ -20,7 +20,7 @@ body{width:970PX; margin: 0 auto; }
 #cr_banner{width:739px; height:263px;  overflow:hidden; border:1px solid #0086F8; float: left;}
 #cr_banner a img{width:61px; height:61px; margin-right:-4px; margin-top:-1px; line-height:0px; border:0px solid red; float:right; display:inline;}
 
-#crf_l{width:410px; height:260px; margin-left:2px; margin-top:2px; font-size:52px; color:#ffffff; text-align:center; line-height:240px;  background:#000000; float:left; display:inline;}
+#crf_l{width:410px; height:260px; margin-left:2px; margin-top:2px; font-size:52px; color:#ffffff; text-align:center; line-height:240px;  float:left; display:inline;}
 #crf_r{width:315px; height:255px; margin-left:5px;  float:left; display:inline;}
 #crf_t{width:280px; height:30px; margin-left:15px; margin-top:5px; font-size:16px; font-weight:bold; color:#000; float:left; display:inline;}
 #crf_t font{ font-size:16px; color:#EC4610; font-weight:bold;}
