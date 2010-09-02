@@ -39,7 +39,7 @@
 							<div class="f_d_title">标题：<?php echo $pos_items[$pos]->title;?></div>
 							<div class="f_d_content"><div class="f_d_c">内容:</div>
 								<div class="fda_content">
-								<?php echo strip_tags($pos_items[$pos]->description);?></div> </div>
+								<?php echo $pos_items[$pos]->description;?></div> </div>
 							<?php }else{?>
 							<div class="fd_content" style="height:220px;">内容为空！</div>
 							<?php }?>
@@ -127,7 +127,7 @@
 							<?php if($pos_items[$pos]->description){?>
 							<div class="f_d_content" style="height:140px;"><div class="f_d_c">内容:</div>
 								<div class="text_area" readonly="readonly" style="height:130px; text-align:left; ">
-								<?php echo strip_tags($pos_items[$pos]->description);?></div> </div>
+								<?php echo $pos_items[$pos]->description;?></div> </div>
 							<?php }else{?>
 							<div class="fd_content">内容为空！</div>
 							<?php }?>
