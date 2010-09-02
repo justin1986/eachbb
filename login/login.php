@@ -32,7 +32,6 @@
 		</form>
 	</body>
 </html>
-
 <script>
 $(function(){
 		$("#login_btn").click(function(){
