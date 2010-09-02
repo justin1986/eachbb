@@ -1,4 +1,10 @@
 $(function(){
+	$('.crbci_t a').click(function(e){
+		e.preventDefault();
+		var selected=$('.crbci_t a').index($(this));
+		$('#flash_dis_'+selected).show();
+	});
+	
 	$('#cr_0').show();
 	$('.crf_c a').click(function(e){
 		e.preventDefault();
