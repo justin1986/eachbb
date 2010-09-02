@@ -15,6 +15,10 @@ $(function(){
 		e.preventDefault();
 		$('.flash_discription').hide();
 	});
+	$('.ff_d_btn').click(function(e){
+		e.preventDefault();
+		$('.fflash_discription').hide();
+	});
 	$('.cr_num').click(function(e){
 		e.preventDefault();
 		var selected = $('.cr_num').index($(this));

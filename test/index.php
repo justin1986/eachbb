@@ -34,16 +34,16 @@
 						<?php for($i =0 ; $i < 4; $i++){
 							$pos = "top_intr_$i";
 						?>
-						<div id="flash_discription_<?php echo $i?>" class="flash_discription">
+						<div id="flash_discription_<?php echo $i?>" class="fflash_discription">
 							<?php if($pos_items[$pos]->description){?>
 							<div class="f_d_title">标题：<?php echo $pos_items[$pos]->title;?></div>
 							<div class="f_d_content"><div class="f_d_c">内容:</div>
-								<textarea readonly="readonly" style="text-align:left; ">
-								<?php echo strip_tags($pos_items[$pos]->description);?></textarea> </div>
+								<div class="fda_content">
+								<?php echo strip_tags($pos_items[$pos]->description);?></div> </div>
 							<?php }else{?>
 							<div class="fd_content">内容为空！</div>
 							<?php }?>
-							<div class="f_d_btn">返回</div>
+							<div class="ff_d_btn">返回</div>
 						</div>
 						<div class="crf_c" id="cr_<?php echo $i;?>"<?php show_page_pos($pos,'link_d_i')?> style="margin-left:10px; float:left; padding:0px;">
 							<div class="crf_ti"><img src="<?php echo $pos_items[$pos]->image1?>"></div>
