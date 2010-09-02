@@ -44,26 +44,17 @@ $(function(){
 	});
 	$('.menu_pic').click(function(){
 		var selected=$('.menu_pic').index($(this));
-		$('#menu_a').attr('style','background:url(../images/yard/m_a.jpg) no-repeat;');
-		$('#menu_b').attr('style','background:url(../images/yard/m_b.jpg) no-repeat;');
-		$('#menu_c').attr('style','background:url(../images/yard/m_c.jpg) no-repeat;');
-		$('#menu_d').attr('style','background:url(../images/yard/m_d.jpg) no-repeat;');
-		$('#menu_f').attr('style','background:url(../images/yard/m_f.jpg) no-repeat;');
 		if(selected === 0){
 			window.location.href="/yard";
 		}else if(selected === 1){
 			window.location.href="/yard/member.php";
 		}else if(selected === 2){
-			window.location.href="/yard/diary_list.php";
-		}else if(selected === 3){
-			window.location.href="/yard/album_list.php";
-		}else if(selected == 4){
 			window.location.href="/yard/language_list.php";
+		}else if(selected === 3){
+			window.location.href="/yard/diary_list.php";
+		}else if(selected === 4){
+			window.location.href="/yard/album_list.php";
 		}
-		for(i = 0 ; i < 5 ; i++ ){
-			$('#menu_'+i).attr('style','background:url(../images/yard/m_'+i+'_sel.jpg) no-repeat;');
-		}
-		$(this).attr('style','background:url(../images/yard/m_'+selected+'.jpg) no-repeat;');
 	});
 	$('.cll_zz').click(function(){
 		var selected=$('.cll_zz').index($(this));
