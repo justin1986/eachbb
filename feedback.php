@@ -21,7 +21,7 @@
 				<div id="menu_flash" style="margin-top:-5px;">
 				</div>
 				<script type="text/javascript">
-					var flashvar = {defaultIndex:'0'};
+					var flashvar = {defaultIndex:''};
 					var flashparam = {wmode:'Transparent'};
 					swfobject.embedSWF("flash/menu.swf","menu_flash","702","103","8",false,flashvar,flashparam);
 				</script>
