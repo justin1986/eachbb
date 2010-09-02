@@ -33,7 +33,7 @@ $(function(){
 	
 	$("#baby_status").change(function(){
 		check_status();
-	})
+	});
 	
 	$("#re_password").change(function(){
 		check_re_password(false);
@@ -208,7 +208,7 @@ function check_name(is_submit){
 			return false;
 		}
 		if (name_flag != 'locked') {
-			name_flag = 'locked'
+			name_flag = 'locked';
 			$("#name_info").text('用户名验证中。。。');
 			$.post('check_name.php', {
 				'name': name
@@ -251,7 +251,7 @@ function check_email(is_submit){
 			return false;
 		}
 		if (email_flag != 'locked') {
-			email_flag = 'locked'
+			email_flag = 'locked';
 			$("#email_info").text('邮箱验证中。。。');
 			$.post('check_email.php', {
 				'email': email
@@ -431,7 +431,7 @@ function check_str_length(length,limit,limit2,info,name){
 
 function check_verify(is_submit){
 	if ($("#verify").val() == ''&&is_submit) {
-		$("#cad_v").html("看不清楚？换张图片<span style=color:red>　请输入验证码</span>")
+		$("#cad_v").html("看不清楚？换张图片<span style=color:red>　请输入验证码</span>");
 	}
 	else {
 		if (verify_flag != 'locked') {
@@ -442,11 +442,11 @@ function check_verify(is_submit){
 			}, function(result){
 				if (result == 'wrong') {
 					change_verify();
-					$("#cad_v").html("看不清楚？换张图片<span style=color:red>　验证码错误</span>")
+					$("#cad_v").html("看不清楚？换张图片<span style=color:red>　验证码错误</span>");
 					verify_flag = 'wrong';
 				}
 				else {
-					$("#cad_v").html("看不清楚？换张图片")
+					$("#cad_v").html("看不清楚？换张图片");
 					verify_flag = 'success';
 					do_submit();
 				}
