@@ -67,8 +67,8 @@ div{margin:0; padding:0; float:left; display:inline;}
 .student_pg a{margin-left:5px; color:#000; font-size:13px; text-decoration:none;}
 .student_hr{width:215px; height:1px; margin-left:5px; background:url(/images/index/class_hr.jpg) repeat-x; font-size:0px; line-height:0px; float:left; display:inline;}
 #index_right_banner_1{width:284px; height:138px; margin-top:13px; font-size:0px; line-height:0px;  float:left; display:inline;}
-#dict_more{width:48px; height:10px; border:0px solid red;cursor:pointer;  margin-top:8px; margin-right:5px; background-image:none; font-size:0px; line-height:0px;  cursor:pointer; z-index:100; float:right; display:inline;}
-
+#dict_more{width:48px; height:20px; border:0px solid red;cursor:pointer;  margin-top:15px; margin-right:5px; background-image:none; font-size:12px; line-height:20px;  cursor:pointer; z-index:100; float:right; display:inline;}
+#dict_more a{font-size:14px; color:#444444; text-decoration: none;}
 #rtest_banner{width:195px; height:84px; margin-top:35px; float:right; display:inline;}
 .rest_title{width:195px; height:21px; line-height:21px; float:left; display:inline;}
 .rest_title a{font-size:12px; color:#000; text-decoration: none;}
@@ -171,7 +171,8 @@ div{margin:0; padding:0; float:left; display:inline;}
 #student_r{width:264px; height:264px; margin-top:13px; margin-right:2px; background:url(/images/index/r_pg.gif) no-repeat; float:right; display:inline;}
 #dict_a{width:250px; height:30px; margin-left:10px; margin-top:5px; float:left; display:inline;}
 #dict_title{width:180px; height:30px; line-height:30px; font-size:16px; font-weight:bold;  float:left; display:inline;}
-#div_dict_more{width:48px; height:10px; border:0px solid red;cursor:pointer;  margin-top:8px; margin-right:5px; background-image:none; font-size:0px; line-height:0px;  cursor:pointer; z-index:100; float:right; display:inline;}
+#div_dict_more{width:48px; height:14px; border:0px solid red;cursor:pointer;  margin-top:8px; margin-right:5px; background-image:none; font-size:12px; line-height:12px;  cursor:pointer; z-index:100; float:right; display:inline;}
+	#div_dict_more a{font-size:14px; color:#444444; text-decoration: none;}
 #dict_menu{width:250px; height:44px; margin-left:7px; margin-top:5px; cursor:pointer; float:left; display:inline;}
 #dict_menu a{color: #000000; text-decoration: none; }
 

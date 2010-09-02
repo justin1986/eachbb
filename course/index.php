@@ -27,7 +27,7 @@
 				<div id="crcb_t">
 					<div class="cr_a"  style="color:#ffffff;">大运动</div>
 					<div class="cr_a" >精细动作</div>
-					<div class="cr_a" >认识</div>
+					<div class="cr_a" >认知</div>
 					<div class="cr_a" >语言</div>
 					<div class="cr_a" >情感培养</div>
 				</div>
