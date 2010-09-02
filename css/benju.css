@@ -1,0 +1,5 @@
+.benju_banner{width:739px; height:200px; left:0px; top:0px; border:1px solid #76759D;  background:#ffffff; position:absolute;  float:right; display:none;}
+.benju_content{width:731px; height:160px; margin-top:8px; font-size:14px;}
+.benju_con_left{width:40px; height:160px; margin-left:5px; font-size:12px; float:left; }
+.benju_con_right{width:670px; height:160px; overflow-y:auto; line-height:20px;  font-size:12px; float:right; }
+.benju_bottom{width:710px; height:20px; margin-top:10px; padding-right:20px; cursor:pointer;  font-size:13px; text-align: right;}

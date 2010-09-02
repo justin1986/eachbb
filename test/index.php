@@ -9,7 +9,7 @@
 <title>特色测评</title>
 <?php
 	use_jquery();
-	css_include_tag('top_inc/test_top','test','top_inc/test_left','test_left_inc');
+	css_include_tag('top_inc/test_top','test','top_inc/test_left','test_left_inc','benju');
 	js_include_tag('test/test');
 	init_page_items('test_index');
 ?>
@@ -41,7 +41,7 @@
 						<div class="crf_c" id="cr_<?php echo $i;?>"<?php show_page_pos($pos,'link_d_i')?> style="margin-left:10px; float:left; padding:0px;">
 							<div class="crf_ti"><img src="<?php echo $pos_items[$pos]->image1?>"></div>
 							<div class="crg_tt"><?php echo $pos_items[$pos]->title;?></div>
-							<?php echo mb_substr($pos_items[$pos]->description,0,160,'utf-8').'<a href="#">...【查看全文】</a>'?>
+							<?php echo mb_substr($pos_items[$pos]->description,0,150,'utf-8').'<a href="#">...【查看全文】</a>'?>
 						</div>
 						<?php }?>
 						<div id="crf_d">
@@ -53,7 +53,7 @@
 					</div>
 					</div>
 				</div>
-				<div id="cr_b">
+				<div id="cr_b" style="position:relative;">
 					<div id="crb_t"> 
 						<div class="crb_value">
 							<div class="crb_tt"></div>
@@ -91,10 +91,19 @@
 								</a>
 							</div>
 							<div class="crbci_t">
-								<a href="<?php echo $pos_items[$pos]->href;?>">
-								<?php echo $pos_items[$pos]->description;?>
-								</a>
+								<?php echo strip_tags(mb_substr($pos_items[$pos]->description,0,370,'utf-8')).'<a href="#" class="beijiu">...【查看全文】</a>'?>								</a>
 							</div>
+							<div  class="benju_banner" id="benju_dis_<?php echo $i;?>">
+									<?php if($pos_items[$pos]->description){?>
+									<div class="benju_content">
+										<div class="benju_con_left">内容：</div>
+										<div class="benju_con_right"><?php echo $pos_items[$pos]->description;?></div>
+									</div>
+									<?php }else{
+										echo '<div class="benju_content" style="text-align:center; font-size:20px; line-height:200px;">内容为空！</div>';
+									}?>
+									<div class="benju_bottom">返回</div>
+								</div>
 					</div>
 					<?php } ?>
 					</div>
@@ -134,5 +143,17 @@
 		<?php include_once(dirname(__FILE__).'/../inc/bottom.php');?>
 	</div>
 </div>
+<script type="text/javascript">
+	$(function(){
+		$('.crbci_t a').click(function(e){
+			e.preventDefault();
+			var selected=$('.crbci_t a').index($(this));
+			$('#benju_dis_'+selected).attr('style','display:inline;');
+		});
+		$('.benju_bottom').click(function(){
+				$('.benju_banner').attr('style','display:none');
+			});
+	});
+</script>
 </body>
 </html>
