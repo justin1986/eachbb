@@ -9,8 +9,8 @@
 <title>特色测评</title>
 <?php
 	use_jquery();
+	js_include_tag('test/test','swfobject');
 	css_include_tag('top_inc/test_top','test','top_inc/test_left','test_left_inc','benju');
-	js_include_tag('test/test');
 	init_page_items('test_index');
 ?>
 </head>
@@ -24,7 +24,12 @@
 				<div id="cr_flash" style="position: relative; z-index:1">
 					<div id="cr_banner">
 						<div id="crf_l">flash</div>
-					<div id="crf_r">
+						<script type="text/javascript">
+							var flashvar = {};
+							var flashparam = {wmode:'Transparent'};
+							swfobject.embedSWF("/flash/test_index.swf","crf_l","410","260","8",false,flashvar,flashparam);
+						</script>
+						<div id="crf_r">
 						<div id="crf_t">特色测评<font>介绍</font></div>
 						<?php for($i =0 ; $i < 4; $i++){
 							$pos = "top_intr_$i";
