@@ -1,11 +1,10 @@
-body{width:995px; margin: 0 auto;  background:url(../images/index/img_pg.jpg) repeat-x;}
+body{width:970px; margin: 0 auto;  background:url(../images/index/img_pg.jpg) repeat-x;}
 
-#ibody{width:995px; overflow:hidden; margin:0;}
+#ibody{width:970px; overflow:hidden; margin:0;}
 
-#fbody{ width:973px; margin-left:10px; overflow:hidden;  background:#ffffff; float:left; display:inline;}
+#fbody{ width:970px; margin-left:10px; overflow:hidden;  background:#ffffff; float:left; display:inline;}
 
-
-#top_login{width:1000px; height:20px; margin-top:15px; margin-left:20px;  font-size:13px; color:#ffffff; float:right; display:inline;}
+#top_login{width:970px; height:20px; margin-top:15px; margin-left:20px;  font-size:13px; color:#ffffff; float:right; display:inline;}
 #top_login a{color:#ffffff; text-decoration:none;}
 #login{width:400px; height:20px; z-index:12; float:right; display:inline;}
 #login_login{width:80px; height:20px; float:left; display:inline;}
@@ -20,15 +19,6 @@ body{width:995px; margin: 0 auto;  background:url(../images/index/img_pg.jpg) re
 #member{width:90px; height:25px; margin-left:20px; float:left; display:inline; }
 #member_img{width:25px; height:20px; background:url(../images/index/img_w_d.jpg) no-repeat; float:left; display:inline;}
 #member_word{width:55px; height:25px; line-height:23px;  float:left; display:inline; }
-
-
-
-
-#top_menu{width:995px; height:103px; margin-left:5px; margin-top:10px;  float:left; display:inline;}
-#menu_left{width:267px; height:97px; margin-top:6px; font-size:0px; line-height:0px; background:url(/images/index/top.jpg) no-repeat; float:left; display:inline;}
-#menu_center{width:672px; height:103px; background:url(/images/index/top_pg_a_center.jpg) repeat-x;  float:left; display:inline;}
-#menu_right{width:40px; height:103px; background:url(/images/index/top_pg_a_right.jpg) no-repeat;  float:left; display:inline;}
-
 
 #content{width:970px;  margin-top:12px; overflow:hidden; float:left; display:inline;}
 #c_l{width:205px;  margin-left:7px; overflow:hidden; float:left; display:inline;}
