@@ -41,14 +41,25 @@
 								<div class="fda_content">
 								<?php echo strip_tags($pos_items[$pos]->description);?></div> </div>
 							<?php }else{?>
-							<div class="fd_content">内容为空！</div>
+							<div class="fd_content" style="height:220px;">内容为空！</div>
 							<?php }?>
 							<div class="ff_d_btn">返回</div>
 						</div>
 						<div class="crf_c" id="cr_<?php echo $i;?>"<?php show_page_pos($pos,'link_d_i')?> style="margin-left:10px; float:left; padding:0px;">
 							<div class="crf_ti"><img src="<?php echo $pos_items[$pos]->image1?>"></div>
 							<div class="crg_tt"><?php echo $pos_items[$pos]->title;?></div>
-							<?php echo mb_substr($pos_items[$pos]->description,0,150,'utf-8').'<a href="#">...【查看全文】</a>'?>
+							<?php
+								if(mb_strlen($pos_items[$pos]->description,'utf-8'))
+								{
+									if(mb_strlen($pos_items[$pos]->description,'utf-8') < 175){
+										echo $pos_items[$pos]->description.'<a href="#"></a>';
+									}else{
+										echo mb_substr($pos_items[$pos]->description,0,175,'utf-8').'<a href="#">...【查看全文】</a>';
+									}
+								}else{
+									echo '<a href="#"></a>';
+								}
+							?>
 						</div>
 						<?php }?>
 						<div id="crf_d">
@@ -99,9 +110,20 @@
 							</div>
 							<input type="hidden" name="benjuname<?php echo $i;?>" id="benjuname<?php echo $i;?>" value="<?php echo $pos_items[$pos]->description;?>"/>
 							<div class="crbci_t" id="crbci_t_<?php echo $i;?>">
-								<?php echo strip_tags(mb_substr($pos_items[$pos]->description,0,370,'utf-8')).'<a href="#" class="beijiu">...【查看全文】</a>'?>
+								<?php
+								if(mb_strlen($pos_items[$pos]->description,'utf-8'))
+								{
+									if(mb_strlen($pos_items[$pos]->description,'utf-8') < 370){
+										echo $pos_items[$pos]->description.'<a href="#"></a>';
+									}else{
+										echo mb_substr($pos_items[$pos]->description,0,370,'utf-8').'<a href="#">...【查看全文】</a>';
+									}
+								}else{
+									echo '<a href="#"></a>';
+								}
+								?>
 							</div>
-							<div id="flash_dis_<?php echo $i?>" class="flash_discription" style="margin-top:-3px; margin-left:-3px; height:180px;">
+							<div id="flash_dis_<?php echo $i?>" class="flash_discription" style="width:733px; margin-top:-3px; margin-left:-3px; height:180px;">
 							<?php if($pos_items[$pos]->description){?>
 							<div class="f_d_content" style="height:140px;"><div class="f_d_c">内容:</div>
 								<div class="text_area" readonly="readonly" style="height:130px; text-align:left; ">

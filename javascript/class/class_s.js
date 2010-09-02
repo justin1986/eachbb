@@ -1,10 +1,11 @@
 $(function(){
-	$('.beijiu').click(function(e){
+	$('.beiju').click(function(e){
 		e.preventDefault();
-		var selected = $('.beijiu').index($(this));
+		var selected = $('.beiju').index($(this));
 		$('#flash_discription_'+selected).show();
 	});
-	$('.f_d_btn').click(function(){
+	$('.f_d_btn').click(function(e){
+		e.preventDefault();
 		$('.flash_discription').hide();
 	});
 	$('.cr_a').hover(function(e){

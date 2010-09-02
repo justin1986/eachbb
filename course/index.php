@@ -54,7 +54,18 @@
 								<div class="crr_t" <?php $pos="middle_headline_$j";show_page_pos($pos,'link_d_i');?>>
 									<div class="crrt_l"><a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : '/images/class/cr_l.jpg';?>" border="0"></a></div>
 									<div class="crrt_c"><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href);?></div>
-									<?php echo strip_tags(mb_substr($pos_items[$pos]->description,0,170,'utf-8')).'<a href="#" class="beijiu">...【查看全文】</a>'?>
+									<?php 
+									if(mb_strlen($pos_items[$pos]->description,'utf-8'))
+									{
+										if(mb_strlen($pos_items[$pos]->description,'utf-8') < 170){
+											echo $pos_items[$pos]->description.'<a class="beiju" href="#"></a>';
+										}else{
+											echo mb_substr($pos_items[$pos]->description,0,170,'utf-8').'<a class="beiju" href="#">...【查看全文】</a>';
+										}
+									}else{
+										echo '<a class="beiju" href="#"></a>';
+									}
+									?>
 								</div>
 							</div>
 						</div>
