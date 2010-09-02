@@ -75,7 +75,7 @@
 							<div class="f_d_content">
 								<div class="f_d_c">内容:</div>
 								<div class="ffff_cc">
-									<?php echo strip_tags($pos_items[$pos]->description);?>
+									<?php echo $pos_items[$pos]->description;?>
 								</div>
 							</div>
 							<?php }else{?>
