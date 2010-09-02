@@ -144,7 +144,7 @@
 							<div class="f_d_title">标题：<?php echo $pos_items[$pos]->title;?></div>
 							<div class="f_d_content">
 								<div class="f_d_c">内容:</div>
-								<t>
+								<div class="f_d_resutlt">
 									<?php echo strip_tags($pos_items[$pos]->description);?>
 								</div>
 							</div>
