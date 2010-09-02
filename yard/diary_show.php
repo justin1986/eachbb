@@ -56,7 +56,6 @@
 		<div id="menu_b" class="menu_pic" style="background:url(../images/yard/m_b.jpg) no-repeat;"></div>
 		<div id="menu_c" class="menu_pic" style="background:url(../images/yard/m_2.jpg) no-repeat;"></div>
 		<div id="menu_d" class="menu_pic"></div>
-		<div id="menu_e" class="menu_pic"></div>
 		<div id="menu_f" class="menu_pic"></div>
 	</div>
 	<div id="content">

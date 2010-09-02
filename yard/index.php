@@ -25,12 +25,11 @@
 			<div id="yard_day_time"><?php echo date('Y年m月d日'); ?></div>
 			<div id="yard_day_ct"><?php echo get_week_day(); ?></div>
 		</div>
-		<div id="menu_a" class="menu_pic"></div>
-		<div id="menu_b" class="menu_pic"></div>
-		<div id="menu_c" class="menu_pic"></div>
-		<div id="menu_d" class="menu_pic"></div>
-		<div id="menu_e" class="menu_pic"></div>
-		<div id="menu_f" class="menu_pic"></div>
+		<div class="menu_pic" id="menu_0" style="margin-left:50px; background:url(/images/yard/m_0.jpg) no-repeat;"></div>
+		<div class="menu_pic" id="menu_1"></div>
+		<div class="menu_pic" id="menu_2"></div>
+		<div class="menu_pic" id="menu_3"></div>
+		<div class="menu_pic" id="menu_4"></div>
 	</div>
 	<div id="content">
 		<div id="c_l">
@@ -149,10 +148,9 @@
 						<div id="c_ch">
 							<div id="m_w"></div>
 							<div class="c_ch_w" style=" border-bottom:0px solid #E3F2DF;background:url(/images/yard/m_pg.jpg) no-repeat;">全部</div>
-							<div class="c_ch_w">一句话</div>
+							<div class="c_ch_w">动态</div>
 							<div class="c_ch_w">照片</div>
 							<div class="c_ch_w">日记</div>
-							<div class="c_ch_w">分享</div>
 							<div class="c_ch_w">随便看看</div>
 							<div id="m_w" style="width:30px;"></div>
 						</div>
