@@ -166,3 +166,9 @@ function insert_ad_record($ad,$type='show'){
 	$list->save();
 }
 
+function add_latest($type,$r_id,$content){
+	$user = User::current_user();
+	$db = get_db();
+	$sql = "insert into eachbb_member (resource_type,resource_id,content,created_at,u_id,u_name,u_avatar) values('$type',$r_id,'$content',now(),{$user->id},'{$user->name}','{$user->avatar}')";
+	return $db->execute($sql);
+}

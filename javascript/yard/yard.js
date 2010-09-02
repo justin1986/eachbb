@@ -9,35 +9,35 @@ $(function(){
 	
 		if(selected === 0)
 		{
-			$.post('lastest_news.post.php',{'select':''},function(data){
+			$.post('lastest_news.post.php',{'type':'all'},function(data){
 				$('#test').html(data);
 			});
 		}
 		else if(selected === 1)
 		{
-			$.post('lastest_news.post.php',{'select':'and resource_id=1'},function(data){
+			$.post('lastest_news.post.php',{'type':'oneword'},function(data){
 				$('#test').html(data);
 			});
 		}
 		else if(selected === 2)
 		{
-			$.post('lastest_news.post.php',{'select':'and resource_id=2'},function(data){
+			$.post('lastest_news.post.php',{'type':'image'},function(data){
 				$('#test').html(data);
 			});
 		}
 		else if(selected === 3)
 		{
-			$.post('lastest_news.post.php',{'select':'and resource_id=3'},function(data){
+			$.post('lastest_news.post.php',{'type':'dairy'},function(data){
 				$('#test').html(data);
 			});
 		}else if(selected === 4)
 		{
-			$.post('lastest_news.post.php',{'select':'and resource_id=4'},function(data){
+			$.post('lastest_news.post.php',{'type':'all'},function(data){
 				$('#test').html(data);
 			});
 		}else if(selected === 5)
 		{
-			$.post('lastest_news.post.php',{'select':'and resource_id=5'},function(data){
+			$.post('lastest_news.post.php',{'type':'all'},function(data){
 				$('#test').html(data);
 			});
 		}
