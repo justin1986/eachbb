@@ -143,8 +143,10 @@
 							<?php if($pos_items[$pos]->description){?>
 							<div class="f_d_title">标题：<?php echo $pos_items[$pos]->title;?></div>
 							<div class="f_d_content">
-								<div class="f_d_c">内容:</div><textarea readonly="readonly" style="text-align:left; float:left;">
-								<?php echo strip_tags($pos_items[$pos]->description);?></textarea>
+								<div class="f_d_c">内容:</div>
+								<div class="f_d_result">
+									<?php echo strip_tags($pos_items[$pos]->description);?>
+								</div>
 							</div>
 							<?php }else{?>
 							<div class="fd_content" style="height:120px; line-height:120px;">内容为空！</div>
@@ -490,7 +492,7 @@
 					<div id="sbl_cr">
 						<div class="son_top">
 							<div class="son_t_l">助手<font style="color:#A4C853; font-weight:bold;" >排行</font></div>
-							<div class="son_t_r"><a href="<?php echo get_news_list_url(208); ?>"><font style="color:#F33B0A; font-weight:bold;" >+</font> 更多</a></div>
+							<div class="son_t_r"><a href="/assistant"><font style="color:#F33B0A; font-weight:bold;" >+</font> 更多</a></div>
 						</div>
 						<div class="son_content">
 							<?php 
