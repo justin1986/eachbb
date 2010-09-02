@@ -62,8 +62,10 @@
 							<?php if($pos_items[$pos]->description){?>
 							<div class="f_d_title">标题：<?php echo $pos_items[$pos]->title;?></div>
 							<div class="f_d_content">
-								<div class="f_d_c">内容:</div><textarea readonly="readonly" style="float:left;">
-								<?php echo strip_tags($pos_items[$pos]->description);?></textarea>
+								<div class="f_d_c">内容:</div>
+								<div class="ffff_cc">
+									<?php echo strip_tags($pos_items[$pos]->description);?>
+								</div>
 							</div>
 							<?php }else{?>
 							<div class="fd_content">内容为空！</div>

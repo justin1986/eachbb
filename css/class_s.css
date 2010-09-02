@@ -9,7 +9,7 @@ body{width:970PX; margin: 0 auto; }
 	.f_d_btn{width:710px; height:20px; padding-right:20px; line-height:20px; text-align:right;  float:left; display: inline;}
 	.f_d_content{width:720px; height:130px; padding-top:10px; line-height:0px; float:left; display: inline;}
 	.f_d_c{width:35px; height:50px; padding-top:10px; line-height:10px; overflow:hidden; float:left; display: inline;}
-	.f_d_content TEXTAREA{width:640px; height:118px; color:#333399; border:1px solid #7B9CBD; line-height: 18px; font-size:12px;}
+	.ffff_cc{width:640px; height:118px; color:#333399; border:1px solid #7B9CBD; background:#fff; overflow-y:auto;  line-height: 18px; font-size:12px;}
 	.f_d_btn{cursor:pointer;}
 	.fd_content{width:710px; height:160px; line-height:200px; font-size:20px; font-weight:bold; text-align: center; float: left; display: inline;}
 	.class_val a{color:#666666; text-decoration: none;}

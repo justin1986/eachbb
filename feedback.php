@@ -9,14 +9,26 @@
 <title>问题反馈</title>
 <?php
 	use_jquery();
-	css_include_tag('feedback');
-	js_include_tag('jquery.cookie','feedback/feedback');
+	css_include_tag('feedback','index');
+	js_include_tag('jquery.cookie','feedback/feedback','swfobject');
 ?>
 </head>
 <body>
 <div id="ibody">
-	<?php include_once('./inc/_feedback_top.php');?>
-	<div id="fbody">
+	<div id="top_menu">
+			<div id="menu_left"></div>
+			<div id="menu_center">
+				<div id="menu_flash" style="margin-top:-5px;">
+				</div>
+				<script type="text/javascript">
+					var flashvar = {defaultIndex:''};
+					var flashparam = {wmode:'Transparent'};
+					swfobject.embedSWF("flash/menu.swf","menu_flash","702","103","8",false,flashvar,flashparam);
+				</script>
+			</div>
+			<div id="menu_right"></div>
+	</div>
+	<div id="fbody"  style="width:972px;">
 		<div id="content">
 			<div id="c_l">
 				<div id="l_pho">
@@ -71,7 +83,7 @@
 				<div id="pg_a"></div>
 			</div>
 			<div id="c_r">
-				<div id="address">当前位置：<a href="/">首页</a> &gt; <font>意见反馈</font></div>
+				<div id="address">当前位置：<a href="/">首页</a> &gt; <font style="font-size:12px;">意见反馈</font></div>
 				<div id="c_hr"></div>
 				<div id="h_title">感谢使用我们的教程，希望我们的共同努力能使您的孩子从哇哇落地就得到装专业的教育和早教指导</div>
 				<div id="c_title">您的意见是我们最珍贵的礼物</div>
