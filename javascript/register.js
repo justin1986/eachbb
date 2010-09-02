@@ -204,7 +204,7 @@ function check_name(is_submit){
 			return false;
 		}
 		if(!isNumberOrLetter(name)){
-			$("#name_info").html('<span style=color:red>用户名不能含有特殊字符</span>');
+			$("#name_info").html('<span style=color:red>用户名不能含有特殊字符,只能包含英文大小字母和数字</span>');
 			return false;
 		}
 		if (name_flag != 'locked') {
@@ -247,7 +247,7 @@ function check_email(is_submit){
 			return false;
 		}
 		if(!isEmail(email)){
-			$("#email_info").html('<span style=color:red>邮箱格式不对</span>');
+			$("#email_info").html('<span style=color:red>邮箱格式不对,清输入正确邮箱地址</span>');
 			return false;
 		}
 		if (email_flag != 'locked') {
@@ -291,7 +291,7 @@ function check_password(is_submit){
 			return false;
 		}
 		if(!isNumberOrLetter2(password)){
-			$("#password_info").html('<span style=color:red>密码还有非法字符</span>');
+			$("#password_info").html('<span style=color:red>密码还有非法字符,只能包含英文大小字母和数字</span>');
 			return false;
 		}
 		if (re_password != '') {
