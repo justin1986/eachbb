@@ -10,7 +10,7 @@
 <?php
 	use_jquery();
 	js_include_tag('test/test','swfobject');
-	css_include_tag('top_inc/test_top','test','top_inc/test_left','test_left_inc','benju');
+	css_include_tag('top_inc/test_top','test','top_inc/test_left','test_left_inc');
 	init_page_items('test_index');
 ?>
 </head>

@@ -4,8 +4,8 @@ body{width:970PX; margin: 0 auto; }
 
 #fbody{ width:970px; overflow:hidden;  background:#ffffff; float:left; display:inline;}
 
-.flash_discription{width:727px; height:251px;  background:#99CCCC; overflow:hidden; font-size:13px; padding-left:10px;  padding-top:10px; left:2px; top:2px; position: absolute; float: left;display: none;}
-	.f_d_title{width:730px; height:20px;line-height:20px; overflow:hidden; float:left; display: inline;}
+.flash_discription{width:725px; height:188px;  background:#99CCCC; overflow:hidden; font-size:13px; padding-left:10px;  padding-top:10px; left:2px; top:2px; position: absolute; float: left;display: none;}
+	.f_d_title{width:725px; height:20px;line-height:20px; overflow:hidden; float:left; display: inline;}
 	.f_d_btn{width:710px; height:20px; padding-right:20px; line-height:20px; text-align:right;  float:left; display: inline;}
 	.f_d_content{width:720px; height:130px; padding-top:10px; line-height:0px; float:left; display: inline;}
 	.f_d_c{width:35px; height:50px; padding-top:10px; line-height:10px; overflow:hidden; float:left; display: inline;}

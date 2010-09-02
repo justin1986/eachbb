@@ -22,7 +22,10 @@ if($user){
 <form action="comlogin.post.php" method="post">
 <div id="lp_ppp">
 		<div class="lp_p_input"><div id="user">用户名:</div><div class="lpp_i"><input name='name' id="name" type="text" /></div></div>
-		<div class="lp_p_input" ><div id="user_pwd">密&nbsp;&nbsp;码:</div><div class="lpp_i"><input name='password' id="password" type="password" /></div></div>
+		<div class="lp_p_input" style="height:34px;">
+			<div id="user_pwd" style="height:34px;">密&nbsp;&nbsp;码:</div>
+			<div class="lpp_i" style="height:34px;"><input name='password' id="password" type="password" /></div>
+		</div>
 	<div id="userr">
 	<div id="u_l">期&nbsp;&nbsp;限：</div>
 	<div id="u_r">
@@ -38,8 +41,8 @@ if($user){
 		<input type="hidden" name="session" value="<?php echo $_SESSION['login'];?>">
   		 <?php }?>
 	</div>
-	 <div id="urr_btn" style="width:170px; height:30px;  margin-top:5px; text-align: center; float: left; display: inline;">
-		 <img id="login_bn" src="/images/index/btn_login.gif"/>
+	 <div id="urr_btn" style="width:180px; height:30px;  margin-top:5px; text-align: center; float: left; display: inline;">
+		 <img id="login_bn" src="/images/index/btn_login.gif" style="float:left; margin-left:20px;" />
 		 <a href="/register/"><img id="login_r" border="0" src="/images/index/btn_zhuce.gif"/></a>
 	 </div>
 </div>
