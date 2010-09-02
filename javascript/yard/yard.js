@@ -48,7 +48,6 @@ $(function(){
 		$('#menu_b').attr('style','background:url(../images/yard/m_b.jpg) no-repeat;');
 		$('#menu_c').attr('style','background:url(../images/yard/m_c.jpg) no-repeat;');
 		$('#menu_d').attr('style','background:url(../images/yard/m_d.jpg) no-repeat;');
-		$('#menu_e').attr('style','background:url(../images/yard/m_e.jpg) no-repeat;');
 		$('#menu_f').attr('style','background:url(../images/yard/m_f.jpg) no-repeat;');
 		if(selected === 0){
 			window.location.href="/yard";
@@ -58,8 +57,11 @@ $(function(){
 			window.location.href="/yard/diary_list.php";
 		}else if(selected === 3){
 			window.location.href="/yard/album_list.php";
-		}else if(selected == 5){
+		}else if(selected == 4){
 			window.location.href="/yard/language_list.php";
+		}
+		for(i = 0 ; i < 5 ; i++ ){
+			$('#menu_'+i).attr('style','background:url(../images/yard/m_'+i+'_sel.jpg) no-repeat;');
 		}
 		$(this).attr('style','background:url(../images/yard/m_'+selected+'.jpg) no-repeat;');
 	});
