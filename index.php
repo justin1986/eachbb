@@ -133,7 +133,7 @@
 							</div>
 							<div class="test_context">
 								<div class="context_title"><?php echo $pos_items[$pos]->title;?></div>
-								<div class="context_content"><?php echo  $pos_items[$pos]->description ? mb_substr($pos_items[$pos]->description,0,80,'utf-8').'...' : ''; ?></div>
+								<div class="context_content"><?php echo  $pos_items[$pos]->description ? mb_substr($pos_items[$pos]->description,0,75,'utf-8').'...' : ''; ?></div>
 								<div class="test_content_more">
 									<a href="<?php echo $pos_items[$pos]->href;?>"  class="beijiu">查看全文</a>
 								</div>
