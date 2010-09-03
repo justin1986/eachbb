@@ -8,7 +8,7 @@ $(function(){
 		e.preventDefault();
 		$('.flash_discription').hide();
 	});
-	$('.cr_a').hover(function(e){
+	$('.cr_a').click(function(e){
 		e.preventDefault();
 		var selected = $('.cr_a').index($(this));
 		for(var i = 0 ; i < 4 ; i++){
