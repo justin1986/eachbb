@@ -204,6 +204,6 @@ function refresh_course_xml(){
 		$out .= '<photo imageURL="'.$items[$i]->src.'" linkData="'.$items[$i]->url.'" linkType="URL" linkTarget="_blank" captionText="" captionText2="" enableButtonWhenInFront="1"/>';
 	}	
 	$out .= "</photos>";
-	write_to_file(dirname(__FILE__).'/../course/data.xml', $out,'w');
+	return write_to_file(dirname(__FILE__).'/../course/data.xml', $out,'w');
 }
 
