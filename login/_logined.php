@@ -6,7 +6,7 @@
 <div id="login_left_container" style="width:135px; float:left; display:inline;">
 	<div style="width:135px; height:15px;"><?php echo $user->name;?></div>
 	<div style="width:135px; margin-top:5px; color:#68983C; float:left; display:inline; "><b>您好，欢迎回来!</b></div>
-	<div id="div_person_center"><a href="#">个人中心</a> | <a href="#">消息(0)</a></div>
+	<div id="div_person_center"><a href="/yard">个人中心</a> | <a href="#">消息(0)</a></div>
 </div>
 <div style="float:right; margin-right:15px;">
 	<img alt="头像" src="<?php echo $user->avatar ? $user->avatar : '/images/login/avatar.jpg'?>" width="80" height="80">
