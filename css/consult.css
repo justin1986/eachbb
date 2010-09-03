@@ -162,8 +162,8 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 .bct_cpv{width:180px; margin-top:10px; margin-left:6px; height:14px;  line-height:14px; overflow:hidden; float:left; display:inline;}
 .bct_cpv a{ font-size:12px; line-height:14px; color:#000; text-decoration:none;}
 
-.bct_number{display:none;}
-
+.bct_number{ float:left;display:none;}
+#bn_0{display:inline;}
 .bd{width:289px; margin-top:20px; float:left; display:inline;}
 .bd_t{width:289px; height:5px; background:url(/images/consult/r_t.jpg) no-repeat; font-size:0px; line-height:0px; float:left; display:inline;}
 .bd_c{width:287px; border-left:1px solid #E4E4E4; border-right:1px solid #E4E4E4; float:left; display:inline;}

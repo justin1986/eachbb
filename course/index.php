@@ -61,10 +61,10 @@
 									<?php 
 									if(mb_strlen($pos_items[$pos]->description,'utf-8'))
 									{
-										if(mb_strlen($pos_items[$pos]->description,'utf-8') < 170){
+										if(mb_strlen($pos_items[$pos]->description,'utf-8') < 160){
 											echo $pos_items[$pos]->description.'<a class="beiju" href="#"></a>';
 										}else{
-											echo mb_substr($pos_items[$pos]->description,0,170,'utf-8').'<a class="beiju" href="#">...【查看全文】</a>';
+											echo mb_substr($pos_items[$pos]->description,0,160,'utf-8').'<a class="beiju" href="#">...【查看全文】</a>';
 										}
 									}else{
 										echo '<a class="beiju" href="#"></a>';

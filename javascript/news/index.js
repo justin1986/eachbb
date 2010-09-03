@@ -23,7 +23,6 @@ $(function(){
 		 interval =setInterval(image_interval,iamge_tab_interval);
 	});
 	var  interval =setInterval(image_interval,iamge_tab_interval);
-	
 	$('.dict_tab').hover(function(){
 		var selected = $('.dict_tab').index($(this));
 		for(var i = 0 ; i < 5; i++){
