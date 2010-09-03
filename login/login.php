@@ -1,10 +1,18 @@
 <?php
 	include_once(dirname(__FILE__) .'./../frame.php');
-	$lasturl = isset($_REQUEST['last_url']) ? $_REQUEST['last_url'] : '';
+	if($_GET['last_url']){
+		$last_url = $_GET['last_url'];
+	}
+	if(!$last_url && $_SERVER['HTTP_REFERER']){
+		$last_url = $_SERVER['HTTP_REFERER'];
+	}
+	
+	!$last_url && $last_url = '/';
+	
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 	<head>
 		<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 		<meta http-equiv=Content-Language content=zh-CN>
@@ -25,39 +33,40 @@
 							<div id="pwd">密　码　　<input type="password" id=password_text name=password_text style="width:145px; height:17px;"></div>
 							<div id="btn"><input type="button" value="登录" id="login_btn" class="botton"></div>	
 							<input type="hidden" name="lasturl" value="<?php echo $lasturl;?>">
-							<input type="hidden" name="user_type" value="login">						
+							<input type="hidden" name="user_type" value="login">	
+							<input type="hidden" name="last_url" value="$last_url" />					
 						</div>				
 					</div>			
 			</div>		
 		</form>
 	</body>
-</html>
-<script>
-$(function(){
-		$("#login_btn").click(function(){
-			login();
-		});
-		
-		$('#password_text').keypress(function(e){
-			if(e.keyCode == 13){login();}
-		});
-		
-		function login()
-		{
-			var login_text=$("#login_text").val();
-			var password_text=$("#password_text").val();
-			if(login_text==""||password_text=="")
+	<script>
+	$(function(){
+			$("#login_btn").click(function(){
+				login();
+			});
+			
+			$('#password_text').keypress(function(e){
+				if(e.keyCode == 13){login();}
+			});
+			
+			function login()
 			{
-				alert("用户名或密码不能为空");
-				return false;
+				var login_text=$("#login_text").val();
+				var password_text=$("#password_text").val();
+				if(login_text==""||password_text=="")
+				{
+					alert("用户名或密码不能为空");
+					return false;
+				}
+				else
+				{
+	
+					$("#form_login").submit();
+				}		
 			}
-			else
-			{
-
-				$("#form_login").submit();
-			}		
-		}
-		
-		
-});
-</script>
+			
+			
+	});
+	</script>
+</html>

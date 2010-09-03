@@ -9,7 +9,7 @@
 	include_once(dirname(__FILE__).'/../frame.php');
 	use_jquery();
 	css_include_tag('course/course_top','class_s');
-	js_include_tag('class/class_s');
+	js_include_tag('class/class_s','swfobject');
 	init_page_items('course_index');
 ?>
 </head>
@@ -22,6 +22,10 @@
 			<div id="c_r">
 				<div id="cr_top">
 					<div id="cr_flash">flash</div>
+					<script type="text/javascript">
+						var flashvar = {};
+						swfobject.embedSWF("/flash/course.swf","cr_flash","520","300","8",false,flashvar,flashparam);
+					</script>
 					<div id="img_flash"<?php $pos="top_image"; show_page_pos($pos,'link_i')?>><a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/class/c_pg_a.jpg';?>" border="0"/></a></div>				
 				</div>
 				<div id="crcb_t">

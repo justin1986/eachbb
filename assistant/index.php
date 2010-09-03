@@ -18,7 +18,7 @@
 	<?php include_once(dirname(__FILE__)."/../inc/_assistant_top.php"); ?>
 	<?php include_once dirname(__FILE__)."/_assistant_left.php"; ?>
 	<div id="iframe_container">
-		<iframe id="iframe" name="iframe" src="/assistant/_index.php?page_type=<?php echo $page_type;?>" width="745" height="1000" frameborder="0" scrolling="no" ></iframe>
+		<iframe id="iframe" name="iframe" src="/assistant/_index.php?page_type=<?php echo $page_type;?>&age=<?php echo $_GET['age'];?>" width="745" height="1000" frameborder="0" scrolling="no" ></iframe>
 	</div>	
 	<?php include_once(dirname(__FILE__).'/../inc/bottom.php'); ?>
 </div>
