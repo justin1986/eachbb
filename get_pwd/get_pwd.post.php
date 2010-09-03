@@ -1,7 +1,7 @@
 <?php
 session_start();
 include_once('../frame.php');
-
+set_charset();
 if(!is_post()){
 	redirect('/get_pwd/'); 
 	die();
@@ -39,8 +39,9 @@ if($db->record_count==1){
 	$gp->verify = $verify;
 	$gp->end_time = dt_increase(2,'h');
 	$gp->save();
-	$content = "{$name},你好：<br/><br/>　　欢迎进网趣宝贝密码重置过程，请在2小时内点击下面的链接：<br/>　　<a href='http://www.eachbaby.com/get_pwd/get_pwd.php?verify=$verify'>http://www.forbeschina.com/getpwd/get_pwd.php?verify=$verify</a><br><br>　　如果点击以上链接不起作用，请将此网址复制并粘贴到新的浏览器窗口中。如果您意外地收到此邮件，很可能是其他用户在尝试重设密码时，误输入了您的电子邮件地址。如果您没有提出此请求，则无需做进一步的操作，可以放心地忽略此电子邮件。";
-	send_mail('smtp.qiye.163.com','userservice@forbeschina.com','userservice','userservice@forbeschina.com',$mail,'网趣宝贝(eachbaby.com)密码找回',$content);
+	$content = "{$name},你好：<br/><br/>　　欢迎进网趣宝贝密码重置过程，请在2小时内点击下面的链接：<br/>　　<a href='http://{$_SERVER[HTTP_HOST]}/get_pwd/get_pwd.php?verify=$verify'>http://{$_SERVER[HTTP_HOST]}/get_pwd/get_pwd.php?verify=$verify</a><br><br>　　如果点击以上链接不起作用，请将此网址复制并粘贴到新的浏览器窗口中。如果您意外地收到此邮件，很可能是其他用户在尝试重设密码时，误输入了您的电子邮件地址。如果您没有提出此请求，则无需做进一步的操作，可以放心地忽略此电子邮件。";
+	send_mail('mail.eachbaby.com','administrator@eachbaby.com','123456','administrator@eachbaby.com',$mail,'网趣宝贝(eachbaby.com)密码找回',$content);
+	#send_mail('smtp.qiye.163.com','userservice@forbeschina.com','userservice','userservice@forbeschina.com',$mail,'网趣宝贝(eachbaby.com)密码找回',$content);
 	alert("请在2小时内登录到".$mail."完成剩余操作！");
 	redirect('/');
 }else{

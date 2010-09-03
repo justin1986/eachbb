@@ -172,3 +172,4 @@ function add_latest($type,$r_id,$content){
 	$sql = "insert into eachbb_member (resource_type,resource_id,content,created_at,u_id,u_name,u_avatar) values('$type',$r_id,'$content',now(),{$user->id},'{$user->name}','{$user->avatar}')";
 	return $db->execute($sql);
 }
+

@@ -15,7 +15,7 @@ $(function(){
 	});
 	document.onkeydown = function(e){ 
 	    var ev = document.all ? window.event : e;
-	    if(ev.keyCode==13 || ev.ctrlKey) {
+	    if(ev.keyCode==13) {
 	    	if($("#name").val()==''){
 				alert('请输入用户名');
 				return false;
