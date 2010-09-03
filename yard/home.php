@@ -77,7 +77,7 @@
 					<div id = "p1_buttonbox">
 						<div class="p1_but">
 							<div class="but_nl"></div>
-							<div class="but_name">发短消息</div>
+							<div class="but_name"><a href="/baby/message_index.php?id=<?php echo $id;?>">发短消息</a></div>
 							<div class="but_nr"></div>
 						</div>
 						<div class="p1_but" style="float:right;">

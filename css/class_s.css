@@ -26,7 +26,7 @@ body{width:970PX; margin: 0 auto; }
 #lp_word{width:120px; height:50px; margin-left:5px; line-height:25px; overflow:hidden; font-size:13px; font-weight:bold; float:left; display:inline;}
 #l_b_wa,#l_b_wb{width:150px; height:20px; line-height:20px; margin-left:35px; font-size:12px; color:#666666; float:left; display:inline;}
 #l_b_wa{margin-top:11px;}
-#l_b_wa font{color:red;}
+#l_b_wa a{color:red; text-decoration: none; font-size:12px;}
 #l_b_wb a{font-size:12px; color:#666666;   text-decoration:none;}
 
 #l_test,#l_look{width:200px; height:42px; font-size:0px; line-height:0px; margin-left:5px; float:left; display:inline;}
