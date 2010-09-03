@@ -17,6 +17,8 @@ body{width:970px; font-size:12px; color:#000000; margin: 0 auto;  background:url
 .c_menu_pg_p{width:768px; height:30px; margin-left:10px; background:url(/images/yard/log_hr2.jpg) repeat-x;  float: left; display: inline;}
 
 
+
+
 #login{width:400px; height:20px; z-index:12; float:right; display:inline;}
 #login_login{width:80px; height:20px; float:left; display:inline;}
 #login_img{width:22px; height:20px; background:url(/images/img_w_a.jpg) no-repeat; float:left; display:inline;}

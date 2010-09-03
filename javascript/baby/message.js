@@ -9,5 +9,13 @@ $(function(){
 		alert(data);
 		window.location.href = "message_index.php?id="+id;
 	});
-	},function(){});
+	});
+	$('#road_message').live('click',function(){
+			window.location.href = "message_index.php";
+	});
+	$('#r_dele').click(function(){
+			$.post('_message_del_ajax_post.php',function(data){
+			$('#haha').html(data);
+	});
+	});
 });

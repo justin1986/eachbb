@@ -35,14 +35,17 @@
 	<?php include_once(dirname(__FILE__).'/../baby/_inc_index_left.php'); ?>
 	<div id="haha">
 		<div id="right">
-	     		<div ><img src="/images/avatar/point.png"></img><font size="2" style="margin-left:5px;"><b>留言</b></font><font size="2" color="red"><b>信息</b></font></div>
+	     		<div class="right_dvi"><img src="/images/avatar/point.png"></img><font size="2" style="margin-left:5px;"><b>发布</b></font><font size="2" color="red"><b>信息</b></font>
+     					<div class="ri_message" id="r_dele">回收站</div>
+	     				<div class="ri_message">已读信息</div>
+	     		</div>
 	     		<div class="line1" ><hr color="#A3C1CD" width=100%; size="2" /></div>
 	    </div>
 	    <input type="hidden" value="<?php echo $id;?>" name="message_id" id="message_id">
 	    <?php if($id){?>
 		<div id="message_container">
 			<div class="message_stauts">
-						<div class="message_title"><?php if($result) echo "给$name";?>发布留言</div></div>
+						<div class="message_title"><?php if($result) echo "给$name";?>发布信息</div></div>
 						<div class="message_banner">
 								<img class="message_img" style="width:50px; height:50px;" src="<?php echo $user->avatar;?>"/>
 								<textarea class="message_result" style=" margin-left:20px; float:left;"></textarea>
