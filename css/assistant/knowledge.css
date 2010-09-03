@@ -9,11 +9,11 @@ body{width:745px; margin: 0 auto;}
 
 #container{width:745px; margin-top:10px; float:right; display:inline;}
 	#container_result{width:521px; float:left;}
-		.menu{width:99px; height:25px; margin-top:20px; line-height:25px; color:#39AFEB; font-size:14px; font-weight:bolder; float:left; padding-left:10px; text-align:center; background-image:url(/images/assistant_list/menu.gif);}
+		.menu{width:99px; height:25px; margin-top:20px; line-height:25px; color:#4E3431; font-size:14px; font-weight:bolder; float:left; padding-left:10px; text-align:center; background-image:url(/images/assistant_list/menu.gif);}
 		.box{width:100%; float:left; padding-bottom:30px; background-color:#FFEDD6; font-size:13px; line-height:25px;}
 			.first_title{width:90%; height:25px; margin-top:30px; margin-left:6%; font-weight:bolder; float:left;}
-			.first_title a{color:#39AFEB; text-decoration:none;}
+			.first_title a{color:#4E3431; text-decoration:none;}
 			.second_title{width:25%; height:25px; margin-left:6%; float:left;}
-			.second_title a{color:#39AFEB; text-decoration:none;}
+			.second_title a{color:#4E3431; text-decoration:none;}
 .v_kong{width:188px; height:15px; line-height:0px; float:left;}
 .kong{width:503px; height:15px; line-height:0px; float:left;}
