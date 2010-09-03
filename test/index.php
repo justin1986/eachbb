@@ -113,10 +113,10 @@
 								<?php
 								if(mb_strlen($pos_items[$pos]->description,'utf-8'))
 								{
-									if(mb_strlen($pos_items[$pos]->description,'utf-8') < 360){
+									if(mb_strlen($pos_items[$pos]->description,'utf-8') < 340){
 										echo $pos_items[$pos]->description.'<a href="#"></a>';
 									}else{
-										echo mb_substr($pos_items[$pos]->description,0,360,'utf-8').'<a href="#">...【查看全文】</a>';
+										echo mb_substr($pos_items[$pos]->description,0,340,'utf-8').'<a href="#" style="color:#000000;">...【查看全文】</a>';
 									}
 								}else{
 									echo '<a href="#"></a>';
