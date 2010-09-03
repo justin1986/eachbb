@@ -2,7 +2,6 @@
 session_start();
 
 include_once('../frame.php');
-include_once('../inc/user.class.php');
 	
 if(!is_post()){
 	redirect('/error/'); 

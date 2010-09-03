@@ -1,6 +1,6 @@
 @CHARSET "UTF-8";
-body{width:970PX; margin: 0 auto;}
-#ibody{width:970px; overflow:hidden; margin:0;}
+body{width:745px; margin: 0 auto;}
+#ibody{width:745px; overflow:hidden; margin:0;}
 
 #result{width:745px;  float:right; display:inline;}
 

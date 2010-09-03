@@ -4,6 +4,7 @@
 	$user = User::current_user();
 	if(!$user) die();
 	$select =$_POST['select'];
+	$type = $_POST['type'];
    $sql = $db->query("select * FROM eachbb_member.lastest_news where u_id in (select f_id from eachbb_member.friend where u_id={$user->id}) order by created_at desc limit 9");
    $num = $db->record_count;
    if($sql){

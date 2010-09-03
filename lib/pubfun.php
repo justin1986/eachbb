@@ -21,7 +21,7 @@ function debug_info($msg,$type='php') {
 		alert($msg);
 	}
 }
-
+/*
 function send_mail($smtp_server,$smtp_user,$smtp_pwd,$from,$to,$title,$content){
 	$body = '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 				<HTML><HEAD>
@@ -38,7 +38,7 @@ function send_mail($smtp_server,$smtp_user,$smtp_pwd,$from,$to,$title,$content){
 	$email->email_content = $body;
 	$email->save();
 }
-/*
+*/
 function send_mail($smtp_server,$smtp_user,$smtp_pwd,$from,$to,$title,$content){
 		$body = '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 				<HTML><HEAD>
@@ -75,7 +75,7 @@ function send_mail($smtp_server,$smtp_user,$smtp_pwd,$from,$to,$title,$content){
 		//7、发送DATA，期待返回354  
 		$smtp[] = array("DATA".$lb,"354","DATA error: ");  
 		//8.0、发送From  
-		$smtp[] = array("From: =?UTF-8?B?56aP5biD5pav5Lit5paH572R?= <".$deliver.">".$lb,"","");  
+		$smtp[] = array("From: =?UTF-8?B?572R6Laj5a6d6LSd?= <".$deliver.">".$lb,"","");  
 		//8.2、发送To  
 		$smtp[] = array("To: ".$to.$lb,"","");  
 		//8.1、发送标题  
@@ -115,7 +115,8 @@ function send_mail($smtp_server,$smtp_user,$smtp_pwd,$from,$to,$title,$content){
 		//关闭连接  
 		@fclose($fp); 
 		return true;
-}*/
+}
+
 
 function display_error($msg) {
 	echo '<font style="color:red;">' .$msg .'</font>';;

@@ -13,10 +13,15 @@
 		}
 		$("form").submit();
 	});
-	document.onkeydown = function(e){ 
-		var ev = document.all ? window.event : e;
-	    if(ev.keyCode==13) {
-	    	if($("#name").val()==''){
+	$('#name').live('keypress',function(e){
+		if(e.keyCode == 13){
+			$('#password').focus();
+		}
+	});
+	
+	$('#password').live('keypress',function(e){
+		if(e.keyCode == 13){
+			if($("#name").val()==''){
 				alert('请输入用户名');
 				return false;
 			}
@@ -25,6 +30,6 @@
 				return false;
 			}
 			$("form").submit();
-	    }
-	  };
+		}
+	});
 });
