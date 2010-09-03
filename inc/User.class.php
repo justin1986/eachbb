@@ -267,5 +267,10 @@ class User {
 	public function adjust_score($score,$reason){
 		
 	}
+	public static function search(){
+		$db = get_db();
+	    $result = $db->query("select * FROM eachbb_member.lastest_news where u_id in (select f_id from eachbb_member.friend where u_id={$user->id}) order by created_at desc limit 9");
+		$num = $db->record_count;
+	}
 	
 }
