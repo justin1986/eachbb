@@ -201,7 +201,10 @@
 			</div>
 		</div>
 		<div id="b_r">
-			<div id="br_a">
+			<div class="bd"<?php $pos="right_course_sdf";show_page_pos($pos,'link_i')?> style="height:190px; margin-top:0px;">
+				<img src="<?php echo $pos_items[$pos]->image1;?>" style="width:287px; height:190px; border:0px solid red;"/>
+			</div>
+			<div id="br_a" style="margin-top:20px;">
 				<div id="ba_t">
 					<div><img src="/images/consult/0.jpg" class="student_tab"/></div>
 					<div><img src="/images/consult/1a.jpg" class="student_tab"/></div>
@@ -296,9 +299,6 @@
 					</div>
 				</div>
 				<div class="bd_b"></div>
-			</div>
-			<div class="bd"<?php $pos="right_course_sdf";show_page_pos($pos,'link_i')?> style="height:190px;">
-				<img src="<?php echo $pos_items[$pos]->image1;?>" style="width:287px; height:190px; border:0px solid red;"/>
 			</div>
 		</div>
 		<div id="bt_i">

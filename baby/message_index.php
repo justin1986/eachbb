@@ -36,8 +36,10 @@
 	<div id="haha">
 		<div id="right">
 	     		<div class="right_dvi"><img src="/images/avatar/point.png"></img><font size="2" style="margin-left:5px;"><b>发布</b></font><font size="2" color="red"><b>信息</b></font>
+	     				<?php if(!$result){ ?>
      					<div class="ri_message" id="r_dele">回收站</div>
-	     				<div class="ri_message">已读信息</div>
+	     				<div class="ri_message" id="r_load">已读信息</div>
+	     				<?php }?>
 	     		</div>
 	     		<div class="line1" ><hr color="#A3C1CD" width=100%; size="2" /></div>
 	    </div>
@@ -58,10 +60,14 @@
 				$id=$user->id;
 			}?>
 			<?php 
-				$list=$db->query("SELECT * FROM eachbb_member.message m where recieve_id=$id and status=0 order by created_at desc LIMIT 20");
+				$sql= $result ? " and status=0 or status=1 order by created_at desc LIMIT 20" :" and status=0  order by created_at desc LIMIT 20";
+				$list=$db->query("SELECT * FROM eachbb_member.message m where recieve_id=$id ".$sql);
 				if($list){
+					$i==0;
+					$result_id;
 				foreach ($list as $list){
 				$member=$db->query("SELECT name,avatar FROM eachbb_member.member where id={$list->send_id}");
+				$result_id.=$list->id.",";
 			?>
 			<div class="message_stauts">
 					<div class="message_title"><?php echo $member[0]->name;?>发给<?php
@@ -73,8 +79,8 @@
 					}
 				?> &nbsp;<font><?php echo $list->created_at;?></font>
 							<?php if($id == $user->id){?>
-							<div class="banner_del">
-								<a href="message_delete.php?id=<?php echo $list->id;?>">删除</a>
+							<div class="banner_dell">
+								<input type="hidden" id="banner_<?php echo $i; ?>" value="<?php echo $list->id;?>"/>删除
 							</div>
 							<?php }?>
 					</div>
@@ -83,7 +89,7 @@
 							<div class="message_result"><?php echo $list->content;?></div>
 					</div>
 			</div>
-			<?php }}else{
+			<?php $i++;}}else{
 					echo 
 					'<div class="message_banner" style="line-height:50px; font-size:20px; text-align:center;">
 					对不起！留言本为空！
@@ -91,7 +97,9 @@
 				}
 				if(!$result)
 				{
-					$db->execute("update eachbb_member.message set status=1 where recieve_id={$user->id}");
+					if(substr($result_id,0,-1)){
+						$db->execute("update eachbb_member.message set status=1 where id in (".substr($result_id,0,-1).");");	
+					}
 				}
 			?>
 		</div>

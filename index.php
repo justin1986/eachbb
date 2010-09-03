@@ -208,7 +208,7 @@
 					<div id="dict_a">
 						<div id="dict_title">咨询排行</div>
 						<div id="div_dict_more">
-							<a href="#">more&gt;</a>
+							<a href="/news">more&gt;</a>
 						</div>
 					</div>
 					<div id="dict_menu"> 

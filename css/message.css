@@ -1,8 +1,9 @@
 #message_container{width:760px; float:right; display:inline;}
 	.message_stauts{width:750px; margin-top:15px;  float:right; display:inline;}
 		.message_title{width:740px; height:30px; padding-left:10px; font-size:14px; line-height:30px; overflow:hidden; background:#A8C783; float:left; display:inline;}
-			.banner_del{width:50px; height:30px; float:right; display:inline;}
-			.banner_del a{font-size:12px; color:#000; text-decoration: none;}
+			.banner_del{width:70px; height:30px; font-size:12px; cursor:pointer; color:#000; float:right; display:inline;}
+			.banner_dell{width:70px; height:30px; font-size:12px; cursor:pointer; color:#000; float:right; display:inline;}
+			.banner_delete{width:70px; height:30px; font-size:12px; cursor:pointer; color:#000; float:right; display:inline;}
 			.message_title font{font-size:12px;}
 		.message_banner{width:750px; padding-bottom:10px; float:left; display:inline;}
 		.message_img{width:100px; height:100px; margin-left:15px; margin-top:15px; float:left; display:inline;}

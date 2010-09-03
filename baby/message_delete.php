@@ -8,14 +8,12 @@
 		exit();
 	}
 	$db = get_db();
-	$problem_id=intval($_GET['id']);
+	$problem_id=intval($_POST['id']);
 	if(!$problem_id)die('操作有误!');
-	if($db->execute("update eachbb_member.message set status=2 where id=$problem_id")){
-		alert("删除成功！");
-		redirect("message_index.php");
+	if($db->execute("update eachbb_member.message set status=2,last_edit_at=now() where id=$problem_id")){
+		echo "删除成功！";
 	}
 	else{
-		alert("删除失败！");
-		redirect("message_index.php");
+		echo "删除失败！";
 	}
 ?>
