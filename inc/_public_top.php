@@ -125,7 +125,7 @@
 }
 .exit{
 	height:16px;
-	margin-top:8px;
+	margin-top:7px;
 	font-size:12px;
 	line-height:16px;
 	font-weight:bold;
