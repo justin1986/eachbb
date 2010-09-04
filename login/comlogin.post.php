@@ -81,7 +81,7 @@
 	if($err){
 		 	alert($err);
 	 }
-	 redirect($last_url);
+	 redirect('/yard');
 	?>
 	</body>
 </html>
