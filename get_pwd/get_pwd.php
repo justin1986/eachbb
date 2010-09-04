@@ -66,7 +66,7 @@
 			<div id="cpg_b"></div>
 		</div>
 		<?php }}?>
-		<?php include_once(dirname(__FILE__) .'./../inc/_register_top.php');?>
+		<?php include_once(dirname(__FILE__) .'/../inc/_register_top.php');?>
 	</div>
 </div>
 </body>
