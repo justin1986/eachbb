@@ -1,15 +1,17 @@
 <?php
 	include_once '../frame.php';
 	include_once '../inc/User.class.php';
-	if($_SESSION['news_share'] != $_POST['session']){
-		die('invalid request!');
-	}
+//	var_dump($_SESSION['news_share']);
+//	die();
+//	if($_SESSION['news_share'] != $_POST['session']){
+//		die('invalid request!');
+//	}
 	$news_id = intval($_POST['news_id']);
 	$news = new table_class('eb_news');
 	$news->find($news_id);
 	if(!$news->id) die('invalid param');
 	$len = count($_POST['mail']);
-	set_charset();
+	set_charset("utf-8");
 	$news_share = new table_class('eb_news_share');
 	$user = User::current_user();
 	if(!$user) die('need login');
@@ -36,5 +38,5 @@
 ?>
 <script>
 	alert("已成功分享！");
-	window.location.href = "<?php echo get_news_url($news,'static');?>";
+	window.location.href = "/news/news?id=<?php echo $news_id;#echo get_news_url($news,'static');?>";
 </script>

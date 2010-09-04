@@ -13,7 +13,7 @@
 		$db = get_db();
 	?>
 </head>
-<body>
+<body style="position: r">
 <div id="ibody">
 	<div id="top_menu">
 			<div id="menu_left"></div>
