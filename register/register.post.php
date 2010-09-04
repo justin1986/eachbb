@@ -92,7 +92,6 @@
 		User::logout();
 		}
 		User::login($name,$password);
-		die("asdf");
 		success_register();
 	}else{
 		false_register($result);
