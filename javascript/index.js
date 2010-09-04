@@ -70,7 +70,16 @@ $(function(){
 		$('.course_list').hide();
 		$('#course_list_' + selected).show();
 	},function(){});
-	
+	$('img.student_tab').click(function(){
+		var selected = $('img.student_tab').index($(this));
+		if(selected == 0){
+			window.location.href="/course";
+		}else if(selected == 1){
+			window.location.href="/assistant";
+		}else if(selected == 2){
+			window.location.href="bbs.php";
+		}
+	});
 	$('img.student_tab').hover(function(){
 		var selected = $('img.student_tab').index($(this));
 		for(var i = 0 ; i < 3; i++){

@@ -65,7 +65,7 @@ $(function(){
 	
 	$("#birthday").datepicker(
 	{
-		 yearRange: 'c-40:c+1',
+		 yearRange: 'c-70:c+1',
 		changeMonth: true,
 		changeYear: true,
 		monthNamesShort:['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
@@ -77,7 +77,7 @@ $(function(){
 	
 	$("#baby_birthday2").datepicker(
 	{
-		 yearRange: 'c-10:c+5',
+		 yearRange: 'c-60:c+5',
 		changeMonth: true,
 		changeYear: true,
 		monthNamesShort:['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
@@ -290,7 +290,7 @@ function check_password(is_submit){
 			$("#password_info").html('<span style=color:red>密码太长</span>');
 			return false;
 		}
-		if(!isNumberOrLetter2(password)){
+		if(!isNumberOrLetter(password)){
 			$("#password_info").html('<span style=color:red>密码不能中不能有非法字符标点符号，只能含有英文大小字母和数字</span>');
 			return false;
 		}

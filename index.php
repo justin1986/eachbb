@@ -275,7 +275,7 @@
 					<div id="m_r_c">
 						<div class="son_top">
 							<div class="son_t_l">精彩<font style="color:#A4C853; font-weight:bold;" >问答</font></div>
-							<div class="son_t_r"><a href="<?php echo get_news_list_url(208); ?>"><font style="color:#F33B0A; font-weight:bold;" >+</font> 更多</a></div>
+							<div class="son_t_r"><a href="/bbs/forumdisplay.php?fid=10"><font style="color:#F33B0A; font-weight:bold;" >+</font> 更多</a></div>
 						</div>
 						<div class="son_content">
 							<?php 

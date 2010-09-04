@@ -2,7 +2,6 @@
 	session_start();
 	include_once('../frame.php');
 	include_once('../inc/User.class.php');
-	
 	if(!is_post()){
 		redirect('/register/');
 		die();
@@ -86,20 +85,23 @@
 		die();
 	}
 	$ip = $_SERVER["REMOTE_ADDR"];
-	
-	
 	$result = User::register($name,$email,$password,0,$baby_status,$baby_birthday,$birthday,$zip,$phone,$address,$gender,$ip);
 	if($result->result){
+		$user = User::current_user();
+		if($user){
+		User::logout();
+		}
+		User::login($name,$password);
+		die("asdf");
 		success_register();
 	}else{
 		false_register($result);
 	}
 	
-	
-	
 	function success_register(){
-		alert('注册成功！');
-		redirect('/login');
+		alert("注册成功！");//logout()
+		alert("登录成功！");
+		redirect('/');
 	}
 	
 	function false_register($result){
