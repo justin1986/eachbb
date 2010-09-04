@@ -82,6 +82,8 @@
 		 	alert($err);
 	 }
 	 $user = User::current_user();
+	 var_dump($user);
+	 die();
 	 if($user){
 	 		 redirect('/yard');
 	 }else{
