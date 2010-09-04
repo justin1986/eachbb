@@ -81,14 +81,7 @@
 	if($err){
 		 	alert($err);
 	 }
-	 $user = User::current_user();
-	 var_dump($user);
-	 die();
-	 if($user){
-	 		 redirect('/yard');
-	 }else{
-	 		redirect($last_url);
-	 }
+	 redirect($last_url);
 	?>
 	</body>
 </html>
