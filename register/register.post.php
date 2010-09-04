@@ -100,7 +100,7 @@
 	function success_register(){
 		alert("注册成功！");//logout()
 		alert("登录成功！");
-		redirect('/');
+		redirect('/yard');
 	}
 	
 	function false_register($result){
