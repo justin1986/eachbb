@@ -39,7 +39,7 @@
 						<div class="ca_a">*</div>
 						<div class="ca_b">登录密码</div>
 						<div class="ca_c"><input name="password" id="password" type="password"/> </div>
-						<div class="ca_d" id="password_info">请设置4-20个字符，包含英文大小写字母、数字和部分标点符号组合</div>
+						<div class="ca_d" id="password_info">请设置4-20个字符，包含英文大小写字母和数字组合</div>
 					</div>
 					<div class="c_a">
 						<div class="ca_a">*</div>

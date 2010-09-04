@@ -20,16 +20,17 @@
 		include_once '../inc/User.class.php';
 		$user = User::current_user();
 		if(!$user){
-			echo '请先登录';
-			die();
+			echo "请您先登录！";
+		}else{
+			$comment = new table_class('eb_comment');
+			$comment->resource_type= 'feedback';
+			$comment->nick_name = $user->name;
+			$comment->user_id = $user->id;
+			$comment->ip = client_ip();
+			$comment->created_at = now();
+			$comment->comment = htmlspecialchars(urldecode($_POST['comment']));
+			$comment->save();
+			echo "发布成功！";
 		}
-		$comment = new table_class('eb_comment');
-		$comment->resource_type= 'feedback';
-		$comment->nick_name = $user->name;
-		$comment->user_id = $user->id;
-		$comment->ip = client_ip();
-		$comment->created_at = now();
-		$comment->comment = htmlspecialchars(urldecode($_POST['comment']));
-		$comment->save();
 	}
 ?>

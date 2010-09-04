@@ -21,10 +21,7 @@
 <body>
 <div id="ibody">
 	<div id="fbody">
-		<div id="top_login">
-			<div id="tl_l"></div>
-			<div id="tl_r"></div>
-		</div>
+		<?php include_once(dirname(__FILE__) .'./../inc/_register_top.php');?>
 		<div id="top_menu">
 			<div id="menu_pg">
 				<div id="menu_left"></div>
@@ -94,9 +91,7 @@
 			<div id="cpg_b"></div>
 		</div>
 		<?php }}?>
-		<div id="bg_hr"></div>
-		<div id="bottom">关于我们 - 加入我们 - 友情链接 - 联系我们 - 服务条款 - 隐私保护 - 网站地图</div>
-		<div id="bottom_b">哈哈少儿旗下网站  Copyright © 1997-2010 HAHA.fb.com All Rights Reserved.</div>
+		<?php include_once(dirname(__FILE__) .'./../inc/_register_top.php');?>d="bottom_b">哈哈少儿旗下网站  Copyright © 1997-2010 HAHA.fb.com All Rights Reserved.</div>
 	</div>
 </div>
 </body>
