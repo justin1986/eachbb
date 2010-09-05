@@ -17,35 +17,7 @@
 <body>
 <div id="ibody">
 	<div id="fbody">
-		<div id="top_login">
-			<div id="tl_l"></div>
-			<div id="tl_r"></div>
-		</div>
-		<div id="top_menu">
-			<div id="menu_pg">
-				<div id="menu_left"></div>
-				<div id="menu_center">
-					<div id="menu_ct">
-						<div id="menu_ctt">
-							<input type="button" class="t_first" value="网站首页">
-							<div class="me_a"><a href="#">特色测评</a></div>
-							<div class="me_h"></div>
-							<div class="me_b"><a href="#">妈妈助手</a></div>
-							<div class="me_h"></div>
-							<div class="me_b"><a href="#">亲子社区</a></div>
-							<div class="me_h"></div>
-							<div class="me_b"><a href="#">咨询板块</a></div>
-							<div class="me_h"></div>
-							<div class="me_b"><a href="#">我的宝宝</a></div>
-							<div class="me_h"></div>
-							<div class="me_b"><a href="#">早教课程</a></div>
-						</div>
-					</div>
-					
-				</div>
-				<div id="menu_right"></div>
-			</div>
-		</div>
+<?php include_once(dirname(__FILE__) .'./../inc/_register_top.php');?>
 		<div id="center">
 			<div id="cpg_top"></div>
 			<div id="cpg_c">
