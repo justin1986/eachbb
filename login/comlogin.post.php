@@ -80,8 +80,10 @@
 	<?
 	if($err){
 		 	alert($err);
+		 	echo ("<script>parent.window.location.href ='/login'</script>");
+	 }else{
+	 	echo ("<script>parent.window.location.href ='/yard'</script>");
 	 }
-	 redirect('/yard');
 	?>
 	</body>
 </html>

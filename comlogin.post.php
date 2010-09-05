@@ -65,11 +65,16 @@
 	</head>
 	<body>
 	<?
-	if($err){
-		 	alert($err);
-	 }
+//	if($err){
+//		 	alert($err);
+//	 }
 	 #echo $_COOKIE['cache_name'];
-	 redirect('/yard');
+	 if($err){
+		 	alert($err);
+		 	echo ("<script>parent.window.location.href ='/login'</script>");
+	 }else{
+	 	echo ("<script>parent.window.location.href ='/yard'</script>");
+	 }
 	?>
 	</body>
 </html>
