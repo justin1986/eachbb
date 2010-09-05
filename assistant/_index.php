@@ -13,13 +13,15 @@
 		if($_GET['age'] == -2){
 		?>
 		<script type="text/javascript">
-			parent.$('.htct_t:first a').click();
+			//parent.$('.htct_t:first a').click();
+			location.href = "list.php?category_id=6&age=-2";
 		</script>	
 		<?php }
 		if($_GET['age'] == -1){
 		?>
 		<script type="text/javascript">
-			parent.$('.htct_t:eq(1) a').click();
+			//parent.$('.htct_t:eq(1) a').click();
+			location.href = "list.php?category_id=7&age=-1";
 		</script>	
 		<?php }
 		css_include_tag('assistant/_index.css','assistant'); 
@@ -34,6 +36,7 @@
 				case 1:return '0~1岁';break;
 				case 2:return '1~2岁';break;
 				case 3:return '2~3岁';break;
+				case 4:return '3~6岁';break;
 				default:return '';
 			}
 		}

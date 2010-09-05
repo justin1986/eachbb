@@ -34,6 +34,7 @@
 				case 1:return '0~1岁';break;
 				case 2:return '1~2岁';break;
 				case 3:return '2~3岁';break;
+				case 4:return '3~6岁';break;
 				default:return '';
 			}
 		}
@@ -46,13 +47,14 @@
 			<div id="container_result">
 				<div id="breadbrum">
 					<a href="/assistant/_index.php">助手首页</a>
+					<?php if(in_array($_GET['age'], array(-2,-1,1,2,3,4))){
+						echo " >> <a href='/assistant/_index.php?age={$_GET['age']}'>",convert_age($_GET['age']),"</a>";
+					}?>
 					<?php
 					 foreach ($breads as $item){
 						echo " >> <a href='list.php?category_id={$item->id}'>{$item->name}</a>";
 					}?>
-					<?php if(in_array($_GET['age'], array(-2,-1,1,2,3))){
-						echo " >> ",convert_age($_GET['age']);
-					}?>
+					
 				</div>
 				<?php
 					if($level == 1){
