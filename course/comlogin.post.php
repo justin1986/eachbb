@@ -69,7 +69,7 @@
 		 	alert($err);
 		 	echo ("<script>parent.window.location.href ='/login'</script>");
 	 }else{
-	 	echo ("<script>parent.window.location.href ='/yard'</script>");
+	 	echo ("<script>parent.window.location.href ='/course'</script>");
 	 }
 	?>
 	</body>
