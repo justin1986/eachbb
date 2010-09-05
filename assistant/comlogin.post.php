@@ -69,7 +69,7 @@
 		 	alert($err);
 		 	echo ("<script>parent.window.location.href ='/login'</script>");
 	 }
-	 redirect($last_url);
+	 redirect('/assistant');
 	 //else{
 //	 	echo ("<script>parent.window.location.href ='$last_url'</script>");
 //	 }
