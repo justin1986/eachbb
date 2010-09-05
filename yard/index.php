@@ -12,7 +12,7 @@
 		$user = User::current_user();
 		if(!$user){
 			alert("请您先登录！");
-			redirect('/login/');
+			redirect('/login/?last_url=/yard/');
 			exit();
 		}
 		?>
