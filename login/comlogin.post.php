@@ -56,7 +56,7 @@
 	if(!$last_url && $_SERVER['HTTP_REFERER'] && strpos($_SERVER['HTTP_REFERER'], '/login/')=== false){
 		$last_url = $_SERVER['HTTP_REFERER'];
 	}
-	!$last_url && $last_url = '/';
+	!$last_url && $last_url = '/yard/';
 	$suess_url =  $last_url;
 	$fail_url = "/login/index.php?last_url=" .$last_url;
 	if(strlen($name)>20 || strlen($password)>20){
@@ -80,10 +80,8 @@
 	<?
 	if($err){
 		 	alert($err);
-		 	echo ("<script>parent.window.location.href ='/login'</script>");
-	 }else{
-	 	echo ("<script>parent.window.location.href ='/yard'</script>");
 	 }
+	 redirect($last_url);
 	?>
 	</body>
 </html>
