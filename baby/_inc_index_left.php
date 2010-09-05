@@ -1,21 +1,3 @@
-<?php 
-		include_once('../frame.php');
-		use_jquery();
-		css_include_tag('baby','test_report');
-		js_include_tag('baby/report');
-		$user = User::current_user();
-		if(!$user){
-			alert("请您先登录！");
-			redirect('/login/');
-			exit();
-		}
-		$db = get_db();
-		$avatars =$db->query("SELECT id,photo,status FROM eachbb_member.member_avatar where u_id=".$user->id.' order by create_at desc limit 3');
-		$avatars_number = $db->query("SELECT unread_msg_count FROM eachbb_member.member_status  where uid=".$user->uid);
-		$avatar_count = $db->record_count;
-		$name =$user->name;
-		$count=$db->query("SELECT count(id)id FROM eachbb_member.message m where status=0 and recieve_id=".$user->id);
-	?>
 <div id="user">
 	<div id="user_ma">
 	<div id="user_ma_s"><font size="2" color="red" ><b>个人信息管理</b></font></div>
