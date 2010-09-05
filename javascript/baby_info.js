@@ -8,7 +8,9 @@ $(function(){
 				alert(data);
 			}else{
 				alert('保存成功！');
-				window.location.reload();
+				$.post('info.php',function(data){
+					$('#haha').html(data);
+				});
 			}
 		});
 		return false;
