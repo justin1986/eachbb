@@ -38,5 +38,5 @@
 ?>
 <script>
 	alert("已成功分享！");
-	window.location.href = "/news/news?id=<?php echo $news_id;#echo get_news_url($news,'static');?>";
+	window.location.href = "/news/news.php?id=<?php echo $news_id;#echo get_news_url($news,'static');?>";
 </script>

@@ -31,7 +31,7 @@
 			<div class="share_line">分享给好友，您可以输入好友昵称和邮件地址，将网趣宝贝精华文章和您的好友分享</div>
 			<form action="/news/share.post.php" method="post" id="share_form">
 				<div class="share_line">
-					<div class="share_mail"><span>好友邮件：</span><input name="mail[]" type="text"></div>
+					<div class="share_mail"><span>好友邮件：</span><input name="mail[]" type="text" style="width:260px;"></div>
 					<div class="share_name"><span>好友昵称：</span><input name="name[]" type="text"></div>
 				</div>
 				<div class="share_line" style="text-align:center; padding-left:150px;"><button type="button" id="add">继续添加</button> <button id="share_submit" type="button">提交</button></div>

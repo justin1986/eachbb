@@ -90,3 +90,4 @@ if($type == 'login'){
 	}
 	User::login($name, $password);
 }
+?>
