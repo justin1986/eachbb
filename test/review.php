@@ -123,9 +123,9 @@ include_once '../inc/User.class.php';
 										foreach ($question_items as $question_item) {
 											if($question_item->id == $choice){
 									?>
-									<li style="color:red;"><input type="radio" name="choice" checked="checked" value="<?php echo $question_item->id;?>" /><?php echo $question_item->name;?></li>
+									<li style="color:red;"><input type="radio" name="choice" checked="checked" value="<?php echo $question_item->id;?>" disabled="disabled" /><?php echo $question_item->name;?></li>
 									<?php }else{ ?>
-										<li><input type="radio" name="choice" value="<?php echo $question_item->id;?>" /><?php echo $question_item->name;?></li>
+										<li><input type="radio" name="choice" value="<?php echo $question_item->id;?>"  disabled="disabled" /><?php echo $question_item->name;?></li>
 									<?php }
 									}?>
 								</ul>
