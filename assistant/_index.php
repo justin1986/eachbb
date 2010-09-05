@@ -63,7 +63,7 @@
 			</div>
 			<div class="list_item_box">
 				<?php
-				$sql = "select a.id,a.title,b.name from eb_assistant a left join eb_category b on a.category_id = b.id where a.is_adopt=1 and a.category_id in(select id from eb_category where category_type='assistant' and parent_id={$top_cates[$i]->id})";
+				$sql = "select a.id,a.title,a.category_id,b.name from eb_assistant a left join eb_category b on a.category_id = b.id where a.is_adopt=1 and a.category_id in(select id from eb_category where category_type='assistant' and parent_id={$top_cates[$i]->id})";
 				$valid_ages=array(-2,-1,1,2,3);
 				if(in_array($_GET['age'], $valid_ages)){
 					$sql .=" and age=" .$_GET['age'];
@@ -74,7 +74,7 @@
 				foreach($assistants as $assistant){?>
 				<div class="list_item">
 					<div class="dot"></div>
-					<div class="item">[<?php echo $assistant->name;?>] <a href="assistant.php?id=<?php echo $assistant->id;?>" title="<?php echo $assistant->title?>" target="_blank" ><?php echo $assistant->title?></a></div>
+					<div class="item">[<a href="list.php?category_id=<?php echo $assistant->category_id?>" class="a_category_list"><?php echo $assistant->name;?></a>] <a href="assistant.php?id=<?php echo $assistant->id;?>" title="<?php echo $assistant->title?>" target="_blank" ><?php echo $assistant->title?></a></div>
 				</div>
 				<?php  }?>
 			</div>
@@ -87,7 +87,7 @@
 				<div class="fct_l" id="fct_lb" style="width:600px;"><?php echo $top_cates[6]->name;?></div>	
 				<div class="fct_r" id="fct_rb"><a href="list.php?category_id=<?php echo $top_cates[6]->id;?>">更多&gt;&gt;</a></div>
 				<?php
-					$sql = "select a.id,a.title,b.name from eb_assistant a left join eb_category b on a.category_id = b.id where a.is_adopt=1 and a.category_id in(select id from eb_category where category_type='assistant' and parent_id={$top_cates[6]->id})";
+					$sql = "select a.id,a.title,a.category_id,b.name from eb_assistant a left join eb_category b on a.category_id = b.id where a.is_adopt=1 and a.category_id in(select id from eb_category where category_type='assistant' and parent_id={$top_cates[6]->id})";
 					$valid_ages=array(-2,-1,1,2,3);
 					if(in_array($_GET['age'], $valid_ages)){
 								$sql .=" and age=" .$_GET['age'];
@@ -105,7 +105,7 @@
 					for($j=($i-6)*7;$j<($i-6)*7+7;$j++){ ?>
 				<div class="fcr_c">
 					<div class="fcrc_d"></div>
-					<div class="fcrc_c">[<?php echo $assistants[$j]->name;?>] <a href="assistant.php?id=<?php echo $assistants[$j]->id;?>" title="<?php echo $assistants[$j]->title?>" target="_blank" ><?php echo $assistants[$j]->title?></a></div>
+					<div class="fcrc_c"><a style="color:#6EB6CA" href="list.php?category_id=<?php echo $assistant->category_id;?>">[<?php echo $assistants[$j]->name;?>]</a> <a href="assistant.php?id=<?php echo $assistants[$j]->id;?>" title="<?php echo $assistants[$j]->title?>" target="_blank" ><?php echo $assistants[$j]->title?></a></div>
 				</div>
 			<?php  }?>
 				</div>
