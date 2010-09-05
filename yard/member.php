@@ -97,9 +97,11 @@
 										<option value='大学本科/大学专科'>大学本科/大学专科</option>
 										<option value='硕士'>硕士</option>
 										<option value='博士'>博士</option>
-									</select></td>
+									</select>
+									<script>$("[name=education]").val('<?php echo $member->education;?>')</script>
+								</td>
 							</tr>
-							<script>$("[name=education]").val('<?php echo $member->education;?>')</script>
+							
 							<tr>
 								<td class=td1>行业：</td>
 								<td class=td2><select name='industry'>
@@ -124,9 +126,11 @@
 					                      <option value="18.商业咨询 顾问服务">18.商业咨询/顾问服务</option>
 					                      <option value="19.媒体 公关 出版 广播 广告等">19.媒体/公关（出版，广播，广告等）</option>
 					                      <option value="20.其他">20.其他</option>
-									</select></td>
+									</select>
+									<script>$("[name=industry]").val('<?php echo $member->industry;?>')</script>
+								</td>
 							</tr>
-							<script>$("[name=industry]").val('<?php echo $member->industry;?>')</script>
+							
 							<tr>
 								<td class=td1>家庭月收入：</td>
 								<td class=td2><select name='income'>
@@ -137,9 +141,11 @@
 										<option value='5000-8000元'>5000-8000元</option>
 										<option value='8000-10000元'>8000-10000元</option>
 										<option value='10000元以上'>10000元以上</option>
-									</select></td>
+									</select>
+									<script>$("[name=income]").val('<?php echo $member->income;?>')</script>
+								</td>
 							</tr>
-							<script>$("[name=income]").val('<?php echo $member->income;?>')</script>
+							
 						</table>
 						<div class=r_title>会员<span>信息</span></div>
 						<table class=r_table>
