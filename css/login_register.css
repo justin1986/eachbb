@@ -3,7 +3,7 @@
 #banner_top{width:800px; height:43px; background:url(/images/zhuce/r_t.jpg) no-repeat; float:left;}
 #banner_content{width:800px; background:#E6F2CC; float:left; }
 	#banner_son{width:759px; height:450px; margin-left:22px; background:#ffffff; float:left; display:inline;}
-		#login{width:235px; height:25px; margin-left:20px; line-height:25px; float:left; display:inline;}
+		#login{width:235px; height:205px; margin-left:20px; line-height:25px; float:left; display:inline;}
 			.title{width:200px; height:25px;  font-size:18px; font-weight:700; color:#333333; float:left;}
 			.user_banner{width:200px; height:20px; margin-top:20px; line-height:20px; float:left;}
 			.user_banner font{font-size:12px; color:#333;}
