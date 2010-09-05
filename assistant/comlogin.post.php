@@ -68,9 +68,11 @@
 	if($err){
 		 	alert($err);
 		 	echo ("<script>parent.window.location.href ='/login'</script>");
-	 }else{
-	 	echo ("<script>parent.window.location.href ='$last_url'</script>");
 	 }
+	 redirect($last_url);
+	 //else{
+//	 	echo ("<script>parent.window.location.href ='$last_url'</script>");
+//	 }
 	 #echo $_COOKIE['cache_name'];
 	# echo ("<script>window.open('".$last_url."');</script>");
 	 #parent.window.location.href=$last_url;
