@@ -104,7 +104,7 @@ include_once '../frame.php';
 					<div id="crb_l"></div>
 					<div id="crbc_c">
 						<div id="crbc_l"><a href="#"><?php echo $_SESSION['doing_test_name'];?><font>测评开始</font></a></div>
-						<div id="crbc_la"><a href="#">当前第<font><?php echo $step + 1;?></font>题</a></div>
+						<div id="crbc_la" style="margin-top:10px;"><a href="#">当前第<font><?php echo $step + 1;?></font>题</a></div>
 						<div id="crbc_lb"><a href="#">共<font><?php echo $question_len?></font>题</a></div>
 					</div>
 					<div id="crb_r"></div>
