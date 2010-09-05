@@ -157,7 +157,9 @@ $(function(){
 		dayNamesMin:["日","一","二","三","四","五","六"],
 		dayNamesShort:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
 		dateFormat: 'yy-mm-dd',
-		afterShow: function(i,e) {alert('oi');e.dpDiv.css('z-index', 2000);  }
+		afterShow: function(i,e) {alert('oi');e.dpDiv.css('z-index', 2000);  },
+		maxDate: '+0d',
+		minDate: '-10y'
 	});
 	
 	//test tab

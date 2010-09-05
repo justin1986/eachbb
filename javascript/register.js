@@ -65,7 +65,7 @@ $(function(){
 	
 	$("#birthday").datepicker(
 	{
-		 yearRange: 'c-70:c+1',
+		 yearRange: 'c-70:c+0',
 		changeMonth: true,
 		changeYear: true,
 		monthNamesShort:['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
@@ -77,7 +77,7 @@ $(function(){
 	
 	$("#baby_birthday2").datepicker(
 	{
-		 yearRange: 'c-60:c+5',
+		 yearRange: 'c-10:c+1',
 		changeMonth: true,
 		changeYear: true,
 		monthNamesShort:['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
