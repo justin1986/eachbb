@@ -8,7 +8,7 @@
 		include_once('../frame.php');
 		use_jquery();
 		css_include_tag('baby','test_report','yard','baby_info','yard_reset_password');
-		js_include_tag('yard/yard_info','baby/report');
+		js_include_tag('yard/yard_info','baby/report','member');
 		$user = User::current_user();
 		if(!$user){
 			alert("请您先登录！");
