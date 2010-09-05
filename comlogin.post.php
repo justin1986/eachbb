@@ -69,7 +69,7 @@
 		 	alert($err);
 	 }
 	 #echo $_COOKIE['cache_name'];
-	 redirect('/');
+	 redirect('/yard');
 	?>
 	</body>
 </html>
