@@ -47,7 +47,7 @@
 			<?php }?>
 		</div>
 		<?php for($i=1;$i<=4;$i++){?>
-		<div class='menu' <?php if($age&&$age!=$i){?>style="display:none;"<?php }?>>
+		<div class='menu' <?php # if($age&&$age!=$i){?>style="display:inline;"<?php #}?>>
 			<?php 
 				switch($i){
 					case 1:echo '0~1岁';break;
@@ -57,7 +57,7 @@
 				}
 			?>
 		</div>
-		<div class="box" <?php if($age&&$age!=$i){?>style="display:none;"<?php }?>>
+		<div class="box" <?php # if($age&&$age!=$i){?>style="display:inline;"<?php #}?>>
 			<?php 
 				$cate = $category->find_by_name('生长发育');
 				$childrens = $category->find_sub_category($cate->id);
@@ -149,6 +149,7 @@
 			<div class="second_title"><a href="list.php?category_id=<?php echo $child->id;?>&age=<?php echo $i;?>"><?php echo $child->name;?></a></div>
 			<?php }}?>
 		</div>
+		
 		<?php }?>
 	</div>
 	<?php include_once('./_assistant_right.php'); ?>

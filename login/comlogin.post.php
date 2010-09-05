@@ -63,7 +63,6 @@
 		$err = "用户名或密码错误";
 		$last_url = $fail_url;
 	}
-	
 	if(User::login($name,$password)){
 		$last_url = $suess_url;
 	}else{
@@ -81,8 +80,10 @@
 	<?
 	if($err){
 		 	alert($err);
+		 	echo ("<script>parent.window.location.href ='/login'</script>");
+	 }else{
+	 	echo ("<script>parent.window.location.href ='/yard'</script>");
 	 }
-	 redirect($last_url);
 	?>
 	</body>
 </html>

@@ -150,7 +150,7 @@
 					<div id="cri_c">
 						<div id="cric_pg">
 							<div id="pric_l"></div>
-							<div id="cric_title"><font>精彩课程</font></div>
+							<div id="cric_title"><font>精彩课程展示</font></div>
 							<div id="cric_c">
 								<?php for($i=0;$i<6;$i++){?>
 								<div class="cricc_a">

@@ -9,7 +9,6 @@
 		css_include_tag('top_inc/assistant_top','assistant_list','assistant/assistant_content','assistant/assistant_question','right_inc/assistant_right','left_inc/assistant_left'); 
 		use_jquery();
 		js_include_tag('assistant/list');
-		
 		$db = get_db();
 		$age = intval($_GET['age']);
 		$category_id = intval($_GET['category_id']);
@@ -40,13 +39,15 @@
 		}
 	?>
 </head>
+
 <body>
 	<div id="ibody">
 		<div id="container">
 			<div id="container_result">
 				<div id="breadbrum">
 					<a href="/assistant/_index.php">助手首页</a>
-					<?php foreach ($breads as $item){
+					<?php
+					 foreach ($breads as $item){
 						echo " >> <a href='list.php?category_id={$item->id}'>{$item->name}</a>";
 					}?>
 					<?php if(in_array($_GET['age'], array(-2,-1,1,2,3))){

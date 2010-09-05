@@ -13,7 +13,7 @@
 		$db = get_db();
 	?>
 </head>
-<body>
+<body style="position: r">
 <div id="ibody">
 	<div id="top_menu">
 			<div id="menu_left"></div>
@@ -208,7 +208,7 @@
 					<div id="dict_a">
 						<div id="dict_title">咨询排行</div>
 						<div id="div_dict_more">
-							<a href="#">more&gt;</a>
+							<a href="/news">more&gt;</a>
 						</div>
 					</div>
 					<div id="dict_menu"> 
@@ -275,7 +275,7 @@
 					<div id="m_r_c">
 						<div class="son_top">
 							<div class="son_t_l">精彩<font style="color:#A4C853; font-weight:bold;" >问答</font></div>
-							<div class="son_t_r"><a href="<?php echo get_news_list_url(208); ?>"><font style="color:#F33B0A; font-weight:bold;" >+</font> 更多</a></div>
+							<div class="son_t_r"><a href="/bbs/forumdisplay.php?fid=10"><font style="color:#F33B0A; font-weight:bold;" >+</font> 更多</a></div>
 						</div>
 						<div class="son_content">
 							<?php 

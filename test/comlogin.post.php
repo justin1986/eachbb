@@ -67,9 +67,11 @@
 	<?
 	if($err){
 		 	alert($err);
+		 	echo ("<script>parent.window.location.href ='/login'</script>");
+	 }else{
+	 	echo ("<script>parent.window.location.href ='/yard'</script>");
 	 }
-	 #echo $_COOKIE['cache_name'];
-	 redirect('/test');
+	 echo $_COOKIE['cache_name'];
 	?>
 	</body>
 </html>
