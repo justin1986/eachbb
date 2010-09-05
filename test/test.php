@@ -33,6 +33,7 @@ include_once '../frame.php';
 		} 
 		$question_queue = @array_merge($questions_tmp['dadongzuo'],$questions_tmp['jingxidongzuo'],$questions_tmp['yuyan'],$questions_tmp['renshi'],$questions_tmp['shehuihuodong']);
 		$_SESSION['question_queue'] = $question_queue;
+		$_SESSION['doing_test_name'] = $test->name;
 	}else{
 		$question_queue = $_SESSION['question_queue'];
 		$step = $_POST['step'];
@@ -102,7 +103,7 @@ include_once '../frame.php';
 				<div id="cr_b">
 					<div id="crb_l"></div>
 					<div id="crbc_c">
-						<div id="crbc_l"><a href="#"><?php echo $test->name;?><font>测评开始</font></a></div>
+						<div id="crbc_l"><a href="#"><?php echo $_SESSION['doing_test_name'];?><font>测评开始</font></a></div>
 						<div id="crbc_la"><a href="#">当前第<font><?php echo $step + 1;?></font>题</a></div>
 						<div id="crbc_lb"><a href="#">共<font><?php echo $question_len?></font>题</a></div>
 					</div>
