@@ -124,8 +124,8 @@ include_once '../frame.php';
 								<?php echo $question->description;?>
 							</div>
 							<div id="crc_bb">
-								<input id="btn_prev" class="btn_submit" type="button" value="上一题" disabled="disabled"> 
-								<input id="btn_next" class="btn_submit" type="button" value="<?php echo $step >= $question_len-1 ? "查看结果" : "下一题";?>" disabled="disabled">
+								<input id="btn_prev" class="btn_submit" type="button" value="上一题"> 
+								<input id="btn_next" class="btn_submit" type="button" value="<?php echo $step >= $question_len-1 ? "查看结果" : "下一题";?>">
 							</div>
 							
 							<input type="hidden" id="hidden_step" name="step" value="<?php echo $step + 1;?>" />
