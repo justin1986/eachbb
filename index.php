@@ -239,6 +239,7 @@
 							<a href="/assistant/index.php?age=1"><img src="/images/index/3.png"/></a>
 							<a href="/assistant/index.php?age=2"><img src="/images/index/4.png"/></a>
 							<a href="/assistant/index.php?age=3"><img src="/images/index/5.png"/></a>
+							<a href="/assistant/index.php?age=4"><img src="/images/index/6.png"/></a>
 						</div>
 						<a href="/assistant/" style="font-size:14px; color:#444444; text-decoration: none;">
 							more&gt;
