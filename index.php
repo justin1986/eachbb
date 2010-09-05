@@ -115,8 +115,8 @@
 			<div id="test">
 				<div id="test_left"  style="position: relative; z-index:1">
 					<div id="test_id">
-						<div id="test_left_top">
-							请输入宝宝的出生日期:　<input type="text" id='date_picker' />
+						<div id="test_left_top" style="z-index:2000">
+							请输入宝宝的出生日期:　<input style="z-index:2000" type="text" id='date_picker' />
 						</div>
 						<div id="btn_begin_test">
 							<a href="#" id="a_begin_test"><img src="/images/index/test.png" border="0" /></a>
@@ -239,6 +239,7 @@
 							<a href="/assistant/index.php?age=1"><img src="/images/index/3.png"/></a>
 							<a href="/assistant/index.php?age=2"><img src="/images/index/4.png"/></a>
 							<a href="/assistant/index.php?age=3"><img src="/images/index/5.png"/></a>
+							<a href="/assistant/index.php?age=4"><img src="/images/index/6.png"/></a>
 						</div>
 						<a href="/assistant/" style="font-size:14px; color:#444444; text-decoration: none;">
 							more&gt;
