@@ -58,7 +58,6 @@
 						<div><a href="/yard/reset_password.php">修改密码</a></div>
 					</div>
 					<div class="c_menu_pg_p" >
-						
 					</div>
 					<form>
 						<table class=r_table>
