@@ -1,3 +1,6 @@
+<?php 
+
+?>
 <div id="hotspot">育儿热点<a href="#">更多&gt;&gt;</a></div>
 <div id="hotspot_container">
 	<div class="kong" style="height:10px;"></div>
