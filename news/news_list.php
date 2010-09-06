@@ -58,8 +58,10 @@
 							<div id="res_pg"></div>
 						</div>
 						<ul>
-							<?php for($i=0;$i<5;$i++){ ?>
-							<li><a href="#">编辑推荐编辑辑辑辑辑辑辑辑辑辑辑辑辑辑辑辑辑推荐</a></li>
+							<?php
+								$list_news=$db->query("SELECT id,title FROM eb_news where set_up=1 and is_adopt=1 and category_id=$id order by created_at desc LIMIT 5");
+							foreach ($list_news as $list){ ?>
+							<li><a href="/news/news.php?id=<?php echo $list->id;?>"><?php echo $list->title;?></a></li>
 							<?php } ?>
 						</ul>
 					</div>
