@@ -45,6 +45,7 @@
 			<?php include(dirname(__FILE__).'/../yard/_yard_left.php');?>
 		</div>
 		<input type="hidden" id="album_id" value="<?php echo $album[0]->id;?>"/>
+		<input type="hidden" id="_id" value="<?php echo $album[0]->id;?>"/>
 		<div id="c_ll">
 			<div id="cl_t"></div>
 			<div id="cl_c"></div>

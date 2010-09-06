@@ -15,10 +15,10 @@
 			<script>window.location.href="/login/";</script>
 			<?php 
 		}
+		$db = get_db();
 		$id=$user->id;
 		$member = new table_class('eachbb_member.member');
 		$member->find($id);
-		$db = get_db();
 	?>
 </head>
 <body>

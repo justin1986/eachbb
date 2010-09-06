@@ -16,7 +16,9 @@
 		}
 		else{
 			$sql = "insert into eachbb_member.mood (content,u_id,u_name,created_at,comment_count)values('$content','{$user->id}','{$user->name}',now(),0);" ;
-			$db->execute("insert into `eachbb_member`.lastest_news (resource_id,resource_type,u_id,created_at,u_name,u_avatar,form,content)values(1,'oneword','{$user->id}',now(),'{$user->name}','{$user->avatar}','说了一句话：','$content')");
+			$select = $db->query("select id from `eachbb_member`.mood where u_id ='{$user->id}' order by created_at desc limit 1 ");
+			$resource_id = $select[0]->id;
+			$db->execute("insert into `eachbb_member`.lastest_news (resource_id,resource_type,u_id,created_at,u_name,u_avatar,form,content)values('$resource_id','oneword','{$user->id}',now(),'{$user->name}','{$user->avatar}','说了一句话：','$content')");
 			if($db->execute($sql)){
 				alert("发布成功！");
 			}else{
