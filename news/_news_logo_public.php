@@ -25,6 +25,7 @@ include_once('../frame.php');
 				<?php } ?>
 			</div>
 			<div class="cla_hr"></div>
-			<img src="/images/index/img_r_a.jpg" style="width:289px; margin-top:10px; border:0px solid red;"/>
+			<?php $img = $db->query("SELECT image1 FROM eb_page_pos e where page='index' and name ='index_teach_pg'");?>
+			<img src="<?php echo $img[0]->image1;?>" style="width:289px; margin-top:10px; border:0px solid red;" />
 		</div>
 	</div>
