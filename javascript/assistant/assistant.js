@@ -42,7 +42,11 @@ $(function(){
 	
 	$('.ttc_a a').click(function(e){
 		e.preventDefault();
-		iframe.window.filter_age($(this).attr('id'));
+		if($('#iframe').length > 0){
+			iframe.window.filter_age($(this).attr('id'));
+		}else{
+			window.location.href = "/assistant/index.php?age=" + $(this).attr('id');
+		}
 	});
 	
 	$(".num").click(function(){

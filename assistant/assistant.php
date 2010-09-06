@@ -167,4 +167,10 @@
 		<?php include_once('../inc/bottom.php'); ?>
 </div>
 </body>
+<script type="text/javascript">
+$('.ttc_a a').click(function(e){
+	e.preventDefault();
+		window.location.href = "/assistant/index.php?age=" + $(this).attr('id');
+});
+</script>
 </html>
