@@ -44,7 +44,7 @@
 						$(this).css('width','8px');
 						$(this).css('background-color','#D8EDC6');
 					}).click(function(){
-						window.location.href = "topic.php?id=" + $(this).attr('id');
+						//window.location.href = "topic.php?id=" + $(this).attr('id');
 					});
 				</script>
 				<div id="t2bv_a"><a href="#">怀孕期</a></div>
