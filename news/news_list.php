@@ -3,7 +3,6 @@
 <head>
 <meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <meta http-equiv=Content-Language content=zh-CN>
-<title>网趣宝贝-育儿资讯</title>
 <?php
 	include_once('../frame.php');
 	$db=get_db();
@@ -31,6 +30,7 @@
 	$all_category_ids = $category->children_map($category_id);
 	$exists_news_ids = array();
 ?>
+<title>网趣宝贝-育儿资讯-<?php echo $title_id[0]->name;?></title>
 </head>
 <body>
 <div id="ibody">
@@ -121,7 +121,7 @@
 									$sql .= " and id not in ({$exists_news_ids})";
 								}
 								$sql .= " order by created_at desc";								
-								$list_news=$db->paginate($sql,26);
+								$list_news=$db->paginate($sql,58);
 								foreach ($list_news as $news){ ?>
 								<div class="list_title">
 									<div></div>
