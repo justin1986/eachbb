@@ -15,6 +15,8 @@
 			redirect('/login/?last_url=/yard/');
 			exit();
 		}
+		session_start();
+		$_SESSION['page_from'] = 'yard';
 		?>
 </head>
 <body>
