@@ -1,14 +1,14 @@
 $(function(){
-	$.post('lastest_news.post.php',{'select':''},function(data){
+	$.post('lastest_news.post.php',{'type':'all'},function(data){
 		$('#test').html(data);
 	});
 	$('.c_ch_w').click(function(){
 		var selected=$('.c_ch_w').index($(this));
 		$('.c_ch_w').attr('style','background:none;');
 		$(this).attr('style','border:0px solid red; background:url(/images/yard/m_pg.jpg) no-repeat;');
-	
+		$('#test').html("<div style='width:540px; text-align:center; margin-top:20px;'><img src='/images/yard/loading.gif' /></div>");
 		if(selected === 0)
-		{
+		{	
 			$.post('lastest_news.post.php',{'type':'all'},function(data){
 				$('#test').html(data);
 			});
@@ -27,15 +27,10 @@ $(function(){
 		}
 		else if(selected === 3)
 		{
-			$.post('lastest_news.post.php',{'type':'dairy'},function(data){
+			$.post('lastest_news.post.php',{'type':'diary'},function(data){
 				$('#test').html(data);
 			});
 		}else if(selected === 4)
-		{
-			$.post('lastest_news.post.php',{'type':'all'},function(data){
-				$('#test').html(data);
-			});
-		}else if(selected === 5)
 		{
 			$.post('lastest_news.post.php',{'type':'all'},function(data){
 				$('#test').html(data);

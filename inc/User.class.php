@@ -267,10 +267,11 @@ class User {
 	public function adjust_score($score,$reason){
 		
 	}
-	public static function search(){
+	public static function lastest_news($type,$user){
 		$db = get_db();
-	    $result = $db->query("select * FROM eachbb_member.lastest_news where u_id in (select f_id from eachbb_member.friend where u_id={$user->id}) order by created_at desc limit 9");
-		$num = $db->record_count;
+		if($type != all){
+		return $db->query("select * from `eachbb_member`.lastest_news where resource_type = '$type' and u_id = '$user' order by created_at desc limit 9");
+	}else{
+		return $db->query("select * from `eachbb_member`.lastest_news where resource_type != '' and u_id = '$user' order by created_at desc limit 9");}
 	}
-	
 }
