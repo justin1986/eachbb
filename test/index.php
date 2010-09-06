@@ -113,10 +113,10 @@
 								<?php
 								if(mb_strlen($pos_items[$pos]->description,'utf-8'))
 								{
-									if(mb_strlen($pos_items[$pos]->description,'utf-8') < 360){
+									if(mb_strlen($pos_items[$pos]->description,'utf-8') < 340){
 										echo $pos_items[$pos]->description.'<a href="#"></a>';
 									}else{
-										echo mb_substr($pos_items[$pos]->description,0,360,'utf-8').'<a href="#">...【查看全文】</a>';
+										echo mb_substr($pos_items[$pos]->description,0,340,'utf-8').'<a href="#" style="color:#000000;">...【查看全文】</a>';
 									}
 								}else{
 									echo '<a href="#"></a>';
@@ -150,7 +150,7 @@
 					<div id="cri_c">
 						<div id="cric_pg">
 							<div id="pric_l"></div>
-							<div id="cric_title"><font>精彩课程</font></div>
+							<div id="cric_title"><font>精彩课程展示</font></div>
 							<div id="cric_c">
 								<?php for($i=0;$i<6;$i++){?>
 								<div class="cricc_a">

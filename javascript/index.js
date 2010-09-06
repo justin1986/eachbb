@@ -70,7 +70,16 @@ $(function(){
 		$('.course_list').hide();
 		$('#course_list_' + selected).show();
 	},function(){});
-	
+	$('img.student_tab').click(function(){
+		var selected = $('img.student_tab').index($(this));
+		if(selected == 0){
+			window.location.href="/course";
+		}else if(selected == 1){
+			window.location.href="/assistant";
+		}else if(selected == 2){
+			window.location.href="/bbs";
+		}
+	});
 	$('img.student_tab').hover(function(){
 		var selected = $('img.student_tab').index($(this));
 		for(var i = 0 ; i < 3; i++){
@@ -147,7 +156,10 @@ $(function(){
 		dayNames:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
 		dayNamesMin:["日","一","二","三","四","五","六"],
 		dayNamesShort:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
-		dateFormat: 'yy-mm-dd'
+		dateFormat: 'yy-mm-dd',
+		afterShow: function(i,e) {alert('oi');e.dpDiv.css('z-index', 2000);  },
+		maxDate: '+0d',
+		minDate: '-10y'
 	});
 	
 	//test tab

@@ -9,7 +9,6 @@
 		css_include_tag('top_inc/assistant_top','assistant_list','assistant/assistant_content','assistant/assistant_question','right_inc/assistant_right','left_inc/assistant_left'); 
 		use_jquery();
 		js_include_tag('assistant/list');
-		
 		$db = get_db();
 		$age = intval($_GET['age']);
 		$category_id = intval($_GET['category_id']);
@@ -35,23 +34,27 @@
 				case 1:return '0~1岁';break;
 				case 2:return '1~2岁';break;
 				case 3:return '2~3岁';break;
+				case 4:return '3~6岁';break;
 				default:return '';
 			}
 		}
 	?>
 </head>
+
 <body>
 	<div id="ibody">
 		<div id="container">
 			<div id="container_result">
 				<div id="breadbrum">
 					<a href="/assistant/_index.php">助手首页</a>
-					<?php foreach ($breads as $item){
+					<?php if(in_array($_GET['age'], array(-2,-1,1,2,3,4))){
+						echo " >> <a href='/assistant/_index.php?age={$_GET['age']}'>",convert_age($_GET['age']),"</a>";
+					}?>
+					<?php
+					 foreach ($breads as $item){
 						echo " >> <a href='list.php?category_id={$item->id}'>{$item->name}</a>";
 					}?>
-					<?php if(in_array($_GET['age'], array(-2,-1,1,2,3))){
-						echo " >> ",convert_age($_GET['age']);
-					}?>
+					
 				</div>
 				<?php
 					if($level == 1){

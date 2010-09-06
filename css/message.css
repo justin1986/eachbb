@@ -1,0 +1,15 @@
+#message_container{width:760px; float:right; display:inline;}
+	.message_stauts{width:750px; margin-top:15px;  float:right; display:inline;}
+		.message_title{width:740px; height:30px; padding-left:10px; font-size:14px; line-height:30px; overflow:hidden; background:#A8C783; float:left; display:inline;}
+			.banner_del{width:70px; height:30px; font-size:12px; cursor:pointer; color:#000; float:right; display:inline;}
+			.banner_dell{width:70px; height:30px; font-size:12px; cursor:pointer; color:#000; float:right; display:inline;}
+			.banner_delete{width:70px; height:30px; font-size:12px; cursor:pointer; color:#000; float:right; display:inline;}
+			.message_title font{font-size:12px;}
+		.message_banner{width:750px; padding-bottom:10px; float:left; display:inline;}
+		.message_img{width:100px; height:100px; margin-left:15px; margin-top:15px; float:left; display:inline;}
+		.message_result{width:620px; margin-top:12px; line-height:20px; float:right; display:inline;}
+		.message_bottom{width:710px; height:30px; cursor:pointer; text-align:center; float:left; displaY:inline;}
+		.message_btn{width:100px; height:35px; text-align: center; line-height: 30px; font-size:14px; background:url(/images/assistant_list/btn_1.jpg) no-repeat; float:right; display:inline;}
+		
+		.right_dvi{width:740px;}
+		.ri_message{width:50px; height:16px; margin-left:20px; cursor:pointer; float:right; display:inline;}

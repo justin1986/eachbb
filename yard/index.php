@@ -12,7 +12,7 @@
 		$user = User::current_user();
 		if(!$user){
 			alert("请您先登录！");
-			redirect('/login/');
+			redirect('/login/?last_url=/yard/');
 			exit();
 		}
 		?>
@@ -129,10 +129,6 @@
 					<div id="box_right">
 						<div id="ccps_l" style="float:left;"><a href="/yard/info.php"><img src="/images/yard/c_p.jpg" border=0/></a></div>
 						<div id="ccps_c">
-							<div id="ccpsc_l">
-								<div id="ccpsc_img"></div>
-								<div id="ccpsc_word"><a href="">发分享</a></div>
-								</div>
 							<div id="ccpsc_la">
 								<div id="ccpsc_imga"></div>
 								<div id="ccpsc_worda"><a href="/yard/upload_photo.php">传照片</a></div>

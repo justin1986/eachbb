@@ -6,6 +6,7 @@ $db=get_db();
 if(!isset($_SESSION['login'])){
 	$_SESSION['login'] = rand_str();
 }
+$count=$db->query("SELECT count(id)id FROM eachbb_member.message m where status=0 and recieve_id=".$user->id);
 if($user){
 	$count_comment=mysql_query('SELECT id FROM eachbb_member.`comment` c where user_id=3');
 	$num_rows = mysql_num_rows($count_comment); 
@@ -15,7 +16,7 @@ if($user){
 	<div id="lp_l"><img src="<?php echo $user->avatar ? $user->avatar : '/images/class/l_peo.jpg';?>"></div>
 	<div id="lp_word"><?php echo $user->name;?></div>
 </div>
-<div id="l_b_wa">您有<font><?php echo $num_rows; ?></font>条评论</div>
+<div id="l_b_wa">您有<a href="/baby/message_index.php"><?php echo $count[0]->id; ?></a>条消息</div>
 <div id="l_b_wb"><a href="/yard">我家小院子</a></div>
 <?php }else{?>
 <div id="lp_t">个人信息管理</div>

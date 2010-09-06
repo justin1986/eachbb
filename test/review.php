@@ -32,6 +32,11 @@ include_once '../inc/User.class.php';
 		$step = 0;
 		$questions = $db->query("select id,question_type from eb_question where problem_id={$test->id}");
 		!$questions && $questions = array();
+		$questions_tmp['dadongzuo'] = array();
+		$questions_tmp['jingxidongzuo'] = array();
+		$questions_tmp['yuyan'] = array();
+		$questions_tmp['renshi'] = array();
+		$questions_tmp['shehuihuodong'] = array();;
 		foreach($questions as $question){
 			$questions_tmp[$question->question_type][] = array('id'=> $question->id,'question_type'=>$question->question_type,'score'=> 0,'choice'=>0);
 		} 
@@ -118,9 +123,9 @@ include_once '../inc/User.class.php';
 										foreach ($question_items as $question_item) {
 											if($question_item->id == $choice){
 									?>
-									<li style="color:red;"><input type="radio" name="choice" checked="checked" value="<?php echo $question_item->id;?>" /><?php echo $question_item->name;?></li>
+									<li style="color:red;"><input type="radio" name="choice" checked="checked" value="<?php echo $question_item->id;?>" disabled="disabled" /><?php echo $question_item->name;?></li>
 									<?php }else{ ?>
-										<li><input type="radio" name="choice" value="<?php echo $question_item->id;?>" /><?php echo $question_item->name;?></li>
+										<li><input type="radio" name="choice" value="<?php echo $question_item->id;?>"  disabled="disabled" /><?php echo $question_item->name;?></li>
 									<?php }
 									}?>
 								</ul>

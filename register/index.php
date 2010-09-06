@@ -39,7 +39,7 @@
 						<div class="ca_a">*</div>
 						<div class="ca_b">登录密码</div>
 						<div class="ca_c"><input name="password" id="password" type="password"/> </div>
-						<div class="ca_d" id="password_info">请设置4-20个字符，包含英文大小写字母、数字和部分标点符号组合</div>
+						<div class="ca_d" id="password_info">请设置4-20个字符，包含英文大小写字母和数字组合</div>
 					</div>
 					<div class="c_a">
 						<div class="ca_a">*</div>
@@ -119,9 +119,7 @@
 			</div>
 			<div id="cpg_b"></div>
 		</div>
-		<div id="bg_hr"></div>
-		<div id="bottom">关于我们 - 加入我们 - 友情链接 - 联系我们 - 服务条款 - 隐私保护 - 网站地图</div>
-		<div id="bottom_b">哈哈少儿旗下网站  Copyright © 1997-2010 HAHA.smg.com All Rights Reserved.</div>
+		<?php include_once(dirname(__FILE__).'./../inc/bottom.php');?>
 	</div>
 </div>
 </body>

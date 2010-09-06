@@ -50,13 +50,19 @@
 	
 	$name=$_POST['name'];
 	$password=$_POST['password'];
-	$suess_url =   $_POST['last_url'] ? $_POST['last_url'] :'/';
-	$fail_url = $_POST['last_url'] ?"index.php?last_url=" .$_POST['last_url'] :"/login/";
+	if($_POST['last_url']){
+		$last_url = $_POST['last_url'];
+	}
+	if(!$last_url && $_SERVER['HTTP_REFERER'] && strpos($_SERVER['HTTP_REFERER'], '/login/')=== false){
+		$last_url = $_SERVER['HTTP_REFERER'];
+	}
+	!$last_url && $last_url = '/yard/';
+	$suess_url =  $last_url;
+	$fail_url = "/login/index.php?last_url=" .$last_url;
 	if(strlen($name)>20 || strlen($password)>20){
 		$err = "用户名或密码错误";
 		$last_url = $fail_url;
 	}
-	
 	if(User::login($name,$password)){
 		$last_url = $suess_url;
 	}else{

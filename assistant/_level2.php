@@ -37,7 +37,7 @@ $filter_age = array(-2,-1,1,2,3);
 		?>
 		<div class="result_container2">
 			<div class="result_title2"><a  target="_blank" href="/assistant/assistant.php?id=<?php echo $assistant->id;?>"><?php echo $assistant->title;?></a></div>
-			<div class="result_value"><?php echo mb_substr(strip_tags($assistant->description),0,45,'utf-8');?>…<a href="/assistant/assistant.php?id=<?php echo $assistant->id;?>" target="_blank">[查看全文]</a></div>
+			<div class="result_value"><?php echo mb_substr(strip_tags($assistant->content),0,60,'utf-8');?>…<a href="/assistant/assistant.php?id=<?php echo $assistant->id;?>" target="_blank">[查看全文]</a></div>
 		</div>
 		<?php }?>
 	</div>
