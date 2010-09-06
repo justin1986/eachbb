@@ -2,14 +2,14 @@ $(function(){
 	$('.crbci_t a').click(function(e){
 		e.preventDefault();
 		var selected=$('.crbci_t a').index($(this));
-		$('#flash_dis_'+selected).show();
+		$.fn.colorbox({href:'/inc/_public_result_ajax_post_view.php?page=test_index&result=middle_intr_'+selected});
 	});
 	
 	$('#cr_0').show();
 	$('.crf_c a').click(function(e){
 		e.preventDefault();
 		var selected = $('.crf_c a').index($(this));
-		$('#flash_discription_'+selected).show();
+		$.fn.colorbox({href:'/inc/_public_result_ajax_post_view.php?page=test_index&result=top_intr_'+selected});
 	});
 	$('.f_d_btn').click(function(e){
 		e.preventDefault();

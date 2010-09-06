@@ -7,8 +7,8 @@
 	<?php 
 		include_once(dirname(__FILE__).'/frame.php');
 		use_jquery_ui();
-		css_include_tag('index','jquery_ui','bottom');
-		js_include_tag('index','swfobject');
+		css_include_tag('index','jquery_ui','bottom','colorbox');
+		js_include_tag('index','swfobject','jquery.colorbox-min');
 		init_page_items('index');
 		$db = get_db();
 	?>
@@ -135,23 +135,9 @@
 								<div class="context_title"><?php echo $pos_items[$pos]->title;?></div>
 								<div class="context_content"><?php echo  $pos_items[$pos]->description ? mb_substr($pos_items[$pos]->description,0,75,'utf-8').'...' : ''; ?></div>
 								<div class="test_content_more">
-									<a href=""  class="beijiu">查看全文</a>
+									<a href=""  class="beijiu"> 查看全文</a>
 								</div>
 							</div>
-						</div>
-						<div id="flash_discription_<?php echo $i;?>" class="flash_discription">
-							<?php if($pos_items[$pos]->description){?>
-							<div class="f_d_title">标题：<?php echo $pos_items[$pos]->title;?></div>
-							<div class="f_d_content">
-								<div class="f_d_c">内容:</div>
-								<div class="f_d_resutlt">
-									<?php echo $pos_items[$pos]->description;?>
-								</div>
-							</div>
-							<?php }else{?>
-							<div class="fd_content" style="height:120px; line-height:120px;">内容为空！</div>
-							<?php }?>
-							<div class="f_d_btn">返回</div>
 						</div>
 						<?php }?>
 						<div id="div_right_arrow">
