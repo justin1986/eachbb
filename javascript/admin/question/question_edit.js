@@ -1,5 +1,4 @@
 $(function(){
-	
 	$('#add_question_item').live('click',function(){
 		$.post('/admin/question/_question_item.php',{'qid':$('#hidden_question_id').val()},function(data){
 			if($('.question_item').length >0 ){

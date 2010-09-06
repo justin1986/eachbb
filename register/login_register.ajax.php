@@ -2,6 +2,9 @@
 	include_once('../frame.php');
 	if(!is_ajax()) die('invalid request!');
 ?>
+<style>
+.menu font{font-size:12px; color:red;}
+</style>
 <div id="banner">
 	<div id="banner_top"></div>
 	<div id="banner_content">
@@ -16,22 +19,22 @@
 			<div id="logon">
 				<div class="title" style="width:470px; text-align:center;">用户注册</div>
 				<div class="logon_left">
-					<div class="menu">用户名：</div>
-					<div class="menu">邮箱：</div>
-					<div class="menu">密　码：</div>
-					<div class="menu">确认密码：</div>
-					<div class="menu">性别：</div>
-					<div class="menu">是否生育：</div>
-					<div class="menu baby_birth" id="baby_display">宝宝生日：</div>
-					<div class="menu">出生日期：</div>
-					<div class="menu">验证码：</div>
+					<div class="menu"><font >*</font>用户名：</div>
+					<div class="menu"><font >*</font>邮箱：</div>
+					<div class="menu"><font >*</font>密　码：</div>
+					<div class="menu"><font >*</font>确认密码：</div>
+					<div class="menu"><font >*</font>性别：</div>
+					<div class="menu"><font >*</font>是否生育：</div>
+					<div class="menu baby_birth" id="baby_display"><font >*</font>宝宝生日：</div>
+					<div class="menu"><font >*</font>出生日期：</div>
+					<div class="menu"><font >*</font>验证码：</div>
 				</div>
 				<div id="midden">
 					<div class="menu"><input id="register_name" type="text"/></div>
 					<div class="menu"><input id="register_email" type="text"/></div>
 					<div class="menu"><input id="register_password" type="password"></div>
 					<div class="menu"><input id="confirm_password" type="password"></div>
-					<div class="menu" style="margin-top:22px; line-height:20px;"><input name="gender" type="radio" style="width:13px; height:13px; margin:0px; border:0px solid red;" name="gender" value="1"/>男<input type="radio" id="nv" name="gender" style="width:13px; height:13px; margin:0px; margin-left:20px; border:0px solid red;" name="gender" checked="checked" value="2"/><font>女</font></div>
+					<div class="menu" style="margin-top:22px; line-height:20px;"><input name="gender" type="radio" style="width:13px; height:13px; margin:0px; border:0px solid red;" name="gender" value="1"/>男<input type="radio" id="nv" name="gender" style="width:13px; height:13px; margin:0px; margin-left:20px; border:0px solid red;" name="gender" checked="checked" value="2"/>女</div>
 					<div class="menu" style="margin-top:18px;" >
 						<select id="sel_baby_status">
 							<option value="0">请选择</option>
@@ -45,7 +48,7 @@
 					<div class="menu"><input id="virefy" type="text"/></div>
 				</div>
 				<div id="right">
-					<div class="menu">4-20位，包含英文大小字母和数字组成</div>
+					<div class="menu" id="menu_ida">4-20位，包含英文大小字母和数字组成</div>
 					<div class="menu">请填写真实有效邮箱地址并妥善保管</div>
 					<div class="menu">含英文大小写字母、数字和部分标点符号</div>
 					<div class="menu">两次密码必须输入一致</div>
@@ -61,10 +64,10 @@
 	$(function(){
 		$('#btn').click(function(){
 			$.post('/register/ajax.post.php',{'type':'login','name':$('#login_name').val(), 'password':$('#login_password').val()},function(data){
-				if(data){
+				if(data){					
 					alert(data);
 				}else{
-					window.location.href="/test/save_test_result.php";
+					window.location.href="/yard.php";
 				}
 			});
 		});
@@ -114,6 +117,8 @@
 
 		$('#logon_btn').click(function(){
 			if($('#register_name').val()==''){
+//				$('#menu_ida').html("4-20位，包含英文大小字母和数字组成");
+//				$('#menu_ida').css("color","red");
 				alert('请输入用户名');
 				$('#register_name').focus();
 				return;

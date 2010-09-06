@@ -13,6 +13,7 @@
 	$valid_age = array(1,2,3);
 	$age = in_array($age,$valid_age) ? $age : 1;
 	$month = 0 <= $month && $month <= 11 ? $month=$month+1 : 1;
+	$user = User::current_user();
 	?>
 <html>
 <head>
@@ -21,8 +22,8 @@
 <title>网趣宝贝-课程列表</title>
 <?php
 	use_jquery();
-	css_include_tag('course/course_top','info');
-	js_include_tag('course/info');
+	css_include_tag('course/course_top','info','test_left_inc');
+	js_include_tag('course/info','left_inc');
 ?>
 </head>
 <body>
@@ -33,18 +34,7 @@
 				<div id="l_img">
 					<img src="/images/info/t_<?php echo $mon;?>.jpg"/>
 				</div>
-				<div id="l_pho">
-					<div id="lp_t">个人信息管理</div>
-					<div id="lp_p">
-						<div id="lp_l"><img src="/images/class/l_peo.jpg"></div>
-						<div id="lp_word">司法撒旦发射发声法</div>
-					</div>
-					<div id="l_b_wa"><a href="#">您有<font>0</font>新条评论</a></div>
-					<div class="l_b_wb"><a href="#">我的博客</a></div>
-					<div class="l_b_wb"><a href="#">宝宝最新测试报告</a></div>
-					<div class="l_b_wb"><a href="#">宝宝本期课程</a></div>
-					<div class="l_b_wb"><a href="#">宝宝下期课程提示</a></div>
-				</div>
+				<div id="l_pho"></div>
 				<a href="#">
 				<img id="l_look" src="/images/yetrb/asdf.jpg"/>
 				</a>
@@ -62,46 +52,23 @@
 				<div class="hlc_bb"></div>
 				<div id="l_f">
 					<div id="lf_l">我的<font>好友</font></div>
-					<div id="lf_c">（<font>345</font>）</div>
-					<div id="lf_r">More &gt;&gt;</div>
 				</div>
 				<div id="pic_r">
-					<div class="ppg">
-						<div class="pic_pg">
-							<div class="pic_img"><img src="/images/yard/pho.jpg"></div>
+					<?php
+						$db=get_db();
+						$list=$db->query("SELECT id,f_id,f_name,f_avatar FROM eachbb_member.friend f where u_id={$user->id} LIMIT 6");
+						foreach($list as $friend){ ?>
+						<div class="ppg">
+							<div class="pic_pg">
+								<div class="pic_img"><img src="<?php echo $friend->f_avatar; ?>"></div>
+							</div>
+							<div class="ppg_w"><?php echo $friend->f_name; ?></div>
 						</div>
-						<div class="ppg_w">safsadfas</div>
-					</div>
-					<div class="ppg">
-						<div class="pic_pg">
-							<div class="pic_img"><img src="/images/yard/pho.jpg"></div>
-						</div>
-						<div class="ppg_w">safsadfas</div>
-					</div>
-					<div class="ppg">
-						<div class="pic_pg">
-							<div class="pic_img"><img src="/images/yard/pho.jpg"></div>
-						</div>
-						<div class="ppg_w">safsadfas</div>
-					</div>
-					<div class="ppg">
-						<div class="pic_pg">
-							<div class="pic_img"><img src="/images/yard/pho.jpg"></div>
-						</div>
-						<div class="ppg_w">safsadfas</div>
-					</div>
-					<div class="ppg">
-						<div class="pic_pg">
-							<div class="pic_img"><img src="/images/yard/pho.jpg"></div>
-						</div>
-						<div class="ppg_w">safsadfas</div>
-					</div>
-					<div class="ppg">
-						<div class="pic_pg">
-							<div class="pic_img"><img src="/images/yard/pho.jpg"></div>
-						</div>
-						<div class="ppg_w">safsadfas</div>
-					</div>
+						<?php }
+						if(!$list){
+							echo '<div style="width:210px; height:20px; padding-bottom:20px; margin-top:20px; line-height:20px; text-align:center; font-size:14px; font-weight:bold;">您的好友为空！</div>';
+						}
+						?>
 				</div>
 				<img id="pg_a" src="/images/info/img_<?php echo $age;?>.jpg"/>
 			</div>

@@ -13,7 +13,7 @@
 			<input type="text" name="result[max][]" value="<?php echo $result->max_score?>" style="float:none;width:50px;"/>
 			<img src="/images/admin/btn_delete.png" class="<?php echo $del_class;?>" style="cursor:pointer;" /><br/>
 			<textarea rows="3" name="result[description][]" style="float:none;width:500px;"><?php echo $result->description;?></textarea><br/>
-			<?php if($result->id){?>
+			<?php if($problem->problem_type==1 && $result->id){?>
 			<b>妈妈助手推荐</b>: <img src="/images/admin/btn_add.png" style="cursor:pointer;" class="add_assister" />
 			<ul class="ul_assister">
 				<?php 

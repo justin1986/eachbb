@@ -11,7 +11,7 @@
 }
 #tl_l{
 	width:227px;
-	background:url('/images/top/logon.jpg') no-repeat;
+	background:url('/images/top/logon.png') no-repeat;
 	float:left;
 }
 #tl_r{
@@ -103,7 +103,7 @@
 	}
 .xiaoxi{
 	height:16px;
-	margin-top:10px;
+	margin-top:7px;
 	font-size:12px;
 	line-height:16px;
 	font-weight:bold;
@@ -125,7 +125,7 @@
 }
 .exit{
 	height:16px;
-	margin-top:10px;
+	margin-top:7px;
 	font-size:12px;
 	line-height:16px;
 	font-weight:bold;

@@ -1,7 +1,6 @@
 <?php
 session_start();
 include_once '../frame.php';
-include_once '../inc/user.class.php';
 $valid_types = array('login','register');
 $type= $_POST['type'];
 if($type == 'login'){
@@ -91,3 +90,4 @@ if($type == 'login'){
 	}
 	User::login($name, $password);
 }
+?>

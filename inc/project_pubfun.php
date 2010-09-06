@@ -149,3 +149,61 @@ function get_gender($gender){
 	}
 }
 
+function insert_ad_record($ad,$type='show'){
+	if(is_int($ad)){
+		$table = new table_class('eachbb_ad.eb_ad');
+		$table->find($ad);
+		$ad = $table;
+	}
+	$list = new table_class("eachbb_ad.eb_ad_{$type}_list");
+	$list->ad_id = $ad->id;
+	$list->ad_name = $ad->name;
+	$list->channel_id = $ad->channel_id;
+	$list->banner_id = $ad->banner_id;
+	$list->create_at = now();
+	$list->show_page = $_POST['url'] ? $_POST['url'] : $_SERVER['HTTP_REFERER'];
+	$list->remote_ip = $_SERVER['REMOTE_ADDR'];
+	$list->save();
+}
+
+function add_latest($type,$r_id,$content){
+	$user = User::current_user();
+	$db = get_db();
+	$sql = "insert into eachbb_member (resource_type,resource_id,content,created_at,u_id,u_name,u_avatar) values('$type',$r_id,'$content',now(),{$user->id},'{$user->name}','{$user->avatar}')";
+	return $db->execute($sql);
+}
+
+function refresh_course_xml(){
+	$db = get_db();
+	$db->query("select id from eb_category where category_type='image' and name='课程flash'");
+	if($db->record_count < 0 ){
+		return false;
+	}
+	$cate_id = $db->field_by_name('id');
+	
+	$items = $db->query("select * from eb_images where category_id = {$cate_id} and is_adopt=1 order by priority,created_at asc limit 4");
+	$out = '﻿<?xml version="1.0" encoding="UTF-8"?>';
+	$out .='<settings';
+	$out .=' autoRotate="1"';
+	$out .=' autoRotateSpeed="3"';
+	$out .=' useSubtitle="0"';
+	$out .=' useTooltip="1"';
+	$out .=' useSecondCaption="1"';
+	$out .=' spanX="170"' ;
+	$out .=' spanY="20"';
+	$out .=' centerX="260"'; 
+	$out .=' centerY="280"';
+	$out .=' distanceValue="0"'; 
+	$out .=' perspectiveRatio="0.85"';
+	$out .=' minimumscale="0.99"' ;
+	$out .=' turningspeed="4"' ;
+	$out .=' rotationKind="1"' ;
+	$out .='/>';
+	$out .='<photos>';
+	for($i=0;$i<4; $i++){
+		$out .= '<photo imageURL="'.$items[$i]->src.'" linkData="'.$items[$i]->url.'" linkType="URL" linkTarget="_blank" captionText="" captionText2="" enableButtonWhenInFront="1"/>';
+	}	
+	$out .= "</photos>";
+	return write_to_file(dirname(__FILE__).'/../course/data.xml', $out,'w');
+}
+

@@ -1,27 +1,10 @@
-<?php 
-		include_once('../frame.php');
-		use_jquery();
-		css_include_tag('baby','test_report');
-		js_include_tag('baby/report');
-		$user = User::current_user();
-		if(!$user){
-			alert("请您先登录！");
-			redirect('/login/');
-			exit();
-		}
-		$db = get_db();
-		$avatars =$db->query("SELECT id,photo,status FROM eachbb_member.member_avatar where u_id=".$user->id.' order by create_at desc limit 3');
-		$avatars_number = $db->query("SELECT unread_msg_count FROM eachbb_member.member_status  where uid=".$user->uid);
-		$avatar_count = $db->record_count;
-		$name =$user->name;
-	?>
 <div id="user">
 	<div id="user_ma">
 	<div id="user_ma_s"><font size="2" color="red" ><b>个人信息管理</b></font></div>
 	<div id="user_ma_b"></div>
 	<div id="user_ma_h"><div style="float:left;height:50px;width:50px;"><img  src="<?php echo $user->avatar; ?>" style="height:50px;width:50px;"/></div><div style="float:left;margin-left:3px;"><font size="2"><b><?php if($name){echo $name;}else{alert("操作有误！");} ?></b></font></div></div>
 	<div class="user_b">
-	<div class="user_b_t"><img src="/images/avatar/apoint.png"></img><font size="2" style="margin-left:5px;">您有</font><a href="talk.php"><font size="2" color="red" ><?php if($avatars_number){ echo $avatars_number[0]->unread_msg_count;}else{ echo '0';}?></font></a><font size="2" >条新消息</font></div>
+	<div class="user_b_t"><img src="/images/avatar/apoint.png"></img><font size="2" style="margin-left:5px;">您有</font><a href="/baby/message_index.php"><?php echo $count[0]->id ? $count[0]->id : 0;?></a><font size="2" >条新消息</font></div>
 	<div class="user_b_t" style="padding-bottom:5px;"><img src="/images/avatar/apoint.png"></img><a href="/yard/"><font size="2" color="black" style="margin-left:5px;">我的小院子</font></a></div></div>
 	</div>
 	<div id="user_me">

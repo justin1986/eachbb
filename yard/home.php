@@ -51,7 +51,6 @@
 		<div id="menu_b" class="menu_pic" style="background:url(../images/yard/m_1.jpg) no-repeat;"></div>
 		<div id="menu_c" class="menu_pic"></div>
 		<div id="menu_d" class="menu_pic"></div>
-		<div id="menu_e" class="menu_pic"></div>
 		<div id="menu_f" class="menu_pic"></div>
 	</div>
 	</div>
@@ -78,7 +77,7 @@
 					<div id = "p1_buttonbox">
 						<div class="p1_but">
 							<div class="but_nl"></div>
-							<div class="but_name">发短消息</div>
+							<div class="but_name"><a href="/baby/message_index.php?id=<?php echo $id;?>">发短消息</a></div>
 							<div class="but_nr"></div>
 						</div>
 						<div class="p1_but" style="float:right;">

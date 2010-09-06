@@ -13,30 +13,8 @@
 		$db = get_db();
 	?>
 </head>
-<body>
+<body style="position: r">
 <div id="ibody">
-<!-- 
-	<div id="top_login">
-		<div id="login">
-			<div id="login_login">
-				<div id="login_img"></div>
-				<div id="login_word"><a href="/login/">登录</a></div>
-			</div>
-			<div id="register">
-				<div id="register_img"></div>
-				<div id="register_word"><a href="/register/">注册</a></div>
-			</div>
-			<div id="comeback">
-				<div id="comeback_img"></div>
-				<div id="comeback_word"><a href="/">返回首页</a></div>
-			</div>
-			<div id="member">
-				<div id="member_img"></div>
-				<div id="member_word"><a href="#">用户中心</a></div>
-			</div>
-		</div>
-	</div>
-	 -->
 	<div id="top_menu">
 			<div id="menu_left"></div>
 			<div id="menu_center">
@@ -88,7 +66,7 @@
 								for( $i = 0 ; $i < 4 ; $i++){ ?>
 								<div class = "student_pg"<?php $pos="top_tab_1_$i";show_page_pos($pos,'link');?>>
 									<div class = "student_l"/></div>
-									<?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href);?>
+									<?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href,array('target' => '_blank'));?>
 								</div>
 								<?php if($i != 3){?>
 								<div class = "student_hr"></div>		
@@ -99,7 +77,7 @@
 								for( $i = 4 ; $i < 9 ; $i++){ ?>
 								<div class = "student_pg"<?php $pos="top_tab_2_$i";show_page_pos($pos,'link');?>>
 									<div class = "student_l"/></div>
-									<?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href);?>
+									<?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href,array('target' => '_blank'));?>
 								</div>
 								<?php if($i != 8){?>
 								<div class = "student_hr"></div>
@@ -110,7 +88,7 @@
 								for( $i = 0 ; $i < 4 ; $i++){ ?>
 								<div class = "student_pg"<?php $pos="top_tab_3_$i";show_page_pos($pos,'link');?>>
 									<div class = "student_l"/></div>
-									<?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href);?>
+									<?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href,array('target' => '_blank'));?>
 								</div>
 								<?php if($i != 3){?>
 								<div class = "student_hr"></div>
@@ -119,9 +97,7 @@
 							<div id="student_right"></div>
 						</div>
 					</div>
-					<div id="r_spring"<?php $pos="r_spring";show_page_pos($pos,'link_i');?>>
-						<a href="<?php echo $pos_items[$pos]->href?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1:'/images/index/r_d.gif'?>" /></a>
-					</div>
+					<div class="ad_banner" id="index_right_banner_1"></div>
 				</div>
 			</div>
 			<div id="sousuo">
@@ -137,10 +113,10 @@
 				<div id="sousuo_d"></div>
 			</div>
 			<div id="test">
-				<div id="test_left">
+				<div id="test_left"  style="position: relative; z-index:1">
 					<div id="test_id">
-						<div id="test_left_top">
-							请输入宝宝的出生日期:　<input type="text" id='date_picker' />
+						<div id="test_left_top" style="z-index:2000">
+							请输入宝宝的出生日期:　<input style="z-index:2000" type="text" id='date_picker' />
 						</div>
 						<div id="btn_begin_test">
 							<a href="#" id="a_begin_test"><img src="/images/index/test.png" border="0" /></a>
@@ -150,18 +126,32 @@
 						<div id="div_left_arrow">
 							<a href="#" id="a_left_arrow"><img src="/images/index/l_l.png" border="0" /></a>
 						</div>
-						<?php for($i=0;$i<4;$i++){?>
+						<?php for($i=0;$i<5;$i++){?>
 						<div id="test_tab_<?php echo $i;?>" class="test_tab" <?php if($i==0) echo ' style="display:inline;"';?> <?php $pos="test_tab_{$i}"; show_page_pos($pos,'link_d_i')?>>
 							<div class="test_img">
 								<a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1: '/images/index/test_sample.jpg';?>" border="0" /></a>
 							</div>
 							<div class="test_context">
-								<div class="context_title"><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href);?></div>
-								<div class="context_content"><?php echo_href($pos_items[$pos]->description, $pos_items[$pos]->href);?></div>
-							</div>
-							<div class="test_content_more">
-									<a href="<?php echo $pos_items[$pos]->href;?>"><img src="/images/index/more.gif" border="0" /></a>
+								<div class="context_title"><?php echo $pos_items[$pos]->title;?></div>
+								<div class="context_content"><?php echo  $pos_items[$pos]->description ? mb_substr($pos_items[$pos]->description,0,75,'utf-8').'...' : ''; ?></div>
+								<div class="test_content_more">
+									<a href=""  class="beijiu">查看全文</a>
 								</div>
+							</div>
+						</div>
+						<div id="flash_discription_<?php echo $i;?>" class="flash_discription">
+							<?php if($pos_items[$pos]->description){?>
+							<div class="f_d_title">标题：<?php echo $pos_items[$pos]->title;?></div>
+							<div class="f_d_content">
+								<div class="f_d_c">内容:</div>
+								<div class="f_d_resutlt">
+									<?php echo $pos_items[$pos]->description;?>
+								</div>
+							</div>
+							<?php }else{?>
+							<div class="fd_content" style="height:120px; line-height:120px;">内容为空！</div>
+							<?php }?>
+							<div class="f_d_btn">返回</div>
 						</div>
 						<?php }?>
 						<div id="div_right_arrow">
@@ -182,9 +172,8 @@
 							<div style="margin-left:35px;"><img src="/images/index/course_tab_2.jpg" class="course_tab"></div>
 							<div style="margin-left:30px;"><img src="/images/index/course_tab_3.jpg" class="course_tab"></div>
 						</div>
-						<a href="/course/">
-							<img id="dict_more"  style="margin-top:20px;" src="/images/index/more.gif" />
-						</a> 
+						<div id="dict_more"><a href="/course/">more&gt;</a></div>
+						
 					</div>
 					<?php 
 					for($i=1;$i<5;$i++){
@@ -193,10 +182,12 @@
 					?>
 					<div class="course_list" id="course_list_<?php echo $i-1;?>" style="<?php if(1==$i){ echo 'display:inline;';}else{ echo 'display:none;';} ?>">
 					<div class="student_c"<?php $pos="course_tab_head_$i";show_page_pos($pos,'link_d_i');?>>
-						<div class="s_pic_l"><a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1;?>" border="0"></a></div>
-						<div class="s_pic_r">
-							<div class="s_word_top"><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href);?></div>
-							<div class="s_word_cotent"><?php echo_href($pos_items[$pos]->description, $pos_items[$pos]->href);?></div>
+						<div class="s_pic_l">
+							<a href="#"><img src="<?php echo $pos_items[$pos]->image1;?>" border="0"></a>
+						</div>
+						<div class="s_pic_r" style="width:510px;">
+							<div class="s_word_top"><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href,array('target' => '_blank'));?></div>
+							<div class="s_word_cotent"><?php echo_href($pos_items[$pos]->description, $pos_items[$pos]->href,array('target' => '_blank'));?></div>
 						</div>
 					</div>
 					<div class="stuent_d">
@@ -217,9 +208,7 @@
 					<div id="dict_a">
 						<div id="dict_title">咨询排行</div>
 						<div id="div_dict_more">
-							<a href="#" style="line-height: 30px;">
-								<img src="/images/index/more.gif" border="0" />
-							</a> 
+							<a href="/news">more&gt;</a>
 						</div>
 					</div>
 					<div id="dict_menu"> 
@@ -234,7 +223,7 @@
 						<?php for($i = 1; $i < 7; $i++){ ?>
 						<div class="dict_c"<?php $pos="right_tab_{$j}_{$i}";show_page_pos($pos,'link');?>>
 							<div class="dict_number"<?php if($i==1) echo ' style="background:url(/images/index/red.jpg) no-repeat;"';?>><?php echo $i; ?></div>
-							<div class="dict_value" style='margin-top:3px;'><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href);?></div>
+							<div class="dict_value" style='margin-top:3px;'><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href,array('target' => '_blank'));?></div>
 						</div>
 						<?php } ?>
 					</div>
@@ -250,9 +239,10 @@
 							<a href="/assistant/index.php?age=1"><img src="/images/index/3.png"/></a>
 							<a href="/assistant/index.php?age=2"><img src="/images/index/4.png"/></a>
 							<a href="/assistant/index.php?age=3"><img src="/images/index/5.png"/></a>
+							<a href="/assistant/index.php?age=4"><img src="/images/index/6.png"/></a>
 						</div>
-						<a href="/assistant/">
-							<img src="/images/index/more.gif" border="0" />
+						<a href="/assistant/" style="font-size:14px; color:#444444; text-decoration: none;">
+							more&gt;
 						</a> 
 					</div>
 					<div id="m_l_c">
@@ -264,18 +254,18 @@
 							<div id="m_l_pic">
 								<a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1?>" border="0"></a>
 							</div>
-							<div id="m_l_title"><?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?></div>
+							<div id="m_l_title"><?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href,array('target' => '_blank'));?></div>
 						</div>
 						<div id="m_l_b"<?php $pos="assistant_head";show_page_pos($pos,'link_t_d')?>>
-							<div id="m_c_title"><?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?></div>
-							<div id="m_c_content"><?php echo_href($pos_items[$pos]->description,$pos_items[$pos]->href);?></div>
+							<div id="m_c_title"><?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href,array('target' => '_blank'));?></div>
+							<div id="m_c_content"><?php echo_href($pos_items[$pos]->description,$pos_items[$pos]->href,array('target' => '_blank'));?></div>
 							<div id="m_c_bottom"><a href="<?php echo $pos_items[$pos]->href;?>">查看详细内容&gt;&gt;</a></div>
 						</div>
 						<div id="m_l_c_r">
 							<?php 
 								for($i=1;$i<8;$i++){ ?>
 							<div class="mlc"<?php $pos="assistant_list_$i";show_page_pos($pos,'link')?>>
-								<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?>
+								<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href,array('target' => '_blank'));?>
 							</div>
 							<?php } ?>
 						</div>
@@ -286,7 +276,7 @@
 					<div id="m_r_c">
 						<div class="son_top">
 							<div class="son_t_l">精彩<font style="color:#A4C853; font-weight:bold;" >问答</font></div>
-							<div class="son_t_r"><a href="<?php echo get_news_list_url(208); ?>"><font style="color:#F33B0A; font-weight:bold;" >+</font> 更多</a></div>
+							<div class="son_t_r"><a href="/bbs/forumdisplay.php?fid=10"><font style="color:#F33B0A; font-weight:bold;" >+</font> 更多</a></div>
 						</div>
 						<div class="son_content">
 							<?php 
@@ -297,7 +287,7 @@
 							<div class="son_c_z"<?php $pos="right_news_list_$j";show_page_pos($pos,'link')?>>
 								<div class="son_c_z_l"></div>
 								<div class="son_c_z_r">
-									<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?>
+									<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href,array('target' => '_blank'));?>
 								</div>
 							</div>
 							<?php }?>
@@ -330,8 +320,8 @@
 									<a href="<?php echo $pos_items[$pos]->href;?>"><img  src="<?php echo $pos_items[$pos]->image1;?>"/></a>
 								</div>
 								<div class="ch_t_r">
-									<div class="child_title"><?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?></div>
-									<div class="child_content"><?php echo_href($pos_items[$pos]->description,$pos_items[$pos]->href);?></div>
+									<div class="child_title"><?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href,array('target' => '_blank'));?></div>
+									<div class="child_content"><?php echo_href($pos_items[$pos]->description,$pos_items[$pos]->href,array('target' => '_blank'));?></div>
 								</div>
 							</div>
 							<div class="child_c">
@@ -347,7 +337,7 @@
 					<a href="<?php echo $pos_items[$pos]->href; ?>"><img src="<?php echo $pos_items[$pos]->image1;?>" /></a>
 				</div>
 			</div>
-			<div class="quwen"<?php $pos="yard_img";show_page_pos($pos,'link_i')?>>
+			<div class="quwen ad_banner" id="index_middle_banner" <?php $pos="yard_img";show_page_pos($pos,'link_i')?>>
 				<img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : '/images/index/hr.png';?>"/>
 			</div>
 			<div id="student_b">
@@ -384,7 +374,7 @@
 										#$news=$db->query("SELECT id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id in ($news_id) order by created_at desc limit 3;");
 										for($j=0;$j<5;$j++){ ?>
 										<div class="sb_ctt"<?php $pos="bottom_news_list_0_$j";show_page_pos($pos,'link')?>>
-											<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?>
+											<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href,array('target' => '_blank'));?>
 										</div>
 										<?php  }?>
 									</div>
@@ -417,7 +407,7 @@
 										<?php 
 										for($j=0;$j<5;$j++){ ?>
 										<div class="sb_ctt"<?php $pos="bottom_news_list_1_$j";show_page_pos($pos,'link')?>>
-											<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?>
+											<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href,array('target' => '_blank'));?>
 										</div>
 										<?php }?>
 									</div>
@@ -450,7 +440,7 @@
 											#$news=$db->query("SELECT id,title,short_title,description,content FROM eb_news e where category_id in ($news_id) order by created_at desc limit 3;");
 											for($j=0;$j<5;$j++){ ?>
 											<div class="sb_ctt"<?php $pos="bottom_news_list_2_$j";show_page_pos($pos,'link')?>>
-												<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?>
+												<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href,array('target' => '_blank'));?>
 											</div>
 										<?php }?>
 									</div>
@@ -488,7 +478,7 @@
 											#$news=$db->query("SELECT id,title,short_title,description,content FROM eb_news e where category_id in ($news_id) order by created_at desc limit 3;");
 											for($j=0;$j<5;$j++){ ?>
 											<div class="sb_ctt"<?php $pos="bottom_news_list_3_$j";show_page_pos($pos,'link')?>>
-												<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?>
+												<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href,array('target' => '_blank'));?>
 											</div>
 										<?php }?>
 									</div>
@@ -503,7 +493,7 @@
 					<div id="sbl_cr">
 						<div class="son_top">
 							<div class="son_t_l">助手<font style="color:#A4C853; font-weight:bold;" >排行</font></div>
-							<div class="son_t_r"><a href="<?php echo get_news_list_url(208); ?>"><font style="color:#F33B0A; font-weight:bold;" >+</font> 更多</a></div>
+							<div class="son_t_r"><a href="/assistant"><font style="color:#F33B0A; font-weight:bold;" >+</font> 更多</a></div>
 						</div>
 						<div class="son_content">
 							<?php 
@@ -512,7 +502,7 @@
 							<div class="son_c_z"<?php $pos="right_bottom_list_$k";show_page_pos($pos,'link');?>>
 								<div class="son_c_z_l"></div>
 								<div class="son_c_z_r">
-									<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?>
+									<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href,array('target' => '_blank'));?>
 								</div>
 							</div>
 							<?php } ?>

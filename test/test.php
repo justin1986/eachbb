@@ -19,6 +19,7 @@ include_once '../frame.php';
 		if(!$test->id){
 			die_not_found();
 		}
+		$_SESSION['problem_type'] = $test->problem_type;
 		$step = 0;
 		$questions = $db->query("select id,question_type from eb_question where problem_id={$test->id}");
 		$questions_tmp['dadongzuo'] = array();
@@ -32,6 +33,7 @@ include_once '../frame.php';
 		} 
 		$question_queue = @array_merge($questions_tmp['dadongzuo'],$questions_tmp['jingxidongzuo'],$questions_tmp['yuyan'],$questions_tmp['renshi'],$questions_tmp['shehuihuodong']);
 		$_SESSION['question_queue'] = $question_queue;
+		$_SESSION['doing_test_name'] = $test->name;
 	}else{
 		$question_queue = $_SESSION['question_queue'];
 		$step = $_POST['step'];
@@ -65,6 +67,7 @@ include_once '../frame.php';
 		<div id="content">
 			<?php include_once(dirname(__FILE__).'/../inc/left_inc.php'); ?>
 			<div id="c_r">
+				<?php if($_SESSION['problem_type'] == 1){?>
 				<div id="crb_t"> 
 					<div class="crb_value">
 						<div class="crb_tt"></div>
@@ -88,18 +91,19 @@ include_once '../frame.php';
 					<div class="crb_hh"></div>
 					<div class="crb_vv">
 						<div class="crb_ttt"></div>
-						<div class="crb_ccc"  id="tab_shehuihuodong" ><a href="#">社会活动和行为规范</a></div>
+						<div class="crb_ccc"  id="tab_shehuihuodong" ><a href="#">情感及适应性</a></div>
 					</div>
 					<div id="cr_hr"></div>
 					<script type="text/javascript">
 						$('#tab_<?php echo $question->question_type?>').addClass('selected');
 					</script>
 				</div>
+				<?php }?>
 				<!-- test begin -->
 				<div id="cr_b">
 					<div id="crb_l"></div>
 					<div id="crbc_c">
-						<div id="crbc_l"><a href="#"><?php echo $test->name;?><font>测评开始</font></a></div>
+						<div id="crbc_l"><a href="#"><?php echo $_SESSION['doing_test_name'];?><font>测评开始</font></a></div>
 						<div id="crbc_la"><a href="#">当前第<font><?php echo $step + 1;?></font>题</a></div>
 						<div id="crbc_lb"><a href="#">共<font><?php echo $question_len?></font>题</a></div>
 					</div>
@@ -120,8 +124,8 @@ include_once '../frame.php';
 								<?php echo $question->description;?>
 							</div>
 							<div id="crc_bb">
-								<input id="btn_prev" class="btn_submit" type="button" value="上一题" disabled="disabled"> 
-								<input id="btn_next" class="btn_submit" type="button" value="<?php echo $step >= $question_len-1 ? "查看结果" : "下一题";?>" disabled="disabled">
+								<input id="btn_prev" class="btn_submit" type="button" value="上一题"> 
+								<input id="btn_next" class="btn_submit" type="button" value="<?php echo $step >= $question_len-1 ? "查看结果" : "下一题";?>">
 							</div>
 							
 							<input type="hidden" id="hidden_step" name="step" value="<?php echo $step + 1;?>" />
