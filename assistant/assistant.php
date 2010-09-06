@@ -89,10 +89,21 @@
 				<div id="tag_c">
 					<div id="tagc_t"><font>热门</font>关键字</div>
 					<div class="tag_menu">
-						<?php for($i=0; $i<9; $i++){ ?>
-						<div class="cla_m_v"><a href="">早教课程</a></div>
-						<div class="cla_r"></div>
-						<?php } ?>
+						<?php 
+						$list = $db->query("SELECT * FROM eb_news_keywords LIMIT 10");
+						foreach ($list as $list){
+						$lines = explode("||",$list->name);
+							foreach ($lines as $lines){
+								if($lines){
+								?>
+									<div class="cla_m_v" style="text-align: center;"><a href="/news/news.php?id=<?php echo $list->id;?>"><?php echo $lines;?></a></div>
+									<div class="cla_r"></div>
+								<?php }
+							}
+						}?>
+					
+					
+						
 					</div>
 				</div>
 				<div id="tag_b"></div>
@@ -108,13 +119,14 @@
 						<div class="bdt_hr2"></div>
 					</div>
 					<div class="bdt_v">
+					
 						<?php
-						$list = $db->query("SELECT id,title FROM eb_assistant where is_adopt=1 order by created_at desc limit 9");
-						for($i=0;$i<9;$i++){ ?>
+							$list = $db->query("SELECT id,title FROM eb_assistant e where is_adopt=1 order by created_at desc LIMIT 10");
+							foreach ($list as $li){ ?>
 						<div>
 							<div class="bdt_l"></div>
 							<div class="book_title">
-								<a href="/assistant/assistant.php?id=<?php echo $list[$i]->id;?>"><?php echo $list[$i]->title;?></a>
+								<a href="/assistant/assistant.php?id=<?php echo $li->id;?>"><?php echo $li->title;?></a>
 							</div>
 						</div>
 						<?php } ?>
