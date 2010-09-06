@@ -184,9 +184,11 @@ function birthday_display(){
 	if($("#baby_status").val()==1){
 		$("#baby_birthday").text('宝宝生日');
 		$("#baby_birthday").parent().show();
+		$( "#baby_birthday2" ).datepicker( "option", "yearRange", 'c-10:c-0');
 	}else if($("#baby_status").val()==3){
 		$("#baby_birthday").text('宝宝预产期');
 		$("#baby_birthday").parent().show();
+		$( "#baby_birthday2" ).datepicker( "option","yearRange", 'c-10:c+1');
 	}else{
 		$("#baby_birthday").parent().hide();
 	}
