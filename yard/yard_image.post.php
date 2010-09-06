@@ -27,7 +27,14 @@
 				$sql="insert into eachbb_member.member_avatar(u_id,photo,create_at,status)values($id,'$save_e','$created_at',0);";
 				if($db->execute($sql)){
 					alert("上传成功！");
-					redirect('/yard/info.php');
+                    if($_SESSION['page_from']=='baby'){
+                    	redirect('/baby/index.php');
+                    }else {
+                    	$_SESSION['page_from'] = 'yard';
+                        redirect('/yard/info.php');
+                    }
+					
+					
 				}else{
 					alert("上传失败！");
 				}
