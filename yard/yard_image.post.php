@@ -30,7 +30,6 @@
                     if($_SESSION['page_from']=='baby'){
                     	redirect('/baby/index.php');
                     }else {
-                    	$_SESSION['page_from'] = 'yard';
                         redirect('/yard/info.php');
                     }
 					
