@@ -132,10 +132,10 @@
 						</div>
 					</div>
 					<?php 
-					$list = $db->query("SELECT comment FROM eb_comment e where resource_type='assistant' order by created_at desc limit 10");
+					$list = $db->query("SELECT resource_id,comment FROM eb_comment e where resource_type='assistant' order by created_at desc limit 10");
 					for($i=0;$i<10;$i++){ ?>
 					<div id="comm_con">
-						<a href="/assistant/assistant.php?id=<?php echo $id;?>"><?php echo $list[$i]->comment;?></a>
+						<a href="/assistant/assistant.php?id=<?php echo $list[$i]->resource_id;?>"><?php echo $list[$i]->comment;?></a>
 					</div>
 					<?php } ?>
 				</div>
