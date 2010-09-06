@@ -55,8 +55,16 @@
 					if(in_array($_GET['age'], array(1,2,3,4))){
 						echo " >> <a href='/assistant/_index.php?age={$_GET['age']}'>",convert_age($_GET['age']),"</a>";
 					}
+					$len = count($breads);
+					$i = 0;
 					 foreach ($breads as $item){
-						echo " >> <a href='list.php?category_id={$item->id}'>{$item->name}</a>";
+					 	$i++;
+					 	if($i == $len){
+					 		echo " >> {$item->name}";
+					 	}else{
+					 		echo " >> <a href='list.php?category_id={$item->id}'>{$item->name}</a>";
+					 	}
+						
 					}?>
 					
 				</div>
