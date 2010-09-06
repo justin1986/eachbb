@@ -7,6 +7,8 @@
 						<div class="ht_l_h"></div>
 						<div class="htl_pg_c">
 							<?php 
+							include_once(dirname(__FILE__).'/../frame.php');
+								$db=get_db();
 								$sql = "select * from eb_category where category_type='assistant' and level=1";
 								$top_cates = $db->query($sql);
 								$sql = "select * from eb_category where category_type='assistant' and level=2";
