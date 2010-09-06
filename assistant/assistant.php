@@ -103,17 +103,19 @@
 				<div class="bd_c">
 					<div class="bdt_t">
 						<div class="bdt_tl">相关文章列表</div>
-						<div class="bdt_more"><a href="#"><font>+</font>更多</a></div>
+						<div class="bdt_more"></div>
 					</div>
 					<div class="bdt_hr">
 						<div class="bdt_hr2"></div>
 					</div>
 					<div class="bdt_v">
-						<?php for($i=0;$i<9;$i++){ ?>
+						<?php
+						$list = $db->query("SELECT id,title FROM eb_assistant where is_adopt=1 order by created_at desc limit 9");
+						for($i=0;$i<9;$i++){ ?>
 						<div>
 							<div class="bdt_l"></div>
 							<div class="book_title">
-								<a href="#">撒旦法十分</a>
+								<a href="/assistant/assistant.php?id=<?php echo $list[$i]->id;?>"><?php echo $list[$i]->title;?></a>
 							</div>
 						</div>
 						<?php } ?>
@@ -129,11 +131,12 @@
 						<div id="com_title">相关评论</div>
 						<div id="com_x">
 						</div>
-						<a href="#"><img/></a>
 					</div>
-					<?php for($i=0;$i<10;$i++){ ?>
+					<?php 
+					$list = $db->query("SELECT title FROM eb_comment e where resource_id=$id order by created_at desc limit 10");
+					for($i=0;$i<10;$i++){ ?>
 					<div id="comm_con">
-						<a href="#">选购得宝也能当，宝宝食</a>
+						<a href="/assistant/assistant.php?id=<?php echo $id;?>"><?php echo $list[$i]->title;?></a>
 					</div>
 					<?php } ?>
 				</div>
