@@ -15,6 +15,8 @@ $(function(){
 		var title=$('#upload_title').val().trim();
 		var id=$('#id').val();
 		var content=$('#upload_description').val().trim();
+		var album_id = $('#_id').val();
+		var photo = $('#photo').val();
 		if(!title){
 			alert("请输入图片名称！");
 		}else if(title.length >= 30){
@@ -24,7 +26,7 @@ $(function(){
 		}else if(content.length >=500){
 			alert("输入的图片描述必须小于500字！");
 		}else{
-			$.post("_photo_update_ajax_post.php",{"id":id,'title':title,'content':content},function(data){
+			$.post("_photo_update_ajax_post.php",{"id":id,'title':title,'content':content,'album_id':album_id,'photo':photo},function(data){
 				alert(data);
 				$.post("_photo_show_ajax_post.php",{"id":result,'number':number},function(data){
 					$("#pic_log").html(data);
@@ -49,7 +51,8 @@ $(function(){
 		e.preventDefault();
 		var result=$('#select_id select').attr("value");
 		var resos_id=$('#resos_id').val();
-		$.post("_diary_photo_update_ajax_post.php",{"result":result,'resos_id':resos_id},function(data){
+		var photo=$('#photo').val();
+		$.post("_diary_photo_update_ajax_post.php",{"result":result,'resos_id':resos_id,'photo':photo},function(data){
 			alert(data);
 			window.location.href='/yard/photo_show.php?id='+result;
 		});
@@ -122,13 +125,14 @@ $(function(){
 		var resource_id = $('#resos_id').val();
 		var show_result = $('#show_result').val();
 		var number = $('#number').val();
+		var photo = $('#photo').val();
 		if(show_result.length <=0){
 			alert("请输入评论内容！");
 		}else if(show_result.length >= 500){
 			alert("输入的评论内容不能超过500字！");
 		}else{ 
 			$('#subb').attr('disabled',true);
-			$.post("_photo_show_add_comment_post.php",{"resource_id":resource_id,"show_result":show_result},function(data){
+			$.post("_photo_show_add_comment_post.php",{"resource_id":resource_id,"show_result":show_result,"photo":photo},function(data){
 				alert(data);
 				$.post("_photo_show_ajax_post.php",{"id":result,'number':number},function(data){
 					$("#pic_log").html(data);

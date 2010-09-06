@@ -57,7 +57,7 @@
 								}
 							?>"/></a>
 					</div>
-					<?php echo $problem->content;?>
+					<?php echo htmlspecialchars_decode($problem->content);?>
 				</div>
 					
 			</div>

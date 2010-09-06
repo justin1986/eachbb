@@ -267,5 +267,11 @@ class User {
 	public function adjust_score($score,$reason){
 		
 	}
-	
+	public static function lastest_news($type,$user){
+		$db = get_db();
+		if($type != all){
+		return $db->query("select * from `eachbb_member`.lastest_news where resource_type = '$type' and u_id = '$user' order by created_at desc limit 9");
+	}else{
+		return $db->query("select * from `eachbb_member`.lastest_news where resource_type != '' and u_id = '$user' order by created_at desc limit 9");}
+	}
 }
