@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <meta http-equiv=Content-Language content=zh-CN>
-<title>consult</title>
+<title>网趣宝贝-育儿资讯</title>
 <?php
 	include_once('../frame.php');
 	$db=get_db();
@@ -125,7 +125,7 @@
 								foreach ($list_news as $news){ ?>
 								<div class="list_title">
 									<div></div>
-									<a href="<?php get_news_url($news); ?>" title="<?php echo  $news->title; ?>"><?php echo $news->title; ?></a>
+									<a href="/news/news.php?id=<?php echo $news->id;?>" title="<?php echo  $news->title; ?>"><?php echo $news->title; ?></a>
 								</div>
 								<?php } ?>
 						</div>
@@ -145,23 +145,25 @@
 					<div class="cla_title">早教课程</div>
 					<div class="cla_img">
 						<?php
-						$list=$db->query("SELECT id,title,img_url,description,content FROM eb_teach e where is_adopt=1 order by create_time desc,click_count desc limit 15;");
+						$list=$db->query("SELECT id FROM eb_category where category_type = 'news'");
+						$count = $db->query("SELECT count(id)id FROM eb_category where category_type = 'news'");
+						$news_id;
+						for($i = 0 ; $i < $count[0]->id ;  $i++)
+						{
+							//echo $result_id->id;
+								$news_id .= $list[$i]->id.",";
+						}
+						$list=$db->query("SELECT id,name,url FROM eb_images  where category_id in (".$news_id.") and is_adopt=1 order by create_time desc,click_count desc limit 3;");
 						for($i=0;$i<3;$i++){ ?>
 						<div class="ci_z">
-							<div class="ci_pg"><a href="<?php get_news_url($list[$i]); ?>"><img src="<?php echo $list[$i]->img_url;?>"></a></div>
-							<div class="ci_title"><a href="<?php get_news_url($list[$i]); ?>" title="<?php echo $list[$i]->title;?>"><?php echo $list[$i]->title;?></a></div>
+							<div class="ci_pg"><img src="<?php echo $list[$i]->url;?>"></div>
+							<div class="ci_title"><?php echo $list[$i]->name;?></div>
 						</div>
 						<?php } ?>
 					</div>
 					<div class="cla_hr"></div>
-					<div class="cla_menu">
-						<?php for($i=3; $i<15; $i++){ ?>
-						<div class="cla_m_v"><a href="<?php get_news_url($list[$i]); ?>" title="<?php echo $list[$i]->title; ?>"><?php echo $list[$i]->title; ?></a></div>
-						<div class="cla_r"></div>
-						<?php } ?>
-					</div>
+					<img src="/images/index/img_r_a.jpg" style="width:289px; margin-top:10px; border:0px solid red;"/>
 				</div>
-				<div class="cla_b"></div>
 			</div>
 			<div id="comment">
 				<div id="comm_l"></div>
@@ -170,13 +172,14 @@
 						<div id="com_title">业界快讯排行</div>
 						<div id="com_x">
 						</div>
-						<a href="#"><img/></a>
 					</div>
 					<!-- 右边 业界快讯 一条列表的内容  开始 -->
-					<?php for($i=0;$i<10;$i++){ ?>
+					<?php
+					$list = $db->query("SELECT id,title FROM eb_news  where  is_adopt=1 and category_id in(".substr($news_id,0,-1).") order by last_edited_at,created_at,click_count desc LIMIT 10");
+					for($i=0;$i<10;$i++){ ?>
 					<div id="comm_con">
 						<div class="number" style="<?php if($i==0){ echo "background:url(/images/new_list/number.jpg) no-repeat;";} ?>"><?php echo $i+1; ?></div>
-						<a href="#">选购得宝也也也也也也也也也也也能当，宝宝食</a>
+						<a href="/news/news.php?id=<?php echo $list[$i]->id;?>"><?php echo $list[$i]->title;?></a>
 					</div>
 					<!-- 右边 业界快讯 一条列表的内容  结束 -->
 					<?php } ?>
