@@ -121,7 +121,7 @@
 									$sql .= " and id not in ({$exists_news_ids})";
 								}
 								$sql .= " order by created_at desc";								
-								$list_news=$db->paginate($sql,36);
+								$list_news=$db->paginate($sql,46);
 								foreach ($list_news as $news){ ?>
 								<div class="list_title">
 									<div></div>
