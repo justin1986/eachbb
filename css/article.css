@@ -114,7 +114,7 @@ body{width:970px; margin: 0 auto; font-family:����;}
 
 #br_img{width:297px; height:195px; background:url(/images/article/r1.jpg) no-repeat; float:right; display:inline;}
 
-#class{width:289px;  margin-top:22px; background:red; float:right; display:inline;}
+#class{width:289px; background:red; float:right; display:inline;}
 .cla_t{width:289px; height: 9px; font-size:0px; line-height:0px; background:url(/images/article/rb_t.jpg) no-repeat; float:left; display:inline;}
 .cla_c{width:289px;  background:#F4F4F4; float:left; display:inline}
 .cla_b{width:289px; height: 9px; font-size:0px; line-height:0px; background:url(/images/article/rb_b.jpg) no-repeat; float:left; display:inline;}

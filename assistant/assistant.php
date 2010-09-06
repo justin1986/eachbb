@@ -83,31 +83,8 @@
 			</div>
 		</div>
 		<div id="b_r">
-			<div id="br_img"></div>
-			<div id="class">
-				<div class="cla_t"></div>
-				<div class="cla_c">
-					<div class="cla_title">早教课程</div>
-					<div class="cla_img">
-						<?php
-						$list=$db->query("SELECT id,title,img_url,description,content FROM eb_teach e where is_adopt=1 order by create_time desc,click_count desc limit 15;");
-						for($i=0;$i<3;$i++){ ?>
-						<div class="ci_z">
-							<div class="ci_pg"><a href="<?php get_news_url($list[$i]); ?>"><img src="<?php echo $list[$i]->img_url;?>"></a></div>
-							<div class="ci_title"><a href="<?php get_news_url($list[$i]); ?>"  title="<?php echo $list[$i]->title;?>"><?php echo $list[$i]->title;?></a></div>
-						</div>
-						<?php } ?>
-					</div>
-					<div class="cla_hr"></div>
-					<div class="cla_menu">
-						<?php for($i=3; $i<15; $i++){ ?>
-						<div class="cla_m_v"><a href="<?php get_news_url($list[$i]); ?>" title="<?php echo $list[$i]->title; ?>"><?php echo $list[$i]->title; ?></a></div>
-						<div class="cla_r"></div>
-						<?php } ?>
-					</div>
-				</div>
-				<div class="cla_b"></div>
-			</div>
+			<div id="br_img" style="padding-bottom:20px;"></div>
+			<?php include_once('../news/_news_logo_public.php'); ?>
 			<div id="tag">
 				<div id="tag_l"></div>
 				<div id="tag_c">
