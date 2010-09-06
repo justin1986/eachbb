@@ -2,7 +2,7 @@ $(function(){
 	$('.beiju').click(function(e){
 		e.preventDefault();
 		var selected = $('.beiju').index($(this));
-		$('#flash_discription_'+selected).show();
+		$.fn.colorbox({href:'/inc/_public_result_ajax_post_view.php?page=course_index&result=middle_headline_'+selected});
 	});
 	$('.f_d_btn').click(function(e){
 		e.preventDefault();

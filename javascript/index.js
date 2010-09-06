@@ -1,5 +1,6 @@
 var test_tab_index = 0;
 var test_tab_count = 5;
+
 function refresh_test_tab(){
 	if(test_tab_index < 0) test_tab_index = test_tab_count -1;
 	if(test_tab_index >= test_tab_count) test_tab_index = 0;
@@ -27,15 +28,15 @@ function send_login(){
 			alert(data);
 		}
 		$('#test_right').load('/login/ajax.post.php?op=load_login_status_box&rd=' + Math.random());
-		
 	});
 };
 
 $(function(){
+	//$('.beijiu').colorbox({href:'/inc/_public_result_ajax_post_view.php?id='+$('.beijiu').index($(this))});
 	$('.beijiu').click(function(e){
 		e.preventDefault();
 		var selected = $('.beijiu').index($(this));
-		$('#flash_discription_'+selected).show();
+		$.fn.colorbox({href:'/inc/_public_result_ajax_post_view.php?page=index&result=test_tab_'+selected});
 	});
 	$('.f_d_btn').click(function(){
 		$('.flash_discription').hide();

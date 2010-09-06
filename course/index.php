@@ -8,8 +8,8 @@
 <?php 
 	include_once(dirname(__FILE__).'/../frame.php');
 	use_jquery();
-	css_include_tag('course/course_top','class_s');
-	js_include_tag('class/class_s','swfobject');
+	css_include_tag('course/course_top','class_s','colorbox');
+	js_include_tag('class/class_s','swfobject','jquery.colorbox-min');
 	init_page_items('course_index');
 ?>
 </head>
@@ -73,21 +73,6 @@
 								</div>
 							</div>
 						</div>
-						<div id="flash_discription_<?php echo $j?>" class="flash_discription">
-							<?php if($pos_items[$pos]->description){?>
-							<div class="f_d_title">标题：<?php echo $pos_items[$pos]->title;?></div>
-							<div class="f_d_content">
-								<div class="f_d_c">内容:</div>
-								<div class="ffff_cc">
-									<?php echo $pos_items[$pos]->description;?>
-								</div>
-							</div>
-							<?php }else{?>
-							<div class="fd_content">内容为空！</div>
-							<?php }?>
-							<div class="f_d_btn">返回</div>
-						</div>
-				
 					<?php }?>
 					</div>
 				</div>

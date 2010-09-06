@@ -14,9 +14,10 @@
 	if(!$db->execute("delete from eachbb_member.daily where id=".$edit_id))
 		die("删除失败！");
 	else{
+		if($db->execute("insert into `eachbb_member`.lastest_news (resource_id,resource_type,u_id,created_at,u_name,u_avatar,form)values('$edit_id','diary','{$user->id}',now(),'{$user->name}','{$user->avatar}','删除了日志。')")){
 		alert("删除成功！");
 		?>
 		<script>window.location.href="/yard/diary_list.php";</script>
-		<?php 
+		<?php }
 	}
 ?>
