@@ -2,7 +2,6 @@
 
 ?>
 <div id="list_container">
-	<div class="br_img"><img src="/images/article/r1.jpg"/></div>
 	<div id="class">
 		<div class="cla_t"></div>
 		<div class="cla_c">
