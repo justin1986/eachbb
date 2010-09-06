@@ -24,7 +24,7 @@ $list = $db->query("select title,description from eb_page_pos where page='$page'
 <div class="test_context" style="width:600px;">
 <?php if($list){?>
 	<div class="context_title" style="margin-top:10px; width:600px; ">标题：<?php echo $list[0]->title;?></div>
-	<div class="context_content" style="width:600px;">内容：<?php echo  $list[0]->description ; ?></div>
+	<div class="context_content" style="width:600px;">内容：<br><?php echo  $list[0]->description ; ?></div>
 	<?php }else{?>
 	<div style="width:600px; height:100px; line-height:100px; font-size:30px; font-weight:bold; text-align:center;">内容为空！</div>
 	<?php }?>

@@ -55,7 +55,7 @@
 						<div class="hlcb_r">
 							<div class="hlcb_t">按时法十分</div>
 							<div class="hlcb_t">上传者：哈哈</div>
-							<div class="hlcb_t"><font>下载次数：</font>1232</div>
+							<div class="hlcb_t"><font>点击次数：</font>1232</div>
 						</div>
 					</div>
 					<div class="hlcb_z">
@@ -65,7 +65,7 @@
 						<div class="hlcb_r">
 							<div class="hlcb_t">按时法十分</div>
 							<div class="hlcb_t">上传者：哈哈</div>
-							<div class="hlcb_t"><font>下载次数：</font>1232</div>
+							<div class="hlcb_t"><font>点击次数：</font>1232</div>
 						</div>
 					</div>
 				</div>
@@ -77,45 +77,22 @@
 					<div class="hlcb_pg">
 						<div class="hlct_t">热门助手排行榜</div>
 						<img src="/images/helper/lb_hd.jpg"> </div>
+						<?php 
+						$list = $db->query("SELECT id,title,publisher,click_count FROM eb_assistant order by click_count,created_at desc limit 2");
+						$i=1;
+						foreach ($list as $list){
+						?>
 					<div class="hlcb_z">
 						<div class="hlcb_l">
-							<div class="r">1</div>
+							<div class="r"><?php echo $i;?></div>
 						</div>
 						<div class="hlcb_r">
-							<div class="hlcb_t">按时法十分</div>
-							<div class="hlcb_t">上传者：哈哈</div>
-							<div class="hlcb_t"><font>下载次数：</font>1232</div>
+							<div class="hlcb_t"><?php echo $list->title;?></div>
+							<div class="hlcb_t">上传者：<?php echo $list->publisher;?></div>
+							<div class="hlcb_t"><font>点击次数：</font><?php echo $list->click_count;?></div>
 						</div>
 					</div>
-					<div class="hlcb_z">
-						<div class="hlcb_l">
-							<div class="r">3</div>
-						</div>
-						<div class="hlcb_r">
-							<div class="hlcb_t">按时法十分</div>
-							<div class="hlcb_t">上传者：哈哈</div>
-							<div class="hlcb_t"><font>下载次数：</font>1232</div>
-						</div>
-					</div>
-				</div>
-				<div class="hlc_bb"></div>
-			</div>
-			<div id="fl_c">
-				<div class="hlc_t"></div>
-				<div class="hlc_b">
-					<div class="hlcb_pg">
-						<div class="hlct_t">问答排行榜</div>
-						<img src="/images/helper/lb_hd.jpg"> </div>
-					<div class="hlcb_z">
-						<div class="hlcb_l">
-							<div class="r">1</div>
-						</div>
-						<div class="hlcb_r">
-							<div class="hlcb_t">按时法十分</div>
-							<div class="hlcb_t">上传者：哈哈</div>
-							<div class="hlcb_t"><font>下载次数：</font>1232</div>
-						</div>
-					</div>
+					<?php $i++;}?>
 				</div>
 				<div class="hlc_bb"></div>
 			</div>
