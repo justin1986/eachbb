@@ -12,6 +12,7 @@
 	{
 		die('invliad params!');
 	}
+	$title_id = $db->query("select name from eb_category where id=$id");
 	css_include_tag('news_list');
 	//获得顶级category id；
 	$category = new category_class("news");
@@ -37,7 +38,7 @@
 		<div id="log_top">
 			<div id="log_t">
 				<div id="log"></div>
-				<div id="log_address">创业 &gt; 创业投资 &gt; 美国创业基金的中国风格</div>
+				<div id="log_address"><a href="/" style="font-size:12px; color:blue;">首页</a> &nbsp;&gt;&gt; &nbsp;<a href="/news" style="font-size:12px; color:blue;">资讯</a>&nbsp;&gt;&gt;&nbsp;<?php echo $title_id[0]->name;?></div>
 			</div>
 			<div id="hr"></div>
 		</div>
@@ -183,14 +184,6 @@
 				<div id="comm_r"></div>
 			</div>
 			<div class="br_img" style="margin-top:20px;"><img src="/images/article/r1.jpg"/></div>
-		</div>
-		<!-- 下边 标题 列表 -->
-		<div id="title_container">
-				<div>
-				<?php for($i=0;$i<50;$i++){ ?>
-					<a href="#">阿斯顿法</a>
-				<?php } ?>
-				</div>
 		</div>
 		<?php include_once('../inc/bottom.php');?>
 </div>
