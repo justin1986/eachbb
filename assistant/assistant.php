@@ -34,7 +34,7 @@
 						$cate_tree = $category->tree_map_item($column[0]->category_id);
 						$cate_tree = array_reverse($cate_tree);
 						foreach ($cate_tree as $cate){
-							$list_url = get_news_list_url($cate_tree[0]->id);
+							$list_url = get_assistant_list_url($cate_tree[0]->id);
 							echo " &gt;&gt; <a href='{$list_url}'>{$cate->name}</a>";
 						}
 					?>
