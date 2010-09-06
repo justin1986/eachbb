@@ -46,7 +46,6 @@
 		<div id="b_l">
 			<div id="title"><a href="#" title="<?php echo $column[0]->title;?>"><?php echo $column[0]->title;?></a></div>
 			<div id="title_b">
-				<div id="ret">记者：<a href="#" title="<?php echo $column[0]->publisher;?>"><?php echo $column[0]->publisher;?></a></div>
 				<div id="problem" title="<?php echo $column[0]->created_at;?>">发布于：<?php echo $column[0]->created_at;?></div>
 			</div>
 			<div id="text">
