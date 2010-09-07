@@ -50,7 +50,7 @@
 				<div id="right">
 					<div class="menu" id="menu_ida">4-20位，包含英文大小字母和数字组成</div>
 					<div class="menu">请填写真实有效邮箱地址并妥善保管</div>
-					<div class="menu">含英文大小写字母、数字和部分标点符号</div>
+					<div class="menu">含英文大小写字母、数字</div>
 					<div class="menu">两次密码必须输入一致</div>
 					<div class="menu" id="verify_info" style="height:25px; margin-top:135px;"><div id="validate"><img src="/inc/verify.php?name=register"></div><font style="margin-left:10px; color:#999999; cursor:pointer;">看不清楚？换张图片</font></div>
 				</div>
