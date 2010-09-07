@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <meta http-equiv=Content-Language content=zh-CN>
-<title>问题反馈</title>
+<title>意见反馈</title>
 <?php
 	use_jquery();
 	css_include_tag('feedback','index','top_inc/test_left','test_left_inc');
