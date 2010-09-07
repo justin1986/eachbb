@@ -68,7 +68,7 @@
 				if(data){					
 					alert(data);
 				}else{
-					window.location.href="/yard.php";
+					window.location.href="/test/save_test_result.php";
 				}
 			});
 		});
