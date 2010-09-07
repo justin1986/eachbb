@@ -182,10 +182,12 @@ function change_verify(){
 
 function birthday_display(){
 	if($("#baby_status").val()==1){
+		$("#baby_color").text("*");;
 		$("#baby_birthday").text('宝宝生日');
 		$("#baby_birthday").parent().show();
 		$( "#baby_birthday2" ).datepicker( "option", "yearRange", 'c-10:c-0');
 	}else if($("#baby_status").val()==3){
+		$("#baby_color").text("*");;
 		$("#baby_birthday").text('宝宝预产期');
 		$("#baby_birthday").parent().show();
 		$( "#baby_birthday2" ).datepicker( "option","yearRange", 'c-10:c+1');
@@ -381,10 +383,7 @@ function check_babybirthday(){
 }
 
 function check_birthday(){
-	if($("#birthday").val()==''){
-		$("#birthday_info").html('<span style=color:red>请输入生日</span>');
-		return false;
-	}else{
+	if($("#birthday").val()!=''){
 		if(!check_date($("#birthday").val())){
 			$("#birthday_info").html('<span style=color:red>请输入正确的日期格式</span>');
 			$("#birthday").attr('value','');
@@ -393,6 +392,8 @@ function check_birthday(){
 			$("#birthday_info").html('');
 			return true;
 		}
+	}else{
+		return true;
 	}
 }
 

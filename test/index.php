@@ -9,8 +9,8 @@
 <title>特色测评</title>
 <?php
 	use_jquery();
-	js_include_tag('test/test','swfobject');
-	css_include_tag('top_inc/test_top','test','top_inc/test_left','test_left_inc');
+	js_include_tag('test/test','swfobject','jquery.colorbox-min');
+	css_include_tag('top_inc/test_top','test','top_inc/test_left','test_left_inc','colorbox');
 	init_page_items('test_index');
 ?>
 </head>
@@ -34,17 +34,6 @@
 						<?php for($i =0 ; $i < 4; $i++){
 							$pos = "top_intr_$i";
 						?>
-						<div id="flash_discription_<?php echo $i?>" class="fflash_discription">
-							<?php if($pos_items[$pos]->description){?>
-							<div class="f_d_title">标题：<?php echo $pos_items[$pos]->title;?></div>
-							<div class="f_d_content"><div class="f_d_c">内容:</div>
-								<div class="fda_content">
-								<?php echo $pos_items[$pos]->description;?></div> </div>
-							<?php }else{?>
-							<div class="fd_content" style="height:220px;">内容为空！</div>
-							<?php }?>
-							<div class="ff_d_btn">返回</div>
-						</div>
 						<div class="crf_c" id="cr_<?php echo $i;?>"<?php show_page_pos($pos,'link_d_i')?> style="margin-left:10px; float:left; padding:0px;">
 							<div class="crf_ti"><img src="<?php echo $pos_items[$pos]->image1?>"></div>
 							<div class="crg_tt"><?php echo $pos_items[$pos]->title;?></div>
@@ -123,16 +112,6 @@
 								}
 								?>
 							</div>
-							<div id="flash_dis_<?php echo $i?>" class="flash_discription" style="width:733px; margin-top:-3px; margin-left:-3px; height:180px;">
-							<?php if($pos_items[$pos]->description){?>
-							<div class="f_d_content" style="height:140px;"><div class="f_d_c">内容:</div>
-								<div class="text_area" readonly="readonly" style="height:130px; text-align:left; ">
-								<?php echo $pos_items[$pos]->description;?></div> </div>
-							<?php }else{?>
-							<div class="fd_content">内容为空！</div>
-							<?php }?>
-							<div class="f_d_btn">返回</div>
-						</div>
 					</div>
 					<?php } ?>
 					</div>

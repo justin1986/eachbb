@@ -34,7 +34,7 @@
 						$cate_tree = $category->tree_map_item($column[0]->category_id);
 						$cate_tree = array_reverse($cate_tree);
 						foreach ($cate_tree as $cate){
-							$list_url = get_news_list_url($cate_tree[0]->id);
+							$list_url = get_assistant_list_url($cate_tree[0]->id);
 							echo " &gt;&gt; <a href='{$list_url}'>{$cate->name}</a>";
 						}
 					?>
@@ -46,7 +46,6 @@
 		<div id="b_l">
 			<div id="title"><a href="#" title="<?php echo $column[0]->title;?>"><?php echo $column[0]->title;?></a></div>
 			<div id="title_b">
-				<div id="ret">记者：<a href="#" title="<?php echo $column[0]->publisher;?>"><?php echo $column[0]->publisher;?></a></div>
 				<div id="problem" title="<?php echo $column[0]->created_at;?>">发布于：<?php echo $column[0]->created_at;?></div>
 			</div>
 			<div id="text">
@@ -83,40 +82,28 @@
 			</div>
 		</div>
 		<div id="b_r">
-			<div id="br_img"></div>
-			<div id="class">
-				<div class="cla_t"></div>
-				<div class="cla_c">
-					<div class="cla_title">早教课程</div>
-					<div class="cla_img">
-						<?php
-						$list=$db->query("SELECT id,title,img_url,description,content FROM eb_teach e where is_adopt=1 order by create_time desc,click_count desc limit 15;");
-						for($i=0;$i<3;$i++){ ?>
-						<div class="ci_z">
-							<div class="ci_pg"><a href="<?php get_news_url($list[$i]); ?>"><img src="<?php echo $list[$i]->img_url;?>"></a></div>
-							<div class="ci_title"><a href="<?php get_news_url($list[$i]); ?>"  title="<?php echo $list[$i]->title;?>"><?php echo $list[$i]->title;?></a></div>
-						</div>
-						<?php } ?>
-					</div>
-					<div class="cla_hr"></div>
-					<div class="cla_menu">
-						<?php for($i=3; $i<15; $i++){ ?>
-						<div class="cla_m_v"><a href="<?php get_news_url($list[$i]); ?>" title="<?php echo $list[$i]->title; ?>"><?php echo $list[$i]->title; ?></a></div>
-						<div class="cla_r"></div>
-						<?php } ?>
-					</div>
-				</div>
-				<div class="cla_b"></div>
-			</div>
+			<div id="br_img" style="padding-bottom:20px;"></div>
+			<?php include_once('../news/_news_logo_public.php'); ?>
 			<div id="tag">
 				<div id="tag_l"></div>
 				<div id="tag_c">
 					<div id="tagc_t"><font>热门</font>关键字</div>
 					<div class="tag_menu">
-						<?php for($i=0; $i<9; $i++){ ?>
-						<div class="cla_m_v"><a href="">早教课程</a></div>
-						<div class="cla_r"></div>
-						<?php } ?>
+						<?php 
+						$list = $db->query("SELECT * FROM eb_news_keywords LIMIT 10");
+						foreach ($list as $list){
+						$lines = explode("||",$list->name);
+							foreach ($lines as $lines){
+								if($lines){
+								?>
+									<div class="cla_m_v" style="text-align: center;"><a href="/news/news.php?id=<?php echo $list->id;?>"><?php echo $lines;?></a></div>
+									<div class="cla_r"></div>
+								<?php }
+							}
+						}?>
+					
+					
+						
 					</div>
 				</div>
 				<div id="tag_b"></div>
@@ -126,17 +113,20 @@
 				<div class="bd_c">
 					<div class="bdt_t">
 						<div class="bdt_tl">相关文章列表</div>
-						<div class="bdt_more"><a href="#"><font>+</font>更多</a></div>
+						<div class="bdt_more"></div>
 					</div>
 					<div class="bdt_hr">
 						<div class="bdt_hr2"></div>
 					</div>
 					<div class="bdt_v">
-						<?php for($i=0;$i<9;$i++){ ?>
+					
+						<?php
+							$list = $db->query("SELECT id,title FROM eb_assistant e where is_adopt=1 order by created_at desc LIMIT 10");
+							foreach ($list as $li){ ?>
 						<div>
 							<div class="bdt_l"></div>
 							<div class="book_title">
-								<a href="#">撒旦法十分</a>
+								<a href="/assistant/assistant.php?id=<?php echo $li->id;?>"><?php echo $li->title;?></a>
 							</div>
 						</div>
 						<?php } ?>
@@ -152,11 +142,12 @@
 						<div id="com_title">相关评论</div>
 						<div id="com_x">
 						</div>
-						<a href="#"><img/></a>
 					</div>
-					<?php for($i=0;$i<10;$i++){ ?>
+					<?php 
+					$list = $db->query("SELECT resource_id,comment FROM eb_comment e where resource_type='assistant' order by created_at desc limit 10");
+					for($i=0;$i<10;$i++){ ?>
 					<div id="comm_con">
-						<a href="#">选购得宝也能当，宝宝食</a>
+						<a href="/assistant/assistant.php?id=<?php echo $list[$i]->resource_id;?>"><?php echo $list[$i]->comment;?></a>
 					</div>
 					<?php } ?>
 				</div>
@@ -167,4 +158,10 @@
 		<?php include_once('../inc/bottom.php'); ?>
 </div>
 </body>
+<script type="text/javascript">
+$('.ttc_a a').click(function(e){
+	e.preventDefault();
+		window.location.href = "/assistant/index.php?age=" + $(this).attr('id');
+});
+</script>
 </html>

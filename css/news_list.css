@@ -80,7 +80,7 @@ top_login{width:970px; height:83px; margin-top:10px; font-size:13px; color:#ffff
 #list_top{width:650px; height:18px; background: url(/images/new_list/b_t.jpg) no-repeat; float:left; display: inline;}
 #list_bottom{width:650px; height:22px; background:url(/images/new_list/b_c.jpg) no-repeat; float:left; display: inline;}
 #list_news_container{width:650px; float:left; display: inline;}
-.list_container_l{width:2px; height:350px; background:url(/images/new_list/b_h.jpg) repeat-y; float:left; display:inline;}
+.list_container_l{width:2px; height:750px; background:url(/images/new_list/b_h.jpg) repeat-y; float:left; display:inline;}
 #list_container_top{width:640px; overflow:hidden; float: left; display: inline;}
 #list_container_fun{width:640px; height:20px; margin-top:30px; line-height:20px; text-align:center; float:left; display:inline;}
 #list_container_fun a{color: #006666; text-decoration: none; font-size:14px;}
@@ -116,7 +116,7 @@ top_login{width:970px; height:83px; margin-top:10px; font-size:13px; color:#ffff
 
 .br_img{width:297px; height:195px;  float:right; display:inline;}
 
-#class{width:289px;  margin-top:22px; background:red; float:right; display:inline;}
+#class{width:289px;  background:red; float:right; display:inline;}
 .cla_t{width:289px; height: 9px; font-size:0px; line-height:0px; background:url(/images/article/rb_t.jpg) no-repeat; float:left; display:inline;}
 .cla_c{width:289px;  background:#F4F4F4; float:left; display:inline}
 .cla_b{width:289px; height: 9px; font-size:0px; line-height:0px; background:url(/images/article/rb_b.jpg) no-repeat; float:left; display:inline;}

@@ -19,6 +19,8 @@
 		$avatars =$db->query("SELECT id,photo,status FROM eachbb_member.member_avatar where u_id=".$user->id.' order by create_at desc limit 3');
 		$avatar_count = $db->record_count;
 		$name =$user->name;
+		session_start();
+		$_SESSION['page_from'] = 'baby';
 	?>
 </head>
 <body>

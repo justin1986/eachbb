@@ -22,7 +22,7 @@ foreach ($lines as $li){
 <title><?php echo $column[0]->title;?></title>
 <?php
 	use_jquery();
-	css_include_tag('article');
+	css_include_tag('article','news_list');
 	js_include_tag('jquery.cookie', 'news/news');
 ?>
 </head>
@@ -52,7 +52,6 @@ foreach ($lines as $li){
 		<div id="b_l">
 			<div id="title"><a href="#" title="<?php echo $column[0]->title;?>"><?php echo $column[0]->title;?></a></div>
 			<div id="title_b">
-				<div id="ret">记者：<a href="#" title="<?php echo $column[0]->publisher;?>"><?php echo $column[0]->publisher;?></a></div>
 				<div id="problem" title="<?php echo $column[0]->created_at;?>">发布与：<?php echo $column[0]->created_at;?></div>
 			</div>
 			<div id="text">
@@ -98,87 +97,7 @@ foreach ($lines as $li){
 				</div>
 			</div>
 		</div>
-		<div id="b_r">
-			<div id="br_img"></div>
-			<div id="class">
-				<div class="cla_t"></div>
-				<div class="cla_c">
-					<div class="cla_title">早教课程</div>
-					<div class="cla_img">
-						<?php
-						$list=$db->query("SELECT id,title,img_url,description,content FROM eb_teach e where is_adopt=1 order by create_time desc,click_count desc limit 15;");
-						for($i=0;$i<3;$i++){ ?>
-						<div class="ci_z">
-							<div class="ci_pg"><a href="<?php get_news_url($list[$i]); ?>"><img src="<?php echo $list[$i]->img_url;?>"></a></div>
-							<div class="ci_title"><a href="<?php get_news_url($list[$i]); ?>"  title="<?php echo $list[$i]->title;?>"><?php echo $list[$i]->title;?></a></div>
-						</div>
-						<?php } ?>
-					</div>
-					<div class="cla_hr"></div>
-					<div class="cla_menu">
-						<?php for($i=3; $i<15; $i++){ ?>
-						<div class="cla_m_v"><a href="<?php get_news_url($list[$i]); ?>" title="<?php echo $list[$i]->title; ?>"><?php echo $list[$i]->title; ?></a></div>
-						<div class="cla_r"></div>
-						<?php } ?>
-					</div>
-				</div>
-				<div class="cla_b"></div>
-			</div>
-			<div id="tag">
-				<div id="tag_l"></div>
-				<div id="tag_c">
-					<div id="tagc_t"><font>热门</font>关键字</div>
-					<div class="tag_menu">
-						<?php for($i=0; $i<9; $i++){ ?>
-						<div class="cla_m_v"><a href="">早教课程</a></div>
-						<div class="cla_r"></div>
-						<?php } ?>
-					</div>
-				</div>
-				<div id="tag_b"></div>
-			</div>
-			<div class="bd">
-				<div class="bd_t"></div>
-				<div class="bd_c">
-					<div class="bdt_t">
-						<div class="bdt_tl">相关文章列表</div>
-						<div class="bdt_more"><a href="#"><font>+</font>更多</a></div>
-					</div>
-					<div class="bdt_hr">
-						<div class="bdt_hr2"></div>
-					</div>
-					<div class="bdt_v">
-						<?php for($i=0;$i<9;$i++){ ?>
-						<div>
-							<div class="bdt_l"></div>
-							<div class="book_title">
-								<a href="#">撒旦法十分</a>
-							</div>
-						</div>
-						<?php } ?>
-					</div>
-				</div>
-				<div class="bd_b"></div>
-			</div>
-			
-			<div id="comment">
-				<div id="comm_l"></div>
-				<div id="comm_c">
-					<div id="comm_t">
-						<div id="com_title">相关评论</div>
-						<div id="com_x">
-						</div>
-						<a href="#"><img/></a>
-					</div>
-					<?php for($i=0;$i<10;$i++){ ?>
-					<div id="comm_con">
-						<a href="#">选购得宝也能当，宝宝食</a>
-					</div>
-					<?php } ?>
-				</div>
-				<div id="comm_r"></div>
-			</div>
-		</div>
+		<?php include_once('_news_right.php');?>
 		</div>
 		<?php include_once('../inc/bottom.php');?>
 </div>

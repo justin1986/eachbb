@@ -27,7 +27,7 @@
 <input type="hidden" id="user_id" value="<?php echo $user->id;?>">
 <div id="container">
 		<div id="breadbrum">
-			<a href="/assistant/_index.php">助手首页</a> &gt;&gt; <a href="_knownledge.php">知识专题</a>
+			<a href="/assistant/_index.php">助手首页</a> &gt;&gt; <a href="_knowledge.php">知识专题</a>
 			<?php if($age && in_array($age, array(-2,-1,1,2,3,4))){
 				echo ">> ",convert_age($age);
 			} ?>

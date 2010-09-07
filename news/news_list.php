@@ -3,7 +3,6 @@
 <head>
 <meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <meta http-equiv=Content-Language content=zh-CN>
-<title>consult</title>
 <?php
 	include_once('../frame.php');
 	$db=get_db();
@@ -12,6 +11,7 @@
 	{
 		die('invliad params!');
 	}
+	$title_id = $db->query("select name from eb_category where id=$id");
 	css_include_tag('news_list');
 	//获得顶级category id；
 	$category = new category_class("news");
@@ -30,6 +30,7 @@
 	$all_category_ids = $category->children_map($category_id);
 	$exists_news_ids = array();
 ?>
+<title>网趣宝贝-育儿资讯-<?php echo $title_id[0]->name;?></title>
 </head>
 <body>
 <div id="ibody">
@@ -37,7 +38,7 @@
 		<div id="log_top">
 			<div id="log_t">
 				<div id="log"></div>
-				<div id="log_address">创业 &gt; 创业投资 &gt; 美国创业基金的中国风格</div>
+				<div id="log_address"><a href="/" style="font-size:12px; color:blue;">首页</a> &nbsp;&gt;&gt; &nbsp;<a href="/news" style="font-size:12px; color:blue;">资讯</a>&nbsp;&gt;&gt;&nbsp;<?php echo $title_id[0]->name;?></div>
 			</div>
 			<div id="hr"></div>
 		</div>
@@ -57,8 +58,10 @@
 							<div id="res_pg"></div>
 						</div>
 						<ul>
-							<?php for($i=0;$i<5;$i++){ ?>
-							<li><a href="#">编辑推荐编辑辑辑辑辑辑辑辑辑辑辑辑辑辑辑辑辑推荐</a></li>
+							<?php
+								$list_news=$db->query("SELECT id,title FROM eb_news where set_up=1 and is_adopt=1 and category_id=$id order by created_at desc LIMIT 5");
+							foreach ($list_news as $list){ ?>
+							<li><a href="/news/news.php?id=<?php echo $list->id;?>"><?php echo $list->title;?></a></li>
 							<?php } ?>
 						</ul>
 					</div>
@@ -120,11 +123,11 @@
 									$sql .= " and id not in ({$exists_news_ids})";
 								}
 								$sql .= " order by created_at desc";								
-								$list_news=$db->paginate($sql,26);
+								$list_news=$db->paginate($sql,50);
 								foreach ($list_news as $news){ ?>
 								<div class="list_title">
 									<div></div>
-									<a href="<?php get_news_url($news); ?>" title="<?php echo  $news->title; ?>"><?php echo $news->title; ?></a>
+									<a href="/news/news.php?id=<?php echo $news->id;?>" title="<?php echo  $news->title; ?>"><?php echo $news->title; ?></a>
 								</div>
 								<?php } ?>
 						</div>
@@ -136,62 +139,7 @@
 				<div id="list_bottom"></div>
 			</div>
 		</div>
-		<div id="list_container">
-			<div class="br_img"><img src="/images/article/r1.jpg"/></div>
-			<div id="class">
-				<div class="cla_t"></div>
-				<div class="cla_c">
-					<div class="cla_title">早教课程</div>
-					<div class="cla_img">
-						<?php
-						$list=$db->query("SELECT id,title,img_url,description,content FROM eb_teach e where is_adopt=1 order by create_time desc,click_count desc limit 15;");
-						for($i=0;$i<3;$i++){ ?>
-						<div class="ci_z">
-							<div class="ci_pg"><a href="<?php get_news_url($list[$i]); ?>"><img src="<?php echo $list[$i]->img_url;?>"></a></div>
-							<div class="ci_title"><a href="<?php get_news_url($list[$i]); ?>" title="<?php echo $list[$i]->title;?>"><?php echo $list[$i]->title;?></a></div>
-						</div>
-						<?php } ?>
-					</div>
-					<div class="cla_hr"></div>
-					<div class="cla_menu">
-						<?php for($i=3; $i<15; $i++){ ?>
-						<div class="cla_m_v"><a href="<?php get_news_url($list[$i]); ?>" title="<?php echo $list[$i]->title; ?>"><?php echo $list[$i]->title; ?></a></div>
-						<div class="cla_r"></div>
-						<?php } ?>
-					</div>
-				</div>
-				<div class="cla_b"></div>
-			</div>
-			<div id="comment">
-				<div id="comm_l"></div>
-				<div id="comm_c">
-					<div id="comm_t">
-						<div id="com_title">业界快讯排行</div>
-						<div id="com_x">
-						</div>
-						<a href="#"><img/></a>
-					</div>
-					<!-- 右边 业界快讯 一条列表的内容  开始 -->
-					<?php for($i=0;$i<10;$i++){ ?>
-					<div id="comm_con">
-						<div class="number" style="<?php if($i==0){ echo "background:url(/images/new_list/number.jpg) no-repeat;";} ?>"><?php echo $i+1; ?></div>
-						<a href="#">选购得宝也也也也也也也也也也也能当，宝宝食</a>
-					</div>
-					<!-- 右边 业界快讯 一条列表的内容  结束 -->
-					<?php } ?>
-				</div>
-				<div id="comm_r"></div>
-			</div>
-			<div class="br_img" style="margin-top:20px;"><img src="/images/article/r1.jpg"/></div>
-		</div>
-		<!-- 下边 标题 列表 -->
-		<div id="title_container">
-				<div>
-				<?php for($i=0;$i<50;$i++){ ?>
-					<a href="#">阿斯顿法</a>
-				<?php } ?>
-				</div>
-		</div>
+		<?php include_once('_news_right.php');?>
 		<?php include_once('../inc/bottom.php');?>
 </div>
 </body>

@@ -4,7 +4,7 @@
 	if(!isset($_SESSION['login'])){
 		$_SESSION['login'] = rand_str();
 	}
-	js_include_tag('assistant_login');
+	//js_include_tag('assistant_login');
 	$user = User::current_user();
 		function gender($value){
 			if($value){
