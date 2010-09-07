@@ -26,10 +26,9 @@
 					swfobject.embedSWF("flash/menu.swf","menu_flash","702","103","8",false,flashvar,flashparam);
 				</script>
 			</div>
-			<div id="menu_right"></div>
 	</div>
 	<div id="fbody">
-		<div id="f_l_pg"></div>
+		<!-- <div id="f_l_pg"></div> -->
 		<div id="f_c_m">
 			<div id="flash">
 				<div id="flash_left">
@@ -512,7 +511,7 @@
 			</div>
 		<?php include_once(dirname(__FILE__).'/inc/bottom.php');?>
 		</div>
-		<div id="f_r_pg"></div>
+		<!--  <div id="f_r_pg"></div>-->
 	</div>
 </div>
 </body>
