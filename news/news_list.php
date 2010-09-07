@@ -46,7 +46,31 @@
 			<div id="recommend_container">
 				<div id="recommend_top_pg"></div>
 				<div id="recommend_content_pg">
-					<div id="recommend_img"></div>
+					<div id="recommend_img">
+					<?php 
+						$type;
+						switch ($id)
+						{
+							case 1:
+								$type="育儿早班车";
+								break;
+							case 2:
+								$type="邻家育儿";
+								break;
+							case 3:
+								$type="海外传真";
+							break;
+							case 4: 
+								$type="潮爸潮妈";
+							break;
+							case 5:
+								$type=" 网趣动态";
+							break;
+						}
+						$img = $db->query("SELECT src FROM eb_images where is_adopt=1 and title='$type'  order by created_at desc LIMIT 1");
+					?>
+						<img src="<?php echo $img[0]->src;?>" />
+					</div>
 					<div id="recommend_c_hr"></div>
 					<!-- 编辑推荐 开始 -->
 					<div id="res_container">
