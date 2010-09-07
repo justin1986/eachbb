@@ -6,7 +6,7 @@
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-CN>
@@ -34,10 +34,10 @@
 	<div id=isearch>
 		<input class="sau_search" name="title" type="text" value="<? echo $_REQUEST['title']?>">
 		<select id=adopt name="adopt" style="width:90px" class="sau_search">
-				<option value="">发布状况</option>
-				<option value="news" <? if($_REQUEST['adopt']=="news"){?>selected="selected"<? }?>>news</option>
-				<option value="assistant" <? if($_REQUEST['adopt']=="assistant"){?>selected="selected"<? }?>>assistant</option>
-				<option value="feedback" <? if($_REQUEST['adopt']=="feedback"){?>selected="selected"<? }?>>feedback</option>
+				<option value="">评论类型</option>
+				<option value="news" <? if($_REQUEST['adopt']=="news"){?>selected="selected"<? }?>>新闻</option>
+				<option value="assistant" <? if($_REQUEST['adopt']=="assistant"){?>selected="selected"<? }?>>助手</option>
+				<option value="feedback" <? if($_REQUEST['adopt']=="feedback"){?>selected="selected"<? }?>>反馈</option>
 		</select>
 		<input class="sau_search" id="search_category" name ="category" type="hidden"></input>
 		<input type="button" value="搜索" id="search_button">
