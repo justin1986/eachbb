@@ -2,7 +2,7 @@
 	<div id="user_ma">
 	<div id="user_ma_s"><font size="2" color="red" ><b>个人信息管理</b></font></div>
 	<div id="user_ma_b"></div>
-	<div id="user_ma_h"><div style="float:left;height:50px;width:50px;"><img  src="<?php echo $user->avatar; ?>" style="height:50px;width:50px;"/></div><div style="float:left;margin-left:3px;"><font size="2"><b><?php if($name){echo $name;}else{alert("操作有误！");} ?></b></font></div></div>
+	<div id="user_ma_h"><div style="float:left;height:50px;width:50px;"><img  src="<?php echo $user->avatar; ?>" style="height:50px;width:50px;"/></div><div style="float:left;margin-left:3px;"><font size="2"><b><?php if($user->name)echo $user->name; ?></b></font></div></div>
 	<div class="user_b">
 	<div class="user_b_t"><img src="/images/avatar/apoint.png"></img><font size="2" style="margin-left:5px;">您有</font><a href="/baby/message_index.php"><?php echo $count[0]->id ? $count[0]->id : 0;?></a><font size="2" >条新消息</font></div>
 	<div class="user_b_t" style="padding-bottom:5px;"><img src="/images/avatar/apoint.png"></img><a href="/yard/"><font size="2" color="black" style="margin-left:5px;">我的小院子</font></a></div></div>
