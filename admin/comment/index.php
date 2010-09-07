@@ -19,7 +19,7 @@
 		$adopt = $_REQUEST['adopt'];
 		$c = array();
 		if($title!= ''){
-			array_push($c, "title like '%".trim($title)."%'  or comment like '%".trim($title)."%'");
+			array_push($c, "title like '%".trim($title)."%'  or comment like '%".trim($title)."%'  or nick_name like '%".trim($title)."%'");
 		}
 		if($adopt!=''){
 		array_push($c, "resource_type='$adopt'");
@@ -49,13 +49,12 @@
 		</tr>
 		<?php
 			$comment = new table_class("eb_comment");
-			
 			$record = $comment->paginate("all",array('conditions' => implode(' and ', $c) ,'order' => 'created_at desc'),30);
 			$count_record = count($record);
 			//--------------------
 			for($i=0;$i<$count_record;$i++){
-				if($record[$i]->resource_type == news){$result = $db->query("select short_title,category_id from eb_news where id={$record[$i]->resource_id}");}
-				elseif($record[$i]->resource_type == assistant){$result = $db->query("select short_title,category_id from eb_assistant where id={$record[$i]->resource_id}");}
+				if($record[$i]->resource_type == news){$result = $db->query("select short_title from eb_news where id={$record[$i]->resource_id}");}
+				elseif($record[$i]->resource_type == assistant){$result = $db->query("select short_title from eb_assistant where id={$record[$i]->resource_id}");}
 				$result = $result[0]->short_title;
 		?>
 				<tr class=tr3 id=<?php echo $record[$i]->id;?> >
@@ -63,8 +62,7 @@
 						<?php echo $record[$i]->nick_name;?>
 					</td>
 					<td><?php echo $record[$i]->ip;?></td>
-					<td><a href="/<?php if ($record[$i]->resource_type != 'feedback'){echo $record[$i]->resource_type."/".$record[$i]->resource_type.".php?id=".$record[$i]->resource_id;}else{echo "feedback.php";}?>"><?php echo $result;?></a></td>		
-<!--					<td><a href="/<?php echo $record[$i]->resource_type;?>/<?php echo $record[$i]->resource_type;?>.php?id=<?php echo $record[$i]->resource_id;?>"><?php echo $result;?></a></td>		-->
+					<td><a href="/<?php if ($record[$i]->resource_type != 'feedback'){echo $record[$i]->resource_type."/".$record[$i]->resource_type.".php?id=".$record[$i]->resource_id;}else{echo "feedback.php";}?>" target="_blank"><?php echo $result;?></a></td>		
 					<td><?php echo $record[$i]->resource_type;?></td>
 					<td>
 						<a href="#" class="colorbox" style="color:blue;"><?php echo mb_substr($record[$i]->comment,0,50,'utf-8');?></a>
@@ -113,6 +111,5 @@
 			}
 		});
 	});
-		
 </script>
 </html>

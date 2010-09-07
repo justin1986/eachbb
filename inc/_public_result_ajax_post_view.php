@@ -15,12 +15,12 @@
 	?>
 </head>
 <body>
-<div style="width:600px;padding:10px;">
+<div style="width:800px;padding:10px; background:#f1fcfe;">
 <?php if($list){?>
-	<div style="margin-top:10px; margin-bottom:10px; width:600px; ">标题：<?php echo $list[0]->title;?></div>
-	<div style="width:600px;">内容：<br><?php echo  $list[0]->description ; ?></div>
+	<div style="margin-top:10px; height:34px; line-height:34px; margin-bottom:10px; width:800px; background:#c1d4da;font-size:14px; font-weight:bold;">标题：<?php echo $list[0]->title;?></div>
+	<div style="width:800px; font-size:13px; line-height:20px;"><font style="font-size:14px; font-weight:bold;">内容：</font><br><?php echo  $list[0]->description ; ?></div>
 	<?php }else{?>
-	<div style="width:600px; height:100px; line-height:100px; font-size:30px; font-weight:bold; text-align:center;">内容为空！</div>
+	<div style="width:800px; height:100px; line-height:100px; font-size:30px; font-weight:bold; text-align:center;">内容为空！</div>
 	<?php }?>
 </div>
 </body>

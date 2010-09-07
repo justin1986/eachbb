@@ -52,7 +52,8 @@ top_login{width:970px; height:83px; margin-top:10px; font-size:13px; color:#ffff
 #recommend_top_pg{width:650px; height:8px; font-size:0px; line-height:0px; background:url(/images/new_list/t_t.jpg) no-repeat; float:left; display:inline;}
 #recommend_content_pg{width:648px; height:168px;  border-left:1px solid #D8D8D8; border-right:1px solid #D8D8D8; float:left; display:inline;}
 #recommend_bottom_pg{width:650px; height:8px; font-size:0px; line-height:0px; background:url(/images/new_list/t_b.jpg) no-repeat; float:left; display:inline;}
-#recommend_img{width:350px; height:172px; margin-left:7px; background:url(/images/new_list/pg.jpg) no-repeat; float:left; display:inline;}
+#recommend_img{width:350px; height:172px; margin-left:7px;  float:left; display:inline;}
+#recommend_img img{width:350px; height:172px; font-size:0px;}
 #recommend_c_hr{width:1px; height:172px; margin-left:10px; font-size:0px; line-height:0px;  background:url(/images/new_list/c_h.jpg) repeat-y; float:left; display:inline;}
 #res_container{width:270px; height:170px;  float:right; display:inline;}
 #res_top{width:270px; height:30px; float:left; display:inline;}

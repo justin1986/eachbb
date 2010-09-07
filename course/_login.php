@@ -53,10 +53,10 @@ if($user){
 #u_r{width:130px; height:25px; float:left; dispaly:inline;}
 #u_r select{width:80px; height:25px; }
 #urr_btn img{width:60px; height:22px;}
-.lp_p_input{width:190px; height:30px;  margin-top:2px; overflow:hidden; font-size:13px; float:left; display: inline;}
+.lp_p_input{width:185px; height:30px;  margin-top:2px; overflow:hidden; font-size:13px; float:left; display: inline;}
 .lpp_i{width:130px; height:25px; float:left; dispaly:inline;}
 #lp_ppp input{width:120px; height:20px; }
-#lp_ppp{width:190px; height:120px; margin-top:2px; margin-left:8px; background:#ffffff; float:left; display:inline;}
+#lp_ppp{width:185px; height:120px; margin-top:2px; margin-left:8px; background:#ffffff; float:left; display:inline;}
 #user{width:55px; height:25px; line-height:25px;  overflow:hidden; float:left; display:inline;}
 #user_pwd{width:55px; height:25px; overflow:hidden;  line-height:25px; float:left; display:inline;}
 </style>
