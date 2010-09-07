@@ -25,8 +25,8 @@
 					<div class="menu"><font >*</font>确认密码：</div>
 					<div class="menu"><font >*</font>性别：</div>
 					<div class="menu"><font >*</font>是否生育：</div>
-					<div class="menu baby_birth" id="baby_display"><font >*</font>宝宝生日：</div>
-					<div class="menu"><font >*</font>出生日期：</div>
+					<div class="menu baby_birth" id="baby_display" style="width:60px;">宝宝生日：</div>
+					<div class="menu">出生日期：</div>
 					<div class="menu"><font >*</font>验证码：</div>
 				</div>
 				<div id="midden">
@@ -54,6 +54,7 @@
 					<div class="menu">两次密码必须输入一致</div>
 					<div class="menu" id="verify_info" style="height:25px; margin-top:135px;"><div id="validate"><img src="/inc/verify.php?name=register"></div><font style="margin-left:10px; color:#999999; cursor:pointer;">看不清楚？换张图片</font></div>
 				</div>
+				<div id="mark">注:带<font style="font-size:12px; color:red;">*</font>的是必填项</div>
 				<input type="button" id="logon_btn" value="注  册"/>
 			</div>
 		</div>
@@ -75,11 +76,11 @@
 		$("#sel_baby_status").change(function(){
 			if($(this).val()==1){
 				$('.baby_birth').show();
-				$('#baby_display').text('宝宝生日');
+				$('#baby_display').html('<font>*</font>宝宝生日');
 				$('#verify_info').css('margin-top','175px');
 			}else if($(this).val()==3){
 				$('.baby_birth').show();
-				$('#baby_display').text('宝宝预产期');
+				$('#baby_display').html('<font>*</font>预产期');
 				$('#verify_info').css('margin-top','175px');
 			}else{
 				$('.baby_birth').hide();
@@ -143,12 +144,6 @@
 				$('#input_baby_status').focus();
 				return;
 			}
-			if($('#input_birthday').val()==""){
-				alert('请输入您的生日');
-				$('#input_birthday').focus();
-				return;
-			}
-
 			$.post('/register/ajax.post.php',
 				{'name':$('#register_name').val(),
 				 'email':$('#register_email').val(),

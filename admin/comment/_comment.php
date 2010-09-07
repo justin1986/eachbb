@@ -15,14 +15,13 @@
 					$cat = implode('=>',$category->tree_map_name($db->field_by_name('category_id')));
 					$title = $db->field_by_index(0);
 				}
-				
 		?>
 				<tr class=tr3 id=<?php echo $record[$i]->id;?> >
 					<td>
 						<?php echo $record[$i]->nick_name;?>
 					</td>
 					<td><?php echo $record[$i]->ip;?></td>
-					<td><?php echo $title;?></td>		
+					<td><a href="/news/news.php?id=<?php echo $record[$i]->resource_id;?>"><?php echo $title;?></a></td>		
 					<td><?php echo $cat;?></td>
 					<td>
 						<a href="#" class="colorbox" style="color:blue;"><?php echo mb_substr($record[$i]->comment,0,50,'utf-8');?></a>
