@@ -102,9 +102,6 @@
 		</tr>
   </table>
 </div>	
-</body>
-</html>
-
 <script>
 	$(function(){
 		category.display_select('category_select',$('#span_category'),<?php echo $category_id;?>,'', function(id){
@@ -124,3 +121,5 @@
 		});
 	});
 </script>
+</body>
+</html>
