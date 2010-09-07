@@ -15,7 +15,7 @@ $list=$db->query("SELECT id,category_id,title,created_at FROM eb_assistant where
 		?>
 	<div class="hotspot_pg">
 		<div></div>
-		<a href="/assistant/assistant.php?id=<?php echo $list[$i]->id;?>" target="_blank"><font>[<?php echo $type[0]->name;?>]</font>&nbsp;<?php echo $list[$i]->title?></a>
+		<a href="/assistant/assistant.php?id=<?php echo $list[$numid]->id;?>" target="_blank"><font>[<?php echo $type[0]->name;?>]</font>&nbsp;<?php echo $list[$numid]->title?></a>
 	</div>
 	<?php } ?>
 	<div class="kong" style="height:10px;"></div>
