@@ -136,7 +136,7 @@ include_once '../frame.php';
 				<!-- test end -->
 				<div id="cr_d">
 					<div id="crd_d">育儿热点</div>
-					<div id="geng"><a href="#">更多&gt;&gt;</a></div>
+					<div id="geng"><a href="/assistant">更多&gt;&gt;</a></div>
 				</div>
 				<div id="cr_e">
 					<?php
