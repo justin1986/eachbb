@@ -42,9 +42,9 @@
 		foreach($list as $friend){ ?>
 		<div class="ppg">
 			<div class="pic_pg">
-				<div class="pic_img"><a href="/yard/home.php?id=<?php echo $friend->id?>"><img  style="border:0px solid red;" src="<?php echo $friend->f_avatar; ?>"></a></div>
+				<div class="pic_img"><a href="/yard/home.php?id=<?php echo $friend->f_id;?>"><img  style="border:0px solid red;" src="<?php echo $friend->f_avatar; ?>"></a></div>
 			</div>
-			<div class="ppg_w"><a href="/yard/home.php?id=<?php echo $friend->id?>" style="font-size:12px; color:#000000; text-decoration: none;"><?php echo $friend->f_name; ?></a></div>
+			<div class="ppg_w"><a href="/yard/home.php?id=<?php echo $friend->f_id;?>" style="font-size:12px; color:#000000; text-decoration: none;"><?php echo $friend->f_name; ?></a></div>
 		</div>
 		<?php }
 		if(!$list){
