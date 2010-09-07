@@ -1,11 +1,11 @@
 <?php 
-$list=$db->query("SELECT id,category_id,title,created_at FROM eb_assistant where is_adopt=1  order by created_at,last_edited_at,click_count desc limit 12");
+$list=$db->query("SELECT id,category_id,title,created_at FROM eb_assistant where is_adopt=1  order by created_at,last_edited_at,click_count desc limit 100");
 ?>
 <div id="hotspot">育儿热点</div>
 <div id="hotspot_container">
 	<div class="kong" style="height:10px;"></div>
 	<?php for($i = 0 ; $i < 12 ; $i++){
-		$type = $db->query("select name from eb_category  where category_type='assistant' and id=".$list[$i]->category_id);
+		$type = $db->query("select name from eb_category  where category_type='assistant' and id=".$list[rand(0, 100)]->category_id);
 		?>
 	<div class="hotspot_pg">
 		<div></div>
