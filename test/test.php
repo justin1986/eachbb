@@ -55,7 +55,7 @@ include_once '../frame.php';
 	if(!$question->id) die_not_found();
 	$table = new table_class("eb_question_item");
 	$question_items = $table->find('all',array("conditions"=>"question_id={$question->id}"));
-	css_include_tag('top_inc/test_top','test_begin','top_inc/test_left');
+	css_include_tag('top_inc/test_top','test_begin','top_inc/test_left','test_left_inc');
 	use_jquery();
 	js_include_tag('front/test'); 
 ?>
@@ -65,7 +65,7 @@ include_once '../frame.php';
 	<div id="fbody">
 		<?php include_once(dirname(__FILE__).'/../inc/_test_top.php'); ?>
 		<div id="content">
-			<?php include_once(dirname(__FILE__).'/../inc/left_inc.php'); ?>
+			<?php include_once(dirname(__FILE__).'/../test/left_inc.php'); ?>
 			<div id="c_r">
 				<?php if($_SESSION['problem_type'] == 1){?>
 				<div id="crb_t"> 
