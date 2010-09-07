@@ -182,11 +182,15 @@ function change_verify(){
 
 function birthday_display(){
 	if($("#baby_status").val()==1){
+		$("#baby_color").text("*");;
 		$("#baby_birthday").text('宝宝生日');
 		$("#baby_birthday").parent().show();
+		$( "#baby_birthday2" ).datepicker( "option", "yearRange", 'c-10:c-0');
 	}else if($("#baby_status").val()==3){
+		$("#baby_color").text("*");;
 		$("#baby_birthday").text('宝宝预产期');
 		$("#baby_birthday").parent().show();
+		$( "#baby_birthday2" ).datepicker( "option","yearRange", 'c-10:c+1');
 	}else{
 		$("#baby_birthday").parent().hide();
 	}
@@ -195,7 +199,7 @@ function birthday_display(){
 function check_name(is_submit){
 	var name = $("#name").val();
 	if(name!=''){
-		if(name.length<4){
+		if(name.length<1){
 			$("#name_info").html('<span style=color:red>用户名太短</span>');
 			return false;
 		}
@@ -379,6 +383,7 @@ function check_babybirthday(){
 }
 
 function check_birthday(){
+<<<<<<< HEAD:javascript/register.js
 	if(!$("#birthday").val()){
 		$("#birthday_info").html('');
 		return true;
@@ -388,6 +393,18 @@ function check_birthday(){
 		return false;
 	}else{
 		$("#birthday_info").html('');
+=======
+	if($("#birthday").val()!=''){
+		if(!check_date($("#birthday").val())){
+			$("#birthday_info").html('<span style=color:red>请输入正确的日期格式</span>');
+			$("#birthday").attr('value','');
+			return false;
+		}else{
+			$("#birthday_info").html('');
+			return true;
+		}
+	}else{
+>>>>>>> 6b1b085e2bd879b5822696a44f316ab39fd408fe:javascript/register.js
 		return true;
 	}
 	

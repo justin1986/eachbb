@@ -67,7 +67,7 @@
 						<div class="ca_d" id="status_info"></div>
 					</div>
 					<div class="c_a" style="display:none;">
-						<div class="ca_a"></div>
+						<div class="ca_a" id=baby_color></div>
 						<div class="ca_b" id="baby_birthday">宝宝生日</div>
 						<div class="ca_c">
 							<input type="text" id="baby_birthday2" name=baby_birthday>
@@ -112,7 +112,7 @@
 					</div>
 					<div id="hr"></div>
 					<textarea id="text"></textarea>
-					<div id="check"><input id="accept" type="checkbox"/> 我接受用户注册和使用协议</div>
+					<div id="check"><input id="accept" type="checkbox"/> 我接受用户注册和使用协议&nbsp;&nbsp;&nbsp;注:带<font style="font-size:12px; color:red;">*</font>的是必填项</div>
 					<div id="confirm"><input type="button" id="register" disabled="disabled" value="确认并注册"></div>
 					</form>
 				</div>

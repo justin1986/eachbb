@@ -10,7 +10,7 @@ include_once '../inc/User.class.php';
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-CN>
 <?php 
-	css_include_tag('top_inc/test_top','test_begin','top_inc/test_left','test_left_inc');
+	css_include_tag('top_inc/test_top','test_begin','top_inc/test_left','test_left_inc','test_left_inc');
 	use_jquery();
 	js_include_tag('front/test');
 	$method = strtolower($_SERVER['REQUEST_METHOD']);
@@ -108,8 +108,8 @@ include_once '../inc/User.class.php';
 					<div id="crb_l"></div>
 					<div id="crbc_c">
 						<div id="crbc_l"><a href="#"><?php echo $test->name;?><font>测评回顾</font></a></div>
-						<div id="crbc_la"><a href="#">当前第<font><?php echo $step + 1;?></font>题</a></div>
 						<div id="crbc_lb"><a href="#">共<font><?php echo $question_len?></font>题</a></div>
+						<div id="crbc_la"><a href="#">当前第<font><?php echo $step + 1;?></font>题</a></div>
 					</div>
 					<div id="crb_r"></div>
 				</div>

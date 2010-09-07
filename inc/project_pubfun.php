@@ -44,6 +44,10 @@ function get_news_list_url($category,$include_children= true){
 	return '/news/news_list.php?category_id=' .$category_id;
 }
 
+function get_assistant_list_url($category){
+	return '/assistant/index.php?category_id=' . $category;
+}
+
 function get_search_keyword_url($keyword){
 	echo '';
 }
@@ -185,7 +189,7 @@ function refresh_course_xml(){
 	$out = '﻿<?xml version="1.0" encoding="UTF-8"?>';
 	$out .='<settings';
 	$out .=' autoRotate="1"';
-	$out .=' autoRotateSpeed="3"';
+	$out .=' autoRotateSpeed="2"';
 	$out .=' useSubtitle="0"';
 	$out .=' useTooltip="1"';
 	$out .=' useSecondCaption="1"';

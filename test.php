@@ -2,6 +2,8 @@
 	include "frame.php";
 	set_charset();
 	use_jquery(); 
+	js_include_tag('jquery.colorbox-min');
+	css_include_tag('colorbox');
 ?>
 <body>
 	<a href="http://localhost:82" id="test">test</a>
@@ -15,5 +17,8 @@
 <script>
 	//document.getElemetById('test');
 	$(function(){
+		$('#test').colorbox({
+			href:'/'
+		});
 	});
 </script>

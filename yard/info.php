@@ -17,6 +17,7 @@
 		$db = get_db();
 		$avatars =$db->query("SELECT id,photo,status FROM eachbb_member.member_avatar where u_id=".$user->id.' order by create_at desc limit 6');
 		$avatar_count = $db->record_count;
+		
 	?>
 </head>
 <body>
@@ -58,7 +59,7 @@
 					<div class="c_menu_pg_p" ></div>
 					<form  enctype="multipart/form-data" action="/yard/yard_image.post.php" method="post">
 						<div id="pic_log">
-							<img id="pic_left" src="<?php echo $user->avatar; ?>"/>
+							<img id="pic_left" src="<?php echo $user->avatar ? $user->avatar : '/images/yard_info_img/1.jpg'; ?>"/>
 							<div id="pic_right">
 								<div class="rig_title">上传新头像</div>
 								<div class="rig_title" style="font-weight:normal; margin-top:0px; color:#333333; font-size:12px;">支持JPG、JPEG、GIF和PNG文件，最大2M。</div>

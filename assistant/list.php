@@ -47,12 +47,24 @@
 			<div id="container_result">
 				<div id="breadbrum">
 					<a href="/assistant/_index.php">助手首页</a>
-					<?php if(in_array($_GET['age'], array(-2,-1,1,2,3,4))){
+					<?php 
+					if(in_array($_GET['age'], array(-2,-1))){
+						echo " >> ",convert_age($_GET['age']);
+						$breads = array();
+					}
+					if(in_array($_GET['age'], array(1,2,3,4))){
 						echo " >> <a href='/assistant/_index.php?age={$_GET['age']}'>",convert_age($_GET['age']),"</a>";
-					}?>
-					<?php
+					}
+					$len = count($breads);
+					$i = 0;
 					 foreach ($breads as $item){
-						echo " >> <a href='list.php?category_id={$item->id}'>{$item->name}</a>";
+					 	$i++;
+					 	if($i == $len){
+					 		echo " >> {$item->name}";
+					 	}else{
+					 		echo " >> <a href='list.php?category_id={$item->id}'>{$item->name}</a>";
+					 	}
+						
 					}?>
 					
 				</div>
@@ -75,11 +87,11 @@
 </body>
 <script type="text/javascript">
 	function filter_age(age){
-		var url = window.location.href;
-		var exp = /age=\d+/;
-		url = url.replace(exp, '');
-		url = url + '&age=' + age;
-		window.location.href=url;
+		//var url = window.location.href;
+		//var exp = /age=\d+/;
+		//url = url.replace(exp, '');
+		//url = url + '&age=' + age;
+		parent.window.location.href='/assistant/index.php?age='+ age;
 	}
 </script>
 </html>

@@ -149,9 +149,9 @@
 				<div id="menu_ctb" style="line-height: 33px;">
 						<?php
 						$i = 0;
-						foreach ($news_list as $list){
+						foreach ($news_list as $key => $list){
 						?>
-						<a href="#" style="<?php if($i == 0){ echo 'margin-left:10px;';}?> font-size:12px; font-weight:bold; color:#000000; text-decoration:none; float:left;"><?php echo $list;?></a>
+						<a href="<?php echo $key?>" style="<?php if($i == 0){ echo 'margin-left:10px;';}?> font-size:12px; font-weight:bold; color:#000000; text-decoration:none; float:left;"><?php echo $list;?></a>
 						<?php if(count($news_list)-1 != $i){ ?>
 						<div class="me_hh"></div>
 						<?php }

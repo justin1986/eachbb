@@ -30,7 +30,7 @@ $id_num = $_POST['id_num'];
 if((strlen($id_num)!=15&&strlen($id_num)!=18)&&!empty($id_num)){
 	die('身份证格式有误,请认真填写');
 }else{
-	if(!is_numeric(substr($id_num,0,15))){
+	if(!is_numeric(substr($id_num,0,15))&&!empty($id_num)){
 		die('身份证格式有误,请认真填写');
 	}
 	$member->id_num = addslashes($id_num);

@@ -11,11 +11,27 @@
 		$db = get_db();
 		$category = new category_class('assistant');
 		$age = intval($_GET['age']);
+		function convert_age($age){
+			switch($age){
+				case -2: return '准备怀孕';
+				case -1: return '怀孕期';
+				case 1:return '0~1岁';break;
+				case 2:return '1~2岁';break;
+				case 3:return '2~3岁';break;
+				case 4:return '3~6岁';break;
+			}
+		}
 	?>
 </head>
 <body>
 <input type="hidden" id="user_id" value="<?php echo $user->id;?>">
 <div id="container">
+		<div id="breadbrum">
+			<a href="/assistant/_index.php">助手首页</a> &gt;&gt; <a href="_knowledge.php">知识专题</a>
+			<?php if($age && in_array($age, array(-2,-1,1,2,3,4))){
+				echo ">> ",convert_age($age);
+			} ?>
+		</div>
 	<div id="container_result">
 		<div class='menu' <?php if($age&&$age!=-2){?>style="display:none;"<?php }?>>准备怀孕</div>
 		<div class="box" <?php if($age&&$age!=-2){?>style="display:none;"<?php }?>>
@@ -46,8 +62,10 @@
 			<div class="second_title"><a href="list.php?category_id=<?php echo $child->id;?>&age=-1"><?php echo $child->name;?></a></div>
 			<?php }?>
 		</div>
-		<?php for($i=1;$i<=4;$i++){?>
-		<div class='menu' <?php # if($age&&$age!=$i){?>style="display:inline;"<?php #}?>>
+		<?php for($i=1;$i<=4;$i++){
+			if($age && $age != $i) continue;
+		?>
+		<div class='menu' <?php  if($age&&$age!=$i){?>style="display:inline;"<?php }?>>
 			<?php 
 				switch($i){
 					case 1:echo '0~1岁';break;

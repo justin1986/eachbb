@@ -23,6 +23,7 @@
 		</div>
 		<div class="upload_bannerr" style="width:630px; margin-top:10px; text-align: left;">
 			<img style="width:150px; height:150px; margin-left:200px;" src="<?php echo $photo[0]->photo;?>"/>
+			<input id="photo" value="<?php echo $photo[0]->photo;?>" type="hidden" />
 		</div>
 		<div id="upload_btn_banner"  style="width:630px; margin-top:30px; padding-bottom:100px; text-align: left;">
 			<input type="submit" style="margin-left:200px;" id="btn_b_save" value="修改信息" />

@@ -1,5 +1,11 @@
 	<?php 
-	$news_list=array("积极备孕","孕期生活","生长发育","日常护理","疾病与接种","早期教育","宠爱自己");
+	$db = get_db();
+	$category = $db->query("select id,name from eb_category where parent_id = 0 and category_type='assistant'");
+	foreach ($category as $cat){
+		$key = '/assistant/index.php?category_id=' .$cat->id;
+		$news_list[$key] = $cat->name;
+	}
+	#$news_list=array("/assistant/index.php?category_id=-2" => "积极备孕","/assistant/index.php?category_id=-2" => "孕期生活","/assistant/index.php?category_id=-2" => "生长发育","/assistant/index.php?category_id=-2" => "日常护理","/assistant/index.php?category_id=-2" => "疾病与接种","/assistant/index.php?category_id=-2" => "早期教育","/assistant/index.php?category_id=-2" => "宠爱自己");
 	include_once(dirname(__FILE__) .'/../inc/_public_top.php');
 	?> 
 	<script type="text/javascript">
@@ -44,15 +50,15 @@
 						$(this).css('width','8px');
 						$(this).css('background-color','#D8EDC6');
 					}).click(function(){
-						window.location.href = "topic.php?id=" + $(this).attr('id');
+						//window.location.href = "topic.php?id=" + $(this).attr('id');
 					});
 				</script>
-				<div id="t2bv_a"><a href="#">怀孕期</a></div>
-				<div id="t2bv_b"><a href="#">新生儿</a></div>
-				<div id="t2bv_c"><a href="#">1岁</a></div>
-				<div id="t2bv_d"><a href="#">2岁</a></div>
-				<div id="t2bv_e"><a href="#">3岁</a></div>
-				<div id="t2bv_f"><a href="#">6岁</a></div>
+				<div id="t2bv_a"><a href="/assistant/index.php?age=-2">怀孕期</a></div>
+				<div id="t2bv_b"><a href="/assistant/index.php?age=-1">新生儿</a></div>
+				<div id="t2bv_c"><a href="/assistant/index.php?age=1">1岁</a></div>
+				<div id="t2bv_d"><a href="/assistant/index.php?age=2">2岁</a></div>
+				<div id="t2bv_e"><a href="/assistant/index.php?age=3">3岁</a></div>
+				<div id="t2bv_f"><a href="/assistant/index.php?age=4">6岁</a></div>
 			</div>
 		</div>
 	</div>

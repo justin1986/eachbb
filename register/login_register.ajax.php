@@ -25,8 +25,8 @@
 					<div class="menu"><font >*</font>确认密码：</div>
 					<div class="menu"><font >*</font>性别：</div>
 					<div class="menu"><font >*</font>是否生育：</div>
-					<div class="menu baby_birth" id="baby_display"><font >*</font>宝宝生日：</div>
-					<div class="menu"><font >*</font>出生日期：</div>
+					<div class="menu baby_birth" id="baby_display" style="width:60px;">宝宝生日：</div>
+					<div class="menu">出生日期：</div>
 					<div class="menu"><font >*</font>验证码：</div>
 				</div>
 				<div id="midden">
@@ -54,6 +54,7 @@
 					<div class="menu">两次密码必须输入一致</div>
 					<div class="menu" id="verify_info" style="height:25px; margin-top:135px;"><div id="validate"><img src="/inc/verify.php?name=register"></div><font style="margin-left:10px; color:#999999; cursor:pointer;">看不清楚？换张图片</font></div>
 				</div>
+				<div id="mark">注:带<font style="font-size:12px; color:red;">*</font>的是必填项</div>
 				<input type="button" id="logon_btn" value="注  册"/>
 			</div>
 		</div>
@@ -67,7 +68,8 @@
 				if(data){					
 					alert(data);
 				}else{
-					window.location.href="/yard.php";
+					window.location.href="/test/save_test_result.php";
+
 				}
 			});
 		});
@@ -75,12 +77,34 @@
 		$("#sel_baby_status").change(function(){
 			if($(this).val()==1){
 				$('.baby_birth').show();
-				$('#baby_display').text('宝宝生日');
+				$('#baby_display').html('<font>*</font>宝宝生日');
 				$('#verify_info').css('margin-top','175px');
+				$("#input_baby_birth").datepicker(
+						{
+							yearRange: 'c-10:c',
+							changeMonth: true,
+							changeYear: true,
+							monthNamesShort:['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
+							dayNames:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
+							dayNamesMin:["日","一","二","三","四","五","六"],
+							dayNamesShort:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
+							dateFormat: 'yy-mm-dd'
+						});
 			}else if($(this).val()==3){
 				$('.baby_birth').show();
-				$('#baby_display').text('宝宝预产期');
+				$('#baby_display').html('<font>*</font>预产期');
 				$('#verify_info').css('margin-top','175px');
+				$("#input_baby_birth").datepicker(
+						{
+							yearRange: 'c:c+1',
+							changeMonth: true,
+							changeYear: true,
+							monthNamesShort:['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
+							dayNames:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
+							dayNamesMin:["日","一","二","三","四","五","六"],
+							dayNamesShort:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
+							dateFormat: 'yy-mm-dd'
+						});
 			}else{
 				$('.baby_birth').hide();
 				$('#verify_info').css('margin-top','135px');
@@ -89,7 +113,7 @@
 
 		$("#input_birthday").datepicker(
 		{
-			 yearRange: 'c-40:c+1',
+			yearRange: 'c-70:c',
 			changeMonth: true,
 			changeYear: true,
 			monthNamesShort:['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
@@ -99,17 +123,7 @@
 			dateFormat: 'yy-mm-dd'
 		});
 		
-		$("#input_baby_birth").datepicker(
-		{
-			 yearRange: 'c-10:c+5',
-			changeMonth: true,
-			changeYear: true,
-			monthNamesShort:['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
-			dayNames:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
-			dayNamesMin:["日","一","二","三","四","五","六"],
-			dayNamesShort:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
-			dateFormat: 'yy-mm-dd'
-		});
+		
 
 		$("#validate").next().click(function(){
 			$("#validate img").attr('src','/inc/verify.php?name=register&reload='+Math.round(Math.random()*10000));
@@ -143,12 +157,6 @@
 				$('#input_baby_status').focus();
 				return;
 			}
-			if($('#input_birthday').val()==""){
-				alert('请输入您的生日');
-				$('#input_birthday').focus();
-				return;
-			}
-
 			$.post('/register/ajax.post.php',
 				{'name':$('#register_name').val(),
 				 'email':$('#register_email').val(),
