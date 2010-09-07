@@ -21,7 +21,7 @@
 						<?php echo $record[$i]->nick_name;?>
 					</td>
 					<td><?php echo $record[$i]->ip;?></td>
-					<td><a href="/news/news.php?id=<?php echo $record[$i]->resource_id;?>"><?php echo $title;?></a></td>		
+					<td><a href="/news/news.php?id=<?php echo $record[$i]->resource_id;?>" target="_blank"><?php echo $title;?></a></td>		
 					<td><?php echo $cat;?></td>
 					<td>
 						<a href="#" class="colorbox" style="color:blue;"><?php echo mb_substr($record[$i]->comment,0,50,'utf-8');?></a>
