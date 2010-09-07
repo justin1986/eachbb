@@ -62,7 +62,7 @@
 						<?php echo $record[$i]->nick_name;?>
 					</td>
 					<td><?php echo $record[$i]->ip;?></td>
-					<td><a href="/<?php if ($record[$i]->resource_type != 'feedback'){echo $record[$i]->resource_type."/".$record[$i]->resource_type.".php?id=".$record[$i]->resource_id;}else{echo "feedback.php";}?>"><?php echo $result;?></a></td>		
+					<td><a href="/<?php if ($record[$i]->resource_type != 'feedback'){echo $record[$i]->resource_type."/".$record[$i]->resource_type.".php?id=".$record[$i]->resource_id;}else{echo "feedback.php";}?>" target="_blank"><?php echo $result;?></a></td>		
 					<td><?php echo $record[$i]->resource_type;?></td>
 					<td>
 						<a href="#" class="colorbox" style="color:blue;"><?php echo mb_substr($record[$i]->comment,0,50,'utf-8');?></a>
