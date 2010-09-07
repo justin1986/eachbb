@@ -8,10 +8,13 @@ function initial_btn(){
 }
 $(function(){
 	initial_btn();
+	alert();
 	$('#btn_next').click(function(){
 		$('form').submit();
 	});
 	$('#btn_prev').click(function(){
+		var selected = $('.radio_chice').index($(this));
+		alert(selected);
 		$('#hidden_step').val($('#hidden_step').val() - 2);
 		$('form').submit();
 	});

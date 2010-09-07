@@ -379,19 +379,18 @@ function check_babybirthday(){
 }
 
 function check_birthday(){
-	if($("#birthday").val()==''){
-		$("#birthday_info").html('<span style=color:red>请输入生日</span>');
+	if(!$("#birthday").val()){
+		$("#birthday_info").html('');
+		return true;
+	}else if(!check_date($("#birthday").val())){
+		$("#birthday_info").html('<span style=color:red>请输入正确的日期格式</span>');
+		$("#birthday").attr('value','');
 		return false;
 	}else{
-		if(!check_date($("#birthday").val())){
-			$("#birthday_info").html('<span style=color:red>请输入正确的日期格式</span>');
-			$("#birthday").attr('value','');
-			return false;
-		}else{
-			$("#birthday_info").html('');
-			return true;
-		}
+		$("#birthday_info").html('');
+		return true;
 	}
+	
 }
 
 function check_phone(){
