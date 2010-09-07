@@ -87,6 +87,7 @@
 				<img src="/images/yard/friend_r1.jpg" />
 			</div>
 		</div>
+		<div id="query_friend">查询好友</div>
 	</div>
 <div id="pic_r">
 	<div id="pic_0">
