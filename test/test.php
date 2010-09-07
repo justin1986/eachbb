@@ -55,7 +55,7 @@ include_once '../frame.php';
 	if(!$question->id) die_not_found();
 	$table = new table_class("eb_question_item");
 	$question_items = $table->find('all',array("conditions"=>"question_id={$question->id}"));
-	css_include_tag('top_inc/test_top','test_begin','top_inc/test_left','class_s');
+	css_include_tag('top_inc/test_top','test_begin','top_inc/test_left','test_left_inc');
 	use_jquery();
 	js_include_tag('front/test'); 
 ?>
