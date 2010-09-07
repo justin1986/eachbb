@@ -7,6 +7,10 @@ $list=$db->query("SELECT id,category_id,title,created_at FROM eb_assistant where
 	<div class="kong" style="height:10px;"></div>
 	<?php for($i = 0 ; $i < 12 ; $i++){
 		$numid = rand(0, 200);
+		if(!$numid){
+			continue;
+			$i--;
+		}
 		$type = $db->query("select name from eb_category  where category_type='assistant' and id=".$list[$numid]->category_id);
 		?>
 	<div class="hotspot_pg">
