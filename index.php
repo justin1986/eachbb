@@ -254,7 +254,7 @@
 									$type = $db->query("select name from eb_category  where category_type='assistant' and id=".$list[$i]->category_id);
 									?>
 							<div class="mlc">
-								<a  href="/assistant/assistant.php?id=<?php echo $list[$i]->id;?>" target="_blank"><?php echo $type[0]->name;?><?php echo mb_strlen($list[$i]->title,"utf-8")>11 ? mb_substr($list[$i]->title,0,11,"utf-8")."...":$list[$i]->title;?></a>
+								<a  href="/assistant/assistant.php?id=<?php echo $list[$i]->id;?>" target="_blank">[<?php echo $type[0]->name;?>]<?php echo mb_strlen($list[$i]->title,"utf-8")>11 ? mb_substr($list[$i]->title,0,11,"utf-8")."...":$list[$i]->title;?></a>
 							</div>
 							<?php } ?>
 						</div>
@@ -495,7 +495,7 @@
 							<div class="son_c_z">
 								<div class="son_c_z_l"></div>
 								<div class="son_c_z_r">
-									<a  href="/assistant/assistant.php?id=<?php echo $list[$k]->id;?>" target="_blank"><?php echo $type[0]->name;?><?php echo mb_strlen($list[$k]->title,"utf-8")>15 ? mb_substr($list[$k]->title,0,15,"utf-8")."...":$list[$k]->title;?></a>
+									<a  href="/assistant/assistant.php?id=<?php echo $list[$k]->id;?>" target="_blank">[<?php echo $type[0]->name;?>]<?php echo mb_strlen($list[$k]->title,"utf-8")>15 ? mb_substr($list[$k]->title,0,15,"utf-8")."...":$list[$k]->title;?></a>
 								</div>
 							</div>
 							<?php } ?>
