@@ -251,7 +251,7 @@
 						<div id="m_l_b"<?php $pos="assistant_head";show_page_pos($pos,'link_t_d')?>>
 							<div id="m_c_title"><a href="<?php echo $pos_items[$pos]->href;?>" target ='_blank'><?php echo $pos_items[$pos]->title;?></a></div>
 							<div id="m_c_content"><a href="<?php echo $pos_items[$pos]->href;?>" target="_blank"><?php echo $pos_items[$pos]->description ? mb_substr($pos_items[$pos]->description, 0 ,45, "UTF-8")."...":'' ;?></a></div>
-							<div id="m_c_bottom"><a href="/news/news.php">查看详细内容&gt;&gt;</a></div>
+							<div id="m_c_bottom"><a href="/assistant/assistant.php">查看详细内容&gt;&gt;</a></div>
 						</div>
 						<div id="m_l_c_r">
 							<?php 
