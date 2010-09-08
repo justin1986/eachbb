@@ -210,7 +210,7 @@
 						<div class="dict_c"<?php $pos="right_tab_{$j}_{$i}";show_page_pos($pos,'link');?>>
 							<div class="dict_number"<?php if($i==1) echo ' style="background:url(/images/index/red.jpg) no-repeat;"';?>><?php echo $i; ?></div>
 							<div class="dict_value" style='margin-top:3px;'>
-								<a href="<?php echo $pos_items[$pos]->href?>" title="<?php echo $pos_items[$pos]->title;?>" target="_blank"><?php echo mb_strlen($pos_items[$pos]->title,"utf-8")."..." > 13 ? mb_substr($pos_items[$pos]->title,0,13,"utf-8"):$pos_items[$pos]->title;?></a>
+								<a href="<?php echo $pos_items[$pos]->href?>" title="<?php echo $pos_items[$pos]->title;?>" target="_blank"><?php echo mb_strlen($pos_items[$pos]->title,"utf-8") > 13 ? mb_substr($pos_items[$pos]->title,0,13,"utf-8")."...":$pos_items[$pos]->title;?></a>
 								<?php # echo_href($pos_items[$pos]->title, $pos_items[$pos]->href,array('target' => '_blank'));?></div>
 						</div>
 						<?php } ?>
