@@ -497,7 +497,7 @@
 							<div class="son_c_z">
 								<div class="son_c_z_l"></div>
 								<div class="son_c_z_r">
-									<a  href="/assistant/assistant.php?id=<?php echo $list[$k]->id;?>" target="_blank">[<?php echo $type[0]->name;?>]<?php echo mb_strlen($list[$k]->title,"utf-8")>12 ? mb_substr($list[$k]->title,0,12,"utf-8")."...":$list[$k]->title;?></a>
+									<a  href="/assistant/assistant.php?id=<?php echo $list[$k]->id;?>" target="_blank" title="<?php echo $list[$k]->title;?>"><?php echo mb_strlen("[".$type[0]->name."]".$list[$k]->title,"utf-8")>17 ? mb_substr("[".$type[0]->name."]".$list[$k]->title,0,17,"utf-8")."...":"[".$type[0]->name."]".$list[$k]->title;?></a>
 								</div>
 							</div>
 							<?php } ?>
