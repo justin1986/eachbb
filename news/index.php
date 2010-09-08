@@ -326,7 +326,7 @@
 			</div>
 			<div id="bi_c">
 				<?php
-				$list=$db->query("SELECT id,category_id,title,created_at FROM eb_news where is_adopt=1  order by created_at,last_edited_at,click_count desc limit 20");
+				$list=$db->query("select * from (select * from eb_news  where is_adopt=1 order by created_at desc limit 50) eb_news order by rand() limit 20");
 				for($i = 0 ; $i < 20 ; $i++){ ?>
 				<div class="bil_y" style="<?php if($i % 2 == 0){ echo "margin-left:0px;";}?>">
 					<div><span>[<?php echo news_type($list[$i]->category_id);?>]</span>
