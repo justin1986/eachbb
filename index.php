@@ -66,7 +66,7 @@
 								for( $i = 0 ; $i < 4 ; $i++){ ?>
 								<div class = "student_pg"<?php $pos="top_tab_1_$i";show_page_pos($pos,'link');?>>
 									<div class = "student_l"/></div>
-									<a href="<?php echo $pos_items[$pos]->href;?>"  title="<?php echo $pos_items[$pos]->title;?>" target ='_blank'><?php echo mb_strlen($pos_items[$pos]->title,"utf-8")>16 ? mb_substr($pos_items[$pos]->title,0,16,"utf-8")."...":$pos_items[$pos]->title;?></a>
+									<a href="<?php echo $pos_items[$pos]->href;?>"  title="<?php echo $pos_items[$pos]->title;?>" target ='_blank'><?php echo mb_strlen($pos_items[$pos]->title,"utf-8")>14 ? mb_substr($pos_items[$pos]->title,0,14,"utf-8")."...":$pos_items[$pos]->title;?></a>
 								</div>
 								<?php if($i != 3){?>
 								<div class = "student_hr"></div>		
@@ -77,7 +77,7 @@
 								for( $i = 4 ; $i < 9 ; $i++){ ?>
 								<div class = "student_pg"<?php $pos="top_tab_2_$i";show_page_pos($pos,'link');?>>
 									<div class = "student_l"/></div>
-									<a href="<?php echo $pos_items[$pos]->href;?>"  title="<?php echo $pos_items[$pos]->title;?>" target ='_blank'><?php echo mb_strlen($pos_items[$pos]->title,"utf-8")>16 ? mb_substr($pos_items[$pos]->title,0,16,"utf-8")."...":$pos_items[$pos]->title;?></a>
+									<a href="<?php echo $pos_items[$pos]->href;?>"  title="<?php echo $pos_items[$pos]->title;?>" target ='_blank'><?php echo mb_strlen($pos_items[$pos]->title,"utf-8")>14 ? mb_substr($pos_items[$pos]->title,0,14,"utf-8")."...":$pos_items[$pos]->title;?></a>
 								</div>
 								<?php if($i != 8){?>
 								<div class = "student_hr"></div>
@@ -88,7 +88,7 @@
 								for( $i = 0 ; $i < 4 ; $i++){ ?>
 								<div class = "student_pg"<?php $pos="top_tab_3_$i";show_page_pos($pos,'link');?>>
 									<div class = "student_l"/></div>
-									<a href="<?php echo $pos_items[$pos]->href;?>"  title="<?php echo $pos_items[$pos]->title;?>" target ='_blank'><?php echo mb_strlen($pos_items[$pos]->title,"utf-8")>16 ? mb_substr($pos_items[$pos]->title,0,16,"utf-8")."...":$pos_items[$pos]->title;?></a>
+									<a href="<?php echo $pos_items[$pos]->href;?>"  title="<?php echo $pos_items[$pos]->title;?>" target ='_blank'><?php echo mb_strlen($pos_items[$pos]->title,"utf-8")>14 ? mb_substr($pos_items[$pos]->title,0,14,"utf-8")."...":$pos_items[$pos]->title;?></a>
 								</div>
 								<?php if($i != 3){?>
 								<div class = "student_hr"></div>
