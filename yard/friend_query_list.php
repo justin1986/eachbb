@@ -7,6 +7,7 @@
 		include_once('../frame.php');
 		use_jquery();
 		$user = User::current_user();
+		css_include_tag('colorbox');
 		js_include_tag('yard/query_friend_list');
 		if(!$user){
 		alert("请您先登录！");?>
@@ -30,7 +31,7 @@
 </div>
 </body>
 <style>
-#friend_banner{width:850px; float:left; display:inline;}
+#friend_banner{width:850px; height:250px; float:left; display:inline;}
 #friend_title{width:840px; height:30px; padding-left:10px; background:#A8C783; line-height:30px; font-size:14px; font-weight:bold; float:left; display:inline;}
 #friend_where{width:840px; height:35px; margin-top:20px; padding-left:10px; line-height:10px; font-size:14px; float:left; display:inline;}
 #friend_btn{width:100px; height:35px; border:0px solid red;  cursor:pointer;  text-align:center; line-height:30px; background:url(/images/assistant_list/btn_1.jpg) no-repeat; float:right; display: inline;}

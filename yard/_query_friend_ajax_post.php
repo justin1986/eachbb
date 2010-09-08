@@ -20,6 +20,7 @@
 		if($nike_name)
 		$sql .=" and name='$nike_name'";
 		$db = get_db();
+		$sql .=' limit 1';
 		$list = $db->query($sql);
 ?>
 <div class="friend_result_title">搜索列表</div>
