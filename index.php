@@ -72,7 +72,7 @@
 								for( $i = 0 ; $i < 4 ; $i++){ ?>
 								<div class = "student_pg"<?php $pos="top_tab_1_$i";show_page_pos($pos,'link');?>>
 									<div class = "student_l"/></div>
-										<a href="<?php echo $pos_items[$pos]->href;?>"  title="<?php echo $pos_items[$pos]->title;?>" target ='_blank'><?php echo mb_strlen($pos_items[$pos]->title,"utf-8")>14 ? mb_substr($pos_items[$pos]->title,0,14,"utf-8")."...":$pos_items[$pos]->title;?></a>
+									<a href="<?php echo $pos_items[$pos]->href;?>"  title="<?php echo $pos_items[$pos]->title;?>" target ='_blank'><?php echo mb_strlen($pos_items[$pos]->title,"utf-8")>14 ? mb_substr($pos_items[$pos]->title,0,14,"utf-8")."...":$pos_items[$pos]->title;?></a>
 								</div>
 								<?php if($i != 3){?>
 								<div class = "student_hr"></div>		
@@ -83,7 +83,7 @@
 								for( $i = 4 ; $i < 9 ; $i++){ ?>
 								<div class = "student_pg"<?php $pos="top_tab_2_$i";show_page_pos($pos,'link');?>>
 									<div class = "student_l"/></div>
-										<a href="<?php echo $pos_items[$pos]->href;?>"  title="<?php echo $pos_items[$pos]->title;?>" target ='_blank'><?php echo mb_strlen($pos_items[$pos]->title,"utf-8")>14 ? mb_substr($pos_items[$pos]->title,0,14,"utf-8")."...":$pos_items[$pos]->title;?></a>
+									<a href="<?php echo $pos_items[$pos]->href;?>"  title="<?php echo $pos_items[$pos]->title;?>" target ='_blank'><?php echo mb_strlen($pos_items[$pos]->title,"utf-8")>14 ? mb_substr($pos_items[$pos]->title,0,14,"utf-8")."...":$pos_items[$pos]->title;?></a>
 								</div>
 								<?php if($i != 8){?>
 								<div class = "student_hr"></div>
@@ -94,7 +94,7 @@
 								for( $i = 0 ; $i < 4 ; $i++){ ?>
 								<div class = "student_pg"<?php $pos="top_tab_3_$i";show_page_pos($pos,'link');?>>
 									<div class = "student_l"/></div>
-										<a href="<?php echo $pos_items[$pos]->href;?>"  title="<?php echo $pos_items[$pos]->title;?>" target ='_blank'><?php echo mb_strlen($pos_items[$pos]->title,"utf-8")>14 ? mb_substr($pos_items[$pos]->title,0,14,"utf-8")."...":$pos_items[$pos]->title;?></a>
+									<a href="<?php echo $pos_items[$pos]->href;?>"  title="<?php echo $pos_items[$pos]->title;?>" target ='_blank'><?php echo mb_strlen($pos_items[$pos]->title,"utf-8")>14 ? mb_substr($pos_items[$pos]->title,0,14,"utf-8")."...":$pos_items[$pos]->title;?></a>
 								</div>
 								<?php if($i != 3){?>
 								<div class = "student_hr"></div>
@@ -255,9 +255,12 @@
 						</div>
 						<div id="m_l_c_r">
 							<?php 
-								for($i=1;$i<8;$i++){ ?>
-							<div class="mlc"<?php $pos="assistant_list_$i";show_page_pos($pos,'link')?>>
-								<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href,array('target' => '_blank'));?>
+								$list=$db->query("SELECT id,title,created_at FROM eb_assistant where is_adopt=1  order by created_at,last_edited_at,click_count desc limit 200");
+								for($i=1;$i<8;$i++){ 
+								$numid = rand(0, 200);
+									?>
+							<div class="mlc">
+								<a  href="/assistant/assistant.php?id=<?php echo $list[$numid]->id;?>" target="_blank"><?php echo $list[$numid]->title;?></a>
 							</div>
 							<?php } ?>
 						</div>
@@ -489,14 +492,12 @@
 						</div>
 						<div class="son_content">
 							<?php 
-								$list=$db->query("SELECT id,category_id,title,created_at FROM eb_assistant where is_adopt=1  order by created_at,last_edited_at,click_count desc limit 200");	
-								for($k=0;$k<12;$k++){
-								$numid = rand(0, 200);
+								for($k=8;$k<19;$k++){
 							 ?>
-							<div class="son_c_z">
+							<div class="son_c_z"<?php $pos="right_bottom_list_$k";show_page_pos($pos,'link');?>>
 								<div class="son_c_z_l"></div>
 								<div class="son_c_z_r">
-								<a href="assistant/assistant.php?id=<?php echo $list[$numid]->id;?>" target="_blank"><?php echo $list[$numid]->title;?></a>
+									<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href,array('target' => '_blank'));?>
 								</div>
 							</div>
 							<?php } ?>
