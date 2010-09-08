@@ -201,10 +201,8 @@ div{margin:0; padding:0; float:left; display:inline;}
 #m_l_title{width:155px; height:25px; margin-left:28px; margin-top:4px; line-height:25px;  overflow:hidden; float:left; display:inline;}
 #m_l_title a{font-family:����; font-size:16px; color:#333333; font-weight:bold; text-decoration:none;}
 #m_l_b{width:220px; height:175px; float:left; display:inline;}
-#m_c_title{width:177px; height:30px; margin-left:20px; margin-top:20px; overflow:hidden; line-height:30px;  float:left; display:inline;}
-#m_c_title a{font-weight:bold; font-size:16px; color:#FF8C3F; text-decoration:none;}
-#m_c_content{width:180px; height:85px; margin-left:20px; margin-top:5px; line-height:21px; overflow:hidden; float:left; display:inline;}
-#m_c_content a{font-size:13px; color:#000; text-decoration:none;}
+#m_c_title{width:177px; height:30px; margin-left:20px; margin-top:20px;font-weight:bold; font-size:16px; color:#FF8C3F;  overflow:hidden; line-height:30px;  float:left; display:inline;}
+#m_c_content{width:180px; height:85px; margin-left:20px; margin-top:5px;font-size:13px; color:#000; line-height:21px; overflow:hidden; float:left; display:inline;}
 #m_c_bottom{width:100px; height:20px; margin-left:45px; margin-top:10px;  line-height:20px; float:left; display:inline;}
 #m_c_bottom a{color:#CCCCCC; font-size:13px; text-decoration: none;}
 #m_l_c_r{width:237px; height:180px; margin-left:5px; margin-top:8px; float:left; display:inline;}
