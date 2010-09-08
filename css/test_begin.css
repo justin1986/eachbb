@@ -73,7 +73,7 @@ li {list-style-image: none;  list-style-type: none; margin-top:20px;}
 .crez_z{width:230px; height:20px; float:left; display:inline; }
 .crez_v{width:220px; height:20px; line-height:20px; overflow:hidden; float:right; display:inline;}
 .crez_v a{font-size:12px; color:#333333; text-decoration:none;}	
-.crez_v a font{font-size:12px; color:#2C4056; font-weight:bold; text-decoration:none;}
+.crez_v a font{font-size:12px; color:#2C4056; text-decoration:none;}
 
 #bottom{width:970px; text-align:center; margin-top:20px; font-size:12px; color:#666666; float:left; display:inline;}
 #bottom_b{width:970px; margin-top:10px; margin-bottom:50px; text-align:center; font-size:12px; color:#666666; float:left; display:inline;}
