@@ -15,12 +15,6 @@
 </head>
 <body>
 <div id="ibody">
-	<div id="login_index">
-		<a href="/yard"><img src="/images/index/login4.jpg"/></a>
-		<a href="/"><img src="/images/index/login3.jpg"/></a>
-		<a href="/register"><img src="/images/index/login2.jpg"/></a>
-		<a href="/login"><img src="/images/index/login1.jpg"/></a>
-	</div>
 	<div id="top_menu">
 			<div id="menu_left"></div>
 			<div id="menu_center">
