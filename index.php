@@ -260,7 +260,7 @@
 								$numid = rand(0, 200);
 									?>
 							<div class="mlc">
-								<a  href="/assistant/assistant.php?id=<?php echo $list[$numid]->id;?>" target="_blank"><?php echo $list[$numid]->title;?></a>
+								<a  href="/assistant/assistant.php?id=<?php echo $list[$numid]->id;?>" target="_blank"><?php echo mb_strlen($list[$numid]->title,"utf-8")>20 ? mb_substr($list[$numid]->title,0,20,"utf-8")."...":$list[$numid]->title;?></a>
 							</div>
 							<?php } ?>
 						</div>
