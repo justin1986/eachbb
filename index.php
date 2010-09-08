@@ -489,12 +489,14 @@
 						</div>
 						<div class="son_content">
 							<?php 
-								for($k=8;$k<19;$k++){
+								$list=$db->query("SELECT id,category_id,title,created_at FROM eb_assistant where is_adopt=1  order by created_at,last_edited_at,click_count desc limit 200");	
+								for($k=0;$k<12;$k++){
+								$numid = rand(0, 200);
 							 ?>
-							<div class="son_c_z"<?php $pos="right_bottom_list_$k";show_page_pos($pos,'link');?>>
+							<div class="son_c_z">
 								<div class="son_c_z_l"></div>
 								<div class="son_c_z_r">
-									<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href,array('target' => '_blank'));?>
+								<a href="assistant/assistant.php?id=<?php echo $list[$numid]->id;?>" target="_blank"><?php echo $list[$numid]->title;?></a>
 								</div>
 							</div>
 							<?php } ?>
