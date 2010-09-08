@@ -489,13 +489,13 @@
 						<div class="son_content">
 							<?php 
 								$list=$db->query("SELECT id,category_id,title,created_at FROM eb_assistant where is_adopt=1  order by click_count,rand() desc limit 11");
-								for($k=8;$k<19;$k++){
+								for($k=0;$k<11;$k++){
 								$type = $db->query("select name from eb_category  where category_type='assistant' and id=".$list[$k]->category_id);
 							 ?>
 							<div class="son_c_z">
 								<div class="son_c_z_l"></div>
 								<div class="son_c_z_r">
-									<a  href="/assistant/assistant.php?id=<?php echo $list[$k]->id;?>" target="_blank">[<?php echo $type[0]->name;?>]<?php echo mb_strlen($list[$k]->title,"utf-8")>7 ? mb_substr($list[$k]->title,0,7,"utf-8")."...":$list[$k]->title;?></a>
+									<a  href="/assistant/assistant.php?id=<?php echo $list[$k]->id;?>" target="_blank">[<?php echo $type[0]->name;?>]<?php echo mb_strlen($list[$k]->title,"utf-8")>12 ? mb_substr($list[$k]->title,0,12,"utf-8")."...":$list[$k]->title;?></a>
 								</div>
 							</div>
 							<?php } ?>
