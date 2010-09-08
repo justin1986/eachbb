@@ -7,8 +7,7 @@
 		include_once('../frame.php');
 		use_jquery();
 		$user = User::current_user();
-		css_include_tag('colorbox');
-		js_include_tag('yard/query_friend_list','jquery.colorbox-min');
+		js_include_tag('yard/query_friend_list');
 		if(!$user){
 		alert("请您先登录！");?>
 		<script>window.location.href="/login/";</script>
