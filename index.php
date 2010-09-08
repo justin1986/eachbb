@@ -248,7 +248,7 @@
 							<div id="m_l_title"><?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href,array('target' => '_blank'));?></div>
 						</div>
 						<div id="m_l_b"<?php $pos="assistant_head";show_page_pos($pos,'link_t_d')?>>
-							<div id="m_c_title" tilte="<?php echo $pos_items[$pos]->title;?>"><?php echo mb_strlen($pos_items[$pos]->title,"utf-8")>8? mb_substr($pos_items[$pos]->title,0,8,"utf-8")."...":$pos_items[$pos]->title;?></div>
+							<div id="m_c_title" title="<?php echo $pos_items[$pos]->title;?>"><?php echo mb_strlen($pos_items[$pos]->title,"utf-8")>8? mb_substr($pos_items[$pos]->title,0,8,"utf-8")."...":$pos_items[$pos]->title;?></div>
 							<div id="m_c_content"><?php echo $pos_items[$pos]->description ? mb_substr($pos_items[$pos]->description, 0 ,45, "UTF-8")."...":'' ;?></div>
 							<div id="m_c_bottom"><a href="<?php echo $pos_items[$pos]->href;?>">查看详细内容&gt;&gt;</a></div>
 						</div>
