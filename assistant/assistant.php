@@ -44,7 +44,7 @@
 			<div id="hr"></div>
 		</div>
 		<div id="b_l">
-			<div id="title"><a href="#" title="<?php echo $column[0]->title;?>"><?php echo $column[0]->title;?></a></div>
+			<div id="title"><a href="#" title="<?php echo $column[0]->title;?>"><?php echo mb_strlen($column[0]->title,"utf-8")>15 ? mb_substr($column[0]->title,0,15,"utf-8")."...":$column[0]->title;?></a></div>
 			<div id="title_b">
 				<div id="problem" title="<?php echo $column[0]->created_at;?>">发布于：<?php echo $column[0]->created_at;?></div>
 			</div>
