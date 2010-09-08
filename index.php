@@ -131,6 +131,7 @@
 							<div class="test_img">
 								<a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1: '/images/index/test_sample.jpg';?>" border="0" /></a>
 							</div>
+							<div class="test_tab_postion"></div>
 							<div class="test_context">
 								<div class="context_title"><?php echo $pos_items[$pos]->title;?></div>
 								<div class="context_content"><?php echo  $pos_items[$pos]->description ? mb_substr($pos_items[$pos]->description,0,75,'utf-8').'...' : ''; ?></div>
@@ -248,12 +249,12 @@
 						</div>
 						<div id="m_l_c_r">
 							<?php 
-								$list=$db->query("SELECT id,title,created_at FROM eb_assistant where is_adopt=1  order by created_at,last_edited_at,click_count desc limit 200");
+								$list=$db->query("SELECT id,category_id,title,created_at FROM eb_assistant where is_adopt=1  order by click_count,rand() desc limit 8");
 								for($i=1;$i<8;$i++){ 
-								$numid = rand(0, 200);
+									$type = $db->query("select name from eb_category  where category_type='assistant' and id=".$list[$i]->category_id);
 									?>
 							<div class="mlc">
-								<a  href="/assistant/assistant.php?id=<?php echo $list[$numid]->id;?>" target="_blank"><?php echo mb_strlen($list[$numid]->title,"utf-8")>15 ? mb_substr($list[$numid]->title,0,15,"utf-8")."...":$list[$numid]->title;?></a>
+								<a  href="/assistant/assistant.php?id=<?php echo $list[$i]->id;?>" target="_blank"><?php echo $type[0]->name;?><?php echo mb_strlen($list[$i]->title,"utf-8")>11 ? mb_substr($list[$i]->title,0,11,"utf-8")."...":$list[$i]->title;?></a>
 							</div>
 							<?php } ?>
 						</div>
@@ -268,11 +269,11 @@
 						</div>
 						<div class="son_content">
 							<?php 
-								$list=$db->query("SELECT id,category_id,title,created_at FROM eb_assistant where is_adopt=1  order by created_at,last_edited_at,click_count desc limit 200");
+							//	$list=$db->query("SELECT id,category_id,title,created_at FROM eb_assistant where is_adopt=1  order by click_count,rand() desc limit 8");
 								#$news_son=$db->query("SELECT id,title,description,content,short_title FROM eb_news e where category_id=208 and is_adopt=1 order by created_at desc limit 19");
 								#$news_son_count=$db->record_count;
 								for($j=0;$j<8;$j++){
-									$numid = rand(0, 200);
+									//$numid = rand(0, 200);
 							 ?>
 							<div class="son_c_z"<?php $pos="right_news_list_$j";show_page_pos($pos,'link')?>>
 								<div class="son_c_z_l"></div>
@@ -487,14 +488,14 @@
 						</div>
 						<div class="son_content">
 							<?php 
-								$list=$db->query("SELECT id,category_id,title,created_at FROM eb_assistant where is_adopt=1  order by created_at,last_edited_at,click_count desc limit 200");
+								$list=$db->query("SELECT id,category_id,title,created_at FROM eb_assistant where is_adopt=1  order by click_count,rand() desc limit 11");
 								for($k=8;$k<19;$k++){
-									$numid = rand(0, 200);
+								$type = $db->query("select name from eb_category  where category_type='assistant' and id=".$list[$i]->category_id);
 							 ?>
-							<div class="son_c_z"<?php $pos="right_bottom_list_$k";show_page_pos($pos,'link');?>>
+							<div class="son_c_z">
 								<div class="son_c_z_l"></div>
 								<div class="son_c_z_r">
-									<a  href="/assistant/assistant.php?id=<?php echo $list[$numid]->id;?>" target="_blank"><?php echo mb_strlen($list[$numid]->title,"utf-8")>15 ? mb_substr($list[$numid]->title,0,15,"utf-8")."...":$list[$numid]->title;?></a>
+									<a  href="/assistant/assistant.php?id=<?php echo $list[$k]->id;?>" target="_blank"><?php echo $type[0]->name;?><?php echo mb_strlen($list[$k]->title,"utf-8")>15 ? mb_substr($list[$k]->title,0,15,"utf-8")."...":$list[$k]->title;?></a>
 								</div>
 							</div>
 							<?php } ?>

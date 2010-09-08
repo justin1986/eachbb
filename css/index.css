@@ -98,7 +98,8 @@ div{margin:0; padding:0; float:left; display:inline;}
 	#test_id{width:684px; height:45px; margin-top:10px; overflow:Hidden; float:left; display:inline;}
 	#test_pg_zong{width:684px; height:121px; margin-top:-10px; float:left; display:inline;}
 	.test_tab{width:580px; height:110px;  float:left; display:none;}
-		.test_img{width:200px; height:105px; float:left; margin-left:18px; margin-top:3px;display:inline;}
+		.test_img{width:200px; height:105px; margin-left:18px; margin-top:3px;display:inline;}
+		.test_tab_postion{width:200px; height:105px; background:url(/images/index/png.png) no-repeat center !important; background-image:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=image, src=/images/index/png.png); left:60px; top:48px; position:absolute; float:left;}
 			.test_img img{width:200px;height:105px;}
 		.test_context{width:340px; height:110px; margin-left:18px; float:left;}
 			.test_context a{text-decoration: none;}
