@@ -21,19 +21,15 @@ $(function(){
 		$('.crc_pg').hide();
 		$('#crr_zz_'+selected).show();
 	},function(){});
+
 	$('.num').click(function(e){
 		e.preventDefault();
-		var selected=$('.num').index($(this));
-		var selected = selected % 4;
-		for(var i = 0; i < 4; i++){
-			if(i == selected)
-			{
-				continue;
-			}
-			$('.num').attr('style','background:#000000;');
-		}
-		$(this).attr('style','background:#CE0609;');
-		$('.banner').hide();
-		$('#banner_'+selected).show();
+		var container = $(this).parent().find('.num');
+		$(this).parent().find('.num').css('background','#000000');
+		var selected=container.index($(this));
+		$(this).css('background','#CE0609');
+		$(this).parent().parent().find('.banner').hide();
+		//alert($(this).parent().parent().find('.banner').length);
+		$(this).parent().parent().find('.banner:eq(' + selected +')').show();
 	},function(){});
 });
