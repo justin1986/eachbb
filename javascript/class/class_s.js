@@ -34,6 +34,6 @@ $(function(){
 		}
 		$(this).attr('style','background:#CE0609;');
 		$('.banner').hide();
-		$('.banner_'+selected).show();
+		$('#banner_'+selected).show();
 	},function(){});
 });
