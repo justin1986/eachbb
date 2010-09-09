@@ -40,7 +40,7 @@
 					<div class="crc_pg"  id="crr_zz_<?php echo $j;?>" <?php if($j === 0) echo "style='display:inline;'"?>>
 						<div class="crb_img" >
 							<?php for($i = 0; $i < 4; $i++){ ?>
-							<div class="banner"<?php $pos="middle_image_".$i."_".$j;show_page_pos($pos,'link_i');?> style="<?php if($i == 0){echo 'display:inline;';}else{ echo 'display:none;'; } ?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : '/images/class/l_pg_c.jpg';?>" /></div>
+							<div class="banner" id="banner_<?php echo $j;?>"<?php $pos="middle_image_".$i."_".$j;show_page_pos($pos,'link_i');?> style="<?php if($i == 0){echo 'display:inline;';}else{ echo 'display:none;'; } ?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : '/images/class/l_pg_c.jpg';?>" /></div>
 							<?php } ?>
 							<div class="num_banner">
 								<div class="num">4</div>

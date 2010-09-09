@@ -328,7 +328,12 @@
 			</div>
 			<div id="bi_c">
 				<?php
-				$list=$db->query("select * from eb_news order by rand() limit 20");
+				$list = array();
+				foreach(array(1,2,3,4) as $cate){
+						$items =$db->query("select * from eb_news where category_id=$cate order by created_at limit 20");
+						$list = array_merge($list,$items);
+				}
+				
 				for($i = 0 ; $i < 20 ; $i++){ ?>
 				<div class="bil_y" style="<?php if($i % 2 == 0){ echo "margin-left:0px;";}?>">
 					<div><span>[<?php echo news_type($list[$i]->category_id);?>]</span>

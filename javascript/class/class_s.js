@@ -20,8 +20,9 @@ $(function(){
 		$(this).attr('style','color:#ffffff;');
 		$('.crc_pg').hide();
 		$('#crr_zz_'+selected).show();
+		$(this).parent().parent().find('.banner .crc_pg .banner:eq(0)').show();
+		$('#banner_')
 	},function(){});
-
 	$('.num').click(function(e){
 		e.preventDefault();
 		var container = $(this).parent().find('.num');
