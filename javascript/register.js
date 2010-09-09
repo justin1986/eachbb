@@ -383,17 +383,6 @@ function check_babybirthday(){
 }
 
 function check_birthday(){
-<<<<<<< HEAD:javascript/register.js
-	if(!$("#birthday").val()){
-		$("#birthday_info").html('');
-		return true;
-	}else if(!check_date($("#birthday").val())){
-		$("#birthday_info").html('<span style=color:red>请输入正确的日期格式</span>');
-		$("#birthday").attr('value','');
-		return false;
-	}else{
-		$("#birthday_info").html('');
-=======
 	if($("#birthday").val()!=''){
 		if(!check_date($("#birthday").val())){
 			$("#birthday_info").html('<span style=color:red>请输入正确的日期格式</span>');
@@ -404,7 +393,6 @@ function check_birthday(){
 			return true;
 		}
 	}else{
->>>>>>> 6b1b085e2bd879b5822696a44f316ab39fd408fe:javascript/register.js
 		return true;
 	}
 	
