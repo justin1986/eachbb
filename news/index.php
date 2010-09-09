@@ -284,7 +284,9 @@
 				<div class="bct_number"  id="bn_<?php echo $j;?>">
 						<?php for($i=0; $i<10;$i++){?>
 						<div class="bct_cp"<?php $pos="right_tab_".$j."_".$i;show_page_pos($pos,'link')?>>
-							<div class="bct_cpl"  style="<?php if($i==0){ echo 'background:url(/images/index/red.jpg) no-repeat';}?>"><?php echo $i+1?></div>
+							<div class="bct_cpl"  style="<?php if($i==0){ echo 'background:url(/images/index/red.jpg) no-repeat';}?>">
+								<?php echo $i+1?>
+							</div>
 							<div class="bct_cpv"><?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?></div>
 						</div>
 						<?php  }?>
