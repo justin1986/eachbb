@@ -339,7 +339,7 @@ function check_re_password(is_submit){
 		}
 	}else{
 		if(is_submit){
-			$("#re_password_info").html('<span style=color:red>请2次输入相同密码</span>');
+			$("#re_password_info").html('<span style=color:red>2次输入的密码不相同</span>');
 			return false;
 		}else{
 			$("#re_password_info").html('');
