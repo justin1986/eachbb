@@ -4,11 +4,12 @@ $(function(){
 	 var id=$('#message_id').val();
 	 if(!result){
 	 alert('请输入留言内容');
+	 }else{
+		$.post('_message_post_ajax.php',{"id":id,"result":result},function(data){
+			alert(data);
+			window.location.href = "message_index.php?id="+id;
+		});
 	 }
-	$.post('_message_post_ajax.php',{"id":id,"result":result},function(data){
-		alert(data);
-		window.location.href = "message_index.php?id="+id;
-	});
 	});
 	$('#road_message').live('click',function(){
 			window.location.href = "message_index.php";

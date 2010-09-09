@@ -1,4 +1,4 @@
-body{width:970px; margin: 0 auto;  background:url(../images/index/img_pg.jpg) repeat-x;}
+body{width:970px; margin: 0 auto; }
 
 #ibody{width:970px; overflow:hidden; margin:0;}
 
@@ -43,7 +43,7 @@ body{width:970px; margin: 0 auto;  background:url(../images/index/img_pg.jpg) re
 #h_title{width:748px; height:20px; margin-top:15px; line-height:20px; overflow:hidden; text-align:center; font-size:15px; font-weight:bold; float:left; display:inline;}
 #c_title{width:748px; height:20px; margin-top:10px; text-align:center; font-size:18px; font-weight:bold; color:#40A10F; float:left; display:inline;}
 #cc_hr{width:748px; height:1px; margin-left:10px; margin-top:20px; background:url(../images/feedback/hr_b.jpg) repeat-x; float:left; display:inline;}
-#cc_c{width:728px;  margin-left:20px; text-indent:2em; overflow:hidden; font-size:13px; color:#666666; line-height:20px; margin-top:10px; float:left; display:inline;}
+#cc_c{width:718px;  margin-left:20px; text-indent:2em; overflow:hidden; font-size:13px; color:#666666; line-height:20px; margin-top:10px; float:left; display:inline;}
 #c_view{width:710px; height:135px; margin-top:20px; margin-bottom:15px; margin-left:10px; background:#F0F0F0; float:left; display:inline;}
 #cv_title{width:680px; height:20px; margin-top:25px; margin-bottom:5px; margin-left:10px; font-size:12px; font-weight:bold; line-height:20px; float:left; display:inline;}
 #cv_text{width:590px; height:40px; margin-left:35px; float:left; display:inline;}

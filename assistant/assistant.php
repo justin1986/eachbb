@@ -44,7 +44,9 @@
 			<div id="hr"></div>
 		</div>
 		<div id="b_l">
-			<div id="title"><a href="#" title="<?php echo $column[0]->title;?>"><?php echo $column[0]->title;?></a></div>
+			<div id="title"  title="<?php echo $column[0]->title;?>">
+				<?php echo $column[0]->title;?>
+			</div>
 			<div id="title_b">
 				<div id="problem" title="<?php echo $column[0]->created_at;?>">发布于：<?php echo $column[0]->created_at;?></div>
 			</div>

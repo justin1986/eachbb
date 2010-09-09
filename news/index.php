@@ -284,7 +284,9 @@
 				<div class="bct_number"  id="bn_<?php echo $j;?>">
 						<?php for($i=0; $i<10;$i++){?>
 						<div class="bct_cp"<?php $pos="right_tab_".$j."_".$i;show_page_pos($pos,'link')?>>
-							<div class="bct_cpl"  style="<?php if($i==0){ echo 'background:url(/images/index/red.jpg) no-repeat';}?>"><?php echo $i+1?></div>
+							<div class="bct_cpl"  style="<?php if($i==0){ echo 'background:url(/images/index/red.jpg) no-repeat';}?>">
+								<?php echo $i+1?>
+							</div>
 							<div class="bct_cpv"><?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?></div>
 						</div>
 						<?php  }?>
@@ -326,7 +328,12 @@
 			</div>
 			<div id="bi_c">
 				<?php
-				$list=$db->query("SELECT id,category_id,title,created_at FROM eb_news where is_adopt=1  order by created_at,last_edited_at,click_count desc limit 20");
+				$list = array();
+				foreach(array(1,2,3,4) as $cate){
+						$items =$db->query("select * from eb_news where category_id=$cate order by created_at limit 5");
+						$list = array_merge($list,$items);
+				}
+				
 				for($i = 0 ; $i < 20 ; $i++){ ?>
 				<div class="bil_y" style="<?php if($i % 2 == 0){ echo "margin-left:0px;";}?>">
 					<div><span>[<?php echo news_type($list[$i]->category_id);?>]</span>

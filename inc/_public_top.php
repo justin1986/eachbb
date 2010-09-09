@@ -11,7 +11,7 @@
 }
 #tl_l{
 	width:227px;
-	background:url('/images/top/logon.png') no-repeat;
+	background:url('/images/top/logo.png') no-repeat;
 	float:left;
 }
 #tl_r{

@@ -16,6 +16,7 @@ $(function(){
 		}
 	});
 	$('#btn_prev').click(function(){
+		var selected = $('.radio_chice').index($(this));
 		if(step <=1){
 			alert("当前已为第一题");
 		}else{

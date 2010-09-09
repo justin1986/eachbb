@@ -159,7 +159,7 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 .bct_cp{width:286px; height:28px; border-right:1px solid #E0DBF5; border-left:1px solid #E0DBF5; background:url(/images/consult/rb_bc.jpg) repeat-y; float:left; display:inline;}
 #bct_cb{width:288px; height:11px; background:url(/images/consult/rb_bb.jpg) no-repeat; float:Left; display:inline;}
 .bct_cpl{width:22px; bct_cpheight:22px; margin-left:20px; margin-top:5px; font-size:12px; color:#ffffff; font-weight:600; text-align:center; line-height:22px; background:url(/images/index/block.jpg) no-repeat; float:left; display:inline;}
-.bct_cpv{width:180px; margin-top:10px; margin-left:6px; height:14px;  line-height:14px; overflow:hidden; float:left; display:inline;}
+.bct_cpv{width:200px; margin-top:10px; margin-left:6px; height:14px;  line-height:14px; overflow:hidden; float:left; display:inline;}
 .bct_cpv a{ font-size:12px; line-height:14px; color:#000; text-decoration:none;}
 
 .bct_number{ float:left;display:none;}
@@ -212,9 +212,9 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 
 
 .bil_y div{width:350px; float:left;}
-.bil_y{width:440px; height:18px; padding-left:20px; margin-left:20px; margin-top:10px; overflow:hidden; font-size:12px; color:#333333; font-weight:600; text-align:left; line-height:18px; float:left; display:inline;}
+.bil_y{width:440px; height:18px; padding-left:20px; margin-left:20px; margin-top:10px; overflow:hidden; font-size:12px; color:#2C4056;text-align:left; line-height:18px; float:left; display:inline;}
 .bil_y div a{font-size:13px; text-decoration:none; color:#333333;}
-.bil_y div SPAN{font-size:12px; font-weight:bold; color:#555555;}
+.bil_y div SPAN{font-size:12px; color:#555555;}
 .bil_y  font{ margin-left:15px; font-size:12px; font-weight:normal; color:#444444;  }
 
 #bl_img{width:658px; height:86px; margin-top:10px; overflow:hidden; float:left; display:inline;}

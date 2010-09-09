@@ -222,7 +222,7 @@ function check_name(is_submit){
 					name_flag = 'wrong';
 				}
 				else {
-					$("#name_info").html('<span style=color:green>用户名可以使用</span>');
+					$("#name_info").html('<span style=color:blue>用户名可以使用</span>');
 					name_flag = 'success';
 					do_submit();
 				}
@@ -265,7 +265,7 @@ function check_email(is_submit){
 					email_flag = 'wrong';
 				}
 				else {
-					$("#email_info").html('<span style=color:green>邮箱可以使用</span>');
+					$("#email_info").html('<span style=color:blue>邮箱可以使用</span>');
 					email_flag = 'success';
 					do_submit();
 				}
@@ -304,12 +304,12 @@ function check_password(is_submit){
 				return false;
 			}
 			else {
-				$("#re_password_info").html('<span style=color:green>输入一致</span>');
-				$("#password_info").html('<span style=color:green>密码可以使用</span>');
+				$("#re_password_info").html('<span style=color:blue>输入一致</span>');
+				$("#password_info").html('<span style=color:blue>密码可以使用</span>');
 				return true;
 			}
 		}else{
-			$("#password_info").html('<span style=color:green>密码可以使用</span>');
+			$("#password_info").html('<span style=color:blue>密码可以使用</span>');
 			return true;
 		}
 	}else{
@@ -331,15 +331,15 @@ function check_re_password(is_submit){
 	var re_password = $("#re_password").val();
 	if(password!=''&&re_password!=''){
 		if(password!=re_password){
-			$("#re_password_info").html('<span style=color:red>请2次输入相同密码</span>');
+			$("#re_password_info").html('<span style=color:red>2次输入的密码不相同</span>');
 			return false;
 		}else{
-			$("#re_password_info").html('<span style=color:green>输入一致</span>');
+			$("#re_password_info").html('<span style=color:blue>输入一致</span>');
 			return true;
 		}
 	}else{
 		if(is_submit){
-			$("#re_password_info").html('<span style=color:red>请2次输入相同密码</span>');
+			$("#re_password_info").html('<span style=color:red>2次输入的密码不相同</span>');
 			return false;
 		}else{
 			$("#re_password_info").html('');
@@ -395,6 +395,7 @@ function check_birthday(){
 	}else{
 		return true;
 	}
+	
 }
 
 function check_phone(){
