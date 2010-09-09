@@ -219,9 +219,9 @@ div{margin:0; padding:0; float:left; display:inline;}
 .son_t_r{width:50px; height:15px; margin-right:10px; margin-top:5px; font-size:12px; line-height:15px; text-align:center; border-left:1px solid #D8D8D8;  border-right:1px solid #D8D8D8; float:right; display:inline;}
 .son_t_r a{text-decoration: none; color:#000000; }
 .son_content{width:260px; float:left; display:inline;}
-.son_c_z{width:250px; height:20px; margin-top:4px; float:left; display:inline;}
+.son_c_z{width:260px; height:20px; margin-top:4px; float:left; display:inline;}
 .son_c_z_l{width:5px; height:5px; margin:7px; font-size:0px; line-height:0px; background:url(/images/index/dian.png) no-repeat; float:left; display:inline;}
-.son_c_z_r{width:227px; height:20px; line-height:20px; overflow:hidden;  float:left; display:inline;}
+.son_c_z_r{width:237px; height:20px; line-height:20px; overflow:hidden;  float:left; display:inline;}
 .son_c_z_r a{font-size:13px; color:#666666; text-decoration:none;}
 
 #qinzi{width:962px; height:226px; margin-top:4px; float:left; display:inline;}
