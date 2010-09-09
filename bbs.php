@@ -94,7 +94,7 @@
 					</div>
 				</div>
 				<div class="bitc_a" style="float:right; margin-right:20px;">
-					<div class="bitca_t" style="background:url(images/bbs/c2.jpg)">
+					<div class="bitca_t" style="background:url(/images/bbs/c2.jpg)">
 						<div class="bi_l"><a href="#">专  题</a></div>
 						<div class="bi_r"><a href="#">more</a></div>
 					</div>
@@ -124,7 +124,7 @@
 					</div>
 				</div>
 				<div class="bitc_a">
-					<div class="bitca_t" style="background:url(images/bbs/c3.jpg) no-repeat">
+					<div class="bitca_t" style="background:url(/images/bbs/c3.jpg) no-repeat">
 						<div class="bi_l"><a href="#">专  题</a></div>
 						<div class="bi_r"><a href="#">more</a></div>
 					</div>
@@ -154,7 +154,7 @@
 					</div>
 				</div>
 				<div class="bitc_a" style="float:right; margin-right:20px;">
-					<div class="bitca_t" style="background:url(images/bbs/c4.jpg) no-repeat;">
+					<div class="bitca_t" style="background:url(/images/bbs/c4.jpg) no-repeat;">
 						<div class="bi_l"><a href="#">专  题</a></div>
 						<div class="bi_r"><a href="#">more</a></div>
 					</div>
@@ -189,9 +189,9 @@
 				<div id="bl_ti">
 					<div class="special">
 						<div class="bl_sp_t">
-							<div class="bl_a" style="background:url(images/bbs/t1.jpg) no-repeat;"><font><a href="#">专题</a></font></div>
-							<div class="bl_hr" style="background:url(images/bbs/h1.jpg) repeat-x;"></div>
-							<div class="bl_r" style="background:url(images/bbs/m1.jpg) no-repeat;"><a href="#">+MORE</a></div>
+							<div class="bl_a" style="background:url(/images/bbs/t1.jpg) no-repeat;"><font><a href="#">专题</a></font></div>
+							<div class="bl_hr" style="background:url(/images/bbs/h1.jpg) repeat-x;"></div>
+							<div class="bl_r" style="background:url(/images/bbs/m1.jpg) no-repeat;"><a href="#">+MORE</a></div>
 						</div>
 						<div class="bl_sp_c">
 							<div class="blspc_l" <?php $pos="topic1_img";show_page_pos($pos,'link_t_i');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href?>"><img src="<?php echo $pos_items[$pos]->image1;?>"></a></div>
@@ -218,9 +218,9 @@
 					</div>
 					<div class="special">
 						<div class="bl_sp_t"> 
-							<div class="bl_a" style="background:url(images/bbs/t2.jpg) no-repeat;"><a href="#">专题</a></div>
-							<div class="bl_hr" style="background:url(images/bbs/h2.jpg) repeat-x;"></div>
-							<div class="bl_r" style="background:url(images/bbs/m2.jpg) no-repeat;"><a href="#">+MORE</a></div>
+							<div class="bl_a" style="background:url(/images/bbs/t2.jpg) no-repeat;"><a href="#">专题</a></div>
+							<div class="bl_hr" style="background:url(/images/bbs/h2.jpg) repeat-x;"></div>
+							<div class="bl_r" style="background:url(/images/bbs/m2.jpg) no-repeat;"><a href="#">+MORE</a></div>
 						</div>
 						<div class="bl_sp_c">
 							<div class="blspc_l" <?php $pos="topic2_img";show_page_pos($pos,'link_t_i');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href?>"><img src="<?php echo $pos_items[$pos]->image1;?>"></a></div>
@@ -247,9 +247,9 @@
 					</div>
 					<div class="special">
 						<div class="bl_sp_t"> 
-							<div class="bl_a" style="background:url(images/bbs/t3.jpg) no-repeat;"><a href="#">专题</a></div>
-							<div class="bl_hr" style="background:url(images/bbs/h3.jpg) repeat-x;"></div>
-							<div class="bl_r" style="background:url(images/bbs/m3.jpg) no-repeat;"><a href="#">+MORE</a></div>
+							<div class="bl_a" style="background:url(/images/bbs/t3.jpg) no-repeat;"><a href="#">专题</a></div>
+							<div class="bl_hr" style="background:url(/images/bbs/h3.jpg) repeat-x;"></div>
+							<div class="bl_r" style="background:url(/images/bbs/m3.jpg) no-repeat;"><a href="#">+MORE</a></div>
 						</div>
 						<div class="bl_sp_c">
 							<div class="blspc_l" <?php $pos="topic3_img";show_page_pos($pos,'link_t_i');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href?>"><img src="<?php echo $pos_items[$pos]->image1;?>"></a></div>
@@ -276,9 +276,9 @@
 					</div>
 					<div class="special">
 						<div class="bl_sp_t"> 
-							<div class="bl_a" style="background:url(images/bbs/t4.jpg) no-repeat;"><a href="#">专题</a></div>
-							<div class="bl_hr" style="background:url(images/bbs/h4.jpg) repeat-x;"></div>
-							<div class="bl_r" style="background:url(images/bbs/m4.jpg) no-repeat;"><a href="#">+MORE</a></div>
+							<div class="bl_a" style="background:url(/images/bbs/t4.jpg) no-repeat;"><a href="#">专题</a></div>
+							<div class="bl_hr" style="background:url(/images/bbs/h4.jpg) repeat-x;"></div>
+							<div class="bl_r" style="background:url(/images/bbs/m4.jpg) no-repeat;"><a href="#">+MORE</a></div>
 						</div>
 						<div class="bl_sp_c">
 							<div class="blspc_l" <?php $pos="topic4_img";show_page_pos($pos,'link_t_i');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href?>"><img src="<?php echo $pos_items[$pos]->image1;?>"></a></div>
@@ -305,9 +305,9 @@
 					</div>
 					<div class="special">
 						<div class="bl_sp_t"> 
-							<div class="bl_a" style="background:url(images/bbs/t5.jpg) no-repeat;"><a href="#">专题</a></div>
-							<div class="bl_hr" style="background:url(images/bbs/h5.jpg) repeat-x;"></div>
-							<div class="bl_r" style="background:url(images/bbs/m5.jpg) no-repeat;"><a href="#">+MORE</a></div>
+							<div class="bl_a" style="background:url(/images/bbs/t5.jpg) no-repeat;"><a href="#">专题</a></div>
+							<div class="bl_hr" style="background:url(/images/bbs/h5.jpg) repeat-x;"></div>
+							<div class="bl_r" style="background:url(/images/bbs/m5.jpg) no-repeat;"><a href="#">+MORE</a></div>
 						</div>
 						<div class="bl_sp_c">
 							<div class="blspc_l" <?php $pos="topic5_img";show_page_pos($pos,'link_t_i');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href?>"><img src="<?php echo $pos_items[$pos]->image1;?>"></a></div>
@@ -334,9 +334,9 @@
 					</div>
 					<div class="special">
 						<div class="bl_sp_t"> 
-							<div class="bl_a" style="background:url(images/bbs/t6.jpg) no-repeat;"><a href="#">专题</a></div>
-							<div class="bl_hr" style="background:url(images/bbs/h6.jpg) repeat-x;"></div>
-							<div class="bl_r" style="background:url(images/bbs/m6.jpg) no-repeat;"><a href="#">+MORE</a></div>
+							<div class="bl_a" style="background:url(/images/bbs/t6.jpg) no-repeat;"><a href="#">专题</a></div>
+							<div class="bl_hr" style="background:url(/images/bbs/h6.jpg) repeat-x;"></div>
+							<div class="bl_r" style="background:url(/images/bbs/m6.jpg) no-repeat;"><a href="#">+MORE</a></div>
 						</div>
 						<div class="bl_sp_c">
 							<div class="blspc_l" <?php $pos="topic6_img";show_page_pos($pos,'link_t_i');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href?>"><img src="<?php echo $pos_items[$pos]->image1;?>"></a></div>
@@ -363,9 +363,9 @@
 					</div>
 					<div class="special">
 						<div class="bl_sp_t"> 
-							<div class="bl_a" style="background:url(images/bbs/t7.jpg) no-repeat;"><a href="#">专题</a></div>
-							<div class="bl_hr" style="background:url(images/bbs/h7.jpg) repeat-x;"></div>
-							<div class="bl_r" style="background:url(images/bbs/m7.jpg) no-repeat;"><a href="#">+MORE</a></div>
+							<div class="bl_a" style="background:url(/images/bbs/t7.jpg) no-repeat;"><a href="#">专题</a></div>
+							<div class="bl_hr" style="background:url(/images/bbs/h7.jpg) repeat-x;"></div>
+							<div class="bl_r" style="background:url(/images/bbs/m7.jpg) no-repeat;"><a href="#">+MORE</a></div>
 						</div>
 						<div class="bl_sp_c">
 							<div class="blspc_l" <?php $pos="topic7_img";show_page_pos($pos,'link_t_i');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href?>"><img src="<?php echo $pos_items[$pos]->image1;?>"></a></div>
@@ -392,9 +392,9 @@
 					</div>
 					<div class="special">
 						<div class="bl_sp_t"> 
-							<div class="bl_a" style="background:url(images/bbs/t8.jpg) no-repeat;"><a href="#">专题</a></div>
-							<div class="bl_hr" style="background:url(images/bbs/h8.jpg) repeat-x;"></div>
-							<div class="bl_r" style="background:url(images/bbs/m8.jpg) no-repeat;"><a href="#">+MORE</a></div>
+							<div class="bl_a" style="background:url(/images/bbs/t8.jpg) no-repeat;"><a href="#">专题</a></div>
+							<div class="bl_hr" style="background:url(/images/bbs/h8.jpg) repeat-x;"></div>
+							<div class="bl_r" style="background:url(/images/bbs/m8.jpg) no-repeat;"><a href="#">+MORE</a></div>
 						</div>
 						<div class="bl_sp_c">
 							<div class="blspc_l" <?php $pos="topic8_img";show_page_pos($pos,'link_t_i');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href?>"><img src="<?php echo $pos_items[$pos]->image1;?>"></a></div>
