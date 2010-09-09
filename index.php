@@ -256,7 +256,7 @@
 									$type = $db->query("select name from eb_category  where category_type='assistant' and id=".$list[$i]->category_id);
 									?>
 							<div class="mlc">
-								<a  href="/assistant/assistant.php?id=<?php echo $list[$i]->id;?>" target="_blank"  title="<?php echo $list[$i]->title;?>"><?php echo mb_strlen("[".$type[0]->name."]".$list[$i]->title,"utf-8")>21 ? mb_substr("[".$type[0]->name."] ".$list[$i]->title,0,20,"utf-8")."...":"[".$type[0]->name."] ".$list[$i]->title;?></a>
+								<a  href="/assistant/assistant.php?id=<?php echo $list[$i]->id;?>" target="_blank"  title="<?php echo $list[$i]->title;?>"><?php echo mb_strlen("[".$type[0]->name."]".$list[$i]->title,"utf-8")>20 ? mb_substr("[".$type[0]->name."] ".$list[$i]->title,0,19,"utf-8")."...":"[".$type[0]->name."] ".$list[$i]->title;?></a>
 							</div>
 							<?php } ?>
 						</div>
