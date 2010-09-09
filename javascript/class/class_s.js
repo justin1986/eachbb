@@ -18,13 +18,13 @@ $(function(){
 			$('.cr_a').attr('style','color:#1A908A;');
 		}
 		$(this).attr('style','color:#ffffff;');
-		$('.crr_z').hide();
-		$('#crr_z_'+selected).show();
-		$('.flash_discription').hide();
+		$('.crc_pg').hide();
+		$('#crr_zz_'+selected).show();
 	},function(){});
-	$('.num').hover(function(e){
+	$('.num').click(function(e){
 		e.preventDefault();
 		var selected=$('.num').index($(this));
+		var selected = selected % 4;
 		for(var i = 0; i < 4; i++){
 			if(i == selected)
 			{
@@ -34,6 +34,7 @@ $(function(){
 		}
 		$(this).attr('style','background:#CE0609;');
 		$('.banner').hide();
-		$('#banner_'+selected).show();
+		alert('.banner_'+selected);
+		$('.banner_'+selected).show();
 	},function(){});
 });
