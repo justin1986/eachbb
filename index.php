@@ -280,7 +280,7 @@
 							<div class="son_c_z"<?php $pos="right_news_list_$j";show_page_pos($pos,'link')?>>
 								<div class="son_c_z_l"></div>
 								<div class="son_c_z_r">
-									<a href="<?php echo $pos_items[$pos]->href;?>" target='_blank' title="<?php echo $pos_items[$pos]->title;?>"><?php echo mb_strlen($pos_items[$pos]->title,"UTF-8")>20 ? mb_substr($pos_items[$pos]->title, 0 ,20, "UTF-8")."...":$pos_items[$pos]->title ;?>
+									<a href="<?php echo $pos_items[$pos]->href;?>" target='_blank' title="<?php echo $pos_items[$pos]->title;?>"><?php echo mb_strlen($pos_items[$pos]->title,"UTF-8")>18 ? mb_substr($pos_items[$pos]->title, 0 ,18, "UTF-8")."...":$pos_items[$pos]->title ;?>
 								</div>
 							</div>
 							<?php }?>
@@ -497,7 +497,7 @@
 							<div class="son_c_z">
 								<div class="son_c_z_l"></div>
 								<div class="son_c_z_r">
-									<a  href="/assistant/assistant.php?id=<?php echo $list[$k]->id;?>" target="_blank" title="<?php echo $list[$k]->title;?>"><?php echo mb_strlen("[".$type[0]->name."]".$list[$k]->title,"utf-8")>17 ? mb_substr("[".$type[0]->name."]".$list[$k]->title,0,17,"utf-8")."...":"[".$type[0]->name."]".$list[$k]->title;?></a>
+									<a  href="/assistant/assistant.php?id=<?php echo $list[$k]->id;?>" target="_blank" title="<?php echo $list[$k]->title;?>"><?php echo mb_strlen("[".$type[0]->name."]".$list[$k]->title,"utf-8")>19 ? mb_substr("[".$type[0]->name."]".$list[$k]->title,0,19,"utf-8")."...":"[".$type[0]->name."]".$list[$k]->title;?></a>
 								</div>
 							</div>
 							<?php } ?>
