@@ -79,7 +79,7 @@
 					<div class="dot"></div>
 					<div class="item">
 						<?php if(mb_strlen($assistant->name.$assistant->title,"utf-8") > 20){?>
-							[<a href="list.php?category_id=<?php echo $assistant->category_id?>" class="a_category_list"><?php echo $assistant->name;?></a>] <a href="assistant.php?id=<?php echo $assistant->id;?>" title="<?php echo $assistant->title?>" target="_blank" ><?php echo $assistant->title?></a>
+							[<a href="list.php?category_id=<?php echo $assistant->category_id?>" class="a_category_list"><?php echo $assistant->name;?></a>] <a href="assistant.php?id=<?php echo $assistant->id;?>" title="<?php echo $assistant->title?>" target="_blank" ><?php echo mb_substr($assistant->title,0,18-mb_strlen($assistant->name,"utf-8"),"utf-8")."...";?></a>
 							<?php
 							#echo mb_substr("[<a href='list.php?category_id=".$assistant->category_id."' class='a_category_list'>{$assistant->name}</a>] <a href='assistant.php?id={$assistant->id}' title='{$assistant->title}' target='_blank'>{$assistant->title}</a> ",0,20,"utf-8")."..."?>
 						<?php }else{?>
