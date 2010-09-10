@@ -6,7 +6,14 @@
 	?>
 <div id="c_l">
 	<div id="l_pho"></div>
-	<a href="/test"><div id="l_test"></div></a>
+	<a href="/test">
+	<div id="l_test"></div>
+	</a>
+	<?php if($user){?>
+	<div class="l_look">
+		<a href="/feedback.php?type=course">网趣宝贝<font>意见反馈&nbsp;&nbsp;</font></a>
+	</div>
+	<?php }?>
 	<div id="l_look"></div>
 	<div class="hlc_t"></div>
 	<div class="hlc_b">

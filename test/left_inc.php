@@ -8,7 +8,7 @@
 	<div id="l_pho"></div>
 	<?php if($user){?>
 	<div id="l_look">
-		<a href="/feedback.php">网趣宝贝<font>意见反馈&nbsp;&nbsp;</font></a>
+		<a href="/feedback.php?type=test">网趣宝贝<font>意见反馈&nbsp;&nbsp;</font></a>
 	</div>
 	<?php }?>
 	<div class="hlc_t"></div>
