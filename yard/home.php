@@ -163,6 +163,10 @@
 									<div class="box">收入：</div>
 									<div class="info"><?php echo $info[0]->income;?></div>
 								</div>
+								<div id="ad_words">
+									<div class="box">地址：</div>
+									<div id="address"><?php echo mb_substr($info[0]->address,0,7,"utf-8");?></div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -244,7 +248,7 @@
 				<div id="info_p4">
 					<div class="title_info">
 						<div class="word2">留言板</div>
-					</div>
+					</div><!--
 					<div id="c_expression">
 						<?php for($i=0;$i<5;$i++){?>
 						<div class="expression">
@@ -252,7 +256,7 @@
 						</div>
 						<?php }?>
 					</div>
-					<form id="b_bord" action="home.post.php" method="post">
+					--><form id="b_bord" action="home.post.php" method="post">
 					<div id="text_write">
 						<textarea name="b_words" id="b_words"></textarea>
 						<input type="text" name="id" style="display:none;" value="<?php echo $id?>">
@@ -309,7 +313,7 @@
 								<span class="u_id"><a href="#"><?php echo $info[0]->name;?></a></span>
 								<span id="reply_time">2010-11-11 11:11:11</span>
 							</div>
-							<div id="reply_words"></div>
+							<div id="reply_words">jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj</div>
 						</div>
 				<?php }else{?>
 						<div id="u_reply">
