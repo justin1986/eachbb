@@ -32,12 +32,18 @@
 		<div id="content">
 			<?php include_once(dirname(__FILE__).'/test/left_inc.php'); ?>
 			<div id="c_r">
-				<div id="address">当前位置：<a href="/">首页</a> &gt; <font style="font-size:12px;">意见反馈</font></div>
+				<div id="address">当前位置：<a href="/">首页</a> &gt; <a href="/test">测评</a> &gt; <font style="font-size:12px;">意见反馈</font></div>
 				<div id="c_hr"></div>
 				<div id="h_title">感谢使用我们的教程，希望我们的共同努力能使您的孩子从哇哇落地就得到最专业的教育和早教指导</div>
 				<div id="c_title">您的意见是我们最珍贵的礼物</div>
 				<div id="cc_hr"></div>
 				<div id="cc_c"> 现有1000感谢使用我们的教程现有1000感谢使用我们的教程，希望我们的共同努力能使您的孩子从哇哇落地就得到装专业的教育和早教指导感谢使用我们的教程，希望我们的共同努力能使您的孩子从哇哇落地就得到装专业的教育和早教指导感谢使用我们的教程，希望我们的共同努力能使您的孩子从哇哇落地就得到装专业的教育和早教指导感谢使用我们的教程，希望我们的共同努力能使您的孩子从哇哇落地就得到装专业的教育和早教指导感谢使用我们的教程，希望我们的共同努力能使您的孩子从哇哇落地就得到装专业的教育和早教指导感谢使用我们的教程，希望我们的共同努力能使您的孩子从哇哇落地就得到装专业的教育和早教指导感谢使用我们的教程，希望我们的共同努力能使您的孩子从哇哇落地就得到装专业的教育和早教指导感谢使用我们的教程，希望我们的共同努力能使您的现有1000感谢使用我们的教程，希望我们的共同努力能使您的孩子从哇哇落地就得到装专业的教育和早教指导感谢使用我们的教程，希望我们的共同努力能使您的孩子从哇哇落地就得到装专业的教育和早教指导感谢使用我们的教程，希望我们的共同努力能使您的孩子从哇哇落地就得到装专业的教育和早教指导感谢使用我们的教程，希望我们的共同努力能使您的孩子从哇哇落地就得到装专业的教育和早教指导感谢使用我们的教程，希望我们的共同努力能使您的孩子从哇哇落地就得到装</div>
+				<?php 
+				$user = User::current_user();
+				if(!$user){
+				?>
+				<div style="width:710px; height:200px; line-height:200px; text-align:center; font-size:20px; font-weight:bold;"><a href="/login">登录成功后才可以进行评论！</a></div>
+				<?php }else{?>
 				<div id="c_view">
 					<div id="cv_title">发表意见</div>
 					<textarea name="textarea" id="cv_text"></textarea>
@@ -45,6 +51,7 @@
 					<div id="cv_bz">与主题无关的评论，一律予以删除！(最多2000字)</div>
 				</div>
 				<div id="res"></div>
+				<?php }?>
 			</div>
 		</div>
 		<?php include_once('./inc/bottom.php');?>
