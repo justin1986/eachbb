@@ -140,11 +140,6 @@
 								<div class="oth_name"><?php echo $its?>的相册</div>
 								<div class="oth_nr"></div>
 							</div>
-							<div class="oth_botton">
-								<div class="oth_nl"></div>
-								<div class="oth_name"><?php echo $its?>的分享</div>
-								<div class="oth_nr"></div>
-							</div>
 						</div>
 						<div class="basic_info">
 							<div class="word">基本资料</div>
