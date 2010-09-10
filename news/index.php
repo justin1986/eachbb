@@ -327,21 +327,39 @@
 				<div id="bit_r"></div>
 			</div>
 			<div id="bi_c">
+				<div class="news_banner_left">
 				<?php
 				$list = array();
-				foreach(array(1,2,3,4) as $cate){
-						$items =$db->query("select * from eb_news where category_id=$cate order by created_at limit 5");
+				foreach(array(1,2) as $cate){
+						$items =$db->query("select * from eb_news where category_id=$cate order by created_at,rand() limit 5");
 						$list = array_merge($list,$items);
 				}
-				
-				for($i = 0 ; $i < 20 ; $i++){ ?>
-				<div class="bil_y" style="<?php if($i % 2 == 0){ echo "margin-left:0px;";}?>">
+				for($i = 0 ; $i < 10 ; $i++){ ?>
+				<div class="bil_y">
 					<div><span>[<?php echo news_type($list[$i]->category_id);?>]</span>
 					<a href="/news/news.php?id=<?php echo $list[$i]->id;?>" title="<?php echo $list[$i]->title;?>"><?php echo $list[$i]->title;?></a>
 					</div>
 					<font><?php echo $list[$i]->created_at;?></font>
 				</div>
 				<?php }?>
+				</div>
+				<div class="news_banner_left">
+				<?php
+				$list = array();
+				foreach(array(3,4) as $cate){
+						$items =$db->query("select * from eb_news where category_id=$cate order by created_at,rand() limit 5");
+						$list = array_merge($list,$items);
+				}
+				for($i = 0 ; $i < 10 ; $i++){ ?>
+				<div class="bil_y">
+					<div><span>[<?php echo news_type($list[$i]->category_id);?>]</span>
+					<a href="/news/news.php?id=<?php echo $list[$i]->id;?>" title="<?php echo $list[$i]->title;?>"><?php echo $list[$i]->title;?></a>
+					</div>
+					<font><?php echo $list[$i]->created_at;?></font>
+				</div>
+				<?php }?>
+				</div>
+				
 			</div>
 		</div>
 		<?php include_once(dirname(__FILE__).'/../inc/bottom.php');?>
