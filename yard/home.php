@@ -160,10 +160,6 @@
 									<div class="box">收入：</div>
 									<div class="info"><?php echo $info[0]->income;?></div>
 								</div>
-								<div id="ad_words">
-									<div class="box">地址：</div>
-									<div id="address"><?php echo $info[0]->address;?></div>
-								</div>
 							</div>
 						</div>
 					</div>
@@ -310,7 +306,7 @@
 								<span class="u_id"><a href="#"><?php echo $info[0]->name;?></a></span>
 								<span id="reply_time">2010-11-11 11:11:11</span>
 							</div>
-							<div id="reply_words">jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj</div>
+							<div id="reply_words"></div>
 						</div>
 				<?php }else{?>
 						<div id="u_reply">

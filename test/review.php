@@ -152,7 +152,7 @@ include_once '../inc/User.class.php';
 				</div>
 				<div id="cr_e">
 					<?php
-					$list=$db->query("SELECT id,category_id,title,created_at FROM eb_assistant where is_adopt=1  order by created_at,rand() desc limit 12");
+					$list=$db->query("SELECT id,category_id,title,created_at FROM eb_assistant where is_adopt=1  order by rand() desc limit 12");
 					for($x=0;$x<12;$x++){
 					$type = $db->query("select name from eb_category  where category_type='assistant' and id=".$list[$x]->category_id);
 						?>
