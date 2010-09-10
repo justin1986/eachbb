@@ -45,7 +45,7 @@
 					?>
 					<script type="text/javascript">
 						var flashvar = {image:"<?php echo implode('|',$src);?>",url:"<?php echo implode('|',$url);?>",info:"<?php echo implode('|',$title);?>"};
-						swfobject.embedSWF("flash/index.swf","flash_left","665","384","8",false,flashvar,flashparam);
+						swfobject.embedSWF("flash/index.swf","flash_left","680","384","8",false,flashvar,flashparam);
 					</script>
 				</div>
 				<div id="flash_right">
