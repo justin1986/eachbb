@@ -310,7 +310,7 @@
 								<span class="u_id"><a href="#"><?php echo $info[0]->name;?></a></span>
 								<span id="reply_time">2010-11-11 11:11:11</span>
 							</div>
-							<div id="reply_words">jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj</div>
+							<div id="reply_words"></div>
 						</div>
 				<?php }else{?>
 						<div id="u_reply">
