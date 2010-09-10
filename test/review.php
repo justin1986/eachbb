@@ -147,21 +147,19 @@ include_once '../inc/User.class.php';
 				
 				<!-- test end -->
 				<div id="cr_d">
-					<div id="crd_d">精彩早教课程推荐</div>
-					<div id="geng"><a href="#">更多&gt;&gt;</a></div>
+					<div id="crd_d">育儿热点</div>
+<!--					<div id="geng"><a href="#">更多&gt;&gt;</a></div>-->
 				</div>
 				<div id="cr_e">
-					<?php for($x=0;$x<3;$x++){?>
-						<div class="cre_z">
-							<?php for($i=0;$i<4;$i++){?>
-							<div class="crez_z">
+					<?php
+					$list=$db->query("SELECT id,category_id,title,created_at FROM eb_assistant where is_adopt=1  order by created_at,rand() desc limit 12");
+					for($x=0;$x<12;$x++){
+					$type = $db->query("select name from eb_category  where category_type='assistant' and id=".$list[$x]->category_id);
+						?>
+							<div class="crez_z" style="<?php if($i % 2 ==0 ){?>margin-left:5px;<?php }else{?>margin-left:20px;<?php }?>">
 								<div class="crez_d"></div>
-								<div class="crez_v"><a href="#"><font>[知识榜单]</font> 友情链接友情链接友情链接友情链接</a></div>
+								<div class="crez_v"><a href="#"><font>[<?php echo $type[0]->name;?>]</font><?php echo $list[$x]->title;?></a></div>
 							</div>
-							<?php
-							}
-							?>
-						</div>
 						<?php
 						}
 						?>
