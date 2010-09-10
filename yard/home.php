@@ -250,11 +250,11 @@
 						<div class="word2">留言板</div>
 					</div><!--
 					<div id="c_expression">
-						<?php for($i=0;$i<5;$i++){?>
+						<?php # for($i=0;$i<5;$i++){?>
 						<div class="expression">
 							<img src="/images/yard/express1.gif" />
 						</div>
-						<?php }?>
+						<?php # }?>
 					</div>
 					--><form id="b_bord" action="home.post.php" method="post">
 					<div id="text_write">
@@ -269,13 +269,17 @@
 					</div>
 					</form>
 					<?php 
-					$comment =$db->query("select nick_name,created_at,comment,comment_count from eachbb_member.comment where user_id=$id and resource_id='1099' and whispered = 0 order by created_at desc");
+					if($id == $user->id){
+						$comment =$db->query("select nick_name,created_at,comment,comment_count from eachbb_member.comment where user_id=$id and resource_id='1099' and whispered = 1 order by created_at desc");
+					}else{
+						$comment =$db->query("select nick_name,created_at,comment,comment_count from eachbb_member.comment where user_id=$id and resource_id='1099' and whispered = 0 order by created_at desc");
+					}
 					$visitor_name = $comment[0]->nick_name;
 					if($visitor_name != 'guest'){
 					$visit_avatar = $db->query("select b.avatar from eachbb_member.comment a left join eachbb_member.member b on a.nick_name = b.name where $visitor_name");
 					}
 					?>
-					<?php if(count($comment)!= 0){?>
+					<?php if(count($comment) != 0 || $id == $user->id){?>
 					<div class="text_display">
 						<div class="f_content">
 							<div class="f_pho">

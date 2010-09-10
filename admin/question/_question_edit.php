@@ -70,13 +70,13 @@
 					<td colspan="2" style="font-weight: bold; text-align: left;">
 						<span style="margin-left:5px;">问题选项</span><img src="/images/admin/btn_add.png" style="cursor:pointer;" id="add_question_item" />
 					</td>
-				</tr>	
+				</tr>
 				<?php 
 					$items || $items = array();
 					foreach ($items as $question_item){
 						include '_question_item.php';
 					}
-				?>	
+				?>
 				<tr>
 					<td colspan="2">
 						<input id="question_submit" type="submit" value="发布题目">
