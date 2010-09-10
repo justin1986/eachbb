@@ -23,7 +23,7 @@ $(function(){
 		 interval =setInterval(image_interval,iamge_tab_interval);
 	});
 	var  interval =setInterval(image_interval,iamge_tab_interval);
-	$('.dict_tab').hover(function(){
+	$('.dict_tab').click(function(){
 		var selected = $('.dict_tab').index($(this));
 		for(var i = 0 ; i < 5; i++){
 			if(i == selected){
@@ -43,7 +43,7 @@ $(function(){
 		$('.bct_number').attr('style','display:none;');
 		$('#bn_'+selected).attr('style','display:inline;');
 	},function(){});
-	$('img.student_tab').hover(function(e){
+	$('img.student_tab').click(function(e){
 		var selected=$('img.student_tab').index($(this));
 		for(var i = 0; i < 3; i++){
 			if(i == selected){
