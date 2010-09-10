@@ -33,6 +33,7 @@ $(function(){
 			}
 			$('.cr_a').attr('style','color:#1A908A;');
 		}
+		image_tab_index=0;
 		result=selected;
 		refresh_image_tab();
 		$(this).attr('style','color:#ffffff;');
