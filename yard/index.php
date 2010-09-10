@@ -166,5 +166,11 @@
 	</div>
 </div>
 </body>
+
+<script type="text/javascript">
+	$(function(){
+		$('#query_friend').colorbox({href:'friend_query_list.php'});
+	});
+</script>
 </html>
 
