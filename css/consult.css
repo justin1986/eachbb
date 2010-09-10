@@ -202,7 +202,7 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 #bit_f{width:65px; height:20px; margin-left:30px; margin-top:4px; font-size:14px; line-height:20px; font-weight:600; float:left; display:inline;}
 #bit_f font{font-size:14px; color:#C899F8;}
 #bi_c{width:960px;  padding-bottom:15px; background:#F8F3FE; border-bottom:3px solid #BC82F7; float:left; display:inline; }
-
+.news_banner_left{width:480px; float:left; display:inline;}
 
 #bi_cc{width:270px; height:180px; margin-left:5px;  float:left; display:inline; }
 #bi_r{width:370px; height:180px; margin-left:5px; float:left; display:inline;}
