@@ -156,9 +156,9 @@ include_once '../inc/User.class.php';
 					for($x=0;$x<12;$x++){
 					$type = $db->query("select name from eb_category  where category_type='assistant' and id=".$list[$x]->category_id);
 						?>
-							<div class="crez_z" style="<?php if($i % 2 ==0 ){?>margin-left:5px;<?php }else{?>margin-left:20px;<?php }?>">
+							<div class="crez_z" style="margin-left:20px;">
 								<div class="crez_d"></div>
-								<div class="crez_v"><a href="#"><font>[<?php echo $type[0]->name;?>]</font><?php echo $list[$x]->title;?></a></div>
+								<div class="crez_v"><a href="/assistant/assistant.php?id=<?php echo $list[$k]->id;?>" target="_blank"><font>[<?php echo $type[0]->name;?>]</font><?php echo $list[$x]->title;?></a></div>
 							</div>
 						<?php
 						}
