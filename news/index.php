@@ -330,7 +330,7 @@
 				<?php
 				$list = array();
 				foreach(array(1,2,3,4) as $cate){
-						$items =$db->query("select * from eb_news where category_id=$cate order by created_at limit 5");
+						$items =$db->query("select * from eb_news where category_id=$cate order by created_at,rand() limit 5");
 						$list = array_merge($list,$items);
 				}
 				
