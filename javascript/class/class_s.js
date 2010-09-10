@@ -49,17 +49,6 @@ $(function(){
 		 image_tab_index = selected;
 		 refresh_image_tab();
 		 interval =setInterval(image_interval,iamge_tab_interval);
-		if(selected == 3)
-		{
-			selected =0 ;
-		}else if(selected == 2){
-			selected = 1;
-		}else if(selected ==1)
-		{
-			selected = 2;
-		}else if(selected == 0){
-			selected =3;
-		}
 		$(this).css('background','#CE0609');
 		$(this).parent().parent().find('.banner').hide();
 		//alert($(this).parent().parent().find('.banner').length);
