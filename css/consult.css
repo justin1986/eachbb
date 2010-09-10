@@ -59,7 +59,7 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 .trade_c{width:210px; height:103px; margin-left:13px; float:left; display:inline;}
 .tc_z{width:210px; height:23px; margin-top:2px; line-height:23px; overflow:hidden; float:left; display:inline;}
 .tc_z div{width:4px; height:4px; margin-top:10px; margin-left:8px; font-size:0px; line-height:0px; background:#888888; float:left; display:inline;}
-.tc_z a{margin-left:10px; font-size:14px; text-decoration:none; color:#7D7666; font-weight:600;}
+.tc_z a{margin-left:10px; font-size:14px; text-decoration:none; color:#7D7666;}
 
 #bl_c{width:646px; height:41px; margin-top:15px; background:url(../images/consult/l_e.jpg) no-repeat; float:left; display:inline;}
 .more a{font-size:14px; color:#CE0CF7; font-weight:600; text-decoration:none;}
@@ -114,7 +114,7 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 .bel_b{width:276px; height:18px; margin-top:5px; margin-left:8px; float:left; display:inline;}
 .bel_d{width:4px; height:4px; margin-top:5px; background:url(../images/consult/dianb.jpg) no-repeat; float:left; display:inline;}
 .belc_c{width:265px; height:18px; margin-left:5px; line-height:18px;  overflow:hidden; float:left; display:inline;}
-.belc_c a{font-size:13px; font-weight:600; color:#333333; text-decoration:none;}
+.belc_c a{font-size:13px; color:#333333; text-decoration:none;}
 
 #bl_f{width:649px; margin-top:20px; float:left; display:inline;}
 #bf_t{width:649px; height:39px; background:url(../images/consult/ls_b.jpg) no-repeat; font-size:0px; line-height:0px; float:left; display:inline;}
@@ -143,7 +143,7 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 .bac_z{width:268px; height:23px; margin-left:12px; float:left; display:inline;}
 .bac_d{width:6px; height:6px; margin-top:8px; font-size:0px; line-height:0px; background:url(../images/consult/dian.jpg) no-repeat; float:left; display:inline;}
 .bac_v{width:255px; height:14px; margin-top:3px; margin-left:5px; float:left; display:inline;}
-.bac_v a{font-weight:600; font-size:12px; line-height:14px; color:#333333; text-decoration:none;}
+.bac_v a{font-size:12px; line-height:14px; color:#333333; text-decoration:none;}
 .bac_c{width:266px; height:1px; margin-top:5px; font-size:0px; line-height:0px; background:url(../images/consult/l_dian.jpg) repeat-x; float:left; display:inline;}
 
 #bc_z{width:288px; margin-top:27px; float:left; display:inline;}
