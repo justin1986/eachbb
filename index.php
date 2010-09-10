@@ -23,7 +23,7 @@
 				<script type="text/javascript">
 					var flashvar = {defaultIndex:'1'};
 					var flashparam = {wmode:'Transparent'};
-					swfobject.embedSWF("flash/menu.swf","menu_flash","702","103","8",false,flashvar,flashparam);
+					swfobject.embedSWF("flash/menu.swf","menu_flash","702","113","8",false,flashvar,flashparam);
 				</script>
 			</div>
 			<div id="menu_right"></div>
