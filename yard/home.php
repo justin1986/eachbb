@@ -124,7 +124,10 @@
 						</div>
 						<div class="info_word">
 							<div class="word_l">一句话：</div>
-							<div id="word_r2">宝宝</div>
+							<div id="word_r2"><?php 
+							$li = $db->query("SELECT content FROM eachbb_member.mood where u_id={$info[0]->id}  order by created_at desc  LIMIT 1");
+							echo $li[0]->content;
+							?></div>
 						</div>
 					</div>
 					<div id ="line1"></div>
