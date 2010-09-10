@@ -37,7 +37,7 @@ $(function(){
 			});
 		}
 	});
-	$('#query_friend').colorbox({href:'friend_query_list.php'});
+	
 	$('.menu_pic').click(function(){
 		var selected=$('.menu_pic').index($(this));
 		if(selected === 0){
