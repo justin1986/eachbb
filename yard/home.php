@@ -160,10 +160,6 @@
 									<div class="box">收入：</div>
 									<div class="info"><?php echo $info[0]->income;?></div>
 								</div>
-								<div id="ad_words">
-									<div class="box">地址：</div>
-									<div id="address"><?php echo $info[0]->address;?></div>
-								</div>
 							</div>
 						</div>
 					</div>
