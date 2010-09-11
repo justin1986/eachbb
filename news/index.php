@@ -119,7 +119,6 @@
 				</div>
 			</div>
 			<div id="bl_c">
-				<div class="more"><a href="/news/news_list.php?category_id=2">More&gt;</a></div>
 			</div>
 			<div id="bl_d">
 				<?php
@@ -141,7 +140,6 @@
 				<div id="be_l">
 					<div id="bel_t">
 						<div id="bel_l">海外传真</div>
-						<div id="bel_r"><a href="/news/news_list.php?category_id=3">查看更多</a></div>
 					</div>
 					<div id="bel_c"<?php $pos="ylbg_headline";show_page_pos($pos,'link_d_i');?>>
 					<?php 
@@ -178,8 +176,7 @@
 					<div id="ber_tt">
 						<div id="bert_t"></div>
 						<div id="bert_c">
-							<div class="svm"><a href="/news/news_list.php?category_id=4"><font>+</font>更多</a></div>
-							<div id="bert_b"></div>
+							<div id="bert_b" style="margin-top:40px;"></div>
 						</div>
 					</div>
 					<div id="be_cc">
@@ -269,7 +266,6 @@
 			<div id="bc_z">
 				<div id="bc_t">
 					<div id="bct2_l">最热排行</div>
-					<div id="bct2_r"><a href="/news/news_list.php?category_id=1">More&gt;</a> </div>
 				</div>
 				<div id="bc_t2">
 					<div id="bct_z">
@@ -299,7 +295,6 @@
 				<div class="bd_c">
 					<div class="bdt_t">
 						<div class="bdt_tl">最热评论</div>
-						<div class="bdt_more"><!--  <a href="#"><font>+</font>更多</a>--></div>
 					</div>
 					<div class="bdt_hr">
 						<div class="bdt_hr2"></div>
