@@ -198,20 +198,19 @@
 									<span class="info">
 									<?php $date_1 =now();
 										$date_2 =$info[0]->baby_birthday;
-										$d1=strtotime($date_1);
-										$d2=strtotime($date_2);
-										$days=round(($d1-$d2)/3600/24);
-										if($days<=365){echo $days."天";}
-										elseif($days>365){echo floor($days/365)."周岁";}
+										 if(substr($date_2,0,10) != "0000-00-00")
+										 {
+										 	echo substr(now(),0,4)-substr($date_2,0,4)."岁";
+										 }else{
+										 	echo "未知";
+										 }
 									?>
 									</span>
 								</div>
 								<div class="left_words">
 									<div class="box">生日：</div>
 									<div class="info">
-									<?php $info[0]->baby_birthday;
-									echo mb_substr($info[0]->baby_birthday,0,10);
-									?></div>
+									<?php if(substr($info[0]->baby_birthday,0,10) != "0000-00-00"){echo substr($info[0]->baby_birthday,0,10); }else{ echo "未知";}?></div>
 								</div>
 							</div>
 							<?php }?>
@@ -290,7 +289,7 @@
 					}
 					?>
 					<?php 
-						if(count($comment) != 0 || $id == $user->id){
+						if($count[0]->id != 0 || $id == $user->id){
 						?>
 					<div class="text_display">
 					<?php 	foreach ($comment as $comment ){?>
@@ -303,7 +302,8 @@
 										echo $visit_avatar[0]->avatar;
 									}else{
 										echo "/images/yard/avatar.jpg";
-								}}else{
+								}
+								}else{
 									echo "/images/yard/guest.jpg";
 								}
 								?>"/>
