@@ -43,6 +43,7 @@ switch ($op) {
 					$result->save();				
 			}
 		}
+		echo "操作成功！";
 		break;
 	case 'edit_result':
 		if($_GET['result']['id']){
