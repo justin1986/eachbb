@@ -233,8 +233,9 @@
 							</div>
 						</div>
 						<span class="news_txt">
-							<span class="u_id"><a href="#"><?php
-							if($user->id == $sql[$i]->u_id){
+							<span class="u_id">
+								<a href=""><?php
+							if($id == $sql[$i]->u_id){
 								echo "我";
 							}else{
 								echo $sql[$i]->u_name;
