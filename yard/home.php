@@ -223,7 +223,7 @@
 						<div class="word2" >最新动态</div>
 					</div>
 					<?php	
-					   $sql = $db->query("select * FROM eachbb_member.lastest_news where u_id='{$user->id}'order by created_at desc limit 9");
+					   $sql = $db->query("select * FROM eachbb_member.lastest_news where u_id='{$id}'order by created_at desc limit 9");
 					   $num = $db->record_count;
 					   for($i=0;$i<$num;$i++){?>
 					<div class="news_box">
@@ -235,11 +235,11 @@
 						<span class="news_txt">
 							<span class="u_id">
 								<a href=""><?php
-							if($id == $sql[$i]->u_id){
-								echo "我";
-							}else{
+//							if($id == $sql[$i]->u_id){
+//								echo "我";
+//							}else{
 								echo $sql[$i]->u_name;
-							}
+//							}
 							?></a></span>
 							<span class="news_type">
 								<?php echo $sql[$i]->form ;?>
