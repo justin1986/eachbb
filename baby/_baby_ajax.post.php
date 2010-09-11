@@ -24,9 +24,9 @@
 	<?php foreach ($array as $problem){
 		?>
 	<div class="problem_bannerr">
-		<?php echo $problem>name; ?>
+		<div><?php echo $problem>name; ?></div>
 		<div><?php echo $problem->created_at; ?></div>
-		<div><a href="/test/test_result.php?id=<?php echo $problem->problem_id;?>">测评结果</a></div>
+		<div style="margin-left:120px; float:left;"><a href="/test/test_result.php?id=<?php echo $problem->problem_id;?>">测评结果</a></div>
 		<div><a href=" /test/review.php?id=<?php echo $problem->problem_id;?>">题目回顾</a></div>
 	</div>
 	<?php }?>
