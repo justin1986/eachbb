@@ -269,9 +269,11 @@ class User {
 	}
 	public static function lastest_news($type,$user){
 		$db = get_db();
-		if($type != all){
+		if($type != "all"){
 		return $db->query("select * from `eachbb_member`.lastest_news where resource_type = '$type' and u_id = '$user' order by created_at desc limit 9");
-	}else{
-		return $db->query("select * from `eachbb_member`.lastest_news where resource_type != '' order by rand(),created_at desc limit 9");}
-	}
+		}else if($type == "image"){
+			return $db->query("SELECT * FROM lastest_news where resource_type='image' and u_id in (SELECT f_id FROM friend f where u_id=$user)");
+		}else{
+			return $db->query("select * from `eachbb_member`.lastest_news where resource_type != '' order by rand(),created_at desc limit 9");}
+		}
 }
