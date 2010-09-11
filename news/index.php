@@ -73,19 +73,17 @@
 			<div id="bl_b">
 				<div id="bl_ti">
 					<div id="blt_img">育儿早班车</div>
+					<div class="more" style="margin-top:10px;"><a href="/news/news_list.php?category_id=1">More&gt;</a></div>
 					<div id="bltc_hr"></div>
 					<div class="trade_z" >
 						<div class="trade_l">
-							<div class="tl_l">
-								<div class="tll_a"> 怀孕保养</div>
-								<div class="tll_b"><a href="/news/news_list.php?category_id=1">更多&gt;&gt;</a></div>
-							</div>
 							<?php 
 								#$en_news=$db->query("SELECT id,category_id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id=153 and is_adopt=1 order by created_at desc limit 9;");
 							?>
 							<div class="tl_r" <?php $pos="assistan_hb_link_a"; show_page_pos($pos,'link_i');?>>
 								<a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1;?>"/></a>
 							</div>
+								<div class="tll_b"><a href="/news/news_list.php?category_id=1">更多&gt;&gt;</a></div>
 						</div>
 							<?php for($i=1;$i<9;$i++){?>
 							<div class="tc_z"<?php $pos="news_list1_$i"; show_page_pos($pos,'link');?> style="<?php if($i%2==1){ echo "margin-left:17px;";}?>">
@@ -96,10 +94,6 @@
 					</div>
 					<div class="trade_z" >
 						<div class="trade_l" style="background:url(/images/consult/l_pgb.jpg) no-repeat;">
-							<div class="tl_l">	
-								<div class="tll_a">胎    教</div>
-								<div class="tll_b"><a href="/news/news_list.php?category_id=1">更多&gt;&gt;</a></div>
-							</div>
 							<?php 
 								#$en_news=$db->query("SELECT id,category_id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id=209 and is_adopt=1 order by created_at desc limit 9;");
 							?>
@@ -108,6 +102,7 @@
 									<img src="<?php echo $pos_items[$pos]->image1;?>"/>
 								</a>
 							</div>
+								<div class="tll_b"><a href="/news/news_list.php?category_id=1">更多&gt;&gt;</a></div>
 						</div>
 						<?php for($i=1;$i<9;$i++){?>
 							<div class="tc_z"<?php $pos="news_list2_$i";show_page_pos($pos,'link');?> style="<?php if($i%2==1){ echo "margin-left:17px;";}?>">
