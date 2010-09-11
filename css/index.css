@@ -9,7 +9,7 @@ div{margin:0; padding:0; float:left; display:inline;}
 #login_index{width:980px; height:17px; margin-top:15px; float:left; display: inline;}
 #login_index a img{padding-left:15px; border:0px solid #7B9CBD; float:right; display: inline;}
 
-
+#m_l_c{position:relative; float:left; display:inline;}
 .flash_discription{width:669px; height:153px;  background:#99CCCC; overflow:hidden; font-size:13px; padding-left:10px;  padding-top:10px; left:2px; top:2px; position: absolute; float: left;display: none;}
 	.f_d_title{width:660px; height:20px;line-height:20px; overflow:hidden; float:left; display: inline;}
 	.f_d_btn{width:640px; height:20px; padding-right:20px; line-height:20px; text-align:right;  float:left; display: inline;}
@@ -28,6 +28,7 @@ div{margin:0; padding:0; float:left; display:inline;}
 #f_r_pg{width:15px; height:952px; margin:0px; padding:0px;  font-size:0px; line-height:0px; background:url(/images/index/f_r.jpg) no-repeat 0px 0px; float:left; display:inline;}
 #f_c_m{width:962px; background:#ffffff; overflow:hidden; float:left; display: inline;}
 
+#jiao{width:20px; height:20px; background:url(/images/index/jiao.png) no-repeat; bottom:0px; right:-7px; position:absolute; float:left; display:inline;}
 
 #top_login{width:980px; height:20px; margin-top:15px; margin-left:20px;  font-size:13px; color:#ffffff; float:right; display:inline;}
 #login{width:400px; height:20px; z-index:12; float:right; display:inline;}
