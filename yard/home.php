@@ -235,11 +235,11 @@
 						<span class="news_txt">
 							<span class="u_id">
 								<a href=""><?php
-//							if($id == $sql[$i]->u_id){
-//								echo "我";
-//							}else{
-								echo $sql[$i]->u_name;
-//							}
+////							//if($id == $sql[$i]->u_id){
+////							//	echo "我";
+////							//}else{
+//								echo $sql[$i]->u_name;
+////							//}
 							?></a></span>
 							<span class="news_type">
 								<?php echo $sql[$i]->form ;?>
@@ -276,19 +276,25 @@
 					</div>
 					</form>
 					<?php 
-					if($id == $user->id){
-						$comment =$db->query("select nick_name,created_at,comment,comment_count from eachbb_member.comment where user_id=$id and resource_id='1099' and whispered = 1 order by created_at desc");
+					if($id != $user->id){
+						$whispered ="whispered = 1";
 					}else{
-						$comment =$db->query("select nick_name,created_at,comment,comment_count from eachbb_member.comment where user_id=$id and resource_id='1099' and whispered = 0 order by created_at desc");
+						$whispered ="1 = 1 ";
 					}
+					$comment =$db->query("select nick_name,created_at,comment,comment_count,whispered from eachbb_member.comment where user_id=$id and resource_id='1099' and $whispered  order by created_at desc");
 					$visitor_name = $comment[0]->nick_name;
 					if($visitor_name != 'guest'){
 					$visit_avatar = $db->query("select b.avatar from eachbb_member.comment a left join eachbb_member.member b on a.nick_name = b.name where $visitor_name");
+					$sql = "select count(id)id from eachbb_member.comment where user_id=$id and resource_id='1099' and $whispered order by created_at desc";
+					$count = $db->query($sql);
 					}
 					?>
-					<?php if(count($comment) != 0 || $id == $user->id){?>
+					<?php 
+						if(count($comment) != 0 || $id == $user->id){
+						?>
 					<div class="text_display">
-						<div class="f_content">
+					<?php 	foreach ($comment as $comment ){?>
+						<div class="f_content" style="margin-top:10px;">
 							<div class="f_pho">
 								<img src="
 								<?php
@@ -304,21 +310,26 @@
 							</div>
 							<div class="content_box">
 								<div class="f_info">
-									<div class="f_name"><a href="#"><?php echo $comment[0]->nick_name?></a></div>
+									<div class="f_name"><a href="#"><?php echo $comment->nick_name?></a></div>
 									<div class="f_button">
 										<img src="/images/yard/f_button.gif " />
 									</div>
-									<div class="created_at"><?php echo mb_substr($comment[0]->created_at,0,16)?></div>
+									<div class="created_at"><?php echo mb_substr($comment->created_at,0,16)?></div>
 								</div>
-								<div class="f_words"><?php echo htmlspecialchars($comment[0]->comment);?></div>
+								<div class="f_words"><?php
+								if($comment->whispered == 0){
+									echo "<font style='color:blue; font-size:12px;'>(悄悄话)</font>";
+								}
+								echo htmlspecialchars($comment->comment);?></div>
 							</div>
 						</div>
-				<?php }else{?>
+				<?php 
+					}}else{?>
 					<div class="text_display">
 							<font style = "font-weight:bold; font-size:16px; color:#000000;">没有可显示的留言！</font>
 					</div>
 				<?php }?>
-				<?php if($comment[0]->comment_count != ''){?>
+				<?php if($comment->comment_count != ''){?>
 						<div id="u_reply">
 							<div id="reply_title">
 								<span class="u_id"><a href="#"><?php echo $info[0]->name;?></a></span>
@@ -331,10 +342,9 @@
 							<font style = "font-weight:bold; font-size:16px; color:#000000;">暂无回复！</font>
 						</div>
 				<?php }?>
-				<?php $comment_count = "select nick_name from eachbb_member.comment where user_id=$id and resource_id='1099' order by created_at desc"?>
 						<div id="more_reply">
-							<div id="next_reply"><a href="#">查看全部&gt;&gt;</a></div>
-							<div id="total_reply">共<?php echo count($comment_count)?>条留言</div>
+<!--							<div id="next_reply"><a href="#">查看全部&gt;&gt;</a></div>-->
+							<div id="total_reply">共<?php echo $count[0]->id;?>条留言</div>
 						</div>
 					</div>
 				</div>
