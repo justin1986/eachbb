@@ -25,9 +25,9 @@
 		?>
 	<div class="problem_bannerr">
 		<div><?php echo $problem>name; ?></div>
-		<div><?php echo $problem->created_at; ?></div>
+		<div style="font-size:12px; font-weight:100px;">测评时间：<?php echo $problem->created_at; ?></div>
 		<div style="margin-left:120px; float:left;"><a href="/test/test_result.php?id=<?php echo $problem->problem_id;?>">测评结果</a></div>
-		<div><a href=" /test/review.php?id=<?php echo $problem->problem_id;?>">题目回顾</a></div>
+		<div style="margin-left:120px; float:left;"><a href=" /test/review.php?id=<?php echo $problem->problem_id;?>">题目回顾</a></div>
 	</div>
 	<?php }?>
 </div>
