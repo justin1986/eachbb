@@ -233,7 +233,13 @@
 							</div>
 						</div>
 						<span class="news_txt">
-							<span class="u_id"><a href="#"><?php echo $sql[$i]->u_name;?></a></span>
+							<span class="u_id"><a href="#"><?php
+							if($user->id == $sql[$i]->u_id){
+								echo "我";
+							}else{
+								echo $sql[$i]->u_name;
+							}
+							?></a></span>
 							<span class="news_type">
 								<?php echo $sql[$i]->form ;?>
 							</span>
