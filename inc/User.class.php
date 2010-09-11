@@ -272,6 +272,6 @@ class User {
 		if($type != all){
 		return $db->query("select * from `eachbb_member`.lastest_news where resource_type = '$type' and u_id = '$user' order by created_at desc limit 9");
 	}else{
-		return $db->query("select * from `eachbb_member`.lastest_news where resource_type != '' and u_id = '$user' order by created_at desc limit 9");}
+		return $db->query("select * from `eachbb_member`.lastest_news where resource_type != '' order by rand(),created_at desc limit 9");}
 	}
 }
