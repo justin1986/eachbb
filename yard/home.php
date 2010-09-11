@@ -187,7 +187,7 @@
 							<div class ="info_left">
 								<div class="left_words">
 									<span class="box">小名：</span>
-									<span class="info"><?php echo $info[0]->baby_name;?></span>
+									<span class="info"><?php if(!$info[0]->baby_name){ echo "未知";}else{$info[0]->baby_name;};?></span>
 								</div>
 								<div class="left_words">
 									<span class="box">性别：</span>
@@ -275,10 +275,10 @@
 					</div>
 					</form>
 					<?php 
-					if($id != $user->id){
-						$whispered ="whispered = 1";
-					}else{
+					if(!$id){
 						$whispered ="1 = 1 ";
+					}else 	if($id != $user->id){
+						$whispered ="whispered = 0";
 					}
 					$comment =$db->query("select nick_name,created_at,comment,comment_count,whispered from eachbb_member.comment where user_id=$id and resource_id='1099' and $whispered  order by created_at desc");
 					$visitor_name = $comment[0]->nick_name;
@@ -317,7 +317,7 @@
 									<div class="created_at"><?php echo mb_substr($comment->created_at,0,16)?></div>
 								</div>
 								<div class="f_words"><?php
-								if($comment->whispered == 0){
+								if($comment->whispered == 1){
 									echo "<font style='color:blue; font-size:12px;'>(悄悄话)</font>";
 								}
 								echo htmlspecialchars($comment->comment);?></div>
