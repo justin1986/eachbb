@@ -27,7 +27,7 @@
 </div>
 <div id="cr_c">
 	<?php foreach ($pro as $problem){
-	$problem=$db->query("SELECT id,name,create_time FROM eb_problem e where end_month<=(select start_month+(select datediff(now(), create_time) from eachbb.eb_problem where id={$problem->id}) from eachbb.eb_problem where id={$problem->id}) and id={$problem->id};");
+	$problem=$db->query("SELECT * FROM eb_problem");
 	if($problem){
 		?>
 	<div class="problem_bannerr">
