@@ -21,9 +21,12 @@ $(function(){
 				$('#haha').html(data);
 			});
 		}else if(selected === 12){
-			$.post('_baby_record_ajax.post.php',function(data){
+			$.post('_baby_ajax.post.php',function(data){
 				$('#haha').html(data);
 			});
+//			$.post('_baby_record_ajax.post.php',function(data){
+//				$('#haha').html(data);
+//			});
 		}else if(selected === 13){
 			$.post('_baby_ajax.post.php',function(data){
 				$('#haha').html(data);
