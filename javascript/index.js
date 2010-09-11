@@ -1,5 +1,6 @@
 var test_tab_index = 0;
-var test_tab_count = 4;
+var test_tab_count = 5;
+
 function refresh_test_tab(){
 	if(test_tab_index < 0) test_tab_index = test_tab_count -1;
 	if(test_tab_index >= test_tab_count) test_tab_index = 0;
@@ -27,11 +28,19 @@ function send_login(){
 			alert(data);
 		}
 		$('#test_right').load('/login/ajax.post.php?op=load_login_status_box&rd=' + Math.random());
-		
 	});
 };
 
 $(function(){
+	//$('.beijiu').colorbox({href:'/inc/_public_result_ajax_post_view.php?id='+$('.beijiu').index($(this))});
+	$('.beijiu').click(function(e){
+		e.preventDefault();
+		var selected = $('.beijiu').index($(this));
+		$.fn.colorbox({href:'/inc/_public_result_ajax_post_view.php?page=index&result=test_tab_'+selected});
+	});
+	$('.f_d_btn').click(function(){
+		$('.flash_discription').hide();
+	});
 	$('#login_l').live('click',function(e){
 		e.preventDefault();
 		send_login();
@@ -62,7 +71,16 @@ $(function(){
 		$('.course_list').hide();
 		$('#course_list_' + selected).show();
 	},function(){});
-	
+	$('img.student_tab').click(function(){
+		var selected = $('img.student_tab').index($(this));
+		if(selected == 0){
+			window.location.href="/course";
+		}else if(selected == 1){
+			window.location.href="/assistant";
+		}else if(selected == 2){
+			window.location.href="/bbs";
+		}
+	});
 	$('img.student_tab').hover(function(){
 		var selected = $('img.student_tab').index($(this));
 		for(var i = 0 ; i < 3; i++){
@@ -139,7 +157,10 @@ $(function(){
 		dayNames:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
 		dayNamesMin:["日","一","二","三","四","五","六"],
 		dayNamesShort:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
-		dateFormat: 'yy-mm-dd'
+		dateFormat: 'yy-mm-dd',
+		afterShow: function(i,e) {alert('oi');e.dpDiv.css('z-index', 2000);  },
+		maxDate: '+0d',
+		minDate: '-10y'
 	});
 	
 	//test tab

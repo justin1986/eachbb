@@ -12,8 +12,11 @@
 	if(!is_numeric($resource_id)) die('invlid request!');
 	$db=get_db();
 	$sql="insert into eachbb_member.comment(resource_id,comment,user_id,resource_type,created_at)values($resource_id,'$show_result',{$user->id},'daily',now());";
-	if($db->execute($sql))
-		echo "发布评论成功！";
+	$result = $db->execute("select id from eachbb_member.comment where id={$user->id} order by created_at desc limit 1");
+	$resource_id =$result[0]->id;
+	if($db->execute($sql)){
+		if($db->execute("insert into `eachbb_member`.lastest_news (resource_id,resource_type,u_id,created_at,u_name,u_avatar,form,content)values('$id','d_comment','{$user->id}',now(),'{$user->name}','{$user->avatar}','发表了评论：','$show_result')"))
+		echo "发布评论成功！";}
 	else
 		echo "发布评论失败！";
 ?>

@@ -6,15 +6,17 @@
 	<?php 
 		include_once('../frame.php');
 		use_jquery();
-		css_include_tag('yard');
-		js_include_tag('yard/yard','yard_right');
+		css_include_tag('yard','colorbox');
+		js_include_tag('yard/yard','jquery.colorbox-min');
 		$db=get_db();
 		$user = User::current_user();
 		if(!$user){
 			alert("请您先登录！");
-			redirect('/login/');
+			redirect('/login/?last_url=/yard/');
 			exit();
 		}
+		session_start();
+		$_SESSION['page_from'] = 'yard';
 		?>
 </head>
 <body>
@@ -29,7 +31,6 @@
 		<div id="menu_b" class="menu_pic"></div>
 		<div id="menu_c" class="menu_pic"></div>
 		<div id="menu_d" class="menu_pic"></div>
-		<div id="menu_e" class="menu_pic"></div>
 		<div id="menu_f" class="menu_pic"></div>
 	</div>
 	<div id="content">
@@ -118,9 +119,11 @@
 				<div id="cc_pg">
 					<div id="cc_pic"></div>
 					<div id="cc_photo">
-						<div id="pho_l"></div>
+						<div id="pho_l">
+							<img src="<?php echo $user->avatar;?>" width="48" height="48" />
+						</div>
 						<form id="xxx" action="daily.post.php" method="post">
-							<textarea name="pho_r" id="pho_r"></textarea>
+							<textarea name="pho_r" id="pho_r">你正在作什么?</textarea>
 						</form>
 					</div>
 					<div id="cc_ps" >
@@ -128,10 +131,6 @@
 					<div id="box_right">
 						<div id="ccps_l" style="float:left;"><a href="/yard/info.php"><img src="/images/yard/c_p.jpg" border=0/></a></div>
 						<div id="ccps_c">
-							<div id="ccpsc_l">
-								<div id="ccpsc_img"></div>
-								<div id="ccpsc_word"><a href="">发分享</a></div>
-								</div>
 							<div id="ccpsc_la">
 								<div id="ccpsc_imga"></div>
 								<div id="ccpsc_worda"><a href="/yard/upload_photo.php">传照片</a></div>
@@ -147,42 +146,13 @@
 						<div id="c_ch">
 							<div id="m_w"></div>
 							<div class="c_ch_w" style=" border-bottom:0px solid #E3F2DF;background:url(/images/yard/m_pg.jpg) no-repeat;">全部</div>
-							<div class="c_ch_w">一句话</div>
+							<div class="c_ch_w">动态</div>
 							<div class="c_ch_w">照片</div>
 							<div class="c_ch_w">日记</div>
-							<div class="c_ch_w">分享</div>
 							<div class="c_ch_w">随便看看</div>
 							<div id="m_w" style="width:30px;"></div>
 						</div>
-					<div id="test">
-					   <?php	
-					   $sql = $db->query("select * FROM eachbb_member.lastest_news where u_id='{$user->id}'order by created_at desc limit 9");
-					   $num = $db->record_count;
-					   for($i=0;$i<$num;$i++){?>
-						<div class="pc_z">
-							<div class="pc_pg_img">
-								<div class="pc_img"><img src="
-								<?php 
-							if($sql->u_avatar == null){
-								echo "/images/yard/noface.jpg";
-							}else{
-								echo $sql[$i]->u_avatar;
-							}
-						?>
-								"></div>
-							</div>
-							<div class="pc_word">
-								<div class="title_pc"><a href="home.php?id=<?php echo $user->id;?>"><?php echo $sql[$i]->u_name;?></a><?php echo $sql[$i]->form ;?></div>
-								<div class="content_pc" style="<?php if($sql[$i]->content == ''){echo "display:none;";}?>"><?php echo $sql[$i]->content;?><a href="#">查看全部&gt;&gt;</a></div>
-								<div class="photo_box" style="<?php if($sql[$i]->photo == ''){echo "display:none;";}?>"><a href="#"><img src="<?php echo $sql[$i]->photo;?>" border=0/></a></div>
-								<div class="time_pc"><?php echo mb_substr($sql[$i]->created_at,0,16);?></div>
-							</div>
-						</div>
-						<?php }?>
-						</div>
-						<!-- 
-						<div class="pc_hr"></div>
-						 -->
+					<div id="test"></div>
 					</div>
 					</div>
 				</div>
@@ -196,5 +166,11 @@
 	</div>
 </div>
 </body>
+
+<script type="text/javascript">
+	$(function(){
+		$('#query_friend').colorbox({href:'friend_query_list.php'});
+	});
+</script>
 </html>
 

@@ -1,0 +1,45 @@
+@CHARSET "UTF-8";
+body{width:745px; margin: 0 auto;}
+
+.list_box{width:336px; height:192px; margin:15px;  margin-bottom:0px; border: 3px solid; float:left; display:inline; }
+	.list_box div{float:left;display:inline;}
+	.list_title{width:336px; height:26px;}
+		.list_title .title{height:26px; line-height:26px; margin-left:10px; color:inherit; font-size:14px; font-weight: 600;}
+		.list_title .more{height:22px; line-height:22px; margin-top:2px; margin-right:10px; float:right; color: inherit; }
+		.list_title a{font-size:12px; color:inherit; text-decoration: none;}
+	.img_box{width:88px; height:164px; }
+		.img_box div{width:62px; height:62px;margin-left:10px;margin-top:15px;}
+			.img_box div img{width:58px; height:58px; border:none;}
+	.list_item_box{width:244px;height:144px; padding-top:10px;}
+		.dot{width:4px; height:4px;font-size:0; line-height:0;margin-left:5px;	margin-top:9px; background-color: #FFA200}
+		.item{width:220px; height:20px; font-size:12px; line-height:20px; margin-left:10px; overflow: hidden; }
+		.item a{color:black; text-decoration: none;}
+#list_box_1{border-color: #FADCB5; color:#FF6600; }	
+#list_box_1 .list_title{background: url("/images/helper/h_1.jpg") repeat-x scroll 0 0 transparent}
+#list_box_1 .list_title a{color:#FF6600;}
+#list_box_1 .a_category_list{color:#FF6600}
+
+#list_box_2{border-color: #C3E4EC; color:#6EB6CA; }	
+#list_box_2 .list_title{background: url("/images/helper/h_2.jpg") repeat-x scroll 0 0 transparent}
+#list_box_2 .list_title a{color:#6EB6CA;}
+#list_box_2 .a_category_list{color:#6EB6CA}
+
+#list_box_3{border-color: #D0EBC4; color:#84CD64; }	
+#list_box_3 .list_title{background: url("/images/helper/h_3.jpg") repeat-x scroll 0 0 transparent}
+#list_box_3 .list_title a{color:#84CD64;}
+#list_box_3 .a_category_list{color:#84CD64}
+
+#list_box_4{border-color: #F3BCC3; color:#E56275; }	
+#list_box_4 .list_title{background: url("/images/helper/h_4.jpg") repeat-x scroll 0 0 transparent}
+#list_box_4 .list_title a{color:#E56275;}
+#list_box_4 .a_category_list{color:#E56275}
+
+#list_box_5{border-color: #EBC4DC; color:#CB66A4; }	
+#list_box_5 .list_title{background: url("/images/helper/h_5.jpg") repeat-x scroll 0 0 transparent}
+#list_box_5 .list_title a{color:#CB66A4;}
+#list_box_5 .a_category_list{color:#CB66A4}
+
+#list_box_6{border-color: #D7C4EB; color:#9977BF; }	
+#list_box_6 .list_title{background: url("/images/helper/h_6.jpg") repeat-x scroll 0 0 transparent}
+#list_box_6 .list_title a{color:#9977BF}
+#list_box_6 .a_category_list{color:#9977BF}

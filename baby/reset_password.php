@@ -12,8 +12,8 @@
 		$member = new table_class('eachbb_member.member');
 		$member->find($id);
 	?>
-	<div id="cc_t"></div>
-	<div id="cc_c" >
+	<div id="cc_t" style="float:right;"></div>
+	<div id="cc_c" style="float:right;">
 		<div id="cc_pg">
 			<div class=r_title id="r_log"><span><?php echo $member->true_name;?></span>的账户管理</div>
 			<div id="r_log_hr">
@@ -45,4 +45,4 @@
 			</form>
 		</div>
 	</div>
-	<div id="cc_b"></div>
+	<div id="cc_b" style="float:right;"></div>

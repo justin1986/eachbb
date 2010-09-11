@@ -186,16 +186,9 @@
     <div id="inyard"><a href="milk.php"><img src="/images/avatar/inyard.png" border="0" ></img></a></div></div> </div>
    
     </div>
-    
-		
+		 <?php include_once(dirname(__FILE__).'/../inc/bottom.php');?>
 </div>
-        <div id="bottom_l"><hr color="#FB6104" width="100%" size="2" /></div>
-        
 
-        
-        <div id="bottom">关于网趣宝贝 - 加入我们 - 友情链接 - 联系我们 - 服务条款 - 隐私保护 - 网站地图</div>
-		<div id="bottom_b">Copyright &c 1997-2010 HAHA.smg.com All Rights Reserved.</div>
-</div>
       
 
 </body>

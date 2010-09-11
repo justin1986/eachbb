@@ -2,6 +2,7 @@
 	include_once('../frame.php');
 	if(!is_ajax()) die('invlid request!');
 	$db=get_db();
+	
 	$sql = "SELECT n.id,n.nick_name,n.comment,n.created_at,e.comment_id,e.up,e.down FROM eb_comment n left join eb_comment_dig e on n.id=e.comment_id where resource_type='feedback' order by created_at desc";
 	$comments = $db->paginate($sql,5,'comment_page');
 ?>

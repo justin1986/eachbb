@@ -1,51 +1,56 @@
 $(function(){
+	$.post('lastest_news.post.php',{'type':'all'},function(data){
+		$('#test').html(data);
+	});
 	$('.c_ch_w').click(function(){
 		var selected=$('.c_ch_w').index($(this));
 		$('.c_ch_w').attr('style','background:none;');
 		$(this).attr('style','border:0px solid red; background:url(/images/yard/m_pg.jpg) no-repeat;');
+		$('#test').html("<div style='width:540px; text-align:center; margin-top:20px;'><img src='/images/yard/loading.gif' /></div>");
 		if(selected === 0)
-		{
-			$.post('lastest_news.post.php',{'select':''},function(data){
+		{	
+			$.post('lastest_news.post.php',{'type':'all'},function(data){
 				$('#test').html(data);
 			});
 		}
 		else if(selected === 1)
 		{
-			$.post('lastest_news.post.php',{'select':'and resource_id=1'},function(data){
+			$.post('lastest_news.post.php',{'type':'oneword'},function(data){
 				$('#test').html(data);
 			});
 		}
 		else if(selected === 2)
 		{
-			$.post('lastest_news.post.php',{'select':'and resource_id=2'},function(data){
+			$.post('lastest_news.post.php',{'type':'image'},function(data){
 				$('#test').html(data);
 			});
 		}
 		else if(selected === 3)
 		{
-			$.post('lastest_news.post.php',{'select':'and resource_id=3'},function(data){
+			$.post('lastest_news.post.php',{'type':'diary'},function(data){
+				$('#test').html(data);
+			});
+		}else if(selected === 4)
+		{
+			$.post('lastest_news.post.php',{'type':'all'},function(data){
 				$('#test').html(data);
 			});
 		}
 	});
+	
 	$('.menu_pic').click(function(){
 		var selected=$('.menu_pic').index($(this));
-		$('#menu_a').attr('style','background:url(../images/yard/m_a.jpg) no-repeat;');
-		$('#menu_b').attr('style','background:url(../images/yard/m_b.jpg) no-repeat;');
-		$('#menu_c').attr('style','background:url(../images/yard/m_c.jpg) no-repeat;');
-		$('#menu_d').attr('style','background:url(../images/yard/m_d.jpg) no-repeat;');
-		$('#menu_e').attr('style','background:url(../images/yard/m_e.jpg) no-repeat;');
-		$('#menu_f').attr('style','background:url(../images/yard/m_f.jpg) no-repeat;');
 		if(selected === 0){
 			window.location.href="/yard";
 		}else if(selected === 1){
 			window.location.href="/yard/member.php";
 		}else if(selected === 2){
-			window.location.href="/yard/diary_list.php";
+			window.location.href="/yard/language_list.php";
 		}else if(selected === 3){
+			window.location.href="/yard/diary_list.php";
+		}else if(selected === 4){
 			window.location.href="/yard/album_list.php";
 		}
-		$(this).attr('style','background:url(../images/yard/m_'+selected+'.jpg) no-repeat;');
 	});
 	$('.cll_zz').click(function(){
 		var selected=$('.cll_zz').index($(this));
@@ -55,10 +60,15 @@ $(function(){
 	$('#c_moblie').click(function(e){
 		e.preventDefault();
 		var pho_r=$('#pho_r').val();
-		if(pho_r.length >=500){
-			alert("你的内容太多了！");
+		if(pho_r != "你正在作什么?")
+		{
+			if(pho_r.length >=500){
+				alert("你的内容太多了！");
+			}else{
+			$('#xxx').submit();
+			}
 		}else{
-		$('#xxx').submit();
+			alert("请输入内容！");
 		}
 		
 	});
@@ -73,5 +83,10 @@ $(function(){
 		$('#friend_word'+selected).css({'background':'#BFDEC1','color':'#6ebd71'});
 		$('#pic_'+selected).show();
 		$('#pic_'+selected2).hide();
+	});
+	
+	$('#pho_r').focus(function(){
+		$(this).val('');
+		$(this).unbind('focus');
 	});
 });

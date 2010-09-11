@@ -69,7 +69,6 @@
 	<div id="l_f">
 		<div id="lf_l">我的<font>好友</font></div>
 		<div id="lf_c">（<font>345</font>）</div>
-		<div id="lf_r">More &gt;&gt;</div>
 	</div>
 	<div id="pic_r">
 		<?php for($i=0;$i<6;$i++){ ?>
@@ -79,8 +78,7 @@
 			</div>
 			<div class="ppg_w">safsadfas</div>
 		</div>
-		<?php 
-																	}?>
+		<?php }?>
 	</div>
 	<div id="pg_a"></div>
 </div>

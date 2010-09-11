@@ -1,5 +1,5 @@
 $(function(){
-	$('.user_me_t').live('click',function(e){
+	$('.user_me_t').click(function(e){
 		e.preventDefault();
 		var selected = $('.user_me_t').index($(this));
 		if(selected === 1){

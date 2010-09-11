@@ -47,11 +47,10 @@
 			<div id="yard_day_time"><?php echo date('Y年m月d日'); ?></div>
 			<div id="yard_day_ct"><?php echo get_week_day(); ?></div>
 		</div>
-		<div id="menu_a" class="menu_pic"style="background:url(../images/yard/m_a.jpg) no-repeat;"></div>
+		<div id="menu_a" class="menu_pic"style="background:url(../images/yard/m_0_sel.jpg) no-repeat;"></div>
 		<div id="menu_b" class="menu_pic" style="background:url(../images/yard/m_1.jpg) no-repeat;"></div>
 		<div id="menu_c" class="menu_pic"></div>
 		<div id="menu_d" class="menu_pic"></div>
-		<div id="menu_e" class="menu_pic"></div>
 		<div id="menu_f" class="menu_pic"></div>
 	</div>
 	</div>
@@ -78,7 +77,7 @@
 					<div id = "p1_buttonbox">
 						<div class="p1_but">
 							<div class="but_nl"></div>
-							<div class="but_name">发短消息</div>
+							<div class="but_name"><a href="/baby/message_index.php?id=<?php echo $id;?>">发短消息</a></div>
 							<div class="but_nr"></div>
 						</div>
 						<div class="p1_but" style="float:right;">
@@ -125,7 +124,10 @@
 						</div>
 						<div class="info_word">
 							<div class="word_l">一句话：</div>
-							<div id="word_r2">宝宝</div>
+							<div id="word_r2"><?php 
+							$li = $db->query("SELECT content FROM eachbb_member.mood where u_id={$info[0]->id}  order by created_at desc  LIMIT 1");
+							echo $li[0]->content;
+							?></div>
 						</div>
 					</div>
 					<div id ="line1"></div>
@@ -139,11 +141,6 @@
 							<div class="oth_botton" id="its_album">
 								<div class="oth_nl"></div>
 								<div class="oth_name"><?php echo $its?>的相册</div>
-								<div class="oth_nr"></div>
-							</div>
-							<div class="oth_botton">
-								<div class="oth_nl"></div>
-								<div class="oth_name"><?php echo $its?>的分享</div>
 								<div class="oth_nr"></div>
 							</div>
 						</div>
@@ -168,7 +165,7 @@
 								</div>
 								<div id="ad_words">
 									<div class="box">地址：</div>
-									<div id="address"><?php echo $info[0]->address;?></div>
+									<div id="address"><?php echo mb_substr($info[0]->address,0,7,"utf-8");?></div>
 								</div>
 							</div>
 						</div>
@@ -226,7 +223,7 @@
 						<div class="word2" >最新动态</div>
 					</div>
 					<?php	
-					   $sql = $db->query("select * FROM eachbb_member.lastest_news where u_id='{$user->id}'order by created_at desc limit 9");
+					   $sql = $db->query("select * FROM eachbb_member.lastest_news where u_id='{$id}'order by created_at desc limit 9");
 					   $num = $db->record_count;
 					   for($i=0;$i<$num;$i++){?>
 					<div class="news_box">
@@ -236,7 +233,14 @@
 							</div>
 						</div>
 						<span class="news_txt">
-							<span class="u_id"><a href="#"><?php echo $sql[$i]->u_name;?></a></span>
+							<span class="u_id">
+								<a href=""><?php
+//							if($id == $sql[$i]->u_id){
+//								echo "我";
+//							}else{
+								echo $sql[$i]->u_name;
+//							}
+							?></a></span>
 							<span class="news_type">
 								<?php echo $sql[$i]->form ;?>
 							</span>
@@ -251,15 +255,15 @@
 				<div id="info_p4">
 					<div class="title_info">
 						<div class="word2">留言板</div>
-					</div>
+					</div><!--
 					<div id="c_expression">
-						<?php for($i=0;$i<5;$i++){?>
+						<?php # for($i=0;$i<5;$i++){?>
 						<div class="expression">
 							<img src="/images/yard/express1.gif" />
 						</div>
-						<?php }?>
+						<?php # }?>
 					</div>
-					<form id="b_bord" action="home.post.php" method="post">
+					--><form id="b_bord" action="home.post.php" method="post">
 					<div id="text_write">
 						<textarea name="b_words" id="b_words"></textarea>
 						<input type="text" name="id" style="display:none;" value="<?php echo $id?>">
@@ -272,13 +276,17 @@
 					</div>
 					</form>
 					<?php 
-					$comment =$db->query("select nick_name,created_at,comment,comment_count from eachbb_member.comment where user_id=$id and resource_id='1099' and whispered = 0 order by created_at desc");
+					if($id == $user->id){
+						$comment =$db->query("select nick_name,created_at,comment,comment_count from eachbb_member.comment where user_id=$id and resource_id='1099' and whispered = 1 order by created_at desc");
+					}else{
+						$comment =$db->query("select nick_name,created_at,comment,comment_count from eachbb_member.comment where user_id=$id and resource_id='1099' and whispered = 0 order by created_at desc");
+					}
 					$visitor_name = $comment[0]->nick_name;
 					if($visitor_name != 'guest'){
 					$visit_avatar = $db->query("select b.avatar from eachbb_member.comment a left join eachbb_member.member b on a.nick_name = b.name where $visitor_name");
 					}
 					?>
-					<?php if(count($comment)!= 0){?>
+					<?php if(count($comment) != 0 || $id == $user->id){?>
 					<div class="text_display">
 						<div class="f_content">
 							<div class="f_pho">

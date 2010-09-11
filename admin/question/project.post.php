@@ -65,7 +65,6 @@
 				}
 			}
 		}
-		
-		redirect('project_list.php');
+		redirect('project_list.php?type=' . $project->problem_type);
 	}
 ?>

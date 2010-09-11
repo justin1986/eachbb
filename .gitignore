@@ -25,3 +25,4 @@ test1.php
 review
 ./cache
 config/pingguo_config.php
+course/*.xml

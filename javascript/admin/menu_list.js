@@ -1,6 +1,7 @@
 $(function(){
 		$(".img_plus").click(function(){
 			var main_id = $(this).attr('name');
+			var selected=$('.img_plus').index($(this));
 			if($("tr[name*='"+main_id+"']").css('display')=='none'){
 				$(this).attr('src','/images/admin/moners.gif');
 				$("tr[name*='"+main_id+"']").show();
@@ -8,6 +9,5 @@ $(function(){
 				$(this).attr('src','/images/admin/plus.gif');
 				$("tr[name*='"+main_id+"']").hide();
 			}
-			
 		});
 });

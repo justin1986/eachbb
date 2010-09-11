@@ -10,11 +10,15 @@ class Report {
 }
 
 $test_id = intval($_GET['test_id']);
+if(!$test_id)die('invalid param');
+$problem = new table_class('eb_problem');
+$problem->find($test_id);
 $user = User::current_user();
 $sql = "select sum(score) as score, question_type from eb_test_record  where problem_id={$test_id} and user_id={$user->id} group by question_type";
 $db = get_db();
 $results = $db->query($sql);
 !$results && $results = array();
+$reports = array();
 foreach ($results as $result){
 	$sql = "select * from eb_problem_result where problem_id={$test_id} and min_score <={$result->score} and max_score >= {$result->score} limit 1";
 	$db->query($sql);
@@ -24,7 +28,11 @@ foreach ($results as $result){
 		$item->id = $db->field_by_name('id');
 		$item->description = $db->field_by_name('description');
 		$item->result_type = $db->field_by_name('result_type');
-		$item->recommands = $db->query("select * from eb_recommand where result_id={$item->id}");
+		if($problem->problem_type == 1){
+			$item->recommands = $db->query("select * from eb_recommand where result_id={$item->id}");
+		}else{
+			$item->recommands = $db->query("select description from eb_question where id in (select question_id from eb_test_record where problem_id={$test_id} and user_id={$user->id} and score<1)");
+		}
 		$reports[$result_type] = $item; 
 	}
 }
@@ -36,7 +44,8 @@ foreach ($results as $result){
 <meta http-equiv=Content-Language content=zh-CN>
 	<title>测评报告</title>
 	<?php 
-		css_include_tag('top_inc/test_top','test_result','top_inc/test_left');
+		use_jquery();
+		css_include_tag('top_inc/test_top','test_result','top_inc/test_left','test_left_inc');
 	?>
 </head>
 <body>
@@ -45,114 +54,17 @@ foreach ($results as $result){
 		<?php include_once('../inc/_test_top.php'); ?>
 		<!-- 外部容器 -->
 		<div id="container">
-			<?php include_once('../inc/left_inc.php'); ?>
+			<?php include_once(dirname(__FILE__).'/../test/left_inc.php');  ?>
 			<div id="result_container">
 				<div id="result_top"></div>
 				<div id="result_middle">
-					<div id="result">
-						<?php 
-							if(array_key_exists('dadongzuo', $reports)){
-						?>
-						<div class="result_box">
-							<div class="title">大动作</div>
-							<div class="content">
-								<font>点评：</font>
-								<?php echo $reports['dadongzuo']->description;?>
-							</div>
-						</div>
-						<?php }
-							if(array_key_exists('jingxidongzuo', $reports)){
-						?>
-						<div class="result_box" style="margin-top:20px;">
-							<div class="title">精细动作</div>
-							<div class="content">
-								<font>点评：</font>
-								<?php echo $reports['jingxidongzuo']->description;?>
-							</div>
-						</div>
-						<?php }
-							if(array_key_exists('yuyan', $reports)){
-						?>
-						<div class="result_box" style="margin-top:20px;">
-							<div class="title">语言</div>
-							<div class="content">
-								<font>点评：</font>
-								<?php echo $reports['yuyan']->description;?>
-							</div>
-						</div>
-						<?php }
-							if(array_key_exists('renshi', $reports)){
-						?>
-						<div class="result_box" style="margin-top:20px;">
-							<div class="title">认识</div>
-							<div class="content">
-								<font>点评：</font>
-								<?php echo $reports['renshi']->description;?>
-							</div>
-						</div>
-						<?php }
-							if(array_key_exists('shehuihuodong', $reports)){
-						?>
-						<div class="result_box" style="margin-top:20px;">
-							<div class="title">社会形为和生活习惯</div>
-							<div class="content">
-								<font>点评：</font>
-								<?php echo $reports['shehuihuodong']->description;?>
-							</div>
-						</div>
-						<?php }?>
-						<div id="btn_recommand"><a href="/test/review.php?id=<?php echo $test_id;?>">回顾题目</a></div>
-					</div>
-				  	<div id="c_hr"></div>
-					<div id="recommand_container">
-						<?php 
-							$recommd_types = array("dadongzuo" => "大动作","jingxidongzuo"=>"精细动作","yuyan"=>"语言","renshi" => "认识","shehuihuodong" => "社会形为和生活习惯");
-							foreach ($recommd_types as $key => $val){
-								if($reports[$key]->recommands){
-						?>
-						<div class="recommand">
-							<div class="recommand_pg_top"><?php echo $val?></div>
-							<div class="recommand_pg_middle">
-								<div class="recommand_pg_son">
-									<?php
-									//handle the image recommand
-									foreach ($reports[$key]->recommands as $recommand){
-										if($recommand->image){
-									?>
-									<div class="recommand_image">
-										<img src="<?php echo $recommand->image;?>"/>
-										<a href="<?php echo $recommand->href;?>"><?php echo $recommand->title;?></a>
-									</div>
-									<div class="recommand_hr"></div>
-									<?php 
-										}
-									}
-									?>
-									<?php foreach ($reports[$key]->recommands as $recommand){
-									 	if(!$recommand->image && $recommand->recommand_type=='assister'){?>
-									<div class="recommand_assistant">
-										<a href="<?php echo $recommand->href;?>"><?php echo $recommand->title;?></a>
-									</div>
-									<div class="menu_hr"></div>
-									<?php 
-									 	} 
-									 	if(!$recommand->image && $recommand->recommand_type=='course'){?>
-									<div class="recommand_course">
-										<a href="<?php echo $recommand->href;?>"><?php echo $recommand->title;?></a>
-									</div>
-									<div class="menu_hr"></div>
-									<?php 
-										}
-									}
-									?>
-								</div>	
-							</div>
-							<div class="recommand_pg_bottom"></div>
-						</div>
-						<?php 
-								}
-							}?>
-					</div>
+					<?php 
+						if($problem->problem_type == 1){
+							include '_baby_test_result.php';				
+						}else{
+							include '_mother_test_result.php';
+						}
+					?>
 					
 				</div>
 				<div id="result_bottom"></div>

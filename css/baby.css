@@ -10,6 +10,7 @@ body  a{text-decoration:none;}
 #user_ma_h{margin-left:14px;margin-top:5px;height:50px;width:172px;}
 .user_b{width:175px;background-color:#F8F8F8;margin-left:12px;margin-top:8px;}
 .user_b_t{margin-left:20px;padding-top:5px;float:left;}
+.user_b_t a{font-size:12px; color:red; text-decoration: none;}
 #user_me{width:200px;margin-top:13px;}
 #user_me_top{width:200px;height:6px;background:url(/images/avatar/user_me_b_r1.png)  no-repeat;font-size:0; line-height:0px;}
 #user_me_center{width:200px;float:left;background:url(/images/avatar/user_me_b_l.png) repeat ;}
@@ -47,6 +48,6 @@ body  a{text-decoration:none;}
 .left{float:left;width:600px;margin-top:3px;}
 .text1{width:760px;height:20px;padding-top:5px;float:left;color:#8C8C8C;}
 .text1 font{margin-left:5px;color:#8C8C8C;}
-.text2{width:440px;padding-left:15px;padding-top:2px;float:left;color:#8C8C8C;}
+.text2{width:440px; padding-left:15px;padding-top:2px;float:left;color:#8C8C8C;}
 .text2 font{margin-left:10px;color:#8C8C8C;}
 #inyard{float:left;margin-left:300px;margin-top:10px;}

@@ -1,7 +1,6 @@
 <?php
 session_start();
 include_once '../frame.php';
-include_once '../inc/user.class.php';
 $valid_types = array('login','register');
 $type= $_POST['type'];
 if($type == 'login'){
@@ -64,9 +63,6 @@ if($type == 'login'){
 	if(!empty($baby_birth)&&!preg_match("/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/",$baby_birth)){
 		die('生日格式输入有误');
 	}
-	if(empty($birthday)){
-		die('请输入生日');
-	}
 	if(!empty($birthday)&&!preg_match("/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/",$birthday)){
 		die('生日格式输入有误');
 	}
@@ -91,3 +87,4 @@ if($type == 'login'){
 	}
 	User::login($name, $password);
 }
+?>

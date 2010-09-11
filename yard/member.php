@@ -15,10 +15,10 @@
 			<script>window.location.href="/login/";</script>
 			<?php 
 		}
+		$db = get_db();
 		$id=$user->id;
 		$member = new table_class('eachbb_member.member');
 		$member->find($id);
-		$db = get_db();
 	?>
 </head>
 <body>
@@ -29,11 +29,10 @@
 			<div id="yard_day_time"><?php echo date('Y年m月d日'); ?></div>
 			<div id="yard_day_ct"><?php echo get_week_day(); ?></div>
 		</div>
-		<div id="menu_a" class="menu_pic"style="background:url(../images/yard/m_a.jpg) no-repeat;"></div>
-		<div id="menu_b" class="menu_pic" style="background:url(../images/yard/m_1.jpg) no-repeat;"></div>
+		<div id="menu_a" class="menu_pic" style="background:url(../images/yard/m_0_sel.jpg) no-repeat;"></div>
+		<div id="menu_b" class="menu_pic"style="background:url(../images/yard/m_1.jpg) no-repeat;"></div>
 		<div id="menu_c" class="menu_pic"></div>
 		<div id="menu_d" class="menu_pic"></div>
-		<div id="menu_e" class="menu_pic"></div>
 		<div id="menu_f" class="menu_pic"></div>
 	</div>
 	<div id="content">
@@ -59,7 +58,6 @@
 						<div><a href="/yard/reset_password.php">修改密码</a></div>
 					</div>
 					<div class="c_menu_pg_p" >
-						
 					</div>
 					<form>
 						<table class=r_table>
@@ -98,9 +96,11 @@
 										<option value='大学本科/大学专科'>大学本科/大学专科</option>
 										<option value='硕士'>硕士</option>
 										<option value='博士'>博士</option>
-									</select></td>
+									</select>
+									<script>$("[name=education]").val('<?php echo $member->education;?>')</script>
+								</td>
 							</tr>
-							<script>$("[name=education]").val('<?php echo $member->education;?>')</script>
+							
 							<tr>
 								<td class=td1>行业：</td>
 								<td class=td2><select name='industry'>
@@ -125,9 +125,11 @@
 					                      <option value="18.商业咨询 顾问服务">18.商业咨询/顾问服务</option>
 					                      <option value="19.媒体 公关 出版 广播 广告等">19.媒体/公关（出版，广播，广告等）</option>
 					                      <option value="20.其他">20.其他</option>
-									</select></td>
+									</select>
+									<script>$("[name=industry]").val('<?php echo $member->industry;?>')</script>
+								</td>
 							</tr>
-							<script>$("[name=industry]").val('<?php echo $member->industry;?>')</script>
+							
 							<tr>
 								<td class=td1>家庭月收入：</td>
 								<td class=td2><select name='income'>
@@ -138,9 +140,11 @@
 										<option value='5000-8000元'>5000-8000元</option>
 										<option value='8000-10000元'>8000-10000元</option>
 										<option value='10000元以上'>10000元以上</option>
-									</select></td>
+									</select>
+									<script>$("[name=income]").val('<?php echo $member->income;?>')</script>
+								</td>
 							</tr>
-							<script>$("[name=income]").val('<?php echo $member->income;?>')</script>
+							
 						</table>
 						<div class=r_title>会员<span>信息</span></div>
 						<table class=r_table>

@@ -10,6 +10,21 @@
 		css_include_tag('consult');
 		js_include_tag('news/index');
 		init_page_items('consult_index');
+		$db=get_db();
+		function news_type($data){
+			switch ($data){
+				case 1:
+					return "育儿早班车";
+				case 2:
+					return "邻家育儿";
+				case 3:
+					return "海外传真";
+				case 4:
+					return "潮爸潮妈";
+				case 5:
+					return "网趣动态";
+			}
+		}
 	?>
 </head>
 <body>
@@ -19,27 +34,17 @@
 		<div id="b_l">
 			<div id="bl_a">
 				<div id="bla_img">
-					<div class="pic_img" id="img_tab_0" style="display:inline;">
-						<img src="/images/consult/s3.jpg"/>
+					<?php for($i = 1 ; $i <= 5 ; $i++){?>
+					<div class="pic_img"<?php $pos="assistan_pg_l_$i";show_page_pos($pos,'link_i');?> id="img_tab_<?php echo $i;?>"  <?php if($i == 1){ ?> style="display:inline;"<?php }else{?>style="display:none;"<?php }?>>
+						<a href="<?php echo $pos_items[$pos]->href;?>"><img style="border:0px solid red;" src="<?php echo $pos_items[$pos]->image1;?>"/></a>
 					</div>
-					<div class="pic_img" id="img_tab_1">
-						<img src="/images/consult/pic_c.jpg"/>
-					</div>
-					<div class="pic_img" id="img_tab_2">
-						<img src="/images/consult/peb.jpg"/>
-					</div>
-					<div class="pic_img" id="img_tab_3">
-						<img src="/images/consult/s3.jpg"/>
-					</div>
-					<div class="pic_img" id="img_tab_4">
-						<img src="/images/consult/pg.jpg"/>
-					</div>
+					<?php }?>
 					<div id="pic_number">
-						<div id="n_4" class="num">5</div>	
-						<div id="n_3" class="num">4</div>
-						<div id="n_2" class="num">3</div>
-						<div id="n_1" class="num">2</div>
-						<div id="n_0" class="num" style="background:#FF6600;">1</div>
+						<div id="nn_5" class="num">5</div>	
+						<div id="nn_4" class="num" >4</div>
+						<div id="nn_3" class="num">3</div>
+						<div id="nn_2" class="num">2</div>
+						<div id="nn_1" class="num selected">1</div>
 					</div>
 				</div>
 				<div id="bla_r">
@@ -73,13 +78,13 @@
 						<div class="trade_l">
 							<div class="tl_l">
 								<div class="tll_a"> 怀孕保养</div>
-								<div class="tll_b"><a href="#">更多&gt;&gt;</a></div>
+								<div class="tll_b"><a href="/news/news_list.php?category_id=1">更多&gt;&gt;</a></div>
 							</div>
 							<?php 
 								#$en_news=$db->query("SELECT id,category_id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id=153 and is_adopt=1 order by created_at desc limit 9;");
 							?>
-							<div class="tl_r" >
-								<a href="<?php get_news_url($en_news[0]);?>"><img src="<?php echo $en_news[0]->video_photo_src;?>"/></a>
+							<div class="tl_r" <?php $pos="assistan_hb_link_a"; show_page_pos($pos,'link_i');?>>
+								<a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1;?>"/></a>
 							</div>
 						</div>
 							<?php for($i=1;$i<9;$i++){?>
@@ -93,12 +98,16 @@
 						<div class="trade_l" style="background:url(/images/consult/l_pgb.jpg) no-repeat;">
 							<div class="tl_l">	
 								<div class="tll_a">胎    教</div>
-								<div class="tll_b"><a href="#">更多&gt;&gt;</a></div>
+								<div class="tll_b"><a href="/news/news_list.php?category_id=1">更多&gt;&gt;</a></div>
 							</div>
 							<?php 
 								#$en_news=$db->query("SELECT id,category_id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id=209 and is_adopt=1 order by created_at desc limit 9;");
 							?>
-							<div class="tl_r"><a href="<?php get_news_url($en_news[0]);?>"><img src="<?php echo $en_news[0]->video_photo_src;?>"/></a></div>
+							<div class="tl_r"<?php $pos="assistan_hb_link_b"; show_page_pos($pos,'link_i');?>>
+								<a href="<?php echo $pos_items[$pos]->href;?>">
+									<img src="<?php echo $pos_items[$pos]->image1;?>"/>
+								</a>
+							</div>
 						</div>
 						<?php for($i=1;$i<9;$i++){?>
 							<div class="tc_z"<?php $pos="news_list2_$i";show_page_pos($pos,'link');?> style="<?php if($i%2==1){ echo "margin-left:17px;";}?>">
@@ -110,7 +119,7 @@
 				</div>
 			</div>
 			<div id="bl_c">
-				<div class="more"><a href="#">More&gt;</a></div>
+				<div class="more"><a href="/news/news_list.php?category_id=2">More&gt;</a></div>
 			</div>
 			<div id="bl_d">
 				<?php
@@ -132,7 +141,7 @@
 				<div id="be_l">
 					<div id="bel_t">
 						<div id="bel_l">海外传真</div>
-						<div id="bel_r"><a href="#">查看更多</a></div>
+						<div id="bel_r"><a href="/news/news_list.php?category_id=3">查看更多</a></div>
 					</div>
 					<div id="bel_c"<?php $pos="ylbg_headline";show_page_pos($pos,'link_d_i');?>>
 					<?php 
@@ -169,7 +178,7 @@
 					<div id="ber_tt">
 						<div id="bert_t"></div>
 						<div id="bert_c">
-							<div class="svm"><a href="#"><font>+</font>更多</a></div>
+							<div class="svm"><a href="/news/news_list.php?category_id=4"><font>+</font>更多</a></div>
 							<div id="bert_b"></div>
 						</div>
 					</div>
@@ -207,7 +216,10 @@
 			</div>
 		</div>
 		<div id="b_r">
-			<div id="br_a">
+			<div class="bd"<?php $pos="right_course_sdf";show_page_pos($pos,'link_i')?> style="height:190px; margin-top:0px;">
+				<img src="<?php echo $pos_items[$pos]->image1;?>" style="width:287px; height:190px; border:0px solid red;"/>
+			</div>
+			<div id="br_a" style="margin-top:20px;">
 				<div id="ba_t">
 					<div><img src="/images/consult/0.jpg" class="student_tab"/></div>
 					<div><img src="/images/consult/1a.jpg" class="student_tab"/></div>
@@ -257,7 +269,7 @@
 			<div id="bc_z">
 				<div id="bc_t">
 					<div id="bct2_l">最热排行</div>
-					<div id="bct2_r"><a href="#">More&gt;</a></div>
+					<div id="bct2_r"><a href="/news/news_list.php?category_id=1">More&gt;</a> </div>
 				</div>
 				<div id="bc_t2">
 					<div id="bct_z">
@@ -268,14 +280,16 @@
 						<div class="dict_tab short">网趣动态</div>
 					</div>
 				</div>
-				<?php for($j=0;$j<5;$j++){?>
-				<div class="bct_number" id="bn_<?php echo $j;?>" style="display:<?php echo $j==0 ? "inline" : "none"?>;">
-				<?php for($i=0;$i<10;$i++){?>
-					<div id="bn_<?php echo $j;?>" class="bct_cp"<?php $pos="right_tab_$j_$i";show_page_pos($pos,'link')?>>
-						<div class="bct_cpl"  style="<?php if($i==0){ echo 'background:url(/images/index/red.jpg) no-repeat';}?>"><?php echo $i+1?></div>
-						<div class="bct_cpv"><?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?></div>
-					</div>
-				<?php  }?>
+				<?php for($j = 0 ; $j < 5; $j++){?>
+				<div class="bct_number"  id="bn_<?php echo $j;?>">
+						<?php for($i=0; $i<10;$i++){?>
+						<div class="bct_cp"<?php $pos="right_tab_".$j."_".$i;show_page_pos($pos,'link')?>>
+							<div class="bct_cpl"  style="<?php if($i==0){ echo 'background:url(/images/index/red.jpg) no-repeat';}?>">
+								<?php echo $i+1?>
+							</div>
+							<div class="bct_cpv"><?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?></div>
+						</div>
+						<?php  }?>
 				</div>
 				<?php }?>
 				<div id="bct_cb"></div>
@@ -285,13 +299,14 @@
 				<div class="bd_c">
 					<div class="bdt_t">
 						<div class="bdt_tl">最热评论</div>
-						<div class="bdt_more"><a href="#"><font>+</font>更多</a></div>
+						<div class="bdt_more"><!--  <a href="#"><font>+</font>更多</a>--></div>
 					</div>
 					<div class="bdt_hr">
 						<div class="bdt_hr2"></div>
 					</div>
 					<div id="bdc_z">
 						<?php
+						#$list = $db->query("SELECT resource_id,comment,title FROM eb_comment e where resource_type='assistant' order by created_at desc LIMIT 13");
 						#$pro_news=$db->query("SELECT id,name FROM eb_problem e where is_adopt=1 order by create_time desc limit 13;");
 						for($i=0;$i<13;$i++){?>
 						<div class="bdcz_z"<?php $pos="right_comments_$i";show_page_pos($pos,'link');?>>
@@ -303,59 +318,48 @@
 				</div>
 				<div class="bd_b"></div>
 			</div>
-			<div class="bd">
-				<div class="bd_t"></div>
-				<div class="bd_c">
-					<div class="bdt_t">
-						<div class="bdt_tl">用户调查</div>
-						<div class="bdt_more"><a href="#"><font>+</font>更多</a></div>
-					</div>
-					<div class="bdt_hr">
-						<div class="bdt_hr2"></div>
-					</div>
-					<div id="user_z">
-						<form action="">
-							<div id="user_a">
-								<a href="#">
-								<img id="pho"/>
-								</a>
-								<div id="pho_title">用户调查用户调查?</div>
-							</div>
-							<div id="bd_n"></div>
-							<?php for($x=0;$x<3;$x++){?>
-							<div class="user_a">
-								<input type="radio" class="user_rdo">
-								<div class="user_rvalue">斯蒂芬妮斯的浪费那得分</div>
-							</div>
-							<?php  }?>
-							<div id="user_hr"></div>
-							<div id="user_pg">
-								<input type="button" id="u_pa" value="投  票">
-								<input type="button" id="u_pb" value="查看结果">
-							</div>
-							<div id="n"></div>
-						</form>
-					</div>
-				</div>
-				<div class="bd_b"></div>
-			</div>
 		</div>
 		<div id="bt_i">
 			<div id="bi_t">
 				<div id="bit_l">
-					<div id="bit_f"><font>实用</font>推荐</div>
+					<div id="bit_f"><font>育儿</font>咨询</div>
 				</div>
 				<div id="bit_r"></div>
 			</div>
 			<div id="bi_c">
-				<?php for($i = 0 ; $i < 20 ; $i++){ ?>
-				<div class="bil_y" style="<?php if($i % 2 == 0){ echo "margin-left:0px;";}?>">
-					<div><span>[类型]</span>
-					<a href="#" title="">撒旦发射点发撒旦防撒旦</a>
+				<div class="news_banner_left">
+				<?php
+				$list = array();
+				foreach(array(1,2) as $cate){
+						$items =$db->query("select * from eb_news where category_id=$cate order by created_at,rand() limit 5");
+						$list = array_merge($list,$items);
+				}
+				for($i = 0 ; $i < 10 ; $i++){ ?>
+				<div class="bil_y">
+					<div><span>[<?php echo news_type($list[$i]->category_id);?>]</span>
+					<a href="/news/news.php?id=<?php echo $list[$i]->id;?>" title="<?php echo $list[$i]->title;?>"><?php echo $list[$i]->title;?></a>
 					</div>
-					<font>2010-10-12</font>
+					<font><?php echo $list[$i]->created_at;?></font>
 				</div>
 				<?php }?>
+				</div>
+				<div class="news_banner_left">
+				<?php
+				$list = array();
+				foreach(array(3,4) as $cate){
+						$items =$db->query("select * from eb_news where category_id=$cate order by created_at,rand() limit 5");
+						$list = array_merge($list,$items);
+				}
+				for($i = 0 ; $i < 10 ; $i++){ ?>
+				<div class="bil_y">
+					<div><span>[<?php echo news_type($list[$i]->category_id);?>]</span>
+					<a href="/news/news.php?id=<?php echo $list[$i]->id;?>" title="<?php echo $list[$i]->title;?>"><?php echo $list[$i]->title;?></a>
+					</div>
+					<font><?php echo $list[$i]->created_at;?></font>
+				</div>
+				<?php }?>
+				</div>
+				
 			</div>
 		</div>
 		<?php include_once(dirname(__FILE__).'/../inc/bottom.php');?>

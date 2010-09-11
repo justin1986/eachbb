@@ -63,6 +63,7 @@
 						<option value="1">0~1岁</option>
 						<option value="2">1～2岁</option>
 						<option value="3">2～3岁</option>
+						<option value="4">3～6岁</option>
 					</select>
 					<script type="text/javascript">$('#news_age').val(<?php echo "'$news->age'"?>);</script>
 				</td>

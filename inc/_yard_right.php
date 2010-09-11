@@ -65,7 +65,7 @@
 		<div class="r_ge_ct">
 			<div class="r_ge_cta"><img src="/images/yard/r_g.jpg"></div>
 			<div class="r_ge_ctb">最后登录：</div>
-			<div class="r_ge_ctc" style="width:80px;"><?php if($user->last_login!=""){echo substr($user->last_login,0,10);}else{echo "未知";}?></div>
+			<div class="r_ge_ctc" style="width:90px;"><?php if($user->last_login!=""){echo substr($user->last_login,0,10);}else{echo "未知";}?></div>
 		</div>
 	</div>
 	<div id="friendbox">
@@ -87,6 +87,7 @@
 				<img src="/images/yard/friend_r1.jpg" />
 			</div>
 		</div>
+		<div id="query_friend">查询好友</div>
 	</div>
 <div id="pic_r">
 	<div id="pic_0">

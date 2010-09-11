@@ -15,9 +15,11 @@ include_once '../frame.php';
 		$test_id = intval($_GET['id']);
 		$test = new table_class('eb_problem');
 		$test->find($test_id);
+		$_SESSION['doing_test'] = $test->id;
 		if(!$test->id){
 			die_not_found();
 		}
+		$_SESSION['problem_type'] = $test->problem_type;
 		$step = 0;
 		$questions = $db->query("select id,question_type from eb_question where problem_id={$test->id}");
 		$questions_tmp['dadongzuo'] = array();
@@ -29,10 +31,9 @@ include_once '../frame.php';
 		foreach($questions as $question){
 			$questions_tmp[$question->question_type][] = array('id'=> $question->id,'question_type'=>$question->question_type,'score'=> 0,'choice'=>0);
 		} 
-		
 		$question_queue = @array_merge($questions_tmp['dadongzuo'],$questions_tmp['jingxidongzuo'],$questions_tmp['yuyan'],$questions_tmp['renshi'],$questions_tmp['shehuihuodong']);
-		$_SESSION['doing_test'] = $test->id;
 		$_SESSION['question_queue'] = $question_queue;
+		$_SESSION['doing_test_name'] = $test->name;
 	}else{
 		$question_queue = $_SESSION['question_queue'];
 		$step = $_POST['step'];
@@ -54,7 +55,7 @@ include_once '../frame.php';
 	if(!$question->id) die_not_found();
 	$table = new table_class("eb_question_item");
 	$question_items = $table->find('all',array("conditions"=>"question_id={$question->id}"));
-	css_include_tag('top_inc/test_top','test_begin','top_inc/test_left');
+	css_include_tag('top_inc/test_top','test_begin','top_inc/test_left','test_left_inc');
 	use_jquery();
 	js_include_tag('front/test'); 
 ?>
@@ -64,8 +65,9 @@ include_once '../frame.php';
 	<div id="fbody">
 		<?php include_once(dirname(__FILE__).'/../inc/_test_top.php'); ?>
 		<div id="content">
-			<?php include_once(dirname(__FILE__).'/../inc/left_inc.php'); ?>
+			<?php include_once(dirname(__FILE__).'/../test/left_inc.php'); ?>
 			<div id="c_r">
+				<?php if($_SESSION['problem_type'] == 1){?>
 				<div id="crb_t"> 
 					<div class="crb_value">
 						<div class="crb_tt"></div>
@@ -89,31 +91,37 @@ include_once '../frame.php';
 					<div class="crb_hh"></div>
 					<div class="crb_vv">
 						<div class="crb_ttt"></div>
-						<div class="crb_ccc"  id="tab_shehuihuodong" ><a href="#">社会活动和行为规范</a></div>
+						<div class="crb_ccc"  id="tab_shehuihuodong" ><a href="#">情感及适应性</a></div>
 					</div>
 					<div id="cr_hr"></div>
 					<script type="text/javascript">
 						$('#tab_<?php echo $question->question_type?>').addClass('selected');
 					</script>
 				</div>
+				<?php }?>
 				<!-- test begin -->
 				<div id="cr_b">
 					<div id="crb_l"></div>
 					<div id="crbc_c">
-						<div id="crbc_l"><a href="#"><?php echo $test->name;?><font>测评开始</font></a></div>
-						<div id="crbc_la"><a href="#">当前第<font><?php echo $step + 1;?></font>题</a></div>
+						<div id="crbc_l"><a href="#"><?php echo $_SESSION['doing_test_name'];?><font>测评开始</font></a></div>
+
+					<!-- <div id="crbc_la" style="margin-top:10px;"><a href="#">当前第<font><?php echo $step + 1;?></font>题</a></div>
+						<div id="crbc_lb" style="margin-top:10px;"><a href="#">共<font><?php echo $question_len?></font>题</a></div>
+ -->	
 						<div id="crbc_lb"><a href="#">共<font><?php echo $question_len?></font>题</a></div>
+						<div id="crbc_la"><a href="#">当前第<font><?php echo $step + 1;?></font>题</a></div>
+
 					</div>
 					<div id="crb_r"></div>
 				</div>
 				<div id="cr_c">
 					<div id="crc">
-						<form id="question_form" action="test.php" method="post">
+						<form id="question_form" action="test.php?id=<?php echo $test_id;?>" method="post">
 							<div id="crc_tit"><?php echo $question->title;?></div>
 							<div id="crc_cc">
 								<ul>
 									<?php foreach ($question_items as $question_item) {?>
-									<li><input type="radio" name="choice" value="<?php echo $question_item->id;?>" /><?php echo $question_item->name;?></li>
+									<li><input type="radio" name="choice" class="radio_chice" value="<?php echo $question_item->id;?>" /><?php echo $question_item->name;?></li>
 									<?php }?>
 								</ul>
 							</div>
@@ -121,8 +129,8 @@ include_once '../frame.php';
 								<?php echo $question->description;?>
 							</div>
 							<div id="crc_bb">
-								<input id="btn_prev" class="btn_submit" type="button" value="上一题" disabled="disabled"> 
-								<input id="btn_next" class="btn_submit" type="button" value="<?php echo $step >= $question_len-1 ? "查看结果" : "下一题";?>" disabled="disabled">
+								<input id="btn_prev" class="btn_submit" type="button" value="上一题"> 
+								<input id="btn_next" class="btn_submit" type="button" value="<?php echo $step >= $question_len-1 ? "查看结果" : "下一题";?>">
 							</div>
 							
 							<input type="hidden" id="hidden_step" name="step" value="<?php echo $step + 1;?>" />
@@ -132,16 +140,25 @@ include_once '../frame.php';
 				
 				<!-- test end -->
 				<div id="cr_d">
-					<div id="crd_d">精彩早教课程推荐</div>
-					<div id="geng"><a href="#">更多&gt;&gt;</a></div>
+					<div id="crd_d">育儿热点</div>
+					<div id="geng"><a href="/assistant" target="_blank">更多&gt;&gt;</a></div>
 				</div>
 				<div id="cr_e">
-					<?php for($x=0;$x<3;$x++){?>
+					<?php
+					$list=$db->query("SELECT id,category_id,title,created_at FROM eb_assistant where is_adopt=1  order by created_at,last_edited_at,click_count desc limit 200");
+					for($x=0;$x<3;$x++){?>
 						<div class="cre_z">
-							<?php for($i=0;$i<4;$i++){?>
+							<?php for($i=0;$i<4;$i++){
+							$numid = rand(0, 200);
+								if(!$numid){
+									continue;
+									$i--;
+								}
+								$type = $db->query("select name from eb_category  where category_type='assistant' and id=".$list[$numid]->category_id);
+								?>
 							<div class="crez_z">
 								<div class="crez_d"></div>
-								<div class="crez_v"><a href="#"><font>[知识榜单]</font> 友情链接友情链接友情链接友情链接</a></div>
+								<div class="crez_v"><a href="/assistant/assistant.php?id=<?php echo $list[$numid]->id;?>"  target="_blank"><font>[<?php echo $type[0]->name;?>]</font>&nbsp;<?php echo $list[$numid]->title?></a></div>
 							</div>
 							<?php
 							}

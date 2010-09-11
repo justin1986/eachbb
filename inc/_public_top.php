@@ -11,7 +11,7 @@
 }
 #tl_l{
 	width:227px;
-	background:url('/images/top/logon.jpg') no-repeat;
+	background:url('/images/top/logo.png') no-repeat;
 	float:left;
 }
 #tl_r{
@@ -102,10 +102,10 @@
 	display:inline;
 	}
 .xiaoxi{
-	height:14px;
-	margin-top:10px;
+	height:16px;
+	margin-top:7px;
 	font-size:12px;
-	line-height:13px;
+	line-height:16px;
 	font-weight:bold;
 	text-align:center;
 	float:right;
@@ -124,10 +124,10 @@
 	text-decoration: none;
 }
 .exit{
-	height:14px;
-	margin-top:10px;
+	height:16px;
+	margin-top:7px;
 	font-size:12px;
-	line-height:13px;
+	line-height:16px;
 	font-weight:bold;
 	text-align:center;
 	float:right;
@@ -149,9 +149,9 @@
 				<div id="menu_ctb" style="line-height: 33px;">
 						<?php
 						$i = 0;
-						foreach ($news_list as $list){
+						foreach ($news_list as $key => $list){
 						?>
-						<a href="#" style="<?php if($i == 0){ echo 'margin-left:10px;';}?> font-size:12px; font-weight:bold; color:#000000; text-decoration:none; float:left;"><?php echo $list;?></a>
+						<a href="<?php echo $key?>" style="<?php if($i == 0){ echo 'margin-left:10px;';}?> font-size:12px; font-weight:bold; color:#000000; text-decoration:none; float:left;"><?php echo $list;?></a>
 						<?php if(count($news_list)-1 != $i){ ?>
 						<div class="me_hh"></div>
 						<?php }

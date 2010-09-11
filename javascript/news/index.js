@@ -1,32 +1,30 @@
 $(function(){
-	var image_tab_index = 0;
-	var image_tab_count = 5;
+	var image_tab_index = 1;
+	var image_tab_count = 6;
 	var iamge_tab_interval = 5000;
 	function image_interval(){
 		 image_tab_index++;
-		 if(image_tab_index >= image_tab_count) image_tab_index = 0;
+		 if(image_tab_index >= image_tab_count) image_tab_index = 1;
 		 refresh_image_tab();
 	}
 	function refresh_image_tab(){
+		$('.num').css('background','#4E3431');
+		$('#nn_'+image_tab_index).css('background','#FF6600');
 	 	$('.pic_img').hide();
 	 	$('#img_tab_'+image_tab_index).show();
-	 	$('.num').css('background','#4E3431');
-		$('#n_'+image_tab_index).css('background','#FF6600');
 	}
 	$('.num').click(function(){
 		$('.num').css('background','#4E3431');
 		 $(this).css('background','#FF6600');
 		 clearInterval(interval);
 		 var num = $(this).html();
-		 image_tab_index = num -1;
+		 image_tab_index = num;
 		 refresh_image_tab();
 		 interval =setInterval(image_interval,iamge_tab_interval);
 	});
 	var  interval =setInterval(image_interval,iamge_tab_interval);
-	
-	$('.dict_tab').hover(function(){
+	$('.dict_tab').click(function(){
 		var selected = $('.dict_tab').index($(this));
-		var selected=$('.dict_tab').index($(this));
 		for(var i = 0 ; i < 5; i++){
 			if(i == selected){
 				continue;
@@ -45,7 +43,7 @@ $(function(){
 		$('.bct_number').attr('style','display:none;');
 		$('#bn_'+selected).attr('style','display:inline;');
 	},function(){});
-	$('img.student_tab').hover(function(e){
+	$('img.student_tab').click(function(e){
 		var selected=$('img.student_tab').index($(this));
 		for(var i = 0; i < 3; i++){
 			if(i == selected){

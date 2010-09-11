@@ -40,6 +40,15 @@ $(function(){
 	$(this).attr('style','background:#95D171');
 	},function(){});
 	
+	$('.ttc_a a').click(function(e){
+		e.preventDefault();
+		if($('#iframe').length > 0){
+			iframe.window.filter_age($(this).attr('id'));
+		}else{
+			window.location.href = "/assistant/index.php?age=" + $(this).attr('id');
+		}
+	});
+	
 	$(".num").click(function(){
 		var num=$(this).html();
 		$(".fr_tpimg").hide();
@@ -49,6 +58,12 @@ $(function(){
 		clearInterval(interval);
 		count=num;
 		interval =setInterval('xh()',second);
+	});
+	$(".htct_t a").click(function(e){
+		e.preventDefault();
+		$(".htct_b").hide();
+		$(this).parent().next().show();
+		$('#iframe').attr('src',$(this).attr('href'));
 	});
 });
 

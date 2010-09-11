@@ -4,7 +4,7 @@ body{width:970PX; margin: 0 auto; }
 #result_container{width:750px; float:right; display:inline;}
 
 #result_top{width:743px; height:31px; background:url(/images/test_result/c_pg_t.jpg) no-repeat;  float:right; }
-#result_middle{width:741px; border-right:1px solid #DBDBDB; border-left:1px solid #DBDBDB; float:right; }
+#result_middle{width:741px; border-right:1px solid #DBDBDB; border-left:1px solid #DBDBDB; overflow:hidden; float:right; }
 	#result{width:355px;  margin-left:25px; float:left; display:inline;}
 		.result_box{width:355px; overflow:hidden; float:left; display:inline;}
 			.title{font-size:20px; line-height:25px; color:#71B7E0; font-family:黑体; font-weight:bold;}

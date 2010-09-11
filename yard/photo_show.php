@@ -34,18 +34,18 @@
 			<div id="yard_day_time"><?php echo date('Y年m月d日'); ?></div>
 			<div id="yard_day_ct"><?php echo get_week_day(); ?></div>
 		</div>
-		<div id="menu_a" class="menu_pic" style="background:url(../images/yard/m_a.jpg) no-repeat;"></div>
+		<div id="menu_a" class="menu_pic" style="background:url(../images/yard/m_0_sel.jpg) no-repeat;"></div>
 		<div id="menu_b" class="menu_pic"></div>
 		<div id="menu_c" class="menu_pic" ></div>
-		<div id="menu_d" class="menu_pic" style="background:url(../images/yard/m_3.jpg) no-repeat;"></div>
-		<div id="menu_e" class="menu_pic"></div>
-		<div id="menu_f" class="menu_pic"></div>
+		<div id="menu_d" class="menu_pic"></div>
+		<div id="menu_f" class="menu_pic" style="background:url(../images/yard/m_4.jpg) no-repeat;"></div>
 	</div>
 	<div id="content">
 		<div id="c_l">
 			<?php include(dirname(__FILE__).'/../yard/_yard_left.php');?>
 		</div>
 		<input type="hidden" id="album_id" value="<?php echo $album[0]->id;?>"/>
+		<input type="hidden" id="_id" value="<?php echo $album[0]->id;?>"/>
 		<div id="c_ll">
 			<div id="cl_t"></div>
 			<div id="cl_c"></div>

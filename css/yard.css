@@ -4,18 +4,17 @@ body a{text-decoration:none; color:#497617;}
 #ibody{width:970px; overflow:hidden; margin:0 auto;}
 
 #menu{width:700px; height:62px; margin-top:15px; float:left; display:inline;}
-#yard_day{width:124px; height:62px; background:url(../images/yard/day.jpg) no-repeat; float:left; display:inline;}
+#yard_day{width:124px; height:62px; font-size:12px; background:url(../images/yard/day.jpg) no-repeat; float:left; display:inline;}
 #menu_a,#menu_b,#menu_c,#menu_d,#menu_e,#menu_f{width:80px; height:62px; cursor:pointer; float:left; display:inline;}
 
-#yard_day_time{width:105px; height:22px; line-height:22px; margin-top:3px; margin-left:18px; color:#ffffff; font-size:12px; font-weight: bold; text-align: center;}
+#yard_day_time{width:105px; height:22px; line-height:22px; margin-top:3px; margin-left:18px; color:#ffffff; font-size:12px; text-align: center;}
 #yard_day_ct{width:105px; height:22px; line-height:30px; margin-top:3px; margin-left:15px; color:#ffffff; font-size:20px; font-weight: bold; text-align: center;}
 
 #menu_a{ margin-left:50px;  background:url(../images/yard/m_0.jpg) no-repeat; border-right:1px solid #E6F0E5;}
-#menu_b{background:url(../images/yard/m_b.jpg) no-repeat; border-right:1px solid #E6F0E5;}
-#menu_c{background:url(../images/yard/m_c.jpg) no-repeat; border-right:1px solid #E6F0E5;}
-#menu_d{background:url(../images/yard/m_d.jpg) no-repeat; border-right:1px solid #E6F0E5;}
-#menu_e{background:url(../images/yard/m_e.jpg) no-repeat; border-right:1px solid #E6F0E5;}
-#menu_f{background:url(../images/yard/m_f.jpg) no-repeat;}
+#menu_b{background:url(../images/yard/m_1_sel.jpg) no-repeat; border-right:1px solid #E6F0E5;}
+#menu_c{background:url(../images/yard/m_2_sel.jpg) no-repeat; border-right:1px solid #E6F0E5;}
+#menu_d{background:url(../images/yard/m_3_sel.jpg) no-repeat; border-right:1px solid #E6F0E5;}
+#menu_f{background:url(../images/yard/m_4_sel.jpg) no-repeat;}
 #content{width:950px; overflow:hidden; float:left; display:inline;}
 #c_l{width:111px; height:657px; margin-top:10px; background:url(../images/yard/l_pg.jpg) no-repeat; float:left; display:inline;}
 #cll_z{width:100px; height:647px; margin-left:5px; margin-top:5px; float:left; display:inline;}
@@ -33,7 +32,7 @@ body a{text-decoration:none; color:#497617;}
 #cc_c{width:819px;  background:#E5F3CD; float:left; display:inline;}
 #cc_pg{width:576px; margin-left:15px; background:#ffffff; float:left; display:inline;}
 #cc_b{width:819px; height:26px; background:url(/images/yard/c_pg_b.jpg) no-repeat; float:left; display:inline;}
-#cc_pic{width:560px; height:313px; margin-left:8px; background:url(/images/yard/c_t.jpg) repeat; float:left;display:inline;}
+#cc_pic{width:560px; height:313px; margin-left:8px; background:url(/images/yard/yard.jpg) repeat; float:left;display:inline;}
 #cc_photo{width:539px; height:62px; margin-top:15px; margin-left:10px; background:url(/images/yard/c_pg_p.jpg) no-repeat; float:left; display:inline;}
 #pho_l{width:48px; height:48px;	margin-left:7px; margin-top:4px; float:left; display:inline;}
 #pho_l img{width:46px; height:46px; margin:1px;}
@@ -57,7 +56,7 @@ body a{text-decoration:none; color:#497617;}
 #c_moblie{width:76px; height:18px; margin-top:5px; float:right; display:inline; }
 #c_moblie_w{width:50px; height:14px; margin-left:10px; margin-top:2px; font-size:12px; text-align:right; float:right; display:inline;}
 #m_w{width:50px; height:24px; border-bottom:1px solid #E3F2DF; float:left; display:inline;}
-#c_ch{width:491px; height:25px; margin-top:25px; margin-left:63px; overflow:hidden; float:left; display:inline;}
+#c_ch{width:491px; height:25px; margin-top:10px; margin-left:63px; overflow:hidden; float:left; display:inline;}
 .c_ch_w{width:68px; height:22px; margin-top:2px; border-bottom:1px solid #E3F2DF; font-size:14px; cursor:pointer;  font-weight:bold; color:#7FB962; line-height:22px; text-align:center; float:left; display:inline;}
 .pc_z{width:543px;  margin-left:7px; margin-top:5px; float:left; display:inline;}
 .pc_hr{width:543px; height:1px; margin-left:7px; margin-top:5px; background:url(/images/yard/m_pg_hr.jpg) repeat-x; float:left; display:inline;}
@@ -65,21 +64,21 @@ body a{text-decoration:none; color:#497617;}
 .pc_img{width:48px; height:48px; margin:4px; overflow:hidden; float:left; display:inline;}
 .pc_img img{width:44px; height:44px; margin:2px;}
 .pc_word{width:460px; margin-top:5px; margin-left:10px; line-height:14px; font-size:14px;float:left; display:inline;}
-	.title_pc{width:460px; height:16px; float:left; display:inline;}
+	.title_pc{width:460px; height:16px; font-size:12px; float:left; display:inline;}
 		.title_pc a{color: #41619c; font-size:14px;}
-	.content_pc{width:460px; word-wrap: break-word; float:left; display: inline;}
+	.content_pc{width:460px; margin-top:5px; text-indent:20px; line-height:20px; word-wrap: break-word; float:left; display: inline;}
 		.content_pc a{color: #609B38; font-size:12px;}
-	.photo_box{float:left;}
-	.photo_box img{width:150px; height:150px; margin-right:5px;}
+	.photo_box{float:left; }
+	.photo_box img{width:150px;}
 		.content_pc font{color: #A9BDDA; font-size:12px;margin-left:13px;}
 	.time_pc{width:460px; line-height:18px; color: #A9BDDA;  font-size:12px; float: left; display: inline;}
 #r_pho{width:227px; height:600px; float:left; display:inline;}
-#r_img{width:192px; height:272px; margin-left:18px; margin-top:-85px; position:absolute;  background:url(/images/yard/r_pg_img.jpg) no-repeat; float:left; display:inline;}
-#r_pto{width:165px; height:201px; margin-left:13px; margin-top:10px; overflow:hidden; float:left; display:inline;}
-#r_pto img{width:165px; height:201px; border:0px solid red;}
+#r_img{width:192px; height:242px; margin-left:18px; margin-top:-85px; position:absolute;  background:url(/images/yard/r_pg_img.jpg) no-repeat; float:left; display:inline;}
+#r_pto{width:165px; height:165px; margin-left:13px; margin-top:10px; overflow:hidden; float:left; display:inline;}
+#r_pto img{width:165px; height:165px; border:0px solid red;}
 #r_bb{width:85px; height:20px; margin-left:13px; margin-top:10px; color:#3F3F3F; font-size:16px; font-weight:bold; float:left; display:inline;}
 #r_num{width:150px; height:20px; margin-top:8px; margin-left:15px; font-size:12px; font-weight:bold; color:#A2B5CA; float:left; display:inline;}
-#r_geng{width:170px; height:20px; margin-left:30px; margin-top:190px;  position:absolute;  z-index:101; float:left; display:inline;}
+#r_geng{width:170px; height:20px; margin-left:30px; margin-top:160px;  position:absolute;  z-index:101; float:left; display:inline;}
 #r_ge_a{width:70px; height:14px;  float:left; display:inline;}
 #r_gi_a{width:10px; height:10px; margin-top:2px; background:url(/images/yard/pic_pg_a.jpg) no-repeat; float:left; display:inline;}
 #r_gw_a,#r_gw_b{margin-left:5px; float:left; display:inline;}
@@ -87,14 +86,15 @@ body a{text-decoration:none; color:#497617;}
 #r_gi_b{width:10px; height:10px; margin-top:2px; background:url(/images/yard/pic_pg_b.jpg) no-repeat; float:left; display:inline;}
 #r_ge_b{width:70px; height:14px; margin-left:20px;  float:left; display:inline;}
 #r_ge_hr{width:225px; height:1px; margin-top:1px; background:url(/images/yard/r_pg_hr.jpg) repeat-x;  z-index:102; float:left; display:inline;}
-#r_ge_ge{width:225px; margin-top:220px; position:absolute; float:left; display:inline;}
-#r_ge_table{width:195px; margin-left:20px; margin-top:10px;  float:left; display:inline;}
-.r_ge_ct{width:193px; height:30px;  float:left; display:inline;}
+#r_ge_ge{width:225px; margin-top:190px; position:absolute; float:left; display:inline;}
+#r_ge_table{width:213px; margin-left:10px; margin-top:10px;  float:left; display:inline;}
+.r_ge_ct{width:213px; height:30px;  float:left; display:inline;}
 .r_ge_cta{width:11px; height:11px; margin-top:11px; margin-left:7px; float:left; display:inline;}
 .r_ge_ctb{height:30px; line-height:30px; margin-left:5px; font-size:14px; font-weight:bold; color:#666666; float:left; display:inline;}
-.r_ge_ctc{width:80px; height:30px; overflow:Hidden; line-height:30px; font-size:14px; font-weight:bold; color:#6AA85F; float:left; display:inline;}
+.r_ge_ctc{width:100px; height:30px; overflow:Hidden; line-height:30px; font-size:14px; font-weight:bold; color:#6AA85F; float:left; display:inline;}
 #friendbox{width:203px; height:23px; margin-left:10px; margin-top:15px; line-height:24px;border-bottom:1px solid #BFDEC1; float:left; display:inline;}
 .friend{height:23px; margin-left:10px; cursor:pointer; display:inline;}
+#query_friend{font-size:12px; color:#6AA85F; cursor:pointer;  float:right; display:inline;}
 	#friend_l0{width:3px; height:23px; margin-top:1px;}
 	#friend_r0{width:3px; height:23px; margin-top:1px;}
 	#friend_word0{padding:0px 7px; height:23px; color:#4e714f; border-top:1px solid #BFDEC1; background:url("/images/yard/friend_bj.jpg") repeat-x;}
