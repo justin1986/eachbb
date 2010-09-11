@@ -44,7 +44,7 @@
 			$save = ROOT_DIR_NONE ."/upload/".$save_name;
 			$save_e = "/upload/".$save_name;
 				$sql="insert into eachbb_member.photo (description,u_id,u_name,photo,album_id,created_at,width,height)values('$text_photo',$id,'$name_photo','$save_e',$upload_select_id,now(),$img[0],$img[1]);";
-				$last="insert into eachbb_member.lastest_news (resource_id,resource_type,u_id,created_at,u_name,u_avatar,form,photo,content)values('$upload_select_id','image','$user->id',now(),'$user->name','$u_avatar','添加了新的照片。','$save_e','添加了新的照片。')";
+				$last="insert into eachbb_member.lastest_news (resource_id,resource_type,u_id,created_at,u_name,u_avatar,form,photo)values('$upload_select_id','image','$user->id',now(),'$user->name','$u_avatar','添加了新的照片。','$save_e')";
 				$u_name=$user->name;
 				$u_avatar=$user->avatar;
 			}

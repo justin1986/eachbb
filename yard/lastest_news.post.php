@@ -35,7 +35,8 @@
 				&nbsp;&nbsp;查看全部&gt;&gt;
 				</a>
 			</div>
-			<div class="photo_box" style="<?php if(!($result[$i]->photo)){echo "display:none;";}?>"><a href="<?php echo $result[$i]->photo;?>"><img src="<?php echo $result[$i]->photo;?>" border=0/></a></div>
+			<div class="photo_box" style="<?php if(!($result[$i]->photo)){echo "display:none;";}?>"><a href="<?php echo $result[$i]->photo;?>">
+				<img src="<?php echo $result[$i]->photo;?>" border=0  onload="this.width=Math.min(this.width,100)"/></a></div>
 			<div class="time_pc"><?php echo mb_substr($result[$i]->created_at,0,16);?></div>
 		</div>
 	</div>
