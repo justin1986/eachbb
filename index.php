@@ -498,12 +498,12 @@
 							<div class="son_c_z">
 								<div class="son_c_z_l"></div>
 								<div class="son_c_z_r">
-									<a  href="/assistant/assistant.php?id=<?php echo $list[$k]->id;?>" target="_blank" title="<?php echo $list[$k]->title;?>">
+									<a  href="/assistant/assistant.php?id=<?php echo $list[$k]->id;?>" target="_blank" title="<?php echo $list[$k]->title;?>"> 
 										<?php 
 										$number_name = mb_strlen($type[0]->name,"utf-8");
 										$number_title = mb_strlen($list[$k]->title,"utf-8");
 										?>
-										<?php echo ( $number_name+$number_title >16 ? "<font style='color:#3C7745; font-size:12px;'>[".$type[0]->name."] </font>".mb_substr($list[$k]->title,0,15-$number_name,"utf-8")."<font style='font-size:10px;'>...</font>":"<font style='color:#3C7745; font-size:12px;'>[".$type[0]->name."]</font>".$list[$k]->title);?>
+										<?php echo ( $number_name+$number_title >16 ? "<font style='color:#3C7745; font-size:12px;'>[".$type[0]->name."]&nbsp;</font>".mb_substr($list[$k]->title,0,15-$number_name,"utf-8")."<font style='font-size:10px;'>...</font>":"<font style='color:#3C7745; font-size:12px;'>[".$type[0]->name."]</font>".$list[$k]->title);?>
 									</a>
 								</div>
 							</div>
