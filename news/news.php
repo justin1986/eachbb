@@ -50,7 +50,7 @@ foreach ($lines as $li){
 			<div id="hr"></div>
 		</div>
 		<div id="b_l">
-			<div id="title"  title="<?php echo $column[0]->title;?>"><?php echo mb_strlen($column[0]->title,"utf-8")>18 ? mb_substr($column[0]->title,0,18,"utf-8")."...":$column[0]->title;?></div>
+			<div id="title"  title="<?php echo $column[0]->title;?>"><?php echo $column[0]->title;?></div>
 			<div id="title_b">
 				<div id="problem" title="<?php echo $column[0]->created_at;?>">发布与：<?php echo $column[0]->created_at;?></div>
 			</div>

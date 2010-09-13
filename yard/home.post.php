@@ -1,5 +1,6 @@
 <?php
 		include_once('../frame.php');
+		set_charset("utf-8");
 		$db = get_db();
 		$checkbox=$_POST['checkbox'];
 		if($checkbox != 1){

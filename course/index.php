@@ -36,25 +36,27 @@
 					<div class="cr_a" >情感培养</div>
 				</div>
 				<div class="cr_cb"  style="position: relative; z-index:1">
-					<div class="crc_pg">
-						<div class="crb_img">
+					<?php for($j = 0 ; $j <5; $j++){?>
+					<div class="crc_pg"  id="crr_zz_<?php echo $j;?>" <?php if($j === 0) echo "style='display:inline;'"?>>
+						<div class="crb_img" >
 							<?php for($i = 0; $i < 4; $i++){ ?>
-							<div class="banner"<?php $pos="middle_image_$i";show_page_pos($pos,'link_i');?> id="banner_<?php echo $i;?>" style="<?php if($i == 0){echo 'display:inline;';}else{ echo 'display:none;'; } ?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : '/images/class/l_pg_c.jpg';?>" /></div>
+							<div class="banner" id="<?php echo "middle_image_".$i."_".$j; ?>" <?php $pos="middle_image_".$i."_".$j;show_page_pos($pos,'link_i');?> style="<?php if($i == 0){echo 'display:inline;';}else{ echo 'display:none;'; } ?>">
+								<img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : '/images/class/l_pg_c.jpg';?>" />
+							</div>
 							<?php } ?>
-							<div id="num_banner">
-								<div class="num">4</div>
-								<div class="num">3</div>
+							<div class="num_banner">
+							<div class="num" style="margin-left:210px;background:#CE0609;">1</div>
 								<div class="num">2</div>
-								<div class="num" style="background:#CE0609;">1</div>
+								<div class="num">3</div>
+								<div class="num">4</div>
 							</div>
 						</div>
-						<?php for($j = 0 ; $j <5; $j++){?>
-						<div class="crr_z" id="crr_z_<?php echo $j;?>" <?php if($j === 0) echo "style='display:inline;'"?>>
+						<div class="crr_z">
 							<a href="#"><img class="class_img" src="/images/class/class.png"/></a>
 							<div class="crb_title">
 								推荐<font>课程</font>
 							</div>
-							<div class="class_val" <?php if($j == 0) echo 'style="display:inline;"';?>>
+							<div class="class_val">
 								<div class="crr_t" <?php $pos="middle_headline_$j";show_page_pos($pos,'link_d_i');?>>
 									<div class="crrt_l"><a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : '/images/class/cr_l.jpg';?>" border="0"></a></div>
 									<div class="crrt_c"><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href);?></div>
@@ -64,7 +66,7 @@
 										if(mb_strlen($pos_items[$pos]->description,'utf-8') < 160){
 											echo $pos_items[$pos]->description.'<a class="beiju" href="#"></a>';
 										}else{
-											echo mb_substr($pos_items[$pos]->description,0,160,'utf-8').'<a class="beiju" href="#">...【查看全文】</a>';
+											echo mb_substr($pos_items[$pos]->description,0,160,'utf-8')."<a class='beiju' href='#'><font style='font-size:10px;'>...</font>【查看全文】</a>";
 										}
 									}else{
 										echo '<a class="beiju" href="#"></a>';
@@ -73,8 +75,8 @@
 								</div>
 							</div>
 						</div>
-					<?php }?>
 					</div>
+					<?php }?>
 				</div>
 				<div id="cr_ci">
 					<div id="cri_t"></div>

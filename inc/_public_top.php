@@ -11,7 +11,7 @@
 }
 #tl_l{
 	width:227px;
-	background:url('/images/top/logon.png') no-repeat;
+	background:url('/images/top/logo.png') no-repeat;
 	float:left;
 }
 #tl_r{
@@ -158,7 +158,7 @@
 						$i++;
 						} 
 						?>
-						<div id="test_result" style="height:30px; overflow:hidden; float:right; display: inline;"></div>
+						<div id="test_result" style="width:400px; height:30px; overflow:hidden; float:right; display: inline;"></div>
 					</div>
 			</div>
 			<div id="menu_right"></div>

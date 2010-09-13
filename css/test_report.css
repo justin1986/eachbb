@@ -5,7 +5,7 @@
 #cra_ll{width:533px; height:735px; border:1px solid #3F71A2; float:left; display:inline;}
 #cra_r{width:200px; height:200px; float:right; display:inline;}
 
-#haha{width:770px; margin-top:5px; float:right; display: inline;}
+#haha{width:760px; margin-top:5px; overflow:hidden; float:right; display: inline;}
 
 #crr_a{float:left; display:inline;}
 #crb_t{width:754px; height:27px; margin-top:15px; float:left; display:inline; }

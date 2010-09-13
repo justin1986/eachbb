@@ -6,9 +6,14 @@
 	?>
 <div id="c_l">
 	<div id="l_pho"></div>
-	<div id="l_look">
-		<a href="/feedback.php">网趣宝贝<font>意见反馈&nbsp;&nbsp;</font></a>
+	<?php if($user){?>
+	<div class="l_look">
+		<a href="/feedback.php?type=test">网趣宝贝<font>意见反馈&nbsp;&nbsp;</font></a>
 	</div>
+	<div class="l_look">
+		<a href="/baby">网趣宝贝<font>我的测评&nbsp;&nbsp;</font></a>
+	</div>
+	<?php }?>
 	<div class="hlc_t"></div>
 	<div class="hlc_b">
 		<div class="hlcb_pg">
@@ -57,5 +62,5 @@
 </div>
 <style>
 #l_test{border:0px solid red;}
-#l_look{border:0px solid red;}
+.l_look{border:0px solid red;}
 </style>

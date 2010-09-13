@@ -73,19 +73,17 @@
 			<div id="bl_b">
 				<div id="bl_ti">
 					<div id="blt_img">育儿早班车</div>
+					<div class="more" style="margin-top:10px;"><a href="/news/news_list.php?category_id=1">More&gt;</a></div>
 					<div id="bltc_hr"></div>
 					<div class="trade_z" >
 						<div class="trade_l">
-							<div class="tl_l">
-								<div class="tll_a"> 怀孕保养</div>
-								<div class="tll_b"><a href="/news/news_list.php?category_id=1">更多&gt;&gt;</a></div>
-							</div>
 							<?php 
 								#$en_news=$db->query("SELECT id,category_id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id=153 and is_adopt=1 order by created_at desc limit 9;");
 							?>
 							<div class="tl_r" <?php $pos="assistan_hb_link_a"; show_page_pos($pos,'link_i');?>>
 								<a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1;?>"/></a>
 							</div>
+								<div class="tll_b"><a href="/news/news_list.php?category_id=1">更多&gt;&gt;</a></div>
 						</div>
 							<?php for($i=1;$i<9;$i++){?>
 							<div class="tc_z"<?php $pos="news_list1_$i"; show_page_pos($pos,'link');?> style="<?php if($i%2==1){ echo "margin-left:17px;";}?>">
@@ -96,10 +94,6 @@
 					</div>
 					<div class="trade_z" >
 						<div class="trade_l" style="background:url(/images/consult/l_pgb.jpg) no-repeat;">
-							<div class="tl_l">	
-								<div class="tll_a">胎    教</div>
-								<div class="tll_b"><a href="/news/news_list.php?category_id=1">更多&gt;&gt;</a></div>
-							</div>
 							<?php 
 								#$en_news=$db->query("SELECT id,category_id,title,short_title,description,content,video_photo_src FROM eb_news e where category_id=209 and is_adopt=1 order by created_at desc limit 9;");
 							?>
@@ -108,6 +102,7 @@
 									<img src="<?php echo $pos_items[$pos]->image1;?>"/>
 								</a>
 							</div>
+								<div class="tll_b"><a href="/news/news_list.php?category_id=1">更多&gt;&gt;</a></div>
 						</div>
 						<?php for($i=1;$i<9;$i++){?>
 							<div class="tc_z"<?php $pos="news_list2_$i";show_page_pos($pos,'link');?> style="<?php if($i%2==1){ echo "margin-left:17px;";}?>">
@@ -119,7 +114,6 @@
 				</div>
 			</div>
 			<div id="bl_c">
-				<div class="more"><a href="/news/news_list.php?category_id=2">More&gt;</a></div>
 			</div>
 			<div id="bl_d">
 				<?php
@@ -141,7 +135,6 @@
 				<div id="be_l">
 					<div id="bel_t">
 						<div id="bel_l">海外传真</div>
-						<div id="bel_r"><a href="/news/news_list.php?category_id=3">查看更多</a></div>
 					</div>
 					<div id="bel_c"<?php $pos="ylbg_headline";show_page_pos($pos,'link_d_i');?>>
 					<?php 
@@ -178,8 +171,7 @@
 					<div id="ber_tt">
 						<div id="bert_t"></div>
 						<div id="bert_c">
-							<div class="svm"><a href="/news/news_list.php?category_id=4"><font>+</font>更多</a></div>
-							<div id="bert_b"></div>
+							<div id="bert_b" style="margin-top:40px;"></div>
 						</div>
 					</div>
 					<div id="be_cc">
@@ -269,7 +261,6 @@
 			<div id="bc_z">
 				<div id="bc_t">
 					<div id="bct2_l">最热排行</div>
-					<div id="bct2_r"><a href="/news/news_list.php?category_id=1">More&gt;</a> </div>
 				</div>
 				<div id="bc_t2">
 					<div id="bct_z">
@@ -284,7 +275,9 @@
 				<div class="bct_number"  id="bn_<?php echo $j;?>">
 						<?php for($i=0; $i<10;$i++){?>
 						<div class="bct_cp"<?php $pos="right_tab_".$j."_".$i;show_page_pos($pos,'link')?>>
-							<div class="bct_cpl"  style="<?php if($i==0){ echo 'background:url(/images/index/red.jpg) no-repeat';}?>"><?php echo $i+1?></div>
+							<div class="bct_cpl"  style="<?php if($i==0){ echo 'background:url(/images/index/red.jpg) no-repeat';}?>">
+								<?php echo $i+1?>
+							</div>
 							<div class="bct_cpv"><?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?></div>
 						</div>
 						<?php  }?>
@@ -297,7 +290,6 @@
 				<div class="bd_c">
 					<div class="bdt_t">
 						<div class="bdt_tl">最热评论</div>
-						<div class="bdt_more"><!--  <a href="#"><font>+</font>更多</a>--></div>
 					</div>
 					<div class="bdt_hr">
 						<div class="bdt_hr2"></div>
@@ -325,16 +317,39 @@
 				<div id="bit_r"></div>
 			</div>
 			<div id="bi_c">
+				<div class="news_banner_left">
 				<?php
-				$list=$db->query("SELECT id,category_id,title,created_at FROM eb_news where is_adopt=1  order by created_at,last_edited_at,click_count desc limit 20");
-				for($i = 0 ; $i < 20 ; $i++){ ?>
-				<div class="bil_y" style="<?php if($i % 2 == 0){ echo "margin-left:0px;";}?>">
+				$list = array();
+				foreach(array(1,2) as $cate){
+						$items =$db->query("select * from eb_news where category_id=$cate order by created_at,rand() limit 5");
+						$list = array_merge($list,$items);
+				}
+				for($i = 0 ; $i < 10 ; $i++){ ?>
+				<div class="bil_y">
 					<div><span>[<?php echo news_type($list[$i]->category_id);?>]</span>
 					<a href="/news/news.php?id=<?php echo $list[$i]->id;?>" title="<?php echo $list[$i]->title;?>"><?php echo $list[$i]->title;?></a>
 					</div>
 					<font><?php echo $list[$i]->created_at;?></font>
 				</div>
 				<?php }?>
+				</div>
+				<div class="news_banner_left">
+				<?php
+				$list = array();
+				foreach(array(3,4) as $cate){
+						$items =$db->query("select * from eb_news where category_id=$cate order by created_at,rand() limit 5");
+						$list = array_merge($list,$items);
+				}
+				for($i = 0 ; $i < 10 ; $i++){ ?>
+				<div class="bil_y">
+					<div><span>[<?php echo news_type($list[$i]->category_id);?>]</span>
+					<a href="/news/news.php?id=<?php echo $list[$i]->id;?>" title="<?php echo $list[$i]->title;?>"><?php echo $list[$i]->title;?></a>
+					</div>
+					<font><?php echo $list[$i]->created_at;?></font>
+				</div>
+				<?php }?>
+				</div>
+				
 			</div>
 		</div>
 		<?php include_once(dirname(__FILE__).'/../inc/bottom.php');?>

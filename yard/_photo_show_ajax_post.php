@@ -57,7 +57,7 @@
 </div>
 <div id="img_show">
 	<?php if($photo[$number]->photo){?>
-	<img src="<?php echo $photo[$number]->photo;?>"/>
+	<img src="<?php echo $photo[$number]->photo;?>"  onload="if(this.width>700)this.width=700"/>
 	<input id="photo" type="hidden" value="<?php echo $photo[$number]->photo;?>" />
 	<?php }else{ echo "<a href='/yard/album_list.php' style='font-size:16px; font-weight:bold;'>图片路径有误！点击返回相册列表！</a>";}?>
 </div>

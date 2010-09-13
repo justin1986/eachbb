@@ -23,7 +23,7 @@ $(function(){
 		 interval =setInterval(image_interval,iamge_tab_interval);
 	});
 	var  interval =setInterval(image_interval,iamge_tab_interval);
-	$('.dict_tab').hover(function(){
+	$('.dict_tab').click(function(){
 		var selected = $('.dict_tab').index($(this));
 		for(var i = 0 ; i < 5; i++){
 			if(i == selected){
@@ -55,5 +55,15 @@ $(function(){
 		$('.ba_c').attr('style','display:none;');
 		$('#bac_'+selected).attr('style','display:inline;');
 	},function(){});
+	$('img.student_tab').click(function(e){
+		var selected = $('img.student_tab').index($(this));
+		if(selected === 0){
+			window.location.href="/course";
+		}else if(selected === 1){
+			window.location.href="/test";
+		}else if(selected === 2){
+			window.location.href='/bbs';
+		}
+	});
 	
 });
