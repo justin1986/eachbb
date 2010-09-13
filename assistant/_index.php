@@ -117,7 +117,17 @@
 					for($j=($i-6)*7;$j<($i-6)*7+7;$j++){ ?>
 				<div class="fcr_c">
 					<div class="fcrc_d"></div>
-					<div class="fcrc_c"><a style="color:#6EB6CA" href="list.php?category_id=<?php echo $assistant->category_id;?>">[<?php echo $assistants[$j]->name;?>]</a> <a href="assistant.php?id=<?php echo $assistants[$j]->id;?>" title="<?php echo $assistants[$j]->title?>" target="_blank" ><?php echo $assistants[$j]->title?></a></div>
+					<div class="fcrc_c">
+					<?php 
+						$assistant_count = mb_strlen($assistants[$j]->name.$assistants[$j]->title,"utf-8");
+					?>
+						<a style="color:#6EB6CA" href="list.php?category_id=<?php echo $assistant->category_id;?>">
+							[<?php echo $assistants[$j]->name;?>]
+						</a>
+						<a href="assistant.php?id=<?php echo $assistants[$j]->id;?>" title="<?php echo $assistants[$j]->title?>" target="_blank" >
+							<?php echo $assistant_count >17 ? $assistants[$j]->title."<font style='font-size:10px;'>...</font>" : $assistants[$j]->title;?>
+						</a>
+					</div>
 				</div>
 			<?php  }?>
 				</div>
