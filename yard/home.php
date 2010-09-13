@@ -289,7 +289,7 @@
 					}
 					?>
 					<?php 
-						if($count[0]->id != 0 || $id == $user->id){
+						if($count[0]->id != 0 || $id == $user->id && $comment){
 						?>
 					<div class="text_display">
 					<?php 	foreach ($comment as $comment ){?>
