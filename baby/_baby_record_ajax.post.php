@@ -24,7 +24,7 @@
 	if($problem){
 		?>
 	<div class="problem_bannerr" <?php if($i % 2 == 0){echo 'style="background:#D2D8E4;"';}?>>
-		<div style="width:400px; height:20px; line-height:20px; overflow:hidden; float:left; display: inline;"><a href="/baby/_baby_post.php?id=<?php echo $problem->problem_id; ?>" title="<?php echo $problem->name; ?>"><?php echo $problem->name; ?></a></div>
+		<div style="width:400px; height:20px; line-height:20px; overflow:hidden; float:left; display: inline;"><a href="/baby/_baby_post.php?id=<?php echo $problem->problem_id; ?>" title="<?php echo $problem->name; ?>" <?php if($i % 2 == 0){echo 'style="color:#333333;"';}?>><?php echo $problem->name; ?></a></div>
 		<div style="float:left; display:inline;">测评分数：<?php echo $problem->score; ?></div>
 		<div>测评时间：<?php echo $problem->created_at; ?></div>
 	</div>

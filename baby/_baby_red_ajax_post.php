@@ -16,7 +16,7 @@
 	if($problem){
 		?>
 	<div class="problem_bannerr" <?php if($i % 2 == 0){echo 'style="background:#D2D8E4;"';}?>>
-		<a href="/baby/_baby_post.php?id=<?php echo $problem[0]->id; ?>" title="<?php echo $problem[0]->name; ?>"><?php echo $problem[0]->name; ?></a>
+		<a href="/baby/_baby_post.php?id=<?php echo $problem[0]->id; ?>" <?php if($i % 2 == 0){echo 'style="color:#333333;"';}?> title="<?php echo $problem[0]->name; ?>"><?php echo $problem[0]->name; ?></a>
 		<div><?php echo $problem[0]->create_time; ?></div>
 	</div>
 	<?php $i++; }}?>
