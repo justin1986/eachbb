@@ -21,15 +21,17 @@
 	<div id="crb_r"></div>
 </div>
 <div id="cr_c">
-	<?php foreach ($array as $problem){
+	<?php
+	$i=0;
+	foreach ($array as $problem){
 		?>
-	<div class="problem_bannerr">
+	<div class="problem_bannerr" <?php if($i % 2 == 0){echo 'style="background:#D2D8E4;"';}?>>
 		<div><?php echo $problem>name; ?></div>
 		<div style="font-size:12px; font-weight:100px;">测评时间：<?php echo $problem->created_at; ?></div>
 		<div style="margin-left:120px; float:left;"><a href="/test/test_result.php?test_id=<?php echo $problem->problem_id;?>">测评报告</a></div>
 		<div style="margin-left:120px; float:left;"><a href=" /test/review.php?id=<?php echo $problem->problem_id;?>">题目回顾</a></div>
 	</div>
-	<?php }?>
+	<?php $i++; }?>
 </div>
 <?php 		
 	}?>

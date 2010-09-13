@@ -22,8 +22,8 @@
 	<div id="crb_r"></div>
 </div>
 <div id="cr_c">
-	<?php foreach ($array as $array){?>
-	<div class="problem_bannerr">
+	<?php $i=0; foreach ($array as $array){?>
+	<div class="problem_bannerr"  <?php if($i % 2 == 0){echo 'style="background:#D2D8E4;"';}?>>
 		<div  style="width:710px; height:26px; padding-left:10px; font-size:13px; background:#E0E0E0;"><div style="width:380px; height:26px; line-height:26px; overflow:hidden; float:left;">课程名称：<?php echo $array->title; ?></div>
 			<div style="width:320px; height:26px; line-height:26px; float:right;">适龄年龄段：<?php echo $array->age.'岁'.$array->month.'个月      发布时间'. $array->create_time; ?></div>
 		</div>
@@ -32,7 +32,7 @@
 	</div>
 	<div>
 	</div>
-	<?php }?>
+	<?php $i++; }?>
 </div>
 <?php }?>
 

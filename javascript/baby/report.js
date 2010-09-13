@@ -59,5 +59,10 @@ $(function(){
 		$('.crb_c').hide();
 		$('#crbc_'+selected).show();
 	},function(){});
-	
+//	$('.problem_bannerr').live('hover',function(){
+//	$(this).addClass("hover");
+//		        $(this).removeClass("hover");
+//
+//		$(this).css('background',"#E6E5E8");
+//	});
 });
