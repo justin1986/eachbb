@@ -125,7 +125,7 @@
 							[<?php echo $assistants[$j]->name;?>]
 						</a>
 						<a href="assistant.php?id=<?php echo $assistants[$j]->id;?>" title="<?php echo $assistants[$j]->title?>" target="_blank" >
-							<?php echo $assistant_count >17 ? mb_substr($assistants[$j]->title,0,$assistant_count - mb_strlen($assistants[$j]->name,"utf-8"),"UTF-8")."<font style='font-size:10px;'>...</font>" : $assistants[$j]->title;?>
+							<?php echo $assistant_count >17 ? mb_substr($assistants[$j]->title,0,$assistant_count - mb_strlen($assistants[$j]->name,"utf-8")-2,"UTF-8")."<font style='font-size:10px;'>...</font>" : $assistants[$j]->title;?>
 						</a>
 					</div>
 				</div>
