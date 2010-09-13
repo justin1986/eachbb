@@ -32,9 +32,9 @@
 		}
 		$daily_count=$db->query("select id from eachbb_member.daily where u_id=$id");
 		$album_count=$db->query("select id from eachbb_member.album where u_id=$id");
-		if($info[0]->gender != 1){
+		if($info[0]->gender == 2){
 			$its="她";
-		}else{
+		}else if($info[0]->gender == 1){
 			$its="他";
 		}
 	?>
@@ -149,7 +149,7 @@
 							<div class ="info_left">
 								<div class="left_words">
 									<div class="box">性别：</div>
-									<div class="info"><?php if($info[0]->gender != 1){echo "女";}else{echo "男";}?></div>
+									<div class="info"><?php if($info[0]->gender == 1){echo "男";}else if($info[0]->gender == 2){echo "女";}else{echo "未知";}?></div>
 								</div>
 								<div class="left_words">
 									<div class="box">学历：</div>
@@ -191,7 +191,7 @@
 								</div>
 								<div class="left_words">
 									<span class="box">性别：</span>
-									<span class="info"><?php if($info[0]->baby_gender != 1){echo "女";}else{echo "男";}?></span>
+									<span class="info"><?php if($info[0]->baby_gender == 1){echo "男";}else if($info[0]->baby_gender == 2){echo "女";}else{echo "未知";}?></span>
 								</div>
 								<div class="left_words">
 									<span class="box">年龄：</span>
