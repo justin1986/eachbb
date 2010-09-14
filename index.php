@@ -254,9 +254,13 @@
 								$list=$db->query("SELECT id,category_id,title,created_at FROM eb_assistant where is_adopt=1  order by click_count,rand() desc limit 8");
 								for($i=1;$i<8;$i++){ 
 									$type = $db->query("select name from eb_category  where category_type='assistant' and id=".$list[$i]->category_id);
+									$name_len=mb_strlen($type[$i]->name,"utf-8");
+									$title_len=mb_strlen($list[0]->title,"utf-8");
 									?>
 							<div class="mlc">
-								<a  href="/assistant/assistant.php?id=<?php echo $list[$i]->id;?>" target="_blank"  title="<?php echo $list[$i]->title;?>"><?php echo mb_strlen("<font style='color:#3C7745;'>[".$type[0]->name."]</font>".$list[$i]->title,"utf-8")>20 ? mb_substr("[".$type[0]->name."] ".$list[$i]->title,0,20,"utf-8")."<font style='font-size:10px;'>...</font>":"[".$type[0]->name."] ".$list[$i]->title;?></a>
+								<a  href="/assistant/assistant.php?id=<?php echo $list[$i]->id;?>" target="_blank"  title="<?php echo $list[$i]->title;?>">
+									<?php echo "[".$type[0]->name."] "."<font style='color:#000000;'>".($name_len+$title_len >18 ? mb_substr($list[$i]->title,0,17-$name_len,"utf-8")."<font style='font-size:10px; color:#000000;'>...</font>":$list[$i]->title)."</font>";?>
+								</a>
 							</div>
 							<?php } ?>
 						</div>
