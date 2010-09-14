@@ -210,7 +210,7 @@
 								<div class="left_words">
 									<div class="box">生日：</div>
 									<div class="info">
-									<?php if(substr($info[0]->baby_birthday,0,10) != "0000-00-00"){echo substr($info[0]->baby_birthday,0,10); }else{ echo " 未知";}?></div>
+									<?php if(substr($info[0]->baby_birthday,0,10) != "0000-00-00"){echo substr($info[0]->baby_birthday,0,10); }else{ echo "&nbsp;未知";}?></div>
 								</div>
 							</div>
 							<?php }?>
