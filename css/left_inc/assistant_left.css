@@ -16,7 +16,7 @@
 .htct_t a{font-size:12px; color:#666666; font-weight:normal; text-decoration: none;}
 .htct_b{width:160px; margin-left:13px; font-size:12px; float:left; display:none;}
 .htct_b a{color:#999999; text-decoration: none;}
-.htct_c{width:150px; height:14px; margin-top:10px; color:#999999; overflow:hidden; text-align:left; float:left; display:inline;}
+.htct_c{width:80px; height:14px; margin-top:10px; color:#999999; overflow:hidden; text-align:left; float:left; display:inline;}
 .htct_hr{width:160px; height:1px; margin-bottom:1px;  margin-left:10px; margin-top:5px; background:url(/images/helper/l_d.jpg) repeat-x; font-size:0px; line-height:0px; float:left; display:inline;}
 .htctc_hr{width:160px; height:10px;  margin-left:10px; margin-top:5px; font-size:0px; line-height:0xp; float:left; display:inline;}
 
