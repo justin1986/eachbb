@@ -277,8 +277,8 @@
 					<?php 
 					if(!$id){
 						$whispered ="1 = 1 ";
-					}else 	if($id != $user->id){
-						$whispered ="whispered = 0";
+					}else if($id != $user->id){
+						$whispered ="1 = 1";
 					}
 					$comment =$db->query("select nick_name,created_at,comment,comment_count,whispered from eachbb_member.comment where user_id=$id and resource_id='1099' and $whispered  order by created_at desc");
 					$visitor_name = $comment[0]->nick_name;
