@@ -25,6 +25,7 @@
 </head>
 <body>
 <div id="ibody">
+<input type="hidden"  id="type_test" value="<?php echo $_GET["type"];?>"/>
 	<?php include_once(dirname(__FILE__).'/../inc/_baby_top.php'); ?>
 	<?php include_once(dirname(__FILE__).'/../baby/_inc_index_left.php'); ?>
 	<div id="haha">

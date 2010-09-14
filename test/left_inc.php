@@ -11,7 +11,7 @@
 		<a href="/feedback.php?type=test">网趣宝贝<font>意见反馈&nbsp;&nbsp;</font></a>
 	</div>
 	<div class="l_look">
-		<a href="/baby">网趣宝贝<font>我的测评&nbsp;&nbsp;</font></a>
+		<a href="/baby/index.php?type=test">网趣宝贝<font>我的测评&nbsp;&nbsp;</font></a>
 	</div>
 	<?php }?>
 	<div class="hlc_t"></div>

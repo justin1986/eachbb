@@ -1,4 +1,10 @@
 $(function(){
+	var type = $('#type_test').val();
+	if(type =="test"){
+		$.post('_baby_view_ajax_post.php',function(data){
+			$('#haha').html(data);
+		});
+	}
 	$('.user_me_t').click(function(e){
 		e.preventDefault();
 		var selected = $('.user_me_t').index($(this));
