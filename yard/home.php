@@ -277,7 +277,7 @@
 					<?php 
 					if(!$id){
 						$whispered ="1 = 1 ";
-					}else if($id != $user->id){
+					}else if($id == $user->id){
 						$whispered ="1 = 1";
 					}else{
 						$whispered ="whispered = 0";	
