@@ -281,7 +281,7 @@
 							<div class="bct_cpl"  style="<?php if($i==0){ echo 'background:url(/images/index/red.jpg) no-repeat';}?>">
 								<?php echo $i+1?>
 							</div>
-							<div class="bct_cpv"><?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?></div>
+							<div class="bct_cpv"><?php var_dump($pos_items[$pos]); echo_href($pos_items[$pos]->title,$pos_items[$pos]->href);?></div>
 						</div>
 						<?php  }?>
 				</div>
