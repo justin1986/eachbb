@@ -83,7 +83,7 @@
 							<div class="tl_r" <?php $pos="assistan_hb_link_a"; show_page_pos($pos,'link_i');?>>
 								<a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1;?>"/></a>
 							</div>
-								<div class="tll_b"><a href="/news/news_list.php?category_id=1">更多&gt;&gt;</a></div>
+							<div class="tll_b"><a href="/news/news_list.php?category_id=1">更多&gt;&gt;</a></div>
 						</div>
 							<?php for($i=1;$i<9;$i++){?>
 							<div class="tc_z"<?php $pos="news_list1_$i"; show_page_pos($pos,'link');?> style="<?php if($i%2==1){ echo "margin-left:17px;";}?>">
@@ -114,6 +114,7 @@
 				</div>
 			</div>
 			<div id="bl_c">
+				<div class="more"><a href="/news/news_list.php?category_id=2">More&gt;</a></div>
 			</div>
 			<div id="bl_d">
 				<?php
@@ -135,6 +136,7 @@
 				<div id="be_l">
 					<div id="bel_t">
 						<div id="bel_l">海外传真</div>
+						<div id="bel_r"><a href="/news/news_list.php?category_id=3">查看更多</a></div>
 					</div>
 					<div id="bel_c"<?php $pos="ylbg_headline";show_page_pos($pos,'link_d_i');?>>
 					<?php 
@@ -171,7 +173,8 @@
 					<div id="ber_tt">
 						<div id="bert_t"></div>
 						<div id="bert_c">
-							<div id="bert_b" style="margin-top:40px;"></div>
+							<div class="svm"><a href="/news/news_list.php?category_id=4"><font>+</font>更多</a></div>
+							<div id="bert_b"></div>
 						</div>
 					</div>
 					<div id="be_cc">
