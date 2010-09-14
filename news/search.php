@@ -21,7 +21,7 @@
 	<meta http-equiv=Content-Language content=zh-cn>
 	<title><?php echo $key;?>_新闻检索_福布斯中文网</title>
 	<?php
-	$result_key=$key;
+		$result_key=$key;
 		use_jquery();
 		js_include_tag('news_highlight.js');
 		css_include_tag('article','news_search');
