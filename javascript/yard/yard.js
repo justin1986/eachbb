@@ -27,7 +27,7 @@ $(function(){
 		}
 		else if(selected === 3)
 		{
-			$.post('lastest_news.post.php',{'type':'diary'},function(data){
+			$.post('_lastest_news.post.php',{'type':'diary'},function(data){
 				$('#test').html(data);
 			});
 		}else if(selected === 4)
