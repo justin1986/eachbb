@@ -24,7 +24,7 @@
 		</div>
 		<div class="pc_word">
 			<div class="title_pc">
-				<a href="/yard/home.php?id=<?php echo $result[$i]->u_id;?>">
+				<a href="/yard/home.php?id=<?php echo $user->id;?>">
 					<?php echo $result[$i]->u_name;?>
 				</a>
 				<?php echo $result[$i]->form ;?>
