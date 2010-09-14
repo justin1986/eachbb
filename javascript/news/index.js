@@ -7,6 +7,7 @@ $(function(){
 		 if(image_tab_index >= image_tab_count) image_tab_index = 1;
 		 refresh_image_tab();
 	}
+	$('#img_tab_1').show();
 	function refresh_image_tab(){
 		$('.num').css('background','#4E3431');
 		$('#nn_'+image_tab_index).css('background','#FF6600');
