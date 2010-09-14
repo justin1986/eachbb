@@ -140,7 +140,6 @@
 			<!-- <div id="tl_r_l"></div><div id="tl_r_r"></div> background:url('/images/top/t_c.jpg') repeat-x;-->
 			<div id="tl_r_c">
 			</div>
-			
 		</div>
 	</div>
 	<div id="top_menu" style="height:33px;">
