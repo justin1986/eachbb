@@ -208,7 +208,7 @@
 									</span>
 								</div>
 								<div class="left_words">
-									<div class="box">生日：</div>
+									<span class="box">生日：</span>
 									<span class="info">
 									<?php if(substr($info[0]->baby_birthday,0,10) != "0000-00-00"){echo substr($info[0]->baby_birthday,0,10); }else{ echo "未知";}?></span>
 								</div>
