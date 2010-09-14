@@ -19,7 +19,7 @@
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-cn>
-	<title><?php echo $key;?>_新闻检索_福布斯中文网</title>
+	<title><?php echo $key;?>_新闻检索_网趣宝贝</title>
 	<?php
 		$result_key=$key;
 		use_jquery();
@@ -52,6 +52,7 @@
 				<div id=page><?php paginate();?></div>
 			</div>
 		</div>	
+		<?php include_once(dirname(__FILE__).'/../inc/bottom.php');?>
 	</div>
 </body>
 </html>
