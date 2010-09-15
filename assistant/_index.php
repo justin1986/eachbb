@@ -83,7 +83,8 @@
 									<div class="htct_l"></div>
 									<a href="<?php echo $pos_items[$pos]->href;?>" class="die_assistant">
 										<?php $tilte_count =mb_strlen($pos_items[$pos]->title,"utf-8");
-										 echo $tilte_count >45 ?mb_substr($pos_items[$pos]->title,0,46,"utf-8").'<font style="font-size:12px;">...</font>':$pos_items[$pos]->title;?>
+										 echo # $tilte_count >45 ?mb_substr($pos_items[$pos]->title,0,46,"utf-8").'<font style="font-size:12px;">...</font>':
+										 $pos_items[$pos]->title;?>
 									</a>
 								</div>
 								<div class="htl_pg_c">
@@ -182,7 +183,7 @@
 	</div>
 </body>
 <script type="text/javascript">
-	$(".die_assistant").colorbox({href:'/inc/_public_result_ajax_post_view.php?page=assistant&result=assistant_top_pg_c'});
+//	$(".die_assistant").colorbox({href:'/inc/_public_result_ajax_post_view.php?page=assistant&result=assistant_top_pg_c'});
 	function filter_age(age){
 		var url = window.location.href;
 		var exp = /age=\d+/;
