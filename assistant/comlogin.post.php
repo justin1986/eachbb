@@ -2,16 +2,16 @@
 	session_start();
 	include("../frame.php");
 	include_once('../inc/User.class.php');
-	if(!is_post()){
-		redirect('/error/'); 
-		die();
-	}
-	if($_SESSION['login']!=$_POST['session']||empty($_SESSION['login'])){
-		redirect('/error/'); 
-		die();
-	}else{
-		unset($_SESSION['login']);
-	}
+////	if(!is_post()){
+////		redirect('/error/'); 
+////		die();
+////	}
+//	if($_SESSION['login']!=$_POST['session']||empty($_SESSION['login'])){
+//		redirect('/error/'); 
+//		die();
+//	}else{
+//		unset($_SESSION['login']);
+//	}
 	if(strlen($_POST['name']) > 20){
 		alert('用户名过长！请重新输入！');
 		redirect('/login/');
@@ -68,14 +68,10 @@
 	if($err){
 		 	alert($err);
 		 	echo ("<script>parent.window.location.href ='/login'</script>");
+	 }else{
+	 	echo ("<script>parent.window.location.href ='/assistant'</script>");
 	 }
-	 echo ("<script>parent.window.location.href ='/assistant'</script>");
-	 //else{
-//	 	echo ("<script>parent.window.location.href ='$last_url'</script>");
-//	 }
-	 #echo $_COOKIE['cache_name'];
-	# echo ("<script>window.open('".$last_url."');</script>");
-	 #parent.window.location.href=$last_url;
+	 echo $_COOKIE['cache_name'];
 	?>
 	</body>
 </html>

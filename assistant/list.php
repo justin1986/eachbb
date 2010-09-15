@@ -78,11 +78,9 @@
 					}
 				?>
 				<?php include_once('./_assistant_content.php'); ?>
-			
 			</div>
 			<?php include_once('./_assistant_right.php'); ?>
 		</div>
-		
 	</div>
 </body>
 <script type="text/javascript">

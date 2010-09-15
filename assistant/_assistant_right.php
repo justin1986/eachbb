@@ -2,7 +2,8 @@
 <?php
 		include_once dirname(__FILE__).'/../frame.php';
 		use_jquery();
-		js_include_tag('assistant/assistant_login');
+		js_include_tag('assistant/assistant_login','test_left_inc');
+		css_include_tag('test_left_inc');
 	?>
 	<style>
 		.indiv_value{margin-top:10px;}
@@ -13,7 +14,7 @@
 	</style>
 <div id="container_recommand" style="width:200px; height:1100px; overflow:hidden; float:right; display: inline;">
 <!-- 右边 第一个  个人档案 -->
-	<div id="individual"></div>
+	<div id="l_pho" style="margin-left:0px; float:left;"></div>
 	<a href="/course"><img class="recommand" src="/images/assistant_list/r_input.jpg"/></a>
 	<a href="/test/"><img class="recommand" src="/images/assistant_list/btn_test.jpg"/></a>
 	<a href="#"><img class="recommand" style="height:137px;" src="/images/assistant_list/217.jpg"/></a>

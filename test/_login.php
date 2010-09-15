@@ -44,14 +44,13 @@ if($user){
 	</div>
 	 <div id="urr_btn" style="width:180px; height:30px;  margin-top:5px; text-align: center; float: left; display: inline;">
 		 <img id="login_bn" src="/images/index/btn_login.gif" style="float:left; margin-left:20px;" />
-		 <a href="/register/"><img id="login_r" border="0" src="/images/index/btn_zhuce.gif"/></a>
+		 <a href="/register/" target="_blank"><img id="login_r" border="0" style="margin-top:0px;" src="/images/index/btn_zhuce.gif"/></a>
 	 </div>
 </div>
 </div>
 </form>
 <?php }?>
 <style>
-#userr{}
 #u_l{width:55px; height:25px; overflow:hidden; font-size:13px;  line-height:25px; float:left; display:inline;}
 #u_r{width:130px; height:25px; float:left; dispaly:inline;}
 #u_r select{width:80px; height:25px; }
