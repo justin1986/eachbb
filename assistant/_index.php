@@ -209,7 +209,7 @@
 	.assistant_top_pg_a{width:180px; height:70px; margin-left:5px;margin-top:10px;  float:left; display:inline; }
 	.h_pg_cc div img{width:180px; height:70px; border:0px solid red;}
 	.assistant_top_pg_b{width:180px; height:70px; margin-left:5px;margin-top:10px;  float:left; display:inline;}
-	.assistant_top_pg_c{width:180px; height:80px; margin-left:5px; margin-top:10px; line-height:20px; text-indent:5px; overflow:hidden;  float:left; display:inline;}
+	.assistant_top_pg_c{width:180px; height:80px; margin-left:5px; margin-top:10px;font-size:12px; color:#333333; line-height:20px; text-indent:5px; overflow:hidden;  float:left; display:inline;}
 	.assistant_top_pg_c a{font-size:12px; text-decoration: none; color:#333333;}
 </style>
 </html>
