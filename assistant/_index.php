@@ -24,10 +24,10 @@
 			location.href = "list.php?category_id=7&age=-1";
 		</script>	
 		<?php }
-		css_include_tag('assistant/_index.css','assistant'); 
-		
+		css_include_tag('assistant/_index','assistant','top_inc/assistant_top','left_inc/assistant_left'); 
+//		css_include_tag(); 
 		$db = get_db();
-		js_include_tag('assistant/assistant');
+		js_include_tag('assistant/assistant','news/index');
 		init_page_items('assistant_index');
 		function convert_age($age){
 			switch ($age) {
@@ -49,6 +49,63 @@
 			<a href="/assistant/_index.php">助手首页</a> &gt;&gt; <?php echo convert_age($_GET['age']);?>
 		</div>
 		<?php }?>
+		<div id="assistant_top_banner">
+				<div id="assistant_top_left_banner">
+					<div id="bla_img" style="width:505px; height:300px;">
+						<?php for($i = 1 ; $i <= 5 ; $i++){?>
+						<div class="pic_img"<?php $pos="assistan_pg_l_$i";show_page_pos($pos,'link_i');?> id="img_tab_<?php echo $i;?>"  <?php if($i == 1){ ?> style="display:inline;"<?php }else{?>style="display:none;"<?php }?>>
+							<a href="<?php echo $pos_items[$pos]->href;?>"><img style="width:505px; height:300px; border:0px solid red;" src="<?php echo $pos_items[$pos]->image1;?>"/></a>
+						</div>
+						<?php }?>
+						<div id="pic_number" style="width:500px; bottom: 0px;">
+							<div id="nn_5" class="num">5</div>	
+							<div id="nn_4" class="num" >4</div>
+							<div id="nn_3" class="num">3</div>
+							<div id="nn_2" class="num">2</div>
+							<div id="nn_1" class="num selected">1</div>
+						</div>
+					</div>
+				</div>
+				<div id="assistant_top_right_banner">
+					<div class="h_pg_t"></div>
+					<div class="h_pg_c">
+						<div class="h_pg_cc">
+								<div class="ht_l_t">课程助手链接</div>
+								<div class="ht_l_h"></div>
+								<div class="assistant_top_pg_a"<?php $pos = "assistant_top_pg_a";show_page_pos($pos,'link_i')?>>
+									<a href="<?php echo $pos_items[$pos]->href; ?>"><img src="<?php echo $pos_items[$pos]->image1 ?>"/></a>
+								</div>
+								<div class="assistant_top_pg_b"<?php $pos = "assistant_top_pg_b";show_page_pos($pos,'link_i')?>>
+									<a href="<?php echo $pos_items[$pos]->href; ?>"><img src="<?php echo $pos_items[$pos]->image1 ?>"/></a>
+								</div>
+								<div class="assistant_top_pg_c"<?php $pos = "assistant_top_pg_c";show_page_pos($pos,'link')?>>
+									<div class="htct_l"></div>
+									<a href="<?php echo $pos_items[$pos]->href;?>"><?php echo $pos_items[$pos]->title;?></a>
+								</div>
+								<div class="htl_pg_c">
+						</div>
+					</div>
+					<div class="h_pg_b"></div>
+				</div>
+		</div>
+		</div>
+		<style type="text/css">
+			#assistant_top_banner{width:720px; height:300px; margin-left:15px;  float:left; display:inline;}
+			#assistant_top_right_banner{width:198px; float:right; display:inline;}
+			#assistant_top_left_banner{width:505px; height:300px; float:left; display:inline; }
+			#bla_img{width:297px; height:207px; position:relative; float:left; display: inline;}
+			#pic_number{width:297px; height:18px;  position:absolute; overflow:hidden; float:left;}
+			.num{width:16px; height:16px; margin-left:1px; cursor:pointer; color:#FFFFFF; font-size:12px; line-height:16px; font-weight:bold; text-align:center; background:#4E3431; float:right;}
+			.num.selected{background:#FF6600;}
+			.h_pg_cc{height:285px; overflow:hidden;}
+			.pic_img{width:505px; height:300px;  display: none;}
+			.pic_img img{width:505px; height:300px;  border:0px solid red;} 
+			.assistant_top_pg_a{width:180px; height:70px; margin-left:5px;margin-top:10px;  float:left; display:inline; }
+			.h_pg_cc div img{width:180px; height:70px; border:0px solid red;}
+			.assistant_top_pg_b{width:180px; height:70px; margin-left:5px;margin-top:10px;  float:left; display:inline;}
+			.assistant_top_pg_c{width:180px; height:80px; margin-left:5px; margin-top:10px; line-height:20px; text-indent:5px; overflow:hidden;  float:left; display:inline;}
+			.assistant_top_pg_c a{font-size:12px; text-decoration: none; color:#333333;}
+		</style>
 		<?php 
 		$sql = "select * from eb_category where category_type='assistant' and level=1";
 		$top_cates = $db->query($sql);
@@ -149,4 +206,4 @@
 		window.location.href=url;
 	}
 </script>
-</html>			
+</html>
