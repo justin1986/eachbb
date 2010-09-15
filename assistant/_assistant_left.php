@@ -80,7 +80,7 @@ include_once dirname(__FILE__).'/../frame.php';
 						<div class="hlct_t">热门助手排行榜</div>
 						<img src="/images/helper/lb_hd.jpg"> </div>
 						<?php 
-						$list = $db->query("SELECT id,title,click_count FROM eb_assistant order by click_count,created_at desc limit 2");
+						$list = $db->query("SELECT id,title,click_count FROM eb_assistant order by click_count,created_at desc limit 5");
 						$i=1;
 						foreach ($list as $list){
 						?>
