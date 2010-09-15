@@ -103,9 +103,6 @@
 								<?php }
 							}
 						}?>
-					
-					
-						
 					</div>
 				</div>
 				<div id="tag_b"></div>
@@ -121,7 +118,6 @@
 						<div class="bdt_hr2"></div>
 					</div>
 					<div class="bdt_v">
-					
 						<?php
 							$list = $db->query("SELECT id,title FROM eb_assistant e where is_adopt=1 order by created_at desc LIMIT 10");
 							foreach ($list as $li){ ?>
@@ -137,7 +133,7 @@
 				<div class="bd_b"></div>
 			</div>
 			
-			<div id="comment">
+			<!--<div id="comment">
 				<div id="comm_l"></div>
 				<div id="comm_c">
 					<div id="comm_t">
@@ -155,7 +151,7 @@
 				</div>
 				<div id="comm_r"></div>
 			</div>
-		</div>
+		--></div>
 		</div>
 		<?php include_once('../inc/bottom.php'); ?>
 </div>
