@@ -28,7 +28,7 @@
 				<div class="ttc_a"><a href="?age=3&category_id=<?php echo $category_id;?>" id="3">2～3岁</a></div>
 				<div class="ttc_hr"></div>
 				<div class="ttc_a"><a href="?age=4&category_id=<?php echo $category_id;?>" id="4">3～6岁</a></div>
-				<a id="asdf " href="_knowledge.php" target="iframe">
+				<a id="asdf " href="/assistant/index.php?category_id=_knowledge.php" target="_blank">
 					<img id="ttc_g" src="/images/helper/t_2.jpg"/>
 				</a>
 			</div>
