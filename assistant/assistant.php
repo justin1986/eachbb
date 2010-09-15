@@ -26,7 +26,7 @@
 		<div id="fbody">
 		<div id="log_top">
 			<div id="log_t">
-				<div id="log"></div>
+				<a href="/" target="_blank"><div id="log"></div></a>
 				<div id="log_address">
 					<a href="/">首页</a>
 					<?php 
