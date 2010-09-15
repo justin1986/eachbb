@@ -24,10 +24,11 @@
 			location.href = "list.php?category_id=7&age=-1";
 		</script>	
 		<?php }
-		css_include_tag('assistant/_index','assistant','top_inc/assistant_top','left_inc/assistant_left'); 
+		css_include_tag('assistant/_index','assistant','top_inc/assistant_top','left_inc/assistant_left','colorbox'); 
 //		css_include_tag(); 
 		$db = get_db();
-		js_include_tag('assistant/assistant','news/index');
+		js_include_tag('assistant/assistant','news/index','jquery.colorbox-min');
+//			js_include_tag('index','swfobject');
 		init_page_items('assistant_index');
 		function convert_age($age){
 			switch ($age) {
@@ -80,7 +81,7 @@
 								</div>
 								<div class="assistant_top_pg_c"<?php $pos = "assistant_top_pg_c";show_page_pos($pos,'link')?>>
 									<div class="htct_l"></div>
-									<a href="<?php echo $pos_items[$pos]->href;?>">
+									<a href="<?php echo $pos_items[$pos]->href;?>" class="die_assistant">
 										<?php $tilte_count =mb_strlen($pos_items[$pos]->title,"utf-8");
 										 echo $tilte_count >45 ?mb_substr($pos_items[$pos]->title,0,46,"utf-8").'<font style="font-size:12px;">...</font>':$pos_items[$pos]->title;?>
 									</a>
@@ -181,6 +182,7 @@
 	</div>
 </body>
 <script type="text/javascript">
+	$(".die_assistant").colorbox({href:'/inc/_public_result_ajax_post_view.php?page=assistant&result=assistant_top_pg_c'});
 	function filter_age(age){
 		var url = window.location.href;
 		var exp = /age=\d+/;
