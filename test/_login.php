@@ -11,7 +11,7 @@ if($user){
 	$count_comment=mysql_query('SELECT id FROM eachbb_member.`comment` c where user_id=3');
 	$num_rows = mysql_num_rows($count_comment); 
 ?>
-<div id="lp_t">个人信息管理</div>
+<div id="lp_t">用户登录</div>
 <div id="lp_p">
 	<div id="lp_l"><img src="<?php echo $user->avatar ? $user->avatar : '/images/class/l_peo.jpg';?>"></div>
 	<div id="lp_word"><?php echo $user->name;?></div>
