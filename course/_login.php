@@ -19,7 +19,7 @@ if($user){
 <div id="l_b_wa" style="text-decoration: none;">您有<a href="/baby/message_index.php"><?php echo $count[0]->id ? $count[0]->id : 0; ?></a>条评论</div>
 <div id="l_b_wb"><a href="/yard">我家小院子</a></div>
 <?php }else{?>
-<div id="lp_t">个人信息管理</div>
+<div id="lp_t">用户登录</div>
 <form action="comlogin.post.php" method="post">
 <div id="lp_ppp">
 		<div class="lp_p_input"><div id="user">用户名:</div><div class="lpp_i"><input name='name' id="name" type="text" /></div></div>
