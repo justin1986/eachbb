@@ -199,7 +199,7 @@ function birthday_display(){
 function check_name(is_submit){
 	var name = $("#name").val();
 	if(name!=''){
-		if(name.length<1){
+		if(name.length<4){
 			$("#name_info").html('<span style=color:red>用户名太短</span>');
 			return false;
 		}
