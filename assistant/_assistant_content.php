@@ -2,7 +2,7 @@
 <div id="hotspot_container">
 	<div class="kong" style="height:10px;"></div>
 	<?php
-	$list=$db->query("SELECT * FROM bbs_threads where FID=10 order by rand() limit 12");
+	$list=$db->query("SELECT * FROM bbs_threads where FID=10 order by rand() limit 10");
 	foreach ($list as $list){
 		?>
 	<div class="hotspot_pg">
