@@ -52,10 +52,10 @@
 		<?php }?>
 		<div id="assistant_top_banner">
 				<div id="assistant_top_left_banner">
-					<div id="bla_img" style="width:505px; height:300px;">
+					<div id="bla_img">
 						<?php for($i = 1 ; $i <= 5 ; $i++){?>
 						<div class="pic_img"<?php $pos="assistan_pg_l_$i";show_page_pos($pos,'link_i');?> id="img_tab_<?php echo $i;?>"  <?php if($i == 1){ ?> style="display:inline;"<?php }else{?>style="display:none;"<?php }?>>
-							<a href="<?php echo $pos_items[$pos]->href;?>"><img style="width:505px; height:300px; border:0px solid red;" src="<?php echo $pos_items[$pos]->image1;?>"/></a>
+							<a href="<?php echo $pos_items[$pos]->href;?>" target="_blank"><img style="width:505px; height:300px; border:0px solid red;" src="<?php echo $pos_items[$pos]->image1;?>"/></a>
 						</div>
 						<?php }?>
 						<div id="pic_number" style="width:500px; bottom: 0px;">
@@ -198,13 +198,13 @@
 <style type="text/css">
 	#assistant_top_banner{width:720px; height:300px; margin-left:15px;  float:left; display:inline;}
 	#assistant_top_right_banner{width:198px; float:right; display:inline;}
-	#assistant_top_left_banner{width:505px; height:300px; float:left; display:inline; }
-	#bla_img{width:297px; height:207px; position:relative; float:left; display: inline;}
-	#pic_number{width:297px; height:18px;  position:absolute; overflow:hidden; float:left;}
+	#assistant_top_left_banner{width:505px; height:300px;  overflow:hidden; float:left; display:inline; }
+	#bla_img{width:505px; height:300px; background:#000;  overflow:hidden; position:relative; float:left; display: inline;}
+	#pic_number{width:297px; height:16px;  position:absolute; overflow:hidden; float:left; display:inline;}
 	.num{width:16px; height:16px; margin-left:1px; cursor:pointer; color:#FFFFFF; font-size:12px; line-height:16px; font-weight:bold; text-align:center; background:#4E3431; float:right;}
 	.num.selected{background:#FF6600;}
 	.h_pg_cc{height:285px; overflow:hidden;}
-	.pic_img{width:505px; height:300px;  display: none;}
+	.pic_img{width:505px; height:300px; display: none;}
 	.pic_img img{width:505px; height:300px;  border:0px solid red;} 
 	.assistant_top_pg_a{width:180px; height:70px; margin-left:5px;margin-top:10px;  float:left; display:inline; }
 	.h_pg_cc div img{width:180px; height:70px; border:0px solid red;}
