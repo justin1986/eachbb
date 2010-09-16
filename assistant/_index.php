@@ -90,8 +90,8 @@
 								<div class="htl_pg_c">
 						</div>
 					</div>
-					<div class="h_pg_b"></div>
 				</div>
+				<div class="h_pg_b"></div>
 		</div>
 		</div>
 		<?php 
