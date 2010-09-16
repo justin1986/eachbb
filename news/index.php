@@ -35,7 +35,7 @@
 			<div id="bl_a">
 				<div id="bla_img">
 					<?php for($i = 1 ; $i <= 5 ; $i++){?>
-					<div class="pic_img"<?php $pos="assistan_pg_l_$i";show_page_pos($pos,'link_i');?> id="img_tab_<?php echo $i;?>"  <?php if($i == 1){ ?> style="display:inline;"<?php }else{?>style="display:none;"<?php }?>>
+					<div class="pic_img"<?php $pos="news_top_pg_l_$i";show_page_pos($pos,'link_i');?> id="img_tab_<?php echo $i;?>"  <?php if($i == 1){ ?> style="display:inline;"<?php }else{?>style="display:none;"<?php }?>>
 						<a href="<?php echo $pos_items[$pos]->href;?>"><img style="border:0px solid red;" src="<?php echo $pos_items[$pos]->image1;?>"/></a>
 					</div>
 					<?php }?>
@@ -83,7 +83,6 @@
 							<div class="tl_r" <?php $pos="assistan_hb_link_a"; show_page_pos($pos,'link_i');?>>
 								<a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1;?>"/></a>
 							</div>
-							<div class="tll_b"><a href="/news/news_list.php?category_id=1">更多&gt;&gt;</a></div>
 						</div>
 							<?php for($i=1;$i<9;$i++){?>
 							<div class="tc_z"<?php $pos="news_list1_$i"; show_page_pos($pos,'link');?> style="<?php if($i%2==1){ echo "margin-left:17px;";}?>">
@@ -102,7 +101,6 @@
 									<img src="<?php echo $pos_items[$pos]->image1;?>"/>
 								</a>
 							</div>
-								<div class="tll_b"><a href="/news/news_list.php?category_id=1">更多&gt;&gt;</a></div>
 						</div>
 						<?php for($i=1;$i<9;$i++){?>
 							<div class="tc_z"<?php $pos="news_list2_$i";show_page_pos($pos,'link');?> style="<?php if($i%2==1){ echo "margin-left:17px;";}?>">
