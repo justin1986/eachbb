@@ -199,7 +199,7 @@
 	#assistant_top_banner{width:720px; height:300px; margin-left:15px;  float:left; display:inline;}
 	#assistant_top_right_banner{width:198px; float:right; display:inline;}
 	#assistant_top_left_banner{width:505px; height:300px;  overflow:hidden; float:left; display:inline; }
-	#bla_img{width:505px; height:300px; background:#000;  overflow:hidden; position:relative; float:left; display: inline;}
+	#bla_img{width:505px; height:300px;  overflow:hidden; position:relative; float:left; display: inline;}
 	#pic_number{width:297px; height:16px;  position:absolute; overflow:hidden; float:left; display:inline;}
 	.num{width:16px; height:16px; margin-left:1px; cursor:pointer; color:#FFFFFF; font-size:12px; line-height:16px; font-weight:bold; text-align:center; background:#4E3431; float:right;}
 	.num.selected{background:#FF6600;}
