@@ -45,7 +45,7 @@
 							</div>
 							<?php } ?>
 							<div class="num_banner">
-							<div class="num" style="margin-left:210px;background:#CE0609;">1</div>
+							<div class="num" style="margin-left:195px;background:#CE0609;">1</div>
 								<div class="num">2</div>
 								<div class="num">3</div>
 								<div class="num">4</div>

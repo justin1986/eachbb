@@ -41,12 +41,12 @@ $(function(){
 	function refresh_image_tab(){
 	 	$('.fr_img').hide();
 	 	$('#img_tab_'+image_tab_index).show();
-	 	$('.num').css({'background':'#234c2a','filter':'alpha(opacity=50)','-moz-opacity':'0.5','opacity':'0.5;'});
-		$('#num'+image_tab_index).css({'background':'#FF6600','filter':'alpha(opacity=50)','-moz-opacity':'0.5','opacity':'0.5;'});
+	 	$('.num').css('background','#234c2a');
+		$('#num'+image_tab_index).css('background','#FF6600');
 	}
 	$('.num').click(function(){
-		$('.num').css({'background':'#234c2a','filter':'alpha(opacity=50)','-moz-opacity':'0.5','opacity':'0.5;'});
-		 $(this).css({'background':'#FF6600','filter':'alpha(opacity=50)','-moz-opacity':'0.5','opacity':'0.5;'});
+		$('.num').css('background','#234c2a');
+		 $(this).css('background','#FF6600');
 		 clearInterval(interval);
 		 var num = $(this).html();
 		 image_tab_index = num -1;
