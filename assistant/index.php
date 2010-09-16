@@ -21,7 +21,7 @@
 		<?php
 		if($_GET['category_id'] == "_knowledge.php"){
 			?>
-			<iframe id="iframe" name="iframe" src="/assistant/_knowledge.php" width="745px" height="2700px" frameborder="0" scrolling="no" ></iframe>
+			<iframe id="iframe" name="iframe" src="/assistant/_knowledge.php" width="745px" height="2750px" frameborder="0" scrolling="no" ></iframe>
 			<?php
 		}else if($_GET['category_id']){?>
 		<iframe id="iframe" name="iframe" src="/assistant/list.php?page_type=<?php echo $page_type;?>&age=<?php echo $_GET['age'];?>&category_id=<?php echo $_GET['category_id']?>" width="745px" height="2700px" frameborder="0" scrolling="no" ></iframe>
