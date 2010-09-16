@@ -74,6 +74,14 @@
 						</div>
 						<div class="ca_d" id="baby_birthday_info"></div>
 					</div>
+					<div class="c_a" style="display:none;" id="baby_name">
+						<div class="ca_a" id=baby_color>*</div>
+						<div class="ca_b" id="baby_name_text">宝宝姓名</div>
+						<div class="ca_c">
+							<input type="text" id="baby_info_name" name=baby_info_name>
+						</div>
+						<div class="ca_d" id="baby_birthday_name"></div>
+					</div>
 					<div class="c_a">
 						<div class="ca_a"></div>
 						<div class="ca_b">联系电话</div>

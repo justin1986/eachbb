@@ -2,7 +2,7 @@ var name_flag = 'begin';
 var email_flag = 'begin';
 var verify_flag = 'begin';
 var register_flag = 'begin';
-
+var babyname_flag = 'begin';
 $(function(){
 	birthday_display();
 	change_disabled();
@@ -33,6 +33,9 @@ $(function(){
 	
 	$("#baby_status").change(function(){
 		check_status();
+	});
+	$("#baby_name").change(function(){
+		baby_name(false);
 	});
 	
 	$("#re_password").change(function(){
@@ -87,7 +90,6 @@ $(function(){
 		dateFormat: 'yy-mm-dd'
 	});
 	
-	
 	$("#register").click(function(){
 		register_flag = 'begin';
 		if(!check_name(true)){
@@ -109,6 +111,12 @@ $(function(){
 		if(!check_status(true)){
 			$("#baby_status").focus();
 			return false;
+		}
+		if(babyname_flag =="no"){
+			if(!baby_name(true)){
+				$("baby_info_name").focus();
+			return false;
+			}
 		}
 		if(!check_babybirthday()){
 			$("#baby_birthday2").focus();
@@ -138,7 +146,14 @@ $(function(){
 		register_submit();
 	});
 });
-
+function baby_name(){
+	if($("#baby_info_name").val()){
+		return true;
+	}else{
+		$("#baby_birthday_name").html("<span style=color:red>请输入宝宝姓名</span>");
+		return false;
+	}
+}
 function change_disabled(){
 	if($("#accept").attr('checked')){
 		$("#register").attr('disabled',false);
@@ -186,12 +201,17 @@ function birthday_display(){
 		$("#baby_birthday").text('宝宝生日');
 		$("#baby_birthday").parent().show();
 		$( "#baby_birthday2" ).datepicker( "option", "yearRange", 'c-10:c-0');
+		$("#baby_name").show();
+		babyname_flag = "no";
 	}else if($("#baby_status").val()==3){
 		$("#baby_color").text("*");;
 		$("#baby_birthday").text('宝宝预产期');
 		$("#baby_birthday").parent().show();
 		$( "#baby_birthday2" ).datepicker( "option","yearRange", 'c-10:c+1');
+		$("#baby_name").show();
+		babyname_flag = "no";
 	}else{
+		$("#baby_name").hide();
 		$("#baby_birthday").parent().hide();
 	}
 }

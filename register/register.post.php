@@ -30,6 +30,12 @@
 		redirect('/register');
 		die();
 	}
+	$baby_info_name = $_POST['baby_info_name'];
+	if(strlen($baby_info_name)>20){
+		alert("宝宝姓名太长！");
+		redirect('/register');
+		die();
+	}
 	$password = $_POST['password'];
 	if(strlen($password)>20){
 		alert("密码太长！");
@@ -85,7 +91,7 @@
 		die();
 	}
 	$ip = $_SERVER["REMOTE_ADDR"];
-	$result = User::register($name,$email,$password,0,$baby_status,$baby_birthday,$birthday,$zip,$phone,$address,$gender,$ip);
+	$result = User::register($baby_info_name,$name,$email,$password,0,$baby_status,$baby_birthday,$birthday,$zip,$phone,$address,$gender,$ip);
 	if($result->result){
 		$user = User::current_user();
 		if($user){
