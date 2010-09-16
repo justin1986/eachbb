@@ -9,7 +9,8 @@
 	$result= User::lastest_news($type,$user->id);
 	$num = $db->record_count;
     if($result){
-    for($i=0;$i<$num;$i++){?>
+    for($i=0;$i<$num;$i++){
+    	?>
 	<div class="pc_z">
 		<div class="pc_pg_img">
 			<div class="pc_img"><img src="

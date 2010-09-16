@@ -10,7 +10,7 @@
 		<div class="pc_pg_img">
 			<div class="pc_img"><img src="
 			<?php 
-		if($user->avatar){
+		if($result->avatar){
 			echo $result->avatar;
 		}else{
 			echo "/images/yard/noface.jpg";
