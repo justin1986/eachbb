@@ -1,4 +1,4 @@
-<div id="hotspot">育儿热点</div>
+<div id="hotspot">精彩问答</div>
 <div id="hotspot_container">
 	<div class="kong" style="height:10px;"></div>
 	<?php
@@ -7,7 +7,8 @@
 		?>
 	<div class="hotspot_pg">
 		<div></div>
-		<a href="/bbs/viewthread.php?tid=<?php echo $list->tid;?>" target="_blank">&nbsp;&nbsp;<?php echo $list->subject;?></a>
+		<a href="/bbs/viewthread.php?tid=<?php echo $list->tid;?>" target="_blank">&nbsp;&nbsp;
+		<?php echo  mb_strlen($list->subject,"UTF-8")>18? mb_substr($list->subject,0,17,"utf-8").'...':$list->subject;?></a>
 	</div>
 	<?php } ?>
 	<div class="kong" style="height:10px;"></div>

@@ -24,7 +24,7 @@
 			location.href = "list.php?category_id=7&age=-1";
 		</script>	
 		<?php }
-		css_include_tag('assistant/_index','assistant','top_inc/assistant_top','left_inc/assistant_left','colorbox'); 
+		css_include_tag('assistant/_index','assistant','top_inc/assistant_top','left_inc/assistant_left','colorbox','assistant/assistant_content'); 
 //		css_include_tag(); 
 		$db = get_db();
 		js_include_tag('assistant/assistant','news/index','jquery.colorbox-min');
@@ -180,6 +180,21 @@
 			<?php }?>
 			</div>
 		</div>
+		<div id="hotspot">精彩问答</div>
+		<div id="hotspot_container">
+			<div class="kong" style="height:10px;"></div>
+			<?php
+			$list=$db->query("SELECT * FROM bbs_threads where FID=10 order by rand() limit 12");
+			foreach ($list as $list){
+				?>
+			<div class="hotspot_pg">
+				<div></div>
+				<a href="/bbs/viewthread.php?tid=<?php echo $list->tid;?>" target="_blank">&nbsp;&nbsp;
+				<?php echo  mb_strlen($list->subject,"UTF-8")>15? mb_substr($list->subject,0,14,"utf-8").'...':$list->subject;?></a>
+			</div>
+			<?php } ?>
+			<div class="kong" style="height:10px;"></div>
+		</div>
 	</div>
 </body>
 <script type="text/javascript">
@@ -196,6 +211,9 @@
 	}
 </script>
 <style type="text/css">
+	#hotspot{width:690px; margin-left:15px;}
+	#hotspot_container{width:709px; margin-left:15px; height:100px;}
+	.hotspot_pg{width:200px;}
 	#assistant_top_banner{width:720px; height:300px; margin-left:15px;  float:left; display:inline;}
 	#assistant_top_right_banner{width:198px; float:right; display:inline;}
 	#assistant_top_left_banner{width:505px; height:300px;  overflow:hidden; float:left; display:inline; }
