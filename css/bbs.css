@@ -39,7 +39,7 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 .fr_img{width:297px; height:207px; overflow:hidden; float:left; display: none;}
 .fr_img img{width:297px; height:207px; border:0px solid red;}
 .fr_number{width:297px; height:14px; margin-top:-20px; float:left; display:inline;}
-.num{width:15px; height:14px; cursor:pointer;  text-align:center; margin-left:2px; line-height:14px; background:#234c2a; filter:alpha(opacity=50); -moz-opacity:0.5; opacity:0.5; color:#ffffff; font-size:10px; font-weight:bold; float:left; display:inline;}
+.num{width:15px; height:14px; cursor:pointer;  text-align:center; margin-left:2px; line-height:14px; background:#234c2a; color:#ffffff; font-size:10px; font-weight:bold; float:left; display:inline;}
 .num.selected{background:#FF6600;}
 #num_1{margin-left:200px;}
 #bla_r{width:314px; height:207px;  float:right; display:inline;}

@@ -12,8 +12,6 @@ function send_login(){
 		});
 	};
 $(function(){
-	$('.fr_img').hide();
-	$('#img_tab_1').show();
 	$('#login_l').live('click',function(e){
 		e.preventDefault();
 		send_login();
@@ -34,6 +32,8 @@ $(function(){
 	var image_tab_index = 1;
 	var image_tab_count = 5;
 	var iamge_tab_interval = 5000;
+	$('.fr_img').hide();
+	$('#img_tab_1').show();
 	function image_interval(){
 		 image_tab_index++;
 		 if(image_tab_index >= image_tab_count) image_tab_index = 1;

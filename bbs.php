@@ -22,7 +22,7 @@
 				<div id="bla_img">
 					<?php for($i = 1 ; $i < 6 ; $i++){?>
 					<div class="fr_img"<?php $pos="bbs_fr_img_pg_$i";show_page_pos($pos,'link_i');?> id="img_tab_<?php echo $i;?>">
-						<a href=""><img src="<?php echo $pos_items[$pos]->image1?$pos_items[$pos]->image1 : '/images/bbs/m1.jpg';?>"/></a>
+						<a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1?$pos_items[$pos]->image1 : '/images/bbs/m1.jpg';?>"/></a>
 					</div>
 					<?php }?>
 					<div class="fr_number">
