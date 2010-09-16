@@ -36,11 +36,12 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 
 #bl_a{width:646px; height:207px; float:left; display:inline;}
 #bla_img{width:297px; height:207px; float:left; display:inline;}
-.fr_img{width:297px; height:207px; float:left; display: none;}
-.fr_img img{width:297px; height:207px; z-index:2; border:0px solid red;}
+.fr_img{width:297px; height:207px; overflow:hidden; float:left; display: none;}
+.fr_img img{width:297px; height:207px; border:0px solid red;}
 .fr_number{width:297px; height:14px; margin-top:-20px; float:left; display:inline;}
-.num{width:15px; height:14px; cursor:pointer;  text-align:center; margin-right:5px; line-height:14px; background:#234c2a; filter:alpha(opacity=50); -moz-opacity:0.5; opacity:0.5; color:#ffffff; font-size:10px; font-weight:bold; float:right; display:inline;}
-
+.num{width:15px; height:14px; cursor:pointer;  text-align:center; margin-left:2px; line-height:14px; background:#234c2a; filter:alpha(opacity=50); -moz-opacity:0.5; opacity:0.5; color:#ffffff; font-size:10px; font-weight:bold; float:left; display:inline;}
+.num.selected{background:#FF6600;}
+#num_1{margin-left:200px;}
 #bla_r{width:314px; height:207px;  float:right; display:inline;}
 #blar_t{width:314px; height:20px; float:left; display:inline;}
 #pg_f{width:56px; height:14px; margin-top:3px; cursor:pointer;  text-align:center; color:#ffffff; font-size:11px; line-height:14px; background:url(/images/bbs/pg_f.gif) no-repeat; float:left; display:inline;}
