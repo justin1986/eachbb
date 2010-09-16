@@ -8,7 +8,6 @@ function send_login(){
 				alert(data);
 			}
 			$('#test_right').load('/login/ajax.post.php?op=load_login_status_box&rd=' + Math.random());
-			
 		});
 	};
 $(function(){
@@ -36,7 +35,7 @@ $(function(){
 	$('#img_tab_1').show();
 	function image_interval(){
 		 image_tab_index++;
-		 if(image_tab_index >= image_tab_count) image_tab_index = 1;
+		 if(image_tab_index > image_tab_count) image_tab_index = 1;
 		 refresh_image_tab();
 	}
 	function refresh_image_tab(){

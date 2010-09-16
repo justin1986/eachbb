@@ -34,11 +34,11 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 #b_l{width:646px; margin-top:15px; overflow:hidden; float:left; display:inline;}
 #b_r{width:291px;  margin-top:15px; overflow:hidden; float:right; display:inline;}
 
-#bl_a{width:646px; height:207px; float:left; display:inline;}
+#bl_a{width:646px; height:207px; position:relative; float:left; display:inline;}
 #bla_img{width:297px; height:207px; float:left; display:inline;}
 .fr_img{width:297px; height:207px; overflow:hidden; float:left; display: none;}
 .fr_img img{width:297px; height:207px; border:0px solid red;}
-.fr_number{width:297px; height:14px; margin-top:-20px; float:left; display:inline;}
+.fr_number{width:297px; height:14px; bottom:0px; position:absolute; left:0px; display:inline;}
 .num{width:15px; height:14px; cursor:pointer;  text-align:center; margin-left:2px; line-height:14px; background:#234c2a; color:#ffffff; font-size:10px; font-weight:bold; float:left; display:inline;}
 .num.selected{background:#FF6600;}
 #num_1{margin-left:200px;}

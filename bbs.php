@@ -22,17 +22,19 @@
 				<div id="bla_img">
 					<?php for($i = 1 ; $i < 6 ; $i++){?>
 					<div class="fr_img"<?php $pos="bbs_fr_img_pg_$i";show_page_pos($pos,'link_i');?> id="img_tab_<?php echo $i;?>">
-						<a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1?$pos_items[$pos]->image1 : '/images/bbs/m1.jpg';?>"/></a>
+						<a href="<?php echo $pos_items[$pos]->href;?>">
+							<img src="<?php echo $pos_items[$pos]->image1;?>"/>
+						</a>
 					</div>
 					<?php }?>
-					<div class="fr_number">
-					<div class="num selected" id="num_1">1</div>
-					<div class="num" id="num_2">2</div>
-					<div class="num" id="num_3">3</div>	
-					<div class="num" id="num_4">4</div>	
-					<div class="num" id="num_5">5</div>
-					</div>
 				</div>
+				<div class="fr_number">
+						<div class="num selected" id="num_1">1</div>
+						<div class="num" id="num_2">2</div>
+						<div class="num" id="num_3">3</div>	
+						<div class="num" id="num_4">4</div>	
+						<div class="num" id="num_5">5</div>
+					</div>
 				<div id="bla_r">
 					<div id="blar_t">
 						<div id="pg_f"><a href="#">今日热点</a></div>
