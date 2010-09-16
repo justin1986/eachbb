@@ -26,7 +26,6 @@
 			if(move_uploaded_file($yuan_pic,$save)){
 				$sql="insert into eachbb_member.member_avatar(u_id,photo,create_at,status)values($id,'$save_e','$created_at',0);";
 				if($db->execute($sql)){
-					$db->execute("update eachbb_member.friend set f_avatar='$save_e' where f_id=$id");
 					alert("上传成功！");
                     if($_SESSION['page_from']=='baby'){
                     	redirect('/baby/index.php');

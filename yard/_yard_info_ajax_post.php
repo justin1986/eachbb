@@ -16,8 +16,8 @@
 	$db->execute("update eachbb_member.member_avatar set status = 0 where u_id = {$user->id}");
 	$db->execute("update eachbb_member.member_avatar set status = 1 where id = {$id}");
 	$db->execute("update eachbb_member.member set avatar = '{$photo}' where id={$user->id}");
-	$db->execute("update eachbb_member.friend set f_avatar='{$photo}' where  u_id={$user->id}");
-	if($db->execute("update eachbb_member.visit_history set f_avatar='{$photo}' where  u_id={$user->id}")){
+	$db->execute("update eachbb_member.friend set f_avatar='{$photo}' where  f_id={$user->id}");
+	if($db->execute("update eachbb_member.visit_history set f_avatar='{$photo}' where  f_id={$user->id}")){
 		echo "修改成功！";
 	}
 ?>
