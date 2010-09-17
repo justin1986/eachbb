@@ -1,4 +1,5 @@
 <?php
+		session_start();
 		include_once dirname(__FILE__).'/../frame.php';
 		use_jquery();
 		js_include_tag('assistant/assistant_login');
