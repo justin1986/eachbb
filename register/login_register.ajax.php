@@ -73,7 +73,6 @@ $('.baby_name').hide();
 					alert(data);
 				}else{
 					window.location.href="/test/save_test_result.php";
-
 				}
 			});
 		});

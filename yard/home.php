@@ -282,7 +282,7 @@
 					}else{
 						$whispered ="whispered = 0";	
 					}
-					$comment =$db->query("select nick_name,created_at,comment,comment_count,whispered from eachbb_member.comment where user_id=$id and resource_id='1099' and $whispered  order by created_at desc");
+					$comment =$db->query("select nick_name,created_at,comment,comment_count,whispered from eachbb_member.comment where user_id=$id and resource_id='1099' or $whispered  order by created_at desc");
 					$visitor_name = $comment[0]->nick_name;
 					if($visitor_name != 'guest'){
 					$visit_avatar = $db->query("select b.avatar from eachbb_member.comment a left join eachbb_member.member b on a.nick_name = b.name where $visitor_name");

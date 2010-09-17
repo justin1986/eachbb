@@ -31,9 +31,9 @@
 		die();
 	}
 	$baby_info_name = $_POST['baby_info_name'];
-	if(!$baby_info_name){
-		$baby_info_name = $_POST['baby_status'];
-	}
+//	if(!$baby_info_name){
+//		$baby_info_name = $_POST['baby_status'];
+//	}
 	if(strlen($baby_info_name)>20){
 		alert("宝宝姓名太长！");
 		redirect('/register');

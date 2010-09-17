@@ -11,6 +11,7 @@ if($type == 'login'){
 		echo '用户名密码不对！';
 	}
 }elseif ($type == 'register'){
+	$baby_name = $_POST['baby_name'];
 	$name = $_POST['name'];
 	$email = $_POST['email'];
 	$password = $_POST['password'];
@@ -81,7 +82,7 @@ if($type == 'login'){
 		die('邮箱已经被注册');
 	}
 	$ip = $_SERVER["REMOTE_ADDR"];
-	$result = User::register($name,$email,$password,0,$baby_status,$baby_birth,$birthday,'','','',$gender,$ip);
+	$result = User::register($baby_name,$name,$email,$password,0,$baby_status,$baby_birth,$birthday,'','','',$gender,$ip);
 	if(!$result->result){
 		die($result->error_msg);
 	}
