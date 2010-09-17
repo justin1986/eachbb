@@ -295,5 +295,5 @@ div{margin:0; padding:0; float:left; display:inline;}
 #pic{width:952px; height:178px; margin-top:10px; z-index:14; margin-bottom:15px; border:5px solid #E6E6E6; float:left; display:inline;}
 #picc_left{width:27px; height:152px; margin-top:13px; z-index:15; margin-left:-5px; background:url(/images/index/b_left.jpg) no-repeat; float:left; display:inline;}
 #picc_right{width:923px; height:170px; margin-left:5px; overflow:hidden; margin-top:4px; float:left; display:inline;}
-.picc_a{width:78px; height:78px; margin:3px; float:left; display:inline;}
+.picc_a{width:78px; height:78px; margin:2px; margin-left:3px; float:left; display:inline;}
 .picc_a img{width:78px; height:78px; border:0px solid red;}
