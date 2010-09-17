@@ -69,7 +69,7 @@
 		 	alert($err);
 		 	echo ("<script>parent.window.location.href ='/login'</script>");
 	 }else{
-	 	echo ("<script>parent.window.location.href ='/assistant'</script>");
+	 	echo ("<script>parent.window.location.href ='/assistant/index.php?category_id={$_SESSION["cat"]}'</script>");
 	 }
 	 echo $_COOKIE['cache_name'];
 	?>

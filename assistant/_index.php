@@ -43,7 +43,7 @@
 		}
 	?>
 </head>
-<body>			
+<body>
 	<div id="body_container">
 		<?php if(intval($_GET['age']) > 0){?>
 		<div id="breadbrum">

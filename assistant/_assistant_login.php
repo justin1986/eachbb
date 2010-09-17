@@ -50,7 +50,7 @@ if($user){
 	.user_name input{width:100px;}
 	.user_name div{ width:60px; height:20px; font-size:14px; color:#37B0AD; float:left; display:inline;}
 </style>
-	<form action="comlogin.post.php" method="post">
+<form action="comlogin.post.php" method="post">
 <div id="indiv_top"></div>
 	<div id="indiv_container">
 		<div class="user_name" style="width:180px; margin-top:10px; margin-left:10px; color:#37B0AD; float:left; display:inline;">
@@ -79,5 +79,6 @@ if($user){
 		<div style="width:180px; margin-left:10px; margin-top:10px; color:#37B0AD; text-align:center; float:left; display:inline;"><input type="button" id="login_bn"  value="确定" /><input id="assisnt_exit" style="margin-top:10px;" type="button"  value="取消" /></div>
 	</div>
 	<input type="hidden" name="session" value="<?php echo $_SESSION['login'];?>">
+	<input type="hidden" name="category_id" id="category_id" value="<?php echo $_GET["category_id"];?>"/>
    </form>
 <?php }?>
