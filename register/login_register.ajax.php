@@ -26,6 +26,7 @@
 					<div class="menu"><font >*</font>性别：</div>
 					<div class="menu"><font >*</font>是否生育：</div>
 					<div class="menu baby_birth" id="baby_display" style="width:60px;">宝宝生日：</div>
+					<div class="menu baby_name"><font >*</font>宝宝姓名：</div>
 					<div class="menu">出生日期：</div>
 					<div class="menu"><font >*</font>验证码：</div>
 				</div>
@@ -43,6 +44,7 @@
 							<option value="3">怀孕中</option>
 						</select>
 					</div>
+					<div class="menu baby_name" style="display:none"><input id="baby_info_name" type="text"/></div>
 					<div class="menu baby_birth" style="display:none;"><input id="input_baby_birth" type="text"/></div>
 					<div class="menu"><input id="input_birthday"  type="text"/></div>
 					<div class="menu"><input id="virefy" type="text"/></div>
@@ -52,6 +54,7 @@
 					<div class="menu">请填写真实有效邮箱地址并妥善保管</div>
 					<div class="menu">含英文大小写字母、数字</div>
 					<div class="menu">两次密码必须输入一致</div>
+					<div class="menu baby_name"></div>
 					<div class="menu" id="verify_info" style="height:25px; margin-top:135px;"><div id="validate"><img src="/inc/verify.php?name=register"></div><font style="margin-left:10px; color:#999999; cursor:pointer;">看不清楚？换张图片</font></div>
 				</div>
 				<div id="mark">注:带<font style="font-size:12px; color:red;">*</font>的是必填项</div>
@@ -62,6 +65,7 @@
 	<div id="banner_bottom"></div>
 </div>
 <script type="text/javascript">
+$('.baby_name').hide();
 	$(function(){
 		$('#btn').click(function(){
 			$.post('/register/ajax.post.php',{'type':'login','name':$('#login_name').val(), 'password':$('#login_password').val()},function(data){
@@ -73,11 +77,13 @@
 				}
 			});
 		});
-
+		var babyname;
 		$("#sel_baby_status").change(function(){
 			if($(this).val()==1){
 				$('.baby_birth').show();
+				babyname = "babyname";
 				$('#baby_display').html('<font>*</font>宝宝生日');
+				$('.baby_name').show();
 				$('#verify_info').css('margin-top','175px');
 				$("#input_baby_birth").datepicker(
 						{
@@ -90,6 +96,8 @@
 							dayNamesShort:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
 							dateFormat: 'yy-mm-dd'
 						});
+			}else if($(this).val()== 2){
+				$('.baby_name').hide();
 			}else if($(this).val()==3){
 				$('.baby_birth').show();
 				$('#baby_display').html('<font>*</font>预产期');
@@ -105,9 +113,11 @@
 							dayNamesShort:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
 							dateFormat: 'yy-mm-dd'
 						});
+				$('.baby_name').hide();
 			}else{
 				$('.baby_birth').hide();
 				$('#verify_info').css('margin-top','135px');
+				$('.baby_name').hide();
 			}
 		});
 
@@ -157,8 +167,13 @@
 				$('#input_baby_status').focus();
 				return;
 			}
+			if(!babyname){
+				alert('请输入宝宝姓名');
+				$('#baby_info_name').focus();
+				return;
+				}
 			$.post('/register/ajax.post.php',
-				{'name':$('#register_name').val(),
+				{'baby_name':$('#baby_info_name').val(),'name':$('#register_name').val(),
 				 'email':$('#register_email').val(),
 				 'password':$('#register_password').val(),
 				 're_password':$('#confirm_password').val(),
