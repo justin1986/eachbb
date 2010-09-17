@@ -1,10 +1,8 @@
 <?php
-		session_start();
 		include_once dirname(__FILE__).'/../frame.php';
 		use_jquery();
 		js_include_tag('assistant/assistant_login');
 		css_include_tag('test_left_inc');
-		$_SESSION["cat"]=$_GET["category_id"];
 	?>
 	<style>
 		.indiv_value{margin-top:10px;}

@@ -1,4 +1,6 @@
 <?php
+session_start();
+$_SESSION["cat"]=$_GET["category_id"];
 /*
  * 展示1级分类
  */
