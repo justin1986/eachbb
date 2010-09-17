@@ -303,7 +303,7 @@
 									if($visit_avatar[0]->avatar != null){
 										echo $visit_avatar[0]->avatar;
 									}else{
-										echo "/images/yard/avatar.jpg";
+										echo "/images/yard_info_img/1.jpg";
 								}
 								}else{
 									echo "/images/yard/guest.jpg";
