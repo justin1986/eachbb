@@ -208,7 +208,6 @@ function birthday_display(){
 		$("#baby_birthday").text('宝宝预产期');
 		$("#baby_birthday").parent().show();
 		$( "#baby_birthday2" ).datepicker( "option","yearRange", 'c-10:c+1');
-		$("#baby_name").show();
 		babyname_flag = "no";
 	}else{
 		$("#baby_name").hide();
