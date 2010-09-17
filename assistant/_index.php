@@ -15,7 +15,7 @@
 		<script type="text/javascript">
 			//parent.$('.htct_t:first a').click();
 			location.href = "list.php?category_id=6&age=-2";
-		</script>	
+		</script>
 		<?php }
 		if($_GET['age'] == -1){
 		?>

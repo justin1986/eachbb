@@ -100,7 +100,7 @@
 		<div class="pic_box">
 			<div class="pic_pg" id="pic_pg_0">
 				<a href="/yard/home.php?id=<?php echo $friend[$i]->f_id;?>">
-				<IMG  class="pic_img" src="<?php if ($friend[$i]->f_avatar != null){echo $visit[$i]->f_avatar;}else{echo '/images/yard/friend_null.jpg';}?>"/>
+				<IMG  class="pic_img" src="<?php if ($friend[$i]->f_avatar != null){echo $visit[$i]->f_avatar;}else{echo '/images/yard_info_img/1.jpg';}?>"/>
 				</a>
 			</div>
 			<div class="name_pic"><a title="<?php echo $friend[$i]->f_name;?>" href="<?php echo $friend[$i]->f_id;?>"><?php echo $friend[$i]->f_name;?></a></div>
@@ -112,7 +112,7 @@
 		<div class="pic_box">
 			<div class="pic_pg">
 				<a href="/yard/home.php?id=<?php echo $visit[$i]->f_id;?>">
-				<IMG  class="pic_img" src="<?php if ($visit[$i]->f_avatar != null){echo $visit[$i]->f_avatar;}else{echo '/images/yard/friend_null.jpg';}?>"/>
+				<IMG  class="pic_img" src="<?php if ($visit[$i]->f_avatar != null){echo $visit[$i]->f_avatar;}else{echo '/images/yard_info_img/1.jpg';}?>"/>
 				</a>
 			</div>
 			<div class="name_pic"><a title="<?php echo $visit[$i]->f_name;?>" href="/yard/home.php?id=<?php echo $visit[$i]->f_id;?>"><?php echo $visit[$i]->f_name;?></a></div>
