@@ -7,7 +7,7 @@
 		#die();
 	}
 	$db = get_db();
-	$db->query("insert into eb_assistant (id,click_count) values ('{$id}',1)ON DUPLICATE KEY update click_count = click_count +1");
+	$db->execute("insert into eb_assistant (id,click_count) values ('{$id}',1)ON DUPLICATE KEY update click_count = click_count +1");
 	$column = $db->query("SELECT id,title,click_count,short_title,category_id,description,content,created_at,last_edited_at,age FROM eb_assistant e where id=".$id." order by last_edited_at desc");
 	?>
 <html>
