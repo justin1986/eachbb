@@ -26,7 +26,7 @@
 <body>
 <input type="hidden" id="user_id" value="<?php echo $user->id;?>">
 <div id="container">
-	<div id="container_result">
+	<div id="container_result" style="overflow: hidden;">
 		<div id="breadbrum">
 				<a href="/" target="_blank"><div id="log"></div></a>
 				<a href="/assistant/_index.php">助手首页</a> &gt;&gt; <a href="_knowledge.php">知识专题</a>
