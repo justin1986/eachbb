@@ -34,15 +34,15 @@ foreach ($lines as $li){
 			<div id="log_t">
 				<a href="/"><div id="log"></div></a>
 				<div id="log_address">
-					<a href="/">网站首页</a>&gt;&gt;
-					<a href="/news">资讯首页</a>
+					<a href="/" style='color:blue;'>网站首页</a>&gt;&gt;
+					<a href="/news" style='color:blue;'>资讯首页</a>
 					<?php 
 						$category = new category_class('news');
 						$cate_tree = $category->tree_map_item($column[0]->category_id);
 						$cate_tree = array_reverse($cate_tree);
 						foreach ($cate_tree as $cate){
 							$list_url = get_news_list_url($cate_tree[0]->id);
-							echo " &gt;&gt; <a href='{$list_url}'>{$cate->name}</a>";
+							echo " &gt;&gt; <a href='{$list_url}' style='color:blue;'>{$cate->name}</a>";
 						}
 					?>
 					<span> &gt;&gt; <?php echo $column[0]->title;?></span>
