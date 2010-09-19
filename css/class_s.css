@@ -66,7 +66,7 @@ body{width:970PX; margin: 0 auto; }
 .hlc_b{width:198px; margin-left:5px; border-left:1px solid #E7E7E7; border-right:1px solid #E7E7E7; float:left; display:inline;}
 .hlc_bb{width:198px; margin-left:5px; height:4px; font-size:0px; line-height:0px; background:url(/images/helper/lb_b.jpg) no-repeat; float:left; display:inline;}
 .hlcb_pg{width:198px; height:23px; background:url(/images/helper/lb_h.jpg) repeat-x; float:left; display:inline;}
-.hlct_t{width:100px; height:15px; margin-left:14px; margin-top:2px; font-weight:bold; color:#4E4E4E; font-size:12px; float:left; display:inline;}
+.hlct_t{width:120px; height:15px; margin-left:14px; margin-top:2px; font-weight:bold; color:#4E4E4E; font-size:12px; float:left; display:inline;}
 .hlcb_pg img{width:5px; height:3px; margin-top:8px; border:0px solid red; float:left; display:inline; }
 .hlcb_z{width:198px; height:60px; margin-top:10px; float:left; display:inline;}
 .hlcb_l{width:25px; height:60px; float:left; display:inline;}
