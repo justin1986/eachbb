@@ -139,7 +139,7 @@ class User {
 	}
 	
 	//注册新用户,返回数组
-	public static function register($baby_info_name,$name,$email,$password,$uid=0,$baby_status=0,$baby_birthday='',$birthday='',$zip='',$phone='',$address='',$gender=2,$ip=''){	
+	public static function register($baby_info_name,$name,$email,$password,$uid=0,$baby_status,$baby_birthday='',$birthday,$zip='',$phone='',$address='',$gender=2,$ip=''){	
 		$result = new RegisterResult();	
 		$name = strtolower($name);
 		$email = strtolower($email);

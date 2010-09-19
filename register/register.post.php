@@ -97,12 +97,13 @@
 		redirect('/register');
 		die();
 	}
+	$bady_status = $_POST["baby_status"];
 	$ip = $_SERVER["REMOTE_ADDR"];
-	$result = User::register($baby_info_name,$name,$email,$password,0,$baby_status,$baby_birthday,$birthday,$zip,$phone,$address,$gender,$ip);
+	$result = User::register($baby_info_name,$name,$email,$password,0,$bady_status,$baby_birthday,$birthday,$zip,$phone,$address,$gender,$ip);
 	if($result->result){
 		$user = User::current_user();
 		if($user){
-		User::logout();
+			User::logout();
 		}
 		User::login($name,$password);
 		success_register();

@@ -37,7 +37,7 @@
 					<div class="menu"><input id="confirm_password" type="password"></div>
 					<div class="menu" style="margin-top:22px; line-height:20px;"><input name="gender" type="radio" style="width:13px; height:13px; margin:0px; border:0px solid red;" name="gender" value="1"/>男<input type="radio" id="nv" name="gender" style="width:13px; height:13px; margin:0px; margin-left:20px; border:0px solid red;" name="gender" checked="checked" value="2"/>女</div>
 					<div class="menu" style="margin-top:18px;" >
-						<select id="sel_baby_status">
+						<select id="sel_baby_status" name="sel_baby_status">
 							<option value="0">请选择</option>
 							<option value="1">已生育</option>
 							<option value="2">未生育</option>
