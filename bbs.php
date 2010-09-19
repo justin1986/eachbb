@@ -461,7 +461,7 @@
 			<div id="i"></div>
 			<div class="o">
 				<div class="i_l">用户精彩问答</div>
-				<div id="i_r"><a href="/bbs">更多&gt;&gt;</a></div>
+				<div id="i_r"><a href="/bbs/forumdisplay.php?fid=10">更多&gt;&gt;</a></div>
 			</div>
 			<?php  for($i=1;$i<=3;$i++){ ?>
 			<div class="p" style="<?php if($i==1){ echo 'margin-top:12px;';}?>" <?php $pos="qa".$i;show_page_pos($pos,'qa');?>>
