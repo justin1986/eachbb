@@ -7,6 +7,7 @@
 	$title = $_REQUEST['title'];
 	$category_id = $_REQUEST['category'] ? $_REQUEST['category'] : -1;
 	$is_adopt = $_REQUEST['adopt'];
+	$age = $_REQUEST['age'];
 	$c = array();
 	if($title!= ''){
 		array_push($c, "title like '%".trim($title)."%'  or description like '%".trim($title)."%'");
@@ -14,6 +15,9 @@
 	if($category_id > 0){
 		$cate_ids = implode(',',$category->children_map($category_id));
 		array_push($c, "category_id in($cate_ids)");
+	}
+	if($age){
+		array_push($c, "age = $age");
 	}
 	if($is_adopt!=''){
 		array_push($c, "is_adopt=$is_adopt");
@@ -58,6 +62,15 @@
 				<option value="">发布状况</option>
 				<option value="1" <? if($_REQUEST['adopt']=="1"){?>selected="selected"<? }?>>已发布</option>
 				<option value="0" <? if($_REQUEST['adopt']=="0"){?>selected="selected"<? }?>>未发布</option>
+		</select>
+		<select id=age name="age" style="width:90px;">
+			<option>年龄段</option>
+			<option value="-2"<? if($_REQUEST['age']=="-2"){?>selected="selected"<? }?>>准备怀孕</option>
+			<option value="-1"<? if($_REQUEST['age']=="-1"){?>selected="selected"<? }?>>怀孕期</option>
+			<option value="1"<? if($_REQUEST['age']=="1"){?>selected="selected"<? }?>>0～1</option>
+			<option value="2"<? if($_REQUEST['age']=="2"){?>selected="selected"<? }?>>1～2</option>
+			<option value="3"<? if($_REQUEST['age']=="3"){?>selected="selected"<? }?>>2～3</option>
+			<option value="4"<? if($_REQUEST['age']=="4"){?>selected="selected"<? }?>>3～6</option>
 		</select>
 		<input class="sau_search" id="search_category" name ="category" type="hidden"></input>
 		<input type="button" value="搜索" id="search_button">
@@ -104,7 +117,11 @@
 </div>	
 <script>
 	$(function(){
-		category.display_select('category_select',$('#span_category'),<?php echo $category_id;?>,'', function(id){
+
+		$('#age').change(function(){
+				window.location.href="?age="+$('#age').val();
+			});
+			category.display_select('category_select',$('#span_category'),<?php echo $category_id;?>,'', function(id){
 			$('#category').val(id);
 			var category_id = $('.category_select:last').val();
 			if(category_id <= 0){
