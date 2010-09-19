@@ -27,7 +27,7 @@
 					<div class="menu"><font >*</font>是否生育：</div>
 					<div class="menu baby_birth" id="baby_display" style="width:60px;">宝宝生日：</div>
 					<div class="menu baby_name"><font >*</font>宝宝姓名：</div>
-					<div class="menu">出生日期：</div>
+					<div class="menu">您的生日：</div>
 					<div class="menu"><font >*</font>验证码：</div>
 				</div>
 				<div id="midden">
