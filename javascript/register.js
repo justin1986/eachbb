@@ -203,16 +203,22 @@ function birthday_display(){
 		$( "#baby_birthday2" ).datepicker( "option", "yearRange", 'c-10:c-0');
 		$("#baby_name").show();
 		babyname_flag = "no";
+	}else if($("#baby_status").val()==2){
+		$("#baby_name").hide();
+		$("#baby_birthday").parent().hide();
+		babyname_flag = "begin";
 	}else if($("#baby_status").val()==3){
 		$("#baby_color").text("*");;
 		$("#baby_birthday").text('宝宝预产期');
 		$("#baby_birthday").parent().show();
 		$( "#baby_birthday2" ).datepicker( "option","yearRange", 'c-10:c+1');
-		babyname_flag = "no";
+		babyname_flag = "begin";
 	}else{
 		$("#baby_name").hide();
 		$("#baby_birthday").parent().hide();
+		babyname_flag = "begin";
 	}
+	alert($("#baby_status").val());
 }
 
 function check_name(is_submit){

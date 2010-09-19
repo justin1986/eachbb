@@ -34,10 +34,12 @@
 //	if(!$baby_info_name){
 //		$baby_info_name = $_POST['baby_status'];
 //	}
-	if(strlen($baby_info_name)>20){
-		alert("宝宝姓名太长！");
-		redirect('/register');
-		die();
+	if(!$baby_info_name){
+		if(strlen($baby_info_name)>20){
+			alert("宝宝姓名太长！");
+			redirect('/register');
+			die();
+		}
 	}
 	$password = $_POST['password'];
 	if(strlen($password)>20){
@@ -58,10 +60,12 @@
 		die();
 	}
 	$baby_name = $_POST['baby_name'];
-	if(strlen($baby_name)< 1){
-		alert("请输入宝宝姓名！");
-		redirect('/register');
-		die();
+	if($baby_name){
+		if(strlen($baby_name)< 1){
+			alert("请输入宝宝姓名！");
+			redirect('/register');
+			die();
+		}
 	}
 	$baby_birthday = $_POST['baby_birthday'];
 	if(strlen($baby_birthday)>20){
