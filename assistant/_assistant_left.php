@@ -79,7 +79,7 @@ include_once dirname(__FILE__).'/../frame.php';
 					<div class="hlct_t">热门助手排行榜</div>
 					<img src="/images/helper/lb_hd.jpg"> </div>
 					<?php 
-					$list = $db->query("SELECT id,title,click_count FROM eb_assistant order by click_count,created_at desc limit 5");
+					$list = $db->query("SELECT id,title,click_count FROM eb_assistant order by click_count desc limit 5");
 					$i=1;
 					foreach ($list as $list){
 					?>
@@ -88,7 +88,7 @@ include_once dirname(__FILE__).'/../frame.php';
 						<div class="r"><?php echo $i;?></div>
 					</div>
 					<div class="hlcb_r">
-						<div class="hlcb_t"><?php echo $list->title;?></div>
+						<div class="hlcb_t"><a href="/assistant/assistant.php?id=<?php echo $list->id;?>" style="font-size:13px;color:#333333; text-decoration:none;"><?php echo $list->title;?></a></div>
 						<div class="hlcb_t"><font>点击次数：</font><?php echo $list->click_count;?></div>
 					</div>
 				</div>
