@@ -30,11 +30,12 @@
 							swfobject.embedSWF("/flash/test_index.swf","crf_l","410","260","8",false,flashvar,flashparam);
 						</script>
 						<div id="crf_r">
-						<div id="crf_t">特色测评<font>介绍</font></div>
+						<?php $course_tilte=Array("测评理念","测评架构","测评的特色","父母养育测试");?>
 						<?php for($i =0 ; $i < 4; $i++){
 							$pos = "top_intr_$i";
 						?>
 						<div class="crf_c" id="cr_<?php echo $i;?>"<?php show_page_pos($pos,'link_d_i')?> style="margin-left:10px; float:left; padding:0px;">
+							<div id="crf_t"><?php echo $course_tilte[$i];?></div>
 							<div class="crf_ti"><img src="<?php echo $pos_items[$pos]->image1?>"></div>
 							<div class="crg_tt"><?php echo $pos_items[$pos]->title;?></div>
 							<?php
