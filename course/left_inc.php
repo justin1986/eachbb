@@ -22,7 +22,7 @@
 			<img src="/images/helper/lb_hd.jpg"> </div>
 		<?php
 		$db=get_db();
-		for($i = 1 ; $i < 10; $i++){?>
+		for($i = 1 ; $i <= 10; $i++){?>
 		<div class="hlcb_z"<?php $pos="course_left_"+$i;show_page_pos($pos,'link_day');?>  style="height:20px;">
 			<div class="hlcb_l" style="height:20px;">
 				<div class="r" style="background:#ABABAB; border:1px solid #A4A4A4;"><?php echo $i; ?></div>
