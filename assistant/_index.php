@@ -74,10 +74,10 @@
 								<div class="ht_l_t">课程助手链接</div>
 								<div class="ht_l_h"></div>
 								<div class="assistant_top_pg_a"<?php $pos = "assistant_top_pg_a";show_page_pos($pos,'link_i')?>>
-									<a href="<?php echo $pos_items[$pos]->href; ?>"><img src="<?php echo $pos_items[$pos]->image1 ?>"/></a>
+									<a href="/course" target="_blank"><img src="<?php echo $pos_items[$pos]->image1 ?>"/></a>
 								</div>
 								<div class="assistant_top_pg_b"<?php $pos = "assistant_top_pg_b";show_page_pos($pos,'link_i')?>>
-									<a href="<?php echo $pos_items[$pos]->href; ?>"><img src="<?php echo $pos_items[$pos]->image1 ?>"/></a>
+									<a href="/test" target="_blank"><img src="<?php echo $pos_items[$pos]->image1 ?>"/></a>
 								</div>
 								<div class="assistant_top_pg_c"<?php $pos = "assistant_top_pg_c";show_page_pos($pos,'link')?>>
 									<div class="htct_l"></div>
