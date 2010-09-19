@@ -34,7 +34,8 @@ foreach ($lines as $li){
 			<div id="log_t">
 				<div id="log"></div>
 				<div id="log_address">
-					<a href="/">首页</a>
+					<a href="/">网站首页</a>&gt;&gt;
+					<a href="/news">资讯首页</a>
 					<?php 
 						$category = new category_class('news');
 						$cate_tree = $category->tree_map_item($column[0]->category_id);

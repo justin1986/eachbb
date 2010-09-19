@@ -32,15 +32,15 @@
 		<div id="content">
 			<?php include_once(dirname(__FILE__).'/test/left_inc.php'); ?>
 			<div id="c_r">
-				<div id="address">当前位置：<a href="/">首页</a> &gt; 
+				<div id="address">当前位置：<a href="/">网站首页</a> &gt; 
 				<?php 
 					$type=$_GET['type'];
 					if($type =='test'){
 				?>
-				<a href="/test">测评</a> &gt; 
+				<a href="/test">测评首页</a> &gt; 
 				<?php }else if($type == 'course'){
 					?>
-					<a href="/course">课程</a> &gt; <?php 
+					<a href="/course">课程首页</a> &gt; <?php 
 				}?><font style="font-size:12px;">意见反馈</font></div>
 				<div id="c_hr"></div>
 				<div id="h_title">感谢使用我们的教程，希望我们的共同努力能使您的孩子从哇哇落地就得到最专业的教育和早教指导</div>
