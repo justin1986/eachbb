@@ -97,6 +97,7 @@ $('.baby_name').hide();
 						});
 			}else if($(this).val()== 2){
 				$('.baby_name').hide();
+				$('.baby_birth').hide();
 				babyname="no";
 			}else if($(this).val()==3){
 				$('.baby_birth').show();

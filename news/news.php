@@ -34,7 +34,6 @@ foreach ($lines as $li){
 			<div id="log_t">
 				<a href="/"><div id="log"></div></a>
 				<div id="log_address">
-					<a href="/" style='color:blue;'>网站首页</a>&gt;&gt;
 					<a href="/news" style='color:blue;'>资讯首页</a>
 					<?php 
 						$category = new category_class('news');

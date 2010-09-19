@@ -38,7 +38,7 @@
 		<div id="log_top">
 			<div id="log_t">
 				<a href="/"><div id="log"></div></a>
-				<div id="log_address"><a href="/" style="font-size:12px; color:blue;">网站首页</a> &nbsp;&gt;&gt; &nbsp;<a href="/news" style="font-size:12px; color:blue;">资讯首页</a>&nbsp;&gt;&gt;&nbsp;<?php echo $title_id[0]->name;?></div>
+				<div id="log_address"><a href="/news" style="font-size:12px; color:blue;">资讯首页</a>&nbsp;&gt;&gt;&nbsp;<?php echo $title_id[0]->name;?></div>
 			</div>
 			<div id="hr"></div>
 		</div>
