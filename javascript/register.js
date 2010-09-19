@@ -218,7 +218,6 @@ function birthday_display(){
 		$("#baby_birthday").parent().hide();
 		babyname_flag = "begin";
 	}
-	alert($("#baby_status").val());
 }
 
 function check_name(is_submit){
