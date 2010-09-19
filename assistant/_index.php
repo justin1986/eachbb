@@ -24,7 +24,7 @@
 			location.href = "list.php?category_id=7&age=-1";
 		</script>	
 		<?php }
-		css_include_tag('assistant/_index','assistant','top_inc/assistant_top','left_inc/assistant_left','colorbox','assistant/assistant_content'); 
+		css_include_tag('assistant/_index','logo','assistant','top_inc/assistant_top','left_inc/assistant_left','colorbox','assistant/assistant_content'); 
 //		css_include_tag(); 
 		$db = get_db();
 		js_include_tag('assistant/assistant','news/index','jquery.colorbox-min');
@@ -47,6 +47,7 @@
 	<div id="body_container">
 		<?php if(intval($_GET['age']) > 0){?>
 		<div id="breadbrum">
+			<a href="/" target="_blank"><div id="log"></div></a>
 			<a href="/assistant/_index.php">助手首页</a> &gt;&gt; <?php echo convert_age($_GET['age']);?>
 		</div>
 		<?php }?>

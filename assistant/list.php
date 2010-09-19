@@ -6,7 +6,7 @@
 	<title>网趣宝贝-妈妈助手</title>
 	<?php
 		include_once('../frame.php');
-		css_include_tag('top_inc/assistant_top','assistant_list','assistant/assistant_content','assistant/assistant_question','right_inc/assistant_right','left_inc/assistant_left'); 
+		css_include_tag('top_inc/assistant_top','logo','assistant_list','assistant/assistant_content','assistant/assistant_question','right_inc/assistant_right','left_inc/assistant_left'); 
 		use_jquery();
 		js_include_tag('assistant/list');
 		$db = get_db();
@@ -40,12 +40,12 @@
 		}
 	?>
 </head>
-
 <body>
 	<div id="ibody">
 		<div id="container">
 			<div id="container_result">
 				<div id="breadbrum">
+					<a href="/" target="_blank"><div id="log"></div></a>
 					<a href="/assistant/_index.php">助手首页</a>
 					<?php 
 					if(in_array($_GET['age'], array(-2,-1))){

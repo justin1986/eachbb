@@ -6,7 +6,7 @@
 	<title>网趣宝贝-妈妈助手</title>
 	<?php
 		include_once('../frame.php');
-		css_include_tag('top_inc/assistant_top','assistant/knowledge','assistant/assistant_content','assistant/assistant_question','right_inc/assistant_right','left_inc/assistant_left'); 
+		css_include_tag('top_inc/assistant_top','logo','assistant/knowledge','assistant/assistant_content','assistant/assistant_question','right_inc/assistant_right','left_inc/assistant_left'); 
 		use_jquery();
 		$db = get_db();
 		$category = new category_class('assistant');
@@ -27,6 +27,7 @@
 <input type="hidden" id="user_id" value="<?php echo $user->id;?>">
 <div id="container">
 		<div id="breadbrum">
+			<a href="/" target="_blank"><div id="log"></div></a>
 			<a href="/assistant/_index.php">助手首页</a> &gt;&gt; <a href="_knowledge.php">知识专题</a>
 			<?php if($age && in_array($age, array(-2,-1,1,2,3,4))){
 				echo ">> ",convert_age($age);

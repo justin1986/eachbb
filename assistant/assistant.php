@@ -28,7 +28,8 @@
 			<div id="log_t">
 				<a href="/" target="_blank"><div id="log"></div></a>
 				<div id="log_address">
-					<a href="/">首页</a>
+					<a href="/assistant">网站首页</a>&gt;&gt; 
+					<a href="/assistant">妈妈助手</a>
 					<?php 
 						$category = new category_class('assistant');
 						$cate_tree = $category->tree_map_item($column[0]->category_id);
