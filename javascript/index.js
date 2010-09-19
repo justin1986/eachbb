@@ -178,7 +178,12 @@ $(function(){
 	$('#a_begin_test').click(function(e){
 		e.preventDefault();
 		var birth = new Date($('#date_picker').val());
-		if(typeof(birth) == 'Invalid Date' || birth == "NaN"){
+//		if(typeof(birth) == 'Invalid Date' || birth == "NaN"){
+//			alert('请输入有效的时间');
+//			return;
+//		}
+		if(!$('#date_picker').val())
+		{
 			alert('请输入有效的时间');
 			return;
 		}
