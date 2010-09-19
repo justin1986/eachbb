@@ -40,7 +40,7 @@
 						<select id="sel_baby_status">
 							<option value="0">请选择</option>
 							<option value="1">已生育</option>
-							<option value="2">备孕中</option>
+							<option value="2">未生育</option>
 							<option value="3">怀孕中</option>
 						</select>
 					</div>
@@ -76,7 +76,7 @@ $('.baby_name').hide();
 				}
 			});
 		});
-		var babyname;
+		var babyname="no";
 		$("#sel_baby_status").change(function(){
 			if($(this).val()==1){
 				$('.baby_birth').show();
@@ -97,6 +97,7 @@ $('.baby_name').hide();
 						});
 			}else if($(this).val()== 2){
 				$('.baby_name').hide();
+				babyname="no";
 			}else if($(this).val()==3){
 				$('.baby_birth').show();
 				$('#baby_display').html('<font>*</font>预产期');
@@ -113,10 +114,12 @@ $('.baby_name').hide();
 							dateFormat: 'yy-mm-dd'
 						});
 				$('.baby_name').hide();
+				babyname="no";
 			}else{
 				$('.baby_birth').hide();
 				$('#verify_info').css('margin-top','135px');
 				$('.baby_name').hide();
+				babyname="no";
 			}
 		});
 
@@ -166,7 +169,7 @@ $('.baby_name').hide();
 				$('#input_baby_status').focus();
 				return;
 			}
-			if(!babyname){
+			if(babyname == "babyname"){
 				alert('请输入宝宝姓名');
 				$('#baby_info_name').focus();
 				return;
@@ -186,7 +189,7 @@ $('.baby_name').hide();
 					if(data){
 						alert(data);
 					}else{
-						window.location.href="/test/save_test_result.php";
+						window.location.href="/test";
 					}
 				}
 			);

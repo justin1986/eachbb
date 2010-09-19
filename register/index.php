@@ -108,7 +108,7 @@
 					</div>
 					<div class="c_a">
 						<div class="ca_a"></div>
-						<div class="ca_b">出生年月日</div>
+						<div class="ca_b">您的生日</div>
 						<div class="ca_c"><input type="text" id="birthday" name=birthday> </div>
 						<div class="ca_d" id="birthday_info"></div>
 					</div>
