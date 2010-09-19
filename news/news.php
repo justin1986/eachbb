@@ -32,7 +32,7 @@ foreach ($lines as $li){
 		<div id="fbody">
 		<div id="log_top">
 			<div id="log_t">
-				<div id="log"></div>
+				<a href="/"><div id="log"></div></a>
 				<div id="log_address">
 					<a href="/">网站首页</a>&gt;&gt;
 					<a href="/news">资讯首页</a>
