@@ -1,6 +1,6 @@
 @CHARSET "UTF-8";
 body{width:745px; margin: 0 auto;}
-#breadbrum{height:22px; width:700px; overflow:Hidden; margin-left:13px; font-size:12px;}
+#breadbrum{height:22px; width:500px; overflow:Hidden; margin-left:13px; font-size:12px;}
 	#breadbrum a{text-decoration: none; color:blue;}
 #ibody{width:745px; overflow:hidden; margin:0;}
 
