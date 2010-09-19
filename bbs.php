@@ -463,14 +463,14 @@
 				<div class="i_l">用户精彩问答</div>
 				<div id="i_r"><a href="/bbs/forumdisplay.php?fid=10">更多&gt;&gt;</a></div>
 			</div>
-			<?php  for($i=1;$i<=3;$i++){ ?>
+			<?php  for($i=1;$i<=5;$i++){ ?>
 			<div class="p" style="<?php if($i==1){ echo 'margin-top:12px;';}?>" <?php $pos="qa".$i;show_page_pos($pos,'qa');?>>
 				<div class="p_l"></div>
-				<div class="p_r"><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href);?></div>
-			</div>
-			<div class="q">
-				<div class="q_l"></div>
-				<div class="q_r"><?php echo_href($pos_items[$pos]->description, $pos_items[$pos]->href);?></div>
+				<div class="p_r">
+					<a href="<?php echo  $pos_items[$pos]->href;?>">
+						<?php mb_strlen($pos_items[$pos]->title,"utf-8")> 18 ? mb_substr($pos_items[$pos]->title,0,17,"utf-8")."<font style='font-size:10px;'>...</font>":$pos_items[$pos]->title;?>
+					</a>
+				</div>
 			</div>
 			<?php  if($i != 3){ echo '<div class="p_hr"></div>'; } }?>
 		</div>
