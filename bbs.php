@@ -468,11 +468,11 @@
 				<div class="p_l"></div>
 				<div class="p_r">
 					<a href="<?php echo  $pos_items[$pos]->href;?>">
-						<?php mb_strlen($pos_items[$pos]->title,"utf-8")> 18 ? mb_substr($pos_items[$pos]->title,0,17,"utf-8")."<font style='font-size:10px;'>...</font>":$pos_items[$pos]->title;?>
+						<?php echo mb_strlen($pos_items[$pos]->title,"utf-8")> 18 ? mb_substr($pos_items[$pos]->title,0,17,"utf-8")."<font style='font-size:10px;'>...</font>":$pos_items[$pos]->title;?>
 					</a>
 				</div>
 			</div>
-			<?php  if($i != 3){ echo '<div class="p_hr"></div>'; } }?>
+			<?php  if($i != 1 ){ echo '<div class="p_hr"></div>'; } }?>
 		</div>
 		<div id="fb_pg">
 			<div id="fbp_l"><a href="#">
