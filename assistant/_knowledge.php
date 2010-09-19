@@ -26,14 +26,14 @@
 <body>
 <input type="hidden" id="user_id" value="<?php echo $user->id;?>">
 <div id="container">
-		<div id="breadbrum">
-			<a href="/" target="_blank"><div id="log"></div></a>
-			<a href="/assistant/_index.php">助手首页</a> &gt;&gt; <a href="_knowledge.php">知识专题</a>
-			<?php if($age && in_array($age, array(-2,-1,1,2,3,4))){
-				echo ">> ",convert_age($age);
-			} ?>
-		</div>
 	<div id="container_result">
+		<div id="breadbrum">
+				<a href="/" target="_blank"><div id="log"></div></a>
+				<a href="/assistant/_index.php">助手首页</a> &gt;&gt; <a href="_knowledge.php">知识专题</a>
+				<?php if($age && in_array($age, array(-2,-1,1,2,3,4))){
+					echo ">> ",convert_age($age);
+				} ?>
+			</div>
 		<div class='menu' <?php if($age&&$age!=-2){?>style="display:none;"<?php }?>>准备怀孕</div>
 		<div class="box" <?php if($age&&$age!=-2){?>style="display:none;"<?php }?>>
 			<?php 
