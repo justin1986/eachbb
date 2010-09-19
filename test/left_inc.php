@@ -17,14 +17,14 @@
 	<div class="hlc_t"></div>
 	<div class="hlc_b">
 		<div class="hlcb_pg">
-			<div class="hlct_t">热门课程排行榜</div>
+			<div class="hlct_t">论坛热帖排行</div>
 			<img src="/images/helper/lb_hd.jpg"> </div>
 		<?php
 		$db=get_db();
-		for($i = 1 ; $i < 7; $i++){?>
+		for($i = 1 ; $i < 10; $i++){?>
 		<div class="hlcb_z"<?php $pos="test_left_"+$i;show_page_pos($pos,'link_day');?>  style="height:20px;">
 			<div class="hlcb_l" style="height:20px;">
-				<div class="r" style="<?php if($i > 4){ echo 'background:#ABABAB; border:1px solid #A4A4A4;';}?>"><?php echo $i; ?></div>
+				<div class="r" style="background:#ABABAB; border:1px solid #A4A4A4;"><?php echo $i; ?></div>
 			</div>
 			<div class="hlcb_r" style="height:20px;">
 				<div class="hlcb_t"><a href="<?php echo $pos_items[$pos]->href;?>"><?php echo $pos_items[$pos]->title;?></a></div>
