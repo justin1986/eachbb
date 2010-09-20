@@ -41,7 +41,7 @@ foreach ($lines as $li){
 						$cate_tree = array_reverse($cate_tree);
 						foreach ($cate_tree as $cate){
 							$list_url = get_news_list_url($cate_tree[0]->id);
-							echo " &gt;&gt; <a href='{$list_url}' style='color:blue;'>{$cate->name}</a>";
+							echo " &gt;&gt; <a href='{$list_url}' style='color:blue;' target='_blank'>{$cate->name}</a>";
 						}
 					?>
 					<span> &gt;&gt; <?php echo $column[0]->title;?></span>
@@ -63,7 +63,7 @@ foreach ($lines as $li){
 							<?php
 							$lines=explode("||",$column[0]->keywords);
 							foreach ($lines as $li){ ?>
-							<li class="keyword_container"><a href="<?php echo get_search_keyword_url($li);?>" title="<?php  echo $li; ?>"><?php  echo $li; ?></a></li>
+							<li class="keyword_container"><a href="<?php echo get_search_keyword_url($li);?>" title="<?php  echo $li; ?>" target='_blank'><?php  echo $li; ?></a></li>
 							<?php  } ?>
 						</ul>
 					</div>
@@ -72,9 +72,9 @@ foreach ($lines as $li){
 						<?php echo strip_tags($column[0]->description);?>
 					</div>
 					<div id="text_menu">
-						<div class="tm_a"><a id="a_print" href="#">打印</a></div>
-						<div id="tm_b"><a id="a_collect" href="#">收藏</a></div>
-						<div class="tm_a"><a href="/news/share.php?news_id=<?php echo $column[0]->id?>">分享</a></div>
+						<div class="tm_a"><a id="a_print" href="#" >打印</a></div>
+						<div id="tm_b"><a id="a_collect" href="#" >收藏</a></div>
+						<div class="tm_a"><a href="/news/share.php?news_id=<?php echo $column[0]->id?>" target='_blank'>分享</a></div>
 					</div>
 				</div>
 				<div id="text_bpg"></div>

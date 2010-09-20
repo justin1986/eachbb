@@ -14,7 +14,7 @@
 			for($i=0;$i<10;$i++){ ?>
 			<div id="comm_con">
 				<div class="number" style="<?php if($i==0){ echo "background:url(/images/new_list/number.jpg) no-repeat;";} ?>"><?php echo $i+1; ?></div>
-				<a href="/news/news.php?id=<?php echo $list[$i]->id;?>"><?php echo $list[$i]->title;?></a>
+				<a href="/news/news.php?id=<?php echo $list[$i]->id;?>" target='_blank'><?php echo $list[$i]->title;?></a>
 			</div>
 			<!-- 右边 业界快讯 一条列表的内容  结束 -->
 			<?php } ?>
