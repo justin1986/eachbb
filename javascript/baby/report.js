@@ -5,6 +5,12 @@ $(function(){
 			$('#haha').html(data);
 		});
 	}
+	$('#user_me_o').click(function(){
+		$.post('_baby_exit_ajax_post.php',function(){
+			alert("退出成功！返回首页");
+			window.location.href="/";
+		});
+	});
 	$('.user_me_t').click(function(e){
 		e.preventDefault();
 		var selected = $('.user_me_t').index($(this));
