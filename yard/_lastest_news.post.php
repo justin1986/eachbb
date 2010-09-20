@@ -35,7 +35,7 @@
 	</div>
 	<?php 
 	}}else{
-		echo "<div style='width:540px; height:100px; line-height:100px; font-size:20px; text-align:center; font-weight:bold;'>对不起！无信息！</div>";
+		echo "<div style='width:540px; height:100px; line-height:100px; font-size:20px; text-align:center; font-weight:bold;'>对不起！您的好友无日记！</div>";
 	}
 	?>
 	
