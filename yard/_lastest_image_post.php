@@ -24,7 +24,6 @@
 				<a href="/yard/home.php?id=<?php echo $result->u_id;?>">
 					<?php echo $result->u_name.$result->form;?>
 				</a>
-				
 			</div>
 			<img src="<?php echo $result->photo;?>"   onload="if(this.width>50)this.width=50"></img>
 			<div class="content_pc" style="<?php if(!($result->content)){echo "display:none;";}?>">
