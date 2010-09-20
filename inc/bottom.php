@@ -17,7 +17,7 @@
 	<a class="bottom_a"<?php $pos="bottom_d";show_page_pos($pos,'link');?> href="<?php echo $pos_items[$pos]->href;?>" ><?php echo $pos_items[$pos]->title; ?>-</a>
 	<a class="bottom_a"<?php $pos="bottom_e";show_page_pos($pos,'link');?> href="<?php echo $pos_items[$pos]->href;?>" ><?php echo $pos_items[$pos]->title; ?>-</a>
 	<a class="bottom_a"<?php $pos="bottom_f";show_page_pos($pos,'link');?> href="<?php echo $pos_items[$pos]->href;?>" ><?php echo $pos_items[$pos]->title; ?>-</a>
-	<a class="bottom_a"<?php $pos="bottom_g";show_page_pos($pos,'link');?> href="<?php echo $pos_items[$pos]->href;?>" ><?php echo $pos_items[$pos]->title; ?></a>
+	<a class="bottom_a"<?php $pos="bottom_g";show_page_pos($pos,'link');?> href="<?php echo $pos_items[$pos]->href;?>" ><?php echo $pos_items[$pos]->title; ?>s</a>
 </div>
 <div id="bottom_b">沪ICP备10204500号  <script src="http://s17.cnzz.com/stat.php?id=2415758&web_id=2415758&show=pic1" language="JavaScript"></script></div>
 <script src="/javascript/get_ad.js">
