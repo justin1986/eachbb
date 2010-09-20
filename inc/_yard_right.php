@@ -22,6 +22,7 @@
 	<div id="r_bb"><?php echo $user->baby_name;?></div>
 	<div id="r_num">被访问过<?php if($news[0]->visit_count){echo $news[0]->visit_count;}else{echo 0;};?>次</div>
 </div>
+<?php if(!$id){?>
 <div id="r_geng"> 
 	<div id="r_ge_a">
 		<div id="r_gi_a"></div>
@@ -32,6 +33,7 @@
 		<div id="r_gw_b"><a href="/yard/member.php">修改档案</a></div>
 	</div>
 </div>
+<?php }?>
 <div id="r_ge_ge">
 	<div id="r_ge_hr"></div>
 	<div id="r_ge_table">
@@ -92,7 +94,9 @@
 				<img src="/images/yard/friend_r1.jpg" />
 			</div>
 		</div>
+		<?php if(!$id){?>
 		<div id="query_friend">查询好友</div>
+		<?php }?>
 	</div>
 <div id="pic_r">
 	<div id="pic_0">

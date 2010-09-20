@@ -124,6 +124,7 @@
 			<div id="cc_c">
 				<div id="cc_pg">
 					<div id="cc_pic"></div>
+					<?php if(!$id){?>
 					<div id="cc_photo">
 						<div id="pho_l">
 							<img src="<?php echo $user->avatar;?>" width="48" height="48" />
@@ -132,9 +133,11 @@
 							<textarea name="pho_r" id="pho_r">你正在作什么?</textarea>
 						</form>
 					</div>
+					<?php }?>
 					<div id="cc_ps" >
 					<div id="box_test"></div>
 					<div id="box_right">
+						<?php if(!$id){?>
 						<div id="ccps_l" style="float:left;"><a href="/yard/info.php"><img src="/images/yard/c_p.jpg" border=0/></a></div>
 						<div id="ccps_c">
 							<div id="ccpsc_la">
@@ -149,6 +152,7 @@
 								<div id="c_moblie_w"><a href="">发布</a></div>
 								</div>
 						</div>
+						<?php }?>
 						<div id="c_ch">
 							<div id="m_w"></div>
 							<div class="c_ch_w" style=" border-bottom:0px solid #E3F2DF;background:url(/images/yard/m_pg.jpg) no-repeat;">全部</div>

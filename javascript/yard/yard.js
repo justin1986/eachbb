@@ -34,7 +34,7 @@ $(function(){
 			});
 		}else if(selected === 4)
 		{
-			$.post('lastest_news.post.php',{'type':'all',"id":id},function(data){
+			$.post('lastest_news.post.php',{'type':'suibian',"id":id},function(data){
 				$('#test').html(data);
 			});
 		}

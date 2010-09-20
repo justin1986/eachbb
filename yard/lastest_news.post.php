@@ -6,7 +6,7 @@
 	if(!$user) die();
 	$select =$_POST['select'];
 	$type = $_POST['type'];
-	if(!in_array($type,array('all','oneword','diary','image'))){die('no such type!');}
+	if(!in_array($type,array('all','oneword','diary','image','suibian'))){die('no such type!');}
 	$result= User::lastest_news($type,$id);
 	$num = $db->record_count;
     if($result){
