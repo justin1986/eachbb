@@ -78,6 +78,7 @@ $('.baby_name').hide();
 		});
 		var babyname="no";
 		$("#sel_baby_status").change(function(){
+			alert($(this).val());
 			if($(this).val()==1){
 				$('.baby_birth').show();
 				babyname = "babyname";
@@ -101,6 +102,7 @@ $('.baby_name').hide();
 				babyname="no";
 			}else if($(this).val()==3){
 				$('.baby_birth').show();
+				$('#input_baby_birth').show();
 				$('#baby_display').html('<font>*</font>预产期');
 				$('#verify_info').css('margin-top','175px');
 				$("#input_baby_birth").datepicker(
