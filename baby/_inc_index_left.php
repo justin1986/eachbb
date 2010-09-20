@@ -24,27 +24,27 @@
 			<div class="user_me_t"><img src="/images/avatar/bpoint.png"></img><font size="2"><b>订单信息</b></font></div>
 			<div class="user_me_b">
 			<div class="user_me_t"><img src="/images/avatar/cpoint.png"></img><font size="2" color="black">最新订单</font></div>
-			<div class="user_me_t"><img src="/images/avatar/cpoint.png"></img><font size="2" color="black">我到订单</font></div>
-			<div class="user_me_t"><img src="/images/avatar/cpoint.png"></img><font size="2" color="black">订单发货查询</font></div>
-			<div class="user_me_t" style="padding-bottom:10px;"><img src="/images/avatar/cpoint.png"></img><font size="2" color="black">往期订单查询</font></div>
+			<div class="user_me_t"><img src="/images/avatar/cpoint.png"></img><font size="2" color="black">历史订单</font></div>
+<!--			<div class="user_me_t"><img src="/images/avatar/cpoint.png"></img><font size="2" color="black">订单发货查询</font></div>-->
+<!--			<div class="user_me_t" style="padding-bottom:10px;"><img src="/images/avatar/cpoint.png"></img><font size="2" color="black">往期订单查询</font></div>-->
 			</div>
 			</div>
 			<div class="user_me_s">
 			<div class="user_me_t"><img src="/images/avatar/bpoint.png"></img><font size="2"><b>测评报告</b></font></div>
 			<div class="user_me_b">
 			<div class="user_me_t"><img src="/images/avatar/cpoint.png"></img><font size="2" color="black">最新测评</font></div>
-			<div class="user_me_t"><img src="/images/avatar/cpoint.png"></img><font size="2" color="black">我的测评</font></div>
-			<div class="user_me_t"><img src="/images/avatar/cpoint.png"></img><font size="2" color="black">测评查询</font></div>
-			<div class="user_me_t" style="padding-bottom:10px;"><img src="/images/avatar/cpoint.png"></img><font size="2" color="black">测评历史查询</font></div>
+			<div class="user_me_t"><img src="/images/avatar/cpoint.png"></img><font size="2" color="black">历史测评</font></div>
+<!--			<div class="user_me_t"><img src="/images/avatar/cpoint.png"></img><font size="2" color="black">测评查询</font></div>-->
+<!--			<div class="user_me_t" style="padding-bottom:10px;"><img src="/images/avatar/cpoint.png"></img><font size="2" color="black">测评历史查询</font></div>-->
 			</div>
 			</div>
 			<div class="user_me_s">
 			<div class="user_me_t"><img src="/images/avatar/bpoint.png"></img><font size="2"><b>订购课程</b></font></div>
 			<div class="user_me_b">
-			<div class="user_me_t"><img src="/images/avatar/cpoint.png"></img><font size="2" color="black">最新课程</font></div>
-			<div class="user_me_t"><img src="/images/avatar/cpoint.png"></img><font size="2" color="black">我的课程</font></div>
-			<div class="user_me_t"><img src="/images/avatar/cpoint.png"></img><font size="2" color="black">课程查询</font></div>
-			<div class="user_me_t" style="padding-bottom:10px;"><img src="/images/avatar/cpoint.png"></img><font size="2" color="black">课程历史查询</font></div>
+			<div class="user_me_t"><img src="/images/avatar/cpoint.png"></img><font size="2" color="black">最新订购课程</font></div>
+			<div class="user_me_t"><img src="/images/avatar/cpoint.png"></img><font size="2" color="black">历史订购课程</font></div>
+<!--			<div class="user_me_t"><img src="/images/avatar/cpoint.png"></img><font size="2" color="black">课程查询</font></div>-->
+<!--			<div class="user_me_t" style="padding-bottom:10px;"><img src="/images/avatar/cpoint.png"></img><font size="2" color="black">课程历史查询</font></div>-->
 			</div>
 			</div>
 			<div id="user_me_o"><img src="/images/avatar/bpoint.png"></img><a href="/"><font size="2" color="black" style="text-decoration: none;">[退出]</font></a></div>

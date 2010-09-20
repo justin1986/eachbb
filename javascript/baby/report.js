@@ -18,30 +18,30 @@ $(function(){
 			$.post('reset_password.php',function(data){
 				$('#haha').html(data);
 			});
-		}else if(selected ===  10){
-			$.post('_baby_view_ajax_post.php',function(data){
-				$('#haha').html(data);
-			});
-		}else if(selected ===  11){
+		}else if(selected ===  8){
 			$.post('_baby_ajax.post.php',function(data){
 				$('#haha').html(data);
 			});
-		}else if(selected === 12){
+		}else if(selected === 9){
+			$.post('_baby_view_ajax_post.php',function(data){
+				$('#haha').html(data);
+			});
+		}else if(selected === 10){
 			$.post('_baby_view_ajax_post.php',function(data){
 				$('#haha').html(data);
 			});
 //			$.post('_baby_record_ajax.post.php',function(data){
 //				$('#haha').html(data);
 //			});
-		}else if(selected === 13){
+		}else if(selected === 11){
 			$.post('_baby_ajax.post.php',function(data){
 				$('#haha').html(data);
 			});
-		}else if(selected === 15){
+		}else if(selected === 13){
 			$.post('_baby_teach_ajax.post.php',{'type':"ojisd"},function(data){
 				$('#haha').html(data);
 			});
-		}else if(selected === 18){
+		}else if(selected === 16){
 			$.post('_baby_teach_ajax.post.php',function(data){
 				$('#haha').html(data);
 			});
