@@ -88,7 +88,7 @@ include_once dirname(__FILE__).'/../frame.php';
 						<div class="r"><?php echo $i;?></div>
 					</div>
 					<div class="hlcb_r">
-						<div class="hlcb_t"><a href="/assistant/assistant.php?id=<?php echo $list->id;?>" style="font-size:13px;color:#333333; text-decoration:none;"><?php echo $list->title;?></a></div>
+						<div class="hlcb_t"><a href="/assistant/assistant.php?id=<?php echo $list->id;?>" target="_blank" style="font-size:13px;color:#333333; text-decoration:none;"><?php echo $list->title;?></a></div>
 						<div class="hlcb_t"><font>点击次数：</font><?php echo $list->click_count;?></div>
 					</div>
 				</div>
