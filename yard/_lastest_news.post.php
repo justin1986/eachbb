@@ -10,8 +10,8 @@
 		<div class="pc_pg_img">
 			<div class="pc_img"><img src="
 			<?php 
-		if($result->avatar){
-			echo $result->avatar;
+		if($result->u_avatar){
+			echo $result->u_avatar;
 		}else{
 			echo "/images/yard/noface.jpg";
 		}
