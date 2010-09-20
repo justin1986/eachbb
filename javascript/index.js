@@ -78,7 +78,7 @@ $(function(){
 		}else if(selected == 1){
 			window.location.href="/assistant";
 		}else if(selected == 2){
-			window.location.href="/bbs";
+			window.location.href="bbs.php";
 		}
 	});
 	$('img.student_tab').hover(function(){
