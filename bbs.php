@@ -342,16 +342,15 @@
 				</div>
 				<?php  }?>
 			</div>
-			<div id="br_f"><a href="#"><img src="images/bbs/b.jpg"></a></div>
-			<div id="br_g"><a href="#"><img src="images/bbs/c.jpg"></a></div>
-			<div id="br_c"></div>
+			<div id="br_f" <?php $pos="bbs_right_image1";show_page_pos($pos,'link_i');?>><a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : 'images/bbs/b.jpg';?>"></a></div>
+			<div id="br_g"<?php $pos="bbs_right_image2";show_page_pos($pos,'link_i');?>><a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : 'images/bbs/c.jpg';?>"></a></div>
 			<div id="br_h">
 				<div id="rh_t">
 					<div>滚动热帖精华帖</div>
 				</div>
 				<div id="rh_c">
 					<div id="rh_pg">
-						<?php for($i=1;$i<=15;$i++) { ?>
+						<?php for($i=1;$i<=13;$i++) { ?>
 						<div class="rhc_z" <?php $pos="hot".$i;show_page_pos($pos,'link');?> style="<?php if($i==1){ echo 'margin-top:8px;';}?>"><a href="<?php echo $pos_items[$pos]->href;?>"  target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
 						<? }?>
 					</div>
@@ -365,7 +364,7 @@
 				<div class="i_l">最活跃用户排名</div>
 				<div class="i_r">HOT  USER</div>
 			</div>
-			<?php for($i=0;$i<10;$i++){?>
+			<?php for($i=0;$i<8;$i++){?>
 			<div class="o_z" style="<?php if($i==0){echo 'margin-top:10px;';}?>">
 				<div class="oz_l">
 					<div></div>
@@ -379,7 +378,7 @@
 				<div class="i_l">用户精彩问答</div>
 				<div id="i_r"><a href="/bbs/forumdisplay.php?fid=10">更多&gt;&gt;</a></div>
 			</div>
-			<?php  for($i=1;$i<=6;$i++){ ?>
+			<?php  for($i=1;$i<=7;$i++){ ?>
 			<div class="p" style="<?php if($i==1){ echo 'margin-top:12px;';}?>" <?php $pos="qa".$i;show_page_pos($pos,'qa');?>>
 				<div class="p_l"></div>
 				<div class="p_r">
@@ -388,7 +387,7 @@
 					</a>
 				</div>
 			</div>
-			<?php  if($i != 6){ echo '<div class="p_hr"></div>'; } }?>
+			<?php  if($i !=7){ echo '<div class="p_hr"></div>'; } }?>
 		</div>
 		<div id="fb_pg">
 			<div id="fbp_l"><a href="#">
