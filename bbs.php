@@ -181,9 +181,9 @@
 				<div id="bl_ti">
 					<div class="special">
 						<div class="bl_sp_t">
-							<div class="bl_a" style="background:url(/images/bbs/t1.jpg) no-repeat;"><font><a href="#">专题</a></font></div>
+							<div class="bl_a" style="background:url(/images/bbs/t1.jpg) no-repeat;"<?php $pos="topic1_t_z";show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>"><?php echo $pos_items[$pos]->title;?></a></div>
 							<div class="bl_hr" style="background:url(/images/bbs/h1.jpg) repeat-x;"></div>
-							<div class="bl_r" style="background:url(/images/bbs/m1.jpg) no-repeat;"><a href="#">+MORE</a></div>
+							<div class="bl_r" style="background:url(/images/bbs/m1.jpg) no-repeat;"><a href="<?php echo $pos_items[$pos]->href;?>" target="_blank">+MORE</a></div>
 						</div>
 						<div class="bl_sp_c">
 							<div class="blspc_l" <?php $pos="topic1_img";show_page_pos($pos,'link_t_i');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href?>"><img src="<?php echo $pos_items[$pos]->image1;?>"></a></div>
@@ -210,9 +210,9 @@
 					</div>
 					<div class="special">
 						<div class="bl_sp_t"> 
-							<div class="bl_a" style="background:url(/images/bbs/t2.jpg) no-repeat;"><a href="#">专题</a></div>
+							<div class="bl_a" style="background:url(/images/bbs/t2.jpg) no-repeat;"<?php $pos="topic2_t_z";show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>"><?php echo $pos_items[$pos]->title;?></a></div>
 							<div class="bl_hr" style="background:url(/images/bbs/h2.jpg) repeat-x;"></div>
-							<div class="bl_r" style="background:url(/images/bbs/m2.jpg) no-repeat;"><a href="#">+MORE</a></div>
+							<div class="bl_r" style="background:url(/images/bbs/m2.jpg) no-repeat;"><a href="<?php echo $pos_items[$pos]->href;?>" target="_blank">+MORE</a></div>
 						</div>
 						<div class="bl_sp_c">
 							<div class="blspc_l" <?php $pos="topic2_img";show_page_pos($pos,'link_t_i');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href?>"><img src="<?php echo $pos_items[$pos]->image1;?>"></a></div>
@@ -239,9 +239,9 @@
 					</div>
 					<div class="special">
 						<div class="bl_sp_t"> 
-							<div class="bl_a" style="background:url(/images/bbs/t5.jpg) no-repeat;"><a href="#">专题</a></div>
+							<div class="bl_a" style="background:url(/images/bbs/t5.jpg) no-repeat;"<?php $pos="topic5_t_z";show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>"><?php echo $pos_items[$pos]->title;?></a></div>
 							<div class="bl_hr" style="background:url(/images/bbs/h5.jpg) repeat-x;"></div>
-							<div class="bl_r" style="background:url(/images/bbs/m5.jpg) no-repeat;"><a href="#">+MORE</a></div>
+							<div class="bl_r" style="background:url(/images/bbs/m5.jpg) no-repeat;"><a href="<?php echo $pos_items[$pos]->href;?>" target="_blank">+MORE</a></div>
 						</div>
 						<div class="bl_sp_c">
 							<div class="blspc_l" <?php $pos="topic5_img";show_page_pos($pos,'link_t_i');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href?>"><img src="<?php echo $pos_items[$pos]->image1;?>"></a></div>
@@ -268,9 +268,9 @@
 					</div>
 					<div class="special">
 						<div class="bl_sp_t"> 
-							<div class="bl_a" style="background:url(/images/bbs/t6.jpg) no-repeat;"><a href="#">专题</a></div>
+							<div class="bl_a" style="background:url(/images/bbs/t6.jpg) no-repeat;"<?php $pos="topic6_t_z";show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>"><?php echo $pos_items[$pos]->title;?></a></div>
 							<div class="bl_hr" style="background:url(/images/bbs/h6.jpg) repeat-x;"></div>
-							<div class="bl_r" style="background:url(/images/bbs/m6.jpg) no-repeat;"><a href="#">+MORE</a></div>
+							<div class="bl_r" style="background:url(/images/bbs/m6.jpg) no-repeat;"><a href="<?php echo $pos_items[$pos]->href;?>" target="_blank">+MORE</a></div>
 						</div>
 						<div class="bl_sp_c">
 							<div class="blspc_l" <?php $pos="topic6_img";show_page_pos($pos,'link_t_i');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href?>"><img src="<?php echo $pos_items[$pos]->image1;?>"></a></div>
@@ -297,9 +297,9 @@
 					</div>
 					<div class="special">
 						<div class="bl_sp_t"> 
-							<div class="bl_a" style="background:url(/images/bbs/t7.jpg) no-repeat;"><a href="#">专题</a></div>
+							<div class="bl_a" style="background:url(/images/bbs/t7.jpg) no-repeat;"<?php $pos="topic7_t_z";show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>"><?php echo $pos_items[$pos]->title;?></a></div>
 							<div class="bl_hr" style="background:url(/images/bbs/h7.jpg) repeat-x;"></div>
-							<div class="bl_r" style="background:url(/images/bbs/m7.jpg) no-repeat;"><a href="#">+MORE</a></div>
+							<div class="bl_r" style="background:url(/images/bbs/m7.jpg) no-repeat;"><a href="<?php echo $pos_items[$pos]->href;?>" target="_blank">+MORE</a></div>
 						</div>
 						<div class="bl_sp_c">
 							<div class="blspc_l" <?php $pos="topic7_img";show_page_pos($pos,'link_t_i');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href?>"><img src="<?php echo $pos_items[$pos]->image1;?>"></a></div>
@@ -326,9 +326,9 @@
 					</div>
 					<div class="special">
 						<div class="bl_sp_t"> 
-							<div class="bl_a" style="background:url(/images/bbs/t8.jpg) no-repeat;"><a href="#">专题</a></div>
+							<div class="bl_a" style="background:url(/images/bbs/t8.jpg) no-repeat;"<?php $pos="topic8_t_z";show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>"><?php echo $pos_items[$pos]->title;?></a></div>
 							<div class="bl_hr" style="background:url(/images/bbs/h8.jpg) repeat-x;"></div>
-							<div class="bl_r" style="background:url(/images/bbs/m8.jpg) no-repeat;"><a href="#">+MORE</a></div>
+							<div class="bl_r" style="background:url(/images/bbs/m8.jpg) no-repeat;"><a href="<?php echo $pos_items[$pos]->href;?>" target="_blank">+MORE</a></div>
 						</div>
 						<div class="bl_sp_c">
 							<div class="blspc_l" <?php $pos="topic8_img";show_page_pos($pos,'link_t_i');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href?>"><img src="<?php echo $pos_items[$pos]->image1;?>"></a></div>
@@ -355,9 +355,9 @@
 					</div>
 					<div class="special">
 						<div class="bl_sp_t"> 
-							<div class="bl_a" style="background:url(/images/bbs/t8.jpg) no-repeat;"><a href="#">专题</a></div>
+							<div class="bl_a" style="background:url(/images/bbs/t8.jpg) no-repeat;" <?php $pos="topic9_t_z";show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>"><?php echo $pos_items[$pos]->title;?></a></div>
 							<div class="bl_hr" style="background:url(/images/bbs/h8.jpg) repeat-x;"></div>
-							<div class="bl_r" style="background:url(/images/bbs/m8.jpg) no-repeat;"><a href="#">+MORE</a></div>
+							<div class="bl_r" style="background:url(/images/bbs/m8.jpg) no-repeat;"><a href="<?php echo $pos_items[$pos]->href;?>" target="_blank">+MORE</a></div>
 						</div>
 						<div class="bl_sp_c">
 							<div class="blspc_l" <?php $pos="topic9_img";show_page_pos($pos,'link_t_i');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href?>"><img src="<?php echo $pos_items[$pos]->image1;?>"></a></div>
