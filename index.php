@@ -50,7 +50,7 @@
 				</div>
 				<div id="flash_right">
 					<div id="r_test"<?php $pos="index_teach_pg";show_page_pos($pos,'link_i');?>>
-						<img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1:'/images/index/img_r_a.jpg';?>"/>
+						<a href="<?php echo $pos_items[$pos]->href;?>" target="_blank"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1:'/images/index/img_r_a.jpg';?>"/></a>
 					</div>
 					<div id="r_student">
 						<div id="st_top">
