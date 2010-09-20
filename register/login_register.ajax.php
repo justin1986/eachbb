@@ -44,8 +44,8 @@
 							<option value="3">怀孕中</option>
 						</select>
 					</div>
-					<div class="menu baby_name" style="display:none"><input id="input_baby_birth" type="text"/></div>
-					<div class="menu baby_birth" style="display:none;"><input id="baby_info_name" type="text"/></div>
+					<div class="menu baby_birth" style="display:none"><input id="input_baby_birth" type="text"/></div>
+					<div class="menu baby_name" style="display:none;"><input id="baby_info_name" type="text"/></div>
 					<div class="menu"><input id="input_birthday"  type="text"/></div>
 					<div class="menu"><input id="virefy" type="text"/></div>
 				</div>
@@ -78,7 +78,6 @@ $('.baby_name').hide();
 		});
 		var babyname="no";
 		$("#sel_baby_status").change(function(){
-			alert($(this).val());
 			if($(this).val()==1){
 				$('.baby_birth').show();
 				babyname = "babyname";

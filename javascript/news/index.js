@@ -1,6 +1,6 @@
 $(function(){
 	var image_tab_index = 1;
-	var image_tab_count = 5;
+	var image_tab_count = 6;
 	var iamge_tab_interval = 5000;
 	function image_interval(){
 		 image_tab_index++;
