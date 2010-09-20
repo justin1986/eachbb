@@ -135,7 +135,7 @@
 								<?php for($i=0;$i<6;$i++){?>
 								<div class="cricc_a">
 									<div <?php $pos="test_bottom_img_$i";show_page_pos($pos,'link_i');?>>
-										<a href="<?php echo $pos_items[$pos]->href;?>">
+										<a href="<?php echo $pos_items[$pos]->href;?>" target="_blank">
 											<img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : '/images/class/c_pg_a.jpg';?>">
 										</a>
 									</div>
