@@ -57,8 +57,8 @@
 			<div id="bit_c">
 				<div class="bitc_a">
 					<div class="bitca_t">
-						<div class="bi_l"><a href="#">专  题</a></div>
-						<div class="bi_r"><a href="#">more</a></div>
+						<div class="bi_l" <?php $pos="bbs_z_a";show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>"><?php echo $pos_items[$pos]->title;?></a></div>
+						<div class="bi_r"><a href="<?php echo $pos_items[$pos]->href;?>">more</a></div>
 					</div>
 					<div class="bitca_c">
 						<div class="bic_a">
@@ -87,8 +87,8 @@
 				</div>
 				<div class="bitc_a" style="float:right; margin-right:20px;">
 					<div class="bitca_t" style="background:url(/images/bbs/c2.jpg)">
-						<div class="bi_l"><a href="#">专  题</a></div>
-						<div class="bi_r"><a href="#">more</a></div>
+						<div class="bi_l" <?php $pos="bbs_z_b";show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>"><?php echo $pos_items[$pos]->title;?></a></div>
+						<div class="bi_r"><a href="<?php echo $pos_items[$pos]->href;?>">more</a></div>
 					</div>
 					<div class="bitca_c" style="border:3px solid #FEAF59; border-top:0px solid red;">
 						<div class="bic_a">
@@ -117,8 +117,8 @@
 				</div>
 				<div class="bitc_a">
 					<div class="bitca_t" style="background:url(/images/bbs/c3.jpg) no-repeat">
-						<div class="bi_l"><a href="#">专  题</a></div>
-						<div class="bi_r"><a href="#">more</a></div>
+						<div class="bi_l" <?php $pos="bbs_z_c";show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>"><?php echo $pos_items[$pos]->title;?></a></div>
+						<div class="bi_r"><a href="<?php echo $pos_items[$pos]->href;?>">more</a></div>
 					</div>
 					<div class="bitca_c" style="border:3px solid #7FE574; border-top:0px solid red;">
 						<div class="bic_a">
@@ -147,8 +147,8 @@
 				</div>
 				<div class="bitc_a" style="float:right; margin-right:20px;">
 					<div class="bitca_t" style="background:url(/images/bbs/c4.jpg) no-repeat;">
-						<div class="bi_l"><a href="#">专  题</a></div>
-						<div class="bi_r"><a href="#">more</a></div>
+						<div class="bi_l" <?php $pos="bbs_z_d";show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>"><?php echo $pos_items[$pos]->title;?></a></div>
+						<div class="bi_r"><a href="<?php echo $pos_items[$pos]->href;?>">more</a></div>
 					</div>
 					<div class="bitca_c" style="border:3px solid #C8E25D; border-top:0px solid red;">
 						<div class="bic_a">
@@ -233,64 +233,6 @@
 							<div class="blb_bz">
 								<div class="blb_d"></div>
 								<div class="blb_v" <?php $pos="topic2_link".$i;show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>"  target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
-							</div>
-							<?php  }  ?>
-						</div>
-					</div>
-					<div class="special">
-						<div class="bl_sp_t"> 
-							<div class="bl_a" style="background:url(/images/bbs/t3.jpg) no-repeat;"><a href="#">专题</a></div>
-							<div class="bl_hr" style="background:url(/images/bbs/h3.jpg) repeat-x;"></div>
-							<div class="bl_r" style="background:url(/images/bbs/m3.jpg) no-repeat;"><a href="#">+MORE</a></div>
-						</div>
-						<div class="bl_sp_c">
-							<div class="blspc_l" <?php $pos="topic3_img";show_page_pos($pos,'link_t_i');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href?>"><img src="<?php echo $pos_items[$pos]->image1;?>"></a></div>
-							<div class="blspc_r">
-								<?php for($i = 1 ; $i <=4; $i++){ ?>
-								<div class="blspc_a">
-									<div class="blspcc_l"></div>
-									<div class="blspcc_value" <?php $pos="topic3_link".$i;show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>"  target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
-									</div>
-								<?php if($i!=2) { ?>
-								<div class="blspc_hr"></div>
-								<?php } } ?>
-							</div>
-						</div>
-						<div class="bl_sp_b">
-							<div class="blb_hr"></div>
-							<?php for($i = 5 ; $i <=7 ; $i++){ ?>
-							<div class="blb_bz">
-								<div class="blb_d"></div>
-								<div class="blb_v" <?php $pos="topic3_link".$i;show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>"  target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
-							</div>
-							<?php  }  ?>
-						</div>
-					</div>
-					<div class="special">
-						<div class="bl_sp_t"> 
-							<div class="bl_a" style="background:url(/images/bbs/t4.jpg) no-repeat;"><a href="#">专题</a></div>
-							<div class="bl_hr" style="background:url(/images/bbs/h4.jpg) repeat-x;"></div>
-							<div class="bl_r" style="background:url(/images/bbs/m4.jpg) no-repeat;"><a href="#">+MORE</a></div>
-						</div>
-						<div class="bl_sp_c">
-							<div class="blspc_l" <?php $pos="topic4_img";show_page_pos($pos,'link_t_i');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href?>"><img src="<?php echo $pos_items[$pos]->image1;?>"></a></div>
-							<div class="blspc_r">
-								<?php for($i = 1 ; $i <=4; $i++){ ?>
-								<div class="blspc_a">
-									<div class="blspcc_l"></div>
-									<div class="blspcc_value" <?php $pos="topic4_link".$i;show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>"  target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
-									</div>
-								<?php if($i!=2) { ?>
-								<div class="blspc_hr"></div>
-								<?php } } ?>
-							</div>
-						</div>
-						<div class="bl_sp_b">
-							<div class="blb_hr"></div>
-							<?php for($i = 5 ; $i <=7 ; $i++){ ?>
-							<div class="blb_bz">
-								<div class="blb_d"></div>
-								<div class="blb_v" <?php $pos="topic4_link".$i;show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>"  target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
 							</div>
 							<?php  }  ?>
 						</div>
@@ -410,6 +352,38 @@
 							</div>
 							<?php  }  ?>
 						</div>
+					</div>
+					<div class="special">
+						<div class="bl_sp_t"> 
+							<div class="bl_a" style="background:url(/images/bbs/t8.jpg) no-repeat;"><a href="#">专题</a></div>
+							<div class="bl_hr" style="background:url(/images/bbs/h8.jpg) repeat-x;"></div>
+							<div class="bl_r" style="background:url(/images/bbs/m8.jpg) no-repeat;"><a href="#">+MORE</a></div>
+						</div>
+						<div class="bl_sp_c">
+							<div class="blspc_l" <?php $pos="topic9_img";show_page_pos($pos,'link_t_i');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href?>"><img src="<?php echo $pos_items[$pos]->image1;?>"></a></div>
+							<div class="blspc_r">
+								<?php for($i = 1 ; $i <=4; $i++){ ?>
+								<div class="blspc_a">
+									<div class="blspcc_l"></div>
+									<div class="blspcc_value" <?php $pos="topic9_link".$i;show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>"  target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
+									</div>
+								<?php if($i!=2) { ?>
+								<div class="blspc_hr"></div>
+								<?php } } ?>
+							</div>
+						</div>
+						<div class="bl_sp_b">
+							<div class="blb_hr"></div>
+							<?php for($i = 5 ; $i <=7 ; $i++){ ?>
+							<div class="blb_bz">
+								<div class="blb_d"></div>
+								<div class="blb_v" <?php $pos="topic9_link".$i;show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>"  target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
+							</div>
+							<?php  }  ?>
+						</div>
+					</div>
+					<div class="special"<?php $pos="topic10_image".$i;show_page_pos($pos,'link_i');?>>
+						<a href="<?php echo $pos_items[$pos]->href;?>"><img  style="width:310px; height:180px; border:0px solid red;" src="<?php echo $pos_items[$pos]->image?>"/></a>
 					</div>
 				</div>
 			</div>

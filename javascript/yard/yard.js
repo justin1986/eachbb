@@ -21,7 +21,7 @@ $(function(){
 		}
 		else if(selected === 2)
 		{
-			$.post('lastest_news.post.php',{'type':'image'},function(data){
+			$.post('_lastest_image_post.php',{'type':'image'},function(data){
 				$('#test').html(data);
 			});
 		}
