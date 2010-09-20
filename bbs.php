@@ -180,64 +180,6 @@
 			<div id="bl_b">
 				<div id="bl_ti">
 					<div class="special">
-						<div class="bl_sp_t">
-							<div class="bl_a" style="background:url(/images/bbs/t1.jpg) no-repeat;"<?php $pos="topic1_t_z";show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>"><?php echo $pos_items[$pos]->title;?></a></div>
-							<div class="bl_hr" style="background:url(/images/bbs/h1.jpg) repeat-x;"></div>
-							<div class="bl_r" style="background:url(/images/bbs/m1.jpg) no-repeat;"><a href="<?php echo $pos_items[$pos]->href;?>" target="_blank">+MORE</a></div>
-						</div>
-						<div class="bl_sp_c">
-							<div class="blspc_l" <?php $pos="topic1_img";show_page_pos($pos,'link_t_i');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href?>"><img src="<?php echo $pos_items[$pos]->image1;?>"></a></div>
-							<div class="blspc_r">
-								<?php for($i = 1 ; $i <=4; $i++){ ?>
-								<div class="blspc_a">
-									<div class="blspcc_l"></div>
-									<div class="blspcc_value" <?php $pos="topic1_link".$i;show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>"  target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
-									</div>
-								<?php if($i!=2) { ?>
-								<div class="blspc_hr"></div>
-								<?php } } ?>
-							</div>
-						</div>
-						<div class="bl_sp_b">
-							<div class="blb_hr"></div>
-							<?php for($i = 5 ; $i <=7 ; $i++){ ?>
-							<div class="blb_bz">
-								<div class="blb_d"></div>
-								<div class="blb_v" <?php $pos="topic1_link".$i;show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>"  target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
-							</div>
-							<?php  }  ?>
-						</div>
-					</div>
-					<div class="special">
-						<div class="bl_sp_t"> 
-							<div class="bl_a" style="background:url(/images/bbs/t2.jpg) no-repeat;"<?php $pos="topic2_t_z";show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>"><?php echo $pos_items[$pos]->title;?></a></div>
-							<div class="bl_hr" style="background:url(/images/bbs/h2.jpg) repeat-x;"></div>
-							<div class="bl_r" style="background:url(/images/bbs/m2.jpg) no-repeat;"><a href="<?php echo $pos_items[$pos]->href;?>" target="_blank">+MORE</a></div>
-						</div>
-						<div class="bl_sp_c">
-							<div class="blspc_l" <?php $pos="topic2_img";show_page_pos($pos,'link_t_i');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href?>"><img src="<?php echo $pos_items[$pos]->image1;?>"></a></div>
-							<div class="blspc_r">
-								<?php for($i = 1 ; $i <=4; $i++){ ?>
-								<div class="blspc_a">
-									<div class="blspcc_l"></div>
-									<div class="blspcc_value" <?php $pos="topic2_link".$i;show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>"  target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
-									</div>
-								<?php if($i!=2) { ?>
-								<div class="blspc_hr"></div>
-								<?php } } ?>
-							</div>
-						</div>
-						<div class="bl_sp_b">
-							<div class="blb_hr"></div>
-							<?php for($i = 5 ; $i <=7 ; $i++){ ?>
-							<div class="blb_bz">
-								<div class="blb_d"></div>
-								<div class="blb_v" <?php $pos="topic2_link".$i;show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>"  target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
-							</div>
-							<?php  }  ?>
-						</div>
-					</div>
-					<div class="special">
 						<div class="bl_sp_t"> 
 							<div class="bl_a" style="background:url(/images/bbs/t5.jpg) no-repeat;"<?php $pos="topic5_t_z";show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>"><?php echo $pos_items[$pos]->title;?></a></div>
 							<div class="bl_hr" style="background:url(/images/bbs/h5.jpg) repeat-x;"></div>
