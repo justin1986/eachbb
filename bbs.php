@@ -325,7 +325,7 @@
 						</div>
 					</div>
 					<div class="special"<?php $pos="topic10_image".$i;show_page_pos($pos,'link_i');?>>
-						<a href="<?php echo $pos_items[$pos]->href;?>"><img  style="width:310px; height:180px; border:0px solid red;" src="<?php echo $pos_items[$pos]->image?>"/></a>
+						<a href="<?php echo $pos_items[$pos]->href;?>"><img  style="width:310px; height:180px; border:0px solid red;" src="<?php echo $pos_items[$pos]->image1?>"/></a>
 					</div>
 				</div>
 			</div>
