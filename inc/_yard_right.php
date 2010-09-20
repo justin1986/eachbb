@@ -3,6 +3,11 @@
 	use_jquery();
 	$db=get_db();
 	$user = User::current_user();
+	$id = $_GET['id'];
+	if($id){
+		$user=$db->query("SELECT * FROM eachbb_member.member m where id=$id");
+		$user = $user[0];
+	}
 	$sql="select m.*,s.* from eachbb_member.member m inner join eachbb_member.member_status s on m.id=s.uid where m.id=".$user->id;
 	$news=$db->query($sql);
 	$sex='未知';
@@ -99,7 +104,7 @@
 		for($i=0;$i<$m_friend;$i++){?>
 		<div class="pic_box">
 			<div class="pic_pg" id="pic_pg_0">
-				<a href="/yard/home.php?id=<?php echo $friend[$i]->f_id;?>">
+				<a href="/yard/index.php?id=<?php echo $friend[$i]->f_id;?>" target="_blank">
 				<IMG  class="pic_img" src="<?php if ($friend[$i]->f_avatar != null){echo $visit[$i]->f_avatar;}else{echo '/images/yard_info_img/1.jpg';}?>"/>
 				</a>
 			</div>
@@ -111,7 +116,7 @@
 		<?php for($i=0;$i<$m_visit;$i++){?>
 		<div class="pic_box">
 			<div class="pic_pg">
-				<a href="/yard/home.php?id=<?php echo $visit[$i]->f_id;?>">
+				<a href="/yard/index.php?id=<?php echo $visit[$i]->f_id;?>" target="_blank">
 				<IMG  class="pic_img" src="<?php if ($visit[$i]->f_avatar != null){echo $visit[$i]->f_avatar;}else{echo '/images/yard_info_img/1.jpg';}?>"/>
 				</a>
 			</div>

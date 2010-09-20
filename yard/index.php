@@ -9,11 +9,16 @@
 		css_include_tag('yard','colorbox');
 		js_include_tag('yard/yard','jquery.colorbox-min');
 		$db=get_db();
+		$id = $_GET['id'];
 		$user = User::current_user();
 		if(!$user){
 			alert("请您先登录！");
 			redirect('/login/?last_url=/yard/');
 			exit();
+		}
+		if($id){
+			$user=$db->query("SELECT * FROM eachbb_member.member m where id=$id");
+			$user = $user[0];
 		}
 		session_start();
 		$_SESSION['page_from'] = 'yard';
