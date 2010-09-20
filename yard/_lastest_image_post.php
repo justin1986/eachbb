@@ -1,9 +1,9 @@
 <?php
 	include_once('../frame.php');
-	$db=get_db();
 	$user = User::current_user();
 	if(!$user) die();
-	$result= $db->query("SELECT * FROM `eachbb_member`.lastest_news where resource_type='image' and u_id in (SELECT f_id FROM friend where u_id ={$user->id} group by u_id)");
+	$db=get_db();
+	$result = $db->query("SELECT * FROM `eachbb_member`.lastest_news where resource_type='image' and u_id in (SELECT f_id FROM `eachbb_member`.friend where u_id ={$user->id} group by f_id)");
     if($result){
     foreach ($result as $result){?>
 	<div class="pc_z">
@@ -15,15 +15,18 @@
 		}else{
 			echo "/images/yard/noface.jpg";
 		}
+	
 	?>
 			"/></div>
 		</div>
 		<div class="pc_word">
 			<div class="title_pc">
 				<a href="/yard/home.php?id=<?php echo $result->u_id;?>">
-					<?php echo $result->u_name;?>
+					<?php echo $result->u_name.$result->form;?>
 				</a>
+				
 			</div>
+			<img src="<?php echo $result->photo;?>"   onload="if(this.width>50)this.width=50"></img>
 			<div class="content_pc" style="<?php if(!($result->content)){echo "display:none;";}?>">
 				<?php echo htmlspecialchars_decode($result->content);?>
 				<a href="/baby/index_daily_show.php?daily_id=<?php echo $result->id;?>">

@@ -270,8 +270,8 @@ class User {
 	public static function lastest_news($type,$user){
 		$db = get_db();
 		if($type == "all"){
-			return $db->query("select * from `eachbb_member`.lastest_news where u_id in (SELECT f_id FROM friend where u_id =$user group by u_id) order by created_at desc limit 9");
+			return $db->query("select * from `eachbb_member`.lastest_news where u_id in (SELECT f_id FROM `eachbb_member`.friend where u_id =$user group by u_id) order by created_at desc limit 9");
 		}else{
-			return $db->query("select * from `eachbb_member`.lastest_news where resource_type != '' order by rand(),created_at desc limit 9");}
+			return $db->query("select * from `eachbb_member`.lastest_news where  order by rand(),created_at desc limit 9");}
 		}
 }
