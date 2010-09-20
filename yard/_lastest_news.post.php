@@ -3,7 +3,7 @@
 	$db=get_db();
 	$user = User::current_user();
 	if(!$user) die();
-	$result= $db->query("SELECT * FROM eachbb_member.lastest_news order by rand(),created_at desc LIMIT 10");
+	$result= $db->query("SELECT * FROM eachbb_member.lastest_news where u_id in (SELECT f_id FROM friend where u_id =$user group by u_id) order by rand(),created_at desc LIMIT 10");
     if($result){
     foreach ($result as $result){?>
 	<div class="pc_z">
