@@ -63,7 +63,7 @@ $(function(){
 		}else if(selected === 1){
 			window.location.href="/test";
 		}else if(selected === 2){
-			window.location.href='bbs.php';
+			window.location.href='/bbs.php';
 		}
 	});
 	
