@@ -99,7 +99,7 @@
 							foreach ($lines as $lines){
 								if($lines){
 								?>
-									<div class="cla_m_v" style="text-align: center;"><a href="/news/news.php?id=<?php echo $list->id;?>"><?php echo $lines;?></a></div>
+									<div class="cla_m_v" style="text-align: center;"><a href="/news/search.php?key=<?php echo $lines;?>"><?php echo $lines;?></a></div>
 									<div class="cla_r"></div>
 								<?php }
 							}
