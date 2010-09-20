@@ -3,6 +3,11 @@
 	$user = User::current_user();
 	if(!$user) die();
 	$db=get_db();
+	$id =$_POST["id"];
+	if($id){
+		$user=$db->query("SELECT * FROM eachbb_member.member m where id=$id");
+		$user = $user[0];
+	}
 	$result = $db->query("SELECT * FROM `eachbb_member`.lastest_news where resource_type='image' and u_id in (SELECT f_id FROM `eachbb_member`.friend where u_id ={$user->id} group by f_id)");
     if($result){
     foreach ($result as $result){?>
@@ -15,7 +20,6 @@
 		}else{
 			echo "/images/yard/noface.jpg";
 		}
-	
 	?>
 			"/></div>
 		</div>

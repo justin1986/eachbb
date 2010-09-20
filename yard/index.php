@@ -26,6 +26,7 @@
 </head>
 <body>
 <div id="ibody">
+<input type="hidden" name="id" id="id" value="<?php echo $id;?>"/>
 	<?php include_once(dirname(__FILE__).'/../inc/_yard_top.php'); ?>
 	<div id="menu">
 		<div id="yard_day">

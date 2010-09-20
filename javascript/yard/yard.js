@@ -1,5 +1,6 @@
 $(function(){
-	$.post('lastest_news.post.php',{'type':'all'},function(data){
+	var id = $('#id').val();
+	$.post('lastest_news.post.php',{'type':'all',"id":id},function(data){
 		$('#test').html(data);
 	});
 	$('.c_ch_w').click(function(){
@@ -7,32 +8,33 @@ $(function(){
 		$('.c_ch_w').attr('style','background:none;');
 		$(this).attr('style','border:0px solid red; background:url(/images/yard/m_pg.jpg) no-repeat;');
 		$('#test').html("<div style='width:540px; text-align:center; margin-top:20px;'><img src='/images/yard/loading.gif' /></div>");
+		var id = $('#id').val();
 		if(selected === 0)
 		{	
-			$.post('lastest_news.post.php',{'type':'all'},function(data){
+			$.post('lastest_news.post.php',{'type':'all',"id":id},function(data){
 				$('#test').html(data);
 			});
 		}
 		else if(selected === 1)
 		{
-			$.post('lastest_news.post.php',{'type':'oneword'},function(data){
+			$.post('lastest_news.post.php',{'type':'oneword',"id":id},function(data){
 				$('#test').html(data);
 			});
 		}
 		else if(selected === 2)
 		{
-			$.post('_lastest_image_post.php',{'type':'image'},function(data){
+			$.post('_lastest_image_post.php',{'type':'image',"id":id},function(data){
 				$('#test').html(data);
 			});
 		}
 		else if(selected === 3)
 		{
-			$.post('_lastest_news.post.php',{'type':'diary'},function(data){
+			$.post('_lastest_news.post.php',{'type':'diary',"id":id},function(data){
 				$('#test').html(data);
 			});
 		}else if(selected === 4)
 		{
-			$.post('lastest_news.post.php',{'type':'all'},function(data){
+			$.post('lastest_news.post.php',{'type':'all',"id":id},function(data){
 				$('#test').html(data);
 			});
 		}

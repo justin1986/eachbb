@@ -2,11 +2,12 @@
 	include_once('../frame.php');
 	$db=get_db();
 	$user = User::current_user();
+	$id =$_POST["id"];
 	if(!$user) die();
 	$select =$_POST['select'];
 	$type = $_POST['type'];
 	if(!in_array($type,array('all','oneword','diary','image'))){die('no such type!');}
-	$result= User::lastest_news($type,$user->id);
+	$result= User::lastest_news($type,$id);
 	$num = $db->record_count;
     if($result){
     for($i=0;$i<$num;$i++){

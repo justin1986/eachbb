@@ -2,6 +2,11 @@
 	include_once('../frame.php');
 	$db=get_db();
 	$user = User::current_user();
+	$id =$_POST["id"];
+	if($id){
+		$user=$db->query("SELECT * FROM eachbb_member.member m where id=$id");
+		$user = $user[0];
+	}
 	if(!$user) die();
 	$result= $db->query("SELECT * FROM eachbb_member.lastest_news where u_id in (SELECT f_id FROM `eachbb_member`.friend where u_id ={$user->id} group by u_id) order by rand(),created_at desc LIMIT 10");
     if($result){
