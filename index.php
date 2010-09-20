@@ -247,7 +247,7 @@
 						<div id="m_l_b"<?php $pos="assistant_head";show_page_pos($pos,'link_t_d')?>>
 							<div id="m_c_title" title="<?php echo $pos_items[$pos]->title;?>"><?php echo mb_strlen($pos_items[$pos]->title,"utf-8")>10 ? mb_substr($pos_items[$pos]->title,0,9,"utf-8")."<font style='font-size:10px;'>...</font>":$pos_items[$pos]->title;?></div>
 							<div id="m_c_content"><?php echo $pos_items[$pos]->description ? mb_substr($pos_items[$pos]->description, 0 ,48, "UTF-8")."<font style='font-size:10px;'>...</font>":'' ;?></div>
-							<div id="m_c_bottom"><a href="<?php echo $pos_items[$pos]->href;?>">查看详细内容&gt;&gt;</a></div>
+							<div id="m_c_bottom"><a href="<?php echo $pos_items[$pos]->href;?>" target="_blank">查看详细内容&gt;&gt;</a></div>
 						</div>
 						<div id="m_l_c_r">
 							<?php 

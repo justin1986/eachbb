@@ -47,7 +47,7 @@
 				<div id="h_title"<?php $pos="feedback_title1";show_page_pos($pos,'link')?>><a href="<?php echo $pos_items[$pos]->href;?>" target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
 				<div id="c_title"<?php $pos="feedback_title2";show_page_pos($pos,'link_t_d');?>><a href="<?php echo $pos_items[$pos]->href;?>" target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
 				<div id="cc_hr"></div>
-				<div id="cc_c"><?php echo $pos_items[$pos]->description;?>&nbsp;</div>
+				<div id="cc_c"><?php echo $pos_items[$pos]->description;?></div>
 				<?php 
 				$user = User::current_user();
 				if(!$user){
