@@ -274,6 +274,7 @@ class User {
 		}else if($type == "suibian"){
 			return $db->query("select * from `eachbb_member`.lastest_news order by rand(),created_at desc limit 9");
 		}else{
-			return $db->query("select * from `eachbb_member`.lastest_news where u_id in (SELECT f_id FROM `eachbb_member`.friend where u_id =$user group by u_id) order by created_at desc order by rand(),created_at desc limit 9");}
+			echo "select * from `eachbb_member`.lastest_news where u_id in (SELECT f_id FROM `eachbb_member`.friend where u_id =$user group by u_id)  limit 9";
+			return $db->query("select * from `eachbb_member`.lastest_news where u_id in (SELECT f_id FROM `eachbb_member`.friend group by u_id)  limit 9");}
 		}
 }
