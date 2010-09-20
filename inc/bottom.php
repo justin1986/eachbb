@@ -8,16 +8,18 @@
 			include_once(dirname(__FILE__).'./../frame.php');
 			use_jquery_ui();
 			init_page_items('bottom');
+			$db = get_db();
+			$list = $db->query("SELECT title,href FROM eb_page_pos e where page='bottom'");
+			$count =count($list);
 	?>
 <div id="bg_hr"></div>
 <div id="bottom">
-	<a class="bottom_a"<?php $pos="bottom_a";show_page_pos($pos,'link');?> href="<?php echo $pos_items[$pos]->href;?>" ><?php echo $pos_items[$pos]->title; ?> -</a> 
-	<a class="bottom_a"<?php $pos="bottom_b";show_page_pos($pos,'link');?> href="<?php echo $pos_items[$pos]->href;?>" ><?php echo $pos_items[$pos]->title; ?> -</a>
-	<a class="bottom_a"<?php $pos="bottom_c";show_page_pos($pos,'link');?> href="<?php echo $pos_items[$pos]->href;?>" ><?php echo $pos_items[$pos]->title; ?> -</a>
-	<a class="bottom_a"<?php $pos="bottom_d";show_page_pos($pos,'link');?> href="<?php echo $pos_items[$pos]->href;?>" ><?php echo $pos_items[$pos]->title; ?> -</a>
-	<a class="bottom_a"<?php $pos="bottom_e";show_page_pos($pos,'link');?> href="<?php echo $pos_items[$pos]->href;?>" ><?php echo $pos_items[$pos]->title; ?> -</a>
-	<a class="bottom_a"<?php $pos="bottom_f";show_page_pos($pos,'link');?> href="<?php echo $pos_items[$pos]->href;?>" ><?php echo $pos_items[$pos]->title; ?> -</a>
-	<a class="bottom_a"<?php $pos="bottom_g";show_page_pos($pos,'link');?> href="<?php echo $pos_items[$pos]->href;?>" ><?php echo $pos_items[$pos]->title; ?></a>
+	<?php $i=1; foreach ($list as $list){?>
+	<a class="bottom_a"<?php $pos="bottom_a";show_page_pos($pos,'link');?> href="<?php echo $list->href;?>" >
+		<?php echo $list->title; 
+		if($i != $count){
+		?> -<?php }?></a>
+	 <?php $i++; }?>
 </div>
 <div id="bottom_b">沪ICP备10204500号  <script src="http://s17.cnzz.com/stat.php?id=2415758&web_id=2415758&show=pic1" language="JavaScript"></script></div>
 <script src="/javascript/get_ad.js">
