@@ -4,6 +4,9 @@
 	$user = User::current_user();
 	$id =$_POST["id"];
 	if(!$user) die();
+	if(!$id){
+		$id = $user->id;
+	}
 	$select =$_POST['select'];
 	$type = $_POST['type'];
 	if(!in_array($type,array('all','oneword','diary','image','suibian'))){die('no such type!');}
