@@ -1,23 +1,36 @@
 <?php 
 	include_once('../frame.php');
 	$db = get_db();
-	$pro =$db->query("SELECT id,name,create_time FROM eachbb.eb_problem order by create_time desc limit 8;");
+	$user = User::current_user();
+	if(!$user){
+		alert("请您先登录！");
+		redirect('/login/');
+		exit();
+	}
+	$array = $db->query("select a.problem_id,b.name,a.created_at from eb_test_record as a  left join eb_problem b on b.id=a.problem_id  group by user_id,problem_id order by a.created_at desc;");
+	$count = $db->record_count;
+	if(!$array){
+		echo "<div style='width:750px; height:400px; line-height:400px; text-align:center; font-size:30px; font-weight:bold; float:left; display:inline;'>测评列表为空！</div>";
+	}else{
 ?>
 <div id="cr_b">
 	<div id="crb_l"></div>
 	<div id="crbc_c">
-		<div id="crbc_l"><a href="#"><font>最新测评</font></a></div>
+		<div id="crbc_l"><a href="#"><font>我的测评</font></a></div>
 	</div>
 	<div id="crb_r"></div>
 </div>
 <div id="cr_c">
-	<?php foreach ($pro as $problem){
-	$problem=$db->query("SELECT id,name,create_time FROM eb_problem e where end_month<=(select start_month+(select datediff(now(), create_time) from eachbb.eb_problem where id={$problem->id}) from eachbb.eb_problem where id={$problem->id}) and id={$problem->id};");
-	if($problem){
+	<?php
+	$i=0;
+	foreach ($array as $problem){
 		?>
-	<div class="problem_bannerr">
-		<a href="/baby/_baby_post.php?id=<?php echo $problem[0]->id; ?>" title="<?php echo $problem[0]->name; ?>"><?php echo $problem[0]->name; ?></a>
-		<div><?php echo $problem[0]->create_time; ?></div>
+	<div class="problem_bannerr" <?php if($i % 2 == 0){echo 'style="background:#D2D8E4;"';}?>>
+		<div><?php echo $problem>name; ?></div>
+		<div style="font-size:12px; font-weight:100px;">测评时间：<?php echo $problem->created_at; ?></div>
+		<div style="margin-left:120px; float:left;"><a href="/test/test_result.php?test_id=<?php echo $problem->problem_id;?>" <?php if($i % 2 == 0){echo 'style="color:#333333;"';}?>>测评报告</a></div>
+		<div style="margin-left:120px; float:left;"><a href=" /test/review.php?id=<?php echo $problem->problem_id;?>" <?php if($i % 2 == 0){echo 'style="color:#333333;"';}?>>题目回顾</a></div>
 	</div>
-	<?php }}?>
+	<?php $i++;}?>
 </div>
+<?php 	}?>

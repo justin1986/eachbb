@@ -11,15 +11,15 @@ if($user){
 	$count_comment=mysql_query('SELECT id FROM eachbb_member.`comment` c where user_id=3');
 	$num_rows = mysql_num_rows($count_comment); 
 ?>
-<div id="lp_t">个人信息管理</div>
+<div id="lp_t">用户登录</div>
 <div id="lp_p">
 	<div id="lp_l"><img src="<?php echo $user->avatar ? $user->avatar : '/images/class/l_peo.jpg';?>"></div>
 	<div id="lp_word"><?php echo $user->name;?></div>
 </div>
-<div id="l_b_wa">您有<a href="/baby/message_index.php"><?php echo $count[0]->id; ?></a>条消息</div>
-<div id="l_b_wb"><a href="/yard">我家小院子</a></div>
+<div id="l_b_wa">您有<a href="/baby/message_index.php" target="_blank"><?php echo $count[0]->id; ?></a>条消息</div>
+<div id="l_b_wb"><a href="/yard" target="_blank">我家小院子</a></div>
 <?php }else{?>
-<div id="lp_t">个人信息管理</div>
+<div id="lp_t">用户登录</div>
 <form action="comlogin.post.php" method="post">
 <div id="lp_ppp">
 		<div class="lp_p_input"><div id="user">用户名:</div><div class="lpp_i"><input name='name' id="name" type="text" /></div></div>
@@ -44,14 +44,13 @@ if($user){
 	</div>
 	 <div id="urr_btn" style="width:180px; height:30px;  margin-top:5px; text-align: center; float: left; display: inline;">
 		 <img id="login_bn" src="/images/index/btn_login.gif" style="float:left; margin-left:20px;" />
-		 <a href="/register/"><img id="login_r" border="0" src="/images/index/btn_zhuce.gif"/></a>
+		 <a href="/register/" target="_blank"><img id="login_r" border="0" style="margin-top:0px;" src="/images/index/btn_zhuce.gif"/></a>
 	 </div>
 </div>
 </div>
 </form>
 <?php }?>
 <style>
-#userr{}
 #u_l{width:55px; height:25px; overflow:hidden; font-size:13px;  line-height:25px; float:left; display:inline;}
 #u_r{width:130px; height:25px; float:left; dispaly:inline;}
 #u_r select{width:80px; height:25px; }

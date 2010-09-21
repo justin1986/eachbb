@@ -15,7 +15,7 @@
 		<script type="text/javascript">
 			//parent.$('.htct_t:first a').click();
 			location.href = "list.php?category_id=6&age=-2";
-		</script>	
+		</script>
 		<?php }
 		if($_GET['age'] == -1){
 		?>
@@ -24,10 +24,11 @@
 			location.href = "list.php?category_id=7&age=-1";
 		</script>	
 		<?php }
-		css_include_tag('assistant/_index.css','assistant'); 
-		
+		css_include_tag('assistant/_index','logo','assistant','top_inc/assistant_top','left_inc/assistant_left','colorbox','assistant/assistant_content'); 
+//		css_include_tag(); 
 		$db = get_db();
-		js_include_tag('assistant/assistant');
+		js_include_tag('assistant/assistant','news/index','jquery.colorbox-min');
+//			js_include_tag('index','swfobject');
 		init_page_items('assistant_index');
 		function convert_age($age){
 			switch ($age) {
@@ -42,13 +43,58 @@
 		}
 	?>
 </head>
-<body>			
+<body>
 	<div id="body_container">
 		<?php if(intval($_GET['age']) > 0){?>
 		<div id="breadbrum">
+			<a href="/" target="_blank"><div id="log"></div></a>
 			<a href="/assistant/_index.php">助手首页</a> &gt;&gt; <?php echo convert_age($_GET['age']);?>
 		</div>
 		<?php }?>
+		<div id="assistant_top_banner">
+				<div id="assistant_top_left_banner">
+					<div id="bla_img">
+						<?php for($i = 1 ; $i <= 5 ; $i++){?>
+						<div class="pic_img"<?php $pos="assistan_pg_l_$i";show_page_pos($pos,'link_i');?> id="img_tab_<?php echo $i;?>"  <?php if($i == 1){ ?> style="display:inline;"<?php }else{?>style="display:none;"<?php }?>>
+							<a href="<?php echo $pos_items[$pos]->href;?>" target="_blank"><img style="width:505px; height:300px; border:0px solid red;" src="<?php echo $pos_items[$pos]->image1;?>"/></a>
+						</div>
+						<?php }?>
+						<div id="pic_number" style="width:500px; bottom: 0px;">
+							<div id="nn_5" class="num">5</div>	
+							<div id="nn_4" class="num" >4</div>
+							<div id="nn_3" class="num">3</div>
+							<div id="nn_2" class="num">2</div>
+							<div id="nn_1" class="num selected">1</div>
+						</div>
+					</div>
+				</div>
+				<div id="assistant_top_right_banner">
+					<div class="h_pg_t"></div>
+					<div class="h_pg_c">
+						<div class="h_pg_cc">
+								<div class="ht_l_t">课程助手链接</div>
+								<div class="ht_l_h"></div>
+								<div class="assistant_top_pg_a"<?php $pos = "assistant_top_pg_a";show_page_pos($pos,'link_i')?>>
+									<a href="/course" target="_blank"><img src="<?php echo $pos_items[$pos]->image1 ?>"/></a>
+								</div>
+								<div class="assistant_top_pg_b"<?php $pos = "assistant_top_pg_b";show_page_pos($pos,'link_i')?>>
+									<a href="/test" target="_blank"><img src="<?php echo $pos_items[$pos]->image1 ?>"/></a>
+								</div>
+								<div class="assistant_top_pg_c"<?php $pos = "assistant_top_pg_c";show_page_pos($pos,'link')?>>
+									<div class="htct_l"></div>
+											<a href="<?php echo $pos_items[$pos]->href;?>" class="die_assistant">
+										<?php $tilte_count =mb_strlen($pos_items[$pos]->title,"utf-8");
+										 echo # $tilte_count >45 ?mb_substr($pos_items[$pos]->title,0,46,"utf-8").'<font style="font-size:12px;">...</font>':
+										 $pos_items[$pos]->title;?>
+									</a>
+								</div>
+								<div class="htl_pg_c">
+						</div>
+					</div>
+				</div>
+				<div class="h_pg_b"></div>
+		</div>
+		</div>
 		<?php 
 		$sql = "select * from eb_category where category_type='assistant' and level=1";
 		$top_cates = $db->query($sql);
@@ -67,7 +113,7 @@
 			<div class="list_item_box">
 				<?php
 				$sql = "select a.id,a.title,a.category_id,b.name from eb_assistant a left join eb_category b on a.category_id = b.id where a.is_adopt=1 and a.category_id in(select id from eb_category where category_type='assistant' and parent_id={$top_cates[$i]->id})";
-				$valid_ages=array(-2,-1,1,2,3);
+				$valid_ages=array(-2,-1,1,2,3,4);
 				if(in_array($_GET['age'], $valid_ages)){
 					$sql .=" and age=" .$_GET['age'];
 				}
@@ -80,9 +126,9 @@
 					<div class="item">
 						<?php 
 						if(mb_strlen($assistant->name.$assistant->title,"utf-8") > 17){?>
-							[<a href="list.php?category_id=<?php echo $assistant->category_id?>" class="a_category_list"><?php echo $assistant->name;?></a>] <a href="assistant.php?id=<?php echo $assistant->id;?>" title="<?php echo $assistant->title?>" target="_blank" ><?php echo mb_substr($assistant->title,0,16-mb_strlen($assistant->name,"utf-8"),"utf-8")."...";?></a>
+							[<a href="list.php?category_id=<?php echo $assistant->category_id?>" class="a_category_list"><?php echo $assistant->name;?></a>] <a href="assistant.php?id=<?php echo $assistant->id;?>" title="<?php echo $assistant->title?>" target="_blank" ><?php echo mb_substr($assistant->title,0,16-mb_strlen($assistant->name,"utf-8"),"utf-8")."<font style='font-size:10px;'>...</font>";?></a>
 							<?php
-							#echo mb_substr("[<a href='list.php?category_id=".$assistant->category_id."' class='a_category_list'>{$assistant->name}</a>] <a href='assistant.php?id={$assistant->id}' title='{$assistant->title}' target='_blank'>{$assistant->title}</a> ",0,20,"utf-8")."..."?>
+							#echo mb_substr("[<a href='list.php?category_id=".$assistant->category_id."' class='a_category_list'>{$assistant->name}</a>] <a href='assistant.php?id={$assistant->id}' title='{$assistant->title}' target='_blank'>{$assistant->title}</a> ",0,20,"utf-8")."<font style='font-size:10px;'>...</font>"?>
 						<?php }else{?>
 							[<a href="list.php?category_id=<?php echo $assistant->category_id?>" class="a_category_list"><?php echo $assistant->name;?></a>] <a href="assistant.php?id=<?php echo $assistant->id;?>" title="<?php echo $assistant->title?>" target="_blank" ><?php echo $assistant->title?></a>
 						<?php }?>
@@ -117,7 +163,17 @@
 					for($j=($i-6)*7;$j<($i-6)*7+7;$j++){ ?>
 				<div class="fcr_c">
 					<div class="fcrc_d"></div>
-					<div class="fcrc_c"><a style="color:#6EB6CA" href="list.php?category_id=<?php echo $assistant->category_id;?>">[<?php echo $assistants[$j]->name;?>]</a> <a href="assistant.php?id=<?php echo $assistants[$j]->id;?>" title="<?php echo $assistants[$j]->title?>" target="_blank" ><?php echo $assistants[$j]->title?></a></div>
+					<div class="fcrc_c">
+					<?php 
+						$assistant_count = mb_strlen($assistants[$j]->name.$assistants[$j]->title,"utf-8");
+					?>
+						<a style="color:#6EB6CA" href="list.php?category_id=<?php echo $assistant->category_id;?>">
+							[<?php echo $assistants[$j]->name;?>]
+						</a>
+						<a href="assistant.php?id=<?php echo $assistants[$j]->id;?>" title="<?php echo $assistants[$j]->title?>" target="_blank" >
+							<?php echo $assistant_count >18 ? mb_substr($assistants[$j]->title,0,$assistant_count - mb_strlen($assistants[$j]->name,"utf-8")-2,"UTF-8")."<font style='font-size:10px;'>...</font>" : $assistants[$j]->title;?>
+						</a>
+					</div>
 				</div>
 			<?php  }?>
 				</div>
@@ -125,9 +181,25 @@
 			<?php }?>
 			</div>
 		</div>
+		<div id="hotspot">精彩问答</div>
+		<div id="hotspot_container">
+			<div class="kong" style="height:10px;"></div>
+			<?php
+			$list=$db->query("SELECT * FROM bbs_threads where FID=10 order by rand() limit 12");
+			foreach ($list as $list){
+				?>
+			<div class="hotspot_pg">
+				<div></div>
+				<a href="/bbs/viewthread.php?tid=<?php echo $list->tid;?>" target="_blank">&nbsp;&nbsp;
+				<?php echo  mb_strlen($list->subject,"UTF-8")>15? mb_substr($list->subject,0,14,"utf-8").'...':$list->subject;?></a>
+			</div>
+			<?php } ?>
+			<div class="kong" style="height:10px;"></div>
+		</div>
 	</div>
 </body>
 <script type="text/javascript">
+//	$(".die_assistant").colorbox({href:'/inc/_public_result_ajax_post_view.php?page=assistant&result=assistant_top_pg_c'});
 	function filter_age(age){
 		var url = window.location.href;
 		var exp = /age=\d+/;
@@ -139,4 +211,24 @@
 		window.location.href=url;
 	}
 </script>
-</html>			
+<style type="text/css">
+	#hotspot{width:690px; margin-left:15px;}
+	#hotspot_container{width:709px; margin-left:15px; height:100px;}
+	.hotspot_pg{width:200px;}
+	#assistant_top_banner{width:720px; height:300px; margin-left:15px;  float:left; display:inline;}
+	#assistant_top_right_banner{width:198px; float:right; display:inline;}
+	#assistant_top_left_banner{width:505px; height:300px;  overflow:hidden; float:left; display:inline; }
+	#bla_img{width:505px; height:300px;  overflow:hidden; position:relative; float:left; display: inline;}
+	#pic_number{width:297px; height:16px;  position:absolute; overflow:hidden; float:left; display:inline;}
+	.num{width:16px; height:16px; margin-left:1px; cursor:pointer; color:#FFFFFF; font-size:12px; line-height:16px; font-weight:bold; text-align:center; background:#4E3431; float:right;}
+	.num.selected{background:#FF6600;}
+	.h_pg_cc{height:285px; overflow:hidden;}
+	.pic_img{width:505px; height:300px; display: none;}
+	.pic_img img{width:505px; height:300px;  border:0px solid red;} 
+	.assistant_top_pg_a{width:180px; height:70px; margin-left:5px;margin-top:10px;  float:left; display:inline; }
+	.h_pg_cc div img{width:180px; height:70px; border:0px solid red;}
+	.assistant_top_pg_b{width:180px; height:70px; margin-left:5px;margin-top:10px;  float:left; display:inline;}
+	.assistant_top_pg_c{width:180px; height:80px; margin-left:5px; margin-top:10px;font-size:12px; color:#333333; line-height:20px; text-indent:5px; overflow:hidden;  float:left; display:inline;}
+	.assistant_top_pg_c a{font-size:12px; text-decoration: none; color:#333333;}
+</style>
+</html>

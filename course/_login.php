@@ -11,7 +11,7 @@ if($user){
 	$count_comment=mysql_query('SELECT id FROM eachbb_member.`comment` c where user_id=3');
 	$num_rows = mysql_num_rows($count_comment); 
 ?>
-<div id="lp_t">个人信息管理</div>
+<div id="lp_t">用户登录</div>
 <div id="lp_p">
 	<div id="lp_l"><img src="<?php echo $user->avatar ? $user->avatar : '/images/class/l_peo.jpg';?>"></div>
 	<div id="lp_word"><?php echo $user->name;?></div>
@@ -19,7 +19,7 @@ if($user){
 <div id="l_b_wa" style="text-decoration: none;">您有<a href="/baby/message_index.php"><?php echo $count[0]->id ? $count[0]->id : 0; ?></a>条评论</div>
 <div id="l_b_wb"><a href="/yard">我家小院子</a></div>
 <?php }else{?>
-<div id="lp_t">个人信息管理</div>
+<div id="lp_t">用户登录</div>
 <form action="comlogin.post.php" method="post">
 <div id="lp_ppp">
 		<div class="lp_p_input"><div id="user">用户名:</div><div class="lpp_i"><input name='name' id="name" type="text" /></div></div>

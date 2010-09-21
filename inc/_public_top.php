@@ -140,7 +140,6 @@
 			<!-- <div id="tl_r_l"></div><div id="tl_r_r"></div> background:url('/images/top/t_c.jpg') repeat-x;-->
 			<div id="tl_r_c">
 			</div>
-			
 		</div>
 	</div>
 	<div id="top_menu" style="height:33px;">
@@ -158,7 +157,7 @@
 						$i++;
 						} 
 						?>
-						<div id="test_result" style="height:30px; overflow:hidden; float:right; display: inline;"></div>
+						<div id="test_result" style="width:400px; height:30px; overflow:hidden; float:right; display: inline;"></div>
 					</div>
 			</div>
 			<div id="menu_right"></div>

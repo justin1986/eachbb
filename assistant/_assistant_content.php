@@ -1,19 +1,14 @@
-<div id="hotspot">育儿热点</div>
+<div id="hotspot">精彩问答</div>
 <div id="hotspot_container">
 	<div class="kong" style="height:10px;"></div>
 	<?php
-	$list=$db->query("SELECT id,category_id,title,created_at FROM eb_assistant where is_adopt=1  order by created_at,last_edited_at,click_count desc limit 200");
-	for($i = 0 ; $i < 12 ; $i++){
-		$numid = rand(0, 200);
-		if(!$numid){
-			continue;
-			$i--;
-		}
-		$type = $db->query("select name from eb_category  where category_type='assistant' and id=".$list[$numid]->category_id);
+	$list=$db->query("SELECT * FROM bbs_threads where FID=10 order by rand() limit 10");
+	foreach ($list as $list){
 		?>
 	<div class="hotspot_pg">
 		<div></div>
-		<a href="/assistant/assistant.php?id=<?php echo $list[$numid]->id;?>" target="_blank"><font>[<?php echo $type[0]->name;?>]</font>&nbsp;<?php echo $list[$numid]->title?></a>
+		<a href="/bbs/viewthread.php?tid=<?php echo $list->tid;?>" target="_blank">&nbsp;&nbsp;
+		<?php echo  mb_strlen($list->subject,"UTF-8")>18? mb_substr($list->subject,0,17,"utf-8").'...':$list->subject;?></a>
 	</div>
 	<?php } ?>
 	<div class="kong" style="height:10px;"></div>

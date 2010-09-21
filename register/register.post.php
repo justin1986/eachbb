@@ -30,6 +30,17 @@
 		redirect('/register');
 		die();
 	}
+	$baby_info_name = $_POST['baby_info_name'];
+//	if(!$baby_info_name){
+//		$baby_info_name = $_POST['baby_status'];
+//	}
+	if(!$baby_info_name){
+		if(strlen($baby_info_name)>20){
+			alert("宝宝姓名太长！");
+			redirect('/register');
+			die();
+		}
+	}
 	$password = $_POST['password'];
 	if(strlen($password)>20){
 		alert("密码太长！");
@@ -42,17 +53,19 @@
 		redirect('/register');
 		die();
 	}
-	$baby_status = $_POST['baby_status'];
-	if(strlen($baby_status)>1){
-		alert("宝宝生日太长！");
-		redirect('/register');
-		die();
-	}
 	$gender = $_POST['gender'];
 	if(strlen($gender)>1){
 		alert("性别太长！");
 		redirect('/register');
 		die();
+	}
+	$baby_name = $_POST['baby_name'];
+	if($baby_name){
+		if(strlen($baby_name)< 1){
+			alert("请输入宝宝姓名！");
+			redirect('/register');
+			die();
+		}
 	}
 	$baby_birthday = $_POST['baby_birthday'];
 	if(strlen($baby_birthday)>20){
@@ -84,12 +97,13 @@
 		redirect('/register');
 		die();
 	}
+	$bady_status = $_POST["baby_status"];
 	$ip = $_SERVER["REMOTE_ADDR"];
-	$result = User::register($name,$email,$password,0,$baby_status,$baby_birthday,$birthday,$zip,$phone,$address,$gender,$ip);
+	$result = User::register($baby_info_name,$name,$email,$password,0,$bady_status,$baby_birthday,$birthday,$zip,$phone,$address,$gender,$ip);
 	if($result->result){
 		$user = User::current_user();
 		if($user){
-		User::logout();
+			User::logout();
 		}
 		User::login($name,$password);
 		success_register();

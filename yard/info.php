@@ -47,14 +47,14 @@
 			<div id="cc_t"></div>
 			<div id="cc_c" >
 				<div id="cc_pg">
-					<div class=r_title id="r_log"><?php if($member->true_name) echo $member->true_name.'的账户管理'; else echo '暂无信息';?></a></div>
+					<div class=r_title id="r_log"><?php if($member->true_name) echo $member->true_name.'的账户管理'; else echo '暂无信息';?></div>
 					<div id="r_log_hr">
 						<div>个人资料</div>
 					</div>
 					<div class="c_menu_pg">
 						<div style="margin-left:0px;"><a href="/yard/member.php">基本资料</a></div>
-						<div id="c_menu_selected"><a href="/yard/info.php"><a href="">修改头像</a></div>
-						<div><a href=""><a href="/yard/reset_password.php">修改密码</a></div>
+						<div id="c_menu_selected"><a href="/yard/info.php">修改头像</a></div>
+						<div><a href="/yard/reset_password.php">修改密码</a></div>
 					</div>
 					<div class="c_menu_pg_p" ></div>
 					<form  enctype="multipart/form-data" action="/yard/yard_image.post.php" method="post">

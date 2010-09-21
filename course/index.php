@@ -45,7 +45,7 @@
 							</div>
 							<?php } ?>
 							<div class="num_banner">
-							<div class="num" style="margin-left:210px;background:#CE0609;">1</div>
+							<div class="num" style="margin-left:195px;background:#CE0609;">1</div>
 								<div class="num">2</div>
 								<div class="num">3</div>
 								<div class="num">4</div>
@@ -66,7 +66,7 @@
 										if(mb_strlen($pos_items[$pos]->description,'utf-8') < 160){
 											echo $pos_items[$pos]->description.'<a class="beiju" href="#"></a>';
 										}else{
-											echo mb_substr($pos_items[$pos]->description,0,160,'utf-8').'<a class="beiju" href="#">...【查看全文】</a>';
+											echo mb_substr($pos_items[$pos]->description,0,160,'utf-8')."<a class='beiju' href='#'><font style='font-size:10px;'>...</font>【查看全文】</a>";
 										}
 									}else{
 										echo '<a class="beiju" href="#"></a>';

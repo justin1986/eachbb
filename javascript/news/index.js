@@ -7,6 +7,7 @@ $(function(){
 		 if(image_tab_index >= image_tab_count) image_tab_index = 1;
 		 refresh_image_tab();
 	}
+	$('#img_tab_1').show();
 	function refresh_image_tab(){
 		$('.num').css('background','#4E3431');
 		$('#nn_'+image_tab_index).css('background','#FF6600');
@@ -43,7 +44,7 @@ $(function(){
 		$('.bct_number').attr('style','display:none;');
 		$('#bn_'+selected).attr('style','display:inline;');
 	},function(){});
-	$('img.student_tab').click(function(e){
+	$('img.student_tab').hover(function(e){
 		var selected=$('img.student_tab').index($(this));
 		for(var i = 0; i < 3; i++){
 			if(i == selected){
@@ -55,5 +56,15 @@ $(function(){
 		$('.ba_c').attr('style','display:none;');
 		$('#bac_'+selected).attr('style','display:inline;');
 	},function(){});
+	$('img.student_tab').click(function(e){
+		var selected = $('img.student_tab').index($(this));
+		if(selected === 0){
+			window.location.href="/course";
+		}else if(selected === 1){
+			window.location.href="/test";
+		}else if(selected === 2){
+			window.location.href='/bbs.php';
+		}
+	});
 	
 });

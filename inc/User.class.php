@@ -139,7 +139,7 @@ class User {
 	}
 	
 	//注册新用户,返回数组
-	public static function register($name,$email,$password,$uid=0,$baby_status=0,$baby_birthday='',$birthday='',$zip='',$phone='',$address='',$gender=2,$ip=''){	
+	public static function register($baby_info_name,$name,$email,$password,$uid=0,$baby_status,$baby_birthday='',$birthday,$zip='',$phone='',$address='',$gender=2,$ip=''){	
 		$result = new RegisterResult();	
 		$name = strtolower($name);
 		$email = strtolower($email);
@@ -198,8 +198,8 @@ class User {
 		
 		$authentic_str = rand_str(20);
 		$password = md5($password);
-		$sql = "insert into " .self::$s_table_name ." (name,password,email,created_at,uid,authenticate_string,baby_status,baby_birthday,birthday,zip,phone,address,gender,ip) value(";
-		$sql .= "'$name','$password','$email',now(),{$result->uid},'{$authentic_str}',$baby_status,'$baby_birthday','$birthday','$zip','$phone','$address',$gender,'$ip')";
+		$sql = "insert into " .self::$s_table_name ." (baby_name,name,password,email,created_at,uid,authenticate_string,baby_status,baby_birthday,birthday,zip,phone,address,gender,ip) value(";
+		$sql .= "'$baby_info_name','$name','$password','$email',now(),{$result->uid},'{$authentic_str}',$baby_status,'$baby_birthday','$birthday','$zip','$phone','$address',$gender,'$ip')";
 		$db->execute($sql);
 		$result->id = $db->last_insert_id;
 		$result->result = true;
@@ -269,9 +269,11 @@ class User {
 	}
 	public static function lastest_news($type,$user){
 		$db = get_db();
-		if($type != all){
-		return $db->query("select * from `eachbb_member`.lastest_news where resource_type = '$type' and u_id = '$user' order by created_at desc limit 9");
-	}else{
-		return $db->query("select * from `eachbb_member`.lastest_news where resource_type != '' and u_id = '$user' order by created_at desc limit 9");}
-	}
+		if($type == "all"){
+			return $db->query("select * from `eachbb_member`.lastest_news where u_id in (SELECT f_id FROM `eachbb_member`.friend where u_id =$user group by u_id) order by created_at desc limit 9");
+		}else if($type == "suibian"){
+			return $db->query("select * from `eachbb_member`.lastest_news order by rand(),created_at desc limit 9");
+		}else{
+			return $db->query("select * from `eachbb_member`.lastest_news where u_id in (SELECT f_id FROM `eachbb_member`.friend group by u_id)  limit 9");}
+		}
 }

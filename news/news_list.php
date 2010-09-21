@@ -37,8 +37,8 @@
 	<?php include_once('../inc/_consult_top.php'); ?>
 		<div id="log_top">
 			<div id="log_t">
-				<div id="log"></div>
-				<div id="log_address"><a href="/" style="font-size:12px; color:blue;">首页</a> &nbsp;&gt;&gt; &nbsp;<a href="/news" style="font-size:12px; color:blue;">资讯</a>&nbsp;&gt;&gt;&nbsp;<?php echo $title_id[0]->name;?></div>
+				<a href="/" ><div id="log"></div></a>
+				<div id="log_address"><a href="/news" style="font-size:12px; color:blue;">资讯首页</a>&nbsp;&gt;&gt;&nbsp;<?php echo $title_id[0]->name;?></div>
 			</div>
 			<div id="hr"></div>
 		</div>
@@ -85,7 +85,7 @@
 							<?php
 								$list_news=$db->query("SELECT id,title FROM eb_news where set_up=1 and is_adopt=1 and category_id=$id order by created_at desc LIMIT 5");
 							foreach ($list_news as $list){ ?>
-							<li><a href="/news/news.php?id=<?php echo $list->id;?>"><?php echo $list->title;?></a></li>
+							<li><a href="/news/news.php?id=<?php echo $list->id;?>"  target='_blank'><?php echo $list->title;?></a></li>
 							<?php } ?>
 						</ul>
 					</div>
@@ -109,8 +109,8 @@
 						if($list_news[0]) $exists_news_ids[] = $list_news->id;
 					?>
 					<div class="result_left">
-						<a href="<?php get_news_url($list_news[0]); ?>" title="<?php $list_news[0]->video_photo_src;?>"><img src="<?php echo $list_news[0]->video_photo_src;?>" /></a>
-						<a href="<?php get_news_url($list_news[0]); ?>" title="<?php echo $list_news[0]->title; ?>"><?php echo $list_news[0]->title; ?></a>
+						<a href="<?php get_news_url($list_news[0]); ?>" title="<?php $list_news[0]->video_photo_src;?>" target='_blank'><img src="<?php echo $list_news[0]->video_photo_src;?>" /></a>
+						<a href="<?php get_news_url($list_news[0]); ?>" title="<?php echo $list_news[0]->title; ?>" target='_blank'><?php echo $list_news[0]->title; ?></a>
 					</div>
 					<!-- 右边 列表的显示 -->
 					<div class="result_right">
@@ -118,7 +118,7 @@
 							<?php
 							$list_news=$db->query("select created_at,id,title,video_photo_src from eb_news where category_id =".$sub_category->id." and is_adopt=1 order by created_at desc  limit 7");
 							 foreach ($list_news as $news){ ?>
-							<li><div></div><a href="<?php get_news_url($news); ?>" title="<?php echo $news->title; ?>"><?php echo $news->title; ?></a></li>
+							<li><div></div><a href="<?php get_news_url($news); ?>"  target='_blank' title="<?php echo $news->title; ?>"><?php echo $news->title; ?></a></li>
 							<?php 
 								if($news) $exists_news_ids[] = $news->id;
 							} ?>
@@ -147,11 +147,11 @@
 									$sql .= " and id not in ({$exists_news_ids})";
 								}
 								$sql .= " order by created_at desc";								
-								$list_news=$db->paginate($sql,50);
+								$list_news=$db->paginate($sql,58);
 								foreach ($list_news as $news){ ?>
 								<div class="list_title">
 									<div></div>
-									<a href="/news/news.php?id=<?php echo $news->id;?>" title="<?php echo  $news->title; ?>"><?php echo $news->title; ?></a>
+									<a href="/news/news.php?id=<?php echo $news->id;?>"  target='_blank' title="<?php echo  $news->title; ?>"><?php echo $news->title; ?></a>
 								</div>
 								<?php } ?>
 						</div>

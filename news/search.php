@@ -19,8 +19,9 @@
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-cn>
-	<title><?php echo $key;?>_新闻检索_福布斯中文网</title>
+	<title><?php echo $key;?>_新闻检索_网趣宝贝</title>
 	<?php
+		$result_key=$key;
 		use_jquery();
 		js_include_tag('news_highlight.js');
 		css_include_tag('article','news_search');
@@ -34,7 +35,7 @@
 		
 		<div id="l">
 			<div class="news_caption">
-					<div class="captions">搜索关键字“<span id="span_key"><?php echo $key;?></span>”的新闻<span>共<?php echo $page_record_count;?>篇</span></div>
+					<div class="captions">搜索关键字“<span id="span_key"><?php echo $result_key;?></span>”的新闻<span>共<?php echo $page_record_count;?>篇</span></div>
 			</div>
 			<div id="list_content">
 				<?php
@@ -51,6 +52,7 @@
 				<div id=page><?php paginate();?></div>
 			</div>
 		</div>	
+		<?php include_once(dirname(__FILE__).'/../inc/bottom.php');?>
 	</div>
 </body>
 </html>

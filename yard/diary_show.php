@@ -9,8 +9,8 @@
 		css_include_tag('yard','member','diary','diary_list','diary_show');
 		js_include_tag('yard/yard','member','../ckeditor/ckeditor.js','yard/diary_show');
 		$id=trim($_GET["id"]);
-		$db = get_db();
 		$edit_id=trim($_GET['edit']);
+		$db = get_db();
 		if($edit_id){
 			if(!is_numeric($edit_id)) die('invlid request!');
 		}

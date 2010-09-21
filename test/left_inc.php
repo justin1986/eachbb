@@ -7,31 +7,30 @@
 <div id="c_l">
 	<div id="l_pho"></div>
 	<?php if($user){?>
-	<div id="l_look">
+	<div class="l_look">
 		<a href="/feedback.php?type=test">网趣宝贝<font>意见反馈&nbsp;&nbsp;</font></a>
+	</div>
+	<div class="l_look">
+		<a href="/baby/index.php?type=test">网趣宝贝<font>我的测评&nbsp;&nbsp;</font></a>
 	</div>
 	<?php }?>
 	<div class="hlc_t"></div>
 	<div class="hlc_b">
 		<div class="hlcb_pg">
-			<div class="hlct_t">热门课程排行榜</div>
+			<div class="hlct_t">论坛热帖排行</div>
 			<img src="/images/helper/lb_hd.jpg"> </div>
 		<?php
 		$db=get_db();
-		$list=$db->query("select id,title,age,click_count from eb_teach where is_adopt=1 and del_flag=0 order by click_count,create_time desc limit 5;");
-		$i=1;
-		foreach ($list as $result){?>
-		<div class="hlcb_z">
-			<div class="hlcb_l">
-				<div class="r" style="<?php if($i==4){ echo 'background:#ABABAB; border:1px solid #A4A4A4;';}?>"><?php echo $i; ?></div>
+		for($i = 1 ; $i <= 10; $i++){?>
+		<div class="hlcb_z"<?php $pos="test_left_"+$i;show_page_pos($pos,'link_day');?>  style="height:20px;">
+			<div class="hlcb_l" style="height:20px;">
+				<div class="r" style="background:#ABABAB; border:1px solid #A4A4A4;"><?php echo $i; ?></div>
 			</div>
-			<div class="hlcb_r">
-				<div class="hlcb_t"><a href="info.php?age=<?php echo $result->id;?>"><?php echo $result->title;?></a></div>
-				<div class="hlcb_t">适龄年岁：<?php echo $result->age;?></div>
-				<div class="hlcb_t"><font>点击次数：</font><?php echo $result->click_count;?></div>
+			<div class="hlcb_r" style="height:20px;">
+				<div class="hlcb_t"><a href="<?php echo $pos_items[$pos]->href;?>"><?php echo $pos_items[$pos]->title;?></a></div>
 			</div>
 		</div>
-		<?php $i++; }?>
+		<?php ; }?>
 	</div>
 	<div class="hlc_bb"></div>
 	<?php if($user){?>
@@ -59,5 +58,5 @@
 </div>
 <style>
 #l_test{border:0px solid red;}
-#l_look{border:0px solid red;}
+.l_look{border:0px solid red;}
 </style>

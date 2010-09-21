@@ -1,6 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <?php
-	include_once('./frame.php');
+	include_once(dirname(__FILE__).'/frame.php');
 ?>
 <html>
 <head>
@@ -11,6 +11,7 @@
 	use_jquery();
 	css_include_tag('feedback','index','top_inc/test_left','test_left_inc');
 	js_include_tag('jquery.cookie','feedback/feedback','swfobject');
+	init_page_items('feedback');
 ?>
 </head>
 <body>
@@ -32,21 +33,21 @@
 		<div id="content">
 			<?php include_once(dirname(__FILE__).'/test/left_inc.php'); ?>
 			<div id="c_r">
-				<div id="address">当前位置：<a href="/">首页</a> &gt; 
+				<div id="address">当前位置：<a href="/">网站首页</a> &gt; 
 				<?php 
 					$type=$_GET['type'];
 					if($type =='test'){
 				?>
-				<a href="/test">测评</a> &gt; 
+				<a href="/test">测评首页</a> &gt; 
 				<?php }else if($type == 'course'){
 					?>
-					<a href="/course">课程</a> &gt; <?php 
+					<a href="/course">课程首页</a> &gt; <?php 
 				}?><font style="font-size:12px;">意见反馈</font></div>
 				<div id="c_hr"></div>
-				<div id="h_title">感谢使用我们的教程，希望我们的共同努力能使您的孩子从哇哇落地就得到最专业的教育和早教指导</div>
-				<div id="c_title">您的意见是我们最珍贵的礼物</div>
+				<div id="h_title"<?php $pos="feedback_title1";show_page_pos($pos,'link')?>><a href="<?php echo $pos_items[$pos]->href;?>" target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
+				<div id="c_title"<?php $pos="feedback_title2";show_page_pos($pos,'link_t_d');?>><a href="<?php echo $pos_items[$pos]->href;?>" target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
 				<div id="cc_hr"></div>
-				<div id="cc_c"> 现有1000感谢使用我们的教程现有1000感谢使用我们的教程，希望我们的共同努力能使您的孩子从哇哇落地就得到装专业的教育和早教指导感谢使用我们的教程，希望我们的共同努力能使您的孩子从哇哇落地就得到装专业的教育和早教指导感谢使用我们的教程，希望我们的共同努力能使您的孩子从哇哇落地就得到装专业的教育和早教指导感谢使用我们的教程，希望我们的共同努力能使您的孩子从哇哇落地就得到装专业的教育和早教指导感谢使用我们的教程，希望我们的共同努力能使您的孩子从哇哇落地就得到装专业的教育和早教指导感谢使用我们的教程，希望我们的共同努力能使您的孩子从哇哇落地就得到装专业的教育和早教指导感谢使用我们的教程，希望我们的共同努力能使您的孩子从哇哇落地就得到装专业的教育和早教指导感谢使用我们的教程，希望我们的共同努力能使您的现有1000感谢使用我们的教程，希望我们的共同努力能使您的孩子从哇哇落地就得到装专业的教育和早教指导感谢使用我们的教程，希望我们的共同努力能使您的孩子从哇哇落地就得到装专业的教育和早教指导感谢使用我们的教程，希望我们的共同努力能使您的孩子从哇哇落地就得到装专业的教育和早教指导感谢使用我们的教程，希望我们的共同努力能使您的孩子从哇哇落地就得到装专业的教育和早教指导感谢使用我们的教程，希望我们的共同努力能使您的孩子从哇哇落地就得到装</div>
+				<div id="cc_c"><?php echo $pos_items[$pos]->description;?></div>
 				<?php 
 				$user = User::current_user();
 				if(!$user){
@@ -63,7 +64,7 @@
 				<?php }?>
 			</div>
 		</div>
-		<?php include_once('./inc/bottom.php');?>
+		<?php include_once(dirname(__FILE__).'/inc/bottom.php');?>
 	</div>
 </div>
 </body>

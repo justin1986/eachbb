@@ -1,3 +1,5 @@
+<?php session_start();
+?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html>
 	<head>
@@ -18,10 +20,16 @@
 	<?php include_once(dirname(__FILE__)."/../inc/_assistant_top.php"); ?>
 	<?php include_once dirname(__FILE__)."/_assistant_left.php"; ?>
 	<div id="iframe_container">
-		<?php if($_GET['category_id']){?>
-		<iframe id="iframe" name="iframe" src="/assistant/list.php?page_type=<?php echo $page_type;?>&age=<?php echo $_GET['age'];?>&category_id=<?php echo $_GET['category_id']?>" width="745px" height="2700px" frameborder="0" scrolling="no" ></iframe>
-		<?php }else {?>
-		<iframe id="iframe" name="iframe" src="/assistant/_index.php?page_type=<?php echo $page_type;?>&age=<?php echo $_GET['age'];?>" width="745px" height="2700px" frameborder="0" scrolling="no" ></iframe>
+		<?php
+		if($_GET['category_id'] == "_knowledge.php"){
+			?>
+			<iframe id="iframe" name="iframe" src="/assistant/_knowledge.php" width="745px" height="2750px" frameborder="0" scrolling="no" ></iframe>
+			<?php
+		}else if($_GET['category_id']){?>
+		<iframe id="iframe" name="iframe" src="/assistant/list.php?page_type=<?php echo $page_type;?>&age=<?php echo $_GET['age'];?>&category_id=<?php echo $_GET['category_id'];?>" width="745px" height="2700px" frameborder="0" scrolling="no" ></iframe>
+		<?php }else {
+			?>
+		<iframe id="iframe" name="iframe" src="/assistant/_index.php?page_type=<?php echo $page_type;?>&age=<?php echo $_GET['age'];?>" width="745px" height="1300px" frameborder="0" scrolling="no" ></iframe>
 		<?php }?>
 		
 	</div>	

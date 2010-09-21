@@ -50,7 +50,7 @@
 				</div>
 				<div id="flash_right">
 					<div id="r_test"<?php $pos="index_teach_pg";show_page_pos($pos,'link_i');?>>
-						<img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1:'/images/index/img_r_a.jpg';?>"/>
+						<a href="<?php echo $pos_items[$pos]->href;?>" target="_blank"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1:'/images/index/img_r_a.jpg';?>"/></a>
 					</div>
 					<div id="r_student">
 						<div id="st_top">
@@ -66,7 +66,7 @@
 								for( $i = 0 ; $i < 4 ; $i++){ ?>
 								<div class = "student_pg"<?php $pos="top_tab_1_$i";show_page_pos($pos,'link');?>>
 									<div class = "student_l"/></div>
-									<a href="<?php echo $pos_items[$pos]->href;?>"  title="<?php echo $pos_items[$pos]->title;?>" target ='_blank'><?php echo mb_strlen($pos_items[$pos]->title,"utf-8")>15 ? mb_substr($pos_items[$pos]->title,0,14,"utf-8")."...":$pos_items[$pos]->title;?></a>
+									<a href="<?php echo $pos_items[$pos]->href;?>"  title="<?php echo $pos_items[$pos]->title;?>" target ='_blank'><?php echo mb_strlen($pos_items[$pos]->title,"utf-8")>15 ? mb_substr($pos_items[$pos]->title,0,14,"utf-8")."<font style='font-size:10px;'>...</font>":$pos_items[$pos]->title;?></a>
 								</div>
 								<?php if($i != 3){?>
 								<div class = "student_hr"></div>		
@@ -77,7 +77,7 @@
 								for( $i = 4 ; $i < 9 ; $i++){ ?>
 								<div class = "student_pg"<?php $pos="top_tab_2_$i";show_page_pos($pos,'link');?>>
 									<div class = "student_l"/></div>
-									<a href="<?php echo $pos_items[$pos]->href;?>"  title="<?php echo $pos_items[$pos]->title;?>" target ='_blank'><?php echo mb_strlen($pos_items[$pos]->title,"utf-8")>15 ? mb_substr($pos_items[$pos]->title,0,14,"utf-8")."...":$pos_items[$pos]->title;?></a>
+									<a href="<?php echo $pos_items[$pos]->href;?>"  title="<?php echo $pos_items[$pos]->title;?>" target ='_blank'><?php echo mb_strlen($pos_items[$pos]->title,"utf-8")>15 ? mb_substr($pos_items[$pos]->title,0,14,"utf-8")."<font style='font-size:10px;'>...</font>":$pos_items[$pos]->title;?></a>
 								</div>
 								<?php if($i != 8){?>
 								<div class = "student_hr"></div>
@@ -88,7 +88,7 @@
 								for( $i = 0 ; $i < 4 ; $i++){ ?>
 								<div class = "student_pg"<?php $pos="top_tab_3_$i";show_page_pos($pos,'link');?>>
 									<div class = "student_l"/></div>
-									<a href="<?php echo $pos_items[$pos]->href;?>"  title="<?php echo $pos_items[$pos]->title;?>" target ='_blank'><?php echo mb_strlen($pos_items[$pos]->title,"utf-8")>15 ? mb_substr($pos_items[$pos]->title,0,14,"utf-8")."...":$pos_items[$pos]->title;?></a>
+									<a href="<?php echo $pos_items[$pos]->href;?>"  title="<?php echo $pos_items[$pos]->title;?>" target ='_blank'><?php echo mb_strlen($pos_items[$pos]->title,"utf-8")>15 ? mb_substr($pos_items[$pos]->title,0,14,"utf-8")."<font style='font-size:10px;'>...</font>":$pos_items[$pos]->title;?></a>
 								</div>
 								<?php if($i != 3){?>
 								<div class = "student_hr"></div>
@@ -116,7 +116,7 @@
 				<div id="test_left"  style="position: relative; z-index:1">
 					<div id="test_id">
 						<div id="test_left_top" style="z-index:2000">
-							请输入宝宝的出生日期:　<input style="z-index:2000" type="text" id='date_picker' />
+							请输入宝宝的出生日期:　<input style="z-index:2000" readonly="readonly" type="text" id='date_picker' />
 						</div>
 						<div id="btn_begin_test">
 							<a href="#" id="a_begin_test"><img src="/images/index/test.png" border="0" /></a>
@@ -134,7 +134,7 @@
 							<div class="test_tab_postion"></div>
 							<div class="test_context">
 								<div class="context_title"><?php echo $pos_items[$pos]->title;?></div>
-								<div class="context_content"><?php echo  $pos_items[$pos]->description ? mb_substr($pos_items[$pos]->description,0,75,'utf-8').'...' : ''; ?></div>
+								<div class="context_content"><?php echo  $pos_items[$pos]->description ? mb_substr($pos_items[$pos]->description,0,75,'utf-8')."<font style='font-size:10px;'>...</font>" : ''; ?></div>
 								<div class="test_content_more">
 									<a href=""  class="beijiu"> 查看全文</a>
 								</div>
@@ -210,7 +210,7 @@
 						<div class="dict_c"<?php $pos="right_tab_{$j}_{$i}";show_page_pos($pos,'link');?>>
 							<div class="dict_number"<?php if($i==1) echo ' style="background:url(/images/index/red.jpg) no-repeat;"';?>><?php echo $i; ?></div>
 							<div class="dict_value" style='margin-top:3px;'>
-								<a href="<?php echo $pos_items[$pos]->href?>" title="<?php echo $pos_items[$pos]->title;?>" target="_blank"><?php echo mb_strlen($pos_items[$pos]->title,"utf-8") > 15 ? mb_substr($pos_items[$pos]->title,0,14,"utf-8")."...":$pos_items[$pos]->title;?></a>
+								<a href="<?php echo $pos_items[$pos]->href?>" title="<?php echo $pos_items[$pos]->title;?>" target="_blank"><?php echo mb_strlen($pos_items[$pos]->title,"utf-8") > 16 ? mb_substr($pos_items[$pos]->title,0,15,"utf-8")."<font style='font-size:6px;'>...</font>":$pos_items[$pos]->title;?></a>
 								<?php # echo_href($pos_items[$pos]->title, $pos_items[$pos]->href,array('target' => '_blank'));?></div>
 						</div>
 						<?php } ?>
@@ -245,21 +245,26 @@
 							<div id="m_l_title"><?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href,array('target' => '_blank'));?></div>
 						</div>
 						<div id="m_l_b"<?php $pos="assistant_head";show_page_pos($pos,'link_t_d')?>>
-							<div id="m_c_title" title="<?php echo $pos_items[$pos]->title;?>"><?php echo mb_strlen($pos_items[$pos]->title,"utf-8")>10 ? mb_substr($pos_items[$pos]->title,0,9,"utf-8")."...":$pos_items[$pos]->title;?></div>
-							<div id="m_c_content"><?php echo $pos_items[$pos]->description ? mb_substr($pos_items[$pos]->description, 0 ,48, "UTF-8")."...":'' ;?></div>
-							<div id="m_c_bottom"><a href="<?php echo $pos_items[$pos]->href;?>">查看详细内容&gt;&gt;</a></div>
+							<div id="m_c_title" title="<?php echo $pos_items[$pos]->title;?>"><?php echo mb_strlen($pos_items[$pos]->title,"utf-8")>10 ? mb_substr($pos_items[$pos]->title,0,9,"utf-8")."<font style='font-size:10px;'>...</font>":$pos_items[$pos]->title;?></div>
+							<div id="m_c_content"><?php echo $pos_items[$pos]->description ? mb_substr($pos_items[$pos]->description, 0 ,48, "UTF-8")."<font style='font-size:10px;'>...</font>":'' ;?></div>
+							<div id="m_c_bottom"><a href="<?php echo $pos_items[$pos]->href;?>" target="_blank">查看详细内容&gt;&gt;</a></div>
 						</div>
 						<div id="m_l_c_r">
 							<?php 
 								$list=$db->query("SELECT id,category_id,title,created_at FROM eb_assistant where is_adopt=1  order by click_count,rand() desc limit 8");
 								for($i=1;$i<8;$i++){ 
 									$type = $db->query("select name from eb_category  where category_type='assistant' and id=".$list[$i]->category_id);
+									$name_len=mb_strlen($type[$i]->name,"utf-8");
+									$title_len=mb_strlen($list[0]->title,"utf-8");
 									?>
 							<div class="mlc">
-								<a  href="/assistant/assistant.php?id=<?php echo $list[$i]->id;?>" target="_blank"  title="<?php echo $list[$i]->title;?>"><?php echo mb_strlen("[".$type[0]->name."]".$list[$i]->title,"utf-8")>20 ? mb_substr("[".$type[0]->name."] ".$list[$i]->title,0,20,"utf-8")."...":"[".$type[0]->name."] ".$list[$i]->title;?></a>
+								<a  href="/assistant/assistant.php?id=<?php echo $list[$i]->id;?>" target="_blank"  title="<?php echo $list[$i]->title;?>">
+									<?php echo "[".$type[0]->name."] "."<font style='color:#000000;'>".($name_len+$title_len >18 ? mb_substr($list[$i]->title,0,17-$name_len,"utf-8")."<font style='font-size:10px; color:#000000;'>...</font>":$list[$i]->title)."</font>";?>
+								</a>
 							</div>
 							<?php } ?>
 						</div>
+						<div id="jiao"></div>
 					</div>
 				</div>
 				<div id="mother_r">
@@ -280,7 +285,7 @@
 							<div class="son_c_z"<?php $pos="right_news_list_$j";show_page_pos($pos,'link')?>>
 								<div class="son_c_z_l"></div>
 								<div class="son_c_z_r">
-									<a href="<?php echo $pos_items[$pos]->href;?>" target='_blank' title="<?php echo $pos_items[$pos]->title;?>"><?php echo mb_strlen($pos_items[$pos]->title,"UTF-8")>18 ? mb_substr($pos_items[$pos]->title, 0 ,17, "UTF-8")."...":$pos_items[$pos]->title ;?>
+									<a href="<?php echo $pos_items[$pos]->href;?>" target='_blank' title="<?php echo $pos_items[$pos]->title;?>"><?php echo mb_strlen($pos_items[$pos]->title,"UTF-8")>18 ? mb_substr($pos_items[$pos]->title, 0 ,17, "UTF-8")."<font style='font-size:10px;'>...</font>" : $pos_items[$pos]->title ;?></a>
 								</div>
 							</div>
 							<?php }?>
@@ -497,7 +502,13 @@
 							<div class="son_c_z">
 								<div class="son_c_z_l"></div>
 								<div class="son_c_z_r">
-									<a  href="/assistant/assistant.php?id=<?php echo $list[$k]->id;?>" target="_blank" title="<?php echo $list[$k]->title;?>"><?php echo mb_strlen("[".$type[0]->name."]".$list[$k]->title,"utf-8")>19 ? mb_substr("[".$type[0]->name."]".$list[$k]->title,0,18,"utf-8")."...":"[".$type[0]->name."]".$list[$k]->title;?></a>
+									<a  href="/assistant/assistant.php?id=<?php echo $list[$k]->id;?>" target="_blank" title="<?php echo $list[$k]->title;?>"> 
+										<?php 
+										$number_name = mb_strlen($type[0]->name,"utf-8");
+										$number_title = mb_strlen($list[$k]->title,"utf-8");
+										?>
+										<?php echo ( $number_name+$number_title >17 ? "<font style='color:#3C7745; font-size:12px;'>[".$type[0]->name."]&nbsp;</font>".mb_substr($list[$k]->title,0,16-$number_name,"utf-8")."<font style='font-size:10px;'>...</font>":"<font style='color:#3C7745; font-size:12px;'>[".$type[0]->name."]</font>".$list[$k]->title);?>
+									</a>
 								</div>
 							</div>
 							<?php } ?>

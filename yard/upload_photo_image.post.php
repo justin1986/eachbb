@@ -28,7 +28,7 @@
 				if(!$value)die("非法操作！");
 				if(!$upload_title)die("非法操作！");
 				$sql="insert into eachbb_member.album (u_id,created_at,last_update_time,name,front_cover,description)values($id,now(),now(),'$upload_title','$save_e','$value');";
-				$last="insert into eachbb_member.lastest_news (resource_id,resource_type,u_id,created_at,u_name,u_avatar,form,photo)values('$upload_select_id','image','$id',now(),'$u_name','$u_avatar','添加了新的相册。','$save_e')";
+				$last="insert into eachbb_member.lastest_news (resource_id,resource_type,u_id,created_at,u_name,u_avatar,form,photo)values('$upload_select_id','image','$user->id',now(),'$user->name','{$user->avatar}','添加了新的相册。','$save_e')";
 			}else{
 				$path_info = pathinfo($_FILES['src'][name]);
 				$yuan_pic=$_FILES['src'][tmp_name];
@@ -44,7 +44,7 @@
 			$save = ROOT_DIR_NONE ."/upload/".$save_name;
 			$save_e = "/upload/".$save_name;
 				$sql="insert into eachbb_member.photo (description,u_id,u_name,photo,album_id,created_at,width,height)values('$text_photo',$id,'$name_photo','$save_e',$upload_select_id,now(),$img[0],$img[1]);";
-				$last="insert into eachbb_member.lastest_news (resource_id,resource_type,u_id,created_at,u_name,u_avatar,form,photo)values('$upload_select_id','image','$id',now(),'$u_name','$u_avatar','添加了新的照片。','$save_e')";
+				$last="insert into eachbb_member.lastest_news (resource_id,resource_type,u_id,created_at,u_name,u_avatar,form,photo)values('$upload_select_id','image','$user->id',now(),'$user->name','{$user->avatar}','添加了新的照片。','$save_e')";
 				$u_name=$user->name;
 				$u_avatar=$user->avatar;
 			}

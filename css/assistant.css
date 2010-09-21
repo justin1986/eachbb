@@ -12,6 +12,8 @@ body{width:970PX; margin: 0 auto;}
 #fr_tp #fd_num .num.selected{background:#de6f04; filter:alpha(opacity=100); -moz-opacity:1; opacity:1;}
 #fr_trp{width:200px; height:272px; float:right; display:inline;}
 
+
+
 .fc_l{width:336px; height:192px; margin:15px; margin-top:15px; margin-bottom:0px; border:3px solid #FADCB5; float:left; display:inline; }
 .fc_t{width:336px; height:26px; background:url(../images/helper/h_1.jpg) repeat-x; float:left; display:inline;}
 .fc_c{width:708px; height:192px; margin-top:15px; margin-left:15px; border:3px solid #bbd3f7; float:left; display:inline;}
@@ -27,7 +29,7 @@ body{width:970PX; margin: 0 auto;}
 .fcl_l img{width:58px; height:58px; margin:2px; float:left; display:inline;}
 .fcr_c{width:244px; height:20px; margin-top:1px; float:left; display:inline; }
 .fcrc_d{width:4px; height:4px; margin-top:9px; margin-left:5px; font-size:0px; line-height:0px; background:#FFA200; float:left; display:inline;}
-.fcrc_c{width:220px; height:20px; margin-left:10px; line-height:20px; font-size:12px; float:left; display:inline;}
+.fcrc_c{width:220px; height:20px; margin-left:10px; line-height:20px; overflow:hidden; font-size:12px; float:left; display:inline;}
 .fcrc_c a{text-decoration: none;color:black; }
 #fc_b{ background:url(../images/helper/h_2.jpg) repeat-x;}
 #fc_c{ background:url(../images/helper/h_3.jpg) repeat-x;}
@@ -71,5 +73,5 @@ body{width:970PX; margin: 0 auto;}
 .frbzz_c{width:310px; height:20px; margin-left:6px; overflow:hidden; float:left; display:inline;}
 .frbzz_c a{text-decoration:none;  font-size:14px; font-weight:600; line-height:20px; color:#000000; }
 .frbzz_c a font{color:#888893; text-decoration:underline;}
-#breadbrum{margin-left:13px; font-size:12px;}
+#breadbrum{width:700px; height:22px; line-height:22px; float:left; display:inline;  overflow:hidden; margin-left:13px; font-size:12px;}
 	#breadbrum a{text-decoration: none; color:blue;}
