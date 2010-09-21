@@ -20,9 +20,9 @@
 		}
 		$db->execute("insert into eachbb_member.member_status (uid,created_at,last_login,score,level,friend_count,unread_msg_count,visit_count) values ({$info[0]->uid},now(),now(),0,0,0,0,1) ON DUPLICATE KEY update visit_count = visit_count +1;");
 		if(!($info[0]->id === $user->id)){
-			$vis_id=$db->query("select id from eachbb_member.visit_history where u_id= {$user->id} and f_id= {$info[0]->id}");
+			$vis_id=$db->query("select id from eachbb_member.visit_history where u_id= {$info[0]->id} and f_id= {$user->id}");
 			if(!$vis_id){
-				if(!$db->execute("insert into eachbb_member.visit_history(create_at,u_id,f_id,f_name,f_avatar)values(now(),{$user->id},$id,'{$info[0]->name}','{$info[0]->avatar}');")){
+				if(!$db->execute("insert into eachbb_member.visit_history(create_at,u_id,f_id,f_name,f_avatar)values(now(),$id,{$user->id},'{$user->name}','{$user->avatar}');")){
 					echo "添加失败！";
 				}
 			}
@@ -71,7 +71,7 @@
 				<div id="info_p1">
 					<div id = "p1_phobox">
 						<div id="photo">
-							<img src="<?php echo $info[0]->avatar;?>" />
+							<img src="<?php echo thumb_name($info[0]->avatar,'normal');?>" />
 						</div>
 					</div>
 					<div id = "p1_buttonbox">
@@ -275,41 +275,28 @@
 					</div>
 					</form>
 					<?php 
-					if(!$id){
-						$whispered ="1 = 1 ";
-					}else if($id == $user->id){
+					if($id == $user->id){
 						$whispered ="1 = 1";
 					}else{
-						$whispered ="whispered = 0";	
+						$whispered ="(t1.whispered = 0 or (t1.whispered = 1 and t1.f_id = {$user->id}))";	
 					}
-					$comment =$db->query("select nick_name,created_at,comment,user_id,f_id,comment_count,whispered from eachbb_member.comment where user_id=$id and resource_id='1099' order by created_at desc");
-					$visitor_name = $comment[0]->nick_name;
-					if($visitor_name != 'guest'){
-					$visit_avatar = $db->query("select b.avatar from eachbb_member.comment a left join eachbb_member.member b on a.nick_name = b.name where $visitor_name");
-					$sql = "select count(id)id from eachbb_member.comment where user_id=$id and resource_id='1099' and $whispered order by created_at desc";
-					$count = $db->query($sql);
-					}
+					$sql = "select t1.*,t2.photo from eachbb_member.comment t1 left join eachbb_member.member_avatar t2 on t1.f_id=t2.u_id and t2.status=1 where user_id=$id and t1.resource_id='1099' and $whispered order by t1.created_at desc";
+					$comment =$db->paginate($sql,8);
+					$count = $db->record_count;
+					!$comment && $comment = array();
 					?>
-					<?php 
-						if($count[0]->id != 0 || $id == $user->id && $comment){
-						?>
+					<?php if($count > 0){?>
 					<div class="text_display">
-					<?php 	foreach ($comment as $comment ){
-						if($comment->f_id ==$user->id || $comment->user_id == $user->id || $comment->whispered == 1)
-						?>
+					<?php foreach ($comment as $comment ){?>
 						<div class="f_content" style="margin-top:10px;">
 							<div class="f_pho">
 								<img src="
 								<?php
-								if($visitor_name != 'guest'){
-									if($visit_avatar[0]->avatar != null){
-										echo $visit_avatar[0]->avatar;
+									if($comment->photo != null){
+										echo thumb_name($comment->photo,'small');
 									}else{
 										echo "/images/yard_info_img/1.jpg";
-								}
-								}else{
-									echo "/images/yard/guest.jpg";
-								}
+									}
 								?>"/>
 							</div>
 							<div class="content_box">
@@ -333,22 +320,11 @@
 							<font style = "font-weight:bold; font-size:16px; color:#000000;">没有可显示的留言！</font>
 					</div>
 				<?php }?>
-				<?php if($comment->comment_count != ''){?>
-						<div id="u_reply">
-							<div id="reply_title">
-								<span class="u_id"><a href="#"><?php echo $info[0]->name;?></a></span>
-								<span id="reply_time">2010-11-11 11:11:11</span>
-							</div>
-							<div id="reply_words">jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj</div>
-						</div>
-				<?php }else{?>
-						<div id="u_reply">
-							<font style = "font-weight:bold; font-size:16px; color:#000000;">暂无回复！</font>
-						</div>
-				<?php }?>
 						<div id="more_reply">
-<!--							<div id="next_reply"><a href="#">查看全部&gt;&gt;</a></div>-->
-							<div id="total_reply">共<?php echo $count[0]->id;?>条留言</div>
+							<?php paginate();?>
+							<!-- 
+							<div id="total_reply">共<?php global $$record_count_token; echo $$record_count_token;?>条留言</div>
+							 -->
 						</div>
 					</div>
 				</div>

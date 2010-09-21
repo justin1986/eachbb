@@ -10,7 +10,7 @@
 	$select =$_POST['select'];
 	$type = $_POST['type'];
 	if(!in_array($type,array('all','oneword','diary','image','suibian'))){die('no such type!');}
-	$result= User::lastest_news($type,$id);
+	$result= User::lastest_news($type,$user->id);
 	$num = $db->record_count;
     if($result){
     for($i=0;$i<$num;$i++){
@@ -20,9 +20,9 @@
 			<div class="pc_img"><img src="
 			<?php 
 		if($result[$i]->u_avatar){
-			echo $result[$i]->u_avatar;
+			echo thumb_name($result[$i]->u_avatar,'small');
 		}else{
-			echo "/images/yard/noface.jpg";
+			echo "/images/yard_info_img/1.jpg";
 		}
 	?>
 			"/></div>
@@ -41,7 +41,7 @@
 				</a>
 			</div>
 			<div class="photo_box" style="<?php if(!($result[$i]->photo)){echo "display:none;";}?>"><a href="<?php echo $result[$i]->photo;?>">
-				<img src="<?php echo $result[$i]->photo;?>" border=0  onload="this.width=Math.min(this.width,100)"/></a></div>
+				<img src="<?php echo thumb_name($result[$i]->photo,'small');?>" border=0  onload="this.width=Math.min(this.width,100)"/></a></div>
 			<div class="time_pc"><?php echo mb_substr($result[$i]->created_at,0,16);?></div>
 		</div>
 	</div>

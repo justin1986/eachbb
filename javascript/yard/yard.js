@@ -34,6 +34,11 @@ $(function(){
 			});
 		}else if(selected === 4)
 		{
+			$.post('_lastest_comment.post.php',{"id":id},function(data){
+				$('#test').html(data);
+			});
+		}else if(selected === 5)
+		{
 			$.post('lastest_news.post.php',{'type':'suibian',"id":id},function(data){
 				$('#test').html(data);
 			});

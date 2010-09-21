@@ -73,7 +73,7 @@ body a{text-decoration:none;}
 				#u_reply{width:475px; margin-left:64px; margin-top:15px;color:#a9a9a9;}
 					.u_id{color:#41619C;}
 					#reply_words{width:456px; color:#AD5104; line-height:16px; margin-left:12px;word-wrap:break-word;}
-				#more_reply{width:456px; height:12px; margin:20px; float:right;}
+				#more_reply{width:100%; height:15px; line-height:15px; text-align:center; margin:20px; float:right;}
 					#total_reply{color:#A9a9a9; margin-right:10px;float:right;}
 					#next_reply{color:#41619C;float:right;}
 #cc_bottom{width:819px; height:24px; background:url("/images/yard/log_b.jpg") no-repeat;}

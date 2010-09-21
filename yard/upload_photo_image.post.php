@@ -50,6 +50,7 @@
 			}
 			if(move_uploaded_file($yuan_pic,$save)){
 				if($db->execute($sql)&&$db->execute($last)){
+					create_thumb('small',$save_e,100,100);
 					$alpum=$_POST['alpum'];
 					echo "<script>alert('添加成功！');</script>";
 					if($alpum){
