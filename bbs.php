@@ -40,11 +40,13 @@
 						<div id="pg_f"<?php $pos="bbs_rendian";show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>" target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
 						<div id="blar_tit"<?php $pos="bbs_top1";show_page_pos($pos,'link_t_d');?>>
 							<a href="<?php echo $pos_items[$pos]->href;?>"  target="_blank">
-								<?php echo $pos_items[$pos]->title;?>
+								<?php echo mb_strlen($pos_items[$pos]->title,"utf-8")>14 ?mb_substr($pos_items[$pos]->title,0,14,"utf-8")."<font style='font-size:8px;'>...</font>" : $pos_items[$pos]->title;?>
 							</a>
 						</div>
 					</div>
-					<div id="blart_c"><?php echo $pos_items[$pos]->description;?></div>
+					<div id="blart_c">
+						<?php echo mb_strlen($pos_items[$pos]->description,"utf-8")>47 ? mb_substr($pos_items[$pos]->description,0,46,"utf-8")."<font style='font-size:8px;'>...</font>" : $pos_items[$pos]->description;?>
+					</div>
 					<div id="bla_hr"></div>
 					<?php  for($i=2;$i<10;$i++) { ?>
 					<div class="bla_con">
