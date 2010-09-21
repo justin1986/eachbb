@@ -137,7 +137,7 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 #rh_c{width:285px; background:url(/images/bbs/hr_d.jpg) repeat-x; float:left; display:inline;}
 #rh_b{width:285px; height:31px; background:url(/images/bbs/pg_d.jpg) no-repeat; float:left; display:inline;}
 #rh_pg{width:265px; margin-left:9px; background:#ffffff; float:left; display:inline;}
-.rhc_z{width:250px; height:18px; margin-left:10px; padding-left:8px; background:url(/images/bbs/dian.jpg) no-repeat; line-height:18px; float:left; display:inline;}
+.rhc_z{width:250px; height:18px; margin-left:10px; padding-left:8px; background:url(/images/bbs/dian.jpg) no-repeat 0px 5px; line-height:18px; float:left; display:inline;}
 .rhc_z a{text-decoration:none; font-size:12px; font-weight:600; color:#5AAB26;}
 .rhc_z a font{margin-left:5px; color:#000000; font-weight:600; font-size:12px;}
 #rhb_g{width:60px; height:20px; margin-right:10px; margin-top:10px; float:right; display:inline;}
