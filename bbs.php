@@ -354,8 +354,14 @@
 				</div>
 				<div id="rh_c">
 					<div id="rh_pg">
-						<?php for($i=1;$i<=13;$i++) { ?>
-						<div class="rhc_z" <?php $pos="hot".$i;show_page_pos($pos,'link');?> style="<?php if($i==1){ echo 'margin-top:8px;';}?>"><a href="<?php echo $pos_items[$pos]->href;?>"  target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
+						<?php
+						$list = $db->query("SELECT tid,subject FROM bbs_threads b where digest=1 limit 13");
+						for($i=1;$i<=13;$i++) { ?>
+						<div class="rhc_z"  style="<?php if($i==1){ echo 'margin-top:8px;';}?>">
+							<a href="/bbs/viewthread.php?tid=<?php echo $list[$i]->tid;?>"  target="_blank">
+								<?php echo $list[$i]->subject;?>
+							</a>
+						</div>
 						<? }?>
 					</div>
 				</div>
