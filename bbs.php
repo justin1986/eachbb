@@ -148,7 +148,9 @@
 								<?php for($i=1;$i<=4;$i++){?>
 								<div class="bical_z" <?php if($i==4)echo 'style="border:0px solid red;"';?>>
 									<div class="bical_d"></div>
-									<div class="bical_value" <?php $pos="bbs3_href".$i;show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>"  title="<?php echo $pos_items[$pos]->title;?>" target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
+									<div class="bical_value" <?php $pos="bbs3_href".$i;show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>"  title="<?php echo $pos_items[$pos]->title;?>" target="_blank">
+									<?php echo mb_strlen($pos_items[$pos]->title,"utf-8") > 14 ? mb_substr($pos_items[$pos]->title,0,13,"utf-8")."<font style='font-size:8px;'>...</font>" : $pos_items[$pos]->title;?>
+									</a></div>
 								</div>
 								<?php }?>
 							</div>
@@ -159,7 +161,9 @@
 								<?php for($i=5;$i<=8;$i++){?>
 								<div class="bical_z" <?php if($i==8)echo 'style="border:0px solid red;"';?>>
 									<div class="bical_d"></div>
-									<div class="bical_value" <?php $pos="bbs3_href".$i;show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>"  title="<?php echo $pos_items[$pos]->title;?>" target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
+									<div class="bical_value" <?php $pos="bbs3_href".$i;show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>"  title="<?php echo $pos_items[$pos]->title;?>" target="_blank">
+									<?php echo mb_strlen($pos_items[$pos]->title,"utf-8") > 14 ? mb_substr($pos_items[$pos]->title,0,13,"utf-8")."<font style='font-size:8px;'>...</font>" : $pos_items[$pos]->title;?>
+									</a></div>
 								</div>
 								<?php }?>
 							</div>
@@ -178,7 +182,9 @@
 								<?php for($i=1;$i<=4;$i++){?>
 								<div class="bical_z" <?php if($i==4)echo 'style="border:0px solid red;"';?>>
 									<div class="bical_d"></div>
-									<div class="bical_value" <?php $pos="bbs4_href".$i;show_page_pos($pos,'link');?>><a  title="<?php echo $pos_items[$pos]->title;?>"href="<?php echo $pos_items[$pos]->href;?>"  target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
+									<div class="bical_value" <?php $pos="bbs4_href".$i;show_page_pos($pos,'link');?>><a  title="<?php echo $pos_items[$pos]->title;?>"href="<?php echo $pos_items[$pos]->href;?>"  target="_blank">
+									<?php echo mb_strlen($pos_items[$pos]->title,"utf-8") > 14 ? mb_substr($pos_items[$pos]->title,0,13,"utf-8")."<font style='font-size:8px;'>...</font>" : $pos_items[$pos]->title;?>
+									</a></div>
 								</div>
 								<?php }?>
 							</div>
@@ -189,7 +195,9 @@
 								<?php for($i=5;$i<=8;$i++){?>
 								<div class="bical_z" <?php if($i==8)echo 'style="border:0px solid red;"';?>>
 									<div class="bical_d"></div>
-									<div class="bical_value" <?php $pos="bbs4_href".$i;show_page_pos($pos,'link');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href;?>"  target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
+									<div class="bical_value" <?php $pos="bbs4_href".$i;show_page_pos($pos,'link');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href;?>"  target="_blank">
+									<?php echo mb_strlen($pos_items[$pos]->title,"utf-8") > 14 ? mb_substr($pos_items[$pos]->title,0,13,"utf-8")."<font style='font-size:8px;'>...</font>" : $pos_items[$pos]->title;?>
+									</a></div>
 								</div>
 								<?php }?>
 							</div>
@@ -212,7 +220,9 @@
 								<?php for($i = 1 ; $i <=4; $i++){ ?>
 								<div class="blspc_a">
 									<div class="blspcc_l"></div>
-									<div class="blspcc_value" <?php $pos="topic5_link".$i;show_page_pos($pos,'link');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href;?>"  target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
+									<div class="blspcc_value" <?php $pos="topic5_link".$i;show_page_pos($pos,'link');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href;?>"  target="_blank">
+									<?php echo mb_strlen($pos_items[$pos]->title,"utf-8") > 14 ? mb_substr($pos_items[$pos]->title,0,13,"utf-8")."<font style='font-size:8px;'>...</font>" : $pos_items[$pos]->title;?>
+									</a></div>
 									</div>
 								<?php if($i!=2) { ?>
 								<div class="blspc_hr"></div>
@@ -224,7 +234,9 @@
 							<?php for($i = 5 ; $i <=7 ; $i++){ ?>
 							<div class="blb_bz">
 								<div class="blb_d"></div>
-								<div class="blb_v" <?php $pos="topic5_link".$i;show_page_pos($pos,'link');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href;?>"  target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
+								<div class="blb_v" <?php $pos="topic5_link".$i;show_page_pos($pos,'link');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href;?>"  target="_blank">
+								<?php echo mb_strlen($pos_items[$pos]->title,"utf-8") > 14 ? mb_substr($pos_items[$pos]->title,0,13,"utf-8")."<font style='font-size:8px;'>...</font>" : $pos_items[$pos]->title;?>
+								</a></div>
 							</div>
 							<?php  }  ?>
 						</div>
@@ -241,7 +253,9 @@
 								<?php for($i = 1 ; $i <=4; $i++){ ?>
 								<div class="blspc_a">
 									<div class="blspcc_l"></div>
-									<div class="blspcc_value" <?php $pos="topic6_link".$i;show_page_pos($pos,'link');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href;?>"  target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
+									<div class="blspcc_value" <?php $pos="topic6_link".$i;show_page_pos($pos,'link');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href;?>"  target="_blank">
+										<?php echo mb_strlen($pos_items[$pos]->title,"utf-8") > 14 ? mb_substr($pos_items[$pos]->title,0,13,"utf-8")."<font style='font-size:8px;'>...</font>" : $pos_items[$pos]->title;?>
+										</a></div>
 									</div>
 								<?php if($i!=2) { ?>
 								<div class="blspc_hr"></div>
@@ -253,7 +267,9 @@
 							<?php for($i = 5 ; $i <=7 ; $i++){ ?>
 							<div class="blb_bz">
 								<div class="blb_d"></div>
-								<div class="blb_v" <?php $pos="topic6_link".$i;show_page_pos($pos,'link');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href;?>"  target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
+								<div class="blb_v" <?php $pos="topic6_link".$i;show_page_pos($pos,'link');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href;?>"  target="_blank">
+								<?php echo mb_strlen($pos_items[$pos]->title,"utf-8") > 14 ? mb_substr($pos_items[$pos]->title,0,13,"utf-8")."<font style='font-size:8px;'>...</font>" : $pos_items[$pos]->title;?>
+								</a></div>
 							</div>
 							<?php  }  ?>
 						</div>
@@ -270,7 +286,9 @@
 								<?php for($i = 1 ; $i <=4; $i++){ ?>
 								<div class="blspc_a">
 									<div class="blspcc_l"></div>
-									<div class="blspcc_value" <?php $pos="topic7_link".$i;show_page_pos($pos,'link');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href;?>"  target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
+									<div class="blspcc_value" <?php $pos="topic7_link".$i;show_page_pos($pos,'link');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href;?>"  target="_blank">
+									<?php echo mb_strlen($pos_items[$pos]->title,"utf-8") > 14 ? mb_substr($pos_items[$pos]->title,0,13,"utf-8")."<font style='font-size:8px;'>...</font>" : $pos_items[$pos]->title;?>
+									</a></div>
 									</div>
 								<?php if($i!=2) { ?>
 								<div class="blspc_hr"></div>
@@ -282,7 +300,9 @@
 							<?php for($i = 5 ; $i <=7 ; $i++){ ?>
 							<div class="blb_bz">
 								<div class="blb_d"></div>
-								<div class="blb_v" <?php $pos="topic7_link".$i;show_page_pos($pos,'link');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href;?>"  target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
+								<div class="blb_v" <?php $pos="topic7_link".$i;show_page_pos($pos,'link');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href;?>"  target="_blank">
+								<?php echo mb_strlen($pos_items[$pos]->title,"utf-8") > 14 ? mb_substr($pos_items[$pos]->title,0,13,"utf-8")."<font style='font-size:8px;'>...</font>" : $pos_items[$pos]->title;?>
+								</a></div>
 							</div>
 							<?php  }  ?>
 						</div>
@@ -299,7 +319,9 @@
 								<?php for($i = 1 ; $i <=4; $i++){ ?>
 								<div class="blspc_a">
 									<div class="blspcc_l"></div>
-									<div class="blspcc_value" <?php $pos="topic8_link".$i;show_page_pos($pos,'link');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href;?>"  target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
+									<div class="blspcc_value" <?php $pos="topic8_link".$i;show_page_pos($pos,'link');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href;?>"  target="_blank">
+									<?php echo mb_strlen($pos_items[$pos]->title,"utf-8") > 14 ? mb_substr($pos_items[$pos]->title,0,13,"utf-8")."<font style='font-size:8px;'>...</font>" : $pos_items[$pos]->title;?>
+									</a></div>
 									</div>
 								<?php if($i!=2) { ?>
 								<div class="blspc_hr"></div>
@@ -311,7 +333,8 @@
 							<?php for($i = 5 ; $i <=7 ; $i++){ ?>
 							<div class="blb_bz">
 								<div class="blb_d"></div>
-								<div class="blb_v" <?php $pos="topic8_link".$i;show_page_pos($pos,'link');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href;?>"  target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
+								<div class="blb_v" <?php $pos="topic8_link".$i;show_page_pos($pos,'link');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href;?>"  target="_blank">
+								<?php echo mb_strlen($pos_items[$pos]->title,"utf-8") > 14 ? mb_substr($pos_items[$pos]->title,0,13,"utf-8")."<font style='font-size:8px;'>...</font>" : $pos_items[$pos]->title;?></a></div>
 							</div>
 							<?php  }  ?>
 						</div>
@@ -328,7 +351,7 @@
 								<?php for($i = 1 ; $i <=4; $i++){ ?>
 								<div class="blspc_a">
 									<div class="blspcc_l"></div>
-									<div class="blspcc_value" <?php $pos="topic9_link".$i;show_page_pos($pos,'link');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href;?>"  target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
+									<div class="blspcc_value" <?php $pos="topic9_link".$i;show_page_pos($pos,'link');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href;?>"  target="_blank"><?php echo mb_strlen($pos_items[$pos]->title,"utf-8") > 14 ? mb_substr($pos_items[$pos]->title,0,13,"utf-8")."<font style='font-size:8px;'>...</font>" : $pos_items[$pos]->title;?></a></div>
 									</div>
 								<?php if($i!=2) { ?>
 								<div class="blspc_hr"></div>
@@ -340,7 +363,7 @@
 							<?php for($i = 5 ; $i <=7 ; $i++){ ?>
 							<div class="blb_bz">
 								<div class="blb_d"></div>
-								<div class="blb_v" <?php $pos="topic9_link".$i;show_page_pos($pos,'link');?>><a  title="<?php echo $pos_items[$pos]->title;?>"href="<?php echo $pos_items[$pos]->href;?>"  target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
+								<div class="blb_v" <?php $pos="topic9_link".$i;show_page_pos($pos,'link');?>><a  title="<?php echo $pos_items[$pos]->title;?>"href="<?php echo $pos_items[$pos]->href;?>"  target="_blank"><?php echo mb_strlen($pos_items[$pos]->title,"utf-8") > 14 ? mb_substr($pos_items[$pos]->title,0,13,"utf-8")."<font style='font-size:8px;'>...</font>" : $pos_items[$pos]->title;?></a></div>
 							</div>
 							<?php  }  ?>
 						</div>
