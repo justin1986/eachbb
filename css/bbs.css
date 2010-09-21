@@ -160,7 +160,7 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 
 .p{width:273px; height:18px;  margin-left:15px; font-size:13px; float:left; display:inline;}
 .p_l{width:11px; height:10px; margin-top:3px; font-size:0px; line-height:0px; background:url(/images/bbs/q.gif) no-repeat; float:left; display:inline;}
-.p_r{width:250px; height:18px; margin-top:3px; margin-left:4px; line-height:20px; overflow:hidden; float:left; display:inline; }
+.p_r{width:250px; height:18px; margin-left:4px; line-height:20px; overflow:hidden; float:left; display:inline; }
 .p_r a{ font-size:13px; color:#555555;  text-decoration:none;}
 .q_r a{ font-size:13px; color:#D4D4D4; font-weight:600;text-decoration:none;}
 .q{width:273px;  margin-left:15px; font-size:13px; float:left; display:inline;}
