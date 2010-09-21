@@ -355,6 +355,7 @@
 				<div id="rh_c">
 					<div id="rh_pg">
 						<?php
+						$db = get_db();
 						$list = $db->query("SELECT tid,subject FROM bbs_threads b where digest=1 limit 13");
 						for($i=1;$i<=13;$i++) { ?>
 						<div class="rhc_z"  style="<?php if($i==1){ echo 'margin-top:8px;';}?>">
@@ -373,7 +374,6 @@
 				<div class="i_l">最活跃用户排名</div>
 			</div>
 			<?php
-			$db = get_db();
 			$list = $db->query("SELECT username,threads FROM bbs_members b order by threads desc limit 8");
 			$count = count($list);
 			for($i=0;$i<8;$i++){?>
