@@ -79,7 +79,7 @@
 									<div class="bical_d"></div>
 									<div class="bical_value" <?php $pos="bbs1_href".$i;show_page_pos($pos,'link');?>>
 										<a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href;?>"  target="_blank">
-											<?php echo mb_strlen($pos_items[$pos]->title ,"utf-8") > 14 ? mb_strlen($pos_items[$pos]->title,0,13,"utf-8")."<font style='font-size:8px;'>...</font>" : $pos_items[$pos]->title;?>
+											<?php echo mb_strlen($pos_items[$pos]->title,"utf-8") > 14 ? mb_strlen($pos_items[$pos]->title,0,13,"utf-8")."<font style='font-size:8px;'>...</font>" : $pos_items[$pos]->title;?>
 											</a></div>
 								</div>
 								<?php }?>
@@ -93,7 +93,7 @@
 									<div class="bical_d"></div>
 									<div class="bical_value" <?php $pos="bbs1_href".$i;show_page_pos($pos,'link');?>>
 										<a href="<?php echo $pos_items[$pos]->href;?>" title="<?php echo $pos_items[$pos]->title;?>">
-											<?php echo mb_strlen($pos_items[$pos]->title ,"utf-8") > 14 ? mb_strlen($pos_items[$pos]->title,0,13,"utf-8")."<font style='font-size:8px;'>...</font>" : $pos_items[$pos]->title;?>
+											<?php echo mb_strlen($pos_items[$pos]->title,"utf-8") > 14 ? mb_strlen($pos_items[$pos]->title,0,13,"utf-8")."<font style='font-size:8px;'>...</font>" : $pos_items[$pos]->title;?>
 											</a></div>
 								</div>
 								<?php }?>
