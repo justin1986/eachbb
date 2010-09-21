@@ -507,7 +507,7 @@
 										$number_name = mb_strlen($type[0]->name,"utf-8");
 										$number_title = mb_strlen($list[$k]->title,"utf-8");
 										?>
-										<?php echo ( $number_name+$number_title >17 ? "<font style='color:#3C7745; font-size:12px;'>[".$type[0]->name."]&nbsp;</font>".mb_substr($list[$k]->title,0,16-$number_name,"utf-8")."<font style='font-size:10px;'>...</font>":"<font style='color:#3C7745; font-size:12px;'>[".$type[0]->name."]</font>".$list[$k]->title);?>
+										<?php echo ( $number_name+$number_title >17 ? "<font style='color:#3C7745; font-size:12px;'>[".$type[0]->name."]&nbsp;</font>".mb_substr($list[$k]->title,0,16-$number_name,"utf-8")."<font style='font-size:10px;'>...</font>":"<font style='color:#3C7745; font-size:12px;'>[".$type[0]->name."]</font>&nbsp;".$list[$k]->title);?>
 									</a>
 								</div>
 							</div>

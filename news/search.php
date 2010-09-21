@@ -43,7 +43,7 @@
 				?>
 				<div class="list_box">
 					<div class="head_line">
-						<div class="title"><a title="<?php echo $record[$i]->title;?>" href="<?php echo get_news_url($record[$i],'static');?>"><?php echo $record[$i]->title?></a></div>
+						<div class="title"><a title="<?php echo $record[$i]->title;?>" target="_blank" href="<?php echo get_news_url($record[$i],'static');?>"><?php echo $record[$i]->title?></a></div>
 						<div class=info>发布于：<?php echo substr($record[$i]->created_at,0,10);?></div>
 					</div>
 					<div class=description ><?php echo strip_tags($record[$i]->description);?></div>
