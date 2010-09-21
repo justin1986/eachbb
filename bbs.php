@@ -39,7 +39,7 @@
 					<div id="blar_t">
 						<div id="pg_f"<?php $pos="bbs_rendian";show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>" target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
 						<div id="blar_tit"<?php $pos="bbs_top1";show_page_pos($pos,'link_t_d');?>>
-							<a href="<?php echo $pos_items[$pos]->href;?>"  target="_blank">
+							<a href="<?php echo $pos_items[$pos]->href;?>" tilte="<?php echo $pos_items[$pos]->title;?>"  target="_blank">
 								<?php echo mb_strlen($pos_items[$pos]->title,"utf-8")>14 ?mb_substr($pos_items[$pos]->title,0,14,"utf-8")."<font style='font-size:8px;'>...</font>" : $pos_items[$pos]->title;?>
 							</a>
 						</div>
@@ -84,7 +84,7 @@
 								<?php for($i=5;$i<=8;$i++){?>
 								<div class="bical_z" <?php if($i==8)echo 'style="border:0px solid red;"';?>>
 									<div class="bical_d"></div>
-									<div class="bical_value" <?php $pos="bbs1_href".$i;show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>"<?php echo $pos_items[$pos]->title;?></a></div>
+									<div class="bical_value" <?php $pos="bbs1_href".$i;show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>"><?php echo $pos_items[$pos]->title;?></a></div>
 								</div>
 								<?php }?>
 							</div>
