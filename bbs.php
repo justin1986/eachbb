@@ -37,7 +37,7 @@
 					</div>
 				<div id="bla_r">
 					<div id="blar_t">
-						<div id="pg_f"><a href="#">今日热点</a></div>
+						<div id="pg_f"><a href="/bbs/forumdisplay.php?fid=10">今日热点</a></div>
 						<div id="blar_tit" <?php $pos="bbs_top1";show_page_pos($pos,'link_t_d');?>>
 							<a href="<?php echo $pos_items[$pos]->href;?>"  target="_blank">
 								<?php echo $pos_items[$pos]->title;?>
@@ -49,7 +49,7 @@
 					<?php  for($i=2;$i<8;$i++) { ?>
 					<div class="bla_con">
 						<div class="blaco_d"></div>
-						<div class="blaco_c" <?php $pos="top".$i;show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>"  target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
+						<div class="blaco_c" <?php $pos="bbs_top".$i;show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>"  target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
 					</div>
 					<?php } ?>
 				</div>
