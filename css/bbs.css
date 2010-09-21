@@ -164,7 +164,7 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 .p_r a{ font-size:13px; color:#555555;  text-decoration:none;}
 .q_r a{ font-size:13px; color:#D4D4D4; font-weight:600;text-decoration:none;}
 .q{width:273px;  margin-left:15px; font-size:13px; float:left; display:inline;}
-.q_l{width:11px; height:10px; margin-top:7px; font-size:0px; line-height:0px; background:url(/images/bbs/a.gif) no-repeat; float:left; display:inline;}
+.q_l{width:11px; height:10px; margin-top:10px; font-size:0px; line-height:0px; background:url(/images/bbs/a.gif) no-repeat; float:left; display:inline;}
 .q_r{width:250px;  margin-top:3px; margin-left:4px; color:#444444; font-size:13px; font-weight:600; line-height:16px; overflow:hidden; float:left; display:inline; }
 .p_hr{width:273px; height:4px; margin-left:10px; margin-top:5px; font-size:0px; line-height:0px; background:url(/images/bbs/q_h.jpg) repeat-x; float:left; display:inline;}
 
