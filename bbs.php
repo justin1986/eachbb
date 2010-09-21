@@ -399,7 +399,7 @@
 						<?php
 						$db = get_db();
 						$list = $db->query("SELECT tid,subject FROM bbs_threads b where digest > 0 limit 13");
-						for($i=0;$i<=12;$i++) { ?>
+						for($i=0;$i<=15;$i++) { ?>
 						<div class="rhc_z"  style="<?php if($i==0){ echo 'margin-top:8px;';}?>">
 							<a href="/bbs/viewthread.php?tid=<?php echo $list[$i]->tid;?>"  title="<?php echo $list[$i]->subject;?>"  target="_blank">
 								<?php echo mb_strlen($list[$i]->subject,"utf-8")>21 ? mb_substr($list[$i]->subject,0,20,"utf-8")."<font style='font-size:8px;'>...</font>" : $list[$i]->subject;?>
