@@ -16,11 +16,10 @@
 		if($address)
 		$sql .=" and address like '%$address%'";
 		if($email)
-		$sql .=" and email='$email'";
+		$sql .=" and email like '%$email%'";
 		if($nike_name)
-		$sql .=" and name='$nike_name'";
+		$sql .=" and name like '%$nike_name%'";
 		$db = get_db();
-		$sql .=' limit 1';
 		$list = $db->query($sql);
 ?>
 <div class="friend_result_title">搜索列表</div>
@@ -29,7 +28,7 @@
 foreach($list as $list){?>
 <div class="friend_result_banner">
 	<div class="friend_img">
-		<img src="<?php echo $list->avatar ? $list->avatar :"/images/yard_info_img/1.jpg";?>" />
+		<img src="<?php echo $list->avatar ? thumb_name($list->avatar,'small') :"/images/yard_info_img/1.jpg";?>" />
 	</div>
 	<div class="friend_nike_name">用户名:<?php echo $list->name;?></div>
 	<div class="friend_a"><a href="home.php?id=<?php echo $list->id;?>">查看主页</a></div>
