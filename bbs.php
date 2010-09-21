@@ -82,7 +82,7 @@
 								<?php for($i=5;$i<=8;$i++){?>
 								<div class="bical_z" <?php if($i==8)echo 'style="border:0px solid red;"';?>>
 									<div class="bical_d"></div>
-									<div class="bical_value" <?php $pos="bbs1_href".$i;show_page_pos($pos,'link');?>><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href);?></div>
+									<div class="bical_value" <?php $pos="bbs1_href".$i;show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>"<?php echo $pos_items[$pos]->title;?></a></div>
 								</div>
 								<?php }?>
 							</div>
