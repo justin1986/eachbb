@@ -356,7 +356,7 @@
 					<div id="rh_pg">
 						<?php
 						$db = get_db();
-						$list = $db->query("SELECT tid,subject FROM bbs_threads b where digest=1 limit 13");
+						$list = $db->query("SELECT tid,subject FROM bbs_threads b where digest > 0 limit 13");
 						for($i=1;$i<=13;$i++) { ?>
 						<div class="rhc_z"  style="<?php if($i==1){ echo 'margin-top:8px;';}?>">
 							<a href="/bbs/viewthread.php?tid=<?php echo $list[$i]->tid;?>"  target="_blank">
