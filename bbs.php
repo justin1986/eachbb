@@ -397,7 +397,7 @@
 				<div class="p_l"></div>
 				<div class="p_r">
 					<a href="<?php echo  $pos_items[$pos]->href;?>" title="<?php echo $pos_items[$pos]->title;?>" target="_blank">
-						<?php echo mb_strlen($pos_items[$pos]->title,"utf-8")> 20 ? mb_substr($pos_items[$pos]->title,0,19,"utf-8")."<font style='font-size:10px;'>...</font>":$pos_items[$pos]->title;?>
+						<?php echo mb_strlen($pos_items[$pos]->title,"utf-8")> 19 ? mb_substr($pos_items[$pos]->title,0,18,"utf-8")."<font style='font-size:10px;'>...</font>":$pos_items[$pos]->title;?>
 					</a>
 				</div>
 			</div>
