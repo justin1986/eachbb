@@ -19,26 +19,26 @@
 	<div id="fbody">
 		<div id="b_l">
 			<div id="bl_a">
-				<div id="bla_img">
-					<?php for($i = 1 ; $i < 6 ; $i++){?>
-					<div class="fr_img"<?php $pos="bbs_fr_img_pg_$i";show_page_pos($pos,'link_i');?> id="img_tab_<?php echo $i;?>">
-						<a href="<?php echo $pos_items[$pos]->href;?>" target="_blank">
-							<img src="<?php echo $pos_items[$pos]->image1;?>"/>
-						</a>
-					</div>
-					<?php }?>
-				</div>
-				<div class="fr_number">
-						<div class="num selected" id="num_1">1</div>
-						<div class="num" id="num_2">2</div>
-						<div class="num" id="num_3">3</div>	
-						<div class="num" id="num_4">4</div>	
-						<div class="num" id="num_5">5</div>
+					<div id="bla_img">
+						<?php for($i = 1 ; $i < 6 ; $i++){?>
+						<div class="fr_img"<?php $pos="bbs_fr_img_pg_$i";show_page_pos($pos,'link_i');?> id="img_tab_<?php echo $i;?>">
+							<a href="<?php echo $pos_items[$pos]->href;?>" target="_blank">
+								<img src="<?php echo $pos_items[$pos]->image1;?>"/>
+							</a>
+						</div>
+						<?php }?>
+						<div class="fr_number">
+							<div class="num selected" id="num_1">1</div>
+							<div class="num" id="num_2">2</div>
+							<div class="num" id="num_3">3</div>
+							<div class="num" id="num_4">4</div>
+							<div class="num" id="num_5">5</div>
+						</div>
 					</div>
 				<div id="bla_r">
 					<div id="blar_t">
-						<div id="pg_f"><a href="/bbs/forumdisplay.php?fid=10">今日热点</a></div>
-						<div id="blar_tit" <?php $pos="bbs_top1";show_page_pos($pos,'link_t_d');?>>
+						<div id="pg_f"<?php $pos="bbs_rendian";show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>" target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
+						<div id="blar_tit"<?php $pos="bbs_top1";show_page_pos($pos,'link_t_d');?>>
 							<a href="<?php echo $pos_items[$pos]->href;?>"  target="_blank">
 								<?php echo $pos_items[$pos]->title;?>
 							</a>
@@ -46,7 +46,7 @@
 					</div>
 					<div id="blart_c"><?php echo $pos_items[$pos]->description;?></div>
 					<div id="bla_hr"></div>
-					<?php  for($i=2;$i<8;$i++) { ?>
+					<?php  for($i=2;$i<10;$i++) { ?>
 					<div class="bla_con">
 						<div class="blaco_d"></div>
 						<div class="blaco_c" <?php $pos="bbs_top".$i;show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>"  target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
@@ -66,7 +66,7 @@
 					</div>
 					<div class="bitca_c">
 						<div class="bic_a">
-							<div class="bica_li" <?php $pos="bbs1_img1";show_page_pos($pos,'link_t_i');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href?>"><img src="<?php echo $pos_items[$pos]->image1;?>"></a></div>
+							<div class="bica_li" <?php $pos="bbs1_img1";show_page_pos($pos,'link_t_i');?>><a title="<?php echo $pos_items[$pos]->title;?>" target="_blank" href="<?php echo $pos_items[$pos]->href?>"><img src="<?php echo $pos_items[$pos]->image1;?>"></a></div>
 							<div class="bica_lr">
 								<?php for($i=1;$i<=3;$i++){?>
 								<div class="bical_z" <?php if($i==3)echo 'style="border:0px solid red;"';?>>
@@ -277,7 +277,7 @@
 							<div class="bl_r" style="background:url(/images/bbs/m8.jpg) no-repeat;"><a href="<?php echo $pos_items[$pos]->href;?>" target="_blank">+MORE</a></div>
 						</div>
 						<div class="bl_sp_c">
-							<div class="blspc_l" <?php $pos="topic8_img";show_page_pos($pos,'link_t_i');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href?>"><img src="<?php echo $pos_items[$pos]->image1;?>"></a></div>
+							<div class="blspc_l" <?php $pos="topic8_img";show_page_pos($pos,'link_t_i');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href?>" target="_blank"><img src="<?php echo $pos_items[$pos]->image1;?>"></a></div>
 							<div class="blspc_r">
 								<?php for($i = 1 ; $i <=4; $i++){ ?>
 								<div class="blspc_a">
@@ -394,7 +394,7 @@
 			<?php  if($i !=7){ echo '<div class="p_hr"></div>'; } }?>
 		</div>
 		<div id="fb_pg">
-			<div id="fbp_l"><a href="#">
+			<div id="fbp_l"><a href="#" target="_blank">
 				<div></div>
 				</a></div>
 			<div id="fbp_c">
@@ -402,7 +402,7 @@
 				<div class="fb_pg" <?php $pos="photo".$i;show_page_pos($pos,'link_t_i');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href?>" target="_blank"><img src="<?php echo $pos_items[$pos]->image1;?>"></a></div>
 				<?}?>
 			</div>
-			<div id="fbp_r"><a href="#">
+			<div id="fbp_r"><a href="#" target="_blank">
 			<div></div>
 			</a></div>
 		</div>

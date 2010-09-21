@@ -34,14 +34,14 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 #b_l{width:646px; margin-top:15px; overflow:hidden; float:left; display:inline;}
 #b_r{width:291px;  margin-top:15px; overflow:hidden; float:right; display:inline;}
 
-#bl_a{width:646px; height:207px; position:relative; float:left; display:inline;}
-#bla_img{width:297px; height:207px; float:left; display:inline;}
-.fr_img{width:297px; height:207px; overflow:hidden; float:left; display: none;}
+#bl_a{width:646px; display:inline;}
+#bla_img{width:297px; height:207px; position:relative; float:left;  display:inline;}
+.fr_img{width:297px; height:207px; overflow:hidden; display: none;}
 .fr_img img{width:297px; height:207px; border:0px solid red;}
-.fr_number{width:297px; height:14px; bottom:0px; position:absolute; left:0px; display:inline;}
+.fr_number{width:297px; height:14px; bottom:0px; position:absolute; left:0px; float:left; display:inline;}
 .num{width:15px; height:14px; cursor:pointer;  text-align:center; margin-left:2px; line-height:14px; background:#234c2a; color:#ffffff; font-size:10px; font-weight:bold; float:left; display:inline;}
 .num.selected{background:#FF6600;}
-#num_1{margin-left:200px;}
+#num_1{margin-left:210px;}
 #bla_r{width:314px; height:207px;  float:right; display:inline;}
 #blar_t{width:314px; height:20px; float:left; display:inline;}
 #pg_f{width:56px; height:14px; margin-top:3px; cursor:pointer;  text-align:center; color:#ffffff; font-size:11px; line-height:14px; background:url(/images/bbs/pg_f.gif) no-repeat; float:left; display:inline;}
@@ -50,9 +50,9 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 #blar_tit a{color:#333333; font-size:14px; font-weight:600;}
 #blart_c{width:314px; height:40px; margin-top:10px; color:#444444; text-indent:30px; font-size:12px; line-height:20px; overflow:hidden; float:left; display:inline;}
 #bla_hr{width:314px; height:1px; margin-top:8px; font-size:0px; line-height:0px; background:url(/images/bbs/la_hr.jpg) repeat-x;  float:left; display:inline;}
-.bla_con{width:305px; height:20px; margin-left:6px; margin-top:1px; line-height:20px; font-size:12px; float:left; display:inline;}
-.blaco_d{width:4px; height:3px; margin-top:7px; background:url(/images/bbs/pg_g.jpg) no-repeat; float:left; display:inline;}
-.blaco_c{width:295px; height:20px; margin-left:5px; line-height:20px; overflow:hidden; float:left; display:inline;}
+.bla_con{width:305px; height:16px; margin-left:6px; line-height:16px; font-size:12px; float:left; display:inline;}
+.blaco_d{width:4px; height:3px; margin-top:6px; font-size:0px; line-height:0px; background:url(/images/bbs/pg_g.jpg) no-repeat; float:left; display:inline;}
+.blaco_c{width:295px; height:16px; margin-left:5px; line-height:16px; overflow:hidden; float:left; display:inline;}
 .blaco_c a{font-size:12px; font-weight:500; color:#666666; text-decoration:none;}
 
 #bl_b{width:646px;  margin-top:10px; float:left; display:inline;  float:left; display:inline;}
@@ -84,7 +84,7 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 .blb_d{width:5px; height:4px; margin-top:9px; font-size:0px; line-height:0px; background:url(/images/bbs/d1.jpg) no-repeat; float:left; display:inline;}
 .blb_v{width:275px; height:20px; margin-left:7px;  overflow:hidden; line-height:20px; float:left; display:inline;}
 .blb_v a{ font-size:12px; font-weight:600; color:#8C8C8C; text-decoration:none;}
-#bit_ban{width:646px; margin-top:20px; float:left; display:inline;}
+#bit_ban{width:646px; margin-top:5px; float:left; display:inline;}
 
 #bit_c{width:646px; float:left; display:inline;}
 .bitc_a{width:290px; height:215px; margin-top:15px; float:left; display:inline;}

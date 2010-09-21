@@ -53,7 +53,7 @@
 						#$pos_news=$db->query("SELECT  a.id,title,short_title,description,content,video_photo_src FROM  eb_news a left JOIN eb_position ta ON a.id=ta.source_id where ta.pos_name='hart_news' order by a.created_at desc limit 7");
 					?>
 					<div id="blar_t"<?php $pos="headline";show_page_pos($pos,'link_t_d');?>> 
-						<div id="pg_f"><a href="#">今日热点</a></div>
+						<div id="pg_f"><a href="#" target="_blank">今日热点</a></div>
 						<div id="blar_tit">
 							<a href="<?php echo $pos_items[$pos]->href;?>" target="_blank"><?php echo $pos_items[$pos]->title;?></a>
 						</div>
@@ -204,7 +204,7 @@
 						</div>
 						<div id="bf_c">
 							<div id="bfc_t"><a href="<?php echo $pos_items[$pos]->href;?>" target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
-							<div id="bfc_c"><a href="<?php echo $pos_items[$pos]->href?>"><?php echo $pos_items[$pos]->description;?></a></div>
+							<div id="bfc_c"><a href="<?php echo $pos_items[$pos]->href?>" target="_blank"><?php echo $pos_items[$pos]->description;?></a></div>
 						</div>
 					</div>
 				</div>
