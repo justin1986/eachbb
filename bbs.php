@@ -360,7 +360,7 @@
 						for($i=0;$i<=12;$i++) { ?>
 						<div class="rhc_z"  style="<?php if($i==0){ echo 'margin-top:8px;';}?>">
 							<a href="/bbs/viewthread.php?tid=<?php echo $list[$i]->tid;?>"  target="_blank">
-								<?php echo $list[$i]->subject;?>
+								<?php echo mb_strlen($list[$i]->subject,"utf-8")>23 ? mb_substr($list[$i]->subject,0,22,"utf-8")."<font style='font-size:8px;'>...</font>" : $list[$i]->subject;?>
 							</a>
 						</div>
 						<? }?>
