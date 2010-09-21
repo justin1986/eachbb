@@ -360,20 +360,23 @@
 					</div>
 				</div>
 				<div id="rh_b">
-					<div id="rhb_g"><a href="#" target="_blank">更多<img src="images/bbs/pg_e.jpg"></a></div>
 				</div>
 			</div>
 			<div id="i"></div>
 			<div class="o">
 				<div class="i_l">最活跃用户排名</div>
 			</div>
-			<?php for($i=0;$i<8;$i++){?>
+			<?php
+			$db = get_db();
+			$list = $db->query("SELECT username,threads FROM bbs_members b order by threads desc limit 8");
+			$count = count($list);
+			for($i=0;$i<8;$i++){?>
 			<div class="o_z" style="<?php if($i==0){echo 'margin-top:10px;';}?>">
 				<div class="oz_l">
 					<div></div>
-					<font>萨达菲</font></div>
+					<font><?php echo $list[$i]->username;?></font></div>
 				<div class="oz_c"></div>
-				<div class="oz_r">2398 帖</div>
+				<div class="oz_r"><?php echo $list[$i]->threads?> 帖</div>
 			</div>
 			<?php }?>
 			<div id="i"></div>
