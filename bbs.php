@@ -443,19 +443,21 @@
 			</div>
 			<?php  if($i !=7){ echo '<div class="p_hr"></div>'; } }?>
 		</div>
-		<div id="fb_pg">
-			<div id="fbp_l"><a href="#" target="_blank">
-				<div></div>
-				</a></div>
-			<div id="fbp_c">
-				<?php  for($i=1;$i<=5;$i++) { ?>
-				<div class="fb_pg" <?php $pos="photo".$i;show_page_pos($pos,'link_t_i');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href?>" target="_blank"><img src="<?php echo $pos_items[$pos]->image1;?>"></a></div>
-				<?}?>
+		<div id="pic">
+				<div id="picc_left"></div>
+				<div id="picc_right">
+					<?php
+						for($k = 0 ; $k < 22;$k++){
+							$list = $db->query("SELECT href,id,image1 FROM eb_page_pos where name='bottom_$k'");
+					 ?>
+					<div class="picc_a">
+						<a href="<?php echo $list[0]->href;?>">
+							<img src="<?php echo  $list[0]->image1; ?>"/>
+						</a>
+					</div>
+					<?php } ?>
+				</div>
 			</div>
-			<div id="fbp_r"><a href="#" target="_blank">
-			<div></div>
-			</a></div>
-		</div>
 		<?php include_once(dirname(__FILE__).'/inc/bottom.php');?>
 	</div>
 </div>

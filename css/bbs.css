@@ -157,6 +157,14 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 #i_r{width:60px; height:20px; margin-left:20px; color:#CCCCCC; line-height:20px; font-size:16px; float:right; display:inline;}
 #i_r a{font-size:14px; color:#CCCCCC; text-decoration:none;}
 
+
+#pic{width:952px; height:178px; margin-top:10px; z-index:14; margin-bottom:15px; border:5px solid #E6E6E6; float:left; display:inline;}
+#picc_left{width:27px; height:152px; margin-top:13px; z-index:15; margin-left:-5px; background:url(/images/index/b_left.jpg) no-repeat; float:left; display:inline;}
+#picc_right{width:923px; height:170px; margin-left:5px; overflow:hidden; margin-top:4px; float:left; display:inline;}
+.picc_a{width:78px; height:78px; margin:2px; margin-left:3px; float:left; display:inline;}
+.picc_a img{width:78px; height:78px; border:0px solid red;}
+
+
 .p{width:273px; height:18px;  margin-left:15px; font-size:13px; overflow:hidden; float:left; display:inline;}
 .p_l{width:11px; height:10px; margin-top:5px; font-size:0px; line-height:0px; background:url(/images/bbs/q.gif) no-repeat; float:left; display:inline;}
 .p_r{width:250px; height:18px; margin-left:4px; line-height:20px; overflow:hidden; float:left; display:inline; }
