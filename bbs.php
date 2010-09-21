@@ -53,7 +53,7 @@
 						<div class="blaco_d"></div>
 						<div class="blaco_c" <?php $pos="bbs_top".$i;show_page_pos($pos,'link');?>>
 							<a href="<?php echo $pos_items[$pos]->href;?>" title="<?php echo $pos_items[$pos]->title;?>"  target="_blank">
-								<?php echo mb_strlen($pos_items[$pos]->title,"utf-8")>25 ? mb_strlen($pos_items[$pos]->title,0,24,"utf-8")."<font style='font-size:8px;'>...</font>" : $pos_items[$pos]->title;?>
+								<?php echo mb_strlen($pos_items[$pos]->title,"utf-8")>24 ? mb_strlen($pos_items[$pos]->title,0,24,"utf-8")."<font style='font-size:8px;'>...</font>" : $pos_items[$pos]->title;?>
 							</a>
 						</div>
 					</div>
@@ -175,7 +175,7 @@
 						<div class="bi_l" <?php $pos="bbs_z_d";show_page_pos($pos,'link');?>><a href="<?php echo $pos_items[$pos]->href;?>" target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
 						<div class="bi_r"><a href="<?php echo $pos_items[$pos]->href;?>" target="_blank">more</a></div>
 					</div>
-					<div class="bitca_c" style="border:3px solid #C8E25D; border-top:0px solid red;">
+					<div class="bitca_c" style="border:3px solid #C8E24D; border-top:0px solid red;">
 						<div class="bic_a">
 							<div class="bica_li" <?php $pos="bbs4_img1";show_page_pos($pos,'link_t_i');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href?>" target="_blank"><img src="<?php echo $pos_items[$pos]->image1;?>"></a></div>
 							<div class="bica_lr">
@@ -235,7 +235,7 @@
 							<div class="blb_bz">
 								<div class="blb_d"></div>
 								<div class="blb_v" <?php $pos="topic5_link".$i;show_page_pos($pos,'link');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href;?>"  target="_blank">
-								<?php echo mb_strlen($pos_items[$pos]->title,"utf-8") > 25 ? mb_substr($pos_items[$pos]->title,0,24,"utf-8")."<font style='font-size:8px;'>...</font>" : $pos_items[$pos]->title;?>
+								<?php echo mb_strlen($pos_items[$pos]->title,"utf-8") > 24 ? mb_substr($pos_items[$pos]->title,0,23,"utf-8")."<font style='font-size:8px;'>...</font>" : $pos_items[$pos]->title;?>
 								</a></div>
 							</div>
 							<?php  }  ?>
@@ -268,7 +268,7 @@
 							<div class="blb_bz">
 								<div class="blb_d"></div>
 								<div class="blb_v" <?php $pos="topic6_link".$i;show_page_pos($pos,'link');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href;?>"  target="_blank">
-								<?php echo mb_strlen($pos_items[$pos]->title,"utf-8") > 25 ? mb_substr($pos_items[$pos]->title,0,24,"utf-8")."<font style='font-size:8px;'>...</font>" : $pos_items[$pos]->title;?>
+								<?php echo mb_strlen($pos_items[$pos]->title,"utf-8") > 24 ? mb_substr($pos_items[$pos]->title,0,23,"utf-8")."<font style='font-size:8px;'>...</font>" : $pos_items[$pos]->title;?>
 								</a></div>
 							</div>
 							<?php  }  ?>
@@ -301,7 +301,7 @@
 							<div class="blb_bz">
 								<div class="blb_d"></div>
 								<div class="blb_v" <?php $pos="topic7_link".$i;show_page_pos($pos,'link');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href;?>"  target="_blank">
-								<?php echo mb_strlen($pos_items[$pos]->title,"utf-8") > 25 ? mb_substr($pos_items[$pos]->title,0,24,"utf-8")."<font style='font-size:8px;'>...</font>" : $pos_items[$pos]->title;?>
+								<?php echo mb_strlen($pos_items[$pos]->title,"utf-8") > 24 ? mb_substr($pos_items[$pos]->title,0,23,"utf-8")."<font style='font-size:8px;'>...</font>" : $pos_items[$pos]->title;?>
 								</a></div>
 							</div>
 							<?php  }  ?>
@@ -334,7 +334,7 @@
 							<div class="blb_bz">
 								<div class="blb_d"></div>
 								<div class="blb_v" <?php $pos="topic8_link".$i;show_page_pos($pos,'link');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href;?>"  target="_blank">
-								<?php echo mb_strlen($pos_items[$pos]->title,"utf-8") > 25 ? mb_substr($pos_items[$pos]->title,0,24,"utf-8")."<font style='font-size:8px;'>...</font>" : $pos_items[$pos]->title;?></a></div>
+								<?php echo mb_strlen($pos_items[$pos]->title,"utf-8") > 24 ? mb_substr($pos_items[$pos]->title,0,23,"utf-8")."<font style='font-size:8px;'>...</font>" : $pos_items[$pos]->title;?></a></div>
 							</div>
 							<?php  }  ?>
 						</div>
@@ -364,7 +364,7 @@
 							<div class="blb_bz">
 								<div class="blb_d"></div>
 								<div class="blb_v" <?php $pos="topic9_link".$i;show_page_pos($pos,'link');?>><a  title="<?php echo $pos_items[$pos]->title;?>"href="<?php echo $pos_items[$pos]->href;?>"  target="_blank">
-								<?php echo mb_strlen($pos_items[$pos]->title,"utf-8") > 25 ? mb_substr($pos_items[$pos]->title,0,24,"utf-8")."<font style='font-size:8px;'>...</font>" : $pos_items[$pos]->title;?>
+								<?php echo mb_strlen($pos_items[$pos]->title,"utf-8") > 24 ? mb_substr($pos_items[$pos]->title,0,23,"utf-8")."<font style='font-size:8px;'>...</font>" : $pos_items[$pos]->title;?>
 								</a></div>
 							</div>
 							<?php  }  ?>
