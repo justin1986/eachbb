@@ -372,8 +372,8 @@
 				<div class="oz_l">
 					<div></div>
 					<font>萨达菲</font></div>
-				<div class="oz_c">2398 帖</div>
-				<div class="oz_r">198237分</div>
+				<div class="oz_c"></div>
+				<div class="oz_r">2398 帖</div>
 			</div>
 			<?php }?>
 			<div id="i"></div>
