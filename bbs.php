@@ -8,8 +8,8 @@
 	include_once(dirname(__FILE__).'/frame.php');
 	use_jquery_ui();
 	css_include_tag('bbs','jquery_ui','bottom');
-	init_page_items('bbs');
 	js_include_tag('bbs/bbs');
+	init_page_items('bbs');
 ?>
 <link href="./css/bbs.css" rel="stylesheet" type="text/css" />
 </head>
@@ -38,7 +38,11 @@
 				<div id="bla_r">
 					<div id="blar_t">
 						<div id="pg_f"><a href="#">今日热点</a></div>
-						<div id="blar_tit" <?php $pos="top1";show_page_pos($pos,'link_t_d');?>><a href="<?php echo $pos_items[$pos]->href;?>"  target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
+						<div id="blar_tit" <?php $pos="bbs_top1";show_page_pos($pos,'link_t_d');?>>
+							<a href="<?php echo $pos_items[$pos]->href;?>"  target="_blank">
+								<?php echo $pos_items[$pos]->title;?>
+							</a>
+						</div>
 					</div>
 					<div id="blart_c"><?php echo $pos_items[$pos]->description;?></div>
 					<div id="bla_hr"></div>
