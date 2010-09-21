@@ -18,7 +18,7 @@
 	}
 	?>
 <div id="r_img">
-	<div id="r_pto"><img src="<?php echo $user->avatar;?>"></div>
+	<div id="r_pto"><img src="<?php echo $user->avatar ? thumb_name($user->avatar,'normal') : '/images/yard_info_img/1.jpg'; ?>"></div>
 	<div id="r_bb"><?php echo $user->baby_name;?></div>
 	<div id="r_num">被访问过<?php if($news[0]->visit_count){echo $news[0]->visit_count;}else{echo 0;};?>次</div>
 </div>
@@ -109,10 +109,10 @@
 		<div class="pic_box">
 			<div class="pic_pg" id="pic_pg_0">
 				<a href="/yard/index.php?id=<?php echo $friend[$i]->f_id;?>" target="_blank">
-				<IMG  class="pic_img" src="<?php if ($friend[$i]->f_avatar != null){echo $visit[$i]->f_avatar;}else{echo '/images/yard_info_img/1.jpg';}?>"/>
+				<IMG  class="pic_img" src="<?php if ($friend[$i]->f_avatar != null){echo thumb_name($friend[$i]->f_avatar,'small');}else{echo '/images/yard_info_img/1.jpg';}?>"/>
 				</a>
 			</div>
-			<div class="name_pic"><a title="<?php echo $friend[$i]->f_name;?>" href="<?php echo $friend[$i]->f_id;?>"><?php echo $friend[$i]->f_name;?></a></div>
+			<div class="name_pic"><a title="<?php echo $friend[$i]->f_name;?>" href="/yard/index.php?id=<?php echo $friend[$i]->f_id;?>"><?php echo $friend[$i]->f_name;?></a></div>
 		</div>
 		<?php }?>
 	</div>
@@ -121,10 +121,10 @@
 		<div class="pic_box">
 			<div class="pic_pg">
 				<a href="/yard/index.php?id=<?php echo $visit[$i]->f_id;?>" target="_blank">
-				<IMG  class="pic_img" src="<?php if ($visit[$i]->f_avatar != null){echo $visit[$i]->f_avatar;}else{echo '/images/yard_info_img/1.jpg';}?>"/>
+				<IMG  class="pic_img" src="<?php if ($visit[$i]->f_avatar != null){echo thumb_name($visit[$i]->f_avatar,'small');}else{echo '/images/yard_info_img/1.jpg';}?>"/>
 				</a>
 			</div>
-			<div class="name_pic"><a title="<?php echo $visit[$i]->f_name;?>" href="/yard/home.php?id=<?php echo $visit[$i]->f_id;?>"><?php echo $visit[$i]->f_name;?></a></div>
+			<div class="name_pic"><a title="<?php echo $visit[$i]->f_name;?>" href="/yard/index.php?id=<?php echo $visit[$i]->f_id;?>"><?php echo $visit[$i]->f_name;?></a></div>
 		</div>
 		<?php } ?>
 	</div>

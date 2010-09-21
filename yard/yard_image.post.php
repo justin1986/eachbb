@@ -26,6 +26,9 @@
 			if(move_uploaded_file($yuan_pic,$save)){
 				$sql="insert into eachbb_member.member_avatar(u_id,photo,create_at,status)values($id,'$save_e','$created_at',0);";
 				if($db->execute($sql)){
+					create_thumb('big',$save_e,300,300);
+					create_thumb('normal',$save_e,165,165);
+					create_thumb('small',$save_e,98,98);
 					alert("上传成功！");
                     if($_SESSION['page_from']=='baby'){
                     	redirect('/baby/index.php');

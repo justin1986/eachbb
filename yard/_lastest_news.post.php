@@ -8,7 +8,7 @@
 		$user = $user[0];
 	}
 	if(!$user) die();
-	$result= $db->query("SELECT * FROM eachbb_member.lastest_news where u_id in (SELECT f_id FROM `eachbb_member`.friend where u_id ={$user->id} group by u_id) order by rand(),created_at desc LIMIT 10");
+	$result= $db->query("SELECT * FROM eachbb_member.lastest_news where u_id in (SELECT f_id FROM `eachbb_member`.friend where u_id ={$user->id} group by f_id) and resource_type='diary' order by rand(),created_at desc LIMIT 10");
     if($result){
     foreach ($result as $result){?>
 	<div class="pc_z">
@@ -16,9 +16,9 @@
 			<div class="pc_img"><img src="
 			<?php 
 		if($result->u_avatar){
-			echo $result->u_avatar;
+			echo thumb_name($result->u_avatar,'small');
 		}else{
-			echo "/images/yard/noface.jpg";
+			echo "/images/yard_info_img/1.jpg";
 		}
 	?>
 			"/></div>
