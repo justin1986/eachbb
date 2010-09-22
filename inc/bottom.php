@@ -5,21 +5,18 @@
 .bottom_a{font-size:12px; color:#666666;  text-decoration: none;}
 </style>
 	<?php 
-			include_once(dirname(__FILE__).'./../frame.php');
-			use_jquery_ui();
-			init_page_items('bottom');
 			$db = get_db();
-			$list = $db->query("SELECT title,href FROM eb_page_pos e where page='bottom'");
-			$count =count($list);
 	?>
 <div id="bg_hr"></div>
 <div id="bottom">
-	<?php $i=1; foreach ($list as $list){?>
-	<a class="bottom_a"<?php $pos="bottom_a";show_page_pos($pos,'link');?> href="<?php echo $list->href;?>" >
-		<?php echo $list->title; 
-		if($i != $count){
+	<?php for($i=0 ; $i< 7 ; $i++){?>
+	<a class="bottom_a" <?php $pos="bottom_link_".$i;show_page_pos($pos,'link');?> href="<?php echo $list->href;?>">
+		<?php
+		$list = $db->query("SELECT * FROM eb_page_pos where page='index' and name like 'bottom_link_$i' limit 7");
+		echo $list[0]->title; 
+		if($i != 6){
 		?> -<?php }?></a>
-	 <?php $i++; }?>
+	 <?php }?>
 </div>
 <div id="bottom_b">沪ICP备10204500号  <script src="http://s17.cnzz.com/stat.php?id=2415758&web_id=2415758&show=pic1" language="JavaScript"></script></div>
 <script src="/javascript/get_ad.js">
