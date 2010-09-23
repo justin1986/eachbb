@@ -31,8 +31,7 @@
 				<?php } ?>
 			</div>
 			<div class="cla_hr"></div>
-			<?php $img = $db->query("SELECT image1 FROM eb_page_pos e where page='index' and name ='index_teach_pg'");?>
-			<img src="<?php echo $img[0]->image1;?>" style="width:289px; margin-top:10px; border:0px solid red;" />
+			<a  class="result_news" style="border:0px solid red;" <?php $pos="assistant_right_s_$i";show_page_pos($pos,'link_i');?> href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1;?>" style="width:289px; margin-top:10px; border:0px solid red;" /></a>
 		</div>
 	</div>
 	<div id="tag">
