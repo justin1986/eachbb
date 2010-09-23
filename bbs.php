@@ -61,7 +61,7 @@
 				</div>
 			</div>
 			<div id="bit_ban">
-				<div id="blt_img">论坛版块</div>
+				<div id="blt_img">热门版块</div>
 				<div id="bltc_hr"></div>
 			</div>
 			<div id="bit_c">
