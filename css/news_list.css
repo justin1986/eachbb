@@ -5,7 +5,7 @@ body{width:970px; margin: 0 auto; font-family:����;}
 top_login{width:970px; height:83px; margin-top:10px; font-size:13px; color:#ffffff; float:right; display:inline;}
 #top_login a{color:#ffffff; text-decoration:none;}
 #tl_l{width:224px; height:83px; background:url(../images/bbs/loginb.jpg) no-repeat; float:left; display:inline;}
-#tl_r{width:721px; height:77px; background:url(../images/bbs/t.jpg) no-repeat; float:right; display:inline;}
+#tl_r{width:721px; height:77px; float:right; display:inline;}
 
 
 

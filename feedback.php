@@ -44,8 +44,8 @@
 					<a href="/course">课程首页</a> &gt; <?php 
 				}?><font style="font-size:12px;">意见反馈</font></div>
 				<div id="c_hr"></div>
-				<div id="h_title"<?php $pos="feedback_title1";show_page_pos($pos,'link')?>><a href="<?php echo $pos_items[$pos]->href;?>" target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
-				<div id="c_title"<?php $pos="feedback_title2";show_page_pos($pos,'link_t_d');?>><a href="<?php echo $pos_items[$pos]->href;?>" target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
+				<div id="h_title"<?php $pos="feedback_title1";show_page_pos($pos,'link')?>><?php echo $pos_items[$pos]->title;?></div>
+				<div id="c_title"<?php $pos="feedback_title2";show_page_pos($pos,'link_t_d');?>><?php echo $pos_items[$pos]->title;?></div>
 				<div id="cc_hr"></div>
 				<div id="cc_c"><?php echo $pos_items[$pos]->description;?></div>
 				<?php 
