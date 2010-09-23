@@ -5,9 +5,10 @@
 .bottom_a{font-size:12px; color:#666666;  text-decoration: none;}
 </style>
 	<?php 
+		include_once dirname(__FILE__).'/../frame.php';
 		use_jquery_ui();
 		init_page_items('index');
-			$db = get_db();
+		$db = get_db();
 	?>
 <div id="bg_hr"></div>
 <div id="bottom">
