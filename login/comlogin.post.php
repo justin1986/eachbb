@@ -1,6 +1,7 @@
 <?php
 	session_start();
 	include("../frame.php");
+	set_charset("utf-8");
 	if(!is_post()){
 		redirect('/error/'); 
 		die();
