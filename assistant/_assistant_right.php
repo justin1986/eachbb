@@ -14,9 +14,9 @@
 <div id="container_recommand" style="width:200px; height:1100px; overflow:hidden; float:right; display: inline;">
 <!-- 右边 第一个  个人档案 -->
 	<div id="l_pho" style="margin-left:0px; float:left;"></div>
-	<a href="/course"><img class="recommand" src="/images/assistant_list/r_input.jpg"/></a>
-	<a href="/test/"><img class="recommand" src="/images/assistant_list/btn_test.jpg"/></a>
-	<a href="#"><img class="recommand" style="height:137px;" src="/images/assistant_list/217.jpg"/></a>
-	<a href="#"><img class="recommand" style="height:159px;" src="/images/assistant_list/img_1.jpg"/></a>
-	<a href="#"><img class="recommand" style="height:152px;" src="/images/assistant_list/img_2.jpg"/></a>
+	<a href="/course" target="_blank"><img class="recommand" src="/images/assistant_list/r_input.jpg"/></a>
+	<a href="/test/" target="_blank"><img class="recommand" src="/images/assistant_list/btn_test.jpg"/></a>
+	<a href="#" target="_blank"><img class="recommand" style="height:137px;" src="/images/assistant_list/217.jpg"/></a>
+	<a href="#" target="_blank"><img class="recommand" style="height:159px;" src="/images/assistant_list/img_1.jpg"/></a>
+	<a href="#" target="_blank"><img class="recommand" style="height:152px;" src="/images/assistant_list/img_2.jpg"/></a>
 </div>

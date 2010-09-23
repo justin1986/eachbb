@@ -1,26 +1,32 @@
 <?php
-include_once('../frame.php');
+	include_once dirname(__FILE__).'/../frame.php';
+	use_jquery_ui();
+	css_include_tag('article','news_list');
+	init_page_items('_news_right');
 ?>
 <div id="class">
+		<div id="br_img" <?php $pos="assistant_right_img";show_page_pos($pos,'link_i');?>style="padding-bottom:20px;">
+			<a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : '/images/article/r1.jpg' ;?>"/></a>
+		</div>
 		<div class="cla_t"></div>
 		<div class="cla_c">
 			<div class="cla_title">早教课程</div>
 			<div class="cla_img">
 				<?php
 				$db=get_db();
-				$list=$db->query("SELECT id FROM eb_category where category_type = 'news'");
-				$count = $db->query("SELECT count(id)id FROM eb_category where category_type = 'news'");
-				$news_id;
-				for($i = 0 ; $i < $count[0]->id ;  $i++)
-				{
-					//echo $result_id->id;
-						$news_id .= $list[$i]->id.",";
-				}
-				$list=$db->query("SELECT id,name,url FROM eb_images  where category_id in (".$news_id.") and is_adopt=1 order by create_time desc,click_count desc limit 3;");
+//				$list=$db->query("SELECT id FROM eb_category where category_type = 'news'");
+//				$count = $db->query("SELECT count(id)id FROM eb_category where category_type = 'news'");
+//				$news_id;
+//				for($i = 0 ; $i < $count[0]->id ;  $i++)
+//				{
+//					//echo $result_id->id;
+//						$news_id .= $list[$i]->id.",";
+//				}
+//				$list=$db->query("SELECT id,name,url FROM eb_images  where category_id in (".$news_id.") and is_adopt=1 order by create_time desc,click_count desc limit 3;");
 				for($i=0;$i<3;$i++){ ?>
-				<div class="ci_z">
-					<div class="ci_pg"><img src="<?php echo $list[$i]->url;?>"></div>
-					<div class="ci_title"><?php echo $list[$i]->name;?></div>
+				<div class="ci_z"<?php $pos="assistant_right_s_$i";show_page_pos($pos,'link_t_i');?>>
+					<div class="ci_pg"><a href="<?php echo $pos_items[$pos]->url;?>"><img src="<?php echo $pos_items[$pos]->image1;?>"></a></div>
+					<div class="ci_title"><?php echo $pos_items[$pos]->title;?></div>
 				</div>
 				<?php } ?>
 			</div>
@@ -29,3 +35,27 @@ include_once('../frame.php');
 			<img src="<?php echo $img[0]->image1;?>" style="width:289px; margin-top:10px; border:0px solid red;" />
 		</div>
 	</div>
+	<div id="tag">
+			<div id="tag_l"></div>
+			<div id="tag_c">
+				<div id="tagc_t"><font>热门</font>关键字</div>
+				<div class="tag_menu">
+					<?php 
+//					$list = $db->query("SELECT * FROM eb_news_keywords LIMIT 10");
+//					foreach ($list as $list){
+//					$lines = explode("||",$list->name);
+//						foreach ($lines as $lines){
+//							if($lines){
+						for($i = 0 ; $i <12 ; $i++){
+							?>
+								<div class="cla_m_v" <?php $pos="assistant_ri_result_$i";show_page_pos($pos,'link');?> style="text-align: center;"><a href="<?php echo $pos_items[$pos]->href;?>"><?php echo $pos_items[$pos]->title;?></a></div>
+								<?php if($i !=3 &&  $i != 7 && $i !=11){?>
+								<div class="cla_r"></div>
+							<?php #}
+								}
+						#}
+					}?>
+				</div>
+			</div>
+			<div id="tag_b"></div>
+		</div>

@@ -1,6 +1,12 @@
+<?php
+	include_once dirname(__FILE__).'/../frame.php';
+	use_jquery_ui();
+	css_include_tag('article','news_list');
+	init_page_items('_news_right');
+?>
 <div id="list_container">
-	<?php include_once('_news_logo_public.php'); ?>
-	<div id="comment">
+		<?php include_once('_news_logo_public.php');?>
+		<div id="comment">
 		<div id="comm_l"></div>
 		<div id="comm_c">
 			<div id="comm_t">
@@ -21,5 +27,7 @@
 		</div>
 		<div id="comm_r"></div>
 	</div>
-	<div class="br_img" style="margin-top:20px;"><img src="/images/article/r1.jpg"/></div>
+	<div class="br_img"  <?php $pos="assistant_right_ig";show_page_pos($pos,'link_i');?> style="margin-top:20px;">
+		<a href="<?php echo $pos_items[$pos]->url;?>"><img style="border:0px solid red;" src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : '/images/article/r1.jpg' ;?>"/></a>
+	</div>
 </div>

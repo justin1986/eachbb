@@ -97,7 +97,6 @@
 							<div id="student_right"></div>
 						</div>
 					</div>
-					<div class="ad_banner" id="index_right_banner_1"></div>
 				</div>
 			</div>
 			<div id="sousuo">
