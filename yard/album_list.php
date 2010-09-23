@@ -109,7 +109,7 @@
 							<a href="/yard/photo_show.php?id=<?php echo $master[$i]->id;?>&album_id=<?php echo $id;?>"><img src="
 							<?php 
 								if($master[$i]->front_cover != null){
-									echo $master[$i]->front_cover;
+									echo thumb_name($master[$i]->front_cover,'small');
 								}else{
 									echo '/images/yard/noface.jpg';
 								}

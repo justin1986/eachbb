@@ -16,7 +16,7 @@ if($user){
 	<div id="lp_l"><img src="<?php echo $user->avatar ? $user->avatar : '/images/class/l_peo.jpg';?>"></div>
 	<div id="lp_word"><?php echo $user->name;?></div>
 </div>
-<div id="l_b_wa">您有<a href="/baby/message_index.php" target="_blank"><?php echo $count[0]->id; ?></a>条消息</div>
+<div id="l_b_wa"><a href="/baby/message_index.php" target="_blank">您有<font><?php echo $count[0]->id; ?></font>条消息</a></div>
 <div id="l_b_wb"><a href="/yard/" target="_blank">我家小院子</a></div>
 <?php }else{?>
 <div id="lp_t">用户登录</div>

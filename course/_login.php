@@ -16,7 +16,7 @@ if($user){
 	<div id="lp_l"><img src="<?php echo $user->avatar ? $user->avatar : '/images/class/l_peo.jpg';?>"></div>
 	<div id="lp_word"><?php echo $user->name;?></div>
 </div>
-<div id="l_b_wa" style="text-decoration: none;">您有<a href="/baby/message_index.php"><?php echo $count[0]->id ? $count[0]->id : 0; ?></a>条评论</div>
+<div id="l_b_wa" style="text-decoration: none;"><a href="/baby/message_index.php">您有<font><?php echo $count[0]->id ? $count[0]->id : 0; ?></font>条评论</a></div>
 <div id="l_b_wb"><a href="/yard">我家小院子</a></div>
 <?php }else{?>
 <div id="lp_t">用户登录</div>
@@ -48,7 +48,6 @@ if($user){
 </form>
 <?php }?>
 <style>
-#userr{}
 #u_l{width:55px; height:25px; overflow:hidden; font-size:13px;  line-height:25px; float:left; display:inline;}
 #u_r{width:130px; height:25px; float:left; dispaly:inline;}
 #u_r select{width:80px; height:25px; }

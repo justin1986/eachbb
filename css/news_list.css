@@ -5,7 +5,7 @@ body{width:970px; margin: 0 auto; font-family:����;}
 top_login{width:970px; height:83px; margin-top:10px; font-size:13px; color:#ffffff; float:right; display:inline;}
 #top_login a{color:#ffffff; text-decoration:none;}
 #tl_l{width:224px; height:83px; background:url(../images/bbs/loginb.jpg) no-repeat; float:left; display:inline;}
-#tl_r{width:721px; height:77px; background:url(../images/bbs/t.jpg) no-repeat; float:right; display:inline;}
+#tl_r{width:721px; height:77px; float:right; display:inline;}
 
 
 
@@ -117,7 +117,7 @@ top_login{width:970px; height:83px; margin-top:10px; font-size:13px; color:#ffff
 
 .br_img{width:297px; height:195px;  float:right; display:inline;}
 
-#class{width:289px;  background:red; float:right; display:inline;}
+#class{width:289px;  float:right; display:inline;}
 .cla_t{width:289px; height: 9px; font-size:0px; line-height:0px; background:url(/images/article/rb_t.jpg) no-repeat; float:left; display:inline;}
 .cla_c{width:289px;  background:#F4F4F4; float:left; display:inline}
 .cla_b{width:289px; height: 9px; font-size:0px; line-height:0px; background:url(/images/article/rb_b.jpg) no-repeat; float:left; display:inline;}

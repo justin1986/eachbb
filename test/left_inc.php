@@ -24,7 +24,7 @@
 		for($i = 1 ; $i <= 10; $i++){?>
 		<div class="hlcb_z"<?php $pos="test_left_"+$i;show_page_pos($pos,'link_day');?>  style="height:20px;">
 			<div class="hlcb_l" style="height:20px;">
-				<div class="r" style="background:#ABABAB; border:1px solid #A4A4A4;"><?php echo $i; ?></div>
+				<div class="r" style="background:#F36E0C;"><?php echo $i; ?></div>
 			</div>
 			<div class="hlcb_r" style="height:20px;">
 				<div class="hlcb_t"><a href="<?php echo $pos_items[$pos]->href;?>"><?php echo $pos_items[$pos]->title;?></a></div>

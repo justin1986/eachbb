@@ -118,12 +118,12 @@
 					</div>
 			<div id="crc"></div>
 			<div id="crd">
-				<div class="crd_z" id="crd_z" <?php $pos="test_midden_a";show_page_pos($pos,'link_t_i');?>><img src="<?php echo  $pos_items[$pos]->image1;?>"><div class="crd_f"><a href="<?php echo  $pos_items[$pos]->href;?>"><?php echo  $pos_items[$pos]->title;?></a></div></div>
-				<div class="crd_z" <?php $pos="test_midden_b";show_page_pos($pos,'link_t_i');?>><img src="<?php echo  $pos_items[$pos]->image1;?>"><div class="crd_f"><a href="<?php echo  $pos_items[$pos]->href;?>"><?php echo  $pos_items[$pos]->title;?></a></div></div>
-				<div class="crd_z" <?php $pos="test_midden_c";show_page_pos($pos,'link_t_i');?>><img src="<?php echo  $pos_items[$pos]->image1;?>"><div class="crd_f"><a href="<?php echo  $pos_items[$pos]->href;?>"><?php echo  $pos_items[$pos]->title;?></a></div></div>
+				<div class="crd_z" id="crd_z" <?php $pos="test_midden_a";show_page_pos($pos,'link_t_i');?>><img src="<?php echo  $pos_items[$pos]->image1;?>"><div class="crd_f"><a href="<?php echo  $pos_items[$pos]->href;?>" target="_blank"><?php echo  $pos_items[$pos]->title;?></a></div></div>
+				<div class="crd_z" <?php $pos="test_midden_b";show_page_pos($pos,'link_t_i');?>><img src="<?php echo  $pos_items[$pos]->image1;?>"><div class="crd_f"><a href="<?php echo  $pos_items[$pos]->href;?>" target="_blank"><?php echo  $pos_items[$pos]->title;?></a></div></div>
+				<div class="crd_z" <?php $pos="test_midden_c";show_page_pos($pos,'link_t_i');?>><img src="<?php echo  $pos_items[$pos]->image1;?>"><div class="crd_f"><a href="<?php echo  $pos_items[$pos]->href;?>" target="_blank"><?php echo  $pos_items[$pos]->title;?></a></div></div>
 			</div>
 			<div id="cre"<?php $pos="test_midden_d";show_page_pos($pos,'link_i');?>>
-					<a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1:"/images/test/tc_b.jpg";?>"></a>
+					<a href="<?php echo $pos_items[$pos]->href;?>" target="_blank"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1:"/images/test/tc_b.jpg";?>"></a>
 			</div>
 			<div id="cr_ci">
 					<div id="cri_t"></div>
@@ -135,7 +135,7 @@
 								<?php for($i=0;$i<6;$i++){?>
 								<div class="cricc_a">
 									<div <?php $pos="test_bottom_img_$i";show_page_pos($pos,'link_i');?>>
-										<a href="<?php echo $pos_items[$pos]->href;?>">
+										<a href="<?php echo $pos_items[$pos]->href;?>" target="_blank">
 											<img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : '/images/class/c_pg_a.jpg';?>">
 										</a>
 									</div>

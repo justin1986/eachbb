@@ -2,18 +2,23 @@
 	include_once('../frame.php');
 	$db=get_db();
 	$user = User::current_user();
+	$id =$_POST["id"];
+	if($id){
+		$user=$db->query("SELECT * FROM eachbb_member.member m where id=$id");
+		$user = $user[0];
+	}
 	if(!$user) die();
-	$result= $db->query("SELECT * FROM eachbb_member.lastest_news order by rand(),created_at desc LIMIT 10");
+	$result= $db->query("SELECT * FROM eachbb_member.lastest_news where u_id in (SELECT f_id FROM `eachbb_member`.friend where u_id ={$user->id} group by f_id) and resource_type='diary' order by rand(),created_at desc LIMIT 10");
     if($result){
     foreach ($result as $result){?>
 	<div class="pc_z">
 		<div class="pc_pg_img">
 			<div class="pc_img"><img src="
 			<?php 
-		if($result->avatar){
-			echo $result->avatar;
+		if($result->u_avatar){
+			echo thumb_name($result->u_avatar,'small');
 		}else{
-			echo "/images/yard/noface.jpg";
+			echo "/images/yard_info_img/1.jpg";
 		}
 	?>
 			"/></div>
@@ -35,7 +40,7 @@
 	</div>
 	<?php 
 	}}else{
-		echo "<div style='width:540px; height:100px; line-height:100px; font-size:20px; text-align:center; font-weight:bold;'>对不起！无信息！</div>";
+		echo "<div style='width:540px; height:100px; line-height:100px; font-size:20px; text-align:center; font-weight:bold;'>对不起！暂无日记信息！</div>";
 	}
 	?>
 	

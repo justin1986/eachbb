@@ -83,7 +83,7 @@
 					?>
 					<div class="diary_banner">
 						<div class="diary_title_banner">
-						<img src="<?php echo $diary->u_avatar;?>"/>
+						<img src="<?php echo thumb_name($diary->u_avatar,'small');?>"/>
 							<div class="diary_title_pg">
 								<div class="diary_title"><a href="/yard/diary_show.php?edit=<?php echo $diary->id; if($id)echo "&id=$id";?>"><?php if($id) echo $member->name; else echo '我'; echo htmlspecialchars_decode($diary->form);?></a><?php echo $diary->created_at;?></div>
 								<div class="diary">

@@ -139,7 +139,7 @@ class User {
 	}
 	
 	//注册新用户,返回数组
-	public static function register($baby_info_name,$name,$email,$password,$uid=0,$baby_status,$baby_birthday='',$birthday,$zip='',$phone='',$address='',$gender=2,$ip=''){	
+	public static function register($baby_info_name,$name,$email,$password,$uid=0,$baby_status=2,$baby_birthday='',$birthday='',$zip='',$phone='',$address='',$gender=2,$ip=''){	
 		$result = new RegisterResult();	
 		$name = strtolower($name);
 		$email = strtolower($email);
@@ -269,11 +269,13 @@ class User {
 	}
 	public static function lastest_news($type,$user){
 		$db = get_db();
-		if($type != "all"){
-			return $db->query("select * from `eachbb_member`.lastest_news where resource_type = '$type' and u_id = '$user' order by created_at desc limit 9");
-		}else if($type == "image"){
-			return $db->query("SELECT * FROM `eachbb_member`.lastest_news where resource_type='image' and u_id in (SELECT f_id FROM eachbb_member.friend f where u_id=$user)");
+		if($type == "all"){
+			return $db->query("select * from `eachbb_member`.lastest_news where u_id in (SELECT f_id FROM `eachbb_member`.friend where u_id =$user group by f_id) order by created_at desc limit 9");
+		}else if($type == "suibian"){
+			return $db->query("select * from `eachbb_member`.lastest_news order by rand(),created_at desc limit 9");
+		}else if($type == "oneword"){
+			return $db->query("select * from `eachbb_member`.lastest_news where u_id in (SELECT f_id FROM `eachbb_member`.friend where u_id =$user group by f_id) and resource_type='oneword' order by created_at desc limit 9");
 		}else{
-			return $db->query("select * from `eachbb_member`.lastest_news where resource_type != '' order by rand(),created_at desc limit 9");}
+			return $db->query("select * from `eachbb_member`.lastest_news where u_id in (SELECT f_id FROM `eachbb_member`.friend group by u_id)  limit 9");}
 		}
 }
