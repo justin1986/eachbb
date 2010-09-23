@@ -2,7 +2,7 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 
 #ibody{width:970px; overflow:hidden; margin:0;}
 
-#fbody{ width:970px; overflow:hidden;  background:#ffffff; float:left; display:inline;}
+#fbody{ width:970px; overflow:hidden;  background:#ffffff; float:left; display:inline; position: relative;}
 
 #bl_a{width:646px; height:207px; float:left; display:inline;}
 #bla_r{width:314px; height:207px;  float:right; display:inline;}

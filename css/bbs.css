@@ -2,7 +2,7 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 
 #ibody{width:970px; overflow:hidden; margin:0;}
 
-#fbody{ width:970px; overflow:hidden;  background:#ffffff; float:left; display:inline;}
+#fbody{ width:970px; overflow:hidden;  background:#ffffff; float:left; display:inline; position: relative;}
 #tl_l{width:224px; height:83px; background:url(/images/bbs/loginb.jpg) no-repeat; float:left; display:inline;}
 
 #top_menu{width:970px; height:61px; margin-top:5px; overflow:hidden;  float:left; display:inline;}

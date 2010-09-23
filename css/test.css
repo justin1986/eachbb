@@ -1,6 +1,6 @@
 body{width:970PX; margin: 0 auto; }
 
-#ibody{width:970px; overflow:hidden; margin:0;}
+#ibody{width:970px; overflow:hidden; margin:0 auto;}
 
 #fbody{ width:970px; overflow:hidden;  background:#ffffff; float:left; display:inline;}
 
@@ -61,7 +61,7 @@ body{width:970PX; margin: 0 auto; }
 .crd_f{width:240px; height:28px; left:0px; position:absolute; text-align:center; line-height:28px;  color:#fff; bottom:5px;  opacity:0.60; filter:alpha(opacity = 60); background:#000; overflow:hidden;}
 .crd_f a{font-size:20px; color:#ffffff;    font-weight:bold; text-decoration:none;}
 
-#cre{width:746px; height:167px; margin-top:10px; position:relative; float:right; display:inline;}
+#cre{width:746px; height:167px; margin-top:10px;  float:right; display:inline;}
 #cre img{width:746px; height:167px;  border:0px solid red;}
 #cre a{ color:#ffffff; font-weight:bold; font-size:20px; text-decoration:none;}
 

@@ -16,12 +16,12 @@
 </head>
 <body>
 <div id="ibody">
-	<div id="fbody">
+	<div id="fbody" style="position: relative;">
 		<?php include_once(dirname(__FILE__).'/../inc/_test_top.php'); ?>
 		<div id="content">
 			<?php include_once(dirname(__FILE__).'/../test/left_inc.php'); ?>
 			<div id="c_r">
-				<div id="cr_flash" style="position: relative; z-index:1">
+				<div id="cr_flash">
 					<div id="cr_banner">
 						<div id="crf_l">flash</div>
 						<script type="text/javascript">
@@ -61,7 +61,7 @@
 					</div>
 					</div>
 				</div>
-				<div id="cr_b" style="position:relative;">
+				<div id="cr_b">
 					<div id="crb_t"> 
 						<div class="crb_value">
 							<div class="crb_tt"></div>
