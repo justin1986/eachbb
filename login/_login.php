@@ -57,5 +57,6 @@
 .login_result_value{width:240px; height:20px; padding-left:20px; margin-top:5px; overflow:hidden; background:url(/images/index/login_4.jpg) no-repeat 5px 6px; float:left; display:inline;}
 .login_result_value a{font-size:12px; color:#333333; text-decoration: none;}
 .login_result_btn{widtH:260px; height:42px; float:right; display:inline;}
+.login_result_btn a{text-decoration: none;}
 .login_result_btn img{border:0px solid red;}
 </style>
