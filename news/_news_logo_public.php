@@ -48,7 +48,7 @@
 //						for($i = 0 ; $i <12 ; $i++){
 							?>
 							<div class="cla_m_v" <?php # $pos="assistant_ri_result_$i";show_page_pos($pos,'link');?> style="text-align: center;">
-								<a href="/news/search.php?key=<?php echo $line_result; #$pos_items[$pos]->href;?>">
+								<a href="/news/search.php?key=<?php echo $line_result; #$pos_items[$pos]->href;?>" title="<?php echo $line_result;?>">
 									<?php echo $line_result;#$pos_items[$pos]->title;?>
 								</a>
 							</div>
