@@ -40,19 +40,23 @@
 				<div id="tagc_t"><font>热门</font>关键字</div>
 				<div class="tag_menu">
 					<?php 
-//					$list = $db->query("SELECT * FROM eb_news_keywords LIMIT 10");
-//					foreach ($list as $list){
-//					$lines = explode("||",$list->name);
-//						foreach ($lines as $lines){
-//							if($lines){
-						for($i = 0 ; $i <12 ; $i++){
+					$list = $db->query("SELECT id,name FROM eb_news_keywords order by id desc LIMIT 10");
+					foreach ($list as $list){
+					$lines = explode("||",$list->name);
+					foreach ($lines as $line_result){
+						if($line_result){
+//						for($i = 0 ; $i <12 ; $i++){
 							?>
-								<div class="cla_m_v" <?php $pos="assistant_ri_result_$i";show_page_pos($pos,'link');?> style="text-align: center;"><a href="<?php echo $pos_items[$pos]->href;?>"><?php echo $pos_items[$pos]->title;?></a></div>
-								<?php if($i !=3 &&  $i != 7 && $i !=11){?>
-								<div class="cla_r"></div>
-							<?php #}
+							<div class="cla_m_v" <?php # $pos="assistant_ri_result_$i";show_page_pos($pos,'link');?> style="text-align: center;">
+								<a href="/news/search.php?key=<?php echo $line_result; #$pos_items[$pos]->href;?>">
+									<?php echo $line_result;#$pos_items[$pos]->title;?>
+								</a>
+							</div>
+							<?php # if($i !=3 &&  $i != 7 && $i !=11){?>
+							<div class="cla_r"></div>
+						<?php #}
 								}
-						#}
+						}
 					}?>
 				</div>
 			</div>

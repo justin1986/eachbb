@@ -24,15 +24,41 @@ function send_login(){
 		expire = 30;
 	}
 	$.post('/login/ajax.post.php?op=login&name='+ encodeURI($('#login_name').val()) + '&password=' +encodeURI($('#login_password').val()+'&expire='+expire),function(data){
-		if(data){
+		if(data == 0){
+			$("#test_right").hide();
+			$('#r_test').hide();
+			$('#r_student').hide();
+			$('#st_top').hide();
+			$('#student_value').hide();
+			$.post('/login/_login.php',function(data){
+				$("#flash_right").html(data);
+			});
+		}else{
 			alert(data);
+			$('#test_right').load('/login/ajax.post.php?op=load_login_status_box&rd=' + Math.random());
 		}
-		$('#test_right').load('/login/ajax.post.php?op=load_login_status_box&rd=' + Math.random());
+	
 	});
 };
 
 $(function(){
 	//$('.beijiu').colorbox({href:'/inc/_public_result_ajax_post_view.php?id='+$('.beijiu').index($(this))});
+	$.post('/login/ajax.post.php?op=load_login_status_box&login=index',function(data){
+		if(data == 0){
+			$.post('/login/_un_login.php',function(da){
+				$('#test_right').html(da);
+			});
+		}else{
+			$("#test_right").hide();
+			$('#r_test').hide();
+			$('#r_student').hide();
+			$('#st_top').hide();
+			$('#student_value').hide();
+			$.post('/login/_login.php',function(data){
+				$("#flash_right").html(data);
+			});
+		}
+	});
 	$('.beijiu').click(function(e){
 		e.preventDefault();
 		var selected = $('.beijiu').index($(this));
