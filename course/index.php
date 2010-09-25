@@ -37,10 +37,13 @@
 				</div>
 				<div class="cr_cb"  style="position: relative; z-index:1">
 					<?php for($j = 0 ; $j <5; $j++){?>
-					<div class="crc_pg"  id="crr_zz_<?php echo $j;?>" <?php if($j === 0) echo "style='display:inline;'"?>>
+					<div class="crc_pg"  id="crr_zz_<?php echo $j;?>">
 						<div class="crb_img" >
 							<?php for($i = 0; $i < 4; $i++){ ?>
-							<div class="banner" id="<?php echo "middle_image_".$i."_".$j; ?>" <?php $pos="middle_image_".$i."_".$j;show_page_pos($pos,'link_i');?> style="<?php if($i == 0){echo 'display:inline;';}else{ echo 'display:none;'; } ?>">
+							<script type="text/javascript">
+								$('.banner_0').show();
+							</script>
+							<div class="banner banner_<?php echo $i?>" id="<?php echo "middle_image_".$i."_".$j; ?>" <?php $pos="middle_image_".$i."_".$j;show_page_pos($pos,'link_i');?>>
 								<img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : '/images/class/l_pg_c.jpg';?>" />
 							</div>
 							<?php } ?>

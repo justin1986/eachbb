@@ -58,7 +58,7 @@ body{width:970PX; margin: 0 auto; }
 
 #cr_top{width:750px; height:300px;  float:right; display:inline;}
 #cr_flash{width:510px; height:300px; line-height:363px;  font-size:72px; color:#ffffff; text-align:center; float:left;}
-#img_flash{width:235px; height:0px; float:right;}
+#img_flash{width:235px; height:0px; float:right; position: relative; display: inline;}
 #img_flash img{width:235px; height:300px; border:0px solid red;}
 
 #bg_hr{width:958px; height:4px; margin-top:17px; margin-left:10px; background:url(/images/class/b_hr.jpg) repeat-x; float:left; display:inline;}
@@ -99,6 +99,7 @@ body{width:970PX; margin: 0 auto; }
 .crrab_z{width:400px; height:60px;  overflow:hidden;margin-toP:5px; float:left; display:inline;}
 .crrab_z a{font-size:12px; color:#666691; text-decoration:none;}
 .num_banner{width:300px; height:14px; position:absolute; bottom:2px; overflow:hidden; right:0px; color:#fff; opacity:0.70; filter:alpha(opacity = 70);  float:right;}
+.banner{width:311px; height:178px; display:none;}
 .num{width:20px; height: 14px; margin-left:5px; cursor:pointer; line-height: 14px; font-size:12px; background:#000; text-align: center; float:left; display: inline;}
 
 #cr_ci{width:748px; height:208px; margin-top:15px; float:right; display:inline;}
@@ -108,9 +109,9 @@ body{width:970PX; margin: 0 auto; }
 #cri_b{width:748px; height:16px; background:url(/images/class/sousuo_pg_b.jpg) no-repeat; float:left; display:inline;}
 #cric_title{width:735px; height:20px; margin-top:1px; font-family:宋体; font-size:20px; font-weight:bold; text-align:center; color:#617381; float:left; display:inline;}
 #cric_title font{color:#379516;}
-#cric_c{width:730px; height:128px; margin-top:13px; float:left; display:inline;}
+#cric_c{width:730px; height:128px; margin-top:13px; float:left; display:inline; }
 .cricc_a{width:103px; height:128px; margin-left:18px; border:0px solid red; background:url(/images/class/c_pg.jpg) no-repeat; overflow:hidden; float:left; display:inline;}
-.cricc_a div{width:88px; height:128px; overflow:hidden; border:0px solid red; float:left; display:inline;}
+.cricc_a div{width:88px; height:128px; overflow:hidden;  position: relative; border:0px solid red; float:left; display:inline;}
 .cricc_a div img{width:88px; height:128px; border:0px solid red;}
 #login a{text-decoration:none; color:#ffffff;}
 
