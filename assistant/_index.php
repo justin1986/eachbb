@@ -115,7 +115,7 @@
 				$sql = "select a.id,a.title,a.category_id,b.name from eb_assistant a left join eb_category b on a.category_id = b.id where a.is_adopt=1 and a.category_id in(select id from eb_category where category_type='assistant' and parent_id={$top_cates[$i]->id})";
 				$valid_ages=array(-2,-1,1,2,3,4);
 				if(in_array($_GET['age'], $valid_ages)){
-					$sql .=" and age=" .$_GET['age'];
+					$sql .=" and a.age=" .$_GET['age'];
 				}
 				$sql .=" order by a.priority,created_at desc limit 7";
 				$assistants = $db->query($sql);
@@ -144,11 +144,11 @@
 			<div class="fc_c_t">
 				<div class="fct_l" id="fct_lb" style="width:600px;"><?php echo $top_cates[6]->name;?></div>	
 				<div class="fct_r" id="fct_rb"><a href="list.php?category_id=<?php echo $top_cates[6]->id;?>">更多&gt;&gt;</a></div>
-				<?php
+				<?php	
 					$sql = "select a.id,a.title,a.category_id,b.name from eb_assistant a left join eb_category b on a.category_id = b.id where a.is_adopt=1 and a.category_id in(select id from eb_category where category_type='assistant' and parent_id={$top_cates[6]->id})";
-					$valid_ages=array(-2,-1,1,2,3);
+					$valid_ages=array(-2,-1,1,2,3,4);
 					if(in_array($_GET['age'], $valid_ages)){
-								$sql .=" and age=" .$_GET['age'];
+							$sql .=" and age=" .$_GET['age'];
 					}
 					$sql .=" order by a.priority,created_at desc limit 14";
 					$assistants = $db->query($sql);
