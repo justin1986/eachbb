@@ -107,8 +107,16 @@
 				<span class="more"><a href="list.php?category_id=<?php echo $top_cates[$i]->id;?>">更多&gt;&gt;</a></span>
 			</div>
 			<div class="img_box">
-				<div <?php $pos = "list_image_{$i}_a";show_page_pos($pos,'link_i')?>><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
-				<div <?php $pos = "list_image_{$i}_b";show_page_pos($pos,'link_i')?>><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
+			<?php 
+				$sql = "SELECT image FROM eb_assistant where parent_id={$top_cates[$i]->id} order by click_count desc limit 2";
+				$valid_ages=array(-2,-1,1,2,3,4);
+				if(in_array($_GET['age'], $valid_ages)){
+					$sql .=" and a.age=" .$_GET['age'];
+				}
+				$top_list_img = $db->query($sql);
+			?>
+				<div <?php #$pos = "list_image_{$i}_a";show_page_pos($pos,'link_i')?>><img src="<?php echo $top_list_img[0]->image;#$pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
+				<div <?php #$pos = "list_image_{$i}_b";show_page_pos($pos,'link_i')?>><img src="<?php echo $top_list_img[1]->image;#$pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
 			</div>
 			<div class="list_item_box">
 				<?php
@@ -152,31 +160,32 @@
 					}
 					$sql .=" order by a.priority,created_at desc limit 14";
 					$assistants = $db->query($sql);
-				 for($i=6;$i<8;$i++){ ?>
+				 for($i=6;$i<8;$i++){ 
+				 	?>
 				<div class=content>
-				<div class="fcl_l">
-					<div class="fci_a"<?php $pos = "list_image_{$i}_a";show_page_pos($pos,'link_i')?>><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
-					<div class="fci_b"<?php $pos = "list_image_{$i}_b";show_page_pos($pos,'link_i')?>><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
-				</div>
-				<div class="fcl_r">
-				<?php 
-					for($j=($i-6)*7;$j<($i-6)*7+7;$j++){ ?>
-				<div class="fcr_c">
-					<div class="fcrc_d"></div>
-					<div class="fcrc_c">
-					<?php 
-						$assistant_count = mb_strlen($assistants[$j]->name.$assistants[$j]->title,"utf-8");
-					?>
-						<a style="color:#6EB6CA" href="list.php?category_id=<?php echo $assistant->category_id;?>">
-							[<?php echo $assistants[$j]->name;?>]
-						</a>
-						<a href="assistant.php?id=<?php echo $assistants[$j]->id;?>" title="<?php echo $assistants[$j]->title?>" target="_blank" >
-							<?php echo $assistant_count >18 ? mb_substr($assistants[$j]->title,0,$assistant_count - mb_strlen($assistants[$j]->name,"utf-8")-2,"UTF-8")."<font style='font-size:10px;'>...</font>" : $assistants[$j]->title;?>
-						</a>
+					<div class="fcl_l">
+						<div class="fci_a"<?php # $pos = "list_image_{$i}_a";show_page_pos($pos,'link_i')?>><img src="<?php echo $assistants[$i-6]->image;#$pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
+						<div class="fci_b"<?php # $pos = "list_image_{$i}_b";show_page_pos($pos,'link_i')?>><img src="<?php echo $assistants[$i-5]->image;#$pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
 					</div>
-				</div>
-			<?php  }?>
-				</div>
+					<div class="fcl_r">
+					<?php 
+						for($j=($i-6)*7;$j<($i-6)*7+7;$j++){ ?>
+					<div class="fcr_c">
+						<div class="fcrc_d"></div>
+						<div class="fcrc_c">
+						<?php 
+							$assistant_count = mb_strlen($assistants[$j]->name.$assistants[$j]->title,"utf-8");
+						?>
+							<a style="color:#6EB6CA" href="list.php?category_id=<?php echo $assistant->category_id;?>">
+								[<?php echo $assistants[$j]->name;?>]
+							</a>
+							<a href="assistant.php?id=<?php echo $assistants[$j]->id;?>" title="<?php echo $assistants[$j]->title?>" target="_blank" >
+								<?php echo $assistant_count >18 ? mb_substr($assistants[$j]->title,0,$assistant_count - mb_strlen($assistants[$j]->name,"utf-8")-2,"UTF-8")."<font style='font-size:10px;'>...</font>" : $assistants[$j]->title;?>
+							</a>
+						</div>
+					</div>
+				<?php  }?>
+					</div>
 			</div>
 			<?php }?>
 			</div>
