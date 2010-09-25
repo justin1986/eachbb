@@ -25,7 +25,7 @@
 //				$list=$db->query("SELECT id,name,url FROM eb_images  where category_id in (".$news_id.") and is_adopt=1 order by create_time desc,click_count desc limit 3;");
 				for($i=0;$i<3;$i++){ ?>
 				<div class="ci_z"<?php $pos="assistant_right_s_$i";show_page_pos($pos,'link_t_i');?>>
-					<div class="ci_pg"><a href="<?php echo $pos_items[$pos]->url;?>"><img src="<?php echo $pos_items[$pos]->image1;?>"></a></div>
+					<div class="ci_pg"><a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1;?>"></a></div>
 					<div class="ci_title"><?php echo $pos_items[$pos]->title;?></div>
 				</div>
 				<?php } ?>
@@ -42,7 +42,7 @@
 					<?php 
 					$db=get_db();
 					$list = $db->query("SELECT id,name FROM eb_news_keywords order by id desc LIMIT 10");
-						$line_array = array();
+					$line_array = array();
 					foreach ($list as $list){
 					if(!strpos($list->name,"||")){
 						$lines = explode(" ",$list->name);
