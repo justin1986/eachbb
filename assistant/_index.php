@@ -161,7 +161,11 @@
 					$sql .=" order by a.priority,created_at desc limit 14";
 					$assistants = $db->query($sql);
 				 for($i=6;$i<8;$i++){ 
-				 	$sql="SELECT show_image FROM eb_category where parent_id={$top_cates[6]->id} limit 2";
+				 	if($i==6){
+				 		$sql="SELECT show_image FROM eb_category where parent_id={$top_cates[6]->id} limit 2";	
+				 	}else{
+				 		$sql="SELECT show_image FROM eb_category where parent_id={$top_cates[6]->id} limit 2,4";
+				 	}
 				 	$img_assistant = $db->query($sql);
 				 	?>
 				<div class=content>
