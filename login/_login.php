@@ -33,12 +33,12 @@
 		<?php
 		$list =$db->query("SELECT * FROM eb_teach e LIMIT 2");
 		for($i = 0 ; $i <2 ; $i++){?>
-		<div class="login_result_value"><?php echo $list[$i]->title;?></div>
+		<div class="login_result_value"><a href=""><?php echo $list[$i]->title;?></a></div>
 		<?php }?>
 	</div>
 	<div class="login_result_btn">
-		<a href="/yard/album_list.php"><div style="background:url(/images/index/login_1.jpg) no-repeat; text-align: center; width:122px; height:42px; color:#FF6F0F; line-height:42px; font-size:14px; font-weight:bold;" >去相册看看</div></a>
-		<a href="/baby"><div style="padding-right:10px; margin-left:10px; background:url(/images/index/login_2.jpg) no-repeat; text-align: center; width:102px; height:42px; color:#FF6F0F; line-height:42px; font-size:14px; font-weight:bold;" >购买课程</div></a>
+		<a href="/yard/album_list.php"><div style="background:url(/images/index/login_1.jpg) no-repeat; text-align: center; width:122px; height:42px; color:#FF6F0F; line-height:42px; font-size:14px; font-weight:bold;" ></div></a>
+		<a href="/baby"><div style="padding-right:10px; margin-left:10px; background:url(/images/index/login_2.jpg) no-repeat; text-align: center; width:102px; height:42px; color:#FF6F0F; line-height:42px; font-size:14px; font-weight:bold;" ></div></a>
 	</div>
 </div>
 <style>
@@ -59,4 +59,5 @@
 .login_result_btn{widtH:260px; height:42px; float:right; display:inline;}
 .login_result_btn a{text-decoration: none;}
 .login_result_btn img{border:0px solid red;}
+.login_result_value a{font-size:12px; color:#333333; text-decoration: none;}
 </style>
