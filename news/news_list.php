@@ -67,9 +67,9 @@
 								$type=" 网趣动态";
 							break;
 						}
-						$img = $db->query("SELECT src FROM eb_images where is_adopt=1 and title='$type'  order by created_at desc LIMIT 1");
+						$img = $db->query("SELECT src,url FROM eb_images where is_adopt=1 and title='$type'  order by created_at desc LIMIT 1");
 					?>
-						<img src="<?php echo $img[0]->src;?>" />
+						<a href="<?php echo $img[0]->url;?>"><img src="<?php echo $img[0]->src;?>"/></a>
 					</div>
 					<div id="recommend_c_hr"></div>
 					<!-- 编辑推荐 开始 -->
