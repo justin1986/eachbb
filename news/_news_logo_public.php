@@ -41,9 +41,13 @@
 				<div class="tag_menu">
 					<?php 
 					$db=get_db();
-					$list = $db->query("SELECT id,name FROM eb_news_keywords order by id desc LIMIT 10");
+					$list = $db->query("SELECT id,name FROM eb_news_keywords order by id desc LIMIT 7");
 					foreach ($list as $list){
-					$lines = explode("||",$list->name);
+					if(!strpos($list->name,"||")){
+						$lines = explode(" ",$list->name);
+					}else{
+						$lines = explode("||",$list->name);
+					}
 					foreach ($lines as $line_result){
 						if($line_result){
 //						for($i = 0 ; $i <12 ; $i++){
