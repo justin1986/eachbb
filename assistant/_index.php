@@ -24,7 +24,7 @@
 			location.href = "list.php?category_id=7&age=-1";
 		</script>	
 		<?php }
-		css_include_tag('assistant/_index','logo','assistant','top_inc/assistant_top','left_inc/assistant_left','colorbox','assistant/assistant_content'); 
+		css_include_tag('assistant/_index','logo','test_left_inc','assistant','top_inc/assistant_top','left_inc/assistant_left','colorbox','assistant/assistant_content'); 
 //		css_include_tag(); 
 		$db = get_db();
 		js_include_tag('assistant/assistant','news/index','jquery.colorbox-min');
@@ -69,29 +69,12 @@
 					</div>
 				</div>
 				<div id="assistant_top_right_banner">
+<!--					<div id="l_pho" style="margin-left:0px; float:left;"></div>-->
 					<div class="h_pg_t"></div>
 					<div class="h_pg_c">
-						<div class="h_pg_cc">
-								<div class="ht_l_t">课程助手链接</div>
-								<div class="ht_l_h"></div>
-								<div class="assistant_top_pg_a"<?php $pos = "assistant_top_pg_a";show_page_pos($pos,'link_i')?>>
-									<a href="/course" target="_blank"><img src="<?php echo $pos_items[$pos]->image1 ?>"/></a>
-								</div>
-								<div class="assistant_top_pg_b"<?php $pos = "assistant_top_pg_b";show_page_pos($pos,'link_i')?>>
-									<a href="/test" target="_blank"><img src="<?php echo $pos_items[$pos]->image1 ?>"/></a>
-								</div>
-								<div class="assistant_top_pg_c"<?php $pos = "assistant_top_pg_c";show_page_pos($pos,'link')?>>
-									<div class="htct_l"></div>
-											<a href="<?php echo $pos_items[$pos]->href;?>" class="die_assistant">
-										<?php $tilte_count =mb_strlen($pos_items[$pos]->title,"utf-8");
-										 echo # $tilte_count >45 ?mb_substr($pos_items[$pos]->title,0,46,"utf-8").'<font style="font-size:12px;">...</font>':
-										 $pos_items[$pos]->title;?>
-									</a>
-								</div>
-								<div class="htl_pg_c">
+						<div class="h_pg_cc index_assistant_login">
 						</div>
 					</div>
-				</div>
 				<div class="h_pg_b"></div>
 		</div>
 		</div>
@@ -240,10 +223,10 @@
 	.h_pg_cc{height:285px; overflow:hidden;}
 	.pic_img{width:505px; height:300px; display: none;}
 	.pic_img img{width:505px; height:300px;  border:0px solid red;} 
-	.assistant_top_pg_a{width:180px; height:70px; margin-left:5px;margin-top:10px;  float:left; display:inline; }
-	.h_pg_cc div img{width:180px; height:70px; border:0px solid red;}
-	.assistant_top_pg_b{width:180px; height:70px; margin-left:5px;margin-top:10px;  float:left; display:inline;}
-	.assistant_top_pg_c{width:180px; height:80px; margin-left:5px; margin-top:10px;font-size:12px; color:#333333; line-height:20px; text-indent:5px; overflow:hidden;  float:left; display:inline;}
+	.assistant_top_pg_a{width:175px; height:50px; margin-left:7px; margin-top:10px;  float:left; display:inline; }
+	.h_pg_cc div img{width:175px; height:50px; border:0px solid red;}
+	.assistant_top_pg_b{width:175px; height:50px; margin-left:7px; margin-top:10px;  float:left; display:inline;}
+	.assistant_top_pg_c{width:175px; height:80px; margin-left:5px; margin-top:10px;font-size:12px; color:#333333; line-height:20px; text-indent:5px; overflow:hidden;  float:left; display:inline;}
 	.assistant_top_pg_c a{font-size:12px; text-decoration: none; color:#333333;}
 </style>
 </html>

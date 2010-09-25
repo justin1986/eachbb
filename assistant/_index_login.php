@@ -3,14 +3,15 @@ session_start();
 include_once(dirname(__FILE__).'/../frame.php');
 $user = User::current_user();
 $db=get_db();
+init_page_items('assistant_index');
 if(!isset($_SESSION['login'])){
 	$_SESSION['login'] = rand_str();
 }
-
 $count=$db->query("SELECT count(id)id FROM eachbb_member.message m where status=0 and recieve_id=".$user->id);
 if($user){
 	$count_comment=mysql_query('SELECT id FROM eachbb_member.`comment` c where user_id=3');
 	$num_rows = mysql_num_rows($count_comment); 
+
 ?>
 <div id="lp_t">用户登录</div>
 <div id="lp_p">
@@ -19,6 +20,12 @@ if($user){
 </div>
 <div id="l_b_wa"><a href="/baby/message_index.php" target="_blank">您有<font><?php echo $count[0]->id; ?></font>条消息</a></div>
 <div id="l_b_wb"><a href="/yard/" target="_blank">我家小院子</a></div>
+<div class="assistant_top_pg_a"<?php $pos = "assistant_top_pg_a";show_page_pos($pos,'link_i')?>>
+	<a href="/course" target="_blank"><img src="<?php echo $pos_items[$pos]->image1 ?>"/></a>
+</div>
+<div class="assistant_top_pg_b"<?php $pos = "assistant_top_pg_b";show_page_pos($pos,'link_i')?>>
+	<a href="/test" target="_blank"><img src="<?php echo $pos_items[$pos]->image1 ?>"/></a>
+</div>
 <?php }else{?>
 <div id="lp_t">用户登录</div>
 <form action="comlogin.post.php" method="post">
@@ -47,6 +54,12 @@ if($user){
 		 <img id="login_bn" src="/images/index/btn_login.gif" style="float:left; margin-left:20px;" />
 		 <a href="/register/" target="_blank"><img id="login_r" border="0" style="margin-top:0px;" src="/images/index/btn_zhuce.gif"/></a>
 	 </div>
+	 <div class="assistant_top_pg_a"<?php $pos = "assistant_top_pg_a";show_page_pos($pos,'link_i')?>>
+		<a href="/course" target="_blank"><img src="<?php echo $pos_items[$pos]->image1 ?>"/></a>
+	</div>
+	<div class="assistant_top_pg_b"<?php $pos = "assistant_top_pg_b";show_page_pos($pos,'link_i')?>>
+		<a href="/test" target="_blank"><img src="<?php echo $pos_items[$pos]->image1 ?>"/></a>
+	</div>
 </div>
 </div>
 </form>
