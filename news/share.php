@@ -1,5 +1,6 @@
 <?php 
 	session_start();
+	set_charset("utf-8");
 	include_once( dirname(__FILE__) .'/../frame.php');
 	$db = get_db();
 	$_SESSION['news_share'] = rand_str();
