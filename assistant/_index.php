@@ -109,7 +109,6 @@
 			<div class="img_box">
 			<?php 
 				$sql = "SELECT image FROM eb_assistant where category_id={$top_cates[$i]->id} order by click_count desc limit 2";
-				echo $sql;
 				$valid_ages=array(-2,-1,1,2,3,4);
 				if(in_array($_GET['age'], $valid_ages)){
 					$sql .=" and a.age=" .$_GET['age'];
