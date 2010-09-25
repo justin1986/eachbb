@@ -108,16 +108,15 @@
 			</div>
 			<div class="img_box">
 				<?php 
-					$sql="SELECT * FROM eb_assistant where category_id={$top_cates[$i]->id} and is_adopt=1";
+					$sql="SELECT show_image FROM eb_category where parent_id={$top_cates[$i]->id} limit 2";
 //					$valid_ages=array(-2,-1,1,2,3,4);
 //					if(in_array($_GET['age'], $valid_ages)){
 //						$sql .=" and a.age=" .$_GET['age'];
 //					}
-					$sql .=" order by click_count desc limit 2";
 					$img_assistant = $db->query($sql);
 				?>
-				<div  <?php #$pos = "list_image_{$i}_a";show_page_pos($pos,'link_i')?>><img src="<?php echo $img_assistant[0]->image;#$pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
-				<div <?php #$pos = "list_image_{$i}_b";show_page_pos($pos,'link_i')?>><img src="<?php echo $img_assistant[1]->image;#$pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
+				<div  <?php #$pos = "list_image_{$i}_a";show_page_pos($pos,'link_i')?>><img src="<?php echo $img_assistant[0]->show_image;#$pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
+				<div <?php #$pos = "list_image_{$i}_b";show_page_pos($pos,'link_i')?>><img src="<?php echo $img_assistant[1]->show_image;#$pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
 			</div>
 			<div class="list_item_box">
 				<?php
@@ -162,13 +161,13 @@
 					$sql .=" order by a.priority,created_at desc limit 14";
 					$assistants = $db->query($sql);
 				 for($i=6;$i<8;$i++){ 
-				 	$sql="SELECT * FROM eb_assistant where category_id={$top_cates[6]->id} and is_adopt=1";
+				 	$sql="SELECT show_image FROM eb_category where parent_id={$top_cates[6]->id} limit 2";
 				 	$img_assistant = $db->query($sql);
 				 	?>
 				<div class=content>
 				<div class="fcl_l">
-					<div class="fci_a"<?php #$pos = "list_image_{$i}_a";show_page_pos($pos,'link_i')?>><img src="<?php echo $img_assistant[$i-6]->image;#$pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
-					<div class="fci_b"<?php #$pos = "list_image_{$i}_b";show_page_pos($pos,'link_i')?>><img src="<?php echo $img_assistant[$i-5]->image;#$pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
+					<div class="fci_a"<?php #$pos = "list_image_{$i}_a";show_page_pos($pos,'link_i')?>><img src="<?php echo $img_assistant[$i-6]->show_image;#$pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
+					<div class="fci_b"<?php #$pos = "list_image_{$i}_b";show_page_pos($pos,'link_i')?>><img src="<?php echo $img_assistant[$i-5]->show_image;#$pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
 				</div>
 				<div class="fcl_r">
 				<?php 
