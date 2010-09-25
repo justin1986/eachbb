@@ -9,7 +9,7 @@ li {list-style-image: none;  list-style-type: none; margin-top:20px;}
 #c_r{width:755px; float:right; display:inline; }
 
 #cr_a{width:750px;  float:right; display:inline;}
-#cr_b{width:746px; height:167px; margin-top:15px; position:relative; float:right; display:inline;}
+#cr_b{width:746px; height:167px; margin-top:15px; float:right; display:inline;}
 
 #cra_l{ border:1px solid #5595D1;  float:left; display:inline;}
 #cra_ll{width:533px; height:735px; border:1px solid #3F71A2; float:left; display:inline;}
