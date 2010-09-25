@@ -42,7 +42,7 @@
 					<?php 
 					$list = $db->query("SELECT id,name FROM eb_news_keywords order by id desc LIMIT 10");
 					foreach ($list as $list){
-					$lines = explode("||",$list->name);
+					$lines = explode("||",$list->name).explode(" ",$list->name);
 					foreach ($lines as $line_result){
 						if($line_result){
 //						for($i = 0 ; $i <12 ; $i++){
