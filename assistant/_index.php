@@ -108,18 +108,6 @@
 			</div>
 			<div class="img_box">
 			<?php 
-				$sql = "SELECT image FROM eb_assistant where category_id={$top_cates[$i]->id} order by click_count desc limit 2";
-				$valid_ages=array(-2,-1,1,2,3,4);
-				if(in_array($_GET['age'], $valid_ages)){
-					$sql .=" and a.age=" .$_GET['age'];
-				}
-				$top_list_img = $db->query($sql);
-			?>
-				<div <?php #$pos = "list_image_{$i}_a";show_page_pos($pos,'link_i')?>><img src="<?php echo $top_list_img[0]->image;#$pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
-				<div <?php #$pos = "list_image_{$i}_b";show_page_pos($pos,'link_i')?>><img src="<?php echo $top_list_img[1]->image;#$pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
-			</div>
-			<div class="list_item_box">
-				<?php
 				$sql = "select a.id,a.title,a.category_id,a.image,b.name from eb_assistant a left join eb_category b on a.category_id = b.id where a.is_adopt=1 and a.category_id in(select id from eb_category where category_type='assistant' and parent_id={$top_cates[$i]->id})";
 				$valid_ages=array(-2,-1,1,2,3,4);
 				if(in_array($_GET['age'], $valid_ages)){
@@ -127,6 +115,13 @@
 				}
 				$sql .=" order by a.priority,created_at desc limit 7";
 				$assistants = $db->query($sql);
+			?>
+				<div <?php #$pos = "list_image_{$i}_a";show_page_pos($pos,'link_i')?>><img src="<?php echo $assistant[0]->image;#$pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
+				<div <?php #$pos = "list_image_{$i}_b";show_page_pos($pos,'link_i')?>><img src="<?php echo $assistant[1]->image;#$pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
+			</div>
+			<div class="list_item_box">
+				<?php
+	
 				$assistants || $assistants = array(); 
 				foreach($assistants as $assistant){?>
 				<div class="list_item">
