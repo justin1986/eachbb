@@ -51,7 +51,7 @@
 .login_img_name font{color:#666666; font-size:12px;}
 .login_pg_btn{width:170px; height:22px; display: inline;}
 .login_img_name a{font-size:12px; color:#333333; text-decoration: none;}
-#login_hhr{width:260px; height:1px; margin-left:15px;margin-top:10px; background:url(/images/index/login_hr.jpg) repeat-x; float:left; display:inline;}
+#login_hhr{width:260px; height:1px; margin-left:15px;margin-top:10px; font-size:0px; background:url(/images/index/login_hr.jpg) repeat-x; float:left; display:inline;}
 .login_result_pg{width:260px; height:70px; margin-left:15px;  margin-top:10px; float:left; display:inline;}
 .login_reusult_title{width:240px; height:20px; padding-left:20px; font-weight:bold; font-size:16px; color:#333333; background:url(/images/index/login_3.jpg) no-repeat 0 4px; float:left; display:inline;}
 .login_result_value{width:240px; height:20px; padding-left:20px; margin-top:5px; overflow:hidden; background:url(/images/index/login_4.jpg) no-repeat 5px 6px; float:left; display:inline;}
