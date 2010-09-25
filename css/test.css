@@ -45,7 +45,7 @@ body{width:970PX; margin: 0 auto; }
 .crb_vv{width:151px; height:26px; background:#FDFDFD; border:0px solid red; float:left; display:inline;}
 .crb_ttt{width:151px; height:3px;   font-size:0px; line-height:0px; background:url(/images/test/tt.jpg) no-repeat; float:left; display:inline;}
 #cr_hr{width:254px; height:26px; background:#ffffff; border-bottom:1px solid #C2C2C2; float:left; display:inline;}
-.crb_c{width:740px; height:144px; margin-top:15px; float:left; display:none;}
+.crb_c{width:740px; height:144px; margin-top:15px; float:left; display:none; position: relative;}
 .crbc_a{width:139px; height:136px; margin-top:4px; margin-left:4px; float:left; display:inline;}
 .crbc_a img{width:139px; height:136px; border:0px solid red;}
 .crbci_t{width:570px; height:136px;  margin-left:10px; font-size:12px; z-index:1; overflow:hidden; text-indent:24px; line-height:20px;  text-align:left; float:left; display:inline;}
