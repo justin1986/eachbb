@@ -3,11 +3,16 @@
 	include_once(dirname(__FILE__).'/../frame.php');
 	$id =intval(trim($_REQUEST['id']));
 	if(empty($id)){
-		#redirect('error.html');
-		#die();
+		redirect('error.html');
+		die();
+	}
+	if(!is_numeric($id)){
+		redirect('error.html');
+		die();
 	}
 	$db = get_db();
 	$column = $db->query("SELECT id,title,click_count,short_title,category_id,description,content,created_at,last_edited_at,video_photo_src,keywords,publisher FROM eb_news e where id=".$id." order by last_edited_at desc");
+	if(!$column)die("非法操作");
 	?>
 <html>
 <head>

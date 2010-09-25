@@ -20,10 +20,13 @@
 			<!-- 右边 业界快讯 一条列表的内容  开始in(".substr($news_id,0,-1).") -->
 			<?php
 			if($category_id){
+				if (!is_numeric($category_id))die("非法操作");
 				$list = $db->query("SELECT id,title FROM eb_news  where  is_adopt=1 and category_id = $category_id  order by click_count desc LIMIT 10");
 			}else{
+				if (!is_numeric($id))die("非法操作");
 				$list = $db->query("SELECT id,title FROM eb_news  where  is_adopt=1 and category_id = (select category_id from eb_news where id=$id)  order by click_count desc LIMIT 10");
 			}
+			if(!$list)die("非法操作");
 			for($i=0;$i<10;$i++){ ?>
 			<div id="comm_con">
 				<div class="number" style="<?php if($i==0){ echo "background:url(/images/new_list/number.jpg) no-repeat;";} ?>"><?php echo $i+1; ?></div>
