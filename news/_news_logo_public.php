@@ -60,8 +60,9 @@
 									<?php echo $line_result;#$pos_items[$pos]->title;?>
 								</a>
 							</div>
+								<div class="cla_r"></div>
 							<?php # if($i !=3 &&  $i != 7 && $i !=11){?>
-							<div class="cla_r"></div>
+						
 						<?php #}
 						}
 						}
