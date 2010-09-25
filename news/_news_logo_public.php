@@ -41,7 +41,7 @@
 				<div class="tag_menu">
 					<?php 
 					$db=get_db();
-					$list = $db->query("SELECT id,name FROM eb_news_keywords order by id desc LIMIT 10");
+					$list = $db->query("SELECT id,name FROM eb_news_keywords order by rand() desc LIMIT 10");
 					$line_array = array();
 					foreach ($list as $list){
 					if(!strpos($list->name,"||")){
