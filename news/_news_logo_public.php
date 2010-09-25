@@ -42,6 +42,7 @@
 					<?php 
 					$db=get_db();
 					$list = $db->query("SELECT id,name FROM eb_news_keywords order by id desc LIMIT 10");
+						$line_array = array();
 					foreach ($list as $list){
 					if(!strpos($list->name,"||")){
 						$lines = explode(" ",$list->name);
@@ -51,6 +52,8 @@
 					foreach ($lines as $line_result){
 						if($line_result){
 //						for($i = 0 ; $i <12 ; $i++){
+						if(in_array($line_result,$line_array))continue;
+						$line_array[]=$line_result;
 							?>
 							<div class="cla_m_v" <?php # $pos="assistant_ri_result_$i";show_page_pos($pos,'link');?> style="text-align: center;">
 								<a href="/news/search.php?key=<?php echo $line_result; #$pos_items[$pos]->href;?>" title="<?php echo $line_result;?>">
@@ -60,7 +63,7 @@
 							<?php # if($i !=3 &&  $i != 7 && $i !=11){?>
 							<div class="cla_r"></div>
 						<?php #}
-								}
+						}
 						}
 					}?>
 				</div>
