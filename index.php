@@ -52,9 +52,7 @@
 						<div id="test_right">
 <!--							<script type="text/javascript">$('#test_right').load('/login/ajax.post.php?op=load_login_status_box&login=index&rd='+Math.random());</script>-->
 						</div>
-						<div id="r_test" <?php $pos="index_teach_pg";show_page_pos($pos,'link_i');?> style="position: relative;">
-							<a href="<?php echo $pos_items[$pos]->href;?>" target="_blank"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1:'/images/index/img_r_a.jpg';?>"/></a>
-						</div>
+						
 						<div id="r_student">
 						<div id="st_top">
 							<div><img src="/images/index/class_tab_0_sel.jpg" class="student_tab"/></div>
@@ -99,6 +97,9 @@
 							</div>
 							<div id="student_right"></div>
 						</div>
+					</div>
+					<div id="r_test" <?php $pos="index_teach_pg";show_page_pos($pos,'link_i');?> style="position: relative;">
+							<a href="<?php echo $pos_items[$pos]->href;?>" target="_blank"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1:'/images/index/img_r_a.jpg';?>"/></a>
 					</div>
 				</div>
 			</div>
