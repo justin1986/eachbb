@@ -4,6 +4,7 @@
 	css_include_tag('article','news_list');
 	init_page_items('_news_right');
 	$category_id = $_GET["category_id"];
+	$id = $_GET["id"];
 	$db=get_db();
 ?>
 <div id="list_container">
@@ -18,7 +19,11 @@
 			</div>
 			<!-- 右边 业界快讯 一条列表的内容  开始in(".substr($news_id,0,-1).") -->
 			<?php
-			$list = $db->query("SELECT id,title FROM eb_news  where  is_adopt=1 and category_id = $category_id  order by click_count desc LIMIT 10");
+			if($category_id){
+				$list = $db->query("SELECT id,title FROM eb_news  where  is_adopt=1 and category_id = $category_id  order by click_count desc LIMIT 10");
+			}else{
+				$list = $db->query("SELECT id,title FROM eb_news  where  is_adopt=1 and category_id = (select category_id from eb_news where id=$id)  order by click_count desc LIMIT 10");
+			}
 			for($i=0;$i<10;$i++){ ?>
 			<div id="comm_con">
 				<div class="number" style="<?php if($i==0){ echo "background:url(/images/new_list/number.jpg) no-repeat;";} ?>"><?php echo $i+1; ?></div>
