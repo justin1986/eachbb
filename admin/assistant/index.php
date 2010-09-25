@@ -32,6 +32,7 @@
 			case 1:echo '0~1岁';break;
 			case 2:echo '1~2岁';break;
 			case 3:echo '2~3岁';break;
+			case 4:echo '3~6岁';break;
 			default:echo '未知';
 		}
 	}
