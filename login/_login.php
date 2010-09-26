@@ -49,7 +49,7 @@ $(function(){
 			<a href="/test/test.php?id=<?php echo $month_name[0]->id;?>" target="_blank">您的宝宝<?php echo $month;?>个月了,快来参加免费测评</a>
 			<?php }else{
 				?>
-				<a href="/yard/member.php" target="_blank">赶紧输入宝宝生日，参加免费测评</a>
+				<a href="/yard/member.php" target="_blank">输入宝宝生日，参加免费测评</a>
 				<?php 
 			}?>
 		</div>
