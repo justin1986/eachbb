@@ -65,10 +65,10 @@
 				  </div>     
 		<div id="right_up_right">
 		<div class="record">
-		<div ><font size="2" color="red"><b>用户最新动态</b></font></div>
+		<div ><font size="2" color="red"><b>好友的最新动态</b></font></div>
 		<div class="add"><hr color="#A3C1CD" width=100%; size="4" /></div>
 		<?php 
-		$last_news=$db->query("SELECT id,content FROM eachbb_member.lastest_news l where resource_type='oneword' and u_id={$user->id} order by created_at desc LIMIT 7");
+		$last_news=$db->query("SELECT id,content from lastest_news where u_id in (SELECT f_id FROM friend where u_id={$user->id}) order by created_at desc LIMIT 7");
 		for($i = 0 ; $i <= 7 ; $i++){
 		?>
 		<div class="text" style="width:340px; padding-left:10px; height:18px; line-height:18px; overflow:hidden; background:url(/images/avatar/smallpoint.png) no-repeat 0px 7px;">
