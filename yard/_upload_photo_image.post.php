@@ -39,6 +39,7 @@
 				$sql="update eachbb_member.album  set last_update_time=now(),name='$upload_name',front_cover='$save_e',description='$upload_description' where id=$album_id;";
 				if(move_uploaded_file($yuan_pic,$save)){
 					if($db->execute($sql)){
+							create_thumb('small',$save_e,100,100);
 							$db->execute("insert into `eachbb_member`.lastest_news (resource_id,resource_type,u_id,created_at,u_name,u_avatar,form,photo)values('$album_id','image','{$user->id}',now(),'{$user->name}','{$user->avatar}','修改了相册：','$save_e')");
 							$alpum=$_POST['alpum'];
 							alert("修改成功！");

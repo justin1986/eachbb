@@ -19,6 +19,8 @@
 		$sql .=" and email like '%$email%'";
 		if($nike_name)
 		$sql .=" and name like '%$nike_name%'";
+		
+		
 		$db = get_db();
 		$list = $db->query($sql);
 ?>
