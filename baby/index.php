@@ -65,10 +65,10 @@
 				  </div>     
 		<div id="right_up_right">
 		<div class="record">
-		<div ><font size="2" color="red"><b>用户最新动态</b></font></div>
+		<div ><font size="2" color="red"><b>好友的最新动态</b></font></div>
 		<div class="add"><hr color="#A3C1CD" width=100%; size="4" /></div>
 		<?php 
-		$last_news=$db->query("SELECT id,content FROM eachbb_member.lastest_news l where resource_type='oneword' and u_id={$user->id} order by created_at desc LIMIT 7");
+		$last_news=$db->query("SELECT id,content from eachbb_member.lastest_news where u_id in (SELECT f_id FROM eachbb_member.friend where u_id={$user->id}) and resource_type='oneword' order by created_at desc LIMIT 7");
 		for($i = 0 ; $i <= 7 ; $i++){
 		?>
 		<div class="text" style="width:340px; padding-left:10px; height:18px; line-height:18px; overflow:hidden; background:url(/images/avatar/smallpoint.png) no-repeat 0px 7px;">
@@ -100,33 +100,24 @@
 			    	<font size="2" style="margin-left:5px;"><b>测评</b></font>
 			    	<font size="2" color="red"><b>报告</b></font>
 		    </div>
-		     <?php 
-	    	$teach=$db->query("SELECT * FROM eachbb.eb_problem e  where id in (SELECT problem_id FROM eachbb.eb_test_record e where user_id={$user->id}) order by create_time desc LIMIT 10;");
-	    	if($teach){
-	    	?>
-		    <div class="line1"><hr color="#F5F5F5" width=100%; size="2" /></div>
-		    <div class="line2"><hr color="#F5F5F5" width=760px; size="1" /></div>
-		    <div class="att"><div style="float:left; displary:inline;"><a href="index_record_show.php?problem_id=<?php echo $teach[0]->id; ?>"><img src="<?php echo $teach[0]->photo_url; ?>" style="width:152px; height:101px;" border="0"></img></a></div>
-			    <div class="left"style="margin-left:10px;"><div class="left" style="margin-top:10px;"><a href="index_record_show.php?problem_id=<?php echo $teach[0]->id; ?>"><font size="2" color="black"><b><?php echo strip_tags($teach[0]->name); ?></b></font></a></div>
-			    <div class="left" style="margin-top:8px;"><a href="index_record_show.php?problem_id=<?php echo $teach[0]->id; ?>"><font size="2px" color="black" ><?php echo strip_tags($teach[0]->description); ?></font></a></div>
-			    </div>
-	    	</div>
-	    	<?php  }else{
-		    	echo "<div style='width:100%; height:30px; line-height:30px; text-align:center;'><a href=' ' style='font-size:20px;'>您的测评报告为空！</a></div>";
-			    }
-		    ?>
-	    </div>
-	    <?php
-	     for ($i = 1 ;  $i< 11 ; $i++){
-	     if($i !== 1){
-	     	?>
-	    <div class="text1" style="width:240px; <?php if($i <= 4 ) echo "margin-top:10px;";?> height:20px; line-height:20px; overflow:hidden; float:left; display:inline;">
-	    	<img src="/images/avatar/smallpoint.png"></img>
-	    		<a href="index_record_show.php?problem_id=<?php echo $teach->id; ?>">
-	    			<font size="2" ><?php echo $teach->name;?></font>
-	    		</a>
+	    	<div class="line1"><hr color="#F5F5F5" width=100%; size="2" /></div> <div class="line2"><hr color="#F5F5F5" width=760px; size="1" /></div>
+		    	<?php 
+		    		$teach=$db->query("SELECT * FROM eachbb.eb_problem e  where id in (SELECT problem_id FROM eachbb.eb_test_record e where user_id={$user->id}) order by create_time desc LIMIT 10;");
+		    		for($i = 0 ; $i < 10; $i++){
+		    	?>
+			   	 <div class="text2" style="width:314px; height:20px; line-height:20px; overflow:hidden; padding-top:0px;">
+			   	 	<img src="/images/avatar/smallpoint.png" style="margin-top:5px;"></img>
+			   	 		<a href="/test/test_result.php?test_id=<?php echo $teach[$i]->id;?>">
+			   	 			<font size="2" ><?php echo strip_tags($teach[$i]->description); ?></font>
+			   	 		</a>
+			   	 		<?php if($teach[$i]->id){?>
+			   	 		<a href="/test/test_result.php?test_id=<?php echo $teach[$i]->id;?>">测试结果报表</a>
+			   	 		<a href="/test/review.php?id=<?php echo $teach[$i]->id;?>" style="padding-left:20px;">测试回顾</a>
+			   	 		<?php }?>
+				</div>
+				<?php }?>
 	    </div>    
-	    <?php }}
+	    <?php 
 	    	$teach=$db->query("SELECT id,title,img_url FROM eachbb.eb_teach e where is_adopt=1 and del_flag=0 order by priority,click_count,create_time desc limit 10;");
 	    ?>
 	    <div class="txt">

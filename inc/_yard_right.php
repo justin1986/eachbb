@@ -23,7 +23,7 @@
 	<div id="r_num">被访问过<?php if($news[0]->visit_count){echo $news[0]->visit_count;}else{echo 0;};?>次</div>
 </div>
 <?php if(!$id){?>
-<div id="r_geng"> 
+<div id="r_geng">
 	<div id="r_ge_a">
 		<div id="r_gi_a"></div>
 		<div id="r_gw_a"><a href="/yard/info.php">更换头像</a></div>

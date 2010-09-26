@@ -1,7 +1,7 @@
 $(function(){
 	var type = $('#type_test').val();
 	if(type =="test"){
-		$.post('_baby_view_ajax_post.php',function(data){
+		$.post('_baby_ajax.post.php',function(data){
 			$('#haha').html(data);
 		});
 	}

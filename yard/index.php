@@ -67,7 +67,13 @@
 			<div id="cc_t"></div>
 			<div id="cc_c">
 				<div id="cc_pg">
-					<div id="cc_pic"></div>
+					<div id="cc_pic">
+						<img src="/images/yard/yard.jpg" usemap="#Map" />
+						<map name="Map" id="Map">
+						  	<area shape="poly" coords="264,91,205,102,190,26,216,21,249,17" href="/yard/album_list.php" title="照片"/>
+							<area shape="poly" coords="132,37,184,44,174,124,120,119" href="/yard/member.php" title="档案" />
+						</map>
+					</div>
 					<?php if(!$id){?>
 					<div id="cc_photo">
 						<div id="pho_l">
