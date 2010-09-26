@@ -100,28 +100,10 @@
 			    	<font size="2" style="margin-left:5px;"><b>测评</b></font>
 			    	<font size="2" color="red"><b>报告</b></font>
 		    </div>
-		     <?php 
-	    	$teach=$db->query("SELECT * FROM eachbb.eb_problem e  where id in (SELECT problem_id FROM eachbb.eb_test_record e where user_id={$user->id}) order by create_time desc LIMIT 10;");
-	    	if($teach){
-	    	?>
-		    <div class="line1"><hr color="#F5F5F5" width=100%; size="2" /></div>
-		    <div class="line2"><hr color="#F5F5F5" width=760px; size="1" /></div>
-		    <!--<div class="att">
-		    	<div style="float:left; displary:inline;"><a href="index_record_show.php?problem_id=<?php echo $teach[0]->id; ?>"><img src="<?php echo $teach[0]->photo_url; ?>" style="width:152px; height:101px;" border="0"></img></a></div>
-			    <div class="left"style="margin-left:10px;"><div class="left" style="margin-top:10px;"><a href="index_record_show.php?problem_id=<?php echo $teach[0]->id; ?>"><font size="2" color="black"><b><?php echo strip_tags($teach[0]->name); ?></b></font></a></div>
-			    <div class="left" style="margin-top:8px;"><a href="index_record_show.php?problem_id=<?php echo $teach[0]->id; ?>"><font size="2px" color="black" ><?php echo strip_tags($teach[0]->description); ?></font></a></div>
-			    </div>
-	    	</div>
-	    	--><?php  }else{
-		    	echo "<div style='width:100%; height:30px; line-height:30px; text-align:center;'><a href=' ' style='font-size:20px;'>您的测评报告为空！</a></div>";
-			    }
-		    ?>
-	    </div>
-	    <div class="txt">
-		    <div><img src="/images/avatar/point.png"></img><font size="2" style="margin-left:5px;"><b>订购</b></font><font size="2" color="red"><b>课程</b></font></div>
-		  	 <div class="line1"><hr color="#F5F5F5" width=100%; size="2" /></div> <div class="line2"><hr color="#F5F5F5" width=760px; size="1" /></div>
+	    	<div class="line1"><hr color="#F5F5F5" width=100%; size="2" /></div> <div class="line2"><hr color="#F5F5F5" width=760px; size="1" /></div>
 		    	<?php 
-		    	for($i = 0 ; $i < 10; $i++){
+		    		$teach=$db->query("SELECT * FROM eachbb.eb_problem e  where id in (SELECT problem_id FROM eachbb.eb_test_record e where user_id={$user->id}) order by create_time desc LIMIT 10;");
+		    		for($i = 0 ; $i < 10; $i++){
 		    	?>
 			   	 <div class="text2" style="width:314px; height:20px; line-height:20px; overflow:hidden; padding-top:0px;">
 			   	 	<img src="/images/avatar/smallpoint.png" style="margin-top:5px;"></img>
@@ -132,6 +114,24 @@
 			   	 		<a href="/test/test_result.php?test_id=<?php echo $teach[$i]->id;?>">测试结果报表</a>
 			   	 		<a href="/test/review.php?id=<?php echo $teach[$i]->id;?>" style="padding-left:20px;">测试回顾</a>
 			   	 		<?php }?>
+				</div>
+				<?php }?>
+	    </div>    
+	    <?php 
+	    	$teach=$db->query("SELECT id,title,img_url FROM eachbb.eb_teach e where is_adopt=1 and del_flag=0 order by priority,click_count,create_time desc limit 10;");
+	    ?>
+	    <div class="txt">
+		    <div><img src="/images/avatar/point.png"></img><font size="2" style="margin-left:5px;"><b>订购</b></font><font size="2" color="red"><b>课程</b></font></div>
+		  	 <div class="line1"><hr color="#F5F5F5" width=100%; size="2" /></div> <div class="line2"><hr color="#F5F5F5" width=760px; size="1" /></div>
+		    <div class="att"><div style="float:left"><a href="/course"><img src="<?php echo $teach[0]->img_url; ?>" style="width:292px; height:101px;" border="0"></img></a></div>
+		    	<?php 
+		    	for($i = 0 ; $i < 10; $i++){
+		    	?>
+			   	 <div class="text2" style="width:214px; height:20px; line-height:20px; padding-top:0px;">
+			   	 	<img src="/images/avatar/smallpoint.png" style="margin-top:5px;"></img>
+			   	 		<a href="index_teach_show.php?problem_id=<?php echo $teach[$i]->id;?>">
+			   	 			<font size="2" ><?php echo $teach[$i]->title;?></font>
+			   	 		</a>
 				</div>
 				<?php }?>
 				    
