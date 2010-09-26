@@ -11,7 +11,7 @@
 		<img src="<?php echo $user->avatar;?>"/>
 		<div id="login_img_result">
 			<div id="login_img_name"><?php echo $user->name;?></div>
-			<div class="login_img_name">真实姓名：<font><?php echo $user->true_name;?></font></div>
+			<div class="login_img_name" style="margin-top:5px;">真实姓名：<font><?php echo $user->true_name;?></font></div>
 			<div class="login_img_name"><a href="/baby/message_index.php">你有<font style="color:red;"><?php echo $count[0]->num ? $count[0]->num : 0;?></font>新消息</a></div>
 			<div class="login_pg_btn">
 				<a href="/yard"><img style="width:68px; height:22px; margin:0px; border:0px solid red;" src="/images/index/yard.jpg"/></a>
@@ -47,9 +47,9 @@
 #login_img_pg img{width:80px; height:80px; margin-left:10px; margin-top:10px; float:left; display:inline;}
 #login_img_result{width:170px; height:100px; float:right; display:inline;}
 #login_img_name{width:170px; height:20px; font-size:18px; font-weight:bold; color:#FF6F0F; display:inline;}
-.login_img_name{width:170px; height:18px; margin-top:5px; line-height:18px; font-size:12px; color:#333333; display:inline;}
+.login_img_name{width:170px; height:20px;  line-height:18px; font-size:12px; color:#333333; display:inline;}
 .login_img_name font{color:#666666; font-size:12px;}
-.login_pg_btn{width:170px; height:22px; display: inline;}
+.login_pg_btn{width:170px; height:22px; margin-top:5px; display: inline;}
 .login_img_name a{font-size:12px; color:#333333; text-decoration: none;}
 #login_hhr{width:260px; height:1px; margin-left:15px;margin-top:10px; font-size:0px; background:url(/images/index/login_hr.jpg) repeat-x; float:left; display:inline;}
 .login_result_pg{width:260px; height:70px; margin-left:15px;  margin-top:10px; float:left; display:inline;}
