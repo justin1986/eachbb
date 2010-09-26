@@ -22,7 +22,7 @@
 			<img src="/images/helper/lb_hd.jpg"> </div>
 		<?php
 		$db=get_db();
-		$list = $db->query("SELECT tid,subject FROM bbs_threads b order by rand() desc limit 10");
+		$list = $db->query("SELECT tid,subject FROM bbs_threads b order by views desc limit 10");
 		for($i = 1 ; $i <= 10; $i++){?>
 		<div class="hlcb_z" style="height:20px;">
 			<div class="hlcb_l" style="height:20px;">
