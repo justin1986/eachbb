@@ -24,7 +24,7 @@
 			location.href = "list.php?category_id=7&age=-1";
 		</script>	
 		<?php }
-		css_include_tag('assistant/_index','logo','assistant','top_inc/assistant_top','left_inc/assistant_left','colorbox','assistant/assistant_content'); 
+		css_include_tag('assistant/_index','logo','test_left_inc','assistant','top_inc/assistant_top','left_inc/assistant_left','colorbox','assistant/assistant_content'); 
 //		css_include_tag(); 
 		$db = get_db();
 		js_include_tag('assistant/assistant','news/index','jquery.colorbox-min');
@@ -69,29 +69,12 @@
 					</div>
 				</div>
 				<div id="assistant_top_right_banner">
+<!--					<div id="l_pho" style="margin-left:0px; float:left;"></div>-->
 					<div class="h_pg_t"></div>
 					<div class="h_pg_c">
-						<div class="h_pg_cc">
-								<div class="ht_l_t">课程助手链接</div>
-								<div class="ht_l_h"></div>
-								<div class="assistant_top_pg_a"<?php $pos = "assistant_top_pg_a";show_page_pos($pos,'link_i')?>>
-									<a href="/course" target="_blank"><img src="<?php echo $pos_items[$pos]->image1 ?>"/></a>
-								</div>
-								<div class="assistant_top_pg_b"<?php $pos = "assistant_top_pg_b";show_page_pos($pos,'link_i')?>>
-									<a href="/test" target="_blank"><img src="<?php echo $pos_items[$pos]->image1 ?>"/></a>
-								</div>
-								<div class="assistant_top_pg_c"<?php $pos = "assistant_top_pg_c";show_page_pos($pos,'link')?>>
-									<div class="htct_l"></div>
-											<a href="<?php echo $pos_items[$pos]->href;?>" class="die_assistant">
-										<?php $tilte_count =mb_strlen($pos_items[$pos]->title,"utf-8");
-										 echo # $tilte_count >45 ?mb_substr($pos_items[$pos]->title,0,46,"utf-8").'<font style="font-size:12px;">...</font>':
-										 $pos_items[$pos]->title;?>
-									</a>
-								</div>
-								<div class="htl_pg_c">
+						<div class="h_pg_cc index_assistant_login">
 						</div>
 					</div>
-				</div>
 				<div class="h_pg_b"></div>
 		</div>
 		</div>
@@ -107,15 +90,23 @@
 				<span class="more"><a href="list.php?category_id=<?php echo $top_cates[$i]->id;?>">更多&gt;&gt;</a></span>
 			</div>
 			<div class="img_box">
-				<div <?php $pos = "list_image_{$i}_a";show_page_pos($pos,'link_i')?>><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
-				<div <?php $pos = "list_image_{$i}_b";show_page_pos($pos,'link_i')?>><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
+				<?php 
+					$sql="SELECT show_image FROM eb_category where parent_id={$top_cates[$i]->id} limit 2";
+//					$valid_ages=array(-2,-1,1,2,3,4);
+//					if(in_array($_GET['age'], $valid_ages)){
+//						$sql .=" and a.age=" .$_GET['age'];
+//					}
+					$img_assistant = $db->query($sql);
+				?>
+				<div  <?php #$pos = "list_image_{$i}_a";show_page_pos($pos,'link_i')?>><img src="<?php echo $img_assistant[0]->show_image;#$pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
+				<div <?php #$pos = "list_image_{$i}_b";show_page_pos($pos,'link_i')?>><img src="<?php echo $img_assistant[1]->show_image;#$pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
 			</div>
 			<div class="list_item_box">
 				<?php
 				$sql = "select a.id,a.title,a.category_id,b.name from eb_assistant a left join eb_category b on a.category_id = b.id where a.is_adopt=1 and a.category_id in(select id from eb_category where category_type='assistant' and parent_id={$top_cates[$i]->id})";
 				$valid_ages=array(-2,-1,1,2,3,4);
 				if(in_array($_GET['age'], $valid_ages)){
-					$sql .=" and age=" .$_GET['age'];
+					$sql .=" and a.age=" .$_GET['age'];
 				}
 				$sql .=" order by a.priority,created_at desc limit 7";
 				$assistants = $db->query($sql);
@@ -144,19 +135,26 @@
 			<div class="fc_c_t">
 				<div class="fct_l" id="fct_lb" style="width:600px;"><?php echo $top_cates[6]->name;?></div>	
 				<div class="fct_r" id="fct_rb"><a href="list.php?category_id=<?php echo $top_cates[6]->id;?>">更多&gt;&gt;</a></div>
-				<?php
+				<?php	
 					$sql = "select a.id,a.title,a.category_id,b.name from eb_assistant a left join eb_category b on a.category_id = b.id where a.is_adopt=1 and a.category_id in(select id from eb_category where category_type='assistant' and parent_id={$top_cates[6]->id})";
-					$valid_ages=array(-2,-1,1,2,3);
+					$valid_ages=array(-2,-1,1,2,3,4);
 					if(in_array($_GET['age'], $valid_ages)){
-								$sql .=" and age=" .$_GET['age'];
+							$sql .=" and age=" .$_GET['age'];
 					}
 					$sql .=" order by a.priority,created_at desc limit 14";
 					$assistants = $db->query($sql);
-				 for($i=6;$i<8;$i++){ ?>
+				 for($i=6;$i<8;$i++){ 
+				 	if($i==6){
+				 		$sql="SELECT show_image FROM eb_category where parent_id={$top_cates[6]->id} limit 2";	
+				 	}else{
+				 		$sql="SELECT show_image FROM eb_category where parent_id={$top_cates[6]->id} limit 2,4";
+				 	}
+				 	$img_assistant = $db->query($sql);
+				 	?>
 				<div class=content>
 				<div class="fcl_l">
-					<div class="fci_a"<?php $pos = "list_image_{$i}_a";show_page_pos($pos,'link_i')?>><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
-					<div class="fci_b"<?php $pos = "list_image_{$i}_b";show_page_pos($pos,'link_i')?>><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
+					<div class="fci_a"<?php #$pos = "list_image_{$i}_a";show_page_pos($pos,'link_i')?>><img src="<?php echo $img_assistant[$i-6]->show_image;#$pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
+					<div class="fci_b"<?php #$pos = "list_image_{$i}_b";show_page_pos($pos,'link_i')?>><img src="<?php echo $img_assistant[$i-5]->show_image;#$pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
 				</div>
 				<div class="fcl_r">
 				<?php 
@@ -225,10 +223,10 @@
 	.h_pg_cc{height:285px; overflow:hidden;}
 	.pic_img{width:505px; height:300px; display: none;}
 	.pic_img img{width:505px; height:300px;  border:0px solid red;} 
-	.assistant_top_pg_a{width:180px; height:70px; margin-left:5px;margin-top:10px;  float:left; display:inline; }
-	.h_pg_cc div img{width:180px; height:70px; border:0px solid red;}
-	.assistant_top_pg_b{width:180px; height:70px; margin-left:5px;margin-top:10px;  float:left; display:inline;}
-	.assistant_top_pg_c{width:180px; height:80px; margin-left:5px; margin-top:10px;font-size:12px; color:#333333; line-height:20px; text-indent:5px; overflow:hidden;  float:left; display:inline;}
+	.assistant_top_pg_a{width:175px; height:50px; margin-left:7px; margin-top:10px;  float:left; display:inline; }
+	.h_pg_cc div img{width:175px; height:50px; border:0px solid red;}
+	.assistant_top_pg_b{width:175px; height:50px; margin-left:7px; margin-top:10px;  float:left; display:inline;}
+	.assistant_top_pg_c{width:175px; height:80px; margin-left:5px; margin-top:10px;font-size:12px; color:#333333; line-height:20px; text-indent:5px; overflow:hidden;  float:left; display:inline;}
 	.assistant_top_pg_c a{font-size:12px; text-decoration: none; color:#333333;}
 </style>
 </html>

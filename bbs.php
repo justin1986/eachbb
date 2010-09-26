@@ -53,7 +53,7 @@
 						<div class="blaco_d"></div>
 						<div class="blaco_c" <?php $pos="bbs_top".$i;show_page_pos($pos,'link');?>>
 							<a href="<?php echo $pos_items[$pos]->href;?>" title="<?php echo $pos_items[$pos]->title;?>"  target="_blank">
-								<?php echo mb_strlen($pos_items[$pos]->title,"utf-8")>24 ? mb_strlen($pos_items[$pos]->title,0,24,"utf-8")."<font style='font-size:8px;'>...</font>" : $pos_items[$pos]->title;?>
+								<?php echo mb_strlen($pos_items[$pos]->title,"utf-8")>24 ? mb_substr($pos_items[$pos]->title,0,23,"utf-8")."<font style='font-size:8px;'>...</font>" : $pos_items[$pos]->title;?>
 							</a>
 						</div>
 					</div>
@@ -61,7 +61,7 @@
 				</div>
 			</div>
 			<div id="bit_ban">
-				<div id="blt_img">论坛版块</div>
+				<div id="blt_img">热门版块</div>
 				<div id="bltc_hr"></div>
 			</div>
 			<div id="bit_c">

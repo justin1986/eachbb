@@ -3,6 +3,20 @@ var total=5;
 var second=2000;
 $(function(){
 	$("#fr_tpimg1").show();
+	$.post('_index_login.php',function(data){
+		$('.index_assistant_login').html(data);
+	});
+	$("#login_bn").live('click',function(){
+		if($("#name").val()==''){
+			alert('请输入用户名');
+			return false;
+		}
+		if($("#password").val()==''){
+			alert('请输入密码');
+			return false;
+		}
+		$("form").submit();
+	});
 	var interval =setInterval('xh()',second);
 	$.post('/assistant/get_comments.ajax.php?id=' + $('#newsid').val(),function(news){
 		$("#res").html(news);

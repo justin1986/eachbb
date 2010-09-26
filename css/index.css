@@ -23,7 +23,7 @@ div{margin:0; padding:0; float:left; display:inline;}
 
 #ibody{width:1000px; margin:0 auto; overflow:hidden; float:none; display:block;}
 
-#fbody{ width:1000px; overflow:hidden; float:left; display:inline;}
+#fbody{ width:1000px; overflow:hidden; float:left; display:inline; position: relative;}
 #f_l_pg{width:17px; height:921px; margin:0px; padding:0px; background:url(/images/index/h_1.jpg) no-repeat 0px 0px; font-size:0px; line-height:0px; float:left; display:inline;}
 #f_r_pg{width:15px; height:952px; margin:0px; padding:0px;  font-size:0px; line-height:0px; background:url(/images/index/f_r.jpg) no-repeat 0px 0px; float:left; display:inline;}
 #f_c_m{width:962px; background:#ffffff; overflow:hidden; float:left; display: inline;}
@@ -54,9 +54,9 @@ div{margin:0; padding:0; float:left; display:inline;}
 
 #flash{width:965px; overflow:hidden; margin:0; padding:0; float:left; display:inline; }
 #flash_left{width:680px; height:400px; overflow:hidden;  float:left; display:inline; position: absolute; margin-left:-15px; z-index: 1000; }
-#flash_right{width:286px; height:399px; margin-top:5px; overflow:hidden; margin-right:5px; float:right; display:inline;}
-#r_test{width:286px; height:124px;  float:left; display:inline;}
-	#r_test img{width:286px; height:124px; border:none;}
+#flash_right{width:289px; height:399px; margin-top:5px; overflow:hidden; margin-right:5px; float:right; display:inline;}
+#r_test{width:286px; height:90px; margin-top:5px;  float:left; display:inline;}
+	#r_test img{width:286px; height:90px; border:none;}
 #test_value{width:180px; height:80px; margin-left:90px; margin-top:38px; float:left; display:inline;}
 .test_a{width:180px; height:18px; margin-top:1px; overflow:hidden; line-height:18px; float:left; display:inline;}
 .test_a a{font-size:13px; color:#000000; text-decoration:none;}
@@ -117,7 +117,9 @@ div{margin:0; padding:0; float:left; display:inline;}
 #picc{width:185px; height:90px;  margin-left:30px; margin-top:5px;  position:relative; float:left; display:inline;}
 #pic_word{width:180px; height:25px; text-align:center;  position:absolute; bottom:5px; left:0px;  opacity:0.90; filter:alpha(opacity = 90); overflow:hidden; line-height:25px; float:left; display:inline;}
 #pic_word a{font-weight:bold; font-size:16px;  color:#000; text-decoration:none;}
-#test_right{width:237px; height:124px; padding-top:50px; padding-left:30px; background:url(/images/index/user.png) no-repeat; float:right; display:inline;}
+#test_right{width:257px; height:124px; padding-top:50px; padding-left:30px; background:url(/images/index/user.png) no-repeat; float:right; display:inline;}
+#test_rightr{width:263px; height:164px; padding-right:5px; margin-top:5px; float:right; display:inline;}
+#test_rightr a img{width:263px; height:164px; border:0px solid red;}
 #t_content_center{width:320px; height:160px;  z-index:11; margin-left:17px; float:left; display:inline;}
 #select_a{width:130px; height:20px; margin-top:15px; float:left; display:inline;}
 #select_b{width:70px; height:20px; margin-top:15px; margin-left:10px; float:left; display:inline;}
@@ -159,7 +161,7 @@ div{margin:0; padding:0; float:left; display:inline;}
 #student{width:962px; height:280px; margin-top:1px; float:left; display:inline;}
 #student_l{width:694px; height:275px;  float:left; display:inline;}
 .student_c{width:676px; height:100px; margin-left:10px; margin-top:10px; overflow:hidden; float:left; display:inline;}
-.course_list{float:left; display:inline;}
+.course_list{position:relative; float:left; display:inline;}
 .s_pic_l{width:151px; height:100px; margin-left:10px; overflow:hidden; float:left; display:inline;}
 .s_pic_l img{width:151px; height:100px; border:0px solid red; overflow:hidden;}
 
@@ -169,7 +171,7 @@ div{margin:0; padding:0; float:left; display:inline;}
 .s_word_cotent a{font-size:12px; color:#000; font-family:����; text-decoration:none;}
 .stuent_d{width:682px; height:124px; margin-left:10px; overflow:hidden; float:left; display:inline;}
 .word_z{width:678px;  margin-top:5px; float:left; display:inline;}
-.s_a{width:221px; height:20px; line-height:20px; margin-left:5px; float:left; display:inline;}
+.s_a{width:221px; height:20px; line-height:20px; margin-left:5px; position:relative; float:left; display:inline;}
 .s_dian{width:7px; height:5px; margin-top:7px; font-size:0px; line-height:0px; background:url(/images/index/dian.png) no-repeat; float:left; display:inline;}
 .s_value{width:190px; height:20px; line-height:20px; overflow:hidden; margin-left:5px; float:left; display:inline;}
 .s_value a{font-size:13px; text-decoration:none; color:#000;}
@@ -185,7 +187,7 @@ div{margin:0; padding:0; float:left; display:inline;}
 .dict_tab.long{width:125px; height:24px; text-align:center; font-size:13px; font-weight:bold; line-height:24px; background:url(/images/index/r_hui_long.gif) no-repeat; float:left; display:inline;}
 .dict_tab.short{width:83px; height:24px; text-align:center; font-size:13px; font-weight:bold; line-height:24px; background:url(/images/index/r_f.gif) no-repeat; float:left; display:inline;}
 #dict_b{width:246px; height:26px; margin-top:5px; margin-left:8px; overflow:hidden; float:left; display:inline;}
-.dict_c{width:246px; height:26px; margin-left:8px; margin-top:2px; overflow:hidden; float:left; display:inline;}
+.dict_c{width:246px; height:26px; margin-left:8px; margin-top:2px;  position:relative; overflow:hidden; float:left; display:inline;}
 .dict_number{width:22px; height:22px; margin-left:3px; margin-top:2px; text-align:center; line-height:22px; font-size:12px; color:#ffffff; font-weight:bold; background:url(/images/index/block.jpg) no-repeat; float:left; display:inline;}
 .dict_value{width:220px; height:22px; overflow:hidden; text-align:left; line-height:22px; float:left; display:inline;}
 .dict_value a{font-size:14px; color:#000000; text-decoration:none;}
@@ -211,7 +213,7 @@ div{margin:0; padding:0; float:left; display:inline;}
 .mlc{width:230px; height:25px; overflow:hidden; color:#666666; line-height:25px; font-size:14px; float:left; display:inline;}
 #m_l_b a{text-decoration:none;}
 .mlc a{text-decoration:none; color:#006600; font-size:12px;}
-#mother_r{width:264px; height:236px; margin-top:6px; float:right; display:inline;}
+#mother_r{width:264px; height:236px; margin-top:6px; position:relative; float:right; display:inline;}
 #m_r_t{width:264px; height:7px; font-size:0px; line-height:0px; background:url(/images/index/r_top.png) no-repeat; float:left; display:inline;}
 #m_r_c{width:262px; height:215px; border-left:1px solid #E4E4E4; border-right:1px solid #E4E4E4; float:left; display:inline;}
 #m_r_b{width:264px; height:8px; background:url(/images/index/r_bottom.png) no-repeat; float:left; display:inline;}
@@ -220,12 +222,12 @@ div{margin:0; padding:0; float:left; display:inline;}
 .son_t_r{width:50px; height:15px; margin-right:10px; margin-top:5px; font-size:12px; line-height:15px; text-align:center; border-left:1px solid #D8D8D8;  border-right:1px solid #D8D8D8; float:right; display:inline;}
 .son_t_r a{text-decoration: none; color:#000000; }
 .son_content{width:260px; float:left; display:inline;}
-.son_c_z{width:260px; height:20px; margin-top:4px; float:left; display:inline;}
+.son_c_z{width:260px; height:20px; margin-top:4px; position:relative; float:left; display:inline;}
 .son_c_z_l{width:5px; height:5px; margin:7px; font-size:0px; line-height:0px; background:url(/images/index/dian.png) no-repeat; float:left; display:inline;}
 .son_c_z_r{width:237px; height:20px; line-height:20px; overflow:hidden;  float:left; display:inline;}
 .son_c_z_r a{font-size:13px; color:#666666; text-decoration:none;}
 
-#qinzi{width:962px; height:226px; margin-top:4px; float:left; display:inline;}
+#qinzi{width:962px; height:226px; margin-top:4px; position:relative; float:left; display:inline;}
 #qin_left{width:684px; height:226px; background:url(/images/index/w_pg.png) no-repeat; float:left; display:inline;}
 #q_menu_l{width:100px; height:226px; margin-left:15px; float:left; display:inline;}
 .q_m_p{width:100px; height:40px; border-bottom:1px solid #ffffff; border-top:1px solid #8DD310; overflow:hidden; cursor:pointer; float:left; display:inline;}
@@ -235,7 +237,7 @@ div{margin:0; padding:0; float:left; display:inline;}
 #q_m_b{width:90px; height:27px; margin-top:6px;  border:0px solid red; margin-left:7px;  background:url(/images/index/w_b.png) no-repeat; float:left; display:inline;}
 #q_m_c{width:90px; height:27px; margin-top:6px;  border:0px solid red; margin-left:7px;  background:url(/images/index/w_c.png) no-repeat; float:left; display:inline;}
 #q_m_d{width:90px; height:27px; margin-top:6px;  border:0px solid red; margin-left:7px;  background:url(/images/index/w_d.png) no-repeat; float:left; display:inline;}
-.q_m_pg_d{width:564px; height:206px; margin-top:10px; background:url(/images/index/w_pg_pg.gif) no-repeat; float:left; display:inline;}
+.q_m_pg_d{width:564px; height:206px; margin-top:10px; position:relative; background:url(/images/index/w_pg_pg.gif) no-repeat; float:left; display:inline;}
 .child_t{width:530px; height:99px; margin-left:15px; margin-top:10px; float:left; display:inline;}
 .ch_t_r{width:370px; height:99px; float: left; display: inline;}
 .child_title{width:360px; height:20px; margin-left:10px; margin-top:2px;  line-height:20px; float:left; display:inline;}
@@ -243,12 +245,12 @@ div{margin:0; padding:0; float:left; display:inline;}
 .child_content{width:370px; height:64px; margin-top:10px; margin-left:5px; line-height:16px; overflow:hidden;  float:left; display:inline;}
 .child_content a{font-size:13px; color:#000; text-decoration: none;}
 .child_c{width:530px; height:80px; margin-left:15px; margin-top:10px; float:left; display:inline;}
-.child_img{width:98px; height:65px; margin-left:5px; margin-top:5px; border:1px solid #999999; float:left; display:inline;}
+.child_img{width:98px; height:65px; margin-left:5px; margin-top:5px; border:1px solid #999999; position:relative; float:left; display:inline;}
 .child_img img{width:98px; height:65px; border:0px solid red;}
 .ch_t_pic{width:152px; height:99px; border:0px solid red;  float:left; display:inline;}
 .ch_t_pic img{width:152px; height:99px; border:0px solid red; }
 .q_menu_r{width:560px; height:226px; overflow:hidden; float:left; display:none;}
-#qin_right{width:264px; height:226px; float:right; display:inline; }
+#qin_right{width:264px; height:226px; position:relative; float:right; display:inline; }
 #qin_right img{width:264px; height:226px; border:0px solid red;}
 
 .quwen{width:962px; height:90px; margin-top:8px;  float:left; display:inline;}
@@ -269,12 +271,12 @@ div{margin:0; padding:0; float:left; display:inline;}
 .sblct_t a{text-decoration: none; color:#666666;}
 .sblct_t_title{width:80px; height:20px; margin-top:8px; text-align:center; font-size:12px; font-weight:bold; color:#ffffff; float:left; display:inline;}
 .sblct_t{width:30px; height:17px; margin-left:43px; margin-top:4px; font-size:12px; text-align:left; float:left; display:inline;}
-.sblct_bb{width:56px; height:63px; margin-left:10px; margin-top:5px; float:left; display:inline;}
+.sblct_bb{width:56px; height:63px; margin-left:10px; margin-top:5px; position:relative; float:left; display:inline;}
 .sblct_bb img{width:56px; height:63px; border:0px solid red;}
 .sblct_r{width:215px; height:140px; margin-left:10px; margin-top:2px; float:left; display:inline;}
 .sb_title{width:200px; height:45px; margin-left:10px; margin-top:2px; float:left; display:inline; }
 .sb_content{width:200px; margin-left:13px; overflow:hidden; line-height:20px; float:left; display:inline;}
-.sb_ctt{width:200px; height:19px; line-height:17px; float:left; display:inline; }
+.sb_ctt{width:200px; height:19px; line-height:17px; position:relative; float:left; display:inline; }
 .sb_ctt a{font-size:12px; color:#000; text-decoration:none;}
 .sb_t_content{width:60px; height:15px; margin-top:5px;  text-align:center;  float:left; display:inline;}
 .sb_t_content a{color:#9BC683; font-size:12px; text-decoration:none;}
@@ -295,5 +297,5 @@ div{margin:0; padding:0; float:left; display:inline;}
 #pic{width:952px; height:178px; margin-top:10px; z-index:14; margin-bottom:15px; border:5px solid #E6E6E6; float:left; display:inline;}
 #picc_left{width:27px; height:152px; margin-top:13px; z-index:15; margin-left:-5px; background:url(/images/index/b_left.jpg) no-repeat; float:left; display:inline;}
 #picc_right{width:923px; height:170px; margin-left:5px; overflow:hidden; margin-top:4px; float:left; display:inline;}
-.picc_a{width:78px; height:78px; margin:2px; margin-left:3px; float:left; display:inline;}
+.picc_a{width:78px; height:78px; margin:2px; margin-left:3px; position:relative; float:left; display:inline;}
 .picc_a img{width:78px; height:78px; border:0px solid red;}

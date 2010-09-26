@@ -5,14 +5,15 @@
 .bottom_a{font-size:12px; color:#666666;  text-decoration: none;}
 </style>
 	<?php 
-			$db = get_db();
+		$db = get_db();
 	?>
 <div id="bg_hr"></div>
 <div id="bottom">
-	<?php for($i=0 ; $i< 7 ; $i++){?>
-	<a class="bottom_a" <?php $pos="bottom_link_".$i;show_page_pos($pos,'link');?> href="<?php echo $list->href;?>">
-		<?php
+	<?php for($i=0 ; $i< 7 ; $i++){
 		$list = $db->query("SELECT * FROM eb_page_pos where page='index' and name like 'bottom_link_$i' limit 7");
+		?>
+	<a class="bottom_a" <?php $pos="bottom_link_".$i;show_page_pos($pos,'link');?> href="<?php echo $list[0]->href;?>">
+		<?php
 		echo $list[0]->title; 
 		if($i != 6){
 		?> -<?php }?></a>

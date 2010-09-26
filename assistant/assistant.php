@@ -1,6 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <?php
-	include_once('../frame.php');
+	include_once dirname(__FILE__).'/../frame.php';
 	$id =intval(trim($_REQUEST['id']));
 	if(empty($id)){
 		#redirect('error.html');
@@ -85,29 +85,7 @@
 			</div>
 		</div>
 		<div id="b_r">
-			<div id="br_img" style="padding-bottom:20px;"></div>
 			<?php include_once('../news/_news_logo_public.php'); ?>
-			<div id="tag">
-				<div id="tag_l"></div>
-				<div id="tag_c">
-					<div id="tagc_t"><font>热门</font>关键字</div>
-					<div class="tag_menu">
-						<?php 
-						$list = $db->query("SELECT * FROM eb_news_keywords LIMIT 10");
-						foreach ($list as $list){
-						$lines = explode("||",$list->name);
-							foreach ($lines as $lines){
-								if($lines){
-								?>
-									<div class="cla_m_v" style="text-align: center;"><a href="/news/search.php?key=<?php echo $lines;?>"><?php echo $lines;?></a></div>
-									<div class="cla_r"></div>
-								<?php }
-							}
-						}?>
-					</div>
-				</div>
-				<div id="tag_b"></div>
-			</div>
 			<div class="bd">
 				<div class="bd_t"></div>
 				<div class="bd_c">

@@ -29,7 +29,7 @@
 .hlcb_pg img{width:5px; height:3px; margin-top:8px; border:0px solid red; float:left; display:inline; }
 .hlcb_z{width:198px; height:40px; margin-top:10px; float:left; display:inline;}
 .hlcb_l{width:25px; height:40px; float:left; display:inline;}
-.r{width:12px; height:12px; margin-left:10px; font-size:12px; line-height:12px; background:#F58626; color:#ffffff; border:1px solid #F36E0C; text-align:center; font-weight:bld; float:left; display:inline;}
+.r{width:14px; height:14px; margin-left:10px; font-size:12px; line-height:14px; background:#F58626; color:#ffffff; border:1px solid #F36E0C; text-align:center; font-weight:bld; float:left; display:inline;}
 .hlcb_r{width:160px; height:40px; margin-left:3px; float:left; display:inline;}
 .hlcb_t{width:160px; height:16px; margin-top:1px; font-size:12px; color:#666666; overflow:hidden; line-height:16px; float:left; display:inline;}
 .hlcb_t font{color:#F34B2E; font-size:12px;}

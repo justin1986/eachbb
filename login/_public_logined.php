@@ -1,5 +1,6 @@
 <?php 
 	include_once '../frame.php';
+	set_charset("utf-8");
 	$db=get_db();
 	$user = User::current_user();
 	$list=$db->query("SELECT unread_msg_count FROM eachbb_member.member_status where uid=".$user->uid);

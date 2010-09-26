@@ -14,6 +14,7 @@ $(function(){
 		$("#middle_image_"+image_tab_index+"_"+result).show();
 		$("#middle_image_"+image_tab_index+"_"+result).parent().parent().find('.num:eq(' + image_tab_index +')').css('background','red');
 	}
+	$('#crr_zz_0').show();
 	var  interval =setInterval(image_interval,iamge_tab_interval);
 	$('.beiju').click(function(e){
 		e.preventDefault();

@@ -1,5 +1,6 @@
 <?php
 include_once '../frame.php';
+set_charset("utf-8");
 //if(!is_ajax())die('invalid request!');
 $allow_ops = array('logout','load_login_status_box');
 $op = strtolower($_GET['op']);
