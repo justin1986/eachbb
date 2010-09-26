@@ -68,10 +68,11 @@
 		<div ><font size="2" color="red"><b>好友的最新动态</b></font></div>
 		<div class="add"><hr color="#A3C1CD" width=100%; size="4" /></div>
 		<?php 
-		$last_news=$db->query("SELECT id,content from eachbb_member.lastest_news where u_id in (SELECT f_id FROM eachbb_member.friend where u_id={$user->id}) and resource_type='oneword' order by created_at desc LIMIT 7");
+		$last_news=$db->query("SELECT id,content,u_id,u_name from eachbb_member.lastest_news where u_id in (SELECT f_id FROM eachbb_member.friend where u_id={$user->id}) and resource_type='oneword' order by created_at desc LIMIT 7");
 		for($i = 0 ; $i <= 7 ; $i++){
 		?>
 		<div class="text" style="width:340px; padding-left:10px; height:18px; line-height:18px; overflow:hidden; background:url(/images/avatar/smallpoint.png) no-repeat 0px 7px;">
+			<?php if($last_news[$i]->u_id){?><a href="/yard/index.php?id=<?php echo $last_news[$i]->u_id; ?>">[<?php echo $last_news[$i]->u_name;?>]</a><?php }?>
 			<a href="/baby/index_daily_show.php?daily_id=<?php echo $last_news[$i]->id; ?>" style="font-size:12px; color:#8C8C8C;">
 				<?php echo $last_news[$i]->content; ?>
 			</a>
@@ -118,24 +119,26 @@
 				<?php }?>
 	    </div>    
 	    <?php 
-	    	$teach=$db->query("SELECT id,title,img_url FROM eachbb.eb_teach e where is_adopt=1 and del_flag=0 order by priority,click_count,create_time desc limit 10;");
+//	    	$teach=$db->query("SELECT id,title,img_url FROM eachbb.eb_teach e where is_adopt=1 and del_flag=0 order by priority,click_count,create_time desc limit 10;");
 	    ?>
 	    <div class="txt">
 		    <div><img src="/images/avatar/point.png"></img><font size="2" style="margin-left:5px;"><b>订购</b></font><font size="2" color="red"><b>课程</b></font></div>
 		  	 <div class="line1"><hr color="#F5F5F5" width=100%; size="2" /></div> <div class="line2"><hr color="#F5F5F5" width=760px; size="1" /></div>
-		    <div class="att"><div style="float:left"><a href="/course"><img src="<?php echo $teach[0]->img_url; ?>" style="width:292px; height:101px;" border="0"></img></a></div>
-		    	<?php 
-		    	for($i = 0 ; $i < 10; $i++){
+		    <?php 
+		    		$teach=null;$db->query("SELECT * FROM eachbb.eb_problem e  where id in (SELECT problem_id FROM eachbb.eb_test_record e where user_id={$user->id}) order by create_time desc LIMIT 10;");
+		    		for($i = 0 ; $i < 10; $i++){
 		    	?>
-			   	 <div class="text2" style="width:214px; height:20px; line-height:20px; padding-top:0px;">
+			   	 <div class="text2" style="width:314px; height:20px; line-height:20px; overflow:hidden; padding-top:0px;">
 			   	 	<img src="/images/avatar/smallpoint.png" style="margin-top:5px;"></img>
-			   	 		<a href="index_teach_show.php?problem_id=<?php echo $teach[$i]->id;?>">
-			   	 			<font size="2" ><?php echo $teach[$i]->title;?></font>
+			   	 		<a href="/test/test_result.php?test_id=<?php echo $teach[$i]->id;?>">
+			   	 			<font size="2" ><?php echo strip_tags($teach[$i]->description); ?></font>
 			   	 		</a>
+			   	 		<?php if($teach[$i]->id){?>
+			   	 		<a href="/test/test_result.php?test_id=<?php echo $teach[$i]->id;?>">测试结果报表</a>
+			   	 		<a href="/test/review.php?id=<?php echo $teach[$i]->id;?>" style="padding-left:20px;">测试回顾</a>
+			   	 		<?php }?>
 				</div>
 				<?php }?>
-				    
-		   </div>
 	   </div>
 	   
 	    <div class="txt">
