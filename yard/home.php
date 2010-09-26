@@ -18,8 +18,8 @@
 			alert('您的好友不存在！');
 			redirect("/yard");
 		}
-		$db->execute("insert into eachbb_member.member_status (uid,created_at,last_login,score,level,friend_count,unread_msg_count,visit_count) values ({$info[0]->uid},now(),now(),0,0,0,0,1) ON DUPLICATE KEY update visit_count = visit_count +1;");
 		if(!($info[0]->id === $user->id)){
+			$db->execute("insert into eachbb_member.member_status (uid,created_at,last_login,score,level,friend_count,unread_msg_count,visit_count) values ({$info[0]->uid},now(),now(),0,0,0,0,1) ON DUPLICATE KEY update visit_count = visit_count +1");
 			$vis_id=$db->query("select id from eachbb_member.visit_history where u_id= {$info[0]->id} and f_id= {$user->id}");
 			if(!$vis_id){
 				if(!$db->execute("insert into eachbb_member.visit_history(create_at,u_id,f_id,f_name,f_avatar)values(now(),$id,{$user->id},'{$user->name}','{$user->avatar}');")){
@@ -27,7 +27,7 @@
 				}
 			}
 			else{
-				$db->execute("update eachbb_member.visit_history set create_at =now(),f_avatar='{$info[0]->avatar}' where id={$vis_id[0]->id}");
+				$db->execute("update eachbb_member.visit_history set create_at =now()}' where id={$vis_id[0]->id}");
 			}
 		}
 		$daily_count=$db->query("select id from eachbb_member.daily where u_id=$id");

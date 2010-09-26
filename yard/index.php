@@ -7,7 +7,7 @@
 		include_once('../frame.php');
 		use_jquery();
 		css_include_tag('yard','colorbox');
-		js_include_tag('jquery.colorbox-min','yard/yard');
+		js_include_tag('yard/yard','jquery.colorbox-min');
 		$db=get_db();
 		$id = $_GET['id'];
 		$user = User::current_user();
@@ -16,7 +16,18 @@
 			redirect('/login/?last_url=/yard/');
 			exit();
 		}
-		if($id){
+		$info = $db->query("select * from eachbb_member.member where id=$id");
+		if($id!=$user->id){
+			$db->execute("insert into eachbb_member.member_status (uid,created_at,last_login,score,level,friend_count,unread_msg_count,visit_count) values ({$info[0]->uid},now(),now(),0,0,0,0,1) ON DUPLICATE KEY update visit_count = visit_count +1");
+			$vis_id=$db->query("select id from eachbb_member.visit_history where u_id= {$info[0]->id} and f_id= {$user->id}");
+			if(!$vis_id){
+				if(!$db->execute("insert into eachbb_member.visit_history(create_at,u_id,f_id,f_name,f_avatar)values(now(),$id,{$user->id},'{$user->name}','{$user->avatar}');")){
+					echo "添加失败！";
+				}
+			}
+			else{
+				$db->execute("update eachbb_member.visit_history set create_at =now()}' where id={$vis_id[0]->id}");
+			}
 			$user=$db->query("SELECT * FROM eachbb_member.member m where id=$id");
 			$user = $user[0];
 		}
