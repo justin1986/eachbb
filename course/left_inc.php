@@ -22,19 +22,17 @@
 			<img src="/images/helper/lb_hd.jpg"> </div>
 		<?php
 		$db=get_db();
+		$list = $db->query("SELECT tid,subject FROM bbs_threads b order by rand() desc limit 10");
 		for($i = 1 ; $i <= 10; $i++){?>
-		<div class="hlcb_z"<?php $pos="course_left_"+$i;show_page_pos($pos,'link_day');?>  style="height:20px;">
+		<div class="hlcb_z" style="height:20px;">
 			<div class="hlcb_l" style="height:20px;">
 				<div class="r" style="background:#F36E0C;"><?php echo $i; ?></div>
 			</div>
 			<div class="hlcb_r" style="height:20px;">
-				<div class="hlcb_t">
-					<a href="<?php echo $pos_items[$pos]->href;?>">
-						<?php echo $pos_items[$pos]->title;?></a>
-					</div>
+				<div class="hlcb_t"><a href="/bbs/viewthread.php?tid=<?php echo $list[$i-1]->tid;?>"><?php echo $list[$i-1]->subject;?></a></div>
 			</div>
 		</div>
-		<?php ; }?>
+		<?php }?>
 	</div>
 	<div class="hlc_bb"></div>
 	<?php if($user){?>
