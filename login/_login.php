@@ -47,7 +47,7 @@
 #login_img_pg img{width:80px; height:80px; margin-left:10px; margin-top:10px; float:left; display:inline;}
 #login_img_result{width:170px; height:100px; float:right; display:inline;}
 #login_img_name{width:170px; height:20px; font-size:18px; font-weight:bold; color:#FF6F0F; display:inline;}
-.login_img_name{width:170px; height:20px; margin-top:5px; font-size:12px; color:#333333; display:inline;}
+.login_img_name{width:170px; height:18px; margin-top:5px; line-height:18px; font-size:12px; color:#333333; display:inline;}
 .login_img_name font{color:#666666; font-size:12px;}
 .login_pg_btn{width:170px; height:22px; display: inline;}
 .login_img_name a{font-size:12px; color:#333333; text-decoration: none;}
