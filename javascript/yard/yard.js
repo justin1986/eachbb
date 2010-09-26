@@ -86,8 +86,8 @@ $(function(){
 		$('#friend_r'+selected).find('img').attr('src','/images/yard/friend_r1.jpg');
 		$('#friend_l'+selected2).find('img').attr('src','/images/yard/friend_l0.jpg');
 		$('#friend_r'+selected2).find('img').attr('src','/images/yard/friend_r0.jpg');
-		$('#friend_word'+selected2).css({'background':'url("/images/yard/friend_bj.jpg") repeat-x','color':'#4e714f'});
-		$('#friend_word'+selected).css({'background':'#BFDEC1','color':'#6ebd71'});
+		$('#friend_word'+selected2).css({'background':'#BFDEC1','color':'#6ebd71'});
+		$('#friend_word'+selected).css({'background':'url("/images/yard/friend_bj.jpg") repeat-x','color':'#4e714f'});
 		$('#pic_'+selected).show();
 		$('#pic_'+selected2).hide();
 	});
