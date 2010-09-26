@@ -10,6 +10,7 @@
 		js_include_tag('yard/yard','jquery.colorbox-min');
 		$db=get_db();
 		$id = $_GET['id'];
+		$flag = true;
 		$user = User::current_user();
 		if(!$user){
 			alert("请您先登录！");
@@ -17,7 +18,8 @@
 			exit();
 		}
 		$info = $db->query("select * from eachbb_member.member where id=$id");
-		if($id!=$user->id){
+		if($id!=$user->id&&$id!=''){
+			$flag = false;
 			$db->execute("insert into eachbb_member.member_status (uid,created_at,last_login,score,level,friend_count,unread_msg_count,visit_count) values ({$info[0]->uid},now(),now(),0,0,0,0,1) ON DUPLICATE KEY update visit_count = visit_count +1");
 			$vis_id=$db->query("select id from eachbb_member.visit_history where u_id= {$info[0]->id} and f_id= {$user->id}");
 			if(!$vis_id){
@@ -81,8 +83,8 @@
 					<div id="cc_pic">
 						<img src="/images/yard/yard.jpg" usemap="#Map" />
 						<map name="Map" id="Map">
-						  	<area shape="poly" coords="264,91,205,102,190,26,216,21,249,17" href="/yard/album_list.php" title="照片"/>
-							<area shape="poly" coords="132,37,184,44,174,124,120,119" href="/yard/member.php" title="档案" />
+						  	<area shape="poly" coords="264,91,205,102,190,26,216,21,249,17" href="/yard/album_list.php<?php if(!$flag)echo "?id=$id";?>" title="照片"/>
+							<area shape="poly" coords="132,37,184,44,174,124,120,119" href="/yard/<?php if(!$flag)echo "home.php?id=$id";else echo "member.php";?>" title="档案" />
 						</map>
 					</div>
 					<?php if(!$id){?>
