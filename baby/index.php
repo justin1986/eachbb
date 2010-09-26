@@ -112,7 +112,7 @@
 			   	 			<font size="2" ><?php echo strip_tags($teach[$i]->description); ?></font>
 			   	 		</a>
 			   	 		<?php if($teach[$i]->id){?>
-			   	 		<a href="/test/test_result.php?test_id=<?php echo $teach[$i]->id;?>">测试结果报表</a>
+			   	 		<a href="/test/test_result.php?test_id=<?php echo $teach[$i]->id;?>">测试结果</a>
 			   	 		<a href="/test/review.php?id=<?php echo $teach[$i]->id;?>" style="padding-left:20px;">测试回顾</a>
 			   	 		<?php }?>
 				</div>

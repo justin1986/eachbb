@@ -69,7 +69,7 @@ div{margin:0; padding:0; float:left; display:inline;}
 #student_right{width:44px; height:80px; background:url(/images/index/class_r.jpg) no-repeat; float:left; display:inline;}
 #student_value{width:286px; height:90px;  margin-top:3px; float:left; display:inline;}
 .student_l{width:6px; height:6px; margin-top:6px; background:url(/images/index/class_d.jpg) no-repeat; float:left; display:inline;}
-.student_pg{width:210px; height:22px; margin-left:10px; overflow:hidden; line-height:18px; float:left; display:inline;}
+.student_pg{width:210px; height:22px; margin-left:10px; overflow:hidden; position:relative; line-height:18px; float:left; display:inline;}
 .student_pg a{margin-left:5px; color:#000; font-size:13px; text-decoration:none;}
 .student_hr{width:215px; height:1px; margin-left:5px; background:url(/images/index/class_hr.jpg) repeat-x; font-size:0px; line-height:0px; float:left; display:inline;}
 #index_right_banner_1{width:284px; height:138px; margin-top:5px; font-size:0px; line-height:0px;  float:left; display:inline;}
