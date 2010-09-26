@@ -72,7 +72,7 @@
 		for($i = 0 ; $i <= 7 ; $i++){
 		?>
 		<div class="text" style="width:340px; padding-left:10px; height:18px; line-height:18px; overflow:hidden; background:url(/images/avatar/smallpoint.png) no-repeat 0px 7px;">
-			<?php if($last_news[$i]->u_id){?><a href="/yard/home.php?id=<?php echo $last_news[$i]->u_id; ?>">[<?php echo $last_news[$i]->u_name;?>]</a><?php }?>
+			<?php if($last_news[$i]->u_id){?><a href="/yard/index.php?id=<?php echo $last_news[$i]->u_id; ?>">[<?php echo $last_news[$i]->u_name;?>]</a><?php }?>
 			<a href="/baby/index_daily_show.php?daily_id=<?php echo $last_news[$i]->id; ?>" style="font-size:12px; color:#8C8C8C;">
 				<?php echo $last_news[$i]->content; ?>
 			</a>
