@@ -7,7 +7,7 @@ $(function(){
 		{
 			alert("请输入查询条件！");
 		}else{
-			$.post('_query_friend_ajax_post.php',{"nike_name":nike_name,"email":email,"address":address},function(data){
+			$.get('_query_friend_ajax_post.php',{"nike_name":nike_name,"email":email,"address":address},function(data){
 				$('#friend_value').html(data);
 				$.fn.colorbox.resize();
 			});
