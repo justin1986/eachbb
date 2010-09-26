@@ -1,4 +1,4 @@
-body{width:1000px; margin: 0 auto; }
+body{width:1000px; margin: 0 auto; position:relative;}
 
 p{margin:0; padding:0;}
 ul{margin:0; padding:0;}
@@ -23,7 +23,7 @@ div{margin:0; padding:0; float:left; display:inline;}
 
 #ibody{width:1000px; margin:0 auto; overflow:hidden; float:none; display:block;}
 
-#fbody{ width:1000px; overflow:hidden; float:left; display:inline; position: relative;}
+#fbody{ width:1000px; overflow:hidden; float:left; display:inline;}
 #f_l_pg{width:17px; height:921px; margin:0px; padding:0px; background:url(/images/index/h_1.jpg) no-repeat 0px 0px; font-size:0px; line-height:0px; float:left; display:inline;}
 #f_r_pg{width:15px; height:952px; margin:0px; padding:0px;  font-size:0px; line-height:0px; background:url(/images/index/f_r.jpg) no-repeat 0px 0px; float:left; display:inline;}
 #f_c_m{width:962px; background:#ffffff; overflow:hidden; float:left; display: inline;}

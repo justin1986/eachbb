@@ -43,13 +43,18 @@ $(function(){
 		<?php
 		$list = $db->query("select a.problem_id,b.name,a.created_at from eb_test_record as a  left join eb_problem b on b.id=a.problem_id where a.user_id={$user->id} group by user_id,problem_id limit 2;");
 			?>
-		<div class="login_result_value"><a href="/test/test_result.php?test_id=<?php echo $list[0]->problem_id;?>" target="_blank">您最近一次完成测评<?php echo $list[0]->name;?></a></div>
+		<div class="login_result_value">
+			<?php if($list[0]->name){?>
+			<a href="/test/test_result.php?test_id=<?php echo $list[0]->problem_id;?>" target="_blank">您最近一次完成<font style="color:red;"><?php echo $list[0]->name;?></font>测评</a></div>
+			<?php }else{?>
+			<font style="font-size:12px;">您没有测评，参加本期免费测评</font>
+			<?php }?>
 		<div class="login_result_value">
 			<?php if($user->baby_birthday >  0){?>
-			<a href="/test/test.php?id=<?php echo $month_name[0]->id;?>" target="_blank">您的宝宝<?php echo $month;?>个月了,快来参加免费测评</a>
+			<a href="/test/test.php?id=<?php echo $month_name[0]->id;?>" target="_blank">您的宝宝<?php echo $month;?>个月了,快来参加本期免费测评</a>
 			<?php }else{
 				?>
-				<a href="/yard/member.php" target="_blank">输入宝宝生日，参加免费测评</a>
+				<a href="/yard/member.php" target="_blank">输入宝宝生日，参加本期免费测评</a>
 				<?php 
 			}?>
 		</div>
