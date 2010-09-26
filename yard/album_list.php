@@ -124,7 +124,7 @@
 						$n = $db->record_count;
 					?>
 						<div class="al_num"><font style="color:#ff0000;"><?php echo $n;?></font>张<a href="/yard/album_list_update.php?album_id=<?php echo $master_id;?>" <?php if($user->id != $id){echo 'style="display:none;"';}else{ echo 'style="cursor:pointer; margin-left:20px; color:blue; display:inline;"';}?>>编辑相册</a>
-							<img src="/images/yard/delete.jpg" <?php if($user->id != $id){ echo 'style="display:none;"';}else{ echo 'style="cursor:pointer; display:inline;"';}?>/>
+							<img src="/images/yard/delete.jpg" <?php if($user->id != $id){ echo 'style="display:none;"';}else{ echo 'style="margin-left:5px; cursor:pointer; display:inline;"';}?>/>
 						</div>
 					</div>
 					<input id="number_<?php echo $i?>" style="display:none;" value="<?php echo $master[$i]->id?>">
