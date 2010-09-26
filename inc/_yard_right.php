@@ -8,7 +8,7 @@
 		$user=$db->query("SELECT * FROM eachbb_member.member m where id=$id");
 		$user = $user[0];
 	}
-	$sql="select m.*,s.* from eachbb_member.member m inner join eachbb_member.member_status s on m.id=s.uid where m.id=".$user->id;
+	$sql="select m.*,s.* from eachbb_member.member m inner join eachbb_member.member_status s on m.uid=s.uid where m.id=".$user->id;
 	$news=$db->query($sql);
 	$sex='未知';
 	if($user->gender == 1){

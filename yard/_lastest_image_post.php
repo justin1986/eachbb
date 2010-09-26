@@ -5,10 +5,10 @@
 	$db=get_db();
 	$id =$_POST["id"];
 	if($id){
-		$user=$db->query("SELECT * FROM eachbb_member.member m where id=$id");
-		$user = $user[0];
+		$result = $db->query("SELECT * FROM `eachbb_member`.lastest_news where resource_type='image' and u_id=$id order by created_at desc");
+	}else{
+		$result = $db->query("SELECT * FROM `eachbb_member`.lastest_news where resource_type='image' and u_id in (SELECT f_id FROM `eachbb_member`.friend where u_id ={$user->id} group by f_id) order by created_at desc");
 	}
-	$result = $db->query("SELECT * FROM `eachbb_member`.lastest_news where resource_type='image' and u_id in (SELECT f_id FROM `eachbb_member`.friend where u_id ={$user->id} group by f_id) order by created_at desc");
     if($result){
     foreach ($result as $result){?>
 	<div class="pc_z">

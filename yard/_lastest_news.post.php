@@ -4,11 +4,11 @@
 	$user = User::current_user();
 	$id =$_POST["id"];
 	if($id){
-		$user=$db->query("SELECT * FROM eachbb_member.member m where id=$id");
-		$user = $user[0];
+		$result= $db->query("SELECT * FROM eachbb_member.lastest_news where u_id=$id and resource_type='diary' order by rand(),created_at desc LIMIT 10");
+	}else{
+		$result= $db->query("SELECT * FROM eachbb_member.lastest_news where u_id in (SELECT f_id FROM `eachbb_member`.friend where u_id ={$user->id} group by f_id) and resource_type='diary' order by rand(),created_at desc LIMIT 10");
 	}
-	if(!$user) die();
-	$result= $db->query("SELECT * FROM eachbb_member.lastest_news where u_id in (SELECT f_id FROM `eachbb_member`.friend where u_id ={$user->id} group by f_id) and resource_type='diary' order by rand(),created_at desc LIMIT 10");
+	
     if($result){
     foreach ($result as $result){?>
 	<div class="pc_z">

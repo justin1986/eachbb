@@ -70,6 +70,7 @@
 								<div id="pichr_title">我的图库（<font><?php echo $avatar_count;?></font>张）</div>
 								<div class="pichr_menu">[上传头像]</div>
 								<div class="pichr_menu" id="set_avatar">[选择头像]</div>
+								<div class="pichr_menu" id="del_avatar">[删除头像]</div>
 							</div>
 							<div id="pic_hr_b"></div>
 							<div id="pic_hr_pg">

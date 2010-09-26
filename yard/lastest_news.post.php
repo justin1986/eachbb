@@ -6,11 +6,23 @@
 	if(!$user) die();
 	if(!$id){
 		$id = $user->id;
+		$select =$_POST['select'];
+		$type = $_POST['type'];
+		if(!in_array($type,array('all','oneword','diary','image','suibian'))){die('no such type!');}
+		$result = User::lastest_news($type,$user->id);
+	}else{
+		$db = get_db();
+		if($type == "all"){
+			$result = $db->query("select * from `eachbb_member`.lastest_news where u_id=$id order by created_at desc limit 9");
+		}else if($type == "suibian"){
+			$result = $db->query("select * from `eachbb_member`.lastest_news order by rand(),created_at desc limit 9");
+		}else if($type == "oneword"){
+			$result = $db->query("select * from `eachbb_member`.lastest_news where u_id=$id and resource_type='oneword' order by created_at desc limit 9");
+		}else{
+			$result = $db->query("select * from `eachbb_member`.lastest_news where u_id=$id limit 9");
+		}
 	}
-	$select =$_POST['select'];
-	$type = $_POST['type'];
-	if(!in_array($type,array('all','oneword','diary','image','suibian'))){die('no such type!');}
-	$result= User::lastest_news($type,$user->id);
+	
 	$num = $db->record_count;
     if($result){
     for($i=0;$i<$num;$i++){
