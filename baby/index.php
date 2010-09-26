@@ -68,10 +68,11 @@
 		<div ><font size="2" color="red"><b>好友的最新动态</b></font></div>
 		<div class="add"><hr color="#A3C1CD" width=100%; size="4" /></div>
 		<?php 
-		$last_news=$db->query("SELECT id,content from eachbb_member.lastest_news where u_id in (SELECT f_id FROM eachbb_member.friend where u_id={$user->id}) and resource_type='oneword' order by created_at desc LIMIT 7");
+		$last_news=$db->query("SELECT id,content,u_id,u_name from eachbb_member.lastest_news where u_id in (SELECT f_id FROM eachbb_member.friend where u_id={$user->id}) and resource_type='oneword' order by created_at desc LIMIT 7");
 		for($i = 0 ; $i <= 7 ; $i++){
 		?>
 		<div class="text" style="width:340px; padding-left:10px; height:18px; line-height:18px; overflow:hidden; background:url(/images/avatar/smallpoint.png) no-repeat 0px 7px;">
+			<?php if($last_news[$i]->u_id){?><a href="/yard/home.php?id=<?php echo $last_news[$i]->u_id; ?>">[<?php echo $last_news[$i]->u_name;?>]</a><?php }?>
 			<a href="/baby/index_daily_show.php?daily_id=<?php echo $last_news[$i]->id; ?>" style="font-size:12px; color:#8C8C8C;">
 				<?php echo $last_news[$i]->content; ?>
 			</a>

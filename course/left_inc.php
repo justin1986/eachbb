@@ -19,7 +19,7 @@
 	<div class="hlc_b">
 		<div class="hlcb_pg">
 			<div class="hlct_t">论坛热帖排行</div>
-			<img src="/images/helper/lb_hd.jpg"> </div>
+			<img src="/images/helper/lb_hd.jpg"></div>
 		<?php
 		$db=get_db();
 		$list = $db->query("SELECT tid,subject FROM bbs_threads b order by views desc limit 10");
