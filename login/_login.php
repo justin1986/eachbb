@@ -51,7 +51,7 @@ $(function(){
 		<?php
 		$list =$db->query("SELECT * FROM eb_teach e LIMIT 2");
 		for($i = 0 ; $i <2 ; $i++){?>
-		<div class="login_result_value"><a href=""><?php echo $list[$i]->title;?></a></div>
+		<div class="login_result_value"><a href="">测试时期，敬请期待！</a></div>
 		<?php }?>
 	</div>
 	<div class="login_result_btn">
