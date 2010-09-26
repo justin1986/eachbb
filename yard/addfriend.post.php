@@ -12,11 +12,12 @@ include_once('../frame.php');
 					redirect("/yard/home.php?id=$friend_id");
 				}elseif($user->add_friend($friend_id)){
 					$sql="insert into `eachbb_member`.lastest_news (resource_id,resource_type,u_id,created_at,u_name,u_avatar,form)values(98,'addfriend','{$user->id}',now(),'{$user->name}','{$user->avatar}','与<a href=/yard/home.php?id={$friend_id}>{$friend_name}</a>成为好友')";
-					if($db->execute($sql))
-					$db->execute("insert into eachbb_member.message(created_at,content,avatar,status,last_edit_at,send_id,message_type,recieve_id)values(now(),'您成功添加了{$friend_name}为好友！','{$user->avatar}',0,now(),{$user->id},0,{$user->id})");
-					$db->execute("insert into eachbb_member.message(created_at,content,avatar,status,last_edit_at,send_id,message_type,recieve_id)values(now(),'{$user->name}和你成为了好友！','{$user->avatar}',0,now(),{$user->id},0,$friend_id)");
-					alert("添加成功！");
-					redirect("/yard/home.php?id=$friend_id");
+					if($db->execute($sql)){
+					#$db->execute("insert into eachbb_member.message(created_at,content,avatar,status,last_edit_at,send_id,message_type,recieve_id)values(now(),'您成功添加了{$friend_name}为好友！','{$user->avatar}',0,now(),{$user->id},0,{$user->id})");
+						$db->execute("insert into eachbb_member.message(created_at,content,avatar,status,last_edit_at,send_id,message_type,recieve_id)values(now(),'{$user->name}和你成为了好友！','{$user->avatar}',0,now(),{$user->id},0,$friend_id)");
+						alert("添加成功！");
+						redirect("/yard/home.php?id=$friend_id");
+					}
 				}else{
 					alert("添加失败！");
 					redirect("/");

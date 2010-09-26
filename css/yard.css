@@ -93,7 +93,7 @@ body a{text-decoration:none; color:#497617;}
 .r_ge_ctb{height:30px; line-height:30px; margin-left:5px; font-size:14px; font-weight:bold; color:#666666; float:left; display:inline;}
 .r_ge_ctc{width:100px; height:30px; overflow:Hidden; line-height:30px; font-size:14px; font-weight:bold; color:#6AA85F; float:left; display:inline;}
 #friendbox{width:203px; height:23px; margin-left:10px; margin-top:15px; line-height:24px;border-bottom:1px solid #BFDEC1; float:left; display:inline;}
-.friend{height:23px; margin-left:10px; font-size:12px; line-height:23px; cursor:pointer; display:inline; background-color:red;}
+.friend{height:23px; margin-left:10px; font-size:12px; line-height:23px; cursor:pointer; display:inline;}
 #query_friend{font-size:12px; color:#6AA85F; cursor:pointer;  float:right; display:inline;}
 	#friend_l0{width:3px; height:23px; }
 	#friend_r0{width:3px; height:23px;}
