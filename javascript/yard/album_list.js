@@ -38,7 +38,8 @@ $(function(){
 			}
 		});
 		$('#btn_b_res').live("click",function(){
-			window.back();
+			//window.back();
+			window.location.href="/yard/album_list.php";
 		});
 		$(function(){
 			$('#add_album').click(function(){
