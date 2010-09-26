@@ -1,7 +1,7 @@
-body{width:970px; font-size:12px;margin: 0 auto;}
+body{width:970px; font-size:12px;margin: 0 auto;position:relative;}
 body div{float:left; display:inline;}
 body a{text-decoration:none; color:#497617;}
-#ibody{width:970px; overflow:hidden; margin:0 auto;position:relative;}
+#ibody{width:970px; overflow:hidden; margin:0 auto; }
 
 #menu{width:700px; height:62px; margin-top:15px; float:left; display:inline;}
 #yard_day{width:124px; height:62px; font-size:12px; background:url(../images/yard/day.jpg) no-repeat; float:left; display:inline;}
