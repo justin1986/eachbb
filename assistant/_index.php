@@ -91,15 +91,15 @@
 			</div>
 			<div class="img_box">
 				<?php 
-					$sql="SELECT show_image FROM eb_category where parent_id={$top_cates[$i]->id} limit 2";
+					$sql="SELECT id,show_image FROM eb_category where parent_id={$top_cates[$i]->id} order by rand() desc limit 2";
 //					$valid_ages=array(-2,-1,1,2,3,4);
 //					if(in_array($_GET['age'], $valid_ages)){
 //						$sql .=" and a.age=" .$_GET['age'];
 //					}
 					$img_assistant = $db->query($sql);
 				?>
-				<div  <?php #$pos = "list_image_{$i}_a";show_page_pos($pos,'link_i')?>><img src="<?php echo $img_assistant[0]->show_image;#$pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
-				<div <?php #$pos = "list_image_{$i}_b";show_page_pos($pos,'link_i')?>><img src="<?php echo $img_assistant[1]->show_image;#$pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
+				<div  <?php #$pos = "list_image_{$i}_a";show_page_pos($pos,'link_i')?>><a href="/assistant/list.php?category_id=<?php echo $img_assistant[0]->id;?>"><img style="border:0px solid red;" src="<?php echo $img_assistant[0]->show_image;#$pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></a></div>
+				<div <?php #$pos = "list_image_{$i}_b";show_page_pos($pos,'link_i')?>><a href="/assistant/list.php?category_id=<?php echo $img_assistant[1]->id;?>"><img style="border:0px solid red;"  src="<?php echo $img_assistant[1]->show_image;#$pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></a></div>
 			</div>
 			<div class="list_item_box">
 				<?php
