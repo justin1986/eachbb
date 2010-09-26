@@ -7,7 +7,7 @@
 	<?php 
 		include_once('../frame.php');
 		use_jquery();
-		css_include_tag('teach');
+		css_include_tag('baby','teach','test_report');
 		js_include_tag('yard/yard_info','baby/report');
 		$user = User::current_user();
 		$teach_id =$_GET["problem_id"];
