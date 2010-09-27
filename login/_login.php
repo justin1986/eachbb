@@ -78,7 +78,7 @@ $(function(){
 	</div>
 	<div class="login_result_btn">
 		<a href="/yard/album_list.php"><div style="background:url(/images/index/login_1.jpg) no-repeat; text-align: center; width:122px; height:42px; color:#FF6F0F; line-height:42px; font-size:14px; font-weight:bold;" ></div></a>
-		<a href="/baby"><div style="width:122px; padding-right:10px; margin-left:10px; background:url(/images/index/login_2.jpg) no-repeat; text-align: center; height:42px; color:#FF6F0F; line-height:42px; font-size:14px; font-weight:bold;" ></div></a>
+		<div style="width:122px; padding-right:10px; margin-left:10px; background:url(/images/index/login_2.jpg) no-repeat; text-align: center; height:42px; color:#FF6F0F; line-height:42px; font-size:14px; font-weight:bold;" ></div>
 	</div>
 </div>
 <style>
