@@ -21,7 +21,7 @@
 	<div id="user_me_center">
 		<div id="user_me_middle">
 			<div class="user_me_s" >
-				<div class="user_me_tt" ><img src="/images/avatar/bpoint.png"></img><a href="/baby" style='color:#000; text-decoration: none;'><font size="2"><b>宝宝首页</b></font></a></div>
+				<div id="user_baby" ><img src="/images/avatar/bpoint.png"></img><a href="/baby" style='color:#000; text-decoration: none;'><font size="2"><b>宝宝首页</b></font></a></div>
 				<div class="user_me_t" ><img src="/images/avatar/bpoint.png"></img><font size="2"><b>用户信息</b></font></div>
 					<div class="user_me_b">
 						<div class="user_me_t"><img src="/images/avatar/cpoint.png"></img><font size="2" color="black">基本信息</font></div>

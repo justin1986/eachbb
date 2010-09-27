@@ -21,7 +21,7 @@ body  a{text-decoration:none;}
 #user_me_bottom{width:200px;height:6px;background:url(/images/avatar/user_me_b_r4.png) no-repeat ;font-size:0; line-height:0px;float:left;}
 .user_me_s{width:170px;margin-left:17px;padding-top:10px;}
 .user_me_t{width:160px; padding-top:10px;padding-left:20px; cursor:pointer;  float:left; display:inline;}
-.user_me_tt{width:160px; padding-top:10px;padding-left:20px; cursor:pointer;  float:left; display:inline;}
+#user_baby{width:160px; padding-top:10px;padding-left:20px; cursor:pointer;  float:left; display:inline;}
 .user_me_b{width:150px;background-color:#F8F8F8; padding-left:12px; margin-top:5px; overflow:hidden;}
 #user_me_o{margin-top:30px; cursor:pointer; margin-left:30px;height:39px;}
 #user_ad{margin-top:30px;float:left;}
