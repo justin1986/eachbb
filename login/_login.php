@@ -8,10 +8,6 @@
 	$birth= substr($user->baby_birthday,0,10);
 	$month = month_between(now(),$birth);
 	$month_name = $db->query("select id,name from eb_problem where is_adopt=1 and start_month<='$month' and end_month >='$month' limit 1" );
-	function text($num)
-	{
-		return $num==1 ? '宝宝测评' : '父母测评';
-	}
 	?>
 <script type="text/javascript">
 $(function(){
@@ -57,7 +53,7 @@ $(function(){
 			<?php }?>
 			</div>
 		<div class="login_result_value">
-			<?php if($user->baby_birthday >  0){?>
+			<?php if($user->baby_birthday >  0 && $user->baby_status != 2){?>
 			<a href="/test/test.php?id=<?php echo $month_name[0]->id;?>" target="_blank">您的宝宝<?php echo $month;?>个月了,快来参加本期免费测评</a>
 			<?php }else{
 				?>
@@ -72,7 +68,7 @@ $(function(){
 		$list =$db->query("SELECT * FROM eb_teach e LIMIT 2");
 		?>
 		<div class="login_result_value">已订购课程，测试中，敬请期待！</div>
-		<div class="login_result_value">本期适龄课，程测试中，敬请期待！</div>
+		<div class="login_result_value">本期适龄课程，测试中，敬请期待！</div>
 	</div>
 	<div class="login_result_btn">
 		<a href="/yard/album_list.php" target="_blank"><div style="background:url(/images/index/login_1.jpg) no-repeat; text-align: center; width:122px; height:42px; color:#FF6F0F; line-height:42px; font-size:14px; font-weight:bold;" ></div></a>

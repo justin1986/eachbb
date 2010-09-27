@@ -7,7 +7,10 @@ function get_course_url($course){
 function get_teach_url($teach){
 	echo '/teach/teach.php?id='.$teach->id;
 }
-
+function text($num)
+{
+	return $num==1 ? '宝宝测评' : '父母测评';
+}
 function get_news_url($news,$type=null,$index=0){
 	global $page_type;
 	if(!$type) $type = $page_type;

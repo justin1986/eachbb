@@ -104,14 +104,14 @@
 	    	<div class="line1"><hr color="#F5F5F5" width=100%; size="2" /></div> <div class="line2"><hr color="#F5F5F5" width=760px; size="1" /></div>
 		    	<?php 
 		    		$teach=$db->query("SELECT * FROM eachbb.eb_problem e  where id in (SELECT problem_id FROM eachbb.eb_test_record e where user_id={$user->id}) order by create_time desc LIMIT 10;");
-		    		for($i = 0 ; $i < 10; $i++){
+		    		for($i = 0 ; $i < 5; $i++){
 		    	?>
-			   	 <div class="text2" style="width:314px; height:20px; line-height:20px; overflow:hidden; padding-top:0px;">
+			   	 <div class="text2" style="width:614px; height:20px; line-height:20px; overflow:hidden; padding-top:0px;">
 			   	 	<img src="/images/avatar/smallpoint.png" style="margin-top:5px;"></img>
-			   	 		<a href="/test/test_result.php?test_id=<?php echo $teach[$i]->id;?>">
-			   	 			<font size="2" ><?php echo strip_tags($teach[$i]->description); ?></font>
-			   	 		</a>
 			   	 		<?php if($teach[$i]->id){?>
+			   	 		<a href="/test/test_result.php?test_id=<?php echo $teach[$i]->id;?>">
+			   	 			<font size="2" ><?php echo strip_tags($teach[$i]->description).text($teach[$i]->problem_type); ?></font>
+			   	 		</a>
 			   	 		<a href="/test/test_result.php?test_id=<?php echo $teach[$i]->id;?>">测试结果</a>
 			   	 		<a href="/test/review.php?id=<?php echo $teach[$i]->id;?>" style="padding-left:20px;">测试回顾</a>
 			   	 		<?php }?>
