@@ -8,7 +8,6 @@ $(function(){
 				alert("操作有误！");
 			}else{
 				var name=$('#set_avatar').attr('name');
-				alert(name);
 				$.post('/yard/_yard_info_ajax_post.php',{'id':id,'type':'change'},function(data){
 					if(data){
 						alert(data);
