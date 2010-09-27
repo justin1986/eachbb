@@ -4,7 +4,16 @@
 	<div id="user_ma_b"></div>
 	<div id="user_ma_h"><div style="float:left;height:50px;width:50px;"><img  src="<?php echo $user->avatar; ?>" style="height:50px;width:50px;"/></div><div style="float:left;margin-left:3px;"><font size="2"><b><?php if($user->name)echo $user->name; ?></b></font></div></div>
 	<div class="user_b">
-	<div class="user_b_t"><a href="/baby/message_index.php">您有<font size="2" ><?php echo $count[0]->id ? $count[0]->id : 0;?></font>条新消息</a></div>
+	<?php 
+		$db = get_db();
+		$count_new = $db->query("select count(id) as num from eachbb_member.message where recieve_id={$user->id} and status=0");
+		if(!$count_new){
+			$count_new = 0;
+		}else{
+			$count_new = $count_new[0]->num;
+		}
+	?>
+	<div class="user_b_t"><a href="/baby/message_index.php">您有<font size="2" ><?php echo $count_new;?></font>条新消息</a></div>
 	<div class="user_b_t" style="padding-bottom:5px;"><a href="/yard/">我的小院子</a></div></div>
 	</div>
 	<div id="user_me">
