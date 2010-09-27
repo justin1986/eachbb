@@ -112,8 +112,8 @@
 			   	 		<div  class="public_hr">
 			   	 			<div class="test_title_left"><?php echo $teach->name;?></div>
 			   	 			<div class="test_content"><?php echo text($teach->problem_type);?></div>
-			   	 			<div class="test_content"><a href="/test/test_result.php?test_id=<?php echo $teach->id;?>" target="_blank" >测试报告</a></div>
-			   	 			<div class="test_content"><a href="/test/review.php?id=<?php echo $teach->id;?>" target="_blank"  style="padding-left:20px;">测评回顾</a></div>
+			   	 			<div class="test_content"><a href="/test/test_result.php?test_id=<?php echo $teach->id;?>" target="_blank" >测评报告</a></div>
+			   	 			<div class="test_content"><a href="/test/review.php?id=<?php echo $teach->id;?>" target="_blank"  style="padding-left:20px;">回顾测评</a></div>
 			   	 			<div class="test_title_left" style="width:250px; text-align: right;">测评时间：<?php echo substr($teach->create_time,0,16);?></div>
 			   	 		</div>
 			   	 		<?php }?>
