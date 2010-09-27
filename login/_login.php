@@ -8,6 +8,10 @@
 	$birth= substr($user->baby_birthday,0,10);
 	$month = month_between(now(),$birth);
 	$month_name = $db->query("select id,name from eb_problem where is_adopt=1 and start_month<='$month' and end_month >='$month' limit 1" );
+	function text($num)
+	{
+		return $num==1 ? '宝宝测评' : '父母测评';
+	}
 	?>
 <script type="text/javascript">
 $(function(){
@@ -45,7 +49,7 @@ $(function(){
 			?>
 		<div class="login_result_value">
 			<?php if($list[0]->name){?>
-			<a href="/test/test_result.php?test_id=<?php echo $list[0]->problem_id;?>" target="_blank">您最近一次完成<font style="color:red;"><?php echo $list[0]->name;?>[<?php echo $list[0]->problem_type;?>]</font>测评</a></div>
+			<a href="/test/test_result.php?test_id=<?php echo $list[0]->problem_id;?>" target="_blank">您最近一次完成<font style="color:red;"><?php echo $list[0]->name;?>[<?php echo text($list[0]->problem_type);?>]</font>测评</a></div>
 			<?php }else{?>
 			<font style="font-size:12px;">您没有测评，参加本期免费测评</font>
 			<?php }?>
