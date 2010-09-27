@@ -127,7 +127,7 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 #bfc_t{width:330px; height:35px; margin-top:8px; float:left; display:inline;}
 #bfc_t a{font-size:24px; font-weight:600; color:#FF8911; text-decoration:none;}
 #bfc_c{width:360px; height:90px; overflow:hidden; line-height:18px; float:left; display:inline;}
-#bfc_c a{color:#666666; font-size:12px; font-weight:600; text-decoration:none;}
+#bfc_c a{color:#666666; font-size:12px; text-decoration:none;}
 
 #br_a{width:289px; float:left; display:inline;}
 #ba_t{width:289px; height:25px; background:url(../images/consult/rb_pdg.jpg) no-repeat; font-size:0px; line-height:0px; float:left; display:inline;}

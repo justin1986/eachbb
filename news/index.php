@@ -7,8 +7,9 @@
 	<?php
 		include_once(dirname(__FILE__).'/../frame.php');
 		use_jquery();
-		css_include_tag('consult');
-		js_include_tag('news/index');
+		use_jquery_ui();
+		css_include_tag('consult','colorbox');
+		js_include_tag('news/index','jquery.colorbox-min');
 		init_page_items('consult_index');
 		$db=get_db();
 		function news_type($data){
@@ -204,7 +205,7 @@
 						</div>
 						<div id="bf_c">
 							<div id="bfc_t"><a href="<?php echo $pos_items[$pos]->href;?>" target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
-							<div id="bfc_c"><a href="<?php echo $pos_items[$pos]->href?>" target="_blank"><?php echo $pos_items[$pos]->description;?></a></div>
+							<div id="bfc_c"><a href="<?php echo $pos_items[$pos]->href?>" target="_blank"><?php echo mb_strlen($pos_items[$pos]->description,"utf-8") > 200 ? mb_substr($pos_items[$pos]->description,0,200)."<a href='' class='beijiu'>...[查看全文]</a>" : $pos_items[$pos]->description ;?></a></div>
 						</div>
 					</div>
 				</div>

@@ -8,6 +8,10 @@ $(function(){
 		 refresh_image_tab();
 	}
 	$('#img_tab_1').show();
+	$('.beijiu').click(function(e){
+		e.preventDefault();
+		$.fn.colorbox({href:'/inc/_public_result_ajax_post_view.php?page=consult_index&result=zxdt_0'});
+	});
 	function refresh_image_tab(){
 		$('.num').css('background','#4E3431');
 		$('#nn_'+image_tab_index).css('background','#FF6600');
