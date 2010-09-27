@@ -92,7 +92,7 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 .bitca_c{width:284px; height:197px; border:3px solid #FFD25A; border-top:0px solid red; float:left; display:inline;}
 .bi_l{width:100px; height:14px; margin-top:1px; margin-left:10px; line-height:14px; float:left; display:inline;}
 .bitca_t a{font-size:13px; color:#ffffff; text-decoration:none;}
-.bi_r{width:37px; height:15px; margin-right:2px; cursor:pointer; line-height:15px; text-align:right; float:right; display:inline;}
+.bi_r{width:37px; height:15px; margin-right:3px; cursor:pointer; line-height:15px; text-align:right; float:right; display:inline;}
 .bic_a{width:280px; height:90px; float:left; display:inline;}
 .bica_li{width:82px; height:82px;  margin:3px; border:1px solid #E7E7E7; float:left; display:inline;}
 .bica_li img{width:78px; height:78px; border:0px solid #000000; cursor:pointer; margin:2px;}
