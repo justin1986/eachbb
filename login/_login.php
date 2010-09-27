@@ -30,14 +30,14 @@ $(function(){
 			<div id="login_img_name"><?php echo $user->name;?></div>
 			<div class="login_img_name" style="margin-top:5px;">宝宝姓名：<font><?php echo $user->baby_name;?></font></div>
 			<div class="login_img_name" style="width:120px;">
-				<a href="/baby/message_index.php">你有<font style="color:red;"><?php echo $count[0]->num ? $count[0]->num : 0;?></font>新消息</a>
+				<a href="/baby/message_index.php" target="_blank">你有<font style="color:red;"><?php echo $count[0]->num ? $count[0]->num : 0;?></font>新消息</a>
 			</div>
 			<div class="login_img_name" style="width:50px;">
 				<a id='exit' href="#">[退出]</a>
 			</div>
 			<div class="login_pg_btn">
-				<a href="/yard"><img style="width:68px; height:22px; margin:0px; border:0px solid red;" src="/images/index/yard.jpg"/></a>
-				<a href="/baby"><img style="width:77px; height:22px; margin:0px; margin-left:10px; border:0px solid red;" src="/images/index/baby.jpg"/></a>
+				<a href="/yard" target="_blank"><img style="width:68px; height:22px; margin:0px; border:0px solid red;" src="/images/index/yard.jpg"/></a>
+				<a href="/baby" target="_blank"><img style="width:77px; height:22px; margin:0px; margin-left:10px; border:0px solid red;" src="/images/index/baby.jpg"/></a>
 			</div>
 		</div>
 	</div>
@@ -63,7 +63,7 @@ $(function(){
 			<a href="/test/test.php?id=<?php echo $month_name[0]->id;?>" target="_blank">您的宝宝<?php echo $month;?>个月了,快来参加本期免费测评</a>
 			<?php }else{
 				?>
-				<a href="/yard/member.php" target="_blank">输入宝宝生日，即可参加免费测评</a>
+				<a href="/yard/member.php" target="_blank" target="_blank">输入宝宝生日，即可参加免费测评</a>
 				<?php 
 			}?>
 		</div>
@@ -77,7 +77,7 @@ $(function(){
 		<div class="login_result_value">本期适龄课程测试中，敬请期待！</div>
 	</div>
 	<div class="login_result_btn">
-		<a href="/yard/album_list.php"><div style="background:url(/images/index/login_1.jpg) no-repeat; text-align: center; width:122px; height:42px; color:#FF6F0F; line-height:42px; font-size:14px; font-weight:bold;" ></div></a>
+		<a href="/yard/album_list.php" target="_blank"><div style="background:url(/images/index/login_1.jpg) no-repeat; text-align: center; width:122px; height:42px; color:#FF6F0F; line-height:42px; font-size:14px; font-weight:bold;" ></div></a>
 		<div style="width:122px; padding-right:10px; margin-left:10px; background:url(/images/index/login_2.jpg) no-repeat; text-align: center; height:42px; color:#FF6F0F; line-height:42px; font-size:14px; font-weight:bold;" ></div>
 	</div>
 </div>
