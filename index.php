@@ -318,7 +318,7 @@
 						<div class="q_m_pg_d">
 							<div class="child_t">
 								<div class="ch_t_pic"<?php $pos="yard_$i";show_page_pos($pos,'link_d_i')?>>
-									<a href="<?php echo $pos_items[$pos]->href;?>"><img  src="<?php echo $pos_items[$pos]->image1;?>"/></a>
+									<a href="<?php echo $pos_items[$pos]->href;?>" target="_blank"><img  src="<?php echo $pos_items[$pos]->image1;?>"/></a>
 								</div>
 								<div class="ch_t_r">
 									<div class="child_title"><?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href,array('target' => '_blank'));?></div>
@@ -327,7 +327,7 @@
 							</div>
 							<div class="child_c">
 								<?php for($j = 0 ; $j < 5 ; $j++){ ?>
-									<div class="child_img"<?php $pos="yard_son_$i$j";show_page_pos($pos,'link_d_i')?>><a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1;?>"/></a></div>
+									<div class="child_img"<?php $pos="yard_son_$i$j";show_page_pos($pos,'link_d_i')?>><a href="<?php echo $pos_items[$pos]->href;?>" target="_blank"><img src="<?php echo $pos_items[$pos]->image1;?>"/></a></div>
 								<?php }?>
 							</div>
 						</div>
@@ -335,7 +335,7 @@
 					<?php }?>
 				</div>
 				<div id="qin_right"<?php $pos="yard_right";show_page_pos($pos,'link_i')?>>
-					<a href="<?php echo $pos_items[$pos]->href; ?>"><img src="<?php echo $pos_items[$pos]->image1;?>" /></a>
+					<a href="<?php echo $pos_items[$pos]->href; ?>"  target="_blank"><img src="<?php echo $pos_items[$pos]->image1;?>" /></a>
 				</div>
 			</div>
 			<div class="quwen ad_banner" id="index_middle_banner" <?php $pos="yard_img";show_page_pos($pos,'link_i')?>>
@@ -349,7 +349,7 @@
 							<div id="sblct_a">
 								<div class="sblct_l">
 									<div class="sblct_t_title">育儿早班车</div>
-									<div class="sblct_t"><a href="<?php echo get_news_list_url(1);?>">更多</a></div>
+									<div class="sblct_t"><a href="<?php echo get_news_list_url(1);?>"  target="_blank">更多</a></div>
 									<div class="sblct_bb" <?php $pos="bot_a_a";show_page_pos($pos,'link_i')?>>
 										<img src="<?php echo $pos_items[$pos]->image1; ?>"/>
 									</div>
