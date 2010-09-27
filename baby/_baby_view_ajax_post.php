@@ -26,10 +26,10 @@
 	foreach ($array as $problem){
 		?>
 	<div class="problem_bannerr" <?php if($i % 2 == 0){echo 'style="background:#D2D8E4;"';}?>>
-		<div style="width:170px; margin-left:30px; font-weight:bold; float:left; display: inline;"><a href="/test/test.php?id=<?php echo $problem->problem_id;?>"><?php echo $problem->name; ?></a></div>
+		<div style="width:190px; margin-left:30px; font-weight:bold; float:left; display: inline;"><?php echo $problem->name.'['.text($problem->problem_type).']'; ?></div>
 		<div style="font-size:12px; font-weight:100px;">测评时间：<?php echo $problem->created_at; ?></div>
-		<div style="margin-left:40px; float:left;"><a href="/test/test_result.php?test_id=<?php echo $problem->problem_id;?>" <?php if($i % 2 == 0){echo 'style="color:#333333;"';}?>>测试结果报表</a></div>
-		<div style="margin-left:60px; float:left;"><a href=" /test/review.php?id=<?php echo $problem->problem_id;?>" <?php if($i % 2 == 0){echo 'style="color:#333333;"';}?>>测试回顾</a></div>
+		<div style="margin-left:40px; float:left;"><a href="/test/test_result.php?test_id=<?php echo $problem->problem_id;?>" target="_blank"  <?php if($i % 2 == 0){echo 'style="color:#333333;"';}?>>测试报告</a></div>
+		<div style="margin-left:60px; float:left;"><a href=" /test/review.php?id=<?php echo $problem->problem_id;?>" target="_blank"  <?php if($i % 2 == 0){echo 'style="color:#333333;"';}?>>测评回顾</a></div>
 	</div>
 	<?php $i++;}?>
 </div>

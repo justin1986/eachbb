@@ -103,20 +103,22 @@
 		    </div>
 	    	<div class="line1"><hr color="#F5F5F5" width=100%; size="2" /></div> <div class="line2"><hr color="#F5F5F5" width=760px; size="1" /></div>
 		    	<?php 
-		    		$teach=$db->query("SELECT * FROM eachbb.eb_problem e  where id in (SELECT problem_id FROM eachbb.eb_test_record e where user_id={$user->id}) order by create_time desc LIMIT 10;");
-		    		for($i = 0 ; $i < 5; $i++){
+		    		$teach=$db->query("SELECT * FROM eachbb.eb_problem e  where id in (SELECT problem_id FROM eachbb.eb_test_record e where user_id={$user->id}) order by create_time desc LIMIT 5;");
+		    		if($teach){
+		    		foreach ($teach as $teach){
 		    	?>
-			   	 <div class="text2" style="width:614px; height:20px; line-height:20px; overflow:hidden; padding-top:0px;">
-			   	 	<img src="/images/avatar/smallpoint.png" style="margin-top:5px;"></img>
-			   	 		<?php if($teach[$i]->id){?>
-			   	 		<a href="/test/test_result.php?test_id=<?php echo $teach[$i]->id;?>">
-			   	 			<font size="2" ><?php echo strip_tags($teach[$i]->description).text($teach[$i]->problem_type); ?></font>
-			   	 		</a>
-			   	 		<a href="/test/test_result.php?test_id=<?php echo $teach[$i]->id;?>">测试结果</a>
-			   	 		<a href="/test/review.php?id=<?php echo $teach[$i]->id;?>" style="padding-left:20px;">测试回顾</a>
+			   	 <div class="text2" style="height:20px; line-height:20px; overflow:hidden; padding-top:0px;">
+			   	 		<?php if($teach->id){?>
+			   	 		<div  class="public_hr">
+			   	 			<div class="test_title_left"><?php echo $teach->name;?></div>
+			   	 			<div class="test_content"><?php echo text($teach->problem_type);?></div>
+			   	 			<div class="test_content"><a href="/test/test_result.php?test_id=<?php echo $teach->id;?>" target="_blank" >测试报告</a></div>
+			   	 			<div class="test_content"><a href="/test/review.php?id=<?php echo $teach->id;?>" target="_blank"  style="padding-left:20px;">测评回顾</a></div>
+			   	 			<div class="test_title_left" style="width:250px; text-align: right;">测评时间：<?php echo substr($teach->create_time,0,16);?></div>
+			   	 		</div>
 			   	 		<?php }?>
 				</div>
-				<?php }?>
+				<?php }}?>
 	    </div>    
 	    <?php 
 //	    	$teach=$db->query("SELECT id,title,img_url FROM eachbb.eb_teach e where is_adopt=1 and del_flag=0 order by priority,click_count,create_time desc limit 10;");
@@ -125,20 +127,18 @@
 		    <div><img src="/images/avatar/point.png"></img><font size="2" style="margin-left:5px;"><b>订购</b></font><font size="2" color="red"><b>课程</b></font></div>
 		  	 <div class="line1"><hr color="#F5F5F5" width=100%; size="2" /></div> <div class="line2"><hr color="#F5F5F5" width=760px; size="1" /></div>
 		    <?php 
-		    		$teach=null;$db->query("SELECT * FROM eachbb.eb_problem e  where id in (SELECT problem_id FROM eachbb.eb_test_record e where user_id={$user->id}) order by create_time desc LIMIT 10;");
-		    		for($i = 0 ; $i < 10; $i++){
+		    		$teach=null;$db->query("SELECT * FROM eachbb.eb_problem e  where id in (SELECT problem_id FROM eachbb.eb_test_record e where user_id={$user->id}) order by create_time desc LIMIT 5;");
+		    		if($teach){
+		    		foreach ($teach as $teach){
 		    	?>
-			   	 <div class="text2" style="width:314px; height:20px; line-height:20px; overflow:hidden; padding-top:0px;">
-			   	 	<img src="/images/avatar/smallpoint.png" style="margin-top:5px;"></img>
-			   	 		<a href="/test/test_result.php?test_id=<?php echo $teach[$i]->id;?>">
-			   	 			<font size="2" ><?php echo strip_tags($teach[$i]->description); ?></font>
-			   	 		</a>
-			   	 		<?php if($teach[$i]->id){?>
-			   	 		<a href="/test/test_result.php?test_id=<?php echo $teach[$i]->id;?>">测试结果报表</a>
-			   	 		<a href="/test/review.php?id=<?php echo $teach[$i]->id;?>" style="padding-left:20px;">测试回顾</a>
-			   	 		<?php }?>
-				</div>
-				<?php }?>
+			   	 <div  class="public_hr">
+			   	 			<div class="test_title_left"><?php echo $teach->name;?></div>
+			   	 			<div class="test_content"><?php echo text($teach->problem_type);?></div>
+			   	 			<div class="test_content"><a href="/test/test_result.php?test_id=<?php echo $teach->id;?>">测试报告</a></div>
+			   	 			<div class="test_content"><a href="/test/review.php?id=<?php echo $teach->id;?>" style="padding-left:20px;">测试回顾</a></div>
+			   	 			<div class="test_content"><?php echo substr($teach->create_time,0,16);?></div>
+			   	 		</div>
+				<?php }}?>
 	   </div>
 	   
 	    <div class="txt">
