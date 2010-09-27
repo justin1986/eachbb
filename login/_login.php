@@ -93,8 +93,8 @@ $(function(){
 .login_img_name a{font-size:12px; color:#333333; text-decoration: none;}
 #login_hhr{width:260px; height:1px; margin-left:15px;margin-top:10px; font-size:0px; background:url(/images/index/login_hr.jpg) repeat-x; float:left; display:inline;}
 .login_result_pg{width:260px; height:70px; margin-left:15px;  margin-top:10px; float:left; display:inline;}
-.login_reusult_title{width:240px; height:20px; padding-left:20px; font-weight:bold; font-size:16px; color:#333333; background:url(/images/index/login_3.jpg) no-repeat 0 4px; float:left; display:inline;}
-.login_result_value{width:240px; height:20px; padding-left:20px; margin-top:5px; overflow:hidden; background:url(/images/index/login_4.jpg) no-repeat 5px 6px; font-size:12px; color:#333333; float:left; display:inline;}
+.login_reusult_title{width:240px; height:20px; padding-left:20px; font-weight:bold; padding-top:5px; font-size:16px; color:#333333; background:url(/images/index/login_3.jpg) no-repeat 0 4px; float:left; display:inline;}
+.login_result_value{width:240px; height:20px; padding-left:20px; line-height:20px;  overflow:hidden; background:url(/images/index/login_4.jpg) no-repeat 5px 6px; font-size:12px; color:#333333; float:left; display:inline;}
 .login_result_value a{font-size:12px; color:#333333; text-decoration: none;}
 .login_result_btn{widtH:270px; height:42px; float:right; display:inline;}
 .login_result_btn a{text-decoration: none;}
