@@ -41,11 +41,11 @@ $(function(){
 	<div class="login_result_pg">
 		<div class="login_reusult_title">近期<font style="color:#FF6F0F; font-size:16px; font-weight: bold;">测评</font></div>
 		<?php
-		$list = $db->query("select a.problem_id,b.name,a.created_at from eb_test_record as a  left join eb_problem b on b.id=a.problem_id where a.user_id={$user->id} group by user_id,problem_id limit 2;");
+		$list = $db->query("select a.problem_id,b.name,a.created_at,b.problem_type from eb_test_record as a  left join eb_problem b on b.id=a.problem_id where a.user_id={$user->id} group by user_id,problem_id limit 2;");
 			?>
 		<div class="login_result_value">
 			<?php if($list[0]->name){?>
-			<a href="/test/test_result.php?test_id=<?php echo $list[0]->problem_id;?>" target="_blank">您最近一次完成<font style="color:red;"><?php echo $list[0]->name;?></font>测评</a></div>
+			<a href="/test/test_result.php?test_id=<?php echo $list[0]->problem_id;?>" target="_blank">您最近一次完成<font style="color:red;"><?php echo $list[0]->name;?>[<?php echo $list[0]->problem_type;?>]</font>测评</a></div>
 			<?php }else{?>
 			<font style="font-size:12px;">您没有测评，参加本期免费测评</font>
 			<?php }?>
