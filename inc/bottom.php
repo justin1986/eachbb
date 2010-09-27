@@ -15,7 +15,7 @@
 	<a class="bottom_a" <?php $pos="bottom_link_".$i;show_page_pos($pos,'link');?> href="<?php echo $list[0]->href;?>">
 		<?php
 		echo $list[0]->title; 
-		if($i != 6){
+		if($i != 5){
 		?> -<?php }?></a>
 	 <?php }?>
 </div>
