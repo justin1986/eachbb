@@ -55,8 +55,8 @@ div{margin:0; padding:0; float:left; display:inline;}
 #flash{width:965px; overflow:hidden; margin:0; padding:0; float:left; display:inline; }
 #flash_left{width:680px; height:400px; overflow:hidden;  float:left; display:inline; position: absolute; margin-left:-15px; z-index: 1000; }
 #flash_right{width:289px; height:399px; overflow:hidden; margin-right:5px; float:right; display:inline;}
-#r_test{width:286px; height:90px; margin-top:5px;  float:left; display:inline;}
-	#r_test img{width:286px; height:90px; border:none;}
+#r_test{width:286px; height:86px; float:left; display:inline;}
+	#r_test img{width:286px; height:85px; border:none;}
 #test_value{width:180px; height:80px; margin-left:90px; margin-top:38px; float:left; display:inline;}
 .test_a{width:180px; height:18px; margin-top:1px; overflow:hidden; line-height:18px; float:left; display:inline;}
 .test_a a{font-size:13px; color:#000000; text-decoration:none;}
