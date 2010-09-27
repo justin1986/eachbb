@@ -29,7 +29,7 @@
 				<div class="r" style="background:#F36E0C;"><?php echo $i; ?></div>
 			</div>
 			<div class="hlcb_r" style="height:20px;">
-				<div class="hlcb_t"><a href="/bbs/viewthread.php?tid=<?php echo $list[$i-1]->tid;?>"><?php echo $list[$i-1]->subject;?></a></div>
+				<div class="hlcb_t"><a href="/bbs/viewthread.php?tid=<?php echo $list[$i-1]->tid;?>" target="_blank"><?php echo $list[$i-1]->subject;?></a></div>
 			</div>
 		</div>
 		<?php }?>
