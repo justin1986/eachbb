@@ -13,7 +13,7 @@
 		<div id="comm_l"></div>
 		<div id="comm_c">
 			<div id="comm_t">
-				<div id="com_title">咨询排行榜</div>
+				<div id="com_title">资讯排行榜</div>
 				<div id="com_x">
 				</div>
 			</div>
