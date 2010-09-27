@@ -15,7 +15,7 @@ body a{text-decoration:none; color:#497617;}
 #menu_c{background:url(../images/yard/m_2_sel.jpg) no-repeat; border-right:1px solid #E6F0E5;}
 #menu_d{background:url(../images/yard/m_3_sel.jpg) no-repeat; border-right:1px solid #E6F0E5;}
 #menu_f{background:url(../images/yard/m_4_sel.jpg) no-repeat;}
-#content{width:950px; z-index:0; float:left; display:inline;}
+#content{width:950px; position:relative; float:left; display:inline;}
 #c_l{width:111px; height:657px; margin-top:10px; background:url(../images/yard/l_pg.jpg) no-repeat; float:left; display:inline;}
 #cll_z{width:100px; height:647px; margin-left:5px; margin-top:5px; float:left; display:inline;}
 .cll_zz{width:92px; height:32px; margin-left:5px; margin-top:3px; cursor:pointer; float:left; display:inline;}

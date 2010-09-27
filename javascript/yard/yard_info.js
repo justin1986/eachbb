@@ -7,10 +7,12 @@ $(function(){
 			if(id == "default_avatar"){
 				alert("操作有误！");
 			}else{
+				var name=$('#set_avatar').attr('name');
+				alert(name);
 				$.post('/yard/_yard_info_ajax_post.php',{'id':id,'type':'change'},function(data){
 					if(data){
 						alert(data);
-						window.location.href="/yard/info.php";
+						window.location.href=name ? name : "/yard/info.php";
 					}else{
 						$('#pic_left').attr('src',src);
 					}

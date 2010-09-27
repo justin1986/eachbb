@@ -38,7 +38,7 @@
 							<img id="pic_left" src="<?php echo $user->avatar ? $user->avatar : '/images/yard_info_img/1.jpg'; ?>"/>
 						</div>
 						<div style="float:left;margin-top:5px;"><font size="3" ><B>我的头像库</B></font><font size="2" >(</font><font size="2" color="red" ><?php echo $avatar_count;?></font><font size="2" >张)</font></div>
-						<div class="pichr_menu" id="set_avatar" style="margin-left:100px;float:left;margin-top:5px;"><font size="2">[选择头像]</font></div>
+						<div class="pichr_menu" id="set_avatar" name="/baby" style="margin-left:100px;float:left;margin-top:5px;"><font size="2">[选择头像]</font></div>
 				    <div style="margin-top:5px;margin-left:5px;height:20px; float:left;"><a href="/yard/info.php"><font size="2" color="red" >[上传头像]</font></a></div>
 				    <div style="margin-top:5px;height:7px;float:left;"><hr color="#8A7777" width=401px;; size="2" /></div>
 					  <div id="pic_hr_pg">

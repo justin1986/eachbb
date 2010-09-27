@@ -26,10 +26,10 @@
 					<div class="c_menu_pg_p" >
 					</div>
 					<form>
-						<table class=r_table>
+						<table class=r_table style="width:720px;">
 							<tr>
-								<td class=td1>昵称：</td>
-								<td class=td2><span><?php echo $member->name;?></span></td>
+								<td class=td1 style="width:140px;">昵称：</td>
+								<td class=td2 style="width:580px;"><span><?php echo $member->name;?></span></td>
 							</tr>
 							<tr>
 								<td class=td1>电子邮箱：</td>
@@ -113,10 +113,10 @@
 							
 						</table>
 						<div class=r_title>会员<span>信息</span></div>
-						<table class=r_table>
+						<table class=r_table style="width:720px;">
 							<tr>
-								<td class=td1><span>*</span> 真实姓名：</td>
-								<td class=td2><input name="true_name" maxlength="6" value="<?php echo htmlspecialchars($member->true_name);?>" type="text"/></td>
+								<td class=td1 style="width:180px;"><span>*</span> 真实姓名：</td>
+								<td class=td2 style="width:540px;"><input name="true_name" maxlength="6" value="<?php echo htmlspecialchars($member->true_name);?>" type="text"/></td>
 							</tr>
 							<?php
 								$address = $member->address;
@@ -179,10 +179,10 @@
 							</tr>
 						</table>
 						<div class=r_title>宝宝<span>信息</span></div>
-						<table class=r_table>
+						<table class=r_table style="width:720px;">
 							<tr>
-								<td class=td1><span>*</span> 宝宝信息：</td>
-								<td class=td2><input class="radio" type="radio" <?php if($member->baby_status==2){?>checked="checked"<?php }?> name="nowstate" value="2" />
+								<td class=td1 style="width:180px;"><span>*</span> 宝宝信息：</td>
+								<td class=td2 style="width:540px;"><input class="radio" type="radio" <?php if($member->baby_status==2){?>checked="checked"<?php }?> name="nowstate" value="2" />
 									未怀孕
 									<input class="radio" type="radio" name="nowstate" value="3" <?php if($member->baby_status==3){?>checked="checked"<?php }?>>
 									怀孕中
