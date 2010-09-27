@@ -68,15 +68,15 @@ function baby_status(){
 //	alert("assdf");
 	if($("[name=nowstate]:checked").val()==3){
 		$(".yuc").show();
-	}else{
-		$('.yuc').hide();
-	}
-		
-	if($("[name=nowstate]:checked").val()==1){
+		$(".bbs").hide();
+	}else if($("[name=nowstate]:checked").val()==1){
 		$(".bbs").show();
+		$(".yuc").hide();
 	}else{
-		$('.bbs').hide();
+		$(".yuc").hide();
+		$(".bbs").hide();
 	}
+	
 //	if($("[name=nowstate]:checked").val()==1){
 //		$(".bbs").show();
 //	}else{
