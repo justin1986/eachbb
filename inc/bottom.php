@@ -1,8 +1,8 @@
 <style>
 #bg_hr{width:958px; height:4px; margin-top:25px; margin-left:10px; background:url(/images/class/b_hr.jpg) repeat-x; float:left; display:inline;}
-#bottom{width:980px; margin-top:15px; text-align:center; font-size:12px; color:#666666; float:left; display:inline;}
+#bottom{width:980px; margin-top:15px; text-align:center; font-size:12px; color:#666666;  float:left; display:inline;}
 #bottom_b{width:980px; margin-top:10px; margin-bottom:50px; text-align:center; float:left; font-size:12px; color:#666666; display:inline;}
-.bottom_a{font-size:12px; color:#666666;  text-decoration: none;}
+.bottom_a{font-size:12px; color:#666666; position:relative;  text-decoration: none;}
 </style>
 	<?php 
 		$db = get_db();
