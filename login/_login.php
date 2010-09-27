@@ -63,7 +63,7 @@ $(function(){
 			<a href="/test/test.php?id=<?php echo $month_name[0]->id;?>" target="_blank">您的宝宝<?php echo $month;?>个月了,快来参加本期免费测评</a>
 			<?php }else{
 				?>
-				<a href="/yard/member.php" target="_blank">输入宝宝生日，参加本期免费测评</a>
+				<a href="/yard/member.php" target="_blank">输入宝宝生日，即可参加免费测评</a>
 				<?php 
 			}?>
 		</div>
@@ -72,9 +72,9 @@ $(function(){
 		<div class="login_reusult_title">课程<font style="color:#FF6F0F; font-size:16px; font-weight: bold;">订购</font></div>
 		<?php
 		$list =$db->query("SELECT * FROM eb_teach e LIMIT 2");
-		for($i = 0 ; $i <2 ; $i++){?>
-		<div class="login_result_value"><a href="">测试时期，敬请期待！</a></div>
-		<?php }?>
+		?>
+		<div class="login_result_value">已订购课程测试中，敬请期待！</div>
+		<div class="login_result_value">本期适龄课程测试中，敬请期待！</div>
 	</div>
 	<div class="login_result_btn">
 		<a href="/yard/album_list.php"><div style="background:url(/images/index/login_1.jpg) no-repeat; text-align: center; width:122px; height:42px; color:#FF6F0F; line-height:42px; font-size:14px; font-weight:bold;" ></div></a>
@@ -94,7 +94,7 @@ $(function(){
 #login_hhr{width:260px; height:1px; margin-left:15px;margin-top:10px; font-size:0px; background:url(/images/index/login_hr.jpg) repeat-x; float:left; display:inline;}
 .login_result_pg{width:260px; height:70px; margin-left:15px;  margin-top:10px; float:left; display:inline;}
 .login_reusult_title{width:240px; height:20px; padding-left:20px; font-weight:bold; font-size:16px; color:#333333; background:url(/images/index/login_3.jpg) no-repeat 0 4px; float:left; display:inline;}
-.login_result_value{width:240px; height:20px; padding-left:20px; margin-top:5px; overflow:hidden; background:url(/images/index/login_4.jpg) no-repeat 5px 6px; float:left; display:inline;}
+.login_result_value{width:240px; height:20px; padding-left:20px; margin-top:5px; overflow:hidden; background:url(/images/index/login_4.jpg) no-repeat 5px 6px; font-size:12px; color:#333333; float:left; display:inline;}
 .login_result_value a{font-size:12px; color:#333333; text-decoration: none;}
 .login_result_btn{widtH:270px; height:42px; float:right; display:inline;}
 .login_result_btn a{text-decoration: none;}
