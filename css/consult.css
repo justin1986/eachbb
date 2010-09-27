@@ -125,7 +125,7 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 #bf_pic img{width:244px; height:130px; border:0px solid red; float:left; display:inline;}
 #bf_c{width:360px; height:150px; margin-left:15px; float:left; display:inline;}
 #bfc_t{width:330px; height:35px; margin-top:8px; float:left; display:inline;}
-#bfc_t a{font-size:30px; font-weight:600; color:#FF8911; text-decoration:none;}
+#bfc_t a{font-size:24px; font-weight:600; color:#FF8911; text-decoration:none;}
 #bfc_c{width:360px; height:90px; overflow:hidden; line-height:18px; float:left; display:inline;}
 #bfc_c a{color:#666666; font-size:12px; font-weight:600; text-decoration:none;}
 
