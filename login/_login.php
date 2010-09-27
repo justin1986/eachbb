@@ -50,9 +50,7 @@ $(function(){
 		<div class="login_result_value">
 			<?php if($list[0]->name){?>
 				<a href="/test/test_result.php?test_id=<?php echo $list[0]->problem_id;?>" target="_blank">
-					您最近一次完成
-					<font style="color:red;"><?php echo $list[0]->name;?></font>
-					[<?php echo text($list[0]->problem_type);?>]
+					您最近一次完成<font style="color:red;"><?php echo $list[0]->name;?></font><?php echo text($list[0]->problem_type);?>
 				</a>
 			<?php }else{?>
 			<font style="font-size:12px;">您没有测评，参加本期免费测评</font>
@@ -73,8 +71,8 @@ $(function(){
 		<?php
 		$list =$db->query("SELECT * FROM eb_teach e LIMIT 2");
 		?>
-		<div class="login_result_value">已订购课程测试中，敬请期待！</div>
-		<div class="login_result_value">本期适龄课程测试中，敬请期待！</div>
+		<div class="login_result_value">已订购课程，测试中，敬请期待！</div>
+		<div class="login_result_value">本期适龄课，程测试中，敬请期待！</div>
 	</div>
 	<div class="login_result_btn">
 		<a href="/yard/album_list.php" target="_blank"><div style="background:url(/images/index/login_1.jpg) no-repeat; text-align: center; width:122px; height:42px; color:#FF6F0F; line-height:42px; font-size:14px; font-weight:bold;" ></div></a>
