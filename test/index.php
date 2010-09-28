@@ -101,12 +101,12 @@
 							<input type="hidden" name="benjuname<?php echo $i;?>" id="benjuname<?php echo $i;?>" value="<?php echo $pos_items[$pos]->description;?>"/>
 							<div class="crbci_t" style="overflow: hidden;" id="crbci_t_<?php echo $i;?>">
 								<?php
-								if(mb_strlen($pos_items[$pos]->description,'utf-8'))
+								if(mb_strlen($pos_items[$pos]->description,'utf-8') > 0)
 								{
-									if(mb_strlen($pos_items[$pos]->description,'utf-8') < 340){
+									if(mb_strlen($pos_items[$pos]->description,'utf-8') < 320){
 										echo $pos_items[$pos]->description.'<a href="#"></a>';
 									}else{
-										echo mb_substr($pos_items[$pos]->description,0,340,'utf-8')."<a href='#' style='color:#000000;'><font style='font-size:10px;'>...</font>【查看全文】</a>";
+										echo mb_substr($pos_items[$pos]->description,0,320,'utf-8')."<a href='#' style='color:#000000;'><font style='font-size:10px;'>...</font>【查看全文】</a>";
 									}
 								}else{
 									echo '<a href="#"></a>';
