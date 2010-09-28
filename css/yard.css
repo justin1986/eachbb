@@ -1,6 +1,8 @@
-body{width:970px; font-size:12px; margin: 0 auto; }
+body{width:970px; font-size:12px;margin: 0 auto;}
+body div{float:left; display:inline;}
 body a{text-decoration:none; color:#497617;}
-#ibody{width:970px; position: relative;}
+#ibody{width:970px; overflow:hidden; margin:0 auto; position: relative;}
+
 #menu{width:700px; height:62px; margin-top:15px; float:left; display:inline;}
 #yard_day{width:124px; height:62px; font-size:12px; background:url(../images/yard/day.jpg) no-repeat; float:left; display:inline;}
 #menu_a,#menu_b,#menu_c,#menu_d,#menu_e,#menu_f{width:80px; height:62px; cursor:pointer; float:left; display:inline;}
@@ -13,7 +15,7 @@ body a{text-decoration:none; color:#497617;}
 #menu_c{background:url(../images/yard/m_2_sel.jpg) no-repeat; border-right:1px solid #E6F0E5;}
 #menu_d{background:url(../images/yard/m_3_sel.jpg) no-repeat; border-right:1px solid #E6F0E5;}
 #menu_f{background:url(../images/yard/m_4_sel.jpg) no-repeat;}
-#content{width:950px; float:left; display:inline;}
+#content{width:950px; position:relative; float:left; display:inline;}
 #c_l{width:111px; height:657px; margin-top:10px; background:url(../images/yard/l_pg.jpg) no-repeat; float:left; display:inline;}
 #cll_z{width:100px; height:647px; margin-left:5px; margin-top:5px; float:left; display:inline;}
 .cll_zz{width:92px; height:32px; margin-left:5px; margin-top:3px; cursor:pointer; float:left; display:inline;}
@@ -27,7 +29,7 @@ body a{text-decoration:none; color:#497617;}
 #cllz_bs{width:38px; height:12px; margin-top:15px; font-size:0px; line-height:0px; margin-left:25px;  border:0px solid #000000; float:left; display:inline;}
 #c_c{width:819px; float:left; display:inline;}
 #cc_t{width:819px; height:24px; background:url(/images/yard/c_pg_t.jpg) no-repeat; float:left; display:inline;}
-#cc_c{width:819px;  background:#E5F3CD; float:left; display:inline;}
+#cc_c{width:819px;  background:#E5F3CD; z-index:-1; display:inline;}
 #cc_pg{width:576px; margin-left:15px; background:#ffffff; float:left; display:inline;}
 #cc_b{width:819px; height:26px; background:url(/images/yard/c_pg_b.jpg) no-repeat; float:left; display:inline;}
 #cc_pic{width:560px; height:313px; margin-left:8px; float:left;display:inline;}
@@ -38,9 +40,6 @@ body a{text-decoration:none; color:#497617;}
 #pho_r{width:448px; height:43px; margin-left:25px; margin-top:7px; text-align:left; overflow:auto; overflow-y:hidden; line-height:20px; color:#999999; border:1px solid #EAEAEA; font-weight:bold; font-size:12px; float:left;}
 #cc_ps{width:555px; display:inline; float:left;}
 #ccps_c{width:455px;}
-
-
-
 #box_test{width:1px; height:280px; background:#FFFFFF; float:left;}
 #box_right{width:550px; float:left;}
 #ccps_c a{color:#B4BEAF; text-decoration: none; float:right;}
@@ -73,8 +72,7 @@ body a{text-decoration:none; color:#497617;}
 	.photo_box{float:left; }
 		.content_pc font{color: #A9BDDA; font-size:12px;margin-left:13px;}
 	.time_pc{width:460px; line-height:18px; color: #A9BDDA;  font-size:12px; float: left; display: inline;}
-#r_pho{width:227px; height:600px; margin-top:-85px; position:relative;  float:left; display:inline;}
-#r_pho div{float:left; display: inline;}
+#r_pho{width:227px; height:600px; margin-top:-85px; position:absolute; float:left; display:inline;}
 #r_img{width:192px; height:242px; z-index:999;  margin-left:18px;   background:url(/images/yard/r_pg_img.jpg) no-repeat; float:left; display:inline;}
 #r_pto{width:165px; height:165px; margin-left:13px; margin-top:10px; overflow:hidden; float:left; display:inline;}
 #r_pto img{width:165px; height:165px; border:0px solid red;}
@@ -126,5 +124,4 @@ body a{text-decoration:none; color:#497617;}
 	.pic_pg{width:56px; height:56px; background:url(/images/yard/pic_pg.jpg) no-repeat; float:left; display:inline;}
 	.name_pic{width:56px;height:14px;line-height:12px;text-align:center; overflow:hidden; float:left;}
 .pic_img{width:48px; height:48px; border:0; margin:4px; overflow:hidden; float:left; display:inline;}
-
 

@@ -6,7 +6,7 @@
 	<?php 
 		include_once('../frame.php');
 		use_jquery();
-		css_include_tag('yard','colorbox');
+		css_include_tag('yyard','colorbox');
 		js_include_tag('yard/yard','jquery.colorbox-min');
 		$db=get_db();
 		$id = $_GET['id'];
