@@ -4,6 +4,7 @@
 ?>
 <meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <style>
+#friend_banner{float: left; display: inline;}
 .friend_a{width:100px; height:100px; line-height:100px; float:right; display:inline;}
 #friend_banner{width:950px;  float:left; display:inline;}
 #friend_title{width:940px; height:30px; padding-left:10px; background:#A8C783; line-height:30px; font-size:14px; font-weight:bold; float:left; display:inline;}

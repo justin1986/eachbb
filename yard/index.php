@@ -224,7 +224,7 @@
 									</div>
 								</div>
 								<?php if(!$id){?>
-								<div id="query_friend">查询好友</div>
+								<div id="query_friend" style="float:right;">查询好友</div>
 								<?php }?>
 							</div>
 						<div id="pic_r">

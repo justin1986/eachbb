@@ -40,3 +40,6 @@ foreach($list as $list){?>
 	echo "<div style='width:800px; height:100px; line-height:100px; text-align:center; font-size:20px; font-weight:bold;'>对不起，查询结果为空！</div>";	
 }?>
 <div style="width:100%; text-align:center; margin-top:10px;"><?php paginate('','friend_value');?></div>
+<style>
+.friend_result_banner div{float:left; display:inline;}
+</style>
