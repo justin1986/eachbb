@@ -99,7 +99,7 @@
 								</a>
 							</div>
 							<input type="hidden" name="benjuname<?php echo $i;?>" id="benjuname<?php echo $i;?>" value="<?php echo $pos_items[$pos]->description;?>"/>
-							<div class="crbci_t" id="crbci_t_<?php echo $i;?>">
+							<div class="crbci_t" style="overflow: hidden;" id="crbci_t_<?php echo $i;?>">
 								<?php
 								if(mb_strlen($pos_items[$pos]->description,'utf-8'))
 								{
