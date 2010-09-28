@@ -2,7 +2,7 @@ body{width:970PX; margin: 0 auto; }
 
 #ibody{width:970px; overflow:hidden; margin:0;}
 
-#fbody{ width:970px; overflow:hidden;  background:#ffffff; float:left; display:inline; position: relative;}
+#fbody{ width:970px; overflow:hidden;  background:#ffffff; float:left; display:inline; }
 
 .flash_discription{width:725px; height:188px;  background:#99CCCC; overflow:hidden; font-size:13px; padding-left:10px;  padding-top:10px; left:2px; top:2px; position: absolute; float: left;display: none;}
 	.f_d_title{width:725px; height:20px;line-height:20px; overflow:hidden; float:left; display: inline;}
