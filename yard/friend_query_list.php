@@ -1,10 +1,11 @@
 <?php 
-	include_once('../frame.php');
+	include_once(dirname(__FILE__).'/../frame.php');
 	js_include_tag('yard/query_friend_list');
 ?>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <style>
 .friend_a{width:100px; height:100px; line-height:100px; float:right; display:inline;}
-#friend_banner{width:950px; float:left; display:inline;}
+#friend_banner{width:950px;  float:left; display:inline;}
 #friend_title{width:940px; height:30px; padding-left:10px; background:#A8C783; line-height:30px; font-size:14px; font-weight:bold; float:left; display:inline;}
 #friend_where{width:940px; height:35px; margin-top:20px; padding-left:10px; line-height:10px; font-size:14px; float:left; display:inline;}
 #friend_btn{width:100px; height:35px; border:0px solid red;  cursor:pointer;  text-align:center; line-height:30px; background:url(/images/assistant_list/btn_1.jpg) no-repeat; float:left; display: inline;}

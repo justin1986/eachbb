@@ -19,7 +19,7 @@
 	?>
 <div id="r_img">
 	<div id="r_pto"><img src="<?php echo $user->avatar ? thumb_name($user->avatar,'normal') : '/images/yard_info_img/1.jpg'; ?>"></div>
-	<div id="r_bb"><?php echo $user->baby_name;?></div>
+	<div id="r_bb"><?php echo $user->name;?></div>
 	<div id="r_num">被访问过<?php if($news[0]->visit_count){echo $news[0]->visit_count;}else{echo 0;};?>次</div>
 </div>
 <?php if(!$id){?>

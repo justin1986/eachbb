@@ -40,7 +40,7 @@
 <body>
 <div id="ibody">
 <input type="hidden" name="id" id="id" value="<?php echo $id;?>"/>
-	<?php include_once(dirname(__FILE__).'/../inc/_yard_top.php'); ?>
+	<?php  include_once(dirname(__FILE__).'/../inc/_yard_top.php'); ?>
 	<div id="menu">
 		<div id="yard_day">
 			<div id="yard_day_time"><?php echo date('Y年m月d日'); ?></div>
@@ -263,7 +263,7 @@
 			</div>
 			<div id="cc_b"></div>
 		</div>
-		<?php #include_once(dirname(__FILE__).'./../inc/bottom.php');?>
+		<?php include_once(dirname(__FILE__).'./../inc/bottom.php');?>
 	</div>
 </div>
 </body>
