@@ -213,9 +213,7 @@
 			</div>
 		</div>
 		<div id="b_r">
-			<div class="bd"<?php $pos="right_course_sdf";show_page_pos($pos,'link_i')?> style="height:190px; margin-top:0px;">
-				<a href="<?php echo $pos_items[$pos]->href;?>" target="_blank"><img src="<?php echo $pos_items[$pos]->image1;?>" style="width:287px; height:190px; border:0px solid red;"/></a>
-			</div>
+			<div class="bd ad_banner" id="news_banner_ad"></div>
 			<div id="br_a" style="margin-top:20px;">
 				<div id="ba_t">
 					<div><img src="/images/consult/0.jpg" class="student_tab"/></div>

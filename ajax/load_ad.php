@@ -3,8 +3,8 @@ include_once "../frame.php";
 $channel = $_GET['channel'];
 $banner = $_GET['banner'];
 if(!is_ajax()) die();
-$banners = array('test_rightr','qin_right','index_middle_banner','index_center_banner_2','cre','pg_a','pg_ab','bg_pg','couser_a','hl_b','bl_img','br_f','br_g');
-$channels = array('index','test','course','assistant','bbs.php');
+$banners = array('test_rightr','qin_right','index_middle_banner','index_center_banner_2','cre','pg_a','pg_ab','bg_pg','couser_a','couser_b','couser_c','couser_d','couser_e','hl_b','bl_img','br_f','br_g','news_banner_ad','mother','baby_index_bottom','img_flash','r_test','br_img','wenzhan_right','brr_img','news_wenzhan_right','brrrr_img');
+$channels = array('index','test','course','assistant','bbs.php','news','baby');
 if(!in_array($_GET['channel'],$channels) || !in_array($_GET['banner'],$banners)){
 	die();
 }

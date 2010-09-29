@@ -91,7 +91,7 @@
 <!--		<div class="text"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2">宝宝因为好奇四处探索，常常引发一系……</font></a></div>-->
 <!--		<div class="text"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2">宝宝因为好奇四处探索，常常引发一系……</font></a></div>-->
 		</div>
-		<div id="mother"><a href="4th_mother.php"><img src="/images/avatar/mother.png" border="0"></img></a></div>
+		<div class="ad_banner" id="mother"></div>
 		</div>
 	    </div>
 	    </div>
@@ -145,7 +145,7 @@
 	    <div class="txt">
 	    <div><img src="/images/avatar/point.png"></img><font size="2" style="margin-left:5px;"><B>我家</B></font><font size="2" color="red"><b>小院子</b></font></div>
 	    <div class="line1"><hr color="#F5F5F5" width=100%; size="2" /></div> <div class="line2"><hr color="#F5F5F5" width=760px; size="1" /></div>
-	    <div class="att"><div style="float:left"><a href="milk.php"><img src="/images/avatar/yard.png" border="0"></img></a></div>
+	    <div class="att"><div style="width:311px; height:139px; float:left" class="ad_banner" id="baby_index_bottom"></div>
 	    <?php 	
 				$diary_list=$db->query("SELECT id,title from eachbb_member.daily where u_id={$user->id} order by last_edit_time desc  limit 4;");
 				if(!$diary_list){

@@ -26,7 +26,7 @@
 						var flashvar = {};
 						swfobject.embedSWF("/flash/course.swf","cr_flash","520","300","8",false,flashvar,flashparam);
 					</script>
-					<div id="img_flash"<?php $pos="top_image"; show_page_pos($pos,'link_i')?>><a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/class/c_pg_a.jpg';?>" border="0"/></a></div>				
+					<div id="img_flash" class="ad_banner"></div>				
 				</div>
 				<div id="crcb_t">
 					<div class="cr_a"  style="color:#ffffff;">大运动</div>

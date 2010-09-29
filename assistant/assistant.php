@@ -85,7 +85,7 @@
 			</div>
 		</div>
 		<div id="b_r">
-			<?php include_once('../news/_news_logo_public.php'); ?>
+			<?php include_once('_news_logo_public.php'); ?>
 			<div class="bd">
 				<div class="bd_t"></div>
 				<div class="bd_c">
