@@ -201,7 +201,7 @@
 						#$up_news=$db->query("SELECT id,title,short_title,video_photo_src,content FROM eb_news e where category_id=156 and is_adopt=1 order by created_at desc limit 1;");
 						?>
 						<div id="bf_pic"<?php $pos="zxdt_0";show_page_pos($pos)?>>
-							<a href="<?php $pos_items[$pos]->href;?>" target="_blank"><img src="<?php echo $pos_items[$pos]->image1;?>"></a>
+							<a href="<?php echo $pos_items[$pos]->href;?>" target="_blank"><img src="<?php echo $pos_items[$pos]->image1;?>"></a>
 						</div>
 						<div id="bf_c">
 							<div id="bfc_t"><a href="<?php echo $pos_items[$pos]->href;?>" target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
