@@ -82,7 +82,7 @@
 		<div class="record">
 		<div ><font size="2" color="red"><b>重要信息提醒</b></font></div>
 		<div class="add"><hr color="#A3C1CD" width=100%; size="4" /></div>
-			<div style="width:300px; height:100px; line-height:100px; font-size:14px; text-align: center;">暂为开通，敬请期待。</div>
+			<div style="width:300px; height:100px; line-height:100px; font-size:14px; text-align: center;">暂未开通，敬请期待。</div>
 <!--		<div class="text" style="margin-top:5px;"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2">宝宝因为好奇四处探索，常常引发一系……</font></a></div>-->
 <!--		<div class="text"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2">宝宝因为好奇四处探索，常常引发一系……</font></a></div>-->
 <!--		<div class="text"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2">宝宝因为好奇四处探索，常常引发一系……</font></a></div>-->
