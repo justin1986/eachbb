@@ -45,9 +45,9 @@
 		foreach($list as $friend){ ?>
 		<div class="ppg">
 			<div class="pic_pg">
-				<div class="pic_img"><img src="<?php echo $friend->f_avatar; ?>"></div>
+				<div class="pic_img"><a href="/yard/index.php?id=<?php echo $friend->id;?>"><img src="<?php echo $friend->f_avatar; ?>"></a></div>
 			</div>
-			<div class="ppg_w"><?php echo $friend->f_name; ?></div>
+			<div class="ppg_w"><a href="/yard/index.php?id=<?php echo $friend->id;?>"><?php echo $friend->f_name; ?></a></div>
 		</div>
 		<?php }
 		if(!$list){
@@ -60,5 +60,7 @@
 </div>
 <style>
 #l_test{border:0px solid red;}
+.pic_img a img{border:0px solid red;}
+.ppg_w a{color:#000; font-size:12px; text-decoration: none;}
 #l_look{border:0px solid red;}
 </style>
