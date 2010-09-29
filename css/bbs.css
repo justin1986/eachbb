@@ -95,7 +95,7 @@ body{width:970px; margin: 0 auto; font-family:宋体;}
 .bi_r{width:37px; height:15px; margin-right:3px; cursor:pointer; line-height:15px; text-align:right; float:right; display:inline;}
 .bic_a{width:280px; height:90px; float:left; display:inline;}
 .bica_li{width:82px; height:82px;  margin:3px; border:1px solid #E7E7E7; float:left; display:inline;}
-.bica_li img{width:78px; height:78px; border:0px solid #000000; cursor:pointer; margin:2px;}
+.bica_li img{width:78px; height:78px; border:0px solid #000000; margin:2px;}
 .bica_lr{width:185px; height:70px; margin-top:5px; float:left; display:inline;}					
 .bical_z{width:185px; height:20px; border-bottom:2px solid #F1F1F1; float:left; display:inline;}
 .bical_d{width:4px; height:4px; margin-top:8px; margin-left:5px; background:#FF5E03; font-size:0px; line-height:0px; float:left; display:inline;}
