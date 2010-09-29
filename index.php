@@ -149,9 +149,8 @@
 						</div>
 					</div>
 				</div>
-				<div id="test_rightr" style="position: relative;" <?php $pos="index_x";show_page_pos($pos,'link_i');?>>
-					<a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1;?>"/></a>
-				</div>
+				<!-- style="position: relative;" <?php $pos="index_x";show_page_pos($pos,'link_i');?> -->
+				<div id="test_rightr" class='ad_banner'></div>
 			</div>
 			<div id="student">
 				<div id="student_l" <?php $pos="index_news_img_pg";show_page_pos($pos,'link_i');?>>

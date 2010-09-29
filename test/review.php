@@ -48,6 +48,7 @@ include_once '../inc/User.class.php';
 		$_SESSION['doing_test'] = $test->id;
 		$_SESSION['question_queue'] = $question_queue;
 		$_SESSION['problem_type'] = $test->problem_type;
+		$_SESSION['doing_test_name']=$test->name;
 		
 	}else{
 		$question_queue = $_SESSION['question_queue'];
@@ -107,7 +108,7 @@ include_once '../inc/User.class.php';
 				<div id="cr_b">
 					<div id="crb_l"></div>
 					<div id="crbc_c">
-						<div id="crbc_l"><a href="#"><?php echo $_SESSION['doing_test_name'];?><?php #echo $test->name;?><font>测评回顾</font></a></div>
+						<div id="crbc_l"><a href="#"><font>测评回顾</font><?php echo $_SESSION['doing_test_name'];?></a></div>
 						<div id="crbc_lb"><a href="#">共<font><?php echo $question_len?></font>题</a></div>
 						<div id="crbc_la"><a href="#">当前第<font><?php echo $step + 1;?></font>题</a></div>
 					</div>

@@ -26,10 +26,11 @@
 	foreach ($array as $problem){
 		?>
 	<div class="problem_bannerr" <?php if($i % 2 == 0){echo 'style="background:#D2D8E4;"';}?>>
-		<div style="width:200px; margin-left:30px; font-weight:bold; float:left; display: inline;"><?php echo $problem->name.'['.text($problem->problem_type).']'; ?></div>
-		<div style="font-size:12px; font-weight:100px;">测评时间：<?php echo $problem->created_at; ?></div>
-		<div style="margin-left:65px; float:left;"><a href="/test/test_result.php?test_id=<?php echo $problem->problem_id;?>" target="_blank" <?php if($i % 2 == 0){echo 'style="color:#333333;"';}?>>测评报告</a></div>
-		<div style="margin-left:65px; float:left;"><a href=" /test/review.php?id=<?php echo $problem->problem_id;?>" target="_blank" <?php if($i % 2 == 0){echo 'style="color:#333333;"';}?>>回顾测评</a></div>
+		<div style="width:200px; margin-left:30px; font-weight:bold; float:left; display: inline;"><?php echo $problem->name; ?></div>
+		<div style="font-size:12px;">测评时间：<?php echo $problem->created_at; ?></div>
+		<div style="font-size:12px;  float:left;"><?php echo text($problem->problem_type);?></div>
+		<div style="margin-left:15px; float:left;"><a href="/test/test_result.php?test_id=<?php echo $problem->problem_id;?>" target="_blank" <?php if($i % 2 == 0){echo 'style="color:#333333;"';}?>>测评报告</a></div>
+		<div style="margin-left:15px; float:left;"><a href=" /test/review.php?id=<?php echo $problem->problem_id;?>" target="_blank" <?php if($i % 2 == 0){echo 'style="color:#333333;"';}?>>回顾测评</a></div>
 	</div>
 	<?php $i++; }?>
 </div>
