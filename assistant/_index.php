@@ -145,15 +145,15 @@
 					$assistants = $db->query($sql);
 				 for($i=6;$i<8;$i++){ 
 				 	if($i==6){
-				 		$sql="SELECT show_image FROM eb_category where parent_id={$top_cates[6]->id} limit 2";	
+				 		$sql="SELECT id,show_image FROM eb_category where parent_id={$top_cates[6]->id} limit 2";	
 				 	}else{
-				 		$sql="SELECT show_image FROM eb_category where parent_id={$top_cates[6]->id} limit 2,4";
+				 		$sql="SELECT id,show_image FROM eb_category where parent_id={$top_cates[6]->id} limit 2,4";
 				 	}
 				 	$img_assistant = $db->query($sql);
 				 	?>
 				<div class=content>
 				<div class="fcl_l">
-					<div class="fci_a"<?php #$pos = "list_image_{$i}_a";show_page_pos($pos,'link_i')?>><img src="<?php echo $img_assistant[$i-6]->show_image;#$pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
+					<div class="fci_a"<?php #$pos = "list_image_{$i}_a";show_page_pos($pos,'link_i')?>><a href="/assistant/list.php?category_id=<?php echo $img_assistant[$i-5]->id;?>"><img style="border:0px solid red;" src="<?php echo $img_assistant[$i-6]->show_image;#$pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></a></div>
 					<div class="fci_b"<?php #$pos = "list_image_{$i}_b";show_page_pos($pos,'link_i')?>><img src="<?php echo $img_assistant[$i-5]->show_image;#$pos_items[$pos]->image1 ? $pos_items[$pos]->image1 :'/images/helper/peo.jpg';?>"></div>
 				</div>
 				<div class="fcl_r">
