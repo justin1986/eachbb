@@ -165,7 +165,7 @@
 					<?php 
 						$assistant_count = mb_strlen($assistants[$j]->name.$assistants[$j]->title,"utf-8");
 					?>
-						<a style="color:#6EB6CA" href="list.php?category_id=<?php echo $assistant->category_id;?>">
+						<a style="color:#6EB6CA" href="list.php?category_id=<?php echo $assistants[$j]->category_id;?>">
 							[<?php echo $assistants[$j]->name;?>]
 						</a>
 						<a href="assistant.php?id=<?php echo $assistants[$j]->id;?>" title="<?php echo $assistants[$j]->title?>" target="_blank" >
