@@ -175,7 +175,7 @@
 									<select name="day">
 										<option value=''>请选择</option>
 									</select><script>show_day('<?php echo $birthday[2];?>');</script>
-									 </td>
+									 日</td>
 							</tr>
 						</table>
 						<div class=r_title>宝宝<span>信息</span></div>
