@@ -228,14 +228,14 @@
 								<?php }?>
 							</div>
 						<div id="pic_r">
-							<div id="pic_0" >
+							<div id="pic_0" style="display:none;">
 								<?php
 								$visit = $db->query("select id,f_avatar,f_id,f_name from eachbb_member.visit_history where u_id='{$user->id}' order by create_at desc limit 9;");
 								$m_visit = $db->record_count;
 								$friend = $db->query("select id,f_name,f_id,f_avatar from eachbb_member.friend where u_id='{$user->id}' order by created_at desc limit 9;");
 								$m_friend = $db->record_count;
 								for($i=0;$i<$m_friend;$i++){?>
-								<div class="pic_box" style="display:none;">
+								<div class="pic_box">
 									<div class="pic_pg" id="pic_pg_0">
 										<a href="/yard/index.php?id=<?php echo $friend[$i]->f_id;?>" target="_blank">
 										<IMG  class="pic_img" src="<?php if ($friend[$i]->f_avatar != null){echo thumb_name($friend[$i]->f_avatar,'small');}else{echo '/images/yard_info_img/1.jpg';}?>"/>
