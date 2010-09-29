@@ -96,5 +96,5 @@ include_once dirname(__FILE__).'/../frame.php';
 			</div>
 			<div class="hlc_bb"></div>
 		</div>
-		<div id="hl_b"> <img src="/images/class/l_pg.jpg"> </div>
+		<div id="hl_b" class="ad_banner"></div>
 	</div>

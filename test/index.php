@@ -122,9 +122,7 @@
 				<div class="crd_z" <?php $pos="test_midden_b";show_page_pos($pos,'link_t_i');?>><img src="<?php echo  $pos_items[$pos]->image1;?>"><div class="crd_f"><a href="<?php echo  $pos_items[$pos]->href;?>" target="_blank"><?php echo  $pos_items[$pos]->title;?></a></div></div>
 				<div class="crd_z" <?php $pos="test_midden_c";show_page_pos($pos,'link_t_i');?>><img src="<?php echo  $pos_items[$pos]->image1;?>"><div class="crd_f"><a href="<?php echo  $pos_items[$pos]->href;?>" target="_blank"><?php echo  $pos_items[$pos]->title;?></a></div></div>
 			</div>
-			<div id="cre"<?php $pos="test_midden_d";show_page_pos($pos,'link_i');?>>
-					<a href="<?php echo $pos_items[$pos]->href;?>" target="_blank"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1:"/images/test/tc_b.jpg";?>"></a>
-			</div>
+			<div id="cre" class="ad_banner"></div>
 			<div id="cr_ci">
 					<div id="cri_t"></div>
 					<div id="cri_c">

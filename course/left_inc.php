@@ -56,7 +56,7 @@
 		?>
 	</div>
 	<?php }?>
-	<div id="pg_a"></div>
+	<div id="pg_ab" class="ad_banner" style="width:200px; height:141px; margin-top:5px; margin-left:10px; float:left; display:inline;"></div>
 </div>
 <style>
 #l_test{border:0px solid red;}

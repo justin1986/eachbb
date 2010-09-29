@@ -102,9 +102,7 @@
 					</div>
 					<div id="cri_b"></div>
 				</div>
-				<div id="bg_pg"<?php $pos="bottom_img_$i";show_page_pos($pos,'link_i');?>> 
-					<a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1;?>"/></a>
-				</div>
+				<div id="bg_pg" class="ad_banner"></div>
 			</div>
 		</div>
 		<?php include_once(dirname(__FILE__).'/../inc/bottom.php');?>

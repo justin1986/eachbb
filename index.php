@@ -308,13 +308,9 @@
 					</div>
 					<?php }?>
 				</div>
-				<div id="qin_right"<?php $pos="yard_right";show_page_pos($pos,'link_i')?>>
-					<a href="<?php echo $pos_items[$pos]->href; ?>"  target="_blank"><img src="<?php echo $pos_items[$pos]->image1;?>" /></a>
-				</div>
+				<div id="qin_right" class='ad_banner'></div>
 			</div>
-			<div class="quwen ad_banner" id="index_middle_banner" <?php $pos="yard_img";show_page_pos($pos,'link_i')?>>
-				<img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : '/images/index/hr.png';?>"/>
-			</div>
+			<div class="quwen ad_banner" id="index_middle_banner"></div>
 			<div id="student_b">
 				<div id="sb_l">
 					<div id="sbl_l"></div>
@@ -494,9 +490,7 @@
 					<div id="sbl_br"></div>
 				</div>
 			</div>
-			<div class="quwen"<?php $pos="yardd_img";show_page_pos($pos,'link_i')?>>
-				<img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : '/images/index/hr.png';?>"/>
-			</div>
+			<div class="quwen ad_banner" id="index_center_banner_2"></div>
 			<div id="pic">
 				<div id="picc_left"></div>
 				<div id="picc_right">
