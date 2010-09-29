@@ -205,7 +205,7 @@
 						</div>
 						<div id="bf_c">
 							<div id="bfc_t"><a href="<?php echo $pos_items[$pos]->href;?>" target="_blank"><?php echo $pos_items[$pos]->title;?></a></div>
-							<div id="bfc_c"><a href="<?php echo $pos_items[$pos]->href?>" target="_blank"><?php echo mb_strlen($pos_items[$pos]->description,"utf-8") > 132 ? mb_substr($pos_items[$pos]->description,0,132,'utf-8')."<a href='' class='beijiu'>...[查看全文]</a>" : $pos_items[$pos]->description ;?></a></div>
+							<div id="bfc_c"><a href="<?php echo $pos_items[$pos]->href?>" target="_blank"><?php echo mb_strlen($pos_items[$pos]->description,"utf-8") > 132 ? mb_substr($pos_items[$pos]->description,0,132,'utf-8')."<a href=".$pos_items[$pos]->href.">...[查看全文]</a>" : $pos_items[$pos]->description ;?></a></div>
 						</div>
 					</div>
 				</div>
