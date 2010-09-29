@@ -13,7 +13,7 @@
 	$result= $db->query($sql);
     if($result){
     foreach ($result as $result){
-    	if($result->whispered == 0 || $user_id == $id || !$id){
+    	if($result->whispered == 0 || $user_id == $result->user_id || $user_id == $result->f_id ){
     	?>
 	<div class="pc_z">
 		<div class="pc_pg_img">
@@ -30,7 +30,7 @@
 		<div class="pc_word">
 			<div class="title_pc">
 				<a href="/yard/home.php?id=<?php echo $result->u_id;?>">
-					<?php echo $result->nick_name;?>
+					<?php if($user_id == $result->f_id){ echo '我';}else{ echo $result->nick_name;}?>
 				</a>
 				发表了留言：
 			</div>
