@@ -92,7 +92,7 @@
 					<?php for($i = 0; $i < 5; $i++){
 						$pos = "middle_intr_$i";
 					?>
-					<div class="crb_c" id="crbc_<?php echo $i; ?>" style="<?php if($i == 0){ echo 'display:inline;';}else{ echo 'display:none;';} ?>">
+					<div class="crb_c" id="crbc_<?php echo $i; ?>">
 							<div class="crbc_a" id="sadf<?php echo $i;?>"<?php show_page_pos($pos,'link_d_i')?>>
 								<a href="#">
 									<img src="<?php echo $pos_items[$pos]->image1?>">
