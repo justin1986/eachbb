@@ -228,7 +228,7 @@
 								<?php }?>
 							</div>
 						<div id="pic_r">
-							<div id="pic_0" style="display:none;">
+							<div id="pic_0" >
 								<?php
 								$visit = $db->query("select id,f_avatar,f_id,f_name from eachbb_member.visit_history where u_id='{$user->id}' order by create_at desc limit 9;");
 								$m_visit = $db->record_count;
@@ -245,7 +245,7 @@
 								</div>
 								<?php }?>
 							</div>
-							<div id="pic_1" >
+							<div id="pic_1" style="display:none;">
 								<?php for($i=0;$i<$m_visit;$i++){?>
 								<div class="pic_box">
 									<div class="pic_pg">
