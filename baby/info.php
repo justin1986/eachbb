@@ -231,7 +231,7 @@
 								if($birthday[1]<10)$birthday[1] = substr($birthday[1],1,1);
 								if($birthday[2]<10)$birthday[2] = substr($birthday[2],1,1);
 							?>
-								<td class=td1><span>*</span> 出生日期：</td>
+								<td class=td1><span>*</span> 宝宝生日：</td>
 								<td class=td2><select name="bb_year">
 										<option value=''>请选择</option>
 										<?php
