@@ -11,8 +11,6 @@ switch ($op) {
 		$user = User::login($_GET['name'],$_GET['password'],intval($_GET['expire']));
 		if(!$user){
 			echo '用户名或密码错误';
-		}else{
-			echo 0;
 		}
 	break;
 	case 'logout':
@@ -21,10 +19,8 @@ switch ($op) {
 		$user = User::current_user();
 		$login = $_GET['login'];
 		if(!$user){
-			if($login){
-				echo 0;
-			}else{
-				include "_unlogin.php";
+			if(!$login){
+			include "_unlogin.php";
 			}
 		}else{
 			if($login){
