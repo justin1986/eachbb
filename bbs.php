@@ -215,7 +215,7 @@
 							<div class="bl_r" style="background:url(/images/bbs/m5.jpg) no-repeat;"><a href="<?php echo $pos_items[$pos]->href;?>" target="_blank">more</a></div>
 						</div>
 						<div class="bl_sp_c">
-							<div class="blspc_l" <?php $pos="topic5_img";show_page_pos($pos,'link_t_i');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href?>" target="_blank"><img src="<?php echo $pos_items[$pos]->image1;?>"></a></div>
+							<div class="blspc_l" <?php $pos="topic5_img";show_page_pos($pos,'link_t_i');?>><img src="<?php echo $pos_items[$pos]->image1;?>"></div>
 							<div class="blspc_r">
 								<?php for($i = 1 ; $i <=4; $i++){ ?>
 								<div class="blspc_a">
@@ -248,7 +248,7 @@
 							<div class="bl_r" style="background:url(/images/bbs/m6.jpg) no-repeat;"><a href="<?php echo $pos_items[$pos]->href;?>" target="_blank">more</a></div>
 						</div>
 						<div class="bl_sp_c">
-							<div class="blspc_l" <?php $pos="topic6_img";show_page_pos($pos,'link_t_i');?>><a title="<?php echo $pos_items[$pos]->title;?>" title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href?>" target="_blank"><img src="<?php echo $pos_items[$pos]->image1;?>"></a></div>
+							<div class="blspc_l" <?php $pos="topic6_img";show_page_pos($pos,'link_t_i');?>><img src="<?php echo $pos_items[$pos]->image1;?>"></div>
 							<div class="blspc_r">
 								<?php for($i = 1 ; $i <=4; $i++){ ?>
 								<div class="blspc_a">
@@ -281,7 +281,7 @@
 							<div class="bl_r" style="background:url(/images/bbs/m7.jpg) no-repeat;"><a href="<?php echo $pos_items[$pos]->href;?>" target="_blank">more</a></div>
 						</div>
 						<div class="bl_sp_c">
-							<div class="blspc_l" <?php $pos="topic7_img";show_page_pos($pos,'link_t_i');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href?>" target="_blank"><img src="<?php echo $pos_items[$pos]->image1;?>"></a></div>
+							<div class="blspc_l" <?php $pos="topic7_img";show_page_pos($pos,'link_t_i');?>><img src="<?php echo $pos_items[$pos]->image1;?>"></div>
 							<div class="blspc_r">
 								<?php for($i = 1 ; $i <=4; $i++){ ?>
 								<div class="blspc_a">
@@ -314,7 +314,7 @@
 							<div class="bl_r" style="background:url(/images/bbs/m8.jpg) no-repeat;"><a href="<?php echo $pos_items[$pos]->href;?>" target="_blank">more</a></div>
 						</div>
 						<div class="bl_sp_c">
-							<div class="blspc_l" <?php $pos="topic8_img";show_page_pos($pos,'link_t_i');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href?>" target="_blank"><img src="<?php echo $pos_items[$pos]->image1;?>"></a></div>
+							<div class="blspc_l" <?php $pos="topic8_img";show_page_pos($pos,'link_t_i');?>><img src="<?php echo $pos_items[$pos]->image1;?>"></div>
 							<div class="blspc_r">
 								<?php for($i = 1 ; $i <=4; $i++){ ?>
 								<div class="blspc_a">
@@ -346,7 +346,7 @@
 							<div class="bl_r" style="background:url(/images/bbs/m2.jpg) no-repeat;"><a href="<?php echo $pos_items[$pos]->href;?>" target="_blank" style="font-size:12px;">more</a></div>
 						</div>
 						<div class="bl_sp_c">
-							<div class="blspc_l" <?php $pos="topic9_img";show_page_pos($pos,'link_t_i');?>><a title="<?php echo $pos_items[$pos]->title;?>" href="<?php echo $pos_items[$pos]->href?>" target="_blank"><img src="<?php echo $pos_items[$pos]->image1;?>"></a></div>
+							<div class="blspc_l" <?php $pos="topic9_img";show_page_pos($pos,'link_t_i');?>><img src="<?php echo $pos_items[$pos]->image1;?>"></div>
 							<div class="blspc_r">
 								<?php for($i = 1 ; $i <=4; $i++){ ?>
 								<div class="blspc_a">
