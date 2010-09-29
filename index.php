@@ -155,8 +155,17 @@
 			</div>
 			<div id="student">
 				<div id="student_l" <?php $pos="index_news_img_pg";show_page_pos($pos,'link_i');?>>
+					<div id="student_top">
+						<div id="u">
+							<div><img src="/images/index/course_tab_0_sel.jpg" class="course_tab"></div>
+							<div style="margin-left:25px;"><img src="/images/index/course_tab_1.jpg" class="course_tab"></div>
+							<div style="margin-left:35px;"><img src="/images/index/course_tab_2.jpg" class="course_tab"></div>
+							<div style="margin-left:30px;"><img src="/images/index/course_tab_3.jpg" class="course_tab"></div>
+						</div>
+						<div id="dict_more"><a href="/course/">more&gt;</a></div>
+					</div>
 					<a href="<?php echo $pos_items[$pos]->href;?>">
-						<img src="<?php echo $pos_items[$pos]->image1;?>" style="width:685px; height:260px; margin-top:15px; border:0px solid red;"/>
+						<img src="<?php echo $pos_items[$pos]->image1;?>" style="width:685px; height:230px; margin-top:5px; border:0px solid red;"/>
 					</a>
 				</div>
 				<div id="student_r">
