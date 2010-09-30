@@ -161,9 +161,11 @@
 						</div>
 						<div id="dict_more"><a href="/course/">more&gt;</a></div>
 					</div>
-					<a href="<?php echo $pos_items[$pos]->href;?>">
-						<img src="<?php echo $pos_items[$pos]->image1;?>" style="width:685px; height:230px; margin-top:5px; border:0px solid red;"/>
-					</a>
+					<div id="index_course_pg">
+						<a href="<?php echo $pos_items[$pos]->href;?>">
+							<img src="<?php echo $pos_items[$pos]->image1;?>"/>
+						</a>
+					</div>
 				</div>
 				<div id="student_r">
 					<div id="dict_a">
