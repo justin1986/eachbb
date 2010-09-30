@@ -52,7 +52,6 @@
 						<div id="test_right">
 <!--							<script type="text/javascript">$('#test_right').load('/login/ajax.post.php?op=load_login_status_box&login=index&rd='+Math.random());</script>-->
 						</div>
-						
 						<div id="r_student">
 						<div id="st_top">
 							<div><a href="/course" target="_blank"><img src="/images/index/class_tab_0_sel.jpg" class="student_tab"/></a></div>
