@@ -43,8 +43,8 @@
 	width:2px; 
 	height:14px;
 	margin-top:8px; 
-	margin-left:1px;
-	padding-right:1px;
+	margin-left:3px;
+	padding-right:3px;
 	background:url(/images/bbs/hr_t.jpg) no-repeat; 
 	font-size:0px; 
 	border:0px solid red; 
