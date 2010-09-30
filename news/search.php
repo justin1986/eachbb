@@ -10,7 +10,8 @@
 		$count = 0;
 		$page_record_count = 0;
 	}else{
-		$record = search_content($key);
+//		$record = search_content($key,'eb_assistant');
+		$record = search_content($key,'eb_news')+ search_content($key,'eb_assistant');
 		$count = count($record);
 	}
 ?>
