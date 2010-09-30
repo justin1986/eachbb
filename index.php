@@ -55,9 +55,9 @@
 						
 						<div id="r_student">
 						<div id="st_top">
-							<div><img src="/images/index/class_tab_0_sel.jpg" class="student_tab"/></div>
-							<div><img src="/images/index/class_tab_1.jpg" class="student_tab"/></div>
-							<div><img src="/images/index/class_tab_2.jpg" class="student_tab"/></div>
+							<div><a href="/course" target="_blank"><img src="/images/index/class_tab_0_sel.jpg" class="student_tab"/></a></div>
+							<div><a href="/assistant" target="_blank"><img src="/images/index/class_tab_1.jpg" class="student_tab"/></a></div>
+							<div><a href="/bbs.php" target="_blank"><img src="/images/index/class_tab_2.jpg" class="student_tab"/></a></div>
 						</div>
 						<div id="student_value">
 							<div class="student_left" id="student_left_0" style="display:inline;">
@@ -162,7 +162,7 @@
 						<div id="dict_more"><a href="/course/">more&gt;</a></div>
 					</div>
 					<div id="index_course_pg">
-						<a href="<?php echo $pos_items[$pos]->href;?>">
+						<a href="<?php echo $pos_items[$pos]->href;?>" target="_blank">
 							<img style="border:0px solid red;" src="<?php echo $pos_items[$pos]->image1;?>"/>
 						</a>
 					</div>
@@ -171,7 +171,7 @@
 					<div id="dict_a">
 						<div id="dict_title">咨询排行</div>
 						<div id="div_dict_more">
-							<a href="/news">more&gt;</a>
+							<a href="/news" target="_blank">more&gt;</a>
 						</div>
 					</div>
 					<div id="dict_menu"> 
@@ -199,14 +199,14 @@
 				<div id="mother_l">
 					<div id="m_l_t">
 						<div>
-							<a href="/assistant/index.php?age=-2"><img src="/images/index/1.png" /></a>
-							<a href="/assistant/index.php?age=-1"><img src="/images/index/2.png"/></a>
-							<a href="/assistant/index.php?age=1"><img src="/images/index/3.png"/></a>
-							<a href="/assistant/index.php?age=2"><img src="/images/index/4.png"/></a>
-							<a href="/assistant/index.php?age=3"><img src="/images/index/5.png"/></a>
-							<a href="/assistant/index.php?age=4"><img src="/images/index/6.png"/></a>
+							<a href="/assistant/index.php?age=-2" target="_blank"><img src="/images/index/1.png" /></a>
+							<a href="/assistant/index.php?age=-1" target="_blank"><img src="/images/index/2.png"/></a>
+							<a href="/assistant/index.php?age=1" target="_blank"><img src="/images/index/3.png"/></a>
+							<a href="/assistant/index.php?age=2" target="_blank"><img src="/images/index/4.png"/></a>
+							<a href="/assistant/index.php?age=3" target="_blank"><img src="/images/index/5.png"/></a>
+							<a href="/assistant/index.php?age=4" target="_blank"><img src="/images/index/6.png"/></a>
 						</div>
-						<a href="/assistant/" style="font-size:14px; color:#444444; text-decoration: none;">
+						<a href="/assistant/" target="_blank" style="font-size:14px; color:#444444; text-decoration: none;">
 							more&gt;
 						</a> 
 					</div>
@@ -249,7 +249,7 @@
 					<div id="m_r_c">
 						<div class="son_top">
 							<div class="son_t_l">精彩<font style="color:#A4C853; font-weight:bold;" >问答</font></div>
-							<div class="son_t_r"><a href="/bbs/forumdisplay.php?fid=10"><font style="color:#F33B0A; font-weight:bold;" >+</font> 更多</a></div>
+							<div class="son_t_r"><a href="/bbs/forumdisplay.php?fid=10" target="_blank"><font style="color:#F33B0A; font-weight:bold;" >+</font> 更多</a></div>
 						</div>
 						<div class="son_content">
 							<?php 
@@ -354,7 +354,7 @@
 							<div id="sblct_b">
 								<div class="sblct_l">
 									<div class="sblct_t_title">邻家育儿</div>
-									<div class="sblct_t"><a href="<?php echo get_news_list_url(2);?>">更多</a></div>
+									<div class="sblct_t"><a href="<?php echo get_news_list_url(2);?>" target="_blank">更多</a></div>
 									<div class="sblct_bb" <?php $pos="bot_a_b";show_page_pos($pos,'link_i')?>>
 										<img src="<?php echo $pos_items[$pos]->image1; ?>"/>
 									</div>
@@ -389,7 +389,7 @@
 							<div id="sblcb_c">
 								<div class="sblct_l">
 								<div class="sblct_t_title">海外传真</div>
-									<div class="sblct_t"><a href="<?php echo get_news_list_url(3);?>">更多</a></div>
+									<div class="sblct_t"><a href="<?php echo get_news_list_url(3);?>" target="_blank">更多</a></div>
 									<div class="sblct_bb" <?php $pos="bot_a_c";show_page_pos($pos,'link_i')?>>
 										<img src="<?php echo $pos_items[$pos]->image1; ?>"/>
 									</div>
@@ -420,7 +420,7 @@
 							<div id="sblcb_d">
 								<div class="sblct_l">
 									<div class="sblct_t_title">潮爸潮妈</div>
-									<div class="sblct_t"><a href="<?php echo get_news_list_url(4);?>">更多</a></div>
+									<div class="sblct_t"><a href="<?php echo get_news_list_url(4);?>" target="_blank">更多</a></div>
 									<?php 
 										#$category=array("136"=>"游戏","137"=>"抚摸","138"=>"训练","139"=>"对话");
 										#$news_k=array_keys($news);
@@ -464,7 +464,7 @@
 					<div id="sbl_cr">
 						<div class="son_top">
 							<div class="son_t_l">助手<font style="color:#A4C853; font-weight:bold;" >排行</font></div>
-							<div class="son_t_r"><a href="/assistant"><font style="color:#F33B0A; font-weight:bold;" >+</font> 更多</a></div>
+							<div class="son_t_r"><a href="/assistant" target="_blank"><font style="color:#F33B0A; font-weight:bold;" >+</font> 更多</a></div>
 						</div>
 						<div class="son_content">
 							<?php 
