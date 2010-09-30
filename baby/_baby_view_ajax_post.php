@@ -7,7 +7,7 @@
 		redirect('/login/');
 		exit();
 	}
-	$array = $db->query("select a.problem_id,b.name,a.created_at from eb_test_record as a  left join eb_problem b on b.id=a.problem_id where a.user_id={$user->id}  group by user_id,problem_id order by a.created_at desc;");
+	$array = $db->query("select a.problem_id,b.name,a.created_at,b.problem_type from eb_test_record as a  left join eb_problem b on b.id=a.problem_id where a.user_id={$user->id} group by user_id,problem_id order by a.created_at desc;");
 	$count = $db->record_count;
 	if(!$array){
 		echo "<div style='width:750px; height:400px; line-height:400px; text-align:center; font-size:30px; font-weight:bold; float:left; display:inline;'>测评列表为空！</div>";
