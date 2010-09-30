@@ -223,7 +223,7 @@ function birthday_display(){
 function check_name(is_submit){
 	var name = $("#name").val();
 	if(name!=''){
-		if(name.length<1){
+		if(name.length<2){
 			$("#name_info").html('<span style=color:red>用户名太短</span>');
 			return false;
 		}
@@ -231,10 +231,12 @@ function check_name(is_submit){
 			$("#name_info").html('<span style=color:red>用户名太长</span>');
 			return false;
 		}
+		/*
 		if(!isNumberOrLetter(name)){
 			$("#name_info").html('<span style=color:red>用户名不能含有特殊字符标点符号，只能含有英文大小字母和数字</span>');
 			return false;
 		}
+		*/
 		if (name_flag != 'locked') {
 			name_flag = 'locked';
 			$("#name_info").text('用户名验证中。。。');
