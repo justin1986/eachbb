@@ -86,7 +86,7 @@
 							<area shape="rect" coords="5,6,76,90" href="/yard/album_list.php" />
 							<area shape="rect" coords="104,8,161,91" href="/yard/member.php" />
 							<area shape="poly" coords="193,70" href="#" />
-							<area shape="rect" coords="195,13,253,90" href="/yard/diary_list.php" />
+							<area shape="rect" coords="196,9,254,91" href="/yard/diary_list.php" />
 						</map>
 					</div>
 					<?php if(!$id){?>
