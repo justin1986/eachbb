@@ -43,8 +43,8 @@
 	width:2px; 
 	height:14px;
 	margin-top:8px; 
-	margin-left:5px;
-	padding-right:5px;
+	margin-left:1px;
+	padding-right:1px;
 	background:url(/images/bbs/hr_t.jpg) no-repeat; 
 	font-size:0px; 
 	border:0px solid red; 
@@ -157,7 +157,7 @@
 						$i++;
 						} 
 						?>
-						<div id="test_result" style="width:400px; height:30px; overflow:hidden; float:right; display: inline;"></div>
+						<div id="test_result" style="width:370px; height:30px; overflow:hidden; float:right; display: inline;"></div>
 					</div>
 			</div>
 			<div id="menu_right"></div>
