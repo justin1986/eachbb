@@ -20,7 +20,7 @@ $results = $db->query($sql);
 !$results && $results = array();
 $reports = array();
 foreach ($results as $result){
-	$sql = "select * from eb_problem_result where problem_id={$test_id} and min_score <={$result->score} and max_score >= {$result->score} limit 1";
+	$sql = "select * from eb_problem_result where problem_id={$test_id} and result_type='{$result->question_type}' and min_score <={$result->score} and max_score >= {$result->score} limit 1";
 	$db->query($sql);
 	if($db->record_count == 1){
 		$result_type = $db->field_by_name('result_type');
