@@ -81,10 +81,11 @@
 			<div id="cc_c">
 				<div id="cc_pg">
 					<div id="cc_pic">
-						<img src="/images/yard/yard.jpg" usemap="#Map" />
+						<img src="/images/yard/yard_index.jpg" usemap="#Map" />
 						<map name="Map" id="Map">
-						  	<area shape="poly" coords="264,91,205,102,190,26,216,21,249,17" href="/yard/album_list.php<?php if(!$flag)echo "?id=$id";?>" title="照片"/>
-							<area shape="poly" coords="132,37,184,44,174,124,120,119" href="/yard/<?php if(!$flag)echo "home.php?id=$id";else echo "member.php";?>" title="档案" />
+						<area shape="rect" coords="5,6,76,90" href="/yard/album_list.php" />
+						<area shape="poly" coords="116,32,106,17,113,8,118,11,141,10,150,14,162,16,163,19,156,44,151,63,162,86,136,89,120,90,105,87" href="/yard/member.php" />
+						<area shape="poly" coords="193,70" href="#" /><area shape="poly" coords="203,65,191,60,193,45,197,36,200,24,206,10,222,10,237,14,242,15,247,20,245,34,244,48,243,56,245,64,244,66,246,69,253,74,253,83,250,88,245,90,229,90,213,92,197,90,195,78,199,67" href="/yard/diary_list.php" />
 						</map>
 					</div>
 					<?php if(!$id){?>
