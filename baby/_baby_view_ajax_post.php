@@ -16,7 +16,7 @@
 <div id="cr_b">
 	<div id="crb_l"></div>
 	<div id="crbc_c">
-		<div id="crbc_l"><a href="#"><font>我的测评</font></a></div>
+		<div id="crbc_l"><a href="#"><font>历史测评</font></a></div>
 	</div>
 	<div id="crb_r"></div>
 </div>
