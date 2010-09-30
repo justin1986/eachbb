@@ -10,7 +10,7 @@
 	$array = $db->query("select a.problem_id,b.name,a.created_at,b.problem_type from eb_test_record as a  left join eb_problem b on b.id=a.problem_id where a.user_id={$user->id} group by user_id,problem_id order by a.created_at desc;");
 	$count = $db->record_count;
 	if(!$array){
-		echo "<div style='width:750px; height:400px; line-height:400px; text-align:center; font-size:30px; font-weight:bold; float:left; display:inline;'>测评列表为空！</div>";
+		echo "<div style='width:750px; height:400px; line-height:400px; text-align:center; font-size:30px; font-weight:bold; float:left; display:inline;'>您的测评列表为空！</div>";
 	}else{
 ?>
 <div id="cr_b">
@@ -32,6 +32,7 @@
 		<div style="margin-left:15px; float:left;"><a href="/test/test_result.php?test_id=<?php echo $problem->problem_id;?>" target="_blank" <?php if($i % 2 == 0){echo 'style="color:#333333;"';}?>>测评报告</a></div>
 		<div style="margin-left:15px; float:left;"><a href=" /test/review.php?id=<?php echo $problem->problem_id;?>" target="_blank" <?php if($i % 2 == 0){echo 'style="color:#333333;"';}?>>回顾测评</a></div>
 	</div>
-	<?php $i++;}?>
+	<?php $i++; }?>
 </div>
-<?php 	}?>
+<?php 		
+	}?>
