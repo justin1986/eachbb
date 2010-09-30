@@ -20,11 +20,11 @@ if($user){
 </div>
 <div id="l_b_wa"><a href="/baby/message_index.php" target="_blank">您有<font><?php echo $count[0]->id; ?></font>条消息</a></div>
 <div id="l_b_wb"><a href="/yard/" target="_blank">我家小院子</a></div>
-<div class="assistant_top_pg_a"<?php $pos = "assistant_top_pg_a";show_page_pos($pos,'link_i')?>>
-	<a href="/course" target="_blank"><img src="<?php echo $pos_items[$pos]->image1 ?>"/></a>
+<div class="assistant_top_pg_a">
+	<a href="/course" target="_blank"><img src="/images/consult/course_pg.jpg"/></a>
 </div>
-<div class="assistant_top_pg_b"<?php $pos = "assistant_top_pg_b";show_page_pos($pos,'link_i')?>>
-	<a href="/test" target="_blank"><img src="<?php echo $pos_items[$pos]->image1 ?>"/></a>
+<div class="assistant_top_pg_b">
+	<a href="/test" target="_blank"><img src="/images/test/test_pg.jpg"/></a>
 </div>
 <?php }else{?>
 <div id="lp_t">用户登录</div>
@@ -54,11 +54,11 @@ if($user){
 		 <img id="login_bn" src="/images/index/btn_login.gif" style="float:left; margin-left:20px;" />
 		 <a href="/register/" target="_blank"><img id="login_r" border="0" style="margin-top:0px;" src="/images/index/btn_zhuce.gif"/></a>
 	 </div>
-	 <div class="assistant_top_pg_a"<?php $pos = "assistant_top_pg_a";show_page_pos($pos,'link_i')?>>
-		<a href="/course" target="_blank"><img src="<?php echo $pos_items[$pos]->image1 ?>"/></a>
+	 <div class="assistant_top_pg_a">
+		<a href="/course" target="_blank"><img src="/images/consult/course_pg.jpg"/></a>
 	</div>
 	<div class="assistant_top_pg_b"<?php $pos = "assistant_top_pg_b";show_page_pos($pos,'link_i')?>>
-		<a href="/test" target="_blank"><img src="<?php echo $pos_items[$pos]->image1 ?>"/></a>
+		<a href="/test" target="_blank"><img src="/images/test/test_pg.jpg"/></a>
 	</div>
 </div>
 </div>
