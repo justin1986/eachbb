@@ -157,7 +157,7 @@
 						$i++;
 						} 
 						?>
-						<div id="test_result" style="width:370px; height:30px; overflow:hidden; float:right; display: inline;"></div>
+						<div id="test_result" style="width:390px; height:30px; overflow:hidden; float:right; display: inline;"></div>
 					</div>
 			</div>
 			<div id="menu_right"></div>

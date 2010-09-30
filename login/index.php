@@ -65,8 +65,7 @@
 					</div>
 					<div id="cpgc_b"></div>
 				</div>
-				<div id="cpg_r">
-				</div>
+				<div id="cpg_r" class="ad_banner"></div>
 			</div>
 			<div id="cpg_b"></div>
 		</div>
