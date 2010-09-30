@@ -19,6 +19,6 @@
 		?> -<?php }?></a>
 	 <?php }?>
 </div>
-<script src="/javascript/get_ad.js">
+<script src="/javascript/get_ad.js"  src="http://s17.cnzz.com/stat.php?id=2415758&web_id=2415758&show=pic1" language="JavaScript">
 </script>
-<div id="bottom_b">沪ICP备10204500号  <script src="http://s17.cnzz.com/stat.php?id=2415758&web_id=2415758&show=pic1" language="JavaScript"></script></div>
+<div id="bottom_b">沪ICP备10204500号 <!-- <script src="http://s17.cnzz.com/stat.php?id=2415758&web_id=2415758&show=pic1" language="JavaScript"></script> --> </div>
