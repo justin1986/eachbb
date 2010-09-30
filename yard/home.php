@@ -302,9 +302,9 @@
 							<div class="content_box">
 								<div class="f_info">
 									<div class="f_name"><a href="#"><?php echo $comment->nick_name?></a></div>
-									<div class="f_button">
-										<img src="/images/yard/f_button.gif " />
-									</div>
+<!--									<div class="f_button">-->
+<!--										<img src="/images/yard/f_button.gif " />-->
+<!--									</div>-->
 									<div class="created_at"><?php echo mb_substr($comment->created_at,0,16)?></div>
 								</div>
 								<div class="f_words"><?php
