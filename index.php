@@ -163,7 +163,7 @@
 					</div>
 					<div id="index_course_pg">
 						<a href="<?php echo $pos_items[$pos]->href;?>">
-							<img src="<?php echo $pos_items[$pos]->image1;?>"/>
+							<img style="border:0px solid red;" src="<?php echo $pos_items[$pos]->image1;?>"/>
 						</a>
 					</div>
 				</div>
