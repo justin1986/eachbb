@@ -63,7 +63,6 @@ if(!defined('IN_UC')) {
 		$GLOBALS['tablepre'] = $tablepre;
 		unset($dbhost, $dbuser, $dbpw, $dbname, $pconnect);
 		include_once DISCUZ_ROOT."../frame.php";
-		include_once DISCUZ_ROOT."../inc/user.class.php";
 		$uc_note = new uc_note();
 		exit($uc_note->$get['action']($get, $post));
 	} else {
