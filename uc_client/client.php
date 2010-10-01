@@ -10,7 +10,6 @@
 if(!defined('UC_API')) {
 	exit('Access denied');
 }
-
 error_reporting(0);
 
 define('IN_UC', TRUE);
@@ -69,7 +68,7 @@ function uc_api_post($module, $action, $arg = array()) {
 		$sep = '&';
 	}
 	$postdata = uc_api_requestdata($module, $action, $s);
-	#echo UC_API .'/index.php?' .$postdata .'<br/>';
+#	echo UC_API .'/index.php?' .$postdata .'<br/>';
 	return uc_fopen2(UC_API.'/index.php', 500000, $postdata, '', TRUE, UC_IP, 20);
 }
 
@@ -209,14 +208,15 @@ function uc_fopen($url, $limit = 0, $post = '', $cookie = '', $bysocket = FALSE,
 		$out .= "Connection: Close\r\n";
 		$out .= "Cookie: $cookie\r\n\r\n";
 	}
-	$fp = @fsockopen(($ip ? $ip : $host), $port, $errno, $errstr, $timeout);
-	#echo $ip;
+	$fp = @fsockopen( $host, $port, $errno, $errstr, $timeout);
+#	echo $errstr;
 	if(!$fp) {
 		return '';
 	} else {
 		stream_set_blocking($fp, $block);
 		stream_set_timeout($fp, $timeout);
 		@fwrite($fp, $out);
+#		echo $out;
 		$status = stream_get_meta_data($fp);
 		if(!$status['timed_out']) {
 			while (!feof($fp)) {

@@ -2,12 +2,15 @@
 if(!defined('FRAME_VERSION')){
 	die('not in frame');
 }
+
+global $app_uc_key;
+define('UC_APPID', '2');
+define('UC_KEY', $app_uc_key);
+
 if(!function_exists('uc_user_synlogin')){
 	@include_once dirname(__FILE__). '/../uc_client/client.php';
 }
 
-define('UC_APPID', '2');
-define('UC_KEY', $app_uc_key);
 
 class RegisterResult {
 	var $result = false;

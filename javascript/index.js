@@ -34,7 +34,12 @@ function send_login(){
 				$("#flash_right").html(data);
 			});
 		}else{
-			alert(data);
+			var login_result = $('#login_result');
+			if(login_result.length <= 0){
+				$('body').append('<div id="login_result" style="display:none;"></div>');
+			}
+			login_result = $('#login_result');
+			login_result.html(data);
 			$('#test_right').load('/login/ajax.post.php?op=load_login_status_box&rd=' + Math.random());
 		}
 	
