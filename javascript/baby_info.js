@@ -65,9 +65,21 @@ function show_city(city){
 }
 
 function baby_status(){
-	if($("[name=nowstate]:checked").val()==1){
+//	alert("assdf");
+	if($("[name=nowstate]:checked").val()==3){
+		$(".yuc").show();
+		$(".bbs").hide();
+	}else if($("[name=nowstate]:checked").val()==1){
 		$(".bbs").show();
+		$(".yuc").hide();
 	}else{
+		$(".yuc").hide();
 		$(".bbs").hide();
 	}
+	
+//	if($("[name=nowstate]:checked").val()==1){
+//		$(".bbs").show();
+//	}else{
+//		$(".bbs").hide();
+//	}
 }

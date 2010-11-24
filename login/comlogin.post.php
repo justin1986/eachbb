@@ -1,6 +1,7 @@
 <?php
 	session_start();
 	include("../frame.php");
+	set_charset("utf-8");
 	if(!is_post()){
 		redirect('/error/'); 
 		die();
@@ -24,11 +25,11 @@
 		die();
 	}
 	
-	if(preg_match("/^\w+$/", $_POST['name'])==0){
-		alert('用户名包含特殊字符！请重新输入！');
-		redirect('/login/');
-		die();
-	}
+//	if(preg_match("/^\w+$/", $_POST['name'])==0){
+//		alert('用户名包含特殊字符！请重新输入！');
+//		redirect('/login/');
+//		die();
+//	}
 	if(strlen($_POST['password']) > 20){
 		alert('密码过长！请重新输入！');
 		redirect('/login/');

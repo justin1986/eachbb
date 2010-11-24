@@ -404,7 +404,7 @@ function require_login($type="redirect"){
 	}
 }
 
-function search_content($key,$table_name='eb_news',$conditions=null,$page_count = 10, $order='',$full_text=false){
+function search_content($key,$table_name,$conditions=null,$page_count = 10, $order='',$full_text=false){
 	$db = get_db();
 	if($key){
 		$change = array('('=>'\(',')' => '\)');
@@ -418,7 +418,7 @@ function search_content($key,$table_name='eb_news',$conditions=null,$page_count 
 		}
 		$key = implode('|',$key);
 	}
-	$sql = "select * from {$table_name} where language_tag = 0 ";
+	$sql = "select * from {$table_name} where 1=1 ";
 	if($conditions){
 		$sql .= " and {$conditions}";
 	}

@@ -47,19 +47,19 @@
 			<div id="cc_t"></div>
 			<div id="cc_c" >
 				<div id="cc_pg">
-					<div class=r_title id="r_log"><?php if($member->true_name) echo $member->true_name.'的账户管理'; else echo '暂无信息';?></a></div>
+					<div class=r_title id="r_log"><?php if($member->true_name) echo $member->true_name.'的账户管理'; else echo '暂无信息';?></div>
 					<div id="r_log_hr">
 						<div>个人资料</div>
 					</div>
 					<div class="c_menu_pg">
 						<div style="margin-left:0px;"><a href="/yard/member.php">基本资料</a></div>
-						<div id="c_menu_selected"><a href="/yard/info.php"><a href="">修改头像</a></div>
-						<div><a href=""><a href="/yard/reset_password.php">修改密码</a></div>
+						<div id="c_menu_selected"><a href="/yard/info.php">修改头像</a></div>
+						<div><a href="/yard/reset_password.php">修改密码</a></div>
 					</div>
 					<div class="c_menu_pg_p" ></div>
 					<form  enctype="multipart/form-data" action="/yard/yard_image.post.php" method="post">
 						<div id="pic_log">
-							<img id="pic_left" src="<?php echo $user->avatar ? $user->avatar : '/images/yard_info_img/1.jpg'; ?>"/>
+							<img id="pic_left" src="<?php echo $user->avatar ? thumb_name($user->avatar,'big') : '/images/yard_info_img/1.jpg'; ?>"/>
 							<div id="pic_right">
 								<div class="rig_title">上传新头像</div>
 								<div class="rig_title" style="font-weight:normal; margin-top:0px; color:#333333; font-size:12px;">支持JPG、JPEG、GIF和PNG文件，最大2M。</div>
@@ -70,6 +70,7 @@
 								<div id="pichr_title">我的图库（<font><?php echo $avatar_count;?></font>张）</div>
 								<div class="pichr_menu">[上传头像]</div>
 								<div class="pichr_menu" id="set_avatar">[选择头像]</div>
+								<div class="pichr_menu" id="del_avatar">[删除头像]</div>
 							</div>
 							<div id="pic_hr_b"></div>
 							<div id="pic_hr_pg">
@@ -89,7 +90,7 @@
 									}
 								?>
 								<div class="avatar_container" id="<?php echo $avatar_id;?>" <?php if($i == 0){  if($current_avatar_index == $i){echo 'style="margin-left:0px; background:url(/images/yard_info_img/pg2.jpg) no-repeat;"';}else{?>style='margin-left:0px;' <?php }}?><?php if($current_avatar_index == $i){echo 'style="background:url(/images/yard_info_img/pg2.jpg) no-repeat;"';}?>>
-									<img src="<?php echo  $avatars[$i]->photo ? $avatars[$i]->photo : '/images/yard_info_img/1.jpg';?>"/>
+									<img src="<?php echo  $avatars[$i]->photo ? thumb_name($avatars[$i]->photo,'small') : '/images/yard_info_img/1.jpg';?>"/>
 								</div>
 								<?php }?>
 							</div>

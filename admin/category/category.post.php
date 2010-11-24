@@ -35,10 +35,6 @@
 			//$cate->echo_sql = true;
 			$cate->save();
 			redirect('category_list.php?type='.$_POST['post']['category_type'].'');
-				
-			
-			
-			
 		?>
 	</body>
 </html>

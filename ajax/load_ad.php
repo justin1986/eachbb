@@ -3,15 +3,15 @@ include_once "../frame.php";
 $channel = $_GET['channel'];
 $banner = $_GET['banner'];
 if(!is_ajax()) die();
-$banners = array('top_banner','index_middle_banner','right_banner','rich_banner2','rich_banner1','news_banner','list_banner','magazine_banner1','magazine_banner2','login_banner','club_banner');
-$channels = array('billionaires','business','city','club','column','entrepreneur','index','investment','investor','life','list','magazine','news','search','survey','tech','login','register','user','getpwd','review','comments','pic_list','event','contact');
+$banners = array('test_rightr','qin_right','index_middle_banner','index_center_banner_2','cre','pg_a','pg_ab','bg_pg','couser_a','couser_b','couser_c','couser_d','couser_e','hl_b','bl_img','br_f','br_g','news_banner_ad','mother','baby_index_bottom','img_flash','r_test','br_img','wenzhan_right','brr_img','news_wenzhan_right','brrrr_img','cpg_r');
+$channels = array('index','test','course','assistant','bbs.php','news','baby','login');
 if(!in_array($_GET['channel'],$channels) || !in_array($_GET['banner'],$banners)){
 	die();
 }
 if ($channel == 'review') $channel = 'news';
 $db = get_db();
 $db->query("select id from eachbb_ad.eb_channel where parttern='$channel'");
-if($db->record_count <= 0) die('1');
+if($db->record_count <= 0) die('2');
 $db->move_first();
 $channel_id = $db->field_by_name('id');
 $db->query("select id from eachbb_ad.eb_banner where code='$banner'");

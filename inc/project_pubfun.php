@@ -7,7 +7,10 @@ function get_course_url($course){
 function get_teach_url($teach){
 	echo '/teach/teach.php?id='.$teach->id;
 }
-
+function text($num)
+{
+	return $num==1 ? '宝宝测评' : '父母测评';
+}
 function get_news_url($news,$type=null,$index=0){
 	global $page_type;
 	if(!$type) $type = $page_type;
@@ -211,3 +214,16 @@ function refresh_course_xml(){
 	return write_to_file(dirname(__FILE__).'/../course/data.xml', $out,'w');
 }
 
+function thumb_name($src,$name){
+	$pic_name = pathinfo($src);
+	$pic_name['basename'] .= "_" .$name;
+	return str_replace("." .$pic_name['exetension'],"_" .$name . "." .$pic_name['exetension'],$src);					
+}
+
+function create_thumb($name,$src,$width,$height=null){
+	$handler = new image_handler_class();
+	$handler->load(ROOT_DIR_NONE .$src);
+	$handler->setImgCreateQuality(100);
+	$thum_name = ROOT_DIR_NONE .thumb_name($src, $name);	
+	$handler->resize_image($thum_name,$width,$height);
+}

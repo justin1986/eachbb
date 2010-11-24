@@ -3,7 +3,7 @@
 #cc_c{width:760px;  background:#E5F3CD; float:left; display:inline;}
 #cc_t{background:url(/images/baby/log_t.jpg ) repeat; width:760px; height:24px; float:left; display:inline;}
 #cc_b{background:url(/images/baby/log_b.jpg) no-repeat;width:760px; height:26px; float:left; display:inline; }
-#cc_pg{width:730px; margin-left:15px; background:#ffffff; float:left; display:inline;}
+#cc_pg{width:730px; margin-left:15px; background:#ffffff; overflow:hidden; float:left; display:inline;}
 #r_log{width:680px; margin-left:10px; border-bottom:0px solid red; background: url(/images/yard/log.jpg) no-repeat; padding-left:40px;}
 .r_title{width:700px; height:22px; margin-left:10px; margin-top:10px; padding-left:20px; border-bottom:2px solid #f1f1f1; font-size:14px; font-weight:bold; color:#000000; line-height:22px; background:url('/images/member/r_title_bg.jpg') 5px 4px no-repeat; float:left; display:inline;}
 .r_title a{color:#ff6600;}
@@ -11,12 +11,12 @@
 #r_log_hr div{width:100px; height:30px; text-align: center; cursor:pointer;   line-height:30px;  font-size: 12px; font-weight: bold; color: #AC4C00; background: url(/images/yard/log_hr5.jpg) repeat-x; border:0px solid red;float:left;}
 .c_menu_pg_p{width:720px; height:30px; margin-left:10px; background:url(/images/yard/log_hr2.jpg) repeat-x;  float: left; display: inline;}
 
-.r_title{width:700px; height:22px; margin-left:10px; margin-top:10px; padding-left:20px; border-bottom:2px solid #f1f1f1; font-size:14px; font-weight:bold; color:#000000; line-height:22px; background:url('/images/member/r_title_bg.jpg') 5px 4px no-repeat; float:left; display:inline;}
+.r_title{width:720px; height:22px; margin-left:10px; margin-top:10px; padding-left:20px; border-bottom:2px solid #f1f1f1; font-size:14px; font-weight:bold; color:#000000; line-height:22px; background:url('/images/member/r_title_bg.jpg') 5px 4px no-repeat; float:left; display:inline;}
 .r_title a{color:#ff6600;}
 .r_table{width:720px; margin-top:10px; margin-left:10px; float:left; display:inline;}
 .r_table tr{line-height:34px;}
-.r_table .td1{width:85px; border-top:1px solid #f1f1f1; border-bottom:1px solid #f1f1f1; padding-right:5px; text-align:right; color:#666666; background:#f9f9f9;}
-.r_table .td2{width:225px; border-top:1px solid #f1f1f1; border-bottom:1px solid #f1f1f1; padding-left:5px; text-align:left;}
+.r_table .td1{width:180px; border-top:1px solid #f1f1f1; border-bottom:1px solid #f1f1f1; padding-right:5px; text-align:right; color:#666666; background:#f9f9f9;}
+.r_table .td2{width:540px; border-top:1px solid #f1f1f1; border-bottom:1px solid #f1f1f1; padding-left:5px; text-align:left;}
 .r_table span{color:#ff6600;}
 .r_table .td2 input{width:213px; height:22px; margin-top:3px; padding-left:5px; border:1px solid #cccccc; color:#333333; line-height:22px;}
 .r_table .td2 input.radio{width:20px; height:16px; border:0px; margin-left:5px;}

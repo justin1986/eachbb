@@ -149,7 +149,7 @@
 						<div class=r_title>会员<span>信息</span></div>
 						<table class=r_table>
 							<tr>
-								<td class=td1><span>*</span> 真实姓名：</td>
+								<td class=td1>真实姓名：</td>
 								<td class=td2><input name="true_name" maxlength="6" value="<?php echo htmlspecialchars($member->true_name);?>" type="text"/></td>
 							</tr>
 							<?php
@@ -157,7 +157,7 @@
 								$address = explode('-',$address);
 							?>
 							<tr>
-								<td class=td1><span>*</span> 地址：</td>
+								<td class=td1> 地址：</td>
 								<td class=td2><select name="province">
 										<option value=''>请选择</option>
 										<?php
@@ -176,7 +176,7 @@
 									<input name="address" maxlength="30" value="<?php echo htmlspecialchars($address[2]);?>" type="text"/></td>
 							</tr>
 							<tr>
-								<td class=td1><span>*</span> 邮政编码：</td>
+								<td class=td1> 邮政编码：</td>
 								<td class=td2><input name="zip" maxlength="6" value="<?php echo htmlspecialchars($member->zip);?>" type="text"/></td>
 							</tr>
 							<tr>
@@ -186,14 +186,14 @@
 								if($birthday[1]<10)$birthday[1] = substr($birthday[1],1,1);
 								if($birthday[2]<10)$birthday[2] = substr($birthday[2],1,1);
 							?>
-								<td class=td1><span>*</span> 您的生日：</td>
+								<td class=td1>您的生日：</td>
 								<td class=td2><select name="year">
 										<option value=''>请选择</option>
 										<?php
 											$now_year = date('Y');
 											for($i=$now_year;$i>$now_year-50;$i--){
 										?>
-										<option value='<?php echo $i;?>'><?php echo $i;?>年</option>
+										<option value='<?php echo $i;?>'><?php echo $i;?></option>
 										<?php }?>
 									</select>
 									年<script>$("[name=year]").val('<?php echo $birthday[0];?>')</script>
@@ -202,7 +202,7 @@
 										<?php
 											for($i=1;$i<13;$i++){
 										?>
-										<option value='<?php echo $i;?>'><?php echo $i;?>月</option>
+										<option value='<?php echo $i;?>'><?php echo $i;?></option>
 										<?php }?>
 									</select>
 									月<script>$("[name=month]").val('<?php echo $birthday[1];?>')</script>
@@ -230,7 +230,7 @@
 								if($birthday[1]<10)$birthday[1] = substr($birthday[1],1,1);
 								if($birthday[2]<10)$birthday[2] = substr($birthday[2],1,1);
 							?>
-								<td class=td1>出生日期：</td>
+								<td class=td1><span>*</span>出生日期：</td>
 								<td class=td2><select name="bb_year">
 										<option value=''>请选择</option>
 										<?php
@@ -259,11 +259,11 @@
 									日 </td>
 							</tr>
 							<tr class="bbs">
-								<td class=td1>宝宝姓名：</td>
+								<td class=td1><span>*</span> 宝宝姓名：</td>
 								<td class=td2><input name="baby_name" maxlength="6" value="<?php echo htmlspecialchars($member->baby_name);?>" type="text" /></td>
 							</tr>
 							<tr class="bbs">
-								<td class=td1>宝宝性别：</td>
+								<td class=td1><span>*</span> 宝宝性别：</td>
 								<td class=td2><input class="radio" type="radio" name="babysex" <?php if($member->baby_gender==1){?>checked="checked"<?php }?> value="1" />
 									男
 									<input class="radio" type="radio" name="babysex" value="2" <?php if($member->baby_gender==2){?>checked="checked"<?php }?> />

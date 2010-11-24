@@ -13,7 +13,7 @@
 		$db = get_db();
 	?>
 </head>
-<body style="position: r">
+<body>
 <div id="ibody">
 	<div id="top_menu">
 			<div id="menu_left"></div>
@@ -23,7 +23,7 @@
 				<script type="text/javascript">
 					var flashvar = {defaultIndex:'1'};
 					var flashparam = {wmode:'Transparent'};
-					swfobject.embedSWF("flash/menu.swf","menu_flash","702","103","8",false,flashvar,flashparam);
+					swfobject.embedSWF("flash/menu.swf","menu_flash","702","113","8",false,flashvar,flashparam);
 				</script>
 			</div>
 			<div id="menu_right"></div>
@@ -45,18 +45,18 @@
 					?>
 					<script type="text/javascript">
 						var flashvar = {image:"<?php echo implode('|',$src);?>",url:"<?php echo implode('|',$url);?>",info:"<?php echo implode('|',$title);?>"};
-						swfobject.embedSWF("flash/index.swf","flash_left","665","384","8",false,flashvar,flashparam);
+						swfobject.embedSWF("flash/index.swf","flash_left","680","384","8",false,flashvar,flashparam);
 					</script>
 				</div>
 				<div id="flash_right">
-					<div id="r_test"<?php $pos="index_teach_pg";show_page_pos($pos,'link_i');?>>
-						<img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1:'/images/index/img_r_a.jpg';?>"/>
-					</div>
-					<div id="r_student">
+						<div id="test_right">
+<!--							<script type="text/javascript">$('#test_right').load('/login/ajax.post.php?op=load_login_status_box&login=index&rd='+Math.random());</script>-->
+						</div>
+						<div id="r_student">
 						<div id="st_top">
-							<div><img src="/images/index/class_tab_0_sel.jpg" class="student_tab"/></div>
-							<div><img src="/images/index/class_tab_1.jpg" class="student_tab"/></div>
-							<div><img src="/images/index/class_tab_2.jpg" class="student_tab"/></div>
+							<div><a href="/course" target="_blank"><img src="/images/index/class_tab_0_sel.jpg" class="student_tab"/></a></div>
+							<div><a href="/assistant" target="_blank"><img src="/images/index/class_tab_1.jpg" class="student_tab"/></a></div>
+							<div><a href="/bbs.php" target="_blank"><img src="/images/index/class_tab_2.jpg" class="student_tab"/></a></div>
 						</div>
 						<div id="student_value">
 							<div class="student_left" id="student_left_0" style="display:inline;">
@@ -66,7 +66,7 @@
 								for( $i = 0 ; $i < 4 ; $i++){ ?>
 								<div class = "student_pg"<?php $pos="top_tab_1_$i";show_page_pos($pos,'link');?>>
 									<div class = "student_l"/></div>
-									<?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href,array('target' => '_blank'));?>
+									<a href="<?php echo $pos_items[$pos]->href;?>"  title="<?php echo $pos_items[$pos]->title;?>" target ='_blank'><?php echo mb_strlen($pos_items[$pos]->title,"utf-8")>15 ? mb_substr($pos_items[$pos]->title,0,14,"utf-8")."<font style='font-size:10px;'>...</font>":$pos_items[$pos]->title;?></a>
 								</div>
 								<?php if($i != 3){?>
 								<div class = "student_hr"></div>		
@@ -77,7 +77,7 @@
 								for( $i = 4 ; $i < 9 ; $i++){ ?>
 								<div class = "student_pg"<?php $pos="top_tab_2_$i";show_page_pos($pos,'link');?>>
 									<div class = "student_l"/></div>
-									<?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href,array('target' => '_blank'));?>
+									<a href="<?php echo $pos_items[$pos]->href;?>"  title="<?php echo $pos_items[$pos]->title;?>" target ='_blank'><?php echo mb_strlen($pos_items[$pos]->title,"utf-8")>15 ? mb_substr($pos_items[$pos]->title,0,14,"utf-8")."<font style='font-size:10px;'>...</font>":$pos_items[$pos]->title;?></a>
 								</div>
 								<?php if($i != 8){?>
 								<div class = "student_hr"></div>
@@ -88,7 +88,7 @@
 								for( $i = 0 ; $i < 4 ; $i++){ ?>
 								<div class = "student_pg"<?php $pos="top_tab_3_$i";show_page_pos($pos,'link');?>>
 									<div class = "student_l"/></div>
-									<?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href,array('target' => '_blank'));?>
+									<a href="<?php echo $pos_items[$pos]->href;?>"  title="<?php echo $pos_items[$pos]->title;?>" target ='_blank'><?php echo mb_strlen($pos_items[$pos]->title,"utf-8")>15 ? mb_substr($pos_items[$pos]->title,0,14,"utf-8")."<font style='font-size:10px;'>...</font>":$pos_items[$pos]->title;?></a>
 								</div>
 								<?php if($i != 3){?>
 								<div class = "student_hr"></div>
@@ -97,7 +97,7 @@
 							<div id="student_right"></div>
 						</div>
 					</div>
-					<div class="ad_banner" id="index_right_banner_1"></div>
+					<div id="r_test" class="ad_banner"></div>
 				</div>
 			</div>
 			<div id="sousuo">
@@ -116,7 +116,7 @@
 				<div id="test_left"  style="position: relative; z-index:1">
 					<div id="test_id">
 						<div id="test_left_top" style="z-index:2000">
-							请输入宝宝的出生日期:　<input style="z-index:2000" type="text" id='date_picker' />
+							请输入宝宝的出生日期:　<input style="z-index:2000" readonly="readonly" type="text" id='date_picker' />
 						</div>
 						<div id="btn_begin_test">
 							<a href="#" id="a_begin_test"><img src="/images/index/test.png" border="0" /></a>
@@ -131,9 +131,10 @@
 							<div class="test_img">
 								<a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1: '/images/index/test_sample.jpg';?>" border="0" /></a>
 							</div>
+							<div class="test_tab_postion"></div>
 							<div class="test_context">
 								<div class="context_title"><?php echo $pos_items[$pos]->title;?></div>
-								<div class="context_content"><?php echo  $pos_items[$pos]->description ? mb_substr($pos_items[$pos]->description,0,75,'utf-8').'...' : ''; ?></div>
+								<div class="context_content"><?php echo  $pos_items[$pos]->description ? mb_substr($pos_items[$pos]->description,0,75,'utf-8')."<font style='font-size:10px;'>...</font>" : ''; ?></div>
 								<div class="test_content_more">
 									<a href=""  class="beijiu"> 查看全文</a>
 								</div>
@@ -145,12 +146,11 @@
 						</div>
 					</div>
 				</div>
-				<div id="test_right">
-					<script type="text/javascript">$('#test_right').load('/login/ajax.post.php?op=load_login_status_box&rd='+Math.random());</script>
-				</div>
+				<!-- style="position: relative;" <?php $pos="index_x";show_page_pos($pos,'link_i');?> -->
+				<div id="test_rightr" class='ad_banner'></div>
 			</div>
 			<div id="student">
-				<div id="student_l">
+				<div id="student_l" <?php $pos="index_news_img_pg";show_page_pos($pos,'link_i');?>>
 					<div id="student_top">
 						<div id="u">
 							<div><img src="/images/index/course_tab_0_sel.jpg" class="course_tab"></div>
@@ -159,42 +159,18 @@
 							<div style="margin-left:30px;"><img src="/images/index/course_tab_3.jpg" class="course_tab"></div>
 						</div>
 						<div id="dict_more"><a href="/course/">more&gt;</a></div>
-						
 					</div>
-					<?php 
-					for($i=1;$i<5;$i++){
-						#$teact=$db->query("select id,title,img_url,description from eb_teach where is_adopt=1 and del_flag=0 and age=".$i." order by create_time desc,priority desc limit 13");
-						#$teact_count=$db->record_count;
-					?>
-					<div class="course_list" id="course_list_<?php echo $i-1;?>" style="<?php if(1==$i){ echo 'display:inline;';}else{ echo 'display:none;';} ?>">
-					<div class="student_c"<?php $pos="course_tab_head_$i";show_page_pos($pos,'link_d_i');?>>
-						<div class="s_pic_l">
-							<a href="#"><img src="<?php echo $pos_items[$pos]->image1;?>" border="0"></a>
-						</div>
-						<div class="s_pic_r" style="width:510px;">
-							<div class="s_word_top"><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href,array('target' => '_blank'));?></div>
-							<div class="s_word_cotent"><?php echo_href($pos_items[$pos]->description, $pos_items[$pos]->href,array('target' => '_blank'));?></div>
-						</div>
+					<div id="index_course_pg">
+						<a href="<?php echo $pos_items[$pos]->href;?>" target="_blank">
+							<img style="border:0px solid red;" src="<?php echo $pos_items[$pos]->image1;?>"/>
+						</a>
 					</div>
-					<div class="stuent_d">
-						<div class="word_z">
-							<?php for($k=1;$k<=18;$k++){?>
-							
-							<div class="s_a"<?php $pos="course_tab_list_{$i}_{$k}";show_page_pos($pos,'link');?>>
-								<div class="s_dian"></div>
-								<div class="s_value"><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href);?></div>
-							</div>
-							<?php }?>
-						</div>
-					</div>
-					</div>
-					<?php }?>
 				</div>
 				<div id="student_r">
 					<div id="dict_a">
 						<div id="dict_title">咨询排行</div>
 						<div id="div_dict_more">
-							<a href="/news">more&gt;</a>
+							<a href="/news" target="_blank">more&gt;</a>
 						</div>
 					</div>
 					<div id="dict_menu"> 
@@ -209,7 +185,9 @@
 						<?php for($i = 1; $i < 7; $i++){ ?>
 						<div class="dict_c"<?php $pos="right_tab_{$j}_{$i}";show_page_pos($pos,'link');?>>
 							<div class="dict_number"<?php if($i==1) echo ' style="background:url(/images/index/red.jpg) no-repeat;"';?>><?php echo $i; ?></div>
-							<div class="dict_value" style='margin-top:3px;'><?php echo_href($pos_items[$pos]->title, $pos_items[$pos]->href,array('target' => '_blank'));?></div>
+							<div class="dict_value" style='margin-top:3px;'>
+								<a href="<?php echo $pos_items[$pos]->href?>" title="<?php echo $pos_items[$pos]->title;?>" target="_blank"><?php echo mb_strlen($pos_items[$pos]->title,"utf-8") > 16 ? mb_substr($pos_items[$pos]->title,0,15,"utf-8")."<font style='font-size:6px;'>...</font>":$pos_items[$pos]->title;?></a>
+								<?php # echo_href($pos_items[$pos]->title, $pos_items[$pos]->href,array('target' => '_blank'));?></div>
 						</div>
 						<?php } ?>
 					</div>
@@ -220,14 +198,14 @@
 				<div id="mother_l">
 					<div id="m_l_t">
 						<div>
-							<a href="/assistant/index.php?age=-2"><img src="/images/index/1.png" /></a>
-							<a href="/assistant/index.php?age=-1"><img src="/images/index/2.png"/></a>
-							<a href="/assistant/index.php?age=1"><img src="/images/index/3.png"/></a>
-							<a href="/assistant/index.php?age=2"><img src="/images/index/4.png"/></a>
-							<a href="/assistant/index.php?age=3"><img src="/images/index/5.png"/></a>
-							<a href="/assistant/index.php?age=4"><img src="/images/index/6.png"/></a>
+							<a href="/assistant/index.php?age=-2" target="_blank"><img src="/images/index/1.png" /></a>
+							<a href="/assistant/index.php?age=-1" target="_blank"><img src="/images/index/2.png"/></a>
+							<a href="/assistant/index.php?age=1" target="_blank"><img src="/images/index/3.png"/></a>
+							<a href="/assistant/index.php?age=2" target="_blank"><img src="/images/index/4.png"/></a>
+							<a href="/assistant/index.php?age=3" target="_blank"><img src="/images/index/5.png"/></a>
+							<a href="/assistant/index.php?age=4" target="_blank"><img src="/images/index/6.png"/></a>
 						</div>
-						<a href="/assistant/" style="font-size:14px; color:#444444; text-decoration: none;">
+						<a href="/assistant/" target="_blank" style="font-size:14px; color:#444444; text-decoration: none;">
 							more&gt;
 						</a> 
 					</div>
@@ -243,18 +221,26 @@
 							<div id="m_l_title"><?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href,array('target' => '_blank'));?></div>
 						</div>
 						<div id="m_l_b"<?php $pos="assistant_head";show_page_pos($pos,'link_t_d')?>>
-							<div id="m_c_title"><?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href,array('target' => '_blank'));?></div>
-							<div id="m_c_content"><?php echo_href($pos_items[$pos]->description,$pos_items[$pos]->href,array('target' => '_blank'));?></div>
-							<div id="m_c_bottom"><a href="<?php echo $pos_items[$pos]->href;?>">查看详细内容&gt;&gt;</a></div>
+							<div id="m_c_title" title="<?php echo $pos_items[$pos]->title;?>"><?php echo mb_strlen($pos_items[$pos]->title,"utf-8")>10 ? mb_substr($pos_items[$pos]->title,0,9,"utf-8")."<font style='font-size:10px;'>...</font>":$pos_items[$pos]->title;?></div>
+							<div id="m_c_content"><?php echo $pos_items[$pos]->description ? mb_substr($pos_items[$pos]->description, 0 ,48, "UTF-8")."<font style='font-size:10px;'>...</font>":'' ;?></div>
+							<div id="m_c_bottom"><a href="<?php echo $pos_items[$pos]->href;?>" target="_blank">查看详细内容&gt;&gt;</a></div>
 						</div>
 						<div id="m_l_c_r">
 							<?php 
-								for($i=1;$i<8;$i++){ ?>
-							<div class="mlc"<?php $pos="assistant_list_$i";show_page_pos($pos,'link')?>>
-								<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href,array('target' => '_blank'));?>
+								$list=$db->query("SELECT id,category_id,title,created_at FROM eb_assistant where is_adopt=1  order by click_count,rand() desc limit 8");
+								for($i=1;$i<8;$i++){ 
+									$type = $db->query("select name from eb_category  where category_type='assistant' and id=".$list[$i]->category_id);
+									$name_len=mb_strlen($type[$i]->name,"utf-8");
+									$title_len=mb_strlen($list[0]->title,"utf-8");
+									?>
+							<div class="mlc">
+								<a  href="/assistant/assistant.php?id=<?php echo $list[$i]->id;?>" target="_blank"  title="<?php echo $list[$i]->title;?>">
+									<?php echo "[".$type[0]->name."] "."<font style='color:#000000;'>".($name_len+$title_len >18 ? mb_substr($list[$i]->title,0,17-$name_len,"utf-8")."<font style='font-size:10px; color:#000000;'>...</font>":$list[$i]->title)."</font>";?>
+								</a>
 							</div>
 							<?php } ?>
 						</div>
+						<div id="jiao"></div>
 					</div>
 				</div>
 				<div id="mother_r">
@@ -262,18 +248,20 @@
 					<div id="m_r_c">
 						<div class="son_top">
 							<div class="son_t_l">精彩<font style="color:#A4C853; font-weight:bold;" >问答</font></div>
-							<div class="son_t_r"><a href="/bbs/forumdisplay.php?fid=10"><font style="color:#F33B0A; font-weight:bold;" >+</font> 更多</a></div>
+							<div class="son_t_r"><a href="/bbs/forumdisplay.php?fid=10" target="_blank"><font style="color:#F33B0A; font-weight:bold;" >+</font> 更多</a></div>
 						</div>
 						<div class="son_content">
 							<?php 
+							//	$list=$db->query("SELECT id,category_id,title,created_at FROM eb_assistant where is_adopt=1  order by click_count,rand() desc limit 8");
 								#$news_son=$db->query("SELECT id,title,description,content,short_title FROM eb_news e where category_id=208 and is_adopt=1 order by created_at desc limit 19");
 								#$news_son_count=$db->record_count;
 								for($j=0;$j<8;$j++){
+									//$numid = rand(0, 200);
 							 ?>
 							<div class="son_c_z"<?php $pos="right_news_list_$j";show_page_pos($pos,'link')?>>
 								<div class="son_c_z_l"></div>
 								<div class="son_c_z_r">
-									<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href,array('target' => '_blank'));?>
+									<a href="<?php echo $pos_items[$pos]->href;?>" target='_blank' title="<?php echo $pos_items[$pos]->title;?>"><?php echo mb_strlen($pos_items[$pos]->title,"UTF-8")>18 ? mb_substr($pos_items[$pos]->title, 0 ,17, "UTF-8")."<font style='font-size:10px;'>...</font>" : $pos_items[$pos]->title ;?></a>
 								</div>
 							</div>
 							<?php }?>
@@ -303,7 +291,7 @@
 						<div class="q_m_pg_d">
 							<div class="child_t">
 								<div class="ch_t_pic"<?php $pos="yard_$i";show_page_pos($pos,'link_d_i')?>>
-									<a href="<?php echo $pos_items[$pos]->href;?>"><img  src="<?php echo $pos_items[$pos]->image1;?>"/></a>
+									<a href="<?php echo $pos_items[$pos]->href;?>" target="_blank"><img  src="<?php echo $pos_items[$pos]->image1;?>"/></a>
 								</div>
 								<div class="ch_t_r">
 									<div class="child_title"><?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href,array('target' => '_blank'));?></div>
@@ -312,20 +300,16 @@
 							</div>
 							<div class="child_c">
 								<?php for($j = 0 ; $j < 5 ; $j++){ ?>
-									<div class="child_img"<?php $pos="yard_son_$i$j";show_page_pos($pos,'link_d_i')?>><a href="<?php echo $pos_items[$pos]->href;?>"><img src="<?php echo $pos_items[$pos]->image1;?>"/></a></div>
+									<div class="child_img"<?php $pos="yard_son_$i$j";show_page_pos($pos,'link_d_i')?>><a href="<?php echo $pos_items[$pos]->href;?>" target="_blank"><img src="<?php echo $pos_items[$pos]->image1;?>"/></a></div>
 								<?php }?>
 							</div>
 						</div>
 					</div>
 					<?php }?>
 				</div>
-				<div id="qin_right"<?php $pos="yard_right";show_page_pos($pos,'link_i')?>>
-					<a href="<?php echo $pos_items[$pos]->href; ?>"><img src="<?php echo $pos_items[$pos]->image1;?>" /></a>
-				</div>
+				<div id="qin_right" class='ad_banner'></div>
 			</div>
-			<div class="quwen ad_banner" id="index_middle_banner" <?php $pos="yard_img";show_page_pos($pos,'link_i')?>>
-				<img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : '/images/index/hr.png';?>"/>
-			</div>
+			<div class="quwen ad_banner" id="index_middle_banner"></div>
 			<div id="student_b">
 				<div id="sb_l">
 					<div id="sbl_l"></div>
@@ -334,7 +318,7 @@
 							<div id="sblct_a">
 								<div class="sblct_l">
 									<div class="sblct_t_title">育儿早班车</div>
-									<div class="sblct_t"><a href="<?php echo get_news_list_url(1);?>">更多</a></div>
+									<div class="sblct_t"><a href="<?php echo get_news_list_url(1);?>"  target="_blank">更多</a></div>
 									<div class="sblct_bb" <?php $pos="bot_a_a";show_page_pos($pos,'link_i')?>>
 										<img src="<?php echo $pos_items[$pos]->image1; ?>"/>
 									</div>
@@ -369,7 +353,7 @@
 							<div id="sblct_b">
 								<div class="sblct_l">
 									<div class="sblct_t_title">邻家育儿</div>
-									<div class="sblct_t"><a href="<?php echo get_news_list_url(2);?>">更多</a></div>
+									<div class="sblct_t"><a href="<?php echo get_news_list_url(2);?>" target="_blank">更多</a></div>
 									<div class="sblct_bb" <?php $pos="bot_a_b";show_page_pos($pos,'link_i')?>>
 										<img src="<?php echo $pos_items[$pos]->image1; ?>"/>
 									</div>
@@ -404,7 +388,7 @@
 							<div id="sblcb_c">
 								<div class="sblct_l">
 								<div class="sblct_t_title">海外传真</div>
-									<div class="sblct_t"><a href="<?php echo get_news_list_url(3);?>">更多</a></div>
+									<div class="sblct_t"><a href="<?php echo get_news_list_url(3);?>" target="_blank">更多</a></div>
 									<div class="sblct_bb" <?php $pos="bot_a_c";show_page_pos($pos,'link_i')?>>
 										<img src="<?php echo $pos_items[$pos]->image1; ?>"/>
 									</div>
@@ -435,7 +419,7 @@
 							<div id="sblcb_d">
 								<div class="sblct_l">
 									<div class="sblct_t_title">潮爸潮妈</div>
-									<div class="sblct_t"><a href="<?php echo get_news_list_url(4);?>">更多</a></div>
+									<div class="sblct_t"><a href="<?php echo get_news_list_url(4);?>" target="_blank">更多</a></div>
 									<?php 
 										#$category=array("136"=>"游戏","137"=>"抚摸","138"=>"训练","139"=>"对话");
 										#$news_k=array_keys($news);
@@ -479,16 +463,24 @@
 					<div id="sbl_cr">
 						<div class="son_top">
 							<div class="son_t_l">助手<font style="color:#A4C853; font-weight:bold;" >排行</font></div>
-							<div class="son_t_r"><a href="/assistant"><font style="color:#F33B0A; font-weight:bold;" >+</font> 更多</a></div>
+							<div class="son_t_r"><a href="/assistant" target="_blank"><font style="color:#F33B0A; font-weight:bold;" >+</font> 更多</a></div>
 						</div>
 						<div class="son_content">
 							<?php 
-								for($k=8;$k<19;$k++){
+								$list=$db->query("SELECT id,category_id,title,created_at FROM eb_assistant where is_adopt=1  order by click_count,rand() desc limit 11");
+								for($k=0;$k<11;$k++){
+								$type = $db->query("select name from eb_category  where category_type='assistant' and id=".$list[$k]->category_id);
 							 ?>
-							<div class="son_c_z"<?php $pos="right_bottom_list_$k";show_page_pos($pos,'link');?>>
+							<div class="son_c_z">
 								<div class="son_c_z_l"></div>
 								<div class="son_c_z_r">
-									<?php echo_href($pos_items[$pos]->title,$pos_items[$pos]->href,array('target' => '_blank'));?>
+									<a  href="/assistant/assistant.php?id=<?php echo $list[$k]->id;?>" target="_blank" title="<?php echo $list[$k]->title;?>"> 
+										<?php 
+										$number_name = mb_strlen($type[0]->name,"utf-8");
+										$number_title = mb_strlen($list[$k]->title,"utf-8");
+										?>
+										<?php echo ( $number_name+$number_title >17 ? "<font style='color:#3C7745; font-size:12px;'>[".$type[0]->name."]&nbsp;</font>".mb_substr($list[$k]->title,0,16-$number_name,"utf-8")."<font style='font-size:10px;'>...</font>":"<font style='color:#3C7745; font-size:12px;'>[".$type[0]->name."]</font>&nbsp;".$list[$k]->title);?>
+									</a>
 								</div>
 							</div>
 							<?php } ?>
@@ -497,9 +489,7 @@
 					<div id="sbl_br"></div>
 				</div>
 			</div>
-			<div class="quwen"<?php $pos="yardd_img";show_page_pos($pos,'link_i')?>>
-				<img src="<?php echo $pos_items[$pos]->image1 ? $pos_items[$pos]->image1 : '/images/index/hr.png';?>"/>
-			</div>
+			<div class="quwen ad_banner" id="index_center_banner_2"></div>
 			<div id="pic">
 				<div id="picc_left"></div>
 				<div id="picc_right">

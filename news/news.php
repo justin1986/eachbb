@@ -3,11 +3,16 @@
 	include_once(dirname(__FILE__).'/../frame.php');
 	$id =intval(trim($_REQUEST['id']));
 	if(empty($id)){
-		#redirect('error.html');
-		#die();
+		redirect('error.html');
+		die();
+	}
+	if(!is_numeric($id)){
+		redirect('error.html');
+		die();
 	}
 	$db = get_db();
 	$column = $db->query("SELECT id,title,click_count,short_title,category_id,description,content,created_at,last_edited_at,video_photo_src,keywords,publisher FROM eb_news e where id=".$id." order by last_edited_at desc");
+	if(!$column)die("非法操作");
 	?>
 <html>
 <head>
@@ -32,16 +37,16 @@ foreach ($lines as $li){
 		<div id="fbody">
 		<div id="log_top">
 			<div id="log_t">
-				<div id="log"></div>
+				<a href="/"><div id="log"></div></a>
 				<div id="log_address">
-					<a href="/">首页</a>
+					<a href="/news" style='color:blue;'>资讯首页</a>
 					<?php 
 						$category = new category_class('news');
 						$cate_tree = $category->tree_map_item($column[0]->category_id);
 						$cate_tree = array_reverse($cate_tree);
 						foreach ($cate_tree as $cate){
 							$list_url = get_news_list_url($cate_tree[0]->id);
-							echo " &gt;&gt; <a href='{$list_url}'>{$cate->name}</a>";
+							echo " &gt;&gt; <a href='{$list_url}' style='color:blue;' target='_blank'>{$cate->name}</a>";
 						}
 					?>
 					<span> &gt;&gt; <?php echo $column[0]->title;?></span>
@@ -50,7 +55,7 @@ foreach ($lines as $li){
 			<div id="hr"></div>
 		</div>
 		<div id="b_l">
-			<div id="title"><a href="#" title="<?php echo $column[0]->title;?>"><?php echo $column[0]->title;?></a></div>
+			<div id="title"  title="<?php echo $column[0]->title;?>"><?php echo $column[0]->title;?></div>
 			<div id="title_b">
 				<div id="problem" title="<?php echo $column[0]->created_at;?>">发布与：<?php echo $column[0]->created_at;?></div>
 			</div>
@@ -63,7 +68,7 @@ foreach ($lines as $li){
 							<?php
 							$lines=explode("||",$column[0]->keywords);
 							foreach ($lines as $li){ ?>
-							<li class="keyword_container"><a href="<?php echo get_search_keyword_url($li);?>" title="<?php  echo $li; ?>"><?php  echo $li; ?></a></li>
+							<li class="keyword_container"><a href="<?php echo get_search_keyword_url($li);?>" title="<?php  echo $li; ?>" target='_blank'><?php  echo $li; ?></a></li>
 							<?php  } ?>
 						</ul>
 					</div>
@@ -72,9 +77,9 @@ foreach ($lines as $li){
 						<?php echo strip_tags($column[0]->description);?>
 					</div>
 					<div id="text_menu">
-						<div class="tm_a"><a id="a_print" href="#">打印</a></div>
-						<div id="tm_b"><a id="a_collect" href="#">收藏</a></div>
-						<div class="tm_a"><a href="/news/share.php?news_id=<?php echo $column[0]->id?>">分享</a></div>
+						<div class="tm_a"><a id="a_print" href="#" >打印</a></div>
+						<div id="tm_b"><a id="a_collect" href="#" >收藏</a></div>
+						<div class="tm_a"><a href="/news/share.php?news_id=<?php echo $column[0]->id?>" target='_blank'>分享</a></div>
 					</div>
 				</div>
 				<div id="text_bpg"></div>

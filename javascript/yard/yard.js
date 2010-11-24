@@ -1,5 +1,6 @@
 $(function(){
-	$.post('lastest_news.post.php',{'type':'all'},function(data){
+	var id = $('#id').val();
+	$.post('lastest_news.post.php',{'type':'all',"id":id},function(data){
 		$('#test').html(data);
 	});
 	$('.c_ch_w').click(function(){
@@ -7,36 +8,43 @@ $(function(){
 		$('.c_ch_w').attr('style','background:none;');
 		$(this).attr('style','border:0px solid red; background:url(/images/yard/m_pg.jpg) no-repeat;');
 		$('#test').html("<div style='width:540px; text-align:center; margin-top:20px;'><img src='/images/yard/loading.gif' /></div>");
+		var id = $('#id').val();
 		if(selected === 0)
 		{	
-			$.post('friend_news.post.php',{'type':'all'},function(data){
+			$.post('lastest_news.post.php',{'type':'all',"id":id},function(data){
 				$('#test').html(data);
 			});
 		}
 		else if(selected === 1)
 		{
-			$.post('lastest_news.post.php',{'type':'oneword'},function(data){
+			$.post('lastest_news.post.php',{'type':'oneword',"id":id},function(data){
 				$('#test').html(data);
 			});
 		}
 		else if(selected === 2)
 		{
-			$.post('lastest_news.post.php',{'type':'image'},function(data){
+			$.post('_lastest_image_post.php',{'type':'image',"id":id},function(data){
 				$('#test').html(data);
 			});
 		}
 		else if(selected === 3)
 		{
-			$.post('lastest_news.post.php',{'type':'diary'},function(data){
+			$.post('_lastest_news.post.php',{'type':'diary',"id":id},function(data){
 				$('#test').html(data);
 			});
 		}else if(selected === 4)
 		{
-			$.post('lastest_news.post.php',{'type':'all'},function(data){
+			$.post('_lastest_comment.post.php',{"id":id},function(data){
+				$('#test').html(data);
+			});
+		}else if(selected === 5)
+		{
+			$.post('lastest_news.post.php',{'type':'suibian',"id":id},function(data){
 				$('#test').html(data);
 			});
 		}
 	});
+	
 	$('.menu_pic').click(function(){
 		var selected=$('.menu_pic').index($(this));
 		if(selected === 0){
@@ -78,8 +86,8 @@ $(function(){
 		$('#friend_r'+selected).find('img').attr('src','/images/yard/friend_r1.jpg');
 		$('#friend_l'+selected2).find('img').attr('src','/images/yard/friend_l0.jpg');
 		$('#friend_r'+selected2).find('img').attr('src','/images/yard/friend_r0.jpg');
-		$('#friend_word'+selected2).css({'background':'url("/images/yard/friend_bj.jpg") repeat-x','color':'#4e714f'});
-		$('#friend_word'+selected).css({'background':'#BFDEC1','color':'#6ebd71'});
+		$('#friend_word'+selected2).css({'background':'#BFDEC1','color':'#6ebd71'});
+		$('#friend_word'+selected).css({'background':'url("/images/yard/friend_bj.jpg") repeat-x','color':'#4e714f'});
 		$('#pic_'+selected).show();
 		$('#pic_'+selected2).hide();
 	});

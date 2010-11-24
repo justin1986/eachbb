@@ -1,5 +1,6 @@
 <?php
 	include_once('../frame.php');
+	set_charset("utf-8");
 	$valid_types = array('up','down','collect','comment');
 	$type = strtolower($_POST["type"]);
 	if(!in_array($type, $valid_types)) die('invalid request!');

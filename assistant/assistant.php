@@ -1,12 +1,13 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <?php
-	include_once('../frame.php');
+	include_once dirname(__FILE__).'/../frame.php';
 	$id =intval(trim($_REQUEST['id']));
 	if(empty($id)){
 		#redirect('error.html');
 		#die();
 	}
 	$db = get_db();
+	$db->execute("insert into eb_assistant (id,click_count) values ('{$id}',1)ON DUPLICATE KEY update click_count = click_count +1");
 	$column = $db->query("SELECT id,title,click_count,short_title,category_id,description,content,created_at,last_edited_at,age FROM eb_assistant e where id=".$id." order by last_edited_at desc");
 	?>
 <html>
@@ -26,9 +27,9 @@
 		<div id="fbody">
 		<div id="log_top">
 			<div id="log_t">
-				<div id="log"></div>
+				<a href="/" target="_blank"><div id="log"></div></a>
 				<div id="log_address">
-					<a href="/">首页</a>
+					<a href="/assistant">妈妈助手</a>
 					<?php 
 						$category = new category_class('assistant');
 						$cate_tree = $category->tree_map_item($column[0]->category_id);
@@ -44,7 +45,9 @@
 			<div id="hr"></div>
 		</div>
 		<div id="b_l">
-			<div id="title"><a href="#" title="<?php echo $column[0]->title;?>"><?php echo $column[0]->title;?></a></div>
+			<div id="title"  title="<?php echo $column[0]->title;?>">
+				<?php echo $column[0]->title;?>
+			</div>
 			<div id="title_b">
 				<div id="problem" title="<?php echo $column[0]->created_at;?>">发布于：<?php echo $column[0]->created_at;?></div>
 			</div>
@@ -82,32 +85,7 @@
 			</div>
 		</div>
 		<div id="b_r">
-			<div id="br_img" style="padding-bottom:20px;"></div>
-			<?php include_once('../news/_news_logo_public.php'); ?>
-			<div id="tag">
-				<div id="tag_l"></div>
-				<div id="tag_c">
-					<div id="tagc_t"><font>热门</font>关键字</div>
-					<div class="tag_menu">
-						<?php 
-						$list = $db->query("SELECT * FROM eb_news_keywords LIMIT 10");
-						foreach ($list as $list){
-						$lines = explode("||",$list->name);
-							foreach ($lines as $lines){
-								if($lines){
-								?>
-									<div class="cla_m_v" style="text-align: center;"><a href="/news/news.php?id=<?php echo $list->id;?>"><?php echo $lines;?></a></div>
-									<div class="cla_r"></div>
-								<?php }
-							}
-						}?>
-					
-					
-						
-					</div>
-				</div>
-				<div id="tag_b"></div>
-			</div>
+			<?php include_once('_news_logo_public.php'); ?>
 			<div class="bd">
 				<div class="bd_t"></div>
 				<div class="bd_c">
@@ -119,7 +97,6 @@
 						<div class="bdt_hr2"></div>
 					</div>
 					<div class="bdt_v">
-					
 						<?php
 							$list = $db->query("SELECT id,title FROM eb_assistant e where is_adopt=1 order by created_at desc LIMIT 10");
 							foreach ($list as $li){ ?>
@@ -135,7 +112,7 @@
 				<div class="bd_b"></div>
 			</div>
 			
-			<div id="comment">
+			<!--<div id="comment">
 				<div id="comm_l"></div>
 				<div id="comm_c">
 					<div id="comm_t">
@@ -153,7 +130,7 @@
 				</div>
 				<div id="comm_r"></div>
 			</div>
-		</div>
+		--></div>
 		</div>
 		<?php include_once('../inc/bottom.php'); ?>
 </div>

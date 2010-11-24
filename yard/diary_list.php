@@ -69,7 +69,9 @@
 					<div class=r_title id="r_log"><a href="/yard/home.php?id=<?php echo $user_id;?>"><?php echo $member->name;?></a>的日志列表</div>
 					<div id="r_log_hr">
 						<div>日志列表</div>
+						<?php if(!$id){?>
 						<button id="r_log_hr_button" style="margin-top:3px; height:25px; line-height:25px; color:#333333; background:url(/images/yetrb/btn2.jpg) no-repeat;float:right;">发表日志</button>
+						<?php }?>
 					</div>
 					<?php 	
 						$diary_list=$db->query("SELECT d.id,d.created_at,d.last_edit_time,d.title,d.content,d.category_id,s.name FROM eachbb_member.daily d left join eachbb_member.daily_category as s on d.category_id=s.id where d.u_id=$user_id order by created_at desc,last_edit_time desc limit 4;");

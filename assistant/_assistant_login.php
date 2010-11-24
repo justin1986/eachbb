@@ -48,14 +48,21 @@ if($user){
 <?php }else{ ?>
 <style>
 	.user_name input{width:100px;}
+	.user_name div{ width:60px; height:20px; font-size:14px; color:#37B0AD; float:left; display:inline;}
 </style>
-	<form action="comlogin.post.php" method="post">
+<form action="comlogin.post.php" method="post">
 <div id="indiv_top"></div>
 	<div id="indiv_container">
-		<div class="user_name" style="width:180px; margin-top:10px; margin-left:10px; color:#37B0AD; float:left; display:inline;"><font>用户名：</font><input type="text" name="name" id='name'/></div>
-		<div class="user_name" style="width:180px; margin-left:10px; margin-top:10px; color:#37B0AD; float:left; display:inline;"><font>密&nbsp;&nbsp;码：</font><input type="password" id='password' name="password" /></div>
+		<div class="user_name" style="width:180px; margin-top:10px; margin-left:10px; color:#37B0AD; float:left; display:inline;">
+			<div>用户名：</div>
+			<input type="text" name="name" id='name' style="float:left;"/>
+		</div>
+		<div class="user_name" style="width:180px; margin-left:10px; margin-top:10px; color:#37B0AD; float:left; display:inline;">
+			<div>密&nbsp;&nbsp;码：</div>
+			<input type="password" id='password' name="password" style="float:left;" />
+		</div>
 		<div style="width:180px; height:20px; margin-left:10px; margin-top:10px; color:#37B0AD; float:left; display: inline;">
-			<div style=" float:left; display: inline;">期&nbsp;&nbsp;限：</div>
+			<div style="width:60px; float:left; display: inline;">期&nbsp;&nbsp;限：</div>
 			<div class="u_r">
 				<select name="time">
 					<option value="0">不保存</option>
@@ -72,6 +79,6 @@ if($user){
 		<div style="width:180px; margin-left:10px; margin-top:10px; color:#37B0AD; text-align:center; float:left; display:inline;"><input type="button" id="login_bn"  value="确定" /><input id="assisnt_exit" style="margin-top:10px;" type="button"  value="取消" /></div>
 	</div>
 	<input type="hidden" name="session" value="<?php echo $_SESSION['login'];?>">
-	
+	<input type="hidden" name="category_id" id="category_id" value="<?php echo $_GET["category_id"];?>"/>
    </form>
 <?php }?>

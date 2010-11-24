@@ -104,8 +104,13 @@ include_once '../frame.php';
 					<div id="crb_l"></div>
 					<div id="crbc_c">
 						<div id="crbc_l"><a href="#"><?php echo $_SESSION['doing_test_name'];?><font>测评开始</font></a></div>
+
+					<!-- <div id="crbc_la" style="margin-top:10px;"><a href="#">当前第<font><?php echo $step + 1;?></font>题</a></div>
+						<div id="crbc_lb" style="margin-top:10px;"><a href="#">共<font><?php echo $question_len?></font>题</a></div>
+ -->	
 						<div id="crbc_lb"><a href="#">共<font><?php echo $question_len?></font>题</a></div>
 						<div id="crbc_la"><a href="#">当前第<font><?php echo $step + 1;?></font>题</a></div>
+
 					</div>
 					<div id="crb_r"></div>
 				</div>
@@ -116,7 +121,7 @@ include_once '../frame.php';
 							<div id="crc_cc">
 								<ul>
 									<?php foreach ($question_items as $question_item) {?>
-									<li><input type="radio" name="choice" value="<?php echo $question_item->id;?>" /><?php echo $question_item->name;?></li>
+									<li><input type="radio" name="choice" class="radio_chice" value="<?php echo $question_item->id;?>" /><?php echo $question_item->name;?></li>
 									<?php }?>
 								</ul>
 							</div>
@@ -135,16 +140,25 @@ include_once '../frame.php';
 				
 				<!-- test end -->
 				<div id="cr_d">
-					<div id="crd_d">精彩早教课程推荐</div>
-					<div id="geng"><a href="#">更多&gt;&gt;</a></div>
+					<div id="crd_d">育儿热点</div>
+					<div id="geng"><a href="/assistant" target="_blank">更多&gt;&gt;</a></div>
 				</div>
 				<div id="cr_e">
-					<?php for($x=0;$x<3;$x++){?>
+					<?php
+					$list=$db->query("SELECT id,category_id,title,created_at FROM eb_assistant where is_adopt=1  order by created_at,last_edited_at,click_count desc limit 200");
+					for($x=0;$x<3;$x++){?>
 						<div class="cre_z">
-							<?php for($i=0;$i<4;$i++){?>
+							<?php for($i=0;$i<4;$i++){
+							$numid = rand(0, 200);
+								if(!$numid){
+									continue;
+									$i--;
+								}
+								$type = $db->query("select name from eb_category  where category_type='assistant' and id=".$list[$numid]->category_id);
+								?>
 							<div class="crez_z">
 								<div class="crez_d"></div>
-								<div class="crez_v"><a href="#"><font>[知识榜单]</font> 友情链接友情链接友情链接友情链接</a></div>
+								<div class="crez_v"><a href="/assistant/assistant.php?id=<?php echo $list[$numid]->id;?>"  target="_blank"><font>[<?php echo $type[0]->name;?>]</font>&nbsp;<?php echo $list[$numid]->title?></a></div>
 							</div>
 							<?php
 							}

@@ -3,7 +3,12 @@
 	use_jquery();
 	$db=get_db();
 	$user = User::current_user();
-	$sql="select m.*,s.* from eachbb_member.member m inner join eachbb_member.member_status s on m.id=s.uid where m.id=".$user->id;
+	$id = $_GET['id'];
+	if($id){
+		$user=$db->query("SELECT * FROM eachbb_member.member m where id=$id");
+		$user = $user[0];
+	}
+	$sql="select m.*,s.* from eachbb_member.member m inner join eachbb_member.member_status s on m.uid=s.uid where m.id=".$user->id;
 	$news=$db->query($sql);
 	$sex='未知';
 	if($user->gender == 1){
@@ -13,11 +18,12 @@
 	}
 	?>
 <div id="r_img">
-	<div id="r_pto"><img src="<?php echo $user->avatar;?>"></div>
-	<div id="r_bb"><?php echo $user->baby_name;?></div>
+	<div id="r_pto"><img src="<?php echo $user->avatar ? thumb_name($user->avatar,'normal') : '/images/yard_info_img/1.jpg'; ?>"></div>
+	<div id="r_bb"><?php echo $user->name;?></div>
 	<div id="r_num">被访问过<?php if($news[0]->visit_count){echo $news[0]->visit_count;}else{echo 0;};?>次</div>
 </div>
-<div id="r_geng"> 
+<?php if(!$id){?>
+<div id="r_geng">
 	<div id="r_ge_a">
 		<div id="r_gi_a"></div>
 		<div id="r_gw_a"><a href="/yard/info.php">更换头像</a></div>
@@ -27,6 +33,7 @@
 		<div id="r_gw_b"><a href="/yard/member.php">修改档案</a></div>
 	</div>
 </div>
+<?php }?>
 <div id="r_ge_ge">
 	<div id="r_ge_hr"></div>
 	<div id="r_ge_table">
@@ -87,6 +94,9 @@
 				<img src="/images/yard/friend_r1.jpg" />
 			</div>
 		</div>
+		<?php if(!$id){?>
+		<div id="query_friend">查询好友</div>
+		<?php }?>
 	</div>
 <div id="pic_r">
 	<div id="pic_0">
@@ -98,11 +108,11 @@
 		for($i=0;$i<$m_friend;$i++){?>
 		<div class="pic_box">
 			<div class="pic_pg" id="pic_pg_0">
-				<a href="/yard/home.php?id=<?php echo $friend[$i]->f_id;?>">
-				<IMG  class="pic_img" src="<?php if ($friend[$i]->f_avatar != null){echo $visit[$i]->f_avatar;}else{echo '/images/yard/friend_null.jpg';}?>"/>
+				<a href="/yard/index.php?id=<?php echo $friend[$i]->f_id;?>" target="_blank">
+				<IMG  class="pic_img" src="<?php if ($friend[$i]->f_avatar != null){echo thumb_name($friend[$i]->f_avatar,'small');}else{echo '/images/yard_info_img/1.jpg';}?>"/>
 				</a>
 			</div>
-			<div class="name_pic"><a title="<?php echo $friend[$i]->f_name;?>" href="<?php echo $friend[$i]->f_id;?>"><?php echo $friend[$i]->f_name;?></a></div>
+			<div class="name_pic"><a title="<?php echo $friend[$i]->f_name;?>" href="/yard/index.php?id=<?php echo $friend[$i]->f_id;?>"><?php echo $friend[$i]->f_name;?></a></div>
 		</div>
 		<?php }?>
 	</div>
@@ -110,11 +120,11 @@
 		<?php for($i=0;$i<$m_visit;$i++){?>
 		<div class="pic_box">
 			<div class="pic_pg">
-				<a href="/yard/home.php?id=<?php echo $visit[$i]->f_id;?>">
-				<IMG  class="pic_img" src="<?php if ($visit[$i]->f_avatar != null){echo $visit[$i]->f_avatar;}else{echo '/images/yard/friend_null.jpg';}?>"/>
+				<a href="/yard/index.php?id=<?php echo $visit[$i]->f_id;?>" target="_blank">
+				<IMG  class="pic_img" src="<?php if ($visit[$i]->f_avatar != null){echo thumb_name($visit[$i]->f_avatar,'small');}else{echo '/images/yard_info_img/1.jpg';}?>"/>
 				</a>
 			</div>
-			<div class="name_pic"><a title="<?php echo $visit[$i]->f_name;?>" href="/yard/home.php?id=<?php echo $visit[$i]->f_id;?>"><?php echo $visit[$i]->f_name;?></a></div>
+			<div class="name_pic"><a title="<?php echo $visit[$i]->f_name;?>" href="/yard/index.php?id=<?php echo $visit[$i]->f_id;?>"><?php echo $visit[$i]->f_name;?></a></div>
 		</div>
 		<?php } ?>
 	</div>

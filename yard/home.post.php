@@ -1,5 +1,6 @@
 <?php
 		include_once('../frame.php');
+		set_charset("utf-8");
 		$db = get_db();
 		$checkbox=$_POST['checkbox'];
 		if($checkbox != 1){
@@ -23,7 +24,7 @@
 			redirect("/yard/home.php?id=".$f_id);
 		}
 		else{
-			$sql = "insert into eachbb_member.comment (comment,user_id,resource_type,resource_id,nick_name,created_at,whispered) values ('$content','$f_id','visitorsbook',1099,'$visitor',now(),'$checkbox');" ;
+			$sql = "insert into eachbb_member.comment (comment,user_id,resource_type,resource_id,nick_name,created_at,whispered,f_id) values ('$content','$f_id','visitorsbook',1099,'$visitor',now(),'$checkbox',{$user->id});" ;
 			if($db->execute($sql)){
 				alert("发布成功！");
 			}else{

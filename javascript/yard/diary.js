@@ -29,7 +29,7 @@ $(function(){
 		}
 	});
 	$('#category_button').live('click',function(){
-		var value = $('#category_name').val().trim();
+		var value = $('#category_name').val();
 		if(value != ""){
 			$.post('_diary_ajax_post.php',{"type":$('#category_name').val()},function(data){
 				alert(data);
@@ -42,7 +42,7 @@ $(function(){
 		}
 	});
 	$('#diary_content img').live('click',function(){
-		var value = $('#diary_content select option:selected').val().trim();
+		var value = $('#diary_content select option:selected').val();
 		$.post('_diary_ajax_select.php',{"type":"insert"},function(data){
 			$('#diary_content').html(data);
 		});

@@ -1,6 +1,6 @@
 body{width:970PX; margin: 0 auto; }
 
-#ibody{width:970px; overflow:hidden; margin:0;}
+#ibody{width:970px; overflow:hidden; margin:0 auto;}
 
 #fbody{ width:970px; overflow:hidden;  background:#ffffff; float:left; display:inline;}
 
@@ -27,7 +27,7 @@ body{width:970PX; margin: 0 auto; }
 #crf_r{width:315px; height:255px; margin-left:5px;  float:left; display:inline;}
 #crf_t{width:280px; height:30px; margin-left:15px; margin-top:5px; font-size:16px; font-weight:bold; color:#000; float:left; display:inline;}
 #crf_t font{ font-size:16px; color:#EC4610; font-weight:bold;}
-.crf_c{width:290px; height:185px;  overflow:hidden; font-size:13px; color:#666666; line-height:18px; float:left; display:none;}
+.crf_c{width:290px; height:220px;  overflow:hidden; font-size:13px; color:#666666; line-height:18px; float:left; display:none;}
 	.crf_c a{color:#666666; text-decoration: none;}
 .crf_ti{width:77px; height:60px; margin-right:5px; border:6px solid #E7E7DF; float:left; display:inline; }
 .crf_ti img{width:73px; height:56px; margin-left:2px; margin-top:2px; float:left; display:inline;}
@@ -36,7 +36,7 @@ body{width:970PX; margin: 0 auto; }
 #crf_d{width:120px; height:22px; margin-right:15px; margin-top:10px; float:right; display:inline;}
 .cr_num{width:22px; height:22px; margin-left:7px; cursor:pointer; font-size:12px; font-weight:bold; text-decoration:none; color:#71CAE4; background:url(/images/test/r_nb.jpg) no-repeat; text-align:center; line-height:22px; float:left; display:inline; float:left;}
 
-#cr_b{width:741px; height:200px; margin-tOP:27px; float:right; display:inline; }
+#cr_b{margin-top:20px; float:right; display:inline; }
 #crb_t{width:741px; height:27px; float:left; display:inline; }
 .crb_value{width:81px; height:26px; background:#FDFDFD; border:0px solid red; float:left; display:inline;}
 .crb_tt{width:81px; height:3px; font-size:0px; line-height:0px; background:url(/images/test/t.jpg) no-repeat; float:left; display:inline;}
@@ -45,7 +45,7 @@ body{width:970PX; margin: 0 auto; }
 .crb_vv{width:151px; height:26px; background:#FDFDFD; border:0px solid red; float:left; display:inline;}
 .crb_ttt{width:151px; height:3px;   font-size:0px; line-height:0px; background:url(/images/test/tt.jpg) no-repeat; float:left; display:inline;}
 #cr_hr{width:254px; height:26px; background:#ffffff; border-bottom:1px solid #C2C2C2; float:left; display:inline;}
-.crb_c{width:740px; height:144px; margin-top:15px; float:left; display:none;}
+.crb_c{width:740px; height:144px; margin-top:15px; float:left; overflow:hidden; display:none; position: relative;}
 .crbc_a{width:139px; height:136px; margin-top:4px; margin-left:4px; float:left; display:inline;}
 .crbc_a img{width:139px; height:136px; border:0px solid red;}
 .crbci_t{width:570px; height:136px;  margin-left:10px; font-size:12px; z-index:1; overflow:hidden; text-indent:24px; line-height:20px;  text-align:left; float:left; display:inline;}
@@ -61,7 +61,7 @@ body{width:970PX; margin: 0 auto; }
 .crd_f{width:240px; height:28px; left:0px; position:absolute; text-align:center; line-height:28px;  color:#fff; bottom:5px;  opacity:0.60; filter:alpha(opacity = 60); background:#000; overflow:hidden;}
 .crd_f a{font-size:20px; color:#ffffff;    font-weight:bold; text-decoration:none;}
 
-#cre{width:746px; height:167px; margin-top:10px; position:relative; float:right; display:inline;}
+#cre{width:746px; height:167px; margin-top:10px; position:relative;  float:right; display:inline;}
 #cre img{width:746px; height:167px;  border:0px solid red;}
 #cre a{ color:#ffffff; font-weight:bold; font-size:20px; text-decoration:none;}
 
@@ -122,9 +122,9 @@ body{width:970PX; margin: 0 auto; }
 .hlcb_pg img{width:5px; height:3px; margin-top:8px; border:0px solid red; float:left; display:inline; }
 .hlcb_z{width:198px; height:60px; margin-top:10px; float:left; display:inline;}
 .hlcb_l{width:25px; height:60px; float:left; display:inline;}
-.r{width:12px; height:12px; margin-left:10px; font-size:12px; line-height:12px; background:#F58626; color:#ffffff; border:1px solid #F36E0C; text-align:center; font-weight:bld; float:left; display:inline;}
+.r{width:14px; height:14px; margin-left:10px; font-size:12px; line-height:14px; background:#F58626; color:#ffffff; border:1px solid #F36E0C; text-align:center; font-weight:bld; float:left; display:inline;}
 .hlcb_r{width:160px; height:60px; margin-left:3px; float:left; display:inline;}
-.hlcb_t{width:160px; height:16px; margin-top:1px; font-size:12px; font-weight:bold; color:#666666; overflow:hidden; line-height:16px; float:left; display:inline;}
+.hlcb_t{width:160px; height:16px; margin-top:1px; font-size:12px; color:#666666; overflow:hidden; line-height:16px; float:left; display:inline;}
 .hlcb_t font{color:#F34B2E; font-size:12px;}
 
 #pric_l{width:1px; height:175px; background:#ffffff; float:left; display:inline;}
@@ -141,6 +141,6 @@ body{width:970PX; margin: 0 auto; }
 #cric_title{width:735px; height:20px; margin-top:1px; font-family:����; font-size:20px; font-weight:bold; text-align:center; color:#617381; float:left; display:inline;}
 #cric_title font{color:#379516;}
 #cric_c{width:730px; height:128px; margin-top:13px; float:left; display:inline;}
-.cricc_a{width:103px; height:128px; margin-left:18px; border:0px solid red; background:url(/images/class/c_pg.jpg) no-repeat; overflow:hidden; float:left; display:inline;}
+.cricc_a{width:103px; height:128px; margin-left:18px; border:0px solid red; position:relative; background:url(/images/class/c_pg.jpg) no-repeat; overflow:hidden; float:left; display:inline;}
 .cricc_a div{width:88px; height:128px; overflow:hidden; border:0px solid red; float:left; display:inline;}
 .cricc_a div img{width:88px; height:128px; border:0px solid red;}

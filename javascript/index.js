@@ -24,15 +24,46 @@ function send_login(){
 		expire = 30;
 	}
 	$.post('/login/ajax.post.php?op=login&name='+ encodeURI($('#login_name').val()) + '&password=' +encodeURI($('#login_password').val()+'&expire='+expire),function(data){
-		if(data){
-			alert(data);
+		if(data == 0){
+			$("#test_right").hide();
+			$('#r_test').hide();
+			$('#r_student').hide();
+			$('#st_top').hide();
+			$('#student_value').hide();
+			$.post('/login/_login.php',function(data){
+				$("#flash_right").html(data);
+			});
+		}else{
+			var login_result = $('#login_result');
+			if(login_result.length <= 0){
+				$('body').append('<div id="login_result" style="display:none;"></div>');
+			}
+			login_result = $('#login_result');
+			login_result.html(data);
+			$('#test_right').load('/login/ajax.post.php?op=load_login_status_box&rd=' + Math.random());
 		}
-		$('#test_right').load('/login/ajax.post.php?op=load_login_status_box&rd=' + Math.random());
+	
 	});
 };
 
 $(function(){
 	//$('.beijiu').colorbox({href:'/inc/_public_result_ajax_post_view.php?id='+$('.beijiu').index($(this))});
+	$.post('/login/ajax.post.php?op=load_login_status_box&login=index',function(data){
+		if(data == 0){
+			$.post('/login/_un_login.php',function(da){
+				$('#test_right').html(da);
+			});
+		}else{
+			$("#test_right").hide();
+			$('#r_test').hide();
+			$('#r_student').hide();
+			$('#st_top').hide();
+			$('#student_value').hide();
+			$.post('/login/_login.php',function(data){
+				$("#flash_right").html(data);
+			});
+		}
+	});
 	$('.beijiu').click(function(e){
 		e.preventDefault();
 		var selected = $('.beijiu').index($(this));
@@ -71,16 +102,6 @@ $(function(){
 		$('.course_list').hide();
 		$('#course_list_' + selected).show();
 	},function(){});
-	$('img.student_tab').click(function(){
-		var selected = $('img.student_tab').index($(this));
-		if(selected == 0){
-			window.location.href="/course";
-		}else if(selected == 1){
-			window.location.href="/assistant";
-		}else if(selected == 2){
-			window.location.href="/bbs";
-		}
-	});
 	$('img.student_tab').hover(function(){
 		var selected = $('img.student_tab').index($(this));
 		for(var i = 0 ; i < 3; i++){
@@ -178,7 +199,12 @@ $(function(){
 	$('#a_begin_test').click(function(e){
 		e.preventDefault();
 		var birth = new Date($('#date_picker').val());
-		if(typeof(birth) == 'Invalid Date' || birth == "NaN"){
+//		if(typeof(birth) == 'Invalid Date' || birth == "NaN"){
+//			alert('请输入有效的时间');
+//			return;
+//		}
+		if(!$('#date_picker').val())
+		{
 			alert('请输入有效的时间');
 			return;
 		}

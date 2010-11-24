@@ -1,5 +1,6 @@
 <?php 
 include_once('../frame.php');
+set_charset("utf-8");
 $db=get_db();
 $user = User::current_user();
 $count=$db->query("SELECT count(id)id FROM eachbb_member.message m where status=0 and recieve_id=".$user->id);

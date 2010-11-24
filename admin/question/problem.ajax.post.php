@@ -43,6 +43,7 @@ switch ($op) {
 					$result->save();				
 			}
 		}
+		echo "操作成功！";
 		break;
 	case 'edit_result':
 		if($_GET['result']['id']){
@@ -72,6 +73,7 @@ switch ($op) {
 				}
 			}
 		}
+		echo "操作成功！";
 		break;
 	case 'delete_recommand':
 		$id = intval($_GET['recommand_id']);

@@ -1,3 +1,4 @@
+<?php set_charset("utf-8");?>
 <div id="email">
 	<div id="email_l">用户名</div>
 	<div id="email_r">

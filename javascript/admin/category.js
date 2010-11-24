@@ -4,7 +4,6 @@ $(function(){
 			var img_id = $(this).attr('img_name');
 			var array = img_id.split(',');
 			
-			
 			if($("tr[name*='"+main_id+"']").css('display')=='none'){
 				$(this).attr('src','/images/admin/moners.gif');
 				$("tr[name*='"+main_id+"']").show();

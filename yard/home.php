@@ -18,23 +18,23 @@
 			alert('您的好友不存在！');
 			redirect("/yard");
 		}
-		$db->execute("insert into eachbb_member.member_status (uid,created_at,last_login,score,level,friend_count,unread_msg_count,visit_count) values ({$info[0]->uid},now(),now(),0,0,0,0,1) ON DUPLICATE KEY update visit_count = visit_count +1;");
 		if(!($info[0]->id === $user->id)){
-			$vis_id=$db->query("select id from eachbb_member.visit_history where u_id= {$user->id} and f_id= {$info[0]->id}");
+			$db->execute("insert into eachbb_member.member_status (uid,created_at,last_login,score,level,friend_count,unread_msg_count,visit_count) values ({$info[0]->uid},now(),now(),0,0,0,0,1) ON DUPLICATE KEY update visit_count = visit_count +1");
+			$vis_id=$db->query("select id from eachbb_member.visit_history where u_id= {$info[0]->id} and f_id= {$user->id}");
 			if(!$vis_id){
-				if(!$db->execute("insert into eachbb_member.visit_history(create_at,u_id,f_id,f_name,f_avatar)values(now(),{$user->id},$id,'{$info[0]->name}','{$info[0]->avatar}');")){
+				if(!$db->execute("insert into eachbb_member.visit_history(create_at,u_id,f_id,f_name,f_avatar)values(now(),$id,{$user->id},'{$user->name}','{$user->avatar}');")){
 					echo "添加失败！";
 				}
 			}
 			else{
-				$db->execute("update eachbb_member.visit_history set create_at =now(),f_avatar='{$info[0]->avatar}' where id={$vis_id[0]->id}");
+				$db->execute("update eachbb_member.visit_history set create_at =now()}' where id={$vis_id[0]->id}");
 			}
 		}
 		$daily_count=$db->query("select id from eachbb_member.daily where u_id=$id");
 		$album_count=$db->query("select id from eachbb_member.album where u_id=$id");
-		if($info[0]->gender != 1){
+		if($info[0]->gender == 2){
 			$its="她";
-		}else{
+		}else if($info[0]->gender == 1){
 			$its="他";
 		}
 	?>
@@ -47,7 +47,7 @@
 			<div id="yard_day_time"><?php echo date('Y年m月d日'); ?></div>
 			<div id="yard_day_ct"><?php echo get_week_day(); ?></div>
 		</div>
-		<div id="menu_a" class="menu_pic"style="background:url(../images/yard/m_a.jpg) no-repeat;"></div>
+		<div id="menu_a" class="menu_pic"style="background:url(../images/yard/m_0_sel.jpg) no-repeat;"></div>
 		<div id="menu_b" class="menu_pic" style="background:url(../images/yard/m_1.jpg) no-repeat;"></div>
 		<div id="menu_c" class="menu_pic"></div>
 		<div id="menu_d" class="menu_pic"></div>
@@ -71,7 +71,7 @@
 				<div id="info_p1">
 					<div id = "p1_phobox">
 						<div id="photo">
-							<img src="<?php echo $info[0]->avatar;?>" />
+							<img src="<?php echo thumb_name($info[0]->avatar,'normal');?>" />
 						</div>
 					</div>
 					<div id = "p1_buttonbox">
@@ -124,7 +124,10 @@
 						</div>
 						<div class="info_word">
 							<div class="word_l">一句话：</div>
-							<div id="word_r2">宝宝</div>
+							<div id="word_r2"><?php 
+							$li = $db->query("SELECT content FROM eachbb_member.mood where u_id={$info[0]->id}  order by created_at desc  LIMIT 1");
+							echo $li[0]->content;
+							?></div>
 						</div>
 					</div>
 					<div id ="line1"></div>
@@ -140,18 +143,13 @@
 								<div class="oth_name"><?php echo $its?>的相册</div>
 								<div class="oth_nr"></div>
 							</div>
-							<div class="oth_botton">
-								<div class="oth_nl"></div>
-								<div class="oth_name"><?php echo $its?>的分享</div>
-								<div class="oth_nr"></div>
-							</div>
 						</div>
 						<div class="basic_info">
 							<div class="word">基本资料</div>
 							<div class ="info_left">
 								<div class="left_words">
 									<div class="box">性别：</div>
-									<div class="info"><?php if($info[0]->gender != 1){echo "女";}else{echo "男";}?></div>
+									<div class="info"><?php if($info[0]->gender == 1){echo "男";}else if($info[0]->gender == 2){echo "女";}else{echo "未知";}?></div>
 								</div>
 								<div class="left_words">
 									<div class="box">学历：</div>
@@ -167,7 +165,7 @@
 								</div>
 								<div id="ad_words">
 									<div class="box">地址：</div>
-									<div id="address"><?php echo $info[0]->address;?></div>
+									<div id="address"><?php echo mb_substr($info[0]->address,0,7,"utf-8");?></div>
 								</div>
 							</div>
 						</div>
@@ -189,31 +187,30 @@
 							<div class ="info_left">
 								<div class="left_words">
 									<span class="box">小名：</span>
-									<span class="info"><?php echo $info[0]->baby_name;?></span>
+									<span class="info"><?php if(!$info[0]->baby_name){ echo "未知";}else{$info[0]->baby_name;};?></span>
 								</div>
 								<div class="left_words">
 									<span class="box">性别：</span>
-									<span class="info"><?php if($info[0]->baby_gender != 1){echo "女";}else{echo "男";}?></span>
+									<span class="info"><?php if($info[0]->baby_gender == 1){echo "男";}else if($info[0]->baby_gender == 2){echo "女";}else{echo "未知";}?></span>
 								</div>
 								<div class="left_words">
 									<span class="box">年龄：</span>
 									<span class="info">
 									<?php $date_1 =now();
 										$date_2 =$info[0]->baby_birthday;
-										$d1=strtotime($date_1);
-										$d2=strtotime($date_2);
-										$days=round(($d1-$d2)/3600/24);
-										if($days<=365){echo $days."天";}
-										elseif($days>365){echo floor($days/365)."周岁";}
+										 if(substr($date_2,0,10) != "0000-00-00")
+										 {
+										 	echo substr(now(),0,4)-substr($date_2,0,4)."岁";
+										 }else{
+										 	echo "未知";
+										 }
 									?>
 									</span>
 								</div>
 								<div class="left_words">
-									<div class="box">生日：</div>
-									<div class="info">
-									<?php $info[0]->baby_birthday;
-									echo mb_substr($info[0]->baby_birthday,0,10);
-									?></div>
+									<span class="box">生日：</span>
+									<span class="info">
+									<?php if(substr($info[0]->baby_birthday,0,10) != "0000-00-00"){echo substr($info[0]->baby_birthday,0,10); }else{ echo "未知";}?></span>
 								</div>
 							</div>
 							<?php }?>
@@ -225,7 +222,7 @@
 						<div class="word2" >最新动态</div>
 					</div>
 					<?php	
-					   $sql = $db->query("select * FROM eachbb_member.lastest_news where u_id='{$user->id}'order by created_at desc limit 9");
+					   $sql = $db->query("select * FROM eachbb_member.lastest_news where u_id='{$id}'order by created_at desc limit 9");
 					   $num = $db->record_count;
 					   for($i=0;$i<$num;$i++){?>
 					<div class="news_box">
@@ -235,7 +232,14 @@
 							</div>
 						</div>
 						<span class="news_txt">
-							<span class="u_id"><a href="#"><?php echo $sql[$i]->u_name;?></a></span>
+							<span class="u_id">
+								<a href=""><?php
+////							//if($id == $sql[$i]->u_id){
+////							//	echo "我";
+////							//}else{
+//								echo $sql[$i]->u_name;
+////							//}
+							?></a></span>
 							<span class="news_type">
 								<?php echo $sql[$i]->form ;?>
 							</span>
@@ -250,15 +254,15 @@
 				<div id="info_p4">
 					<div class="title_info">
 						<div class="word2">留言板</div>
-					</div>
+					</div><!--
 					<div id="c_expression">
-						<?php for($i=0;$i<5;$i++){?>
+						<?php # for($i=0;$i<5;$i++){?>
 						<div class="expression">
 							<img src="/images/yard/express1.gif" />
 						</div>
-						<?php }?>
+						<?php # }?>
 					</div>
-					<form id="b_bord" action="home.post.php" method="post">
+					--><form id="b_bord" action="home.post.php" method="post">
 					<div id="text_write">
 						<textarea name="b_words" id="b_words"></textarea>
 						<input type="text" name="id" style="display:none;" value="<?php echo $id?>">
@@ -271,61 +275,56 @@
 					</div>
 					</form>
 					<?php 
-					$comment =$db->query("select nick_name,created_at,comment,comment_count from eachbb_member.comment where user_id=$id and resource_id='1099' and whispered = 0 order by created_at desc");
-					$visitor_name = $comment[0]->nick_name;
-					if($visitor_name != 'guest'){
-					$visit_avatar = $db->query("select b.avatar from eachbb_member.comment a left join eachbb_member.member b on a.nick_name = b.name where $visitor_name");
+					if($id == $user->id){
+						$whispered ="1 = 1";
+					}else{
+						$whispered ="(t1.whispered = 0 or (t1.whispered = 1 and t1.f_id = {$user->id}))";	
 					}
+					$sql = "select t1.*,t2.photo from eachbb_member.comment t1 left join eachbb_member.member_avatar t2 on t1.f_id=t2.u_id and t2.status=1 where user_id=$id and t1.resource_id='1099' and $whispered order by t1.created_at desc";
+					$comment =$db->paginate($sql,8);
+					$count = $db->record_count;
+					!$comment && $comment = array();
 					?>
-					<?php if(count($comment)!= 0){?>
+					<?php if($count > 0){?>
 					<div class="text_display">
-						<div class="f_content">
+					<?php foreach ($comment as $comment ){?>
+						<div class="f_content" style="margin-top:10px;">
 							<div class="f_pho">
 								<img src="
 								<?php
-								if($visitor_name != 'guest'){
-									if($visit_avatar[0]->avatar != null){
-										echo $visit_avatar[0]->avatar;
+									if($comment->photo != null){
+										echo thumb_name($comment->photo,'small');
 									}else{
-										echo "/images/yard/avatar.jpg";
-								}}else{
-									echo "/images/yard/guest.jpg";
-								}
+										echo "/images/yard_info_img/1.jpg";
+									}
 								?>"/>
 							</div>
 							<div class="content_box">
 								<div class="f_info">
-									<div class="f_name"><a href="#"><?php echo $comment[0]->nick_name?></a></div>
-									<div class="f_button">
-										<img src="/images/yard/f_button.gif " />
-									</div>
-									<div class="created_at"><?php echo mb_substr($comment[0]->created_at,0,16)?></div>
+									<div class="f_name"><a href="#"><?php echo $comment->nick_name?></a></div>
+<!--									<div class="f_button">-->
+<!--										<img src="/images/yard/f_button.gif " />-->
+<!--									</div>-->
+									<div class="created_at"><?php echo mb_substr($comment->created_at,0,16)?></div>
 								</div>
-								<div class="f_words"><?php echo htmlspecialchars($comment[0]->comment);?></div>
+								<div class="f_words"><?php
+								if($comment->whispered == 1){
+									echo "<font style='color:blue; font-size:12px;'>(悄悄话)</font>";
+								}
+								echo htmlspecialchars($comment->comment);?></div>
 							</div>
 						</div>
-				<?php }else{?>
+				<?php 
+					}}else{?>
 					<div class="text_display">
 							<font style = "font-weight:bold; font-size:16px; color:#000000;">没有可显示的留言！</font>
 					</div>
 				<?php }?>
-				<?php if($comment[0]->comment_count != ''){?>
-						<div id="u_reply">
-							<div id="reply_title">
-								<span class="u_id"><a href="#"><?php echo $info[0]->name;?></a></span>
-								<span id="reply_time">2010-11-11 11:11:11</span>
-							</div>
-							<div id="reply_words">jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj</div>
-						</div>
-				<?php }else{?>
-						<div id="u_reply">
-							<font style = "font-weight:bold; font-size:16px; color:#000000;">暂无回复！</font>
-						</div>
-				<?php }?>
-				<?php $comment_count = "select nick_name from eachbb_member.comment where user_id=$id and resource_id='1099' order by created_at desc"?>
 						<div id="more_reply">
-							<div id="next_reply"><a href="#">查看全部&gt;&gt;</a></div>
-							<div id="total_reply">共<?php echo count($comment_count)?>条留言</div>
+							<?php paginate();?>
+							<!-- 
+							<div id="total_reply">共<?php global $$record_count_token; echo $$record_count_token;?>条留言</div>
+							 -->
 						</div>
 					</div>
 				</div>

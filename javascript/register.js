@@ -2,7 +2,7 @@ var name_flag = 'begin';
 var email_flag = 'begin';
 var verify_flag = 'begin';
 var register_flag = 'begin';
-
+var babyname_flag = 'begin';
 $(function(){
 	birthday_display();
 	change_disabled();
@@ -33,6 +33,9 @@ $(function(){
 	
 	$("#baby_status").change(function(){
 		check_status();
+	});
+	$("#baby_name").change(function(){
+		baby_name(false);
 	});
 	
 	$("#re_password").change(function(){
@@ -87,7 +90,6 @@ $(function(){
 		dateFormat: 'yy-mm-dd'
 	});
 	
-	
 	$("#register").click(function(){
 		register_flag = 'begin';
 		if(!check_name(true)){
@@ -109,6 +111,12 @@ $(function(){
 		if(!check_status(true)){
 			$("#baby_status").focus();
 			return false;
+		}
+		if(babyname_flag =="no"){
+			if(!baby_name(true)){
+				$("baby_info_name").focus();
+			return false;
+			}
 		}
 		if(!check_babybirthday()){
 			$("#baby_birthday2").focus();
@@ -138,7 +146,14 @@ $(function(){
 		register_submit();
 	});
 });
-
+function baby_name(){
+	if($("#baby_info_name").val()){
+		return true;
+	}else{
+		$("#baby_birthday_name").html("<span style=color:red>请输入宝宝姓名</span>");
+		return false;
+	}
+}
 function change_disabled(){
 	if($("#accept").attr('checked')){
 		$("#register").attr('disabled',false);
@@ -186,20 +201,29 @@ function birthday_display(){
 		$("#baby_birthday").text('宝宝生日');
 		$("#baby_birthday").parent().show();
 		$( "#baby_birthday2" ).datepicker( "option", "yearRange", 'c-10:c-0');
+		$("#baby_name").show();
+		babyname_flag = "no";
+	}else if($("#baby_status").val()==2){
+		$("#baby_name").hide();
+		$("#baby_birthday").parent().hide();
+		babyname_flag = "begin";
 	}else if($("#baby_status").val()==3){
 		$("#baby_color").text("*");;
 		$("#baby_birthday").text('宝宝预产期');
 		$("#baby_birthday").parent().show();
 		$( "#baby_birthday2" ).datepicker( "option","yearRange", 'c-10:c+1');
+		babyname_flag = "begin";
 	}else{
+		$("#baby_name").hide();
 		$("#baby_birthday").parent().hide();
+		babyname_flag = "begin";
 	}
 }
 
 function check_name(is_submit){
 	var name = $("#name").val();
 	if(name!=''){
-		if(name.length<1){
+		if(name.length<2){
 			$("#name_info").html('<span style=color:red>用户名太短</span>');
 			return false;
 		}
@@ -207,10 +231,12 @@ function check_name(is_submit){
 			$("#name_info").html('<span style=color:red>用户名太长</span>');
 			return false;
 		}
+		/*
 		if(!isNumberOrLetter(name)){
 			$("#name_info").html('<span style=color:red>用户名不能含有特殊字符标点符号，只能含有英文大小字母和数字</span>');
 			return false;
 		}
+		*/
 		if (name_flag != 'locked') {
 			name_flag = 'locked';
 			$("#name_info").text('用户名验证中。。。');
@@ -222,7 +248,7 @@ function check_name(is_submit){
 					name_flag = 'wrong';
 				}
 				else {
-					$("#name_info").html('<span style=color:green>用户名可以使用</span>');
+					$("#name_info").html('<span style=color:blue>用户名可以使用</span>');
 					name_flag = 'success';
 					do_submit();
 				}
@@ -265,7 +291,7 @@ function check_email(is_submit){
 					email_flag = 'wrong';
 				}
 				else {
-					$("#email_info").html('<span style=color:green>邮箱可以使用</span>');
+					$("#email_info").html('<span style=color:blue>邮箱可以使用</span>');
 					email_flag = 'success';
 					do_submit();
 				}
@@ -304,12 +330,12 @@ function check_password(is_submit){
 				return false;
 			}
 			else {
-				$("#re_password_info").html('<span style=color:green>输入一致</span>');
-				$("#password_info").html('<span style=color:green>密码可以使用</span>');
+				$("#re_password_info").html('<span style=color:blue>输入一致</span>');
+				$("#password_info").html('<span style=color:blue>密码可以使用</span>');
 				return true;
 			}
 		}else{
-			$("#password_info").html('<span style=color:green>密码可以使用</span>');
+			$("#password_info").html('<span style=color:blue>密码可以使用</span>');
 			return true;
 		}
 	}else{
@@ -331,15 +357,15 @@ function check_re_password(is_submit){
 	var re_password = $("#re_password").val();
 	if(password!=''&&re_password!=''){
 		if(password!=re_password){
-			$("#re_password_info").html('<span style=color:red>请2次输入相同密码</span>');
+			$("#re_password_info").html('<span style=color:red>2次输入的密码不相同</span>');
 			return false;
 		}else{
-			$("#re_password_info").html('<span style=color:green>输入一致</span>');
+			$("#re_password_info").html('<span style=color:blue>输入一致</span>');
 			return true;
 		}
 	}else{
 		if(is_submit){
-			$("#re_password_info").html('<span style=color:red>请2次输入相同密码</span>');
+			$("#re_password_info").html('<span style=color:red>2次输入的密码不相同</span>');
 			return false;
 		}else{
 			$("#re_password_info").html('');
@@ -395,6 +421,7 @@ function check_birthday(){
 	}else{
 		return true;
 	}
+	
 }
 
 function check_phone(){

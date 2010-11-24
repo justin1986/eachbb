@@ -6,7 +6,7 @@
 	<title>网趣宝贝-妈妈助手</title>
 	<?php
 		include_once('../frame.php');
-		css_include_tag('top_inc/assistant_top','assistant_list','assistant/assistant_content','assistant/assistant_question','right_inc/assistant_right','left_inc/assistant_left'); 
+		css_include_tag('top_inc/assistant_top','logo','assistant_list','assistant/assistant_content','assistant/assistant_question','right_inc/assistant_right','left_inc/assistant_left'); 
 		use_jquery();
 		js_include_tag('assistant/list');
 		$db = get_db();
@@ -40,12 +40,12 @@
 		}
 	?>
 </head>
-
 <body>
 	<div id="ibody">
 		<div id="container">
 			<div id="container_result">
 				<div id="breadbrum">
+					<a href="/" target="_blank"><div id="log"></div></a>
 					<a href="/assistant/_index.php">助手首页</a>
 					<?php 
 					if(in_array($_GET['age'], array(-2,-1))){
@@ -78,20 +78,18 @@
 					}
 				?>
 				<?php include_once('./_assistant_content.php'); ?>
-			
 			</div>
 			<?php include_once('./_assistant_right.php'); ?>
 		</div>
-		
 	</div>
 </body>
 <script type="text/javascript">
 	function filter_age(age){
-		var url = window.location.href;
-		var exp = /age=\d+/;
-		url = url.replace(exp, '');
-		url = url + '&age=' + age;
-		window.location.href=url;
+		//var url = window.location.href;
+		//var exp = /age=\d+/;
+		//url = url.replace(exp, '');
+		//url = url + '&age=' + age;
+		parent.window.location.href='/assistant/index.php?age='+ age;
 	}
 </script>
 </html>

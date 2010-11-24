@@ -1,7 +1,7 @@
 <?php
 session_start();
 include_once('../frame.php');
-set_charset();
+set_charset("utf-8");
 if(!is_post()){
 	redirect('/get_pwd/'); 
 	die();

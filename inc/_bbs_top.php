@@ -1,5 +1,11 @@
 <?php
 	$news_list=array();
+	$db = get_db();
+	$category = $db->query("SELECT * FROM bbs_forums b where type='forum' and name<>'精英爸爸谈育儿' order by threads desc limit 7");
+	foreach ($category as $cat){
+		$key = '/bbs/forumdisplay.php?fid=' .$cat->fid;
+		$news_list[$key] = $cat->name;
+	}
 	include_once(dirname(__FILE__) .'/../inc/_public_top.php');
 ?> 
 <script type="text/javascript">

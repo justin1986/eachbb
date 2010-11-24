@@ -11,7 +11,7 @@
 }
 #tl_l{
 	width:227px;
-	background:url('/images/top/logon.png') no-repeat;
+	background:url('/images/top/logo.png') no-repeat;
 	float:left;
 }
 #tl_r{
@@ -43,8 +43,8 @@
 	width:2px; 
 	height:14px;
 	margin-top:8px; 
-	margin-left:5px;
-	padding-right:5px;
+	margin-left:3px;
+	padding-right:3px;
 	background:url(/images/bbs/hr_t.jpg) no-repeat; 
 	font-size:0px; 
 	border:0px solid red; 
@@ -140,7 +140,6 @@
 			<!-- <div id="tl_r_l"></div><div id="tl_r_r"></div> background:url('/images/top/t_c.jpg') repeat-x;-->
 			<div id="tl_r_c">
 			</div>
-			
 		</div>
 	</div>
 	<div id="top_menu" style="height:33px;">
@@ -158,7 +157,7 @@
 						$i++;
 						} 
 						?>
-						<div id="test_result" style="height:30px; overflow:hidden; float:right; display: inline;"></div>
+						<div id="test_result" style="width:390px; height:30px; overflow:hidden; float:right; display: inline;"></div>
 					</div>
 			</div>
 			<div id="menu_right"></div>

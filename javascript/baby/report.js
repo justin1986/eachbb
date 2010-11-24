@@ -1,4 +1,16 @@
 $(function(){
+	var type = $('#type_test').val();
+	if(type =="test"){
+		$.post('_baby_ajax.post.php',function(data){
+			$('#haha').html(data);
+		});
+	}
+	$('#user_me_o').click(function(){
+		$.post('_baby_exit_ajax_post.php',function(){
+			alert("退出成功！返回首页");
+			window.location.href="/";
+		});
+	});
 	$('.user_me_t').click(function(e){
 		e.preventDefault();
 		var selected = $('.user_me_t').index($(this));
@@ -12,27 +24,30 @@ $(function(){
 			$.post('reset_password.php',function(data){
 				$('#haha').html(data);
 			});
-		}else if(selected ===  10){
+		}else if(selected ===  8){
+			$.post('_baby_ajax.post.php',function(data){
+				$('#haha').html(data);
+			});
+		}else if(selected === 9){
 			$.post('_baby_view_ajax_post.php',function(data){
 				$('#haha').html(data);
 			});
-		}else if(selected ===  11){
-			$.post('_baby_ajax.post.php',function(data){
+		}else if(selected === 10){
+			$.post('_baby_view_ajax_post.php',function(data){
 				$('#haha').html(data);
 			});
-		}else if(selected === 12){
-			$.post('_baby_record_ajax.post.php',function(data){
+//			$.post('_baby_record_ajax.post.php',function(data){
+//				$('#haha').html(data);
+//			});
+		}else if(selected === 11){
+			$.post('_baby_ajax.post.php',function(data){
 				$('#haha').html(data);
 			});
 		}else if(selected === 13){
-			$.post('_baby_ajax.post.php',function(data){
-				$('#haha').html(data);
-			});
-		}else if(selected === 15){
 			$.post('_baby_teach_ajax.post.php',{'type':"ojisd"},function(data){
 				$('#haha').html(data);
 			});
-		}else if(selected === 18){
+		}else if(selected === 16){
 			$.post('_baby_teach_ajax.post.php',function(data){
 				$('#haha').html(data);
 			});
@@ -56,5 +71,10 @@ $(function(){
 		$('.crb_c').hide();
 		$('#crbc_'+selected).show();
 	},function(){});
-	
+//	$('.problem_bannerr').live('hover',function(){
+//	$(this).addClass("hover");
+//		        $(this).removeClass("hover");
+//
+//		$(this).css('background',"#E6E5E8");
+//	});
 });

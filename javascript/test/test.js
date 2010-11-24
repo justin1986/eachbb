@@ -4,7 +4,7 @@ $(function(){
 		var selected=$('.crbci_t a').index($(this));
 		$.fn.colorbox({href:'/inc/_public_result_ajax_post_view.php?page=test_index&result=middle_intr_'+selected});
 	});
-	
+	$('#crbc_0').show();
 	$('#cr_0').show();
 	$('.crf_c a').click(function(e){
 		e.preventDefault();

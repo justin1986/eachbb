@@ -10,7 +10,8 @@
 		$count = 0;
 		$page_record_count = 0;
 	}else{
-		$record = search_content($key);
+//		$record = search_content($key,'eb_assistant');
+		$record = search_content($key,'eb_news');//+ search_content($key,'eb_assistant');
 		$count = count($record);
 	}
 ?>
@@ -19,8 +20,9 @@
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-cn>
-	<title><?php echo $key;?>_新闻检索_福布斯中文网</title>
+	<title><?php echo $key;?>_新闻检索_网趣宝贝</title>
 	<?php
+		$result_key=$key;
 		use_jquery();
 		js_include_tag('news_highlight.js');
 		css_include_tag('article','news_search');
@@ -34,7 +36,7 @@
 		
 		<div id="l">
 			<div class="news_caption">
-					<div class="captions">搜索关键字“<span id="span_key"><?php echo $key;?></span>”的新闻<span>共<?php echo $page_record_count;?>篇</span></div>
+					<div class="captions">搜索关键字“<span id="span_key"><?php echo $result_key;?></span>”的新闻<span>共<?php echo $page_record_count;?>篇</span></div>
 			</div>
 			<div id="list_content">
 				<?php
@@ -42,7 +44,7 @@
 				?>
 				<div class="list_box">
 					<div class="head_line">
-						<div class="title"><a title="<?php echo $record[$i]->title;?>" href="<?php echo get_news_url($record[$i],'static');?>"><?php echo $record[$i]->title?></a></div>
+						<div class="title"><a title="<?php echo $record[$i]->title;?>" target="_blank" href="<?php echo get_news_url($record[$i],'static');?>"><?php echo $record[$i]->title?></a></div>
 						<div class=info>发布于：<?php echo substr($record[$i]->created_at,0,10);?></div>
 					</div>
 					<div class=description ><?php echo strip_tags($record[$i]->description);?></div>
@@ -51,6 +53,7 @@
 				<div id=page><?php paginate();?></div>
 			</div>
 		</div>	
+		<?php include_once(dirname(__FILE__).'/../inc/bottom.php');?>
 	</div>
 </body>
 </html>

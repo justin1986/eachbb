@@ -25,6 +25,7 @@
 </head>
 <body>
 <div id="ibody">
+<input type="hidden"  id="type_test" value="<?php echo $_GET["type"];?>"/>
 	<?php include_once(dirname(__FILE__).'/../inc/_baby_top.php'); ?>
 	<?php include_once(dirname(__FILE__).'/../baby/_inc_index_left.php'); ?>
 	<div id="haha">
@@ -34,10 +35,10 @@
 	     		<div class="line1" ><hr color="#A3C1CD" width=100%; size="2" /></div>
 	     		<div id="head">
 						<div id="head_b">
-							<img id="pic_left" src="<?php echo $user->avatar; ?>"/>
+							<img id="pic_left" src="<?php echo $user->avatar ? $user->avatar : '/images/yard_info_img/1.jpg'; ?>"/>
 						</div>
 						<div style="float:left;margin-top:5px;"><font size="3" ><B>我的头像库</B></font><font size="2" >(</font><font size="2" color="red" ><?php echo $avatar_count;?></font><font size="2" >张)</font></div>
-						<div class="pichr_menu" id="set_avatar" style="margin-left:100px;float:left;margin-top:5px;"><font size="2">[选择头像]</font></div>
+						<div class="pichr_menu" id="set_avatar" name="/baby" style="margin-left:100px;float:left;margin-top:5px;"><font size="2">[选择头像]</font></div>
 				    <div style="margin-top:5px;margin-left:5px;height:20px; float:left;"><a href="/yard/info.php"><font size="2" color="red" >[上传头像]</font></a></div>
 				    <div style="margin-top:5px;height:7px;float:left;"><hr color="#8A7777" width=401px;; size="2" /></div>
 					  <div id="pic_hr_pg">
@@ -64,13 +65,14 @@
 				  </div>     
 		<div id="right_up_right">
 		<div class="record">
-		<div ><font size="2" color="red"><b>用户最新动态</b></font></div>
+		<div ><font size="2" color="red"><b>好友的最新动态</b></font></div>
 		<div class="add"><hr color="#A3C1CD" width=100%; size="4" /></div>
 		<?php 
-		$last_news=$db->query("SELECT id,content FROM eachbb_member.lastest_news l where resource_type='oneword' and u_id={$user->id} order by created_at desc LIMIT 7");
+		$last_news=$db->query("SELECT id,content,u_id,u_name from eachbb_member.lastest_news where u_id in (SELECT f_id FROM eachbb_member.friend where u_id={$user->id}) and resource_type='oneword' order by created_at desc LIMIT 7");
 		for($i = 0 ; $i <= 7 ; $i++){
 		?>
 		<div class="text" style="width:340px; padding-left:10px; height:18px; line-height:18px; overflow:hidden; background:url(/images/avatar/smallpoint.png) no-repeat 0px 7px;">
+			<?php if($last_news[$i]->u_id){?><a href="/yard/index.php?id=<?php echo $last_news[$i]->u_id; ?>">[<?php echo $last_news[$i]->u_name;?>]</a><?php }?>
 			<a href="/baby/index_daily_show.php?daily_id=<?php echo $last_news[$i]->id; ?>" style="font-size:12px; color:#8C8C8C;">
 				<?php echo $last_news[$i]->content; ?>
 			</a>
@@ -80,15 +82,16 @@
 		<div class="record">
 		<div ><font size="2" color="red"><b>重要信息提醒</b></font></div>
 		<div class="add"><hr color="#A3C1CD" width=100%; size="4" /></div>
-		<div class="text" style="margin-top:5px;"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2">宝宝因为好奇四处探索，常常引发一系……</font></a></div>
-		<div class="text"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2">宝宝因为好奇四处探索，常常引发一系……</font></a></div>
-		<div class="text"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2">宝宝因为好奇四处探索，常常引发一系……</font></a></div>
-		<div class="text"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2">宝宝因为好奇四处探索，常常引发一系……</font></a></div>
-		<div class="text"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2">宝宝因为好奇四处探索，常常引发一系……</font></a></div>
-		<div class="text"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2">宝宝因为好奇四处探索，常常引发一系……</font></a></div>
-		<div class="text"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2">宝宝因为好奇四处探索，常常引发一系……</font></a></div>
+			<div style="width:300px; height:100px; line-height:100px; font-size:14px; text-align: center;">暂未开通，敬请期待。</div>
+<!--		<div class="text" style="margin-top:5px;"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2">宝宝因为好奇四处探索，常常引发一系……</font></a></div>-->
+<!--		<div class="text"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2">宝宝因为好奇四处探索，常常引发一系……</font></a></div>-->
+<!--		<div class="text"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2">宝宝因为好奇四处探索，常常引发一系……</font></a></div>-->
+<!--		<div class="text"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2">宝宝因为好奇四处探索，常常引发一系……</font></a></div>-->
+<!--		<div class="text"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2">宝宝因为好奇四处探索，常常引发一系……</font></a></div>-->
+<!--		<div class="text"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2">宝宝因为好奇四处探索，常常引发一系……</font></a></div>-->
+<!--		<div class="text"><img src="/images/avatar/smallpoint.png"></img><a href="baby.php"><font size="2">宝宝因为好奇四处探索，常常引发一系……</font></a></div>-->
 		</div>
-		<div id="mother"><a href="4th_mother.php"><img src="/images/avatar/mother.png" border="0"></img></a></div>
+		<div class="ad_banner" id="mother"></div>
 		</div>
 	    </div>
 	    </div>
@@ -99,57 +102,50 @@
 			    	<font size="2" style="margin-left:5px;"><b>测评</b></font>
 			    	<font size="2" color="red"><b>报告</b></font>
 		    </div>
-		     <?php 
-	    	$teach=$db->query("SELECT * FROM eachbb.eb_problem e  where id in (SELECT problem_id FROM eachbb.eb_test_record e where user_id={$user->id}) order by create_time desc LIMIT 10;");
-	    	if($teach){
-	    	?>
-		    <div class="line1"><hr color="#F5F5F5" width=100%; size="2" /></div>
-		    <div class="line2"><hr color="#F5F5F5" width=760px; size="1" /></div>
-		    <div class="att"><div style="float:left; displary:inline;"><a href="index_record_show.php?problem_id=<?php echo $teach[0]->id; ?>"><img src="<?php echo $teach[0]->photo_url; ?>" style="width:152px; height:101px;" border="0"></img></a></div>
-			    <div class="left"style="margin-left:10px;"><div class="left" style="margin-top:10px;"><a href="index_record_show.php?problem_id=<?php echo $teach[0]->id; ?>"><font size="2" color="black"><b><?php echo strip_tags($teach[0]->name); ?></b></font></a></div>
-			    <div class="left" style="margin-top:8px;"><a href="index_record_show.php?problem_id=<?php echo $teach[0]->id; ?>"><font size="2px" color="black" ><?php echo strip_tags($teach[0]->description); ?></font></a></div>
-			    </div>
-	    	</div>
-	    	<?php  }else{
-		    	echo "<div style='width:100%; height:30px; line-height:30px; text-align:center;'><a href=' ' style='font-size:20px;'>您的测评报告为空！</a></div>";
-			    }
-		    ?>
-	    </div>
-	    <?php
-	     for ($i = 1 ;  $i< 11 ; $i++){
-	     if($i !== 1){
-	     	?>
-	    <div class="text1" style="width:240px; <?php if($i <= 4 ) echo "margin-top:10px;";?> height:20px; line-height:20px; overflow:hidden; float:left; display:inline;">
-	    	<img src="/images/avatar/smallpoint.png"></img>
-	    		<a href="index_record_show.php?problem_id=<?php echo $teach->id; ?>">
-	    			<font size="2" ><?php echo $teach->name;?></font>
-	    		</a>
+	    	<div class="line1"><hr color="#F5F5F5" width=100%; size="2" /></div> <div class="line2"><hr color="#F5F5F5" width=760px; size="1" /></div>
+		    	<?php 
+		    		$teach=$db->query("SELECT * FROM eachbb.eb_problem e  where id in (SELECT problem_id FROM eachbb.eb_test_record e where user_id={$user->id}) order by create_time desc LIMIT 5;");
+		    		if($teach){
+		    		foreach ($teach as $teach){
+		    	?>
+			   	 <div class="text2" style="height:20px; line-height:20px; overflow:hidden; padding-top:0px;">
+			   	 		<?php if($teach->id){?>
+			   	 		<div  class="public_hr">
+			   	 			<div class="test_title_left"><?php echo $teach->name;?></div>
+			   	 			<div class="test_content"><?php echo text($teach->problem_type);?></div>
+			   	 			<div class="test_content"><a href="/test/test_result.php?test_id=<?php echo $teach->id;?>" target="_blank" >测评报告</a></div>
+			   	 			<div class="test_content"><a href="/test/review.php?id=<?php echo $teach->id;?>" target="_blank"  style="padding-left:20px;">回顾测评</a></div>
+			   	 			<div class="test_title_left" style="width:250px; text-align: right;">测评时间：<?php echo substr($teach->create_time,0,16);?></div>
+			   	 		</div>
+			   	 		<?php }?>
+				</div>
+				<?php }}?>
 	    </div>    
-	    <?php }}
-	    	$teach=$db->query("SELECT id,title,img_url FROM eachbb.eb_teach e where is_adopt=1 and del_flag=0 order by priority,click_count,create_time desc limit 10;");
+	    <?php 
+//	    	$teach=$db->query("SELECT id,title,img_url FROM eachbb.eb_teach e where is_adopt=1 and del_flag=0 order by priority,click_count,create_time desc limit 10;");
 	    ?>
 	    <div class="txt">
 		    <div><img src="/images/avatar/point.png"></img><font size="2" style="margin-left:5px;"><b>订购</b></font><font size="2" color="red"><b>课程</b></font></div>
 		  	 <div class="line1"><hr color="#F5F5F5" width=100%; size="2" /></div> <div class="line2"><hr color="#F5F5F5" width=760px; size="1" /></div>
-		    <div class="att"><div style="float:left"><a href="/course"><img src="<?php echo $teach[0]->img_url; ?>" style="width:292px; height:101px;" border="0"></img></a></div>
-		    	<?php 
-		    	for($i = 0 ; $i < 10; $i++){
+		    <?php 
+		    		$teach=null;$db->query("SELECT * FROM eachbb.eb_problem e  where id in (SELECT problem_id FROM eachbb.eb_test_record e where user_id={$user->id}) order by create_time desc LIMIT 5;");
+		    		if($teach){
+		    		foreach ($teach as $teach){
 		    	?>
-			   	 <div class="text2" style="width:214px; height:20px; line-height:20px; padding-top:0px;">
-			   	 	<img src="/images/avatar/smallpoint.png" style="margin-top:5px;"></img>
-			   	 		<a href="index_teach_show.php?problem_id=<?php echo $teach[$i]->id;?>">
-			   	 			<font size="2" ><?php echo $teach[$i]->title;?></font>
-			   	 		</a>
-				</div>
-				<?php }?>
-				    
-		   </div>
+			   	 <div  class="public_hr">
+			   	 			<div class="test_title_left"><?php echo $teach->name;?></div>
+			   	 			<div class="test_content"><?php echo text($teach->problem_type);?></div>
+			   	 			<div class="test_content"><a href="/test/test_result.php?test_id=<?php echo $teach->id;?>">测试报告</a></div>
+			   	 			<div class="test_content"><a href="/test/review.php?id=<?php echo $teach->id;?>" style="padding-left:20px;">测试回顾</a></div>
+			   	 			<div class="test_content"><?php echo substr($teach->create_time,0,16);?></div>
+			   	 		</div>
+				<?php }}?>
 	   </div>
 	   
 	    <div class="txt">
 	    <div><img src="/images/avatar/point.png"></img><font size="2" style="margin-left:5px;"><B>我家</B></font><font size="2" color="red"><b>小院子</b></font></div>
 	    <div class="line1"><hr color="#F5F5F5" width=100%; size="2" /></div> <div class="line2"><hr color="#F5F5F5" width=760px; size="1" /></div>
-	    <div class="att"><div style="float:left"><a href="milk.php"><img src="/images/avatar/yard.png" border="0"></img></a></div>
+	    <div class="att"><div style="width:311px; height:139px; float:left" class="ad_banner" id="baby_index_bottom"></div>
 	    <?php 	
 				$diary_list=$db->query("SELECT id,title from eachbb_member.daily where u_id={$user->id} order by last_edit_time desc  limit 4;");
 				if(!$diary_list){
