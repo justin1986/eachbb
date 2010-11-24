@@ -10,7 +10,6 @@
 	<meta http-equiv=Content-Language content=zh-CN>
 	<title>发布新闻</title>
 	<?php 
-
 		css_include_tag('admin2','colorbox','jquery_ui');
 		use_jquery_ui();
 		validate_form("news_edit");

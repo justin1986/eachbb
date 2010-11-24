@@ -49,7 +49,6 @@
 		<input type="hidden" id="r_id" value="<?php echo $id;?>">
 	</div>
 </body>
-</html>
 <script>
 function send_search(){
 	window.location.href="?s_text=" + encodeURI($('#s_text').val())+"&id="+$("#r_id").val();;
@@ -96,3 +95,4 @@ $(function(){
 	});
 });
 </script>
+</html>

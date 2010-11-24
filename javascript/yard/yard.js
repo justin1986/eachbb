@@ -9,7 +9,7 @@ $(function(){
 		$('#test').html("<div style='width:540px; text-align:center; margin-top:20px;'><img src='/images/yard/loading.gif' /></div>");
 		if(selected === 0)
 		{	
-			$.post('lastest_news.post.php',{'type':'all'},function(data){
+			$.post('friend_news.post.php',{'type':'all'},function(data){
 				$('#test').html(data);
 			});
 		}

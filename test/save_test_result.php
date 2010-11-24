@@ -3,7 +3,9 @@ session_start();
 include_once '../frame.php';
 include_once '../inc/User.class.php';
 $user = User::current_user();
+$_SESSION['tmp_flag'] = $temp_flag;
 if(!$user){
+	
 	redirect('save_result_nologin.php');
 	die();
 }
