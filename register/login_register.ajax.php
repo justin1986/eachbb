@@ -70,7 +70,7 @@ $('.baby_name').hide();
 	$(function(){
 		$('#btn').click(function(){
 			$.post('/register/ajax.post.php',{'type':'login','name':$('#login_name').val(), 'password':$('#login_password').val()},function(data){
-				if(data == '1'){					
+				if(data == '用户名密码不对！'){					
 					alert('用户名密码不对！');
 				}else{
 					var temp = $('#temp').val();
