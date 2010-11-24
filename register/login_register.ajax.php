@@ -63,16 +63,17 @@
 		</div>
 	</div>
 	<div id="banner_bottom"></div>
+	<input id="temp" type="hidden" value="<?php echo $_GET['temp'];?>" />
 </div>
 <script type="text/javascript">
 $('.baby_name').hide();
 	$(function(){
 		$('#btn').click(function(){
 			$.post('/register/ajax.post.php',{'type':'login','name':$('#login_name').val(), 'password':$('#login_password').val()},function(data){
-				if(data){					
-					alert(data);
+				if(data == '1'){					
+					alert('用户名密码不对！');
 				}else{
-					var temp = "<?php echo $_SESSION['temp_flag']?>";
+					var temp = $('#temp').val();
 					window.location.href="/test/save_test_result.php?temp="+temp;
 				}
 			});

@@ -12,10 +12,12 @@
 	?>
 </head>
 <body>
+<input id="temp" type="hidden" value="<?php echo $_GET['temp'];?>" />
 </body>
 <script type="text/javascript">
 	$(function(){
-		$.fn.colorbox({href:'/register/login_register.ajax.php'});
+		var temp = $('#temp').val();
+		$.fn.colorbox({href:'/register/login_register.ajax.php?temp='+temp});
 	});
 </script>
 </html>

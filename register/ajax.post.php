@@ -8,7 +8,7 @@ if($type == 'login'){
 	$password = $_POST['password'];
 	$user = User::login($name, $password);
 	if(!$user){
-		echo '用户名密码不对！';
+		echo '1';
 	}
 }elseif ($type == 'register'){
 	$baby_name = $_POST['baby_name'];
