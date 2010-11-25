@@ -3,8 +3,7 @@ session_start();
 include_once '../frame.php';
 include_once '../inc/User.class.php';
 $user = User::current_user();
-//if(! $test_id = intval($_SESSION['doing_test'])) die('invalid request!');
-$test_id = 54;
+if(! $test_id = intval($_SESSION['doing_test'])) die('invalid request!');
 $db = get_db();
 if(!$_GET['temp']){
 	$temp_flag = rand_str();
@@ -14,7 +13,7 @@ if(!$_GET['temp']){
 	
 	$ip   =   $_SERVER['REMOTE_ADDR']; 
 	if(!$user){
-		$test_result = new table_class('eb_test_result');
+		$test_result = new table_class('eb_test_result1');
 		$test_result->test_type = $test_id;
 		$test_result->pro_type = $problem->problem_type;
 		$test_result->created_at = now();
@@ -25,7 +24,7 @@ if(!$_GET['temp']){
 		die();
 	}
 	
-		$test_result = new table_class('eb_test_result');
+		$test_result = new table_class('eb_test_result1');
 		$test_result->u_name = $user->name;
 		$test_result->u_id = $user->id;
 		$test_result->test_type = $test_id;

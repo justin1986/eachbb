@@ -3,22 +3,24 @@
 	include_once('../../frame.php');
 	judge_role();
 	$key = $_REQUEST['key'];
-	
+	$test_type = $_REQUEST['test'];
 	$is_adopt = $_REQUEST['adopt'];
 	$type = intval($_GET['type']) ? intval($_GET['type']) : 1;
 	$db = get_db();
-	$pro_type = $db->query("select name from  eb_problem");
+	$pro_type = $db->query("select id,name from  eb_problem");
 	if($start==""){$start=date('Y-m-d');}else{$start=$_REQUEST['start'];}
 	if($end==""){$end=date('Y-m-d');}else{$end=$_REQUEST['end'];}
-	$sql = "select b.*,a.problem_type,a.name from eb_test_result b left join eb_problem a on a.id = b.test_type where 1=1";
+	$sql = "select b.*,a.problem_type,a.name from eb_test_result1 b left join eb_problem a on a.id = b.test_type where 1=1";
 	if($key != undefined &&$key != ''){
 		$sql .= " and created_at between $key";
 	}
 	if($is_adopt!=''){
 		$sql .= " and b.pro_type =$is_adopt";
 	}
+	if($test_type!=''){
+		$sql .= " and b.test_type =$test_type";
+	}
 	$sql .= " order by created_at desc";
-	var_dump($sql);
 	$record = $db->paginate($sql,30);
 	$count_record = $db->record_count;
 ?>
@@ -47,10 +49,10 @@
 					<option value="1" <? if($_REQUEST['adopt']=="1"){?>selected="selected"<? }?>>父母</option>
 					<option value="0" <? if($_REQUEST['adopt']=="0"){?>selected="selected"<? }?>>宝宝</option>
 		</select>
-		<select id=adopt style="width:100px">
+		<select id=test_type style="width:100px">
 					<option value="">测试名称</option>
 					<?php for ($j = 0; $j < count($pro_type); $j++) { ?>
-						<option value="<?php echo $j;?>"><?php echo $pro_type[$j]->name;?></option>
+						<option value="<?php echo $pro_type[$j]->id;?>" <? if($_REQUEST['test']== $pro_type[$j]->id){?>selected="selected"<? }?>><?php echo $pro_type[$j]->name;?></option>
 					<?php }?>
 		</select>
 		<input type="button" value="搜索" id="search_button">
@@ -87,6 +89,9 @@
 	$("#adopt").change(function(){
 		search();
 	});
+	$("#test_type").change(function(){
+		search();
+	});
 	$(".birthday").datepicker(
 			{
 				changeMonth: true,
@@ -106,7 +111,7 @@
 		}else{
 			var key = "0000-00-00 00:00:00 and "+date('Y-m-d')+" 23:59:59";
 		}
-		window.location.href = "?key="+key+"&adopt="+$("#adopt").val();
+		window.location.href = "?key="+key+"&adopt="+$("#adopt").val()+"&test="+$("#test_type").val();
 	}
 	
 </script>
